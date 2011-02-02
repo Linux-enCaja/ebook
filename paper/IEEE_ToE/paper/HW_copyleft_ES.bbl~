@@ -1,0 +1,1539 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\astroncite{{A. Avizienis}}{1997}]{AA97}
+{A. Avizienis}\leavevmode\nopagebreak\newline 1997.
+\newblock Toward systematic design of fault tolerant systems.
+\newblock {\em Computer}.
+
+\bibitem[\protect\astroncite{{A. Avizienis} et~al.}{2001}]{AAJL01}
+{A. Avizienis}, {J. Laprie}, and {B. Randell}\leavevmode\nopagebreak\newline
+  2001.
+\newblock Fundamental {C}oncepts of {D}ependability.
+\newblock Technical report, UCLA, LAAS, Newcastle University.
+
+\bibitem[\protect\astroncite{{A. Avizienis} and {R. Avizienis}}{2001}]{AARA01}
+{A. Avizienis} and {R. Avizienis}\leavevmode\nopagebreak\newline 2001.
+\newblock An {I}mmune system paradigm for the design of fault tolerance
+  systems.
+\newblock {\em Workshop 3: Evaluating and Architecting Systems for
+  Dependability (EASY)}.
+
+\bibitem[\protect\astroncite{{A. Berlin}}{1994}]{AB94}
+{A. Berlin}\leavevmode\nopagebreak\newline 1994.
+\newblock {\em Towards {I}ntelligent {S}tructures: {A}ctive {C}ontrol of
+  {B}ucling}.
+\newblock PhD thesis, MIT. Department of Electrical Engineering and Computer
+  Science.
+
+\bibitem[\protect\astroncite{{A. Cortesi}}{2009}]{AC09}
+{A. Cortesi}\leavevmode\nopagebreak\newline 2009.
+\newblock Elinor {O}strom, the commons problem and {O}pen {S}ource.
+\newblock {\em URL: http://corte.si/posts/opensource/ostrom/index.html}.
+
+\bibitem[\protect\astroncite{{A. Gerstlauer} et~al.}{2002}]{AGDG+02}
+{A. Gerstlauer}, {D. Gajski.}, {. Technical Report CECS-02-17}, and .~CECS,
+  UC~Irvine\leavevmode\nopagebreak\newline 2002.
+\newblock System-level abstraction semantics, {T}echnical {R}eport
+  {CECS}-02-17.
+\newblock Technical report, CECS, UC Irvine.
+
+\bibitem[\protect\astroncite{{A. Grove}}{2010}]{AG10}
+{A. Grove}\leavevmode\nopagebreak\newline 2010.
+\newblock How {A}merica {C}an {C}reate {J}obs.
+\newblock
+  http://www.businessweek.com/magazine/content/10\_28/b4186048358596.htm.
+
+\bibitem[\protect\astroncite{{A. J. Ijspeert} et~al.}{2001}]{AJI+01}
+{A. J. Ijspeert}, {A. Martinoli}, {A. Billard}, and {L. M.
+  Gambardella}\leavevmode\nopagebreak\newline 2001.
+\newblock Collaboration through the exploitation of local interactions in
+  autonomous collective robotics: {T}he stick pulling experiment.
+\newblock {\em Autonomous Robots, 11}.
+
+\bibitem[\protect\astroncite{{A. Martinoli}}{1999}]{AM99}
+{A. Martinoli}\leavevmode\nopagebreak\newline 1999.
+\newblock {\em Swarm {I}ntelligence in {A}utonomous {C}ollective {R}obotics:
+  {F}rom {T}ools to the {A}nalysis and {S}ynthesis of {D}istributed {C}ontrol
+  {S}trategies}.
+\newblock PhD thesis, EPFL.
+
+\bibitem[\protect\astroncite{{A. Martinoli} et~al.}{1999}]{AMAJI99}
+{A. Martinoli}, {A. J. Ijspeert}, and {L. M.
+  Gambardella}\leavevmode\nopagebreak\newline 1999.
+\newblock {\em Proceedings of the 5th {E}uropean {C}onference on {A}dvances in
+  {A}rtificial {L}ife}, chapter A probabilistic model for understanding and
+  comparing collective aggregation mechanisms.
+\newblock Springer.
+
+\bibitem[\protect\astroncite{{A. Martinoli} and PhD~thesis}{1999}]{AMPt99}
+{A. Martinoli} and E.~PhD~thesis, PhD Thesis
+  No~2069\leavevmode\nopagebreak\newline 1999.
+\newblock {\em Swarm {I}ntelligence in {A}utonomous {C}ollective {R}obotics:
+  {F}rom {T}ools to the {A}nalysis and {S}ynthesis of {D}istributed {C}ontrol
+  {S}trategies.}
+\newblock PhD thesis, PhD Thesis No 2069, EPFL.
+
+\bibitem[\protect\astroncite{{A. Purhonen and E. Tuulari}}{2003}]{APaET03}
+{A. Purhonen and E. Tuulari}\leavevmode\nopagebreak\newline 2003.
+\newblock {\em Ambient {I}ntelligence and the {D}evelopment of {E}mbedded
+  {S}ystem {S}oftware}, Pp.~ 51 -- 66.
+\newblock Kluwer Academic Publishers.
+
+\bibitem[\protect\astroncite{{A. Tyrrell}}{1999}]{AT99}
+{A. Tyrrell}\leavevmode\nopagebreak\newline 1999.
+\newblock Computer {K}now {T}hy {S}elf: {A} {B}iological {W}ay to {L}ook at
+  {F}ault {T}olerance.
+\newblock {\em 2nd Euromicro/IEEE workshop on Dependable Computing Systems}.
+
+\bibitem[\protect\astroncite{{A. Warner}}{2004}]{AW04}
+{A. Warner}\leavevmode\nopagebreak\newline 2004.
+\newblock A {S}elf {T}riggered {R}eadout for a {T}ime {P}rojection {C}hamber.
+\newblock Master's thesis, MIT Physics Department.
+
+\bibitem[\protect\astroncite{{Aleph 1}}{}]{A1}
+{Aleph 1}\leavevmode\nopagebreak\newline.
+\newblock Building the {T}oolchain.
+\newblock http://www.aleph1.co.uk/node/279.
+
+\bibitem[\protect\astroncite{Alur et~al.}{2000}]{AGH+00}
+Alur, R., R.~Grosu, Y.~Hur, V.~Kumar, and I.~Lee\leavevmode\nopagebreak\newline
+  2000.
+\newblock Modular {S}pecification of {H}ybrid {S}ystems in {CHARON}.
+\newblock {\em Proceedings of the 3rd International Workshop on Hybrid Systems:
+  Computation and Control. Pittsburgh, PA}.
+
+\bibitem[\protect\astroncite{{Ancona D.}}{}]{AD}
+{Ancona D.}\leavevmode\nopagebreak\newline.
+\newblock Leadership in the {A}ge of {U}ncertainty.
+\newblock {\em
+  http://mitleadership.mit.edu/pdf/LeaderShipinanAgeofUncertainty-researchbrie%
+f.pdf}.
+
+\bibitem[\protect\astroncite{Arkin}{1988}]{Ark88}
+Arkin, R.\leavevmode\nopagebreak\newline 1988.
+\newblock {\em Behavior-{B}ased {R}obotics}.
+\newblock Cambridge, MA: MIT Press.
+
+\bibitem[\protect\astroncite{Arkin and Balch}{1997}]{AB97}
+Arkin, R. and T.~Balch\leavevmode\nopagebreak\newline 1997.
+\newblock Principles and {P}ractice in {R}eview.
+\newblock {\em Journal of Experimental and Theoretical Artificial Intelligence
+  9}.
+
+\bibitem[\protect\astroncite{{Arkin R. C.}}{1998}]{ARC98}
+{Arkin R. C.}\leavevmode\nopagebreak\newline 1998.
+\newblock {\em Behavior-{B}ased {R}obotics}.
+\newblock The MIT press, Cambridge, MA.
+
+\bibitem[\protect\astroncite{Arrow}{1962}]{Arr62}
+Arrow, K.\leavevmode\nopagebreak\newline 1962.
+\newblock {\em Economic {W}elfare and the {A}llocation of {R}esources for
+  {I}nvention}.
+\newblock Princeton University Press.
+
+\bibitem[\protect\astroncite{{B. Bonabeau C. Meyer}}{2001}]{BBCM01}
+{B. Bonabeau C. Meyer}\leavevmode\nopagebreak\newline 2001.
+\newblock Swarm {I}ntelligence: {A} whole new way to think about business.
+\newblock Harvard Business Review.
+
+\bibitem[\protect\astroncite{{B. Holldobler} and {E. Wilson}}{1990}]{Holl90}
+{B. Holldobler} and {E. Wilson}\leavevmode\nopagebreak\newline 1990.
+\newblock {\em The Ants}.
+\newblock Springer-Verlag.
+
+\bibitem[\protect\astroncite{{Bernardo A. Huberman} and {Tad Hogg.
+  In}}{1988}]{BAH88}
+{Bernardo A. Huberman} and e.~{Tad Hogg. In}\leavevmode\nopagebreak\newline
+  1988.
+\newblock {\em The {E}cology of {C}omputation}, chapter The behavior of
+  computational ecologies.
+\newblock Amsterdam, Elsevier (North-Holland).
+
+\bibitem[\protect\astroncite{{Bill Gatliff}}{}]{BG}
+{Bill Gatliff}\leavevmode\nopagebreak\newline.
+\newblock Porting and {U}sing {N}ewlib in {E}mbedded {S}ystems.
+\newblock http://venus.billgatliff.com/node/3.
+
+\bibitem[\protect\astroncite{{Bonabeau E.} and {Theraulaz G}}{1994}]{BETG94}
+{Bonabeau E.} and {Theraulaz G}\leavevmode\nopagebreak\newline 1994.
+\newblock {\em Intelligence {C}ollective}.
+\newblock Hermes, Paris, France.
+
+\bibitem[\protect\astroncite{{Bonabeau E.} et~al.}{1997}]{BETG+97}
+{Bonabeau E.}, {Theraulaz G.}, {Deneubourg J.-L.}, {Aron S.}, and {Camazine
+  S.}\leavevmode\nopagebreak\newline 1997.
+\newblock Self-{O}rganisation in {S}ocial {I}nsects.
+\newblock {\em TREE}, 12(5):188--193.
+
+\bibitem[\protect\astroncite{{B.P. Gerkey} et~al.}{2003}]{BGRTV03}
+{B.P. Gerkey}, {R. T. Vaughan}, and {A. Howard}\leavevmode\nopagebreak\newline
+  2003.
+\newblock The {P}layer/{S}tage project: {T}ools for {M}ulti-robot and
+  {D}istributed {S}ensor {S}ystems,.
+\newblock {\em Proceedings of the International Conference on Advanced Robotics
+  (ICAR)}, Pp.~ 317--323.
+
+\bibitem[\protect\astroncite{{Brian P. Gerkey} and {Maja J. Mataric.}}{}]{BPG}
+{Brian P. Gerkey} and {Maja J. Mataric.}\leavevmode\nopagebreak\newline.
+\newblock A formal analysis and taxonomy of task allocation in multi-robot
+  systems.
+\newblock {\em International journal of robotics research, 23(9)}.
+
+\bibitem[\protect\astroncite{Brooks}{1986}]{Bro86}
+Brooks, R.\leavevmode\nopagebreak\newline 1986.
+\newblock A {R}obust {L}ayered {C}ontrol {S}ystem for a {M}obile {R}obot.
+\newblock {\em IEEE Journal of Robotics and Automation}.
+
+\bibitem[\protect\astroncite{Brooks}{1991}]{Bro91}
+Brooks, R.\leavevmode\nopagebreak\newline 1991.
+\newblock Intelligence {W}ithout {R}epresentation.
+\newblock {\em Artificial Intelligence 47}.
+
+\bibitem[\protect\astroncite{Brooks and Connell}{1986}]{BC86}
+Brooks, R. and J.~Connell\leavevmode\nopagebreak\newline 1986.
+\newblock Asynchronous {D}istributed {C}ontrol {S}ystems for a {M}obile
+  {R}obot.
+\newblock {\em In Proceedings of SPIE's Cambridge Symposium on Optical and
+  Optoelectronic Engineering. Cambridge, MA}.
+
+\bibitem[\protect\astroncite{{C. Camargo}}{}]{CC}
+{C. Camargo}\leavevmode\nopagebreak\newline.
+\newblock E{CB}\_{A}{T}91 y {ECBOT} {P}lataformas {A}biertas para el desarrollo
+  de {S}istemas {E}mbebidos.
+\newblock {\em URL: http://wiki.emqbit.com/free-ecb-at91}.
+
+\bibitem[\protect\astroncite{{C. Camargo}}{2005}]{CC05}
+{C. Camargo}\leavevmode\nopagebreak\newline 2005.
+\newblock Implementaci\'on de {S}istemas {D}igitales {C}omplejos {U}tilizando
+  {S}istemas {E}mbebidos.
+\newblock {\em Memorias del XI Workshop de Iberchip ISBN 959-261-105-X}.
+
+\bibitem[\protect\astroncite{{C. Camargo}}{2006}]{CC06}
+{C. Camargo}\leavevmode\nopagebreak\newline 2006.
+\newblock First {C}olombian {L}inux {SBC} runs {D}ebian.
+\newblock URL:
+  http://www.linuxfordevices.com/c/a/News/First-Colombian-Linux-SBC-runs-Debia%
+n/.
+
+\bibitem[\protect\astroncite{{C. Camargo}}{2008}]{CC08}
+{C. Camargo}\leavevmode\nopagebreak\newline 2008.
+\newblock E{CBOT} y {ECB}\_{A}{T}91 {P}lataformas {A}biertas para el {D}ise\~no
+  de {S}istemas {E}mbebidos y {C}o-{D}ise\~no {HW}/{SW}.
+\newblock {\em VIII Jornadas de Computaci\'on Reconfigurable y Aplicaciones}.
+
+\bibitem[\protect\astroncite{{C. Hallinan}}{2006}]{CH06}
+{C. Hallinan}\leavevmode\nopagebreak\newline 2006.
+\newblock {\em Embedded {L}inux {P}remiere {A} {P}ractical {R}eal-{W}orld
+  {A}pproach}.
+\newblock Prentice Hall.
+
+\bibitem[\protect\astroncite{{C. Jacob}}{1997}]{CJ97}
+{C. Jacob}\leavevmode\nopagebreak\newline 1997.
+\newblock {\em Ilustrating {E}volutionary {C}omputation with {M}athematica}.
+\newblock Morgan Kaufmann.
+
+\bibitem[\protect\astroncite{{C. Langton}}{1984}]{CL84}
+{C. Langton}\leavevmode\nopagebreak\newline 1984.
+\newblock Self-{R}eproduction in {C}ellular automata.
+\newblock Physica D, 10:135-144.
+
+\bibitem[\protect\astroncite{{C. Ortega-Sanchez}}{2000}]{CO00}
+{C. Ortega-Sanchez}\leavevmode\nopagebreak\newline 2000.
+\newblock {\em Embryonics: a {B}io-{I}nspired {F}ault-{T}olerant
+  {M}ulticellular {S}ystem}.
+\newblock PhD thesis, The University of York.
+
+\bibitem[\protect\astroncite{{C. Teuscher}}{2004}]{CT04}
+{C. Teuscher}\leavevmode\nopagebreak\newline 2004.
+\newblock {\em Amorphous {M}embrane {B}lending: {F}rom {R}egular to {I}rregular
+  {C}ellular {C}omputing {M}achines}.
+\newblock PhD thesis, \'Ecole Polytechnique F\'ed\'erale de Lausanne.
+
+\bibitem[\protect\astroncite{Cao et~al.}{1997a}]{CFK97}
+Cao, Y., A.~Fukunaga, and A.~Kahng\leavevmode\nopagebreak\newline 1997a.
+\newblock Cooperative {M}obile {R}obotics: {A}ntecedents and {D}irections.
+\newblock {\em Autonomous Robots 4}.
+
+\bibitem[\protect\astroncite{Cao et~al.}{1997b}]{CFK97b}
+Cao, Y., A.~Fukunaga, and A.~Kahng\leavevmode\nopagebreak\newline 1997b.
+\newblock Cooperative {M}obile {R}obotics: {A}ntecedents and {D}irections.
+\newblock {\em Autonomous Robots 4}.
+
+\bibitem[\protect\astroncite{{Charles M. Schweik}}{2006}]{CMS06}
+{Charles M. Schweik}\leavevmode\nopagebreak\newline 2006.
+\newblock {\em Understanding {K}nowledge as a {C}ommons: {F}rom {T}heory to
+  {P}ractice}, chapter Free/Open-Source Software as a Framework for
+  Establishing Commons in Science.
+\newblock The MIT Press.
+
+\bibitem[\protect\astroncite{{Charlotte Hess} and {Elinor
+  Ostrom}}{2006}]{CHEO06}
+{Charlotte Hess} and {Elinor Ostrom}, eds.\leavevmode\nopagebreak\newline 2006.
+\newblock {\em Understanding {K}nowledge as a {C}ommons: {F}rom {T}heory to
+  {P}ractice}.
+\newblock The MIT Press.
+
+\bibitem[\protect\astroncite{{Chris V. Jones}}{2005}]{CVJ05}
+{Chris V. Jones}\leavevmode\nopagebreak\newline 2005.
+\newblock {\em A {P}rincipled {D}esign {M}ethodology for {M}inimalist
+  {M}ulti-{R}obot {S}ystem {C}ontrollers}.
+\newblock PhD thesis, FACULTY OF THE GRADUATE SCHOOL UNIVERSITY OF SOUTHERN
+  CALIFORNIA.
+
+\bibitem[\protect\astroncite{{Chris V. Jones} and {Maja J
+  Mataric.}}{2003}]{CVJ03}
+{Chris V. Jones} and {Maja J Mataric.}\leavevmode\nopagebreak\newline 2003.
+\newblock Adaptive task allocation in large-scale multi-robot systems.
+\newblock {\em Proceedings of the IEEE International Conference on Intelligent
+  Robots and Systems Las Vegas, NV}.
+
+\bibitem[\protect\astroncite{Connell}{1992}]{Con92}
+Connell, J.\leavevmode\nopagebreak\newline 1992.
+\newblock A {H}ybrid {A}rchitecture {A}pplied to {R}obot {N}avigation.
+\newblock {\em Proceedings IEEE Conference on Robotics and Automation, Nice,
+  France}.
+
+\bibitem[\protect\astroncite{{Creative Commons}}{2004}]{CCb}
+{Creative Commons}\leavevmode\nopagebreak\newline 2004.
+\newblock Licencias {C}reative {C}ommons.
+\newblock URL: http://creativecommons.org/licenses.
+
+\bibitem[\protect\astroncite{{D. Bradley} and {A. Tyrrell}}{2002}]{DBAT02}
+{D. Bradley} and {A. Tyrrell}\leavevmode\nopagebreak\newline 2002.
+\newblock A {H}ardware {I}mmune {S}ystem for {B}enchmark {S}tate {M}achine
+  {E}rror {D}etection.
+\newblock In {\em Congress on {E}volutionary {C}omputation}.
+
+\bibitem[\protect\astroncite{{D. Bradley} et~al.}{2000}]{DBCO00}
+{D. Bradley}, {C. Ortega-Sanchez}, and {A.
+  Tyrrell}\leavevmode\nopagebreak\newline 2000.
+\newblock Embryonic +{I}mmunotronics: abio-{I}nspired {A}pproach to {F}ault
+  {T}olerance.
+\newblock {\em The Second NASA/DoD Workshop on Evolvable Hardware}.
+
+\bibitem[\protect\astroncite{{D. Coore}}{1997}]{DC97}
+{D. Coore}\leavevmode\nopagebreak\newline 1997.
+\newblock Establishing a {C}oordinate {S}ystem on an {A}morphous {C}omputer.
+\newblock http://swiss.ai.mit.edu/projects/amorphous.
+
+\bibitem[\protect\astroncite{{D. Coore}}{1999}]{DC99}
+{D. Coore}\leavevmode\nopagebreak\newline 1999.
+\newblock {\em Botanical {C}omputing: {A} {D}evelopmental {A}pproach to
+  {G}enerating {I}nterconnected {T}opologies on an {A}morphous {C}omputer}.
+\newblock PhD thesis, Massachusetss Institute of Technology.
+
+\bibitem[\protect\astroncite{{D. Coore} et~al.}{1997}]{DCRN97}
+{D. Coore}, {R. Nagpal}, and {R. Weiss}\leavevmode\nopagebreak\newline 1997.
+\newblock Paradigm for {S}tructure in an {A}morphous {C}omputer.
+\newblock {\em AI Memo No. 1614,
+  http://www.swiss.ai.nit.edu/projects/amorphous}.
+
+\bibitem[\protect\astroncite{{D. Gracias} et~al.}{2000}]{DGJT+00}
+{D. Gracias}, {J. Tien}, {T. Breen}, {C. Hsu}, and {G.
+  Whitesides}\leavevmode\nopagebreak\newline 2000.
+\newblock Forming {E}lectrical {N}etworks in {T}hree {D}imensions by
+  {S}elf-{A}ssembly.
+\newblock {\em Science}.
+
+\bibitem[\protect\astroncite{{D. Mange} and {M. Tomassini}}{1998}]{DMMT98}
+{D. Mange} and {M. Tomassini}\leavevmode\nopagebreak\newline 1998.
+\newblock {\em Bio-inspired {C}omputing {M}achines: {T}owards {N}ovel
+  {C}omputational {A}rchitectures}.
+\newblock Presses Polytechniques et Universitaires Romandes, Lausanne,
+  Switzerland.
+
+\bibitem[\protect\astroncite{{D. Servant}}{2002}]{DS02}
+{D. Servant}\leavevmode\nopagebreak\newline 2002.
+\newblock Combining amorphous computing and reactive agent-based systems: a
+  paradigm for pervasive intelligence?
+\newblock In {\em First international joint conference on {A}utonomous agents
+  and muktiagent systems: part 1}.
+
+\bibitem[\protect\astroncite{{D Zuluaga} et~al.}{2007}]{DZSC+07}
+{D Zuluaga}, {S Campos}, {M Tovar}, {R Rodr\'{\i}guez}, {J S\'anchez}, {A
+  Aguilera}, {L Land\'{\i}nez}, and {J Medina}\leavevmode\nopagebreak\newline
+  2007.
+\newblock Informe de {V}igilancia {T}ecnol\'ogica: {A}plicaciones de la
+  {E}lectr\'onica en el {S}ector {A}gr\'{\i}cola.
+\newblock Technical report, COLCIENCIAS.
+
+\bibitem[\protect\astroncite{{Dani Goldberg} and {Maja J
+  Mataric.}}{2002}]{DGMJM02}
+{Dani Goldberg} and {Maja J Mataric.}\leavevmode\nopagebreak\newline 2002.
+\newblock {\em Robot {T}eams: {F}rom {D}iversity to {P}olymorphism}, chapter
+  Design and evaluation of robust behavior-based controllers for distributed
+  multi-robot collection tasks.
+\newblock AK Peters.
+
+\bibitem[\protect\astroncite{{David Powell}}{1993}]{DP93}
+{David Powell}\leavevmode\nopagebreak\newline 1993.
+\newblock Distributed {F}ault {T}olerance {L}essons {L}earnt from {D}elta-4.
+\newblock Technical report, LAAS-CNRS\#93192.
+
+\bibitem[\protect\astroncite{{Dominic Rath}}{2005}]{DR05}
+{Dominic Rath}\leavevmode\nopagebreak\newline 2005.
+\newblock {\em Open {O}n-{C}hip {D}ebugger}.
+\newblock PhD thesis, University of Applied Sciences Augsburg.
+
+\bibitem[\protect\astroncite{Donald}{1995}]{Don95}
+Donald, B.\leavevmode\nopagebreak\newline 1995.
+\newblock Information {I}nvariants in {R}obotics.
+\newblock {\em Artificial Intelligence 72}.
+
+\bibitem[\protect\astroncite{Donald et~al.}{1995}]{DJR95}
+Donald, B., J.~Jennings, and D.~Rus\leavevmode\nopagebreak\newline 1995.
+\newblock {\em International {W}orkshop on the {A}lgorithmic {F}oundations of
+  {R}obotics}, chapter Information Invariants for Distributed Manipulation.
+
+\bibitem[\protect\astroncite{Dudek et~al.}{2002}]{DJM+02}
+Dudek, G., M.~Jenkin, E.~Milios, and L.~(2002). A Taxonomy~of Multirobot
+  Systems. In~Balch, {T. and Parker}\leavevmode\nopagebreak\newline 2002.
+\newblock {\em Robot {T}eams: {F}rom {D}iversity to {P}olymorphism}, chapter A
+  Taxonomy of Multirobot Systems, Pp.~ 3--22.
+\newblock Natick, Massachusetts: A.K. Peters.
+
+\bibitem[\protect\astroncite{{E. Arts} et~al.}{2001}]{EA01}
+{E. Arts}, {R. Harwing}, and {M. Schuurmans}\leavevmode\nopagebreak\newline
+  2001.
+\newblock {\em Ambient {I}ntelligence}, Pp.~ 235--250.
+\newblock McGraw-Hill.
+
+\bibitem[\protect\astroncite{{E. Bonabeau} et~al.}{1999}]{EBMD99}
+{E. Bonabeau}, {M. Dorigo}, and {G. Theraulaz}\leavevmode\nopagebreak\newline
+  1999.
+\newblock Swarm {I}ntelligence.
+\newblock {\em Oxford University Press}.
+
+\bibitem[\protect\astroncite{{E. Codd}}{1968}]{EC68}
+{E. Codd}\leavevmode\nopagebreak\newline 1968.
+\newblock {\em Celullar {A}utomata}.
+\newblock Academic Press.
+
+\bibitem[\protect\astroncite{{E. Crawley} et~al.}{2009}]{ECJM+09}
+{E. Crawley}, {J. Malmqvist}, {D. Brodeur}, and {B.
+  Lucas}\leavevmode\nopagebreak\newline 2009.
+\newblock C{DIO} {S}yllabus, {L}eadership and {E}ntrepreneurship.
+\newblock {\em 5th International CDIO conference}.
+
+\bibitem[\protect\astroncite{{E. D'Hondt}}{2000}]{ED00}
+{E. D'Hondt}\leavevmode\nopagebreak\newline 2000.
+\newblock Exploring the {A}morphous {C}omputing {P}aradigm.
+\newblock Technical report, VUB, Bruxelles.
+
+\bibitem[\protect\astroncite{{E. OSTROM}}{1992}]{EO92}
+{E. OSTROM}\leavevmode\nopagebreak\newline 1992.
+\newblock The {R}udments of a theory of the {O}rigins, {S}urvival, and
+  {P}erformance of {C}ommon-{P}roperty {I}nstitutions.
+\newblock {\em BROMLEY, D.W. et al. (eds.) Making the Commons Work: Theory,
+  Practice, and Policy. San Francisco, CA: ICS Press}.
+
+\bibitem[\protect\astroncite{{E. Petraglio}}{2004}]{EP04}
+{E. Petraglio}\leavevmode\nopagebreak\newline 2004.
+\newblock {\em Fault {T}olerant {S}elf-{R}eplication {S}ystems}.
+\newblock PhD thesis, \'Ecole Polytechnique F\'ed\'erale de Lausanne.
+
+\bibitem[\protect\astroncite{{Edelstein-Keshet L}}{1994}]{EL94}
+{Edelstein-Keshet L}\leavevmode\nopagebreak\newline 1994.
+\newblock {i}mple model for trail-following behaviour; trunk trails versus
+  individual foragers.
+\newblock {\em Journal of Mathematical Biology}.
+
+\bibitem[\protect\astroncite{{Edward F. Crawley}}{2001}]{EFC01}
+{Edward F. Crawley}\leavevmode\nopagebreak\newline 2001.
+\newblock The {CDIO} {S}yllabus {A} {S}tatement of {G}oals for {U}ndergraduate
+  {E}ngineering {E}ducation.
+\newblock {\em URL:http://www.cdio.org}.
+
+\bibitem[\protect\astroncite{{Elinor Ostrom}}{1990}]{EO90}
+{Elinor Ostrom}\leavevmode\nopagebreak\newline 1990.
+\newblock {\em Governing the {C}ommons: {T}he {E}volution of {I}nstitutions for
+  {C}ollective {A}ction ({P}olitical {E}conomy of {I}nstitutions and
+  {D}ecisions) ({P}aperback)}.
+\newblock Cambridge University Press.
+
+\bibitem[\protect\astroncite{emQbit}{}]{emQ}
+emQbit\leavevmode\nopagebreak\newline.
+\newblock {e}m{Q}bit {L}inux {P}owered {D}evices {C}ompany.
+\newblock URL: http://www.emqbit.com/.
+
+\bibitem[\protect\astroncite{EPFL}{}]{entry-0b}
+EPFL\leavevmode\nopagebreak\newline.
+\newblock {e}-puck {EPFL} education robot.
+\newblock http://www.e-puck.org/.
+
+\bibitem[\protect\astroncite{{European Technology Platform on Smart Sistem
+  Integration (EPoSS)}}{2009}]{ETPoSSI(09}
+{European Technology Platform on Smart Sistem Integration
+  (EPoSS)}\leavevmode\nopagebreak\newline 2009.
+\newblock European {T}echnology {P}latform on {S}mart {S}ystems {I}ntegration.
+  {S}trategic {R}esearch {A}genda 2009.
+
+\bibitem[\protect\astroncite{F.~Balarin}{1997}]{FB97}
+F.~Balarin, M.~Chiodo, P.~G.\leavevmode\nopagebreak\newline 1997.
+\newblock {\em Hardware-{S}oftawre {C}o-{D}esign of {E}mbedded {S}ystems}.
+\newblock Klewer Academic Publishers.
+
+\bibitem[\protect\astroncite{{F. Bar} et~al.}{2007}]{FBFP07}
+{F. Bar}, {F. Pisani}, and {M. Weber}\leavevmode\nopagebreak\newline 2007.
+\newblock Mobile technology appropriation in a distant mirror: baroque
+  infiltration, creolization and cannibalism.
+\newblock {\em Seminario sobre Desarrollo Econ\'omico, Desarrollo Social y
+  Comunicaciones M\'oviles en Am\'erica Latina. Buenos Aires}.
+
+\bibitem[\protect\astroncite{{F. Gruau} and {G. Moszkowski}}{2004}]{FGGM04}
+{F. Gruau} and {G. Moszkowski}\leavevmode\nopagebreak\newline 2004.
+\newblock The {B}lob {D}ivision {A} "{H}ardware-{F}ree", {T}ime {E}fficient,
+  {S}elf-{R}eproduction on 2{D} {C}ellular {A}utomaton.
+\newblock In {\em Biologically {I}nspired {A}pproaches to {A}dvanced
+  {I}nformation {T}echnology: {F}irst {I}nternational {W}orkshop, {B}io{ADIT}
+  2004, {L}ausanne, {S}witzerland}.
+\newblock Springer.
+
+\bibitem[\protect\astroncite{{F. Gruau} and {J. Tromp}}{2000}]{FGJT00}
+{F. Gruau} and {J. Tromp}\leavevmode\nopagebreak\newline 2000.
+\newblock Cellular {G}ravity.
+\newblock {\em Parallel Processing Letters}.
+
+\bibitem[\protect\astroncite{{F. Gruau.} and {P. Malbos.}}{2002}]{FGPM02b}
+{F. Gruau.} and {P. Malbos.}\leavevmode\nopagebreak\newline 2002.
+\newblock The blob: A basic topological concept for hardware-free distributed
+  computation.
+\newblock In {\em Unconventional Models of Computation, Third International
+  Conference, UMC 2002, Kobe, Japan, October 15-19, 2002, Proceedings},
+  C.~Calude, M.~J. Dinneen, and F.~Peper, eds., volume 2509 of {\em Lecture
+  Notes in Computer Science}, Pp.~ 151--163. Springer.
+
+\bibitem[\protect\astroncite{{F. Gruau} and {P. Malbos}}{2002}]{FGPM02}
+{F. Gruau} and {P. Malbos}\leavevmode\nopagebreak\newline 2002.
+\newblock The {B}lob: {A} {B}asic {T}opological {C}oncept for {H}ardware-free
+  {D}istributed {C}omputation.
+\newblock In {\em Unconventional {M}odels of {C}omputation, {T}hird
+  {I}nternational {C}onference, {UMC} 2002}, {C. Calude}, {M. Dinneen}, and {F.
+  Peper}, eds., volume 2509 of {\em Lecture Notes in Computer Science}, Pp.~
+  151--163. Springer.
+
+\bibitem[\protect\astroncite{{F. Gruau} et~al.}{2004}]{FGYL+04}
+{F. Gruau}, {Y. Lhuiller}, {P. Reitz}, and {O.
+  Temam}\leavevmode\nopagebreak\newline 2004.
+\newblock {\em Blob {C}omputing}.
+\newblock Computing Frontiers 2004 ACM SIGMicro.
+
+\bibitem[\protect\astroncite{{F. Pedraza} et~al.}{2005}]{FPFS+05}
+{F. Pedraza}, {F. Segura}, {C. Camargo}, and {A.
+  Gauthier}\leavevmode\nopagebreak\newline 2005.
+\newblock Control {A}daptativo {E}mbebido.
+\newblock {\em Memorias del XI workshop de Iberchip ISBN 959-261-105-X}.
+
+\bibitem[\protect\astroncite{{Flaviu Cristian}}{1992}]{FC92}
+{Flaviu Cristian}\leavevmode\nopagebreak\newline 1992.
+\newblock Understanding {F}ault-{T}olerant {D}istributed {S}ystems.
+\newblock {\em Communications of the ACM}.
+
+\bibitem[\protect\astroncite{Forbes and Wield}{2000}]{FW00}
+Forbes, N. and D.~Wield\leavevmode\nopagebreak\newline 2000.
+\newblock Managing {R}\&{D} in technology-followers.
+\newblock {\em Research Policy}.
+
+\bibitem[\protect\astroncite{Fredslund and Mataric}{2002}]{FM02}
+Fredslund, J. and M.~Mataric\leavevmode\nopagebreak\newline 2002.
+\newblock A {G}eneral, {L}ocal {A}lgorithm for {R}obot {F}ormations.
+\newblock {\em IEEE Transactions on Robotics and Automation, Special Issue on
+  Multi- Robot Systems 18}.
+
+\bibitem[\protect\astroncite{{Free Software Foundation}}{}]{FSF}
+{Free Software Foundation}\leavevmode\nopagebreak\newline.
+\newblock G{NU} {G}eneral {P}ublic {L}icense.
+\newblock URL: http://www.gnu.org/copyleft/gpl.html.
+
+\bibitem[\protect\astroncite{{Fukuda T.} and {Ueyama T.}}{1994}]{FTUT94}
+{Fukuda T.} and {Ueyama T.}\leavevmode\nopagebreak\newline 1994.
+\newblock Cellular {R}obotics and {M}icro {R}obotics {S}ystems.
+\newblock {\em World Scientific Series in Robotics and Automated Systems,
+  Singapore}, 10.
+
+\bibitem[\protect\astroncite{{G. Hertel}}{2003}]{GH03}
+{G. Hertel}\leavevmode\nopagebreak\newline 2003.
+\newblock Motivation of software developers in {O}pen {S}ource projects: an
+  {I}nternet-based survey of contributors to the {L}inux kernel.
+\newblock {\em Research Policy In Open Source Software Development, Vol. 32,
+  No. 7}.
+
+\bibitem[\protect\astroncite{{G. Lazea} et~al.}{}]{GLRBR+}
+{G. Lazea}, {R. B. Rusu}, {R. Robotin}, and {R.
+  Sime}\leavevmode\nopagebreak\newline.
+\newblock The {Z}ee{RO} {M}obile {R}obot - {A} {M}odular {A}rchitecture.
+
+\bibitem[\protect\astroncite{{G. Tempesti}}{1995}]{GT95}
+{G. Tempesti}\leavevmode\nopagebreak\newline 1995.
+\newblock A new {S}elf-reproducing {C}ellular {A}utomation {C}apable of
+  {C}onctruction and {C}omputation.
+\newblock {\em Lecture Notes in Artificial Intelligence, Springer Verlag 3rd
+  European Conference on Artificial Life}.
+
+\bibitem[\protect\astroncite{{G. Tempesti}}{1998}]{GT98}
+{G. Tempesti}\leavevmode\nopagebreak\newline 1998.
+\newblock {\em A {S}elf {R}eparing {M}ultiplexer-{B}ased {FPGA} {I}nspired by
+  {B}iological {P}rocesses}.
+\newblock PhD thesis, \'Ecole Polytechnique F\'ed\'erale de Laussane.
+
+\bibitem[\protect\astroncite{{G. Tempesti}}{2004}]{GT04}
+{G. Tempesti}\leavevmode\nopagebreak\newline 2004.
+\newblock Processor {A}rchitectures for {O}ntogenesis.
+\newblock In {\em Proceedings of the 2004 {NASA}/{D}o{D} {C}onference on
+  {E}volution {H}ardware}.
+
+\bibitem[\protect\astroncite{{G. Tempesti} et~al.}{1997}]{GTDM97}
+{G. Tempesti}, {D. Mange}, and {A. Stauffer}\leavevmode\nopagebreak\newline
+  1997.
+\newblock A {R}obust {M}uliplexer-based {FPGA} {I}nspired by {B}iological
+  {S}ystems.
+\newblock {\em Speciall Issue of Journal of Systems Architecture on Dep endable
+  Parralled Computer System}.
+
+\bibitem[\protect\astroncite{{G. Tempesti} et~al.}{2002}]{GTDR+02}
+{G. Tempesti}, {D. Roggen}, {E. Sanchez}, {Y. Thoma}, {R. Canham}, {A.
+  Tyrrell}, and {J.-M. Moreno.}\leavevmode\nopagebreak\newline 2002.
+\newblock A {POE}tic {A}rchitecture for {B}io-{I}nspired {S}ystems.
+\newblock MIT Press, Cambridge, Massachusetts.
+
+\bibitem[\protect\astroncite{{Gajski D.D.} et~al.}{2009}]{GDAS09}
+{Gajski D.D.}, {Abdi S.}, {Gerstlauer A.}, and {Schirner
+  G.}\leavevmode\nopagebreak\newline 2009.
+\newblock {\em Embedded {S}ystem {D}esign: {M}odeling, {S}ynthesis,
+  {V}erification}.
+\newblock Springer.
+
+\bibitem[\protect\astroncite{Gat}{1998}]{Gat98}
+Gat, E.\leavevmode\nopagebreak\newline 1998.
+\newblock On {T}hree-{L}ayer {A}rchitectures.
+\newblock {\em In Artificial Intelligence and Mobile Robotics, AAAI Press}.
+
+\bibitem[\protect\astroncite{Gerkey et~al.}{2001}]{GM(.I.W01}
+Gerkey, B., M.~Mataric, and p.~.-. (2001). . In .~Waikiki,
+  Hawaii\leavevmode\nopagebreak\newline 2001.
+\newblock Principled {C}ommunication for {D}ynamic {M}ulti- {R}obot {T}ask
+  {A}llocation.
+\newblock {\em Proceedings International Symposium on Experimental Robotics
+  2000, Waikiki, Hawaii}.
+
+\bibitem[\protect\astroncite{Ghosh et~al.}{2002}]{GGR02}
+Ghosh, R.~A., {G. Robles}, and {R. Glott.}\leavevmode\nopagebreak\newline 2002.
+\newblock Free/{L}ibre and {O}pen {S}ource {S}oftware: {S}urvey and {S}tudy.
+  {T}echnical report {U}niversity of {M}aastricht, {T}he {N}etherlands:
+  {I}nternational {I}nstitute of {I}nfonomics.
+\newblock URL: http://www.infonomics.nl/FLOSS/report/index.htm.
+
+\bibitem[\protect\astroncite{{Goel Cohen}}{2004}]{GC04}
+{Goel Cohen}\leavevmode\nopagebreak\newline 2004.
+\newblock {\em Technology transfer: strategic management in developing
+  countries}.
+\newblock Sage Publications inc.
+
+\bibitem[\protect\astroncite{Google}{}]{And}
+Google\leavevmode\nopagebreak\newline.
+\newblock Android {P}roject.
+\newblock URL: http://www.android.com/.
+
+\bibitem[\protect\astroncite{H.~Abelson}{1999}]{HA99}
+H.~Abelson, D.~Allen, D.~C.\leavevmode\nopagebreak\newline 1999.
+\newblock Amorphous {C}omputing.
+\newblock {\em http://www.ai.mit.edu/publications/pubsDB/pubs.html}.
+
+\bibitem[\protect\astroncite{{H. Mitsui} et~al.}{2009}]{HMHK09}
+{H. Mitsui}, {H. Kambe}, and {H. Koizumi}\leavevmode\nopagebreak\newline 2009.
+\newblock Use of {S}tudent {E}xperiments for {T}eaching {E}mbedded {S}oftware
+  {D}evelopment {I}ncluding {HW}/{SW} {C}o-{D}esign.
+\newblock {\em IEEE TRANSACTIONS ON EDUCATION,}, 52(3).
+
+\bibitem[\protect\astroncite{{Hann I. H.}}{2002}]{HIH02}
+{Hann I. H.}\leavevmode\nopagebreak\newline 2002.
+\newblock Delayed {R}eturns to {O}pen {S}ource {P}articipation: {A}n
+  {E}mpirical {A}nalysis of the {A}pache {HTTP} {S}erver {P}roject.
+\newblock {\em Workshop on Open Source Software: Economics, Law and Policy,
+  Toulouse, France.}
+
+\bibitem[\protect\astroncite{Hearn et~al.}{2004}]{HSL+04}
+Hearn, G.~N., L.~E. Simpson, J.~Lennie, and M.~P.
+  Kimber\leavevmode\nopagebreak\newline 2004.
+\newblock I{CT}s and regional sustainability: {A} critique and a way forward.
+\newblock {\em Community Informatics Research Network Conference and Colloquium
+  2004: Sustainability and community technology}.
+
+\bibitem[\protect\astroncite{{Henry Y. K. Lau} and {Vicky W. K.
+  Wong}}{2006}]{HYKL06}
+{Henry Y. K. Lau} and {Vicky W. K. Wong}\leavevmode\nopagebreak\newline 2006.
+\newblock An {I}mmunity {B}ased {D}istributed {M}ultiagent-{C}ontrol
+  {F}ramework.
+\newblock {\em Systems, Man and Cybernetics, Part A, IEEE Transactions on}.
+
+\bibitem[\protect\astroncite{{Herianto} et~al.}{2007}]{Her07}
+{Herianto}, {T. Sakakibara}, and {D.
+  Kurabayashi}\leavevmode\nopagebreak\newline 2007.
+\newblock {A}rtificial {P}heromone {S}ystem {U}sing {RFID} for {N}avigation of
+  {A}utonomous {R}obots.
+\newblock {\em Journal of Bionic Engineering, Elsevier Limited and Science
+  Press}.
+
+\bibitem[\protect\astroncite{Holland and Melhuish}{1999}]{HM99}
+Holland, O. and C.~Melhuish\leavevmode\nopagebreak\newline 1999.
+\newblock Stigmergy, {S}elf-organization, and {S}orting in {C}ollective
+  {R}obotics.
+\newblock {\em Artificial Life 5}.
+
+\bibitem[\protect\astroncite{http://www.poetictissue.org}{}]{htt}
+http://www.poetictissue.org\leavevmode\nopagebreak\newline.
+\newblock Proyecto {POE}tic {T}issue.
+
+\bibitem[\protect\astroncite{{I. Bowman}}{1998}]{IB98}
+{I. Bowman}\leavevmode\nopagebreak\newline 1998.
+\newblock Conceptual {A}rchitecture of the {L}inux {K}ernel.
+\newblock http://docs.huihoo.com/linux/kernel/a1/.
+
+\bibitem[\protect\astroncite{{I. Bowman} et~al.}{1998}]{IBSS98}
+{I. Bowman}, {S. Siddiqi}, and {M. Tanuan}\leavevmode\nopagebreak\newline 1998.
+\newblock Concrete {A}rchitecture of the {L}inux {K}ernel.
+\newblock http://docs.huihoo.com/linux/kernel/a2/index.html.
+
+\bibitem[\protect\astroncite{{Innovation Associates Inc.}}{}]{IAI}
+{Innovation Associates Inc.}\leavevmode\nopagebreak\newline.
+\newblock Technology {T}ransfer and {C}ommercialization {P}artnerships
+  {E}xecutive {S}ummary.
+
+\bibitem[\protect\astroncite{{J. Corbet} et~al.}{2005}]{JCAR05}
+{J. Corbet}, {A. Rubini}, and {G. Kroah-Hartman}\leavevmode\nopagebreak\newline
+  2005.
+\newblock {\em Linux {D}evice {D}rivers, {T}hird {E}dition}.
+\newblock O'Reilly.
+
+\bibitem[\protect\astroncite{{J. Espinosa} et~al.}{2005}]{JEFS05}
+{J. Espinosa}, {F. Segura}, and {C. Camargo}\leavevmode\nopagebreak\newline
+  2005.
+\newblock Evoluci\'on de un {A}rreglo de {C}\'elulas {U}tilizando {A}lgoritmos
+  {G}en\'eticos.
+\newblock {\em Memorias del XI Workshop de Iberchip ISBN 959-261-105-X}.
+
+\bibitem[\protect\astroncite{{J Feldman}}{}]{JF}
+{J Feldman}\leavevmode\nopagebreak\newline.
+\newblock The {L}inux startup process.
+\newblock {\em The Linux Expertise Center, Hewlett-Packard Company}.
+
+\bibitem[\protect\astroncite{{J. Holland}}{1992}]{entry-0}
+{J. Holland}\leavevmode\nopagebreak\newline 1992.
+\newblock {\em Adaptation in {N}atural and {A}rtificial {S}ystems}.
+\newblock MIT Press, Cambridge, MA.
+
+\bibitem[\protect\astroncite{{J. Kuan}}{2000}]{JK00}
+{J. Kuan}\leavevmode\nopagebreak\newline 2000.
+\newblock Open source software as consumer integration into production.
+\newblock URL: http://hdl.handle.net/2038/1113.
+
+\bibitem[\protect\astroncite{{J. Licklider}}{1960}]{JL60}
+{J. Licklider}\leavevmode\nopagebreak\newline 1960.
+\newblock Man-{C}omputer {S}ymbiosis.
+\newblock {\em IRE Transactions on Human Factors in Electronics}.
+
+\bibitem[\protect\astroncite{{J. Lifton}}{2002}]{JL02}
+{J. Lifton}\leavevmode\nopagebreak\newline 2002.
+\newblock Pushpin {C}omputing: a {P}latform for {D}istributed {S}ensor
+  {N}etworks.
+\newblock Master's thesis, Massachusetts Institute of Technology.
+
+\bibitem[\protect\astroncite{{J. Lifton} and {et al}}{2002}]{JLea02}
+{J. Lifton} and {et al}\leavevmode\nopagebreak\newline 2002.
+\newblock Pushpin computing system overview: {A} platform for distributed,
+  embedded ubiquitous sensor networks.
+\newblock {\em International Conference on Pervasive Computing}.
+
+\bibitem[\protect\astroncite{{J .M. BALAND} and {J.P. PLATTEAU}}{1996}]{J.B96}
+{J .M. BALAND} and {J.P. PLATTEAU}\leavevmode\nopagebreak\newline 1996.
+\newblock Halting {D}egradation of {N}atural {R}esources. {I}s {T}here a {R}ole
+  for {R}ural {C}ommunities?
+\newblock {\em Oxford: Clarendon Press}.
+
+\bibitem[\protect\astroncite{{J. Sep\'ulveda} and {C. Camargo}}{2004}]{JSCC04b}
+{J. Sep\'ulveda} and {C. Camargo}\leavevmode\nopagebreak\newline 2004.
+\newblock Implementaci\'on de un {S}istema {I}nmune{A}rtificial sobre un {FPGA}
+  para {R}econocimiento de {P}atrones.
+\newblock {\em Memorias del X WorkShop de Iberchip ISBN 959-261-105-X}.
+
+\bibitem[\protect\astroncite{{J. Sep\'ulveda} et~al.}{2003}]{JSCC03}
+{J. Sep\'ulveda}, {C. Camargo}, and {A. Delgado}\leavevmode\nopagebreak\newline
+  2003.
+\newblock El {P}roblema {SAT}: {E}nfoque {C}omparativo con {ADN} y {FPGA}.
+\newblock {\em Memorias del IX Workshop de Iberchip ISBN 959-261-105-X}.
+
+\bibitem[\protect\astroncite{{J. Sep\'ulveda} et~al.}{2004a}]{JSCC04}
+{J. Sep\'ulveda}, {C. Camargo}, and {A. Delgado}\leavevmode\nopagebreak\newline
+  2004a.
+\newblock Implementaci\'on de {C}hip de {ADN} en {FPGA}.
+\newblock {\em Memorias del X Workshop de Iberchip ISBN 959-261-105-X}.
+
+\bibitem[\protect\astroncite{{J. Sep\'ulveda} et~al.}{2004b}]{JSCC04c}
+{J. Sep\'ulveda}, {C. Camargo}, and {S. Bolivar}\leavevmode\nopagebreak\newline
+  2004b.
+\newblock Metodolog\'{\i}a de {I}mplementaci\'on de {A}ut\'omatas {C}elulares
+  en {FPGA}.
+\newblock {\em Memorias del X Workshop de Iberchip ISBN 959-261-105-X}.
+
+\bibitem[\protect\astroncite{{J. Silber}}{2002}]{JS02}
+{J. Silber}\leavevmode\nopagebreak\newline 2002.
+\newblock A cooperative {C}ommunication {P}rotocol for {W}ireless {A}d-hoc
+  {N}etworks.
+\newblock Master's thesis, Massachusetss Institute of Technology.
+
+\bibitem[\protect\astroncite{{J. Timmis} et~al.}{2002}]{JTMA02}
+{J. Timmis}, {M. Ayara}, and {R. Duncan}\leavevmode\nopagebreak\newline 2002.
+\newblock Towards {I}mmune {I}nspired {F}ault {T}olerance {I}n {E}mbedded
+  {S}ystems.
+\newblock In {\em Proceedings of 9th {I}nternational {C}onference on {N}eural
+  {I}nformation {P}rocessing}. IEEE.
+
+\bibitem[\protect\astroncite{{J. Von Neumann}}{1966}]{JVN66}
+{J. Von Neumann}\leavevmode\nopagebreak\newline 1966.
+\newblock {\em Theory of {S}elf-{R}eproducing {A}utomata.}
+\newblock University of Illinois Press. Edited and completed by A. W. Burks.
+
+\bibitem[\protect\astroncite{{Jiming Liu} et~al.}{}]{JLXJ}
+{Jiming Liu}, {Xiaolong Jin}, and {Kwok Ching
+  Tsui}\leavevmode\nopagebreak\newline.
+\newblock Autonomy-{O}riented {C}omputing ({AOC}):{F}ormulating {C}omputational
+  {S}ystems {W}ith {A}utonomous {C}omponents.
+
+\bibitem[\protect\astroncite{Jolly}{1977}]{Jol77}
+Jolly, J.~A.\leavevmode\nopagebreak\newline 1977.
+\newblock The {T}echnology {T}ransfer {P}rocess: {C}oncepts, {F}ramework and
+  {M}ethodology.
+\newblock {\em The Journal of Technology Transfer. Springer}.
+
+\bibitem[\protect\astroncite{{Jon Hall}}{2009}]{JH09}
+{Jon Hall}\leavevmode\nopagebreak\newline 2009.
+\newblock P{OR} {GRANDES} {QUE} {SEAN}...: {ASEGURE} {EL} {FUTURO} {DE} {SU}
+  {NEGOCIO}.
+\newblock {\em Linux magazine,}, ISSN 1576-4079(58):92.
+
+\bibitem[\protect\astroncite{Jones and Mataric}{2003}]{JM03}
+Jones, C. and M.~Mataric\leavevmode\nopagebreak\newline 2003.
+\newblock Adaptive {D}ivision of {L}abor in {L}arge-{S}cale {M}inimalist
+  {M}ulti-{R}obot {S}ystems.
+\newblock {\em Proceedings of the IEEE/RSJ International Conference on Robotics
+  and Intelligent Systems (IROS). Las Vegas, Nevada}.
+
+\bibitem[\protect\astroncite{{Jones and Maja J Mataric}}{2005}]{JaMJM05}
+{Jones and Maja J Mataric}\leavevmode\nopagebreak\newline 2005.
+\newblock {\em Autonomous {M}obile {R}obots: {S}ensing, {C}ontrol,
+  {D}ecision-{M}aking, and {A}pplications}, chapter Behavior-Based Coordination
+  in Multi-Robot Systems.
+\newblock Marcel Dekker, Inc.
+
+\bibitem[\protect\astroncite{{K. A. Kahng}}{2001}]{KAK01}
+{K. A. Kahng}\leavevmode\nopagebreak\newline 2001.
+\newblock Design {T}echnology {P}roductivity in the {DSM} {E}ra.
+\newblock In {\em A{SP}-{DAC}}.
+
+\bibitem[\protect\astroncite{{K. Goel} and {Sayers B.}}{1995}]{KGSB95}
+{K. Goel} and {Sayers B.}\leavevmode\nopagebreak\newline 1995.
+\newblock Modelling {G}lobal-{O}riented {E}nergy {T}ecnology {T}ransfer to
+  {DC}s.
+\newblock {\em Sixth Global Warning International Conference, San Francisco}.
+
+\bibitem[\protect\astroncite{{K. Lerman} et~al.}{2004}]{KLAM04}
+{K. Lerman}, {A. Martinoli}, and {A. Galstyan}\leavevmode\nopagebreak\newline
+  2004.
+\newblock A review of probabilistic macroscopic models for swarm robotic
+  systems.
+\newblock {\em Proceedings of the International Conference on the Simulation of
+  Adaptive Behavior}.
+
+\bibitem[\protect\astroncite{{Kamal Premaratne} and {Jinsong Zhang}}{}]{KPJZ}
+{Kamal Premaratne} and {Jinsong Zhang}\leavevmode\nopagebreak\newline.
+\newblock Location {I}nformation-{A}ided {T}ask-{O}riented
+  {S}elf-{O}rganization of {A}d-{H}oc {S}ensor {S}ystems.
+
+\bibitem[\protect\astroncite{{Karim Yaghmour} et~al.}{2008}]{KYJM+08}
+{Karim Yaghmour}, {Jon Masters}, {Gilad Ben-Yossef}, and {Philippe
+  Gerum}\leavevmode\nopagebreak\newline 2008.
+\newblock {\em Building {E}mbedded {L}inux {S}ystems}.
+\newblock O'REILLY.
+
+\bibitem[\protect\astroncite{{Ken Sugawara} and {Masaki Sano}}{1997}]{KSMS97}
+{Ken Sugawara} and {Masaki Sano}\leavevmode\nopagebreak\newline 1997.
+\newblock Cooperative acceleration of task performance: {F}oraging behavior of
+  interacting multi-robots system.
+\newblock {\em Physica, D100:343-354}.
+
+\bibitem[\protect\astroncite{{Ken Sugawara} et~al.}{}]{KSMS+}
+{Ken Sugawara}, {Masaki Sano}, {Ikuo Yoshihara}, and {K.
+  Abe.}\leavevmode\nopagebreak\newline.
+\newblock Cooperative behavior of interacting robots.
+\newblock {\em Artificial Life and Robotics, 2}.
+
+\bibitem[\protect\astroncite{{Kerstin Balka} et~al.}{2010}]{KBCR10}
+{Kerstin Balka}, {Christina Raasch}, and {Cornelius
+  Herstatt}\leavevmode\nopagebreak\newline 2010.
+\newblock Open {S}ource {I}nnovation: {A} study of openness and community
+  expectations.
+\newblock {\em DIME Conference, Milano}.
+
+\bibitem[\protect\astroncite{{Kristina Lerman} et~al.}{2005}]{KLAM05}
+{Kristina Lerman}, {Alcherio Martinoli}, and {Aram
+  Galstyan}\leavevmode\nopagebreak\newline 2005.
+\newblock {\em Swarm {R}obotics {W}orkshop: {S}tate-of-the-art {S}urvey,},
+  chapter A review of probabilistic macroscopic models for swarm robotic
+  systems.
+\newblock Springer-Verlag, Berlin Heidelberg.
+
+\bibitem[\protect\astroncite{{Kristina Lerman} and {Aram
+  Galstyan}}{2003}]{KLAG03}
+{Kristina Lerman} and {Aram Galstyan}\leavevmode\nopagebreak\newline 2003.
+\newblock Agent {M}emory and {A}daptation in {M}ulti-{A}gent {S}ystems.
+\newblock {\em Proceedings of the International Conference on Autonomous Agents
+  and Multi-Agent Systems}.
+
+\bibitem[\protect\astroncite{{Kristina Lerman} and {Aram
+  Galstyan}}{2004}]{KLAG04}
+{Kristina Lerman} and {Aram Galstyan}\leavevmode\nopagebreak\newline 2004.
+\newblock {\em Collectives and design of complex systems}, chapter Two
+  Paradigms for the Design of Artificial Collectives.
+\newblock Springer Verlag, New York,.
+
+\bibitem[\protect\astroncite{{Kristina Lerman} et~al.}{}]{KLCJ+}
+{Kristina Lerman}, {Chris Jones}, {Aram Galstyan}, and {Maja J
+  Mataric}\leavevmode\nopagebreak\newline.
+\newblock Analysis of {D}ynamic {T}ask {A}llocation in {M}ulti-{R}obot
+  {S}ystems.
+
+\bibitem[\protect\astroncite{{Kristina Lerman} et~al.}{200}]{KLCJ+0}
+{Kristina Lerman}, {Chris Jones}, {Aram Galstyan}, and {Maja J
+  Matar\'{\i}c}\leavevmode\nopagebreak\newline 200.
+\newblock Analysis of {D}ynamic {T}ask {A}llocation in {M}ulti-{R}obot
+  {S}ystems.
+\newblock {\em International Journal of Robotics Research}.
+
+\bibitem[\protect\astroncite{Kurabayashi}{1999}]{Kur99}
+Kurabayashi, D.\leavevmode\nopagebreak\newline 1999.
+\newblock {T}oward {R}ealization of {C}ollective {I}ntelligence and {E}mergent
+  {R}obotics.
+\newblock {\em Proceedings of IEEE International Conference on Systems, Man,
+  and Cybernetics}.
+
+\bibitem[\protect\astroncite{Lerman and Galstyan}{2002}]{LG02}
+Lerman, K. and A.~Galstyan\leavevmode\nopagebreak\newline 2002.
+\newblock Mathematical {M}odel of {F}oraging in a {G}roup of {R}obots:
+  {E}ffects of {I}nterference.
+\newblock {\em Autonomous Robots 13}.
+
+\bibitem[\protect\astroncite{Lerman and Galstyan}{2003}]{LG03}
+Lerman, K. and A.~Galstyan\leavevmode\nopagebreak\newline 2003.
+\newblock Macroscopic {A}nalysis of {A}daptive {T}ask {A}llocation in {R}obots.
+\newblock {\em Proceedings of the IEEE/RSC International Conference on
+  Intelligent Robots and Systems. Las Vegas, Nevada}.
+
+\bibitem[\protect\astroncite{Lerman et~al.}{2001}]{LGM+01}
+Lerman, K., A.~Galstyan, A.~Martinoli, and
+  A.~Ijspeert\leavevmode\nopagebreak\newline 2001.
+\newblock A {M}acroscopic {A}nalytical {M}odel of {C}ollaboration in
+  {D}istributed {R}obotic {S}ystems.
+\newblock {\em Artificial Life 7}.
+
+\bibitem[\protect\astroncite{{Linux Devices}}{2006}]{LD06}
+{Linux Devices}\leavevmode\nopagebreak\newline 2006.
+\newblock First {C}olombian {L}inux {SBC} runs {D}ebian.
+\newblock {\em
+  http://www.linuxfordevices.com/c/a/News/First-Colombian-Linux-SBC-runs-Debia%
+n/}.
+
+\bibitem[\protect\astroncite{{Luis Alejandro Cort\'es}}{2005}]{Cor05}
+{Luis Alejandro Cort\'es}\leavevmode\nopagebreak\newline 2005.
+\newblock {\em Verification and {S}cheduling {T}echniques for {R}eal-{T}ime
+  {E}mbedded {S}ystems}.
+\newblock PhD thesis, Link\"opings universitet Institute of Technology.
+
+\bibitem[\protect\astroncite{{Lydia Woods Schindler}}{1992}]{LWS92}
+{Lydia Woods Schindler}\leavevmode\nopagebreak\newline 1992.
+\newblock {\em Understanding the {I}mmune {S}ystem {H}ow {I}t {W}orks}.
+\newblock US Department of health and human services.
+
+\bibitem[\protect\astroncite{{M. Broxton}}{2005}]{MB05}
+{M. Broxton}\leavevmode\nopagebreak\newline 2005.
+\newblock Localization and {S}ensing {A}pplications in the {P}ushpin
+  {C}omputing {N}etwork.
+\newblock Master's thesis, MIT Media Lab.
+
+\bibitem[\protect\astroncite{{M. Duque} and {A. Gauthier}}{1999}]{MDAG99}
+{M. Duque} and {A. Gauthier}\leavevmode\nopagebreak\newline 1999.
+\newblock Formaci\'on de {I}negnieros para la {I}nnovaci\'on y el {D}esarrollo
+  {T}ecnol\'ogico en {C}olombia.
+\newblock {\em Revista de la Facultad de Minas - Universidad Nacional de
+  Colombia}.
+
+\bibitem[\protect\astroncite{{M. Huhns} and {L. Stephens}}{1999}]{MHLS99}
+{M. Huhns} and {L. Stephens}\leavevmode\nopagebreak\newline 1999.
+\newblock {\em Multi {A}gent {S}ystems: {A} {M}odern {A}pproach to {A}rtificial
+  {I}ntelligence}, chapter~2.
+\newblock The MIT Press.
+
+\bibitem[\protect\astroncite{{M. Odedra}}{1990}]{MO90}
+{M. Odedra}\leavevmode\nopagebreak\newline 1990.
+\newblock {\em Information {T}echnology {T}ransfer to {D}eveloping {C}ountries:
+  {C}ase studies from {K}enya, {Z}ambia and {Z}imbabwe}.
+\newblock PhD thesis, London School of Economics.
+
+\bibitem[\protect\astroncite{{M. Odedra}}{1991}]{MO91}
+{M. Odedra}\leavevmode\nopagebreak\newline 1991.
+\newblock Information {T}echnology {T}ransfer to {D}eveloping {C}ountries {I}s
+  it really taking place?
+\newblock {\em The 4th IFIF.TC9 International Conference on Human Choice and
+  Computers, North Holland, Amsterdam, Netherlands, HCC 4 held jointly with the
+  CEC FAST Programme.}
+
+\bibitem[\protect\astroncite{{M. odedra-straub}}{1994}]{Mo94}
+{M. odedra-straub}\leavevmode\nopagebreak\newline 1994.
+\newblock The {M}yths and {I}llusions of {T}echnology {T}ransfer.
+\newblock {\em IFIP World Congress Proceedings}.
+
+\bibitem[\protect\astroncite{{M. Resnick}}{1994}]{MR94}
+{M. Resnick}\leavevmode\nopagebreak\newline 1994.
+\newblock {\em Turtles, {T}ermites and {T}raffic {J}ams {E}xplorations in
+  {M}assively {P}arallel {M}icroworlds}.
+\newblock The MIT Press Cambridge, Massachusetts.
+
+\bibitem[\protect\astroncite{{M. Sipper} et~al.}{1996}]{MSES+96}
+{M. Sipper}, {E. Sanchez}, {D. Mange}, {M. Tomassini}, {A. P\'erez-Uribe}, and
+  {A. Stauffer}\leavevmode\nopagebreak\newline 1996.
+\newblock The {POE} {M}odel of {B}io-{I}nspired {H}ardware {S}ystems.
+\newblock http://www.cs.bgu.ac.il/~sipper/poe.html.
+
+\bibitem[\protect\astroncite{{M. Tovar} and {R. Rodr\'{\i}guez}}{2007}]{MTRR07}
+{M. Tovar} and {R. Rodr\'{\i}guez}\leavevmode\nopagebreak\newline 2007.
+\newblock P{ROSPECTIVA} {Y} {VIGILANCIA} {TECNOL}\'{O}{GICA} {DE} {LA}
+  {ELECTR}\'{O}{NICA} {EN} {COLOMBIA}.
+\newblock Master's thesis, Universidad Nacional de Colombia.
+
+\bibitem[\protect\astroncite{{M. Weiser}}{1993}]{MW93}
+{M. Weiser}\leavevmode\nopagebreak\newline 1993.
+\newblock Some computer science issues in ubiquitous computing.
+\newblock {\em Commun. ACM}.
+
+\bibitem[\protect\astroncite{{M. Wooldridge} and {M. Jennings}}{1995}]{MWMJ95}
+{M. Wooldridge} and {M. Jennings}\leavevmode\nopagebreak\newline 1995.
+\newblock Intelligent {A}gents: {T}heory and {P}ractice.
+\newblock {\em The Knowledge Engineering Review}.
+
+\bibitem[\protect\astroncite{{Maja J Mataric}}{1994}]{MJM94}
+{Maja J Mataric}\leavevmode\nopagebreak\newline 1994.
+\newblock {\em Interaction and {I}ntelligent {B}ehavior}.
+\newblock PhD thesis, MASSACHUSETTS INSTITUTE OF TECHNOLOGY.
+
+\bibitem[\protect\astroncite{{Mamei M} et~al.}{2006}]{MMQR06}
+{Mamei M}, {Quaglieri R}, and {Zambonelli F.}\leavevmode\nopagebreak\newline
+  2006.
+\newblock Making tuple space physical with {RFID} tags.
+\newblock {\em Proceedings of ACM Symposium on Applied Computing}.
+
+\bibitem[\protect\astroncite{{Mamei M} and {Zambonelli F}}{2005}]{MMZF05}
+{Mamei M} and {Zambonelli F}\leavevmode\nopagebreak\newline 2005.
+\newblock Physical deployment of digital pheromones through {RFID} technology.
+\newblock {\em Swarm Intelligence Symposium}.
+
+\bibitem[\protect\astroncite{{Mamei M.} and {Zambonelli F.}}{2007}]{MMZF07}
+{Mamei M.} and {Zambonelli F.}\leavevmode\nopagebreak\newline 2007.
+\newblock Pervasive {P}heromone-{B}ased {I}nteraction with {RFID} {T}ags.
+\newblock {\em ACM Transactions on Autonomous and Adaptive Systems}.
+
+\bibitem[\protect\astroncite{{Mark Weiser}}{}]{WM91}
+{Mark Weiser}\leavevmode\nopagebreak\newline.
+\newblock The {C}omputer for the 21st {C}entury.
+\newblock {\em http://www.ubiq.com/hy\'ertext/weiser/SciAmDraft3.html}.
+
+\bibitem[\protect\astroncite{Mart\'{\i}nez}{2004}]{Mar04}
+Mart\'{\i}nez, H.\leavevmode\nopagebreak\newline 2004.
+\newblock Apropiaci\'on de conocimiento en {C}olombia. {E}l caso de los
+  contratos de importaci\'on de tecnolog\'{\i}a.
+\newblock {\em Revista Cuadernos de Econom\'{\i}a}.
+
+\bibitem[\protect\astroncite{Martinoli and Easton}{2002}]{ME02}
+Martinoli, A. and K.~Easton\leavevmode\nopagebreak\newline 2002.
+\newblock {\em Experimental {R}obotics {VIII}}, chapter Modeling Swarm Robotic
+  Systems.
+\newblock Springer-Verlag.
+
+\bibitem[\protect\astroncite{Martinoli et~al.}{1999}]{MIM99}
+Martinoli, A., A.~Ijspeert, and F.~Mondada\leavevmode\nopagebreak\newline 1999.
+\newblock Understanding {C}ollective {A}ggregation {M}echanisms: {F}rom
+  {P}robabilistic {M}odeling to {E}xperiments with {R}eal {R}obots.
+\newblock {\em Robotics and Autonomous Systems}.
+
+\bibitem[\protect\astroncite{Mataric}{1992}]{Mat92}
+Mataric, M.\leavevmode\nopagebreak\newline 1992.
+\newblock Integration of {R}epresentation {I}nto {G}oal-{D}riven
+  {B}ehavior-{B}ased {R}obots.
+\newblock {\em IEEE Transactions on Robotics and Automation 8(3)}.
+
+\bibitem[\protect\astroncite{Mataric}{1995a}]{Mat95}
+Mataric, M.\leavevmode\nopagebreak\newline 1995a.
+\newblock Designing and {U}nderstanding {A}daptive {G}roup {B}ehavior.
+\newblock {\em Adaptive Behavior 4}.
+
+\bibitem[\protect\astroncite{Mataric}{1995b}]{Mat95b}
+Mataric, M.\leavevmode\nopagebreak\newline 1995b.
+\newblock Issues and {A}pproaches in the {D}esign of {C}ollective {A}utonomous
+  {A}gents.
+\newblock {\em Robotics and Autonomous Systems 16(2-4)}.
+
+\bibitem[\protect\astroncite{Mataric}{1997}]{Mat97}
+Mataric, M.\leavevmode\nopagebreak\newline 1997.
+\newblock Behavior-{B}ased {C}ontrol: {E}xamples from {N}avigation, {L}earning,
+  and {G}roup {B}ehavior.
+\newblock {\em Journal of Experimental and Theoretical Artificial Intelligence,
+  special issue on Software Architectures for Physical Agents Hexmoor, H.,
+  Horswill, I., and Kortenkamp, D., eds}.
+
+\bibitem[\protect\astroncite{Mayer}{2008}]{May08}
+Mayer, G.\leavevmode\nopagebreak\newline 2008.
+\newblock {\em Immunology - {C}hapter {O}ne: {I}nnate (non-specific) {I}mmunity
+  {M}icrobiology and {I}mmunology {O}n-{L}ine {T}extbook}.
+\newblock USC School of Medicine.
+
+\bibitem[\protect\astroncite{{McFarland D.} and {Bosser U.}}{1993}]{MDBU93}
+{McFarland D.} and {Bosser U.}\leavevmode\nopagebreak\newline 1993.
+\newblock {\em Intelligent {B}ehavior in {A}nimals and {R}obots}.
+\newblock MIT Press, Cambridge, MA.
+
+\bibitem[\protect\astroncite{Meinzen-Dick et~al.}{2004}]{MMDG04}
+Meinzen-Dick, R., {Monica Di Gregorio}, and {Nancy
+  McCarthy}\leavevmode\nopagebreak\newline 2004.
+\newblock Methods for {S}tudying {C}ollective {A}ction in {R}ural
+  {D}evelopment.
+\newblock {\em CAPRi Working Paper, no. 33. International Food Policy Research
+  Institute, 2033 K Street, N.W., Washington, DC 20006.
+  http://www.capri.cgiar.org/pdf/capriwp33.pd}.
+
+\bibitem[\protect\astroncite{{Mesa J. F.} and {Polo A. A.}}{2005}]{MJF05}
+{Mesa J. F.} and {Polo A. A.}\leavevmode\nopagebreak\newline 2005.
+\newblock C{ONSTRUYENDO} {UN} {JINU} {DE} {LA} {INFORMACI}\'{O}{N}.
+\newblock Master's thesis, PONTIFICIA UNIVERSIDAD JAVERIANA Facultad de
+  Ingenier\'{\i}a.
+
+\bibitem[\protect\astroncite{{Michael L. Haungs}}{1998}]{MLH98}
+{Michael L. Haungs}\leavevmode\nopagebreak\newline 1998.
+\newblock The {E}xecutable and {L}inking {F}ormat ({ELF}).
+\newblock http://www.cs.ucdavis.edu/~haungs/paper/node1.html.
+
+\bibitem[\protect\astroncite{MIT}{a}]{HLSIM}
+MIT\leavevmode\nopagebreak\newline.
+\newblock H{LSIM} - {T}he {H}igh {L}evel {S}imulator.
+\newblock http://swiss.ai.mit.edu/prouects/amorphous.
+
+\bibitem[\protect\astroncite{MIT}{b}]{Oxygen}
+MIT\leavevmode\nopagebreak\newline.
+\newblock Proyecto {O}x\'{\i}geno.
+\newblock http://oxygen.lcs.mit.edu/.
+
+\bibitem[\protect\astroncite{Mokyr}{1990}]{Mok90}
+Mokyr, J.\leavevmode\nopagebreak\newline 1990.
+\newblock {\em The {L}ever of {R}iches, {T}echnological {C}reativity and
+  {E}conomic {P}rogress.}
+\newblock Oxford University Press.
+
+\bibitem[\protect\astroncite{Motorola}{}]{Mot}
+Motorola\leavevmode\nopagebreak\newline.
+\newblock M{OTODEV} {P}roject.
+\newblock URL: http://developer.motorola.com/platforms/mobile-linux/.
+
+\bibitem[\protect\astroncite{{Mussa-Ivaldi F. A.} and Giszter}{1992}]{MFA92}
+{Mussa-Ivaldi F. A.} and S.~Giszter\leavevmode\nopagebreak\newline 1992.
+\newblock Vector field approximation: a computational paradigm for motor
+  control and learning.
+\newblock {\em Biological Cybernetics 67}.
+
+\bibitem[\protect\astroncite{{N. Lynch} and {B. Patt-Shamir}}{1992}]{NLBP92}
+{N. Lynch} and {B. Patt-Shamir}\leavevmode\nopagebreak\newline 1992.
+\newblock Distributed {A}lgorithms {L}ecture {N}otes for 6.852.
+\newblock {\em MIT press}.
+
+\bibitem[\protect\astroncite{{National Research Council}}{2001}]{NRC01}
+{National Research Council}\leavevmode\nopagebreak\newline 2001.
+\newblock {\em Embedded {E}verywhere}.
+\newblock National Academic Press.
+
+\bibitem[\protect\astroncite{Nokia}{}]{Mae}
+Nokia\leavevmode\nopagebreak\newline.
+\newblock Maemo {P}roject.
+\newblock URL: http://www.maemo.org/.
+
+\bibitem[\protect\astroncite{{O. Babaoglu} et~al.}{2002}]{OBHM02}
+{O. Babaoglu}, {H. Meling}, and {A. Montresor}\leavevmode\nopagebreak\newline
+  2002.
+\newblock A {F}ramework for the {D}evelopment of {A}gent-{B}ased
+  {P}eer-to-{P}eer {S}ystems.
+\newblock {\em IEEE ICDCS}.
+
+\bibitem[\protect\astroncite{Ostrom}{2000}]{Ost00}
+Ostrom, E.\leavevmode\nopagebreak\newline 2000.
+\newblock Reformulating the {C}ommons.
+\newblock {\em Swiss Political Science Review, Volume 6, Number 1}.
+
+\bibitem[\protect\astroncite{{P. Marchal} et~al.}{1966}]{PMPN+66}
+{P. Marchal}, {P. Naussbaum}, {C. Piguet}, {S. Durand}, M.~D, {E. Sanchez}, {A.
+  Stauffer}, and {G. Tempesti}\leavevmode\nopagebreak\newline 1966.
+\newblock {\em Embryonics: {T}he {B}irth of {S}ynthetic {L}ife}, Pp.~ 166--197.
+\newblock Lecture notes in Computer Science, Springer, Berlin.
+
+\bibitem[\protect\astroncite{{P Mohr} et~al.}{2004}]{MRT04}
+{P Mohr}, {N Ryan}, and {J. Timmis}\leavevmode\nopagebreak\newline 2004.
+\newblock Exploiting {I}mmunological {P}roperties for {U}biqitous {C}omputing
+  {S}ystems.
+\newblock {\em ICARIS 2004}.
+
+\bibitem[\protect\astroncite{{P. Raven} and {G. Johnson}}{}]{PRGJ}
+{P. Raven} and {G. Johnson}\leavevmode\nopagebreak\newline.
+\newblock {\em Biology}, chapter 50 The Immune System.
+\newblock Mc Graw Hill.
+
+\bibitem[\protect\astroncite{{Panurak H V D}}{1997}]{PHVD97}
+{Panurak H V D}\leavevmode\nopagebreak\newline 1997.
+\newblock Go to the ant.
+\newblock {\em Engineering principles for natural multi-agent systems. Annals
+  of Operations Research}.
+
+\bibitem[\protect\astroncite{Parker}{1997}]{Par97}
+Parker, L.\leavevmode\nopagebreak\newline 1997.
+\newblock {\em Intelligent robots: {S}ensing, modeling, and planning}, chapter
+  Behavior-Based Cooperative Robotics Applied to Multi-Target Observation.
+\newblock R. Bolles, H. Bunke, and H. Noltemeier. World Scientific.
+
+\bibitem[\protect\astroncite{Parker}{1998a}]{Par98b}
+Parker, L.\leavevmode\nopagebreak\newline 1998a.
+\newblock A{LLIANCE}: {A}n {A}rchitecture for {F}ault-tolerant {M}ulti-robot
+  {C}ooperation. |.
+\newblock {\em Transactions on Robotics and Automation 14(2)}.
+
+\bibitem[\protect\astroncite{Parker}{1998b}]{Par98}
+Parker, L.\leavevmode\nopagebreak\newline 1998b.
+\newblock Toward the {A}utomated {S}ynthesis of {C}ooperative {M}obile {R}obot
+  {T}eams.
+\newblock {\em Proceedings of SPIE Mobile Robots XIII volume 3525. Boston, MA}.
+
+\bibitem[\protect\astroncite{{Payton D} et~al.}{2001}]{PDDM+01}
+{Payton D}, {Daily M}, {Estowski R}, {Howard M}, and {Lee
+  C}\leavevmode\nopagebreak\newline 2001.
+\newblock Pheromone robotics.
+\newblock {\em Autonomous Robots}.
+
+\bibitem[\protect\astroncite{Pirjanian}{2000}]{Pir00}
+Pirjanian, P.\leavevmode\nopagebreak\newline 2000.
+\newblock Multiple {O}bjective {B}ehavior-based {C}ontrol.
+\newblock {\em Robotics and Autonomous Systems 31}.
+
+\bibitem[\protect\astroncite{{Qi Hardware}}{}]{QH}
+{Qi Hardware}\leavevmode\nopagebreak\newline.
+\newblock Qi {H}ardware {C}opyleft {H}ardware {P}roject.
+\newblock URL: http://en.qi-hardware.com/.
+
+\bibitem[\protect\astroncite{{R. A. Ghosh} et~al.}{2002}]{RAG+02}
+{R. A. Ghosh}, {R. Glott}, {B. Krieger}, and {G.
+  robles}\leavevmode\nopagebreak\newline 2002.
+\newblock Free/{L}ibre and {O}pen {S}ource {S}oftware: {S}urvey and {S}tudy.
+\newblock {\em Deliverable D18: FINAL REPORT}.
+
+\bibitem[\protect\astroncite{{R. Jackman} et~al.}{1998}]{RJSB+98}
+{R. Jackman}, {S. Brittain}, {M. Prentiss}, and {G.
+  Whitesides}\leavevmode\nopagebreak\newline 1998.
+\newblock Design and {F}abrication of topologically {C}omplex,
+  {T}hree-{D}imensional {M}icrostructures.
+\newblock {\em Science}.
+
+\bibitem[\protect\astroncite{{R. L. King; A. B. Lambert; S. H. Russ; and D. S.
+  Reese}}{1999}]{KLRR99}
+{R. L. King; A. B. Lambert; S. H. Russ; and D. S.
+  Reese}\leavevmode\nopagebreak\newline 1999.
+\newblock The {B}iological {B}asis of the {I}mmune {S}ystem as a {M}odel for
+  {I}ntelligent {A}gents.
+\newblock {\em IPDPS 1999 Workshop}.
+
+\bibitem[\protect\astroncite{{R. LeGrand}}{2004}]{CMCfMR04}
+{R. LeGrand}\leavevmode\nopagebreak\newline 2004.
+\newblock Closed-{L}oop {M}otion {C}ontrol for {M}obile {R}obotics.
+\newblock {\em Embedded Programming - Circuit Cellar}, 169.
+
+\bibitem[\protect\astroncite{{R Love}}{2007}]{RL07}
+{R Love}\leavevmode\nopagebreak\newline 2007.
+\newblock {\em Linux {S}ystem {P}rogramming}.
+\newblock O'Reilly Media, Inc.
+
+\bibitem[\protect\astroncite{{R. Menezes} and {R. Tolksdorf}}{2003}]{RMRT03}
+{R. Menezes} and {R. Tolksdorf}\leavevmode\nopagebreak\newline 2003.
+\newblock A {N}ew {A}pproach to {S}calable {L}inda-systems {B}ased on {S}warms.
+\newblock {\em ACM SAC}.
+
+\bibitem[\protect\astroncite{{R. Nagpal}}{1999}]{RN99}
+{R. Nagpal}\leavevmode\nopagebreak\newline 1999.
+\newblock Organizing a {G}lobal {C}oordinate {S}ystem from {L}ocal
+  {I}nformation on an {A}morphous {C}omputer.
+\newblock AI Memo No 1666 MIT.
+
+\bibitem[\protect\astroncite{{R. Nagpal}}{2001}]{RN01}
+{R. Nagpal}\leavevmode\nopagebreak\newline 2001.
+\newblock {\em Programmeble {S}elf-{A}ssembly: {CO}nstructing {G}lobal {S}hape
+  using {B}iologically-inspired {L}ocal {I}nteractions and {O}rigami
+  {M}athematics.}
+\newblock PhD thesis, MIT. Department of Electrical Engineering and Computer
+  Science.
+
+\bibitem[\protect\astroncite{R.~Nagpal}{1998a}]{RN98b}
+R.~Nagpal, D.~C.\leavevmode\nopagebreak\newline 1998a.
+\newblock An {A}lgorithm for group {F}ormation and {M}aximal {I}ndependent
+  {S}et in an {A}morphous {C}omputer.
+\newblock Technical report, AI Memo 1626, MIT Artificial Intelligence
+  Laboratory.
+
+\bibitem[\protect\astroncite{R.~Nagpal}{1998b}]{RN98}
+R.~Nagpal, D.~C.\leavevmode\nopagebreak\newline 1998b.
+\newblock An {A}lgorithm for group {F}ormation in an {A}morphous {C}omputer.
+\newblock http://www.swiss.ai.mit.edu/projects/amorphous/.
+
+\bibitem[\protect\astroncite{{R. Stallman}}{2007}]{RS07}
+{R. Stallman}\leavevmode\nopagebreak\newline 2007.
+\newblock Philosophy of the {GNU} project.
+\newblock URL: http://www.gnu.org/philosophy/.
+
+\bibitem[\protect\astroncite{{R. Want}}{2004}]{RW04}
+{R. Want}\leavevmode\nopagebreak\newline 2004.
+\newblock Enabling {U}biquitous {S}ensing with {RFID}.
+\newblock {\em IEEE Computer}.
+
+\bibitem[\protect\astroncite{Reynolds}{1987}]{Rey87}
+Reynolds, C.\leavevmode\nopagebreak\newline 1987.
+\newblock Flocks, {H}erds, and {S}chools: {A} {D}istributed {B}ehavior {M}odel.
+\newblock {\em Computer Graphics 21}.
+
+\bibitem[\protect\astroncite{Rosenchein and Kaelbling}{1995}]{RK95}
+Rosenchein, S. and L.~Kaelbling\leavevmode\nopagebreak\newline 1995.
+\newblock A {S}ituated {V}iew of {R}epresentation and {C}ontrol. {S}pecial
+  {I}ssue on {C}omputational {R}esearch on {I}nteraction and {A}gency.
+\newblock {\em Special Issue on Computational Research on Interaction and
+  Agency, Elsevier Science}.
+
+\bibitem[\protect\astroncite{S.~H.~Russ}{1999}]{RLKR99}
+S.~H.~Russ, A.~Lambert, R.~K.\leavevmode\nopagebreak\newline 1999.
+\newblock An {A}rtificial {I}mmune {S}ystem {M}odel for {T}ask {A}llocation.
+\newblock {\em Submitted to IPPS/SPDP http://citeseer.ist.psu.edu/115327.html}.
+
+\bibitem[\protect\astroncite{{S. Olariu1} et~al.}{2004}]{SOQX04}
+{S. Olariu1}, {Q. Xu}, and {A. Y. Zomaya}\leavevmode\nopagebreak\newline 2004.
+\newblock An {E}nergy-{E}fficient {S}elf-{O}rganization {P}rotocol for
+  {W}ireless {S}ensor {N}etworks.
+\newblock {\em Intelligent Sensors, Sensor Networks and Information Processing
+  Conference}.
+
+\bibitem[\protect\astroncite{S.~Sathyanath}{2002}]{SS02}
+S.~Sathyanath, F.~S.\leavevmode\nopagebreak\newline 2002.
+\newblock A{ISIMAM} - {A}n {A}rtificial {I}mmune {S}ystem {B}ased {I}ntelligent
+  {M}ulti-{A}gent {M}odel and its {A}pplication to a {M}ine {D}etection.
+\newblock {\em ICARIS 2002}.
+
+\bibitem[\protect\astroncite{{S. Shah}}{2006}]{SS06}
+{S. Shah}\leavevmode\nopagebreak\newline 2006.
+\newblock Motivation, {G}overnance, and the {V}iality of {H}ybrid {F}orms in
+  {O}pen {S}ource {S}oftware {D}evelopment.
+\newblock {\em Management Science}.
+
+\bibitem[\protect\astroncite{S.~Singh}{2001}]{ST01}
+S.~Singh, S.~T.\leavevmode\nopagebreak\newline 2001.
+\newblock Immunology {D}irected {M}ethods for {D}istributed {R}obotics: {A}
+  {N}ovel, {I}mmunity-{B}ased {A}rchitecture for {R}obust {C}ontrol \&
+  {C}oordination.
+\newblock {\em Proceedings of SPIE: Mobile Robots XVI}.
+
+\bibitem[\protect\astroncite{{S. Singh. S. Thayer}}{2002}]{SSST02}
+{S. Singh. S. Thayer}\leavevmode\nopagebreak\newline 2002.
+\newblock Kilorobot {S}earch and {R}escue {U}sing an {I}mmunologically
+  {I}nspired {A}pproach.
+\newblock In {\em Distributed {A}utonomous {R}obotic {S}ystems}.
+  Springer-Verlag.
+
+\bibitem[\protect\astroncite{S.~Thayer}{2002}]{ST02}
+S.~Thayer, S.~S.\leavevmode\nopagebreak\newline 2002.
+\newblock Development of an {I}mmunology-{B}ased {M}ulti-{R}obot {C}oordination
+  {A}lgorithm for exploration and {M}apping {D}omains.
+\newblock {\em IROS 2002: IEEE/RSJ International Conference on Intelegent
+  Robots and Systems}.
+
+\bibitem[\protect\astroncite{{Sandler Todd}}{1992}]{ST92}
+{Sandler Todd}\leavevmode\nopagebreak\newline 1992.
+\newblock Collective {A}ction: {T}heory and {A}pplications.
+\newblock {\em Ann Arbor: University of Michigan Press}.
+
+\bibitem[\protect\astroncite{{Sanza Kazadi} et~al.}{2002}]{SKAA02}
+{Sanza Kazadi}, {A. Abdul-Khaliq}, and {Ron
+  Goodman.}\leavevmode\nopagebreak\newline 2002.
+\newblock On the convergence of puck clustering systems.
+\newblock {\em Robotics and Autonomous Systems, 38(2):93-117}.
+
+\bibitem[\protect\astroncite{Schweik and {A. Semenov}}{2003}]{SAS03}
+Schweik, C.~M. and {A. Semenov}\leavevmode\nopagebreak\newline 2003.
+\newblock The {I}nstitutional {D}esign of '{O}pen {S}ource' {P}rogramming:
+  {I}mplications for {A}ddressing {C}omplex {P}ublic {P}olicy and {M}anagement
+  {P}roblems.
+\newblock URL: http://www.firstmonday.org/issues/issue8\_1/schweik/.
+
+\bibitem[\protect\astroncite{Stallman}{1999}]{Sta99}
+Stallman, R.~M.\leavevmode\nopagebreak\newline 1999.
+\newblock {\em The {GNU} {O}perating {S}ystem and the {F}ree {S}oftware
+  {M}ovement {V}oices from the {O}pen {S}ource {R}evolution}.
+\newblock O'Reilly and Associates.
+
+\bibitem[\protect\astroncite{{Sugawara K} et~al.}{2004}]{SKKT04}
+{Sugawara K}, {Kazama T}, and {Watanabe T}\leavevmode\nopagebreak\newline 2004.
+\newblock Foraging behavior of interacting robots with virtual pheromone.
+\newblock {\em Proceedings of the IEEE/RSJ International Conference on
+  Intelligent Robots and Systems}.
+
+\bibitem[\protect\astroncite{T.~TERADA}{2003}]{TT03}
+T.~TERADA, M.~TSUKAMOTO, K.\leavevmode\nopagebreak\newline 2003.
+\newblock Ubiquitous {C}omputing {U}sing {R}ule-{B}ased {I}/{O} {C}ontrol
+  {D}evices.
+\newblock {\em Proc. of 15th International Comference on Ubiquitous Computing
+  (UbiComp 2003)}.
+
+\bibitem[\protect\astroncite{{Tanaka K} et~al.}{2005}]{TKYI+05}
+{Tanaka K}, {Yo Ishigaki}, {Inoue H}, and {Itoh
+  M}\leavevmode\nopagebreak\newline 2005.
+\newblock Safety monitoring system by autonomous mobile sensors utilizing
+  pheromone communication.
+\newblock {\em Proceedings of the International Conference on Computational
+  Intelligence for Modelling, Control and Automation; International Conference
+  on Intelligent Agents, Web Technologies and Internet Commerce}.
+
+\bibitem[\protect\astroncite{Teece}{1981}]{Tee81}
+Teece, D.\leavevmode\nopagebreak\newline 1981.
+\newblock The {M}arket for {K}now-how. {T}echnology {T}ransfer: {N}ew {I}ssues,
+  {N}ew {A}nalysis.
+\newblock {\em Special issue of the Annals of the American Academy of Political
+  and Social Science}.
+
+\bibitem[\protect\astroncite{{Texas Instruments}}{1996}]{TI96}
+{Texas Instruments}\leavevmode\nopagebreak\newline 1996.
+\newblock I{EEE} {S}td 1149.1 ({JTAG}) {T}estability.
+\newblock {\em 1997 Semiconductor Group}.
+
+\bibitem[\protect\astroncite{{Tsuyoshi UEYAMA} and {Toshio FUKUDA}}{}]{TUTF}
+{Tsuyoshi UEYAMA} and {Toshio FUKUDA}\leavevmode\nopagebreak\newline.
+\newblock Self-organization of {C}ellular {R}obots using {R}andom {W}alk with
+  {S}imple {R}ules.
+
+\bibitem[\protect\astroncite{{Tucker Balch.}}{1999}]{TB99}
+{Tucker Balch.}\leavevmode\nopagebreak\newline 1999.
+\newblock {\em Proceedings of the {T}hird {I}nternational {C}onference on
+  {A}utonomous {A}gents}, chapter The impact of diversity on performance in
+  multi-robot foraging.
+\newblock ACM Press.
+
+\bibitem[\protect\astroncite{UNESCO-Uruguay}{}]{UNE}
+UNESCO-Uruguay\leavevmode\nopagebreak\newline.
+\newblock Rasgos {P}rincipales de la {I}nstitucionalizaci\'on de la {C}iencia,
+  la {T}ecnolog\'{\i}a y la {I}nnovaci\'on en {A}m\'erica {L}atina y el
+  {C}aribe y {T}endencias de la {C}ooperaci\'on {I}nternacional.
+\newblock {\em http://www.unesco.org.uy/}.
+
+\bibitem[\protect\astroncite{{V. Parunak} et~al.}{2004}]{VPSB04}
+{V. Parunak}, {S. Brueckner}, and {J. Sauter}\leavevmode\nopagebreak\newline
+  2004.
+\newblock Digital {P}heromones for {C}oordination of {U}nmanned {V}ehicles.
+\newblock {\em Workshop on Environments for Multi-agent Systems}.
+
+\bibitem[\protect\astroncite{{V. Subrahmanian} et~al.}{2000}]{VSPB+00}
+{V. Subrahmanian}, {P. Bonatti}, {J. Dix}, and {et
+  al}\leavevmode\nopagebreak\newline 2000.
+\newblock {\em Heterogeneous {A}gent {S}ystems}.
+\newblock MIT Press.
+
+\bibitem[\protect\astroncite{{Van Wendel} et~al.}{2003}]{VWJ+03}
+{Van Wendel}, R.~Joode, {J. A. de Bruijn}, and {M. J. G. van
+  Eeten}\leavevmode\nopagebreak\newline 2003.
+\newblock {\em Protecting the {V}irtual {C}ommons: {S}elf-{O}rganizing {O}pen
+  {S}ource and {F}ree {S}oftware {C}ommunities and {I}nnovative {I}ntellectual
+  {P}roperty {R}egimes.}
+\newblock Asser Press.
+
+\bibitem[\protect\astroncite{{VDC corp.}}{2008}]{Vc08}
+{VDC corp.}\leavevmode\nopagebreak\newline 2008.
+\newblock Embedded {S}oftware 2008 {M}arket {I}ntelligence {S}ystem.
+\newblock Technical report, VDC Research Group.
+
+\bibitem[\protect\astroncite{{W. Butera}}{2002}]{WB02}
+{W. Butera}\leavevmode\nopagebreak\newline 2002.
+\newblock {\em Programming a {P}aintable {C}omputing}.
+\newblock PhD thesis, Massachusetts Institute of Technology.
+
+\bibitem[\protect\astroncite{{W. Buttera and V. Bove}}{2001}]{WBaVB}
+{W. Buttera and V. Bove}\leavevmode\nopagebreak\newline 2001.
+\newblock Literally embedded processors.
+\newblock In {\em S{PIE} {M}edia {P}rocessors}.
+
+\bibitem[\protect\astroncite{W.~Heimerdinger}{1992}]{WH93}
+W.~Heimerdinger, C.~W.\leavevmode\nopagebreak\newline 1992.
+\newblock A {C}onceptual {F}ramework for {S}ystem {F}ault {T}olerance.
+\newblock Technical report, CMU/SEI-92-TR-033.
+
+\bibitem[\protect\astroncite{{W. Spraul} et~al.}{}]{WSCC}
+{W. Spraul}, {C. Camargo}, and {A. Wang}\leavevmode\nopagebreak\newline.
+\newblock Proyecto {SAKC}.
+\newblock {\em URL:http://en.qi-hardware.com/wiki/SAKC}.
+
+\bibitem[\protect\astroncite{Weber}{2004}]{Web04}
+Weber, S.\leavevmode\nopagebreak\newline 2004.
+\newblock {\em The {S}uccess of {O}pen {S}ource}.
+\newblock Harvard University Press.
+
+\bibitem[\protect\astroncite{Wikipedia}{a}]{Wikb}
+Wikipedia\leavevmode\nopagebreak\newline.
+\newblock Richard {S}tallman.
+\newblock URL: http://es.wikipedia.org/wiki/Richard\_Stallman.
+
+\bibitem[\protect\astroncite{Wikipedia}{b}]{Wik}
+Wikipedia\leavevmode\nopagebreak\newline.
+\newblock Wikipedia, the free encyclopedia.
+\newblock http://en.wikipedia.org/.
+
+\bibitem[\protect\astroncite{{William Agassounon} and {Alcherio
+  Martinoli}}{2002}]{WAAM02}
+{William Agassounon} and {Alcherio Martinoli}\leavevmode\nopagebreak\newline
+  2002.
+\newblock A macroscopic model of an aggregation experiment using embodied
+  agents in groups of time-varying sizes.
+\newblock {\em Proc. of the IEEE Conf. on System, man and Cybernetics SMC-02,
+  Hammamet, Tunisia.}
+
+\bibitem[\protect\astroncite{{Worldwide CDIO Initiative}}{}]{WCI}
+{Worldwide CDIO Initiative}\leavevmode\nopagebreak\newline.
+\newblock "{B}enefits of {CDIO}" {URL}:http://www.cdio.org/benefits-cdio on
+  {N}ovember, 2009.
+
+\bibitem[\protect\astroncite{{X. Zhang}}{2001}]{XZ01}
+{X. Zhang}\leavevmode\nopagebreak\newline 2001.
+\newblock Bio-{I}nspired {F}ault-{T}olerant {H}ardware {S}ystem.
+\newblock http://www.cems.uwe.ac.uk/~xzhang/.
+
+\bibitem[\protect\astroncite{{Y. Thoma} et~al.}{2004a}]{YTDR+04}
+{Y. Thoma}, {D. Roggen}, {E. Sanchez}, and
+  J.Moreno\leavevmode\nopagebreak\newline 2004a.
+\newblock Prototyping with a bio-inspired reconfigurable chip.
+\newblock In {\em 15th {IEEE} {I}nternational {W}orkshop on {R}apid {S}ystem
+  {P}rototyping ({RSP} 2004)}. IEEE Computer Society, Los Alamitos, California,
+  2004.
+
+\bibitem[\protect\astroncite{{Y. Thoma} et~al.}{2004b}]{YTGT+04}
+{Y. Thoma}, {G. Tempesti}, {E. Sanchez}, and {J.
+  Moreno.}\leavevmode\nopagebreak\newline 2004b.
+\newblock P{OE}tic: {A}n {E}lectronic {T}issue for {B}io-{I}nspired {C}ellular
+  {A}pplications.
+\newblock {\em BioSystems}, Pp.~ 191--200.
+
+\bibitem[\protect\astroncite{{Y. Wang}}{2004}]{YW04}
+{Y. Wang}\leavevmode\nopagebreak\newline 2004.
+\newblock Rules of {B}lob {D}isplacement.
+\newblock Master's thesis, Laboratoire de Recherche en Informatique,
+  Universit\'e Paris ud-XI.
+
+\end{thebibliography}

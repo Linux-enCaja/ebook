@@ -1,0 +1,183 @@
+\documentclass[journal,letterpaper]{IEEEtran}
+\usepackage[latin1]{inputenc}
+\usepackage{enumerate}
+\usepackage{cite}      
+\usepackage{graphicx}  
+\usepackage{psfrag}    
+\usepackage{subfigure} 
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{floatflt}
+\usepackage{amsmath}   % From the American Mathematical Society
+\usepackage[mathscr]{euscript}%Para letra en modo matemï¿½ic
+\usepackage{subfigure}
+
+\begin{document}
+\bibliographystyle{unsrt}
+\title{Hardware Copyleft como Herramienta para la Enseñanza de Procesamiento de Señales e Imágenes}
+\author{Carlos Iván Camargo -- Universidad Nacional de Colombia\\\ cicamargoba@unal.edu.co}
+
+
+\maketitle
+
+\IEEEpeerreviewmaketitle
+
+\begin{abstract}
+
+El procesamiento digital de señales y de imágenes es un área que abarca un amplio rango de aplicaciones académicas y comerciales; es tema obligado en la mayoría de los centros educativos de formación superior y gracias al estado actual de la industria de los semiconductores es posible obtener dispositivos especializados en este tipo de procesamiento, lo que permite la creación de productos comercializables en esta área. Esto es de vital importancia en paises en desarrollo como Colombia, donde la industria electrónica casi no existe y se depende por completo de productos provenientes de paises más desarrollados, en especial de productos asiáticos. Este artículo presenta dos plataformas hardware \textit{copyleft} que pueden ser estudiadas, reproducidas y modificadas incluso para fines comerciales; proporcionando una herramienta para el estudio de procesamiento de señales y de imágenes y un punto de partida para el desarrollo de empresas de base tecnológica que permitan disminuir los altos niveles de desempleo de los profesionales en áreas afines.
+
+\end{abstract}
+
+\begin{keywords}
+Sistemas Embebidos, Robótica Móvil, Linux, apropiación y difusión tecnológica.
+\end{keywords}
+
+% &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+%                                                                                         INTRODUCCIÓN
+% &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+\section{Introducción}
+
+Estudios recientes \cite{CC11d}, \cite{MTRR07}, \cite{DZSC+07}, \cite{MDAG99}, \cite{Mar04} (que pueden ser aplicados a paises de la región) revelan que la industria electrónica colombiana se encuentra muy atrasada en relación a los paises industrializados; siendo una de las causas la utilización de metodologías de diseño y tecnologías obsoletas por parte de las empresas del sector, lo que se originó por la falta de profesionales con las habilidades necesarias para desarrollar productos comercializables que utilicen tecnología de punta, la fuerte dependencia hacia el mercado asiático, y la falta de políticas gubernamentales que protejan las industrias locales; esta situación ha eliminando por completo los departamentos de I+D en una gran número de empresas, reduciendo de esta forma la necesidad de personal relacionado con el diseño electrónico, lo que aumenta el nivel de desempleo en el sector y disminuye de forma considerable el nivel salarial y la calidad de vida de estos profesionales.
+
+
+Sin embargo, es posible realizar una transferencia tecnológica exitosa en el diseño de sistemas digitales con el fín de actualizar a la industria electrónica, proporcionando herramientas para que puedan competir con los productos importados. Para dar solución a este problema se debe trabajar de forma conjunta entre la empresa, la academia y el gobierno; los centros de formación deben incentivar y asesorar a sus egresados en la creación de empresas de base tecnológica que utilicen conocimientos actualizados (ya que tratar de cambiar la mentalidad de los empresarios que llevan muchos años realizando importaciones es muy difícil); se deben actualizar los programas académicos para que los profesionales posean las habilidades necesarias para concebir, diseñar, implementar y operar sistemas digitales. En \cite{CC11} se muestra como se modificó el contenido del área de digitales en la Universidad Nacional de Colombia, pasando de un programa puramente académico que finalizaba en la simulación y utilizaba tecnologías propietarias obsoletas, a uno basado en herramientas abiertas \cite{CC11c}, \cite{CC07}, \cite{CC08c} centrado en el diseño y en la utilización de metodologías de diseño y tecnologías modernas. Esta experiencia mostró la importancia de la implementación física, en la creación de habilidades que requiere la industria local para reducir el alto grado de dependencia tecnológica y en el cambio de mentalidad para pasar de ser un integrador que utiliza productos comerciales a un diseñador que crea sus propias soluciones.
+
+
+\subsection{Hardware Copyleft}
+
+Al ser inspirado en el movimiento Free Open Source Software (FOSS), los dispositivos \textit{hardware copyleft} comparten la misma filosofía \cite{RS07}, y son su complemento perfecto. Los requisitos para que un dispositivo HW sea reproducible y modificable son: Disponibilidad de los esquemáticos y los archivos de la placa de circuito impreso en un formato que permita el uso de herramientas abiertas; la cadena de herramientas de compilación y depuración para desarrollo de aplicaciones; el código fuente de: el programa que inicializa la plataforma, la herramienta que carga dicho programa en la memoria no volátil, el sistema de archivos y aplicaciones; documentación completa que indique como fué diseñada, construida, como utilizarla, como desarrollar aplicaciones y tutoriales que expliquen el funcionamiento de los diferentes componentes. Adicionalmente, se debe contar con la posibilidad de fabricación y montaje, lo que constituye la principal diferencia entre el software y el hardware libre. Esto contrasta fuertemente con el movimiento de software libre, en donde no se requiere inversión de capital para modificar un proyecto existente. Por esta razón, pueden existir varios niveles de libertad, un proyecto que utilice componentes costosos y de difícil consecución limitará su alcance a un sector determinado.
+
+El uso de hardware copyleft permite reducir de forma considerable la inversión necesaria para la creación de empresas de base tecnológica, ya que no es necesario pagar por costosas licencias software y es posible utilizar proyectos existentes como punto de partida de desarrollos propios ahorrando mucho tiempo y reduciendo de esta forma el \textit{time to market}. 
+
+\subsubsection{ECB\_BF532 y ECBOT Herramientas para la enseñanza de Procesamiento de Señales y de Imágenes}
+
+En este artículo presentamos dos plataformas \textit{copyeft} hardware: ECB\_BF532 basado en el DSP de Analog Devices \textit{BF532} y ECBOT \cite{CC07} \cite{CC08c}, compuesto por un procesador ARM9 y una FPGA de la familia Spartan3; estas computadoras en una sola tarjeta (SBC por sus siglas en inglés) permiten: el manejo a bajo nivel de cualquier sensor de imágen CMOS; implementar algoritmos de procesamiento de imágen y de señales en SW, en HW o en una combinación HW/SW y comparar su desempeño; la utilización de librerías abiertas como \textit{opencv} y aplicaciones como \textit{mplayer, octave} útiles en el desarrollo de este tipo de aplicaciones. Adicionalmente, la información necesaria para programarla, reproducirla y modificarla se encuentra disponible en el sitio del proyecto \textit{linux EnCaja}\footnote{http://wiki.linuxencaja.net/}.
+
+
+% &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+%                                                                                                ECBOT
+% &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+\section{Platafrorma ECBOT}
+La SBC ECBOT \cite{CC07} esta compuesta por un procesador ARM9 de 200MHz (AT91RM9200 de Atmel) y una FPGA de la familia Spartan3 de Xilinx, soporta la ejecución del sistema operativo Linux, posee 32 MBytes de memoria RAM, 2 Mbytes de memoria Flash serial y soporta la utilización de memorias micro SD de cualquier tamaño; proporciona 8 entradas análogas, 10 digitales, un puerto serie y un puerto USB host. En la figura \ref{ECBOT_Block} se muestra el diagrama de bloques y en la \ref{ECBOT_picture} una fotografía de esta plataforma. 
+
+  \begin{figure}[htpb]
+    \begin{center}
+      \subfigure[Diagrama de Bloques de ECBOT]{
+        \includegraphics[scale=.35]{./images/ECBOT_Block_2} 
+        \label{ECBOT_Block}
+      }
+      \\
+      \subfigure[SBC ECBOT]{
+        \includegraphics[scale=.49]{./images/ECBOT2_TOP_Specs.png}
+        \label{ECBOT_picture}
+      }
+    \end{center}
+    \caption{Arquitectura de la plataforma ECBOT}
+  \end{figure}
+
+
+\subsection{Sensor de Imágen}
+
+ECBOT permite la conexión de un gran rango de sensores de imágen a través de un conector dedicado para dicho fin; esta interfaz se conecta a uno de los 4 bancos de la FPGA y puede ser alimentado con un voltaje diferente, los otros 3 bancos de la FPGA se alimentan con 3.3V para poder comunicarse de forma adecuada con el procesador ARM9 y el cuarto banco recibe la alimentación de un regulador independiente del valor requerido por el sensor de imágen. En la figura \ref{ECBOT_IS_sch} se muestra el esquemático de este conector, en el podemos encontrar las señales básicas para leer la información de un sensor de 8 bits (\textit{D2C-D9C, vsync, hsync, pclk, mclk}); adicionalmente, se proporciona acceso al puerto I2C (\textit{CSDL, CSDA}), ya que la mayoría de los sensores permite configurar su resolución, contraste, brillo, etc por este medio; y una fuente de alimentación independiente (\textit{UF3}). 
+
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.6]{./images/ECBOT_image_sensor_sch.png} \end{center}
+  \caption{ECBOT: Interfaz con el sensor de imágen}\label{ECBOT_IS_sch}
+\end{figure}
+
+Hasta el momento se han probado con éxito 3 diferentes sensores de imágen en esta plataforma: El \textit{KAC-9628} de Kodak, el \textit{TCM8240} de Toshiba y el \textit{CAM3908}.
+
+
+\subsection{Controlador del Sensor de Imágen}
+La comunicacion entre el sensor de imágen y el procesador se realiza a través de la FPGA, para esto se implementó un periférico dedicado que comparte el bus de direcciones, datos y control con el procesador; como puede verse en la figura \ref{Image_Sensor_Peripheral} está compuesto por un módulo (\textit{SYNC}) encargado de sincronizar las señales provenientes del procesador con el reloj de la FPGA; el módulo \textit{write pulse generator} genera un pulso de duración de un ciclo de reloj de la FPGA por cada escritura del procesador, esto se hace con el fin de prevenir que el controlador ejecute una acción más de una vez debido a la mayor frecuencia de operación; el módulo \textit{image capture} esta encargado de: recibir la información de la imágen y almacenarla en la memoria de doble puerto y generar una señal de interrucpión indicando que la información de la imágen se encuentra disponible; y una memoria RAM de doble puerto que permite leer la información de la imágen y transferirla al procesador para su procesamiento.
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.45, angle=90]{./images/sw_hw_fpga_arch_ecbot.png} \end{center}
+  \caption{Arquitectura del módulo encargado de controlar el sensor de imagen en la plataforma ECBOT}\label{Image_Sensor_Peripheral}
+\end{figure}
+
+% &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+%                                                                                            ECB_BF532
+% &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+\section{Plataforma ECB\_BF532}
+La plataforma \textit{ECB\_BF532} está basada en el DSP de Analog Devices \textit{BF\_532} que corre a 400MHz, posee una memoria SDRAM de 32 Mbytes, una memoria NAND flash de 512 MBytes utilizada para almacenar datos, una memoria SPI de 4MHZ encargada de almacenar el cargador de Linux (\textit{u-boot}), la imágen del kernel de Linux y un sistema de archivos básico (que puede ser expandido en la memoria NAND) basado en la distribución \textit{uClinux}. En la figura \ref{BF532_Block} se muestra su diagrama de bloques y en la \ref{BF532_picture} su disposición física.
+
+  \begin{figure}[htpb]
+    \begin{center}
+      \subfigure[Diagrama de Bloques de ECB\_BF532]{
+        \includegraphics[scale=.45]{./images/BF532_Block_Diagram.png} 
+        \label{BF532_Block}
+      }
+      \\
+      \subfigure[SBC ECB\_BF532]{
+        \includegraphics[scale=.4]{./images/BF532_specs.png}
+        \label{BF532_picture}
+      }
+    \end{center}
+    \caption{Arquitectura de la plataforma ECB\_BF532}
+  \end{figure}
+
+\subsection{Procesamiento de señales}
+ECB\_BF532 permite la conexión de conversores Análogo/Digital y Codecs de Audio utilizando los puertos sincronos seriales o la interfaz paralela \textit{PPI}. El sistema operativo Linux, que se ejecuta en la SBC, permite el acceso a esta información y facilita el desarrollo de aplicaciones utilizando el lenguage C; el esquemático mostrado en la figura \ref{bf532_codec} es parte de una aplicación de encriptamiento de voz, donde se utilizó el proyecto abierto OSS (Open Sound System) para controlar el codec de audio AD1836A; al existir soporte en Linux para este tipo de dispositivos, se simplifica su uso, centrando el esfuerzo en la aplicación final y no en detalles de bajo nivel, todo el manejo se realiza a través del archivo \textit{/dev/dsp}, asociado al controlador del dispositivo; dicho controlador proporciona funcionalidades básicas para abstraer el manejo del codec haciendo más fácil su uso. 
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.45]{./images/bf532_codec.png} \end{center}
+  \caption{Conexión del CODEC de audio AD1836A}\label{bf532_codec}
+\end{figure}
+
+\subsection{Procesamiento de Imágen}
+De forma similar, Linux permite el control de bajo nivel de sensores de imágen proporcionando un controlador (\textit{/dev/video0}) que realiza una abstracción del manejo de bajo nivel del sensor de imagen, (este controlador hace parte del proyecto \textit{video4linux}) permitiendo obtener información y configurar el sensor de forma fácil. A diferencia de la SBC \textit{ECBOT} la información de la imágen es almacenada directamente en la memoria del DSP, lo que hace más rápido el proceso de captura.
+
+
+% \begin{figure}[htpb]
+%   \begin{center} \includegraphics[scale=1]{./images/capture.png} \end{center}
+%   \caption{Conexión con un sensor de imágen}\label{bf532_image_sensor}
+% \end{figure}
+
+
+% &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+%                                                                                           RESULTADOS
+% &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+\section{Imágenes Capturadas y Ejemplo de Ejecución de Algoritmos}
+
+En la figura \ref{capture_samples} se muestran algunas imágenes capturadas con los sensores de imágenes mencionados anteriormente, los cuales envían la información sin formato (\textit{raw}) y un programa que se ejecuta en las plataformas las convierte al formato deseado (\textit{PNG en este caso}). En las dos plataformas se obtiene la misma calidad de imágen, ya que se utilizan los mismos sensores.
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=1]{./images/capture.png} \end{center}
+  \caption{Imágenes capturadas en las SBC ECB\_BF532 y ECBOT}\label{capture_samples}
+\end{figure}
+
+Se ejecutó un algoritmo sencillo para detección de colores basado en vecindades para probar la capacidad de las plataformas, este algoritmo tiene como entrada una imágen similar a la que se muestra en la figura \ref{capture_samples} y su función es detectar un determinado grupo de colores (\textit{blobs}) que reflejan el estado interno de un robot móvil, el resultado de la ejecución de este algoritmo se puede ver en la figura \ref{track_execution}
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=1]{./images/track.png} \end{center}
+  \caption{Aplicación de un algoritmo de detección de \textit{blobs}}\label{track_execution}
+\end{figure}
+
+
+\section{Conclusiones y Trabajo futuro}
+
+Se presentaron dos plataformas abiertas para aplicaciones en procesamiento de señales e imágenes; que permiten ser estudiadas, programadas, reproducidas y modificadas, proporcionando un punto de partida para el desarrollo de aplicaciones comerciales y ser utilizadas en cursos relacionados con el diseño digital y procesamiento de imágenes de señales. A diferencia de plataformas existentes, ECBOT y ECB\_BF532 permiten el estudio total de su arquitectura, desde el componente físico (esquemátivo, placa de circuito impreso) hasta su programación; eliminando el problema de realizar diseños a alto nivel sin tener en cuenta la arquitectura del dispositivo.
+
+El hardware \textit{copyeft} representa un ahorro en tiempo y dinero en el desarrollo de aplicaciones comerciales, ya que proporciona diseños funcionales y conocimiento sobre su programación y funcionamiento. Por otro lado, la utilización de aplicaciones abiertas que hacen parte del proyecto FOSS, permite su programación de forma fácil abstrayendo el manejo tedioso a bajo nivel del hardware, permitiendo su uso a diferentes niveles de formación. La unión hardware \textit{copyleft} y software libre permite reducir de forma considerable la inversión necesaria para el desarrollo de productos tecnológicos comerciales; el objetivo principal de estos movimientos es la difusión de conocimientos a todos los interesados, convirtiéndolos en una herramienta podersosa en la transferencia de tecnología y de conocimientos.
+
+El desarrollo de plataformas hardware es de vital importancia en paises en vía de desarrollo ya que posibilita la creación de habilidades necesarias para la creación de empresas de base tecnológica, lo que puede generar una demanda creciente en productos, bienes y servicios relacionados con la manufactura de dispositivos digitales.
+
+Estas plataformas serán utilizadas en los cursos de DSP y procesamiento de imágenes en el Departamento de Ingeniería Eléctrica y Electrónica de la Universidad Nacional de Colombia sede Bogotá.
+
+
+
+
+
+\section{Bibliografía}
+
+\bibliography{./vision.bib}
+
+
+
+
+
+
+\end{document}

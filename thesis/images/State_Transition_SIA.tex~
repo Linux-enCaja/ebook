@@ -1,0 +1,432 @@
+% PSTricks TeX macro
+% Title: /home/cain/Doctorado/docs/book/images/State_Transition_SIA.dia
+% Creator: Dia v0.96.1
+% CreationDate: Mon Oct 27 19:24:32 2008
+% For: cain
+ \usepackage{pstricks}
+% The following commands are not supported in PSTricks at present
+% We define them conditionally, so when they are implemented,
+% this pstricks file will use them.
+\ifx\setlinejoinmode\undefined
+  \newcommand{\setlinejoinmode}[1]{}
+\fi
+\ifx\setlinecaps\undefined
+  \newcommand{\setlinecaps}[1]{}
+\fi
+% This way define your own fonts mapping (for example with ifthen)
+\ifx\setfont\undefined
+  \newcommand{\setfont}[2]{}
+\fi
+\pspicture(1.936765,2.705875)(44.240000,35.347062)
+\psscalebox{1.000000 -1.000000}{
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\newrgbcolor{diafillcolor}{1.000000 1.000000 1.000000}
+\psset{fillcolor=diafillcolor}
+\newrgbcolor{dialinecolor}{1.000000 1.000000 1.000000}
+\psset{linecolor=dialinecolor}
+\psellipse*(16.475000,-31.850000)(2.375000,2.200000)
+\psset{linewidth=0.100000cm}
+\psset{linestyle=solid}
+\psset{linestyle=solid}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\psellipse(16.475000,-31.850000)(2.375000,2.200000)
+\setfont{Helvetica-Bold}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](15.553750,31.527500){\psscalebox{1 -1}{Reply}}
+\newrgbcolor{dialinecolor}{1.000000 1.000000 1.000000}
+\psset{linecolor=dialinecolor}
+\psellipse*(16.495000,-22.930000)(2.375000,2.200000)
+\psset{linewidth=0.100000cm}
+\psset{linestyle=solid}
+\psset{linestyle=solid}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\psellipse(16.495000,-22.930000)(2.375000,2.200000)
+\setfont{Helvetica-Bold}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](15.195000,22.630000){\psscalebox{1 -1}{Disperse}}
+\newrgbcolor{dialinecolor}{1.000000 1.000000 1.000000}
+\psset{linecolor=dialinecolor}
+\psellipse*(28.900000,-15.587500)(2.375000,2.200000)
+\psset{linewidth=0.100000cm}
+\psset{linestyle=solid}
+\psset{linestyle=solid}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\psellipse(28.900000,-15.587500)(2.375000,2.200000)
+\setfont{Helvetica-Bold}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](27.815000,15.285000){\psscalebox{1 -1}{Agitate}}
+\newrgbcolor{dialinecolor}{1.000000 1.000000 1.000000}
+\psset{linecolor=dialinecolor}
+\psellipse*(10.995000,-15.680000)(2.375000,2.200000)
+\psset{linewidth=0.100000cm}
+\psset{linestyle=solid}
+\psset{linestyle=solid}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\psellipse(10.995000,-15.680000)(2.375000,2.200000)
+\setfont{Helvetica-Bold}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](9.795000,15.380000){\psscalebox{1 -1}{Explore}}
+\newrgbcolor{dialinecolor}{1.000000 1.000000 1.000000}
+\psset{linecolor=dialinecolor}
+\psellipse*(41.815000,-15.585000)(2.375000,2.200000)
+\psset{linewidth=0.100000cm}
+\psset{linestyle=solid}
+\psset{linestyle=solid}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\psellipse(41.815000,-15.585000)(2.375000,2.200000)
+\setfont{Helvetica-Bold}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](40.415000,15.385000){\psscalebox{1 -1}{Request}}
+\newrgbcolor{dialinecolor}{1.000000 1.000000 1.000000}
+\psset{linecolor=dialinecolor}
+\psellipse*(41.750000,-6.412500)(2.375000,2.200000)
+\psset{linewidth=0.100000cm}
+\psset{linestyle=solid}
+\psset{linestyle=solid}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\psellipse(41.750000,-6.412500)(2.375000,2.200000)
+\setfont{Helvetica-Bold}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](41.195000,6.180000){\psscalebox{1 -1}{Idle}}
+\newrgbcolor{dialinecolor}{1.000000 1.000000 1.000000}
+\psset{linecolor=dialinecolor}
+\psellipse*(28.945000,-6.442500)(2.375000,2.200000)
+\psset{linewidth=0.100000cm}
+\psset{linestyle=solid}
+\psset{linestyle=solid}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\psellipse(28.945000,-6.442500)(2.375000,2.200000)
+\setfont{Helvetica-Bold}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](27.745000,6.342500){\psscalebox{1 -1}{Achieve}}
+\newrgbcolor{dialinecolor}{1.000000 1.000000 1.000000}
+\psset{linecolor=dialinecolor}
+\psellipse*(28.900000,-31.812500)(2.375000,2.200000)
+\psset{linewidth=0.100000cm}
+\psset{linestyle=solid}
+\psset{linestyle=solid}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\psellipse(28.900000,-31.812500)(2.375000,2.200000)
+\setfont{Helvetica-Bold}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](27.045000,31.430000){\psscalebox{1 -1}{Cooperate}}
+\psset{linewidth=0.100000cm}
+\psset{linestyle=solid}
+\psset{linestyle=solid}
+\setlinecaps{0}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\psline(18.850000,-31.850000)(26.038202,-31.814878)
+\psset{linestyle=solid}
+\setlinejoinmode{0}
+\setlinecaps{0}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\pspolygon*(26.413198,-31.813046)(25.911982,-31.565492)(26.038202,-31.814878)(25.914425,-32.065486)
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\pspolygon(26.413198,-31.813046)(25.911982,-31.565492)(26.038202,-31.814878)(25.914425,-32.065486)
+\psset{linewidth=0.100000cm}
+\psset{linestyle=solid}
+\psset{linestyle=solid}
+\setlinecaps{0}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\psline(28.900000,-29.612500)(28.900000,-18.274303)
+\psset{linestyle=solid}
+\setlinejoinmode{0}
+\setlinecaps{0}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\pspolygon*(28.900000,-17.899303)(28.650000,-18.399303)(28.900000,-18.274303)(29.150000,-18.399303)
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\pspolygon(28.900000,-17.899303)(28.650000,-18.399303)(28.900000,-18.274303)(29.150000,-18.399303)
+\psset{linewidth=0.100000cm}
+\psset{linestyle=solid}
+\psset{linestyle=solid}
+\setlinecaps{0}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\psline(10.995000,-17.880000)(14.456404,-21.045822)
+\psset{linestyle=solid}
+\setlinejoinmode{0}
+\setlinecaps{0}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\pspolygon*(14.733120,-21.298909)(14.532890,-20.776982)(14.456404,-21.045822)(14.195440,-21.145938)
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\pspolygon(14.733120,-21.298909)(14.532890,-20.776982)(14.456404,-21.045822)(14.195440,-21.145938)
+\psset{linewidth=0.100000cm}
+\psset{linestyle=solid}
+\psset{linestyle=solid}
+\setlinecaps{0}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\psline(18.174379,-21.374365)(26.779669,-17.349383)
+\psset{linestyle=solid}
+\setlinejoinmode{0}
+\setlinecaps{0}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\pspolygon*(27.119348,-17.190504)(26.560523,-17.175890)(26.779669,-17.349383)(26.772362,-17.628796)
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\pspolygon(27.119348,-17.190504)(26.560523,-17.175890)(26.779669,-17.349383)(26.772362,-17.628796)
+\psset{linewidth=0.100000cm}
+\psset{linestyle=solid}
+\psset{linestyle=solid}
+\setlinecaps{0}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\psline(13.370000,-15.680000)(26.038209,-15.590923)
+\psset{linestyle=solid}
+\setlinejoinmode{0}
+\setlinecaps{0}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\pspolygon*(26.413199,-15.588286)(25.911454,-15.341808)(26.038209,-15.590923)(25.914970,-15.841796)
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\pspolygon(26.413199,-15.588286)(25.911454,-15.341808)(26.038209,-15.590923)(25.914970,-15.841796)
+\psset{linewidth=0.100000cm}
+\psset{linestyle=solid}
+\psset{linestyle=solid}
+\setlinecaps{0}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\psline(28.900000,-13.387500)(28.940384,-9.129282)
+\psset{linestyle=solid}
+\setlinejoinmode{0}
+\setlinecaps{0}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\pspolygon*(28.943940,-8.754298)(28.689209,-9.251905)(28.940384,-9.129282)(29.189187,-9.256647)
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\pspolygon(28.943940,-8.754298)(28.689209,-9.251905)(28.940384,-9.129282)(29.189187,-9.256647)
+\psset{linewidth=0.100000cm}
+\psset{linestyle=solid}
+\psset{linestyle=solid}
+\setlinecaps{0}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\psline(31.275000,-15.587500)(38.953197,-15.585149)
+\psset{linestyle=solid}
+\setlinejoinmode{0}
+\setlinecaps{0}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\pspolygon*(39.328197,-15.585034)(38.828120,-15.335187)(38.953197,-15.585149)(38.828273,-15.835187)
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\pspolygon(39.328197,-15.585034)(38.828120,-15.335187)(38.953197,-15.585149)(38.828273,-15.835187)
+\psset{linewidth=0.100000cm}
+\psset{linestyle=solid}
+\psset{linestyle=solid}
+\setlinecaps{0}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\psline(41.815000,-13.385000)(41.756629,-9.099258)
+\psset{linestyle=solid}
+\setlinejoinmode{0}
+\setlinecaps{0}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\pspolygon*(41.751523,-8.724293)(41.508355,-9.227651)(41.756629,-9.099258)(42.008309,-9.220842)
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\pspolygon(41.751523,-8.724293)(41.508355,-9.227651)(41.756629,-9.099258)(42.008309,-9.220842)
+\psset{linewidth=0.100000cm}
+\psset{linestyle=solid}
+\psset{linestyle=solid}
+\setlinecaps{0}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\psline(39.375000,-6.412500)(31.806800,-6.440687)
+\psset{linestyle=solid}
+\setlinejoinmode{0}
+\setlinecaps{0}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\pspolygon*(31.431803,-6.442084)(31.932730,-6.690220)(31.806800,-6.440687)(31.930868,-6.190223)
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\pspolygon(31.431803,-6.442084)(31.932730,-6.690220)(31.806800,-6.440687)(31.930868,-6.190223)
+\psset{linewidth=0.100000cm}
+\psset{linestyle=solid}
+\psset{linestyle=solid}
+\setlinejoinmode{0}
+\setlinecaps{0}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\psline(26.450000,-6.412500)(26.450000,-6.462500)(10.995000,-6.462500)(10.995000,-12.951832)
+\psset{linestyle=solid}
+\setlinejoinmode{0}
+\setlinecaps{0}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\pspolygon*(10.995000,-13.326832)(11.245000,-12.826832)(10.995000,-12.951832)(10.745000,-12.826832)
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\pspolygon(10.995000,-13.326832)(11.245000,-12.826832)(10.995000,-12.951832)(10.745000,-12.826832)
+\psset{linewidth=0.100000cm}
+\psset{linestyle=solid}
+\psset{linestyle=solid}
+\setlinecaps{0}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\psline(16.495000,-25.130000)(16.477154,-29.163201)
+\psset{linestyle=solid}
+\setlinejoinmode{0}
+\setlinecaps{0}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\pspolygon*(16.475495,-29.538198)(16.727705,-29.039309)(16.477154,-29.163201)(16.227710,-29.037096)
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\pspolygon(16.475495,-29.538198)(16.727705,-29.039309)(16.477154,-29.163201)(16.227710,-29.037096)
+\psset{linewidth=0.100000cm}
+\psset{linestyle=solid}
+\psset{linestyle=solid}
+\setlinejoinmode{0}
+\setlinecaps{0}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\psline(8.620000,-15.680000)(1.986765,-15.680000)(1.986765,-31.850000)(13.613197,-31.850000)
+\psset{linestyle=solid}
+\setlinejoinmode{0}
+\setlinecaps{0}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\pspolygon*(13.988197,-31.850000)(13.488197,-31.600000)(13.613197,-31.850000)(13.488197,-32.100000)
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\pspolygon(13.988197,-31.850000)(13.488197,-31.600000)(13.613197,-31.850000)(13.488197,-32.100000)
+\setfont{Helvetica}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](5.050000,34.387500){\psscalebox{1 -1}{Random move}}
+\setfont{Helvetica}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](2.400000,33.437500){\psscalebox{1 -1}{Receive signal from other agent}}
+\setfont{Helvetica}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](6.450000,34.387500){\psscalebox{1 -1}{}}
+\setfont{Helvetica}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](19.850000,34.787500){\psscalebox{1 -1}{Approach the agent}}
+\setfont{Helvetica}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](20.350000,33.937500){\psscalebox{1 -1}{Response to help}}
+\setfont{Helvetica}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](23.000000,33.987500){\psscalebox{1 -1}{}}
+\setfont{Helvetica}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](31.800000,27.212500){\psscalebox{1 -1}{Cooperation}}
+\setfont{Helvetica}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](30.600000,26.262500){\psscalebox{1 -1}{Approach the antigen}}
+\setfont{Helvetica}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](22.350000,21.012500){\psscalebox{1 -1}{Random move}}
+\setfont{Helvetica}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](21.500000,20.262500){\psscalebox{1 -1}{Encounter an antigen}}
+\setfont{Helvetica}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](26.300000,21.712500){\psscalebox{1 -1}{}}
+\setfont{Helvetica}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](32.150000,17.037500){\psscalebox{1 -1}{Identified an antigen}}
+\setfont{Helvetica}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](32.050000,16.237500){\psscalebox{1 -1}{approach the antigen}}
+\setfont{Helvetica}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](30.500000,3.987500){\psscalebox{1 -1}{Wait until other agents respond}}
+\setfont{Helvetica}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](32.450000,3.137500){\psscalebox{1 -1}{Work on the antigen}}
+\setfont{Helvetica}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](16.850000,5.662500){\psscalebox{1 -1}{Work completed}}
+\setfont{Helvetica}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](17.350000,4.862500){\psscalebox{1 -1}{Random move}}
+\setfont{Helvetica}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](16.650000,16.737500){\psscalebox{1 -1}{Random move}}
+\setfont{Helvetica}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](15.850000,15.987500){\psscalebox{1 -1}{Encounter an antigen}}
+\setfont{Helvetica}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](6.398529,28.197794){\psscalebox{1 -1}{Received signal from other agent}}
+\setfont{Helvetica}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](8.751471,27.080147){\psscalebox{1 -1}{Approach the agent}}
+\setfont{Helvetica}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](2.280882,20.962500){\psscalebox{1 -1}{High concentration in wandering zone}}
+\setfont{Helvetica}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](5.222059,20.021324){\psscalebox{1 -1}{Agents disperse}}
+\setfont{Helvetica}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](21.398529,11.903676){\psscalebox{1 -1}{Identified an antigen}}
+\setfont{Helvetica}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](21.475000,10.902353){\psscalebox{1 -1}{Approach the antigen}}
+\setfont{Helvetica}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](35.810294,11.138971){\psscalebox{1 -1}{Fail to work alone}}
+\setfont{Helvetica}{0.800000}
+\newrgbcolor{dialinecolor}{0.000000 0.000000 0.000000}
+\psset{linecolor=dialinecolor}
+\rput[l](35.986765,10.021324){\psscalebox{1 -1}{Request for help}}
+}\endpspicture

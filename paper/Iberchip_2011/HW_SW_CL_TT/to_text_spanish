@@ -1,0 +1,41 @@
+#!/usr/bin/awk -f
+BEGIN {
+    FS = "[.?!]"
+    chars["n"] = "˜ñ"
+    chars["N"] = "˜Ñ"
+    chars["a"] = "´á"
+    chars["A"] = "´Á"
+    chars["e"] = "´é"
+    chars["E"] = "´É"
+    chars["ı"] = "´í"
+    chars["I"] = "´Í"
+    chars["o"] = "´ó"
+    chars["O"] = "´Ó"
+    chars["u"] = "´ú"
+    chars["U"] = "´Ú"
+}
+
+/Key Vocabulary/ {exit}
+
+    NR == 1 { sub(".*A: *","",$1) }
+
+    /^\(.*\) *$/ || \
+    /^(A|B): *$/ || \
+    /^ *$/ \
+        {next}
+
+{
+    punct = gensub($1"(.)"$2,"\\1","",$0)
+
+    for (i=0; i<=length($2); i++) {
+        char = substr($2,i,1);
+        if (char != " ") {
+            sub(substr(chars[char],1,1),substr(chars[char],2,1),$1)
+        }
+    }
+
+    printf "%s%s;", $1, punct
+    getline
+    print
+}
+

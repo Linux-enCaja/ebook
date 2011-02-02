@@ -1,0 +1,67 @@
+\documentclass[conference,a4paper]{IEEEtran}
+\usepackage[latin1]{inputenc}
+% \usepackage{enumerate}
+\usepackage{cite}      
+\usepackage{graphicx}  
+\usepackage{tikz}
+% \usepackage{verbatim}
+% \usepackage[floats,active,tightpage]{preview}
+% \usetikzlibrary{backgrounds,shapes,arrows,positioning,calc,snakes,fit}
+% \usepgflibrary{decorations.markings}
+
+\usepackage{psfrag}    
+\usepackage{subfigure} 
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{floatflt}
+\usepackage{amsmath}   % From the American Mathematical Society
+\usepackage[mathscr]{euscript}%Para letra en modo matemï¿½ico
+\usepackage{pst-all,pstricks,graphics,graphpap,amsmath,amssymb,latexsym,array}
+
+
+\newpsobject{grilla}{psgrid}{subgriddiv=1,griddots=10,gridlabels=6pt}
+\interdisplaylinepenalty=2500
+\usepackage{array}
+
+\hyphenation{semi-conduc-tor}
+
+\DeclareMathOperator{\sen}{sen}
+
+\begin{document}
+\bibliographystyle{unsrt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                 TITLE                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{SIE: Plataforma Hardware \textit{copyleft}  para la Enseñanza de Sistemas Digitales}
+
+\author{Carlos Iván Camargo -- Universidad Nacional de Colombia\\\ cicamargoba@unal.edu.co}
+  
+% \markboth{CAMARGO: SIE: Plataforma Hardware \textit{copyleft}  para la Enseñanza de Sistemas Digitales}
+% {Iberchip 2011}
+
+\maketitle
+\IEEEpeerreviewmaketitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                 ABSTRACT                   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+El gran avance de las técnicas de fabricación de Circuitos Integrados ha permitido que los sistemas embebidos sean parte fundamental de nuestra vida, aún sin darnos cuenta diariamente interactuamos con decenas de ellos; esto unido a la disponibilidad de herramientas software de desarrollo gratuitas (compiladores, simuladores, librerías, Sistemas Operativos, herramientas CAD) abre grandes posibilidades comerciales para paises en vía de desarrollo ya que no son necesarias grandes inversiones de capital para la concepción, diseño, y fabricación de estos sistemas. 
+
+Los dispositivos \textit{hardware copyleft} suministran la información necesaria para reproducir, modificar y construir el dispositivo físico, son el complemento ideal del software libre y del código abierto; la unión software libre y hardware copyleft constituye una herramienta muy poderosa para la transferencia tecnológica y de conocimientos en el diseño de sistemas digitales ya que pueden ser utilizadas como referencia para nuevos productos o como material de estudio. En este artículo se presentan las características de una plataforma \textit{hardware copyleft} y su aplicación en la enseñanza del diseño digital.
+
+\end{abstract}
+
+\begin{keywords}
+Educación en Ingeniería, Sistemas Embebidos, Hardware copyleft, Co-diseño HW/SW.
+\end{keywords}
+
+  \input intro
+
+\bibliography{./biblio.bib}
+
+\end{document}

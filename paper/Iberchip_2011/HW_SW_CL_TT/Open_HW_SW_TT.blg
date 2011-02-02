@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: Open_HW_SW_TT.aux
+The style file: unsrt.bst
+Database file #1: ./biblio.bib.bib
+Warning--empty year in WSCC
+Warning--empty year in CC
+Warning--empty journal in IAI
+Warning--empty year in IAI
+You've used 29 entries,
+            1791 wiz_defined-function locations,
+            596 strings with 8314 characters,
+and the built_in function-call counts, 4120 in all, are:
+= -- 331
+> -- 189
+< -- 0
++ -- 79
+- -- 50
+* -- 156
+:= -- 763
+add.period$ -- 86
+call.type$ -- 29
+change.case$ -- 28
+chr.to.int$ -- 0
+cite$ -- 33
+duplicate$ -- 224
+empty$ -- 417
+format.name$ -- 50
+if$ -- 883
+int.to.chr$ -- 0
+int.to.str$ -- 29
+missing$ -- 25
+newline$ -- 147
+num.names$ -- 29
+pop$ -- 97
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 86
+stack$ -- 0
+substring$ -- 6
+swap$ -- 26
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 4
+while$ -- 30
+width$ -- 31
+write$ -- 291
+(There were 4 warnings)

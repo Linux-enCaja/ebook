@@ -1,0 +1,58 @@
+\documentclass[conference,a4paper]{IEEEtran}
+\usepackage[latin1]{inputenc}
+\usepackage{enumerate}
+\usepackage{cite}      
+\usepackage{graphicx}  
+\usepackage{tikz}
+\usepackage{psfrag}    
+\usepackage{subfigure} 
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{floatflt}
+\usepackage{amsmath}   % From the American Mathematical Society
+\usepackage[mathscr]{euscript}%Para letra en modo matemï¿½ico
+\usepackage{pst-all,pstricks,graphics,graphpap,amsmath,amssymb,latexsym,array}
+
+\newpsobject{grilla}{psgrid}{subgriddiv=1,griddots=10,gridlabels=6pt}
+\interdisplaylinepenalty=2500
+\usepackage{array}
+
+\hyphenation{semi-conduc-tor }
+
+\DeclareMathOperator{\sen}{sen}
+
+\begin{document}
+\bibliographystyle{unsrt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                 TITLE                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{El papel del Hardware \textit{copyleft} en la Enseñanza de Sistemas Embebidos}
+
+\author{
+
+\IEEEauthorblockN{Carlos I. Camargo Bareño}
+\IEEEauthorblockA{Universidad Nacional de Colombia,
+Email: cicamargoba@unal.edu.co}
+}
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                 ABSTRACT                   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+El gran avance de las técnicas de fabricación de Circuitos Integrados ha permitido que los sistemas embebidos sean parte fundamental de nuestras vidas, aún sin darnos cuenta diariamente interactuamos con decenas de ellos. Esto unido a la disponibilidad de herramientas software de desarrollo gratuitas abre grandes posibilidades comerciales para paises en vía de desarrollo ya que no son necesarias grandes inversiones de capital para la concepción, diseño, y fabricación de estos sistemas. Sin embargo, en la actualidad muy pocas universidades ofrecen cursos que permitan crear las habilidades necesarias para la realización de un producto comercializable, lo que se traduce en un abandono de la producción local y el aumento de la dependencia con la industria manufacturera asiática. por otro lado, las herramientas utilizadas en la actualidad (tanto SW como HW) proporcionan un nivel de abstracción relativamente alto impidiendo que el estudiante entienda el funcionamiento global de un sistema digital, lo que le impide generar habilidades (especificamente las relacionadas con la concepción e implementación) necesarias para realizar el proceso completo. En este artículo se presenta una metodología para la enseñanza de diseño de sistemas embebidos utilizando herramientas hardware y software abiertas que ayuda a resolver los problemas mencionados anteriormente.
+\end{abstract}
+
+\begin{keywords}
+Sistemas Embebidos, educación en ingeniería, hardware copyleft.
+\end{keywords}
+
+\IEEEpeerreviewmaketitle
+
+\input intro
+ 
+\bibliography{./biblio.bib}
+
+\end{document}

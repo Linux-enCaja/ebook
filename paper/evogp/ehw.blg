@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: ehw.aux
+The style file: plain.bst
+Database file #1: ./biblio_EHW.bib.bib
+Warning--empty year in WSCC
+Warning--empty year in JJPR
+You've used 14 entries,
+            2118 wiz_defined-function locations,
+            571 strings with 5899 characters,
+and the built_in function-call counts, 3625 in all, are:
+= -- 330
+> -- 214
+< -- 0
++ -- 86
+- -- 70
+* -- 220
+:= -- 672
+add.period$ -- 42
+call.type$ -- 14
+change.case$ -- 76
+chr.to.int$ -- 0
+cite$ -- 16
+duplicate$ -- 136
+empty$ -- 254
+format.name$ -- 70
+if$ -- 715
+int.to.chr$ -- 0
+int.to.str$ -- 14
+missing$ -- 13
+newline$ -- 73
+num.names$ -- 28
+pop$ -- 93
+preamble$ -- 1
+purify$ -- 63
+quote$ -- 0
+skip$ -- 99
+stack$ -- 0
+substring$ -- 72
+swap$ -- 14
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 54
+warning$ -- 2
+while$ -- 28
+width$ -- 16
+write$ -- 140
+(There were 2 warnings)

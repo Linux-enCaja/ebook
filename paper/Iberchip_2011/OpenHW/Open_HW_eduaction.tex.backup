@@ -1,0 +1,77 @@
+\documentclass[journal,a4paper]{IEEEtran}
+\usepackage[latin1]{inputenc}
+\usepackage{enumerate}
+\usepackage{cite}      
+\usepackage{graphicx}  
+\usepackage{tikz}
+% \usepackage{verbatim}
+% \usepackage[floats,active,tightpage]{preview}
+% \usetikzlibrary{backgrounds,shapes,arrows,positioning,calc,snakes,fit}
+% \usepgflibrary{decorations.markings}
+
+\usepackage{psfrag}    
+\usepackage{subfigure} 
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{floatflt}
+\usepackage{amsmath}   % From the American Mathematical Society
+\usepackage[mathscr]{euscript}%Para letra en modo matemï¿½ico
+\usepackage{pst-all,pstricks,graphics,graphpap,amsmath,amssymb,latexsym,array}
+
+
+\usepackage{listings}
+\lstset{language=C} 
+% \lstset{ basicstyle=\small, keywordstyle=\color{blue}\bfseries, identifierstyle=, commentstyle=\color{gray}, showstringspaces=false}
+\lstset{backgroundcolor=\color{white},frame=single,emph={EMPTY},emphstyle=\color{white}, showstringspaces=false}
+
+
+\newpsobject{grilla}{psgrid}{subgriddiv=1,griddots=10,gridlabels=6pt}
+\interdisplaylinepenalty=2500
+\usepackage{array}
+
+\hyphenation{semi-conduc-tor }
+
+\DeclareMathOperator{\sen}{sen}
+
+\begin{document}
+\bibliographystyle{unsrt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                 TITLE                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{SIE: Plataforma Hardware \textit{copyleft}  para la Enseñanza de Sistemas Digitales}
+
+\author{Carlos Iván Camargo -- Universidad Nacional de Colombia\\\ cicamargoba@unal.edu.co}
+
+\markboth{CAMARGO\MakeLowercase{\textit{ et al.}}: SIE: Plataforma Hardware \textit{copyleft}  para la Enseñanza de Sistemas Digitales}
+{Iberchip 2011}
+
+\maketitle
+\IEEEpeerreviewmaketitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                 ABSTRACT                   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+El gran avance de las técnicas de fabricación de Circuitos Integrados ha permitido que los sistemas embebidos sean parte fundamental de nuestra vida, aún sin darnos cuenta diariamente interactuamos con decenas de ellos. Esto unido a la disponibilidad de herramientas software de desarrollo gratuitas (compiladores, simuladores, librerías, Sistemas Operativos, herramientas CAD) abre grandes posibilidades comerciales para paises en vía de desarrollo ya que no son necesarias grandes inversiones de capital para la concepción, diseño, y fabricación de estos sistemas. La utilización de herramientas de desarrollo comerciales en la enseñanza de técnicas de diseño de sistemas digitales, impide la creación de ciertas habilidades necesarias para la producción de dispositivos digitales comercializables; esto debido a que no existe información sobre el proceso de diseño, y en muchas ocasiones existen bloques funcionales que no son documentados. Por otro lado, su uso en aplicaciones comerciales crea dependencia hacia los dispositivos COTS (Commercial, off-the-shelf) lo que reduce la demanda local de productos, bienes y servicios relacionados con la manufactura. Lo que afecta la oferta de empleo para una gran variedad de técnicos y profesionales.  
+
+Los dispositivos \textit{hardware copyleft} suministran la información necesaria para reproducir, modificar y construir el dispositivo físico, son el complemento ideal del software libre y del código abierto; la unión software libre y hardware copyleft constituye una herramienta muy poderosa para la transferencia tecnológica y de conocimientos en el diseño de sistemas digitales. 
+
+
+
+En este artículo se presenta una metodología para la enseñanza de diseño de sistemas embebidos utilizando herramientas hardware y software abiertas que ayuda a resolver los problemas mencionados anteriormente.
+\end{abstract}
+
+\begin{keywords}
+Educación en Ingeniería, Sistemas Embebidos, Hardware copyleft, Co-diseño HW/SW.
+\end{keywords}
+
+  \input intro
+
+\section{BIBLIOGRAFÍA}
+\bibliography{./biblio.bib}
+
+\end{document}

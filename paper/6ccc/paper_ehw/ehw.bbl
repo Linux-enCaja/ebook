@@ -1,0 +1,84 @@
+\begin{thebibliography}{10}
+
+\bibitem{DGJH98}
+{D Goldberg} and {J Holland.}
+\newblock Genetic algorithms and machine learning.
+\newblock {\em Machine Learning}, January 1998.
+
+\bibitem{FR06}
+{F. Rothlauf}.
+\newblock {\em Representations for genetic and evolutionay algorithms.}
+\newblock Springer, January 2006.
+
+\bibitem{JKFB+99}
+{J Koza}, {F Bennett}, {D Andre}, and {M Keane}.
+\newblock Genetic programming iii: darwinian invention and problem solving.
+\newblock {\em Evolutionary Computation}, January 1999.
+
+\bibitem{THTN+92}
+{T Higuchi}, {T Niwa}, {T Tanaka}, {H Iba}, and {H de Garis}.
+\newblock Evolving hardware with genetic learning: a rst step towards building
+  a darwin machine.
+\newblock {\em Proc. of the second Int. Conf. on from animals to animats},
+  January 1992.
+
+\bibitem{JMPT98}
+{J Miller} and {P Thomson}.
+\newblock Aspects of digital evolution: {E}volvability and architecture.
+\newblock {\em Lecture Notes in Computer Science}, January 1998.
+
+\bibitem{QYCC06}
+{Q. Yu}, {C. Chen}, and {C. Pan}.
+\newblock Parallel genetic algoritms on programmable graphics hardware.
+\newblock {\em Lecture notes in computer scienc}, January 2006.
+
+\bibitem{RKYZ02}
+{R Krohling}, {Y Zhou}, and {A Tyrrell}.
+\newblock Evolving fpga-based robot controllers using an evolutionary
+  algorithm.
+\newblock {\em Proc. I Int. Conf. on Articial Immune Syst}, January 2002.
+
+\bibitem{JMPT98b}
+{J Miller} and {P Thomson}.
+\newblock Aspects of digital evolution: {E}volvability and architecture.
+\newblock {\em Lecture Notes in Computer Science}, January 1998.
+
+\bibitem{WSCC}
+{C. Camargo}, {W. Spraul}, and {A. Wang}.
+\newblock Proyecto {SAKC}.
+\newblock {\em URL:http://en.qi-hardware.com/wiki/SAKC}.
+
+\bibitem{CCb}
+{Creative Commons}.
+\newblock Licencias {C}reative {C}ommons.
+\newblock URL: http://creativecommons.org/licenses., 2004.
+
+\bibitem{RS07}
+{R. Stallman}.
+\newblock Philosophy of the {GNU} project.
+\newblock URL: http://www.gnu.org/philosophy/, 2007.
+
+\bibitem{CC}
+{C. Camargo}.
+\newblock Proyecto {SIE}.
+\newblock URL:http://en.qi-hardware.com/wiki/Sie.
+
+\bibitem{RORA+07}
+{R. Oreifej}, {R. Al-haddad}, {H. Tan}, and {R. Demara}.
+\newblock L{AYERED} {APPROACH} {TO} {INTRINSIC} {EVOLVABLE} {HARDWARE} {USING}
+  {DIRECT} {BITSTREAM} {MANIPULATION} {OF} {VIRTEX} {II} {PRO} {DEVICES}.
+\newblock {\em International Conference on Field Programmable Logic and
+  Applications}, 2007.
+
+\bibitem{JJPR}
+{J. Jeon} and {P. Rhee}.
+\newblock An {E}volvable {H}ardware {S}ystem {U}nder {V}arying {I}llumination
+  {E}nvironment.
+\newblock {\em Advances in Natural Computation}.
+
+\bibitem{ZVLS07}
+{Z. Vasicek} and {L. Sekanina}.
+\newblock An evolvable hardware system in {X}ilinx {V}irtex {II} {P}ro {FPGA}.
+\newblock {\em Int. J. Innovative Computing and Applications}, 2007.
+
+\end{thebibliography}

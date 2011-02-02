@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: Open_Robotics.aux
+The style file: unsrt.bst
+Database file #1: ./biblio_EL.bib.bib
+Warning--can't use both author and editor fields in JaMJM05
+Warning--can't use both author and editor fields in DA09
+You've used 20 entries,
+            1791 wiz_defined-function locations,
+            555 strings with 7027 characters,
+and the built_in function-call counts, 3350 in all, are:
+= -- 282
+> -- 144
+< -- 3
++ -- 58
+- -- 38
+* -- 143
+:= -- 582
+add.period$ -- 62
+call.type$ -- 20
+change.case$ -- 17
+chr.to.int$ -- 0
+cite$ -- 22
+duplicate$ -- 181
+empty$ -- 340
+format.name$ -- 38
+if$ -- 749
+int.to.chr$ -- 0
+int.to.str$ -- 20
+missing$ -- 18
+newline$ -- 103
+num.names$ -- 24
+pop$ -- 74
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 81
+stack$ -- 0
+substring$ -- 48
+swap$ -- 38
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 2
+while$ -- 26
+width$ -- 22
+write$ -- 211
+(There were 2 warnings)

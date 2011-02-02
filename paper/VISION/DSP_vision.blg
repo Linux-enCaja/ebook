@@ -1,0 +1,45 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: DSP_vision.aux
+The style file: unsrt.bst
+Database file #1: ./vision.bib.bib
+You've used 10 entries,
+            1791 wiz_defined-function locations,
+            495 strings with 5206 characters,
+and the built_in function-call counts, 1432 in all, are:
+= -- 115
+> -- 70
+< -- 0
++ -- 29
+- -- 19
+* -- 53
+:= -- 276
+add.period$ -- 30
+call.type$ -- 10
+change.case$ -- 11
+chr.to.int$ -- 0
+cite$ -- 10
+duplicate$ -- 73
+empty$ -- 140
+format.name$ -- 19
+if$ -- 303
+int.to.chr$ -- 0
+int.to.str$ -- 10
+missing$ -- 7
+newline$ -- 53
+num.names$ -- 10
+pop$ -- 31
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 28
+stack$ -- 0
+substring$ -- 0
+swap$ -- 8
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 10
+width$ -- 12
+write$ -- 104

@@ -1,0 +1,96 @@
+Reviewer: 1
+
+
+  Originality : Fair
+  Quality : Below average
+  Relevance : Good
+  Presentation : Weak
+
+Summary: Parallel GP using FPGAs
+
+Details:
+Although potentially interesting, unfortunately the paper
+is generally rather poorly written and does not seem to have a
+clear focus on whether it is improving implementation methods,
+or is a new algorithm for cobinational synthesis.
+
+Revisar Objetivo del paper y como se introduce el problema.
+
+
+sections 3.0 and 3.1 seem to be more like an advertisement than scientific.
+
+=====================================
+
+Reviewer: 2
+
+
+Summary: This paper describes a ‘low-cost’ hardware system for running parallel genetic programming in order to evolve hardware designs. The authors present some experimental evidence to support their claim that the approach is superior to other techniques.
+
+Quitar low-cost del título
+
+Cálculo de costo de evolucionar un individuo y no poner como si la siE pudiera reemplazar a las GPU.
+
+Añadir las referencias: papers by, for example, Bill Langdon, Pierre Collet and Simon Harding, have demonstrated very impressive speed-ups that I think would be hard to beat using a system such as the one proposed. 
+
+Hacer una comparación del método propuesto con los ya existentes.
+
+Unfortunately, the system is evaluated on only one problem, and even that is not fully detailed in the paper. 
+Hacer una descripción completa del experimento y tratar de poner ejemplos solo con SIE.
+=====================================
+
+Reviewer: 3
+
+Details: The paper proposes a new accelerator for combinational circuit evolution. Motivation for this work is not clear. Is the goal to minimize the number of gates or obtain a relatively good solution as quickly as possible? The state of the art is not well surveyed, see some examples below. Results are given for one benchmark problem only, which is not sufficient in this area. Comparing the resulting circuit (which is composed of XOR gates) with conventional methods such as Karnaugh map or QuineMcCluskey method is not fair as these conventional methods do not support any XOR decomposition.
+
+Regarding the speedup, see:
+@ARTICLE{
+  author = {R. Poli and J. Page},
+  title = {Solving High-Order Boolean Parity Problems with Smooth Uniform Crossover, Sub-Machine Code GP and Demes},
+  pages = {37--56},
+  journal = {Genetic Programming and Evolvable Machines},
+  volume = {1},
+  number = {1--2},
+  year = {2000}
+}
+@INPROCEEDINGS{
+  author = {Zdenek Vasicek and Lukas Sekanina},
+  title = {Hardware Accelerators for Cartesian Genetic Programming},
+  pages = {230--241},
+  booktitle = {Eleventh European Conference on Genetic Programming},
+  series = {LNCS 4971},
+  year = {2008},
+  publisher = {Springer Verlag},
+}
+
+
+Regarding the quality of optimization, see:
+@InProceedings{
+ author = "V. Vassilev and D. Job and Julian F. Miller",
+ title = "{Towards the Automatic Design of More Efficient Digital Circuits}",
+ booktitle = "Proc. of the 2nd NASA/DoD Workshop on Evolvable Hardware",
+ address = "Los Alamitos, CA, USA",
+ editor = "J. Lohn and A. Stoica and D. Keymeulen and S. Colombano",
+ publisher = "IEEE Computer Society",
+ year = "2000",
+ pages = "151--160",
+}
+
+@INPROCEEDINGS{
+  author = {Zbysek Gajda and Lukas Sekanina},
+  title = {An Efficient Selection Strategy for Digital Circuit
+       Evolution},
+  pages = {13--24},
+  booktitle = {Evolvable Systems: From Biology to Hardware},
+  series = {LNCS 6274},
+  year = {2010},
+  publisher = {Springer Verlag},
+}
+
+
+=====================================
+
+Reviewer: 4
+
+The results of the evolution may be a little disappointing.  I would suggest the authors look at other representations (e.g. CGP, or maybe SMCGP) where these problems have been solved faster.
+
+The authors should also fix the formatting in the references.  Also there are a couple of unresolved references, but I assume this is a latex glitch.

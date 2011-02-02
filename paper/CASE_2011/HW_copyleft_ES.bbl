@@ -1,0 +1,90 @@
+\begin{thebibliography}{10}
+
+\bibitem{Sta99}
+R.~M. Stallman.
+\newblock {\em The {GNU} {O}perating {S}ystem and the {F}ree {S}oftware
+  {M}ovement {V}oices from the {O}pen {S}ource {R}evolution}.
+\newblock O'Reilly and Associates, 1999.
+
+\bibitem{AG10}
+{A. Grove}.
+\newblock How {A}merica {C}an {C}reate {J}obs.
+\newblock
+  http://www.businessweek.com/magazine/content/10\_28/b4186048358596.htm, May
+  2010.
+
+\bibitem{JH09}
+{Jon Hall}.
+\newblock P{OR} {GRANDES} {QUE} {SEAN}...: {ASEGURE} {EL} {FUTURO} {DE} {SU}
+  {NEGOCIO}.
+\newblock {\em Linux magazine,}, ISSN 1576-4079(58):92, 2009.
+
+\bibitem{HMHK09}
+{H. Mitsui}, {H. Kambe}, and {H. Koizumi}.
+\newblock Use of {S}tudent {E}xperiments for {T}eaching {E}mbedded {S}oftware
+  {D}evelopment {I}ncluding {HW}/{SW} {C}o-{D}esign.
+\newblock {\em IEEE TRANSACTIONS ON EDUCATION,}, 52(3), August 2009.
+
+\bibitem{AGDG+02}
+{A. Gerstlauer}, {D. Gajski.}, {. Technical Report CECS-02-17}, and 2002. CECS,
+  UC~Irvine.
+\newblock System-level abstraction semantics, {T}echnical {R}eport
+  {CECS}-02-17.
+\newblock Technical report, CECS, UC Irvine, 2002.
+
+\bibitem{GDAS09}
+{Gajski D.D.}, {Abdi S.}, {Gerstlauer A.}, and {Schirner G.}
+\newblock {\em Embedded {S}ystem {D}esign: {M}odeling, {S}ynthesis,
+  {V}erification}.
+\newblock Springer, 2009.
+
+\bibitem{Cor05}
+{Luis Alejandro Cort\'es}.
+\newblock {\em Verification and {S}cheduling {T}echniques for {R}eal-{T}ime
+  {E}mbedded {S}ystems}.
+\newblock PhD thesis, Link\"opings universitet Institute of Technology, 2005.
+
+\bibitem{QH}
+{Qi Hardware}.
+\newblock Qi {H}ardware {C}opyleft {H}ardware {P}roject.
+\newblock URL: http://en.qi-hardware.com/.
+
+\bibitem{RS07}
+{R. Stallman}.
+\newblock Philosophy of the {GNU} project.
+\newblock URL: http://www.gnu.org/philosophy/, 2007.
+
+\bibitem{WSCC}
+{W. Spraul}, {C. Camargo}, and {A. Wang}.
+\newblock Proyecto {SAKC}.
+\newblock {\em URL:http://en.qi-hardware.com/wiki/SAKC}.
+
+\bibitem{CCb}
+{Creative Commons}.
+\newblock Licencias {C}reative {C}ommons.
+\newblock URL: http://creativecommons.org/licenses., 2004.
+
+\bibitem{CC10}
+{C. Camargo}.
+\newblock Proyecto {SIE}: {D}escargas.
+\newblock
+  http://projects.qi-hardware.com/index.php/p/nn-usb-fpga/source/tree/master/,
+  2010.
+
+\bibitem{CC10b}
+{C. Camargo}.
+\newblock Proyecto {SIE}: {D}ocumentaci\'on.
+\newblock http://en.qi-hardware.com/wiki/SAKC, 2010.
+
+\bibitem{TI96}
+{Texas Instruments}.
+\newblock I{EEE} {S}td 1149.1 ({JTAG}) {T}estability.
+\newblock {\em 1997 Semiconductor Group}, 1996.
+
+\bibitem{SS06}
+{S. Shah}.
+\newblock Motivation, {G}overnance, and the {V}iality of {H}ybrid {F}orms in
+  {O}pen {S}ource {S}oftware {D}evelopment.
+\newblock {\em Management Science}, July 2006.
+
+\end{thebibliography}

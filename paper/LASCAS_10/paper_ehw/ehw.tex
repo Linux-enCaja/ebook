@@ -1,0 +1,209 @@
+\documentclass[conference]{IEEEtran}
+\usepackage[latin1]{inputenc}
+\usepackage{enumerate}
+\usepackage{cite}      
+\usepackage{graphicx}  
+\usepackage{psfrag}    
+\usepackage{subfigure} 
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{floatflt}
+\usepackage{amsmath}   % From the American Mathematical Society
+\usepackage[mathscr]{euscript}%Para letra en modo matemï¿½ico
+\usepackage{pst-all,pstcol,graphics,graphpap,amsmath,amssymb,latexsym,array}
+
+
+\usepackage{listings}
+\lstset{language=C} 
+% \lstset{ basicstyle=\small, keywordstyle=\color{blue}\bfseries, identifierstyle=, commentstyle=\color{gray}, showstringspaces=false}
+\lstset{backgroundcolor=\color{white},frame=single,emph={EMPTY},emphstyle=\color{white}, showstringspaces=false}
+
+
+\newpsobject{grilla}{psgrid}{subgriddiv=1,griddots=10,gridlabels=6pt}
+\interdisplaylinepenalty=2500
+\usepackage{array}
+
+\hyphenation{semi-conduc-tor }
+
+\DeclareMathOperator{\sen}{sen}
+
+\begin{document}
+\bibliographystyle{unsrt}
+
+\title{Low Cost Platform for Evolvable-Based Boolean Synthesis}
+\author{
+\IEEEauthorblockN{César Pedraza Bonilla} 
+\IEEEauthorblockA{Facultad de Ingeniería de Telecomunicaciones. \\ Universidad Santo Tomás - Bogotá. \\ cesarpedraza@usantotomas.edu.co}
+\and
+\IEEEauthorblockN{Carlos Iván Camargo}
+\IEEEauthorblockA{Facultad de Ingeniería \\ Universidad Nacional de Colombia - Bogotá.\\\ cicamargoba@unal.edu.co}
+}
+
+\markboth{Síntesis Booleana Mediante Algoritmos Evolutivos en una Plataforma Abierta de Bajo Costo.}{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Journals}
+
+
+\maketitle
+
+\IEEEpeerreviewmaketitle
+
+\begin{abstract}
+Evolutionary algorithms are another option to the combinational synthesis because they allow to create hardware structures that can not be obtained with other techniques. This paper shows a parallel genetic programming (PGP) boolean synthesis implementation based on a low cost cluster of a embedded platform called SIE, based on a 32-bit processor and Spartan-3 FPGAs. Some task of the PGP has been accelerated in hardware and results has been compared with an HPC implementation, resulting speed-up values up to 40 approximately.
+\end{abstract}
+
+\begin{keywords}
+Embedded systems, Evolutionary algorithms, boolean synthesis, cluster.
+\end{keywords}
+
+% &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+%                                                                                         INTRODUCCIÓN
+% &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+\section{Introduction.}
+
+One of the main aims in combinational synthesis consists of finding compact boolean expressions in the sum of products (SOP) form with the smallest possible number of variables and terms. Boolean algebra offers a way to find compact expressions, but this process depends on the designer's experience, resulting in non-optimal or inadequate expressions. There are other techniques available for combinational synthesis such as the Karnaugh maps, the Quine-McCluskey algorithm, the Reed-Muller algorithm, etc. In general terms, these algorithms have disadvantages like exponential complexity, lack of restrictions management, and multiple solutions.
+As an alternative to the traditional design of combinational circuits, some authors have proposed bio-inspired techniques based on simple genetic algorithms (SGAs), variable-length genetic algorithms (VGAs), tree-based genetic programming (GP), simulated annealing, ant colony algorithms etc. These strategies allow to create combinational blocks that cannot be obtained with the traditional methods, and to add some restrictions to the design such as delay, area, etc. These designs have a very low limited number of variables \cite{DGJH98} and they are mainly oriented to obtain a few basic structures.
+
+In order to use parallel genetic programming (PGP) we have developed an FPGA cluster-based architecture to solve combinational synthesis problem on-chip. The fitness coprocessor unit (FCU) on each FPGA helps to accelerate the convergence of the algorithm, as well as provides an appropriate support for 12 variables synthesis problems. The success of the system is mainly due to the capability of evaluating a chromosome in the FPGA through a virtual LUT-oriented architecture without using high-latency partial reconfiguration techniques, and determining the fitness value for an individual faster than other references.
+
+% &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+%                                                                     PROGRAMACION GENETICA 
+% &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+\section{Genetic Programming to Combinational Synthesis}
+This section describes some of the most important aspects of the evolutionary algorithm for the combinational synthesis problem, such as chromosome representation, the fitness problem and the genetic operators:Chromosome representation. The codification is the way a logic circuit is represented using a bit array in order to be managed in the evolution process \cite{FR06}. This representation must be able to represent all the different solutions of the problem, also the crossing and muting operators should not generate unreal individuals, and it must cover all the solution space so the search is really random. There are different ways of representing combinational hardware for a genetic algorithm: tree-based representation in 2-D, PLD-like structures and cartesian representation are some of them \cite{JKFB+99} \cite{THTN+92} \cite{JMPT98}
+
+The 2-D tree representation is appropriated for implementing parallel systems because allows splitting the chromosomes for balancing the computational load \cite{QYCC06}. Figure \ref{fig:cell_structure} shows the selected cell-based structure representation. Each cell has 3 functions $f$ and 4 input variables $v$ coded in binary. This representation allows adding more cells to represent larger circuits. It must be mentioned that the chromosome length has to be variable because the length of the solution to the synthesis problem is a priori unknown. 
+
+\subsection{Fitness function.}
+Finding the appropriate fitness function is important because it is responsible of quantifying the way a chromosome or individual meets or not the requirements.
+
+
+\begin{figure}[htpb]
+\begin{center} 
+\includegraphics[width=7cm]{./images/fitness} \end{center}
+\caption{Cell-based structure representation.}\label{fig:cell_structure}
+\end{figure}
+
+
+\begin{equation}
+\label{fitness}
+fitness=\omega_{1} . [ \sum_{j=1}^m \sum_{i=1}^n Y(j,i)-X(j,i) ] + \omega_{2}.P(x) + \omega_{3}.L(x)
+\end{equation}
+
+
+In equation \ref{fitness} the fitness function for our GA is shown. Constants $\omega_{1}$, $\omega_{2}$ and $\omega_{3}$ are used for establishing the weights of each of the parameters that will determine the fitness function. The double-summation term calculates the number of coincidences of the individual X for all the possible combinations at the output with the target functions Y. The $P(X)$ function is used for calculating the number of logic gates of a chromosome taking into account some of the $introns$ or segments of the genotype string that will not have any associated function and that do not contribute to the result of the logic circuit they represent. The function $L(X)$ is used for determining the number of levels the circuit has, or in other words the number of gates that the critical path crosses. The $m$ constant means the number of outputs in the circuit and $n$ the number of possible combinations of inputs in the circuit.
+
+\subsection{Genetic operators.}
+The selection operator is responsible of identifying the best individuals of the population taking into account the exploitation and the exploration \cite{QYCC06}. The first one allows the individuals with better fitness to survive and reproduce more often, and the second one means searching in more areas and making possible to find better results. In the other hand, the mutation operator modifies the chromosome randomly in order to increase the search space. It can change: 1) an operator or variable
+and 2) a segment in the chromosome. Both are executed randomly and with a certain probability. A variable mutating probability during the execution of the algorithm (evolvable mutation) \cite{RKYZ02} is more effective for evolvable systems. Finally, the crossing operator combines two selected individuals for obtaining two additional individuals to add to the population. A crossing system with one or two crossing points randomly selected has been implemented because it is more efficient for evolvable systems \cite{JMPT98b}.
+
+
+% &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+%                                                                     PROGRAMACION GENETICA 
+% &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+\section{Plataforma Hardware copyleft SIE}
+El proyecto hardware copyleft SIE \cite{WSCC} permite la creación de aplicaciones comerciales bajo la licencia Creative Commons BY - SA \cite{CCb} la que permite la distribución y modificación del diseño (incluso para aplicaciones comerciales), con el único requisito de que los productos derivados deben tener la misma licencia y deben dar crédito al autor del trabajo original. Lo que constituye la base de los productos \textit{hardware copyleft}.
+
+
+\subsection{Hardware copyleft}
+Al ser inspirado en el movimiento FOSS, los dispositivos \textit{hardware copyleft} comparten la misma filosofía \cite{RS07}, y son su complemento perfecto. Los requisitos para que un dispositivo HW sea reproducible y modificable son: Disponibilidad de los esquemáticos y los archivos de la placa de circuito impreso en un formato que permita el uso de herramientas abiertas; la cadena de herramientas de compilación y depuración para desarrollo de aplicaciones; el código fuente de: el programa que inicializa la plataforma, la herramienta que carga dicho programa en la memoria no volátil, el sistema de archivos y aplicaciones; documentación completa que indique como fué diseñada, construida, como utilizarla, como desarrollar aplicaciones y tutoriales que expliquen el funcionamiento de los diferentes componentes. \footnote{Todo esto se encuentra disponible en: http://projects.qi-hardware.com/index.php/p/nn-usb-fpga/}. Adicionalmente, se debe contar con la posibilidad de fabricación y montaje, lo que constituye la principal diferencia entre el software y el hardware libre. Esto contrasta fuertemente con el movimiento de software libre, en donde no se requiere inversión de capital para modificar un proyecto existente. Por esta razón, pueden existir varios niveles de libertad, un proyecto que utilice componentes costosos y de difícil consecución limitará su alcance a un sector determinado.
+
+
+\subsection{Arquitectura de la plataforma SIE}
+La plataforma SIE está compuesta por (Figura \ref{SIE_arch}) un System on Chip MIPS (Ingenic JZ4725) de 400 MHz con periféricos que permiten controlar: una memoria NAND de 2GB para almacenamiento de datos y programas, una memoria SDRAM de 32 MB un canal de comunicación serial (UART), memorias micro-SD, un puerto I2C, un LCD a color de 3 pulgadas, 2 entradas y salidas de audio stereo, 2 entradas análogas; una FPGA XC3S500E de Xilinx que proporciona 25 señales de entrada/salida digitales de propósito general (GPIOs) y controla un conversor análogo digital de 8 canales. Existen dos canales de comunicación entre la FPGA y el procesador: uno para controlar el puerto JTAG, lo que permite la configuración de la FPGA y ejecución de pruebas a los circuitos implementados en ella; y otro que proporciona el bus de datos, dirección y control para comunicarse con las tareas HW o periféricos implementados en la FPGA.
+
+ \begin{figure}[htpb]
+   \begin{center} \includegraphics[scale=.45]{./images/SIE_block_diagram.png}   \end{center}
+    \caption{Estructura de la plataforma de desarrollo SIE} \label{SIE_arch}
+ \end{figure}
+
+SIE proporciona un canal de comunicación y alimentación a través del puerto USB, y es configurado para ser utilizado como una interfaz de red, permitiendo la transferencia de archivos y ejecución de una consola remota utilizando el protocolo \textit{ssh}; este canal de comunicación también se utiliza para programar la memoria NAND no volátil, por lo que para realizar la programación completa de los componentes de la plataforma solo es necesario un cable USB. 
+
+
+\section{EA implementation.} 
+The algorithm was implemented in two stages: the first one is about software development and the second one refers to a hardware implementation to speed it up on SIE plataform.
+
+\subsection{Software design.}
+Natural evolution works with a whole population not with a single individual (except for selection and reproduction) some operations can be done separately, therefore almost all operations in a GP are implicitly parallel. Using the island approach, the population is divided into sub-populations that will evolve in each processor of the cluster or parallel architecture. When the system starts, each processor creates its sub-population and starts the evolution process, made up of fitness evaluation, selection, crossing, mutation and reproduction. Once the system reaches a number of generations, some individuals are selected to be transfer from one processor to another. A master processor is in charge of collecting the in-transfer individuals and to move them to the rest of the nodes (slaves), increasing the probability of convergence of the algorithm. The ratio of data exchange (the number of the best individuals to exchange increases the probability of finding a better solution) and migration frequency are important parameters to improve the performance of the algorithm. To implement communications in SIE, a custom message passing library was created program the distributed system.
+
+
+\subsection{Hardware design.}
+In the second stage a profiling of the software implementation determined that the most consuming part were the fitness function calculation and the new individual generation (25\% and 35\% of the execution time, respectively). Therefore, these two steps have been accelerated with a coprocessor in the FPGA. The Fitness Calculation Unit (FCU, see Figure \ref{fig:hw_block}) is the hardware element designed in order to accelerate this processes. This coprocessor is connected to the JZ4725 processor through its custom interface.                                                              
+
+The chromosome pass from the DRAM memory to the FCU through the custom interface, and each of its cells are converted to a equivalent Look Up Table in ROM based translation. Then the number of wrong minterms is calculated using the information from the objective function and a counter as inputs. Finally the FCU calculates the final fitness value including the number of gates and the critical path, and will be send back to the JZ4735 processor. In order to speed up pseudo random number generation, a Mersenne-Twister-based was inserted through the same custom interface. 
+
+\begin{figure}[htpb]
+\begin{center} 
+\includegraphics[width=9cm]{./images/hw_block_diagram} \end{center}
+\caption{FCU structure.}\label{fig:hw_block}
+\end{figure}
+
+% &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+%                                                      EVALUACION
+% &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+\section{Evaluation.}
+To obtain the performance and prove the scalability of the algorithm in SIE, it was compared to a High Performance cluster called ALTAMIRA. The cluster setup is made up of 18 eServer BladeCenter, with 256 JS20 nodes (512 processors), using a Myrinet network with 1 Gbps bandwidth. On the other hand, the SIE configuration is made up of 6 JZ4725-FPGA nodes with the architecture described before. The tests  response time measurements for the parallelized versions of the GP both in ALTAMIRA and SIE. Several scenarios have been checked with different input parameter configurations: 1) number of input variables (4, 8 or 12, corresponding to a comparator problem of 2, 4 and 6 bits); 2) population size (512, 1024 or 2048) and 3) number of nodes running the experiment, ranged from 1 to 6 in SIE, and 2 to 16 or 64 in ALTAMIRA. The first and second parameter determine the size of the problem. The last one, gives an idea about the scalability of the system.
+
+\subsection{Response Time.}
+Figures \ref{fig:rt_vars} shows the response time for both platforms with different number of nodes and variables with 1024 individuals during 100 generations. These results the high performance of SIE cluster for the algorithm. This experiment demonstrate that response time for SIE do not depends of the size of the problem. Contrarily, response time in ALTAMIRA has a high dependency of the size of the problem, because individuals had to be evaluated in software. 
+
+Figure \ref{fig:rt_indv} shows the response time in both architectures when varying the number of individuals of the population. It is observed that both architectures has a strong dependency of the number of individuals in the algorithm. This is because increasing this number causes an increment of the software computational load for both clusters. Even in this scenario, SIE shows an excellent performance compared to ALTAMIRA.
+
+\begin{figure}[h!]
+\begin{center} 
+\includegraphics[width=9cm]{./images/response_time_1024indiv} 
+\end{center}
+\caption{Response time in SIE and ALTAMIRA for different number of variables.}
+\label{fig:rt_vars}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{center} 
+\includegraphics[width=9cm]{./images/response_time_12var} 
+\end{center}
+\caption{Response time in SIE and ALTAMIRA for different number of individuals.}
+\label{fig:rt_indv}
+\end{figure}
+
+
+\subsection{Speedup.}
+The speedup of the SIE vs ALTAMIRA for different number of variables is presented in figure \ref{fig:speedup1} with a number of variables fixed to 12. The excellent performance of SIE can be explained because individuals have been directly tested in hardware (FPGA), obtaining a combination of their true table on each cycle of the system clock. In the other hand, individuals evaluated in software by ALTAMIRA requires a lot of system clocks, causing response times tens of times higher than SIE.                                                     
+
+\begin{figure}[h!]
+\begin{center} 
+\includegraphics[width=8cm]{./images/speedup_sie_vs_altamira} 
+\end{center}
+\caption{Speedup of SIE vs Altamira comparing 1 SIE node = 2 Altamira nodes.}
+\label{fig:speedup1}
+\end{figure}
+
+
+\subsection{Resulting circuits.}
+Figure \ref{fig:result-circuit} shows an example of the resulting circuits for the 2-bit comparator problem. This resulting structures use to be novel, compared to the results obtained with other techniques as Karnaugh maps, and QuineMcCluskey.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=8cm]{./images/result-circuit}
+\caption{Example of resulting circuits for the 2-bit comparator problem (A=MSB number1, C=MSB number2).}
+\label{fig:result-circuit}
+\end{figure}
+
+
+% &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+%                                                                     CONCLUSIONES Y TRABAJO FUTURO
+% &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+\section{Conclusions and future work.}
+This paper showed a novel way to evaluate individuals in an evolvable algorithm on an open embedded platform called SIE, and results where compared to an HPC called ALTAMIRA. To accelerate the evolution process, a coprocessor was implemented to calculate the fitness function and to generate random numbers, improving the performance for problems with more than 6 bits. Test proved that the algorithm is more effective for 4-bit and 8-bit problems. 12-bit problems in SIE had an excellent performance, but because the search space is too long, converging to a suitable solution was difficult for the algorithm.                                                               This problem could be solved as future work with some improvements in terms of multiple FCUs inside an FPGA, more nodes, and other hardware-accelerated genetic operators.
+
+ 
+\bibliography{./biblio_EHW.bib}
+
+%\begin{floatingfigure}[l]{3.2cm}
+%\includegraphics[scale=.3]{./images/cain.png}
+%\end{floatingfigure}
+%Carlos Camargo es Ingeniero Electricista de la Universidad Nacional de Colombia, Magister en Ingeniería Eléctrica de la Universidad de los Andes y Candidato a Doctor en Ingeniería Eléctrica en la Universidad Nacional de Colombia. Es profesor del Departamento de Ingeniería Eléctrica y Electrónica de la Universidad Nacional de Colombia en el área de diseño de sistemas digitales.
+
+
+
+\end{document}

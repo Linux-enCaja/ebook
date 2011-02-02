@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: HW_copyleft_ES.aux
+The style file: unsrt.bst
+Database file #1: ./biblio.bib.bib
+Warning--can't use both author and editor fields in Sta99
+Warning--empty year in WSCC
+You've used 15 entries,
+            1791 wiz_defined-function locations,
+            534 strings with 5565 characters,
+and the built_in function-call counts, 2178 in all, are:
+= -- 175
+> -- 94
+< -- 0
++ -- 40
+- -- 25
+* -- 81
+:= -- 380
+add.period$ -- 45
+call.type$ -- 15
+change.case$ -- 13
+chr.to.int$ -- 0
+cite$ -- 17
+duplicate$ -- 104
+empty$ -- 246
+format.name$ -- 25
+if$ -- 484
+int.to.chr$ -- 0
+int.to.str$ -- 15
+missing$ -- 9
+newline$ -- 78
+num.names$ -- 15
+pop$ -- 64
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 42
+stack$ -- 0
+substring$ -- 6
+swap$ -- 15
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 2
+while$ -- 16
+width$ -- 17
+write$ -- 154
+(There were 2 warnings)

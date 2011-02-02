@@ -1,0 +1,71 @@
+\documentclass[conference,a4paper]{IEEEtran}
+\usepackage[latin1]{inputenc}
+\usepackage{enumerate}
+\usepackage{cite}      
+\usepackage{graphicx}  
+\usepackage{tikz}
+\usepackage{psfrag}    
+\usepackage{subfigure} 
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{floatflt}
+\usepackage{amsmath}   % From the American Mathematical Society
+\usepackage[mathscr]{euscript}%Para letra en modo matemï¿½ico
+\usepackage{pst-all,pstricks,graphics,graphpap,amsmath,amssymb,latexsym,array}
+
+\newpsobject{grilla}{psgrid}{subgriddiv=1,griddots=10,gridlabels=6pt}
+\interdisplaylinepenalty=2500
+\usepackage{array}
+
+\hyphenation{semi-conduc-tor }
+
+\DeclareMathOperator{\sen}{sen}
+
+\begin{document}
+\bibliographystyle{unsrt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                 TITLE                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \title{Software Libre y Hardware Copyleft Herramientas para la Transferencia Tecnológica en el Diseño e Implementación de Sistemas Embebidos}
+
+
+\title{Metodología Para la Transferencia Tecnológica en la Industria Electrónica Basada en Software Libre y Hardware Copyleft}
+
+
+\author{
+\IEEEauthorblockN{Carlos I. Camargo Bareño}
+\IEEEauthorblockA{Universidad Nacional de Colombia,
+Email: cicamargoba@unal.edu.co}
+}
+
+\maketitle
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                 ABSTRACT                   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+Los canales tradicionales para la transferencia tecnológica en el área del diseño de sistemas embebidos no han sido exitosos en los países en vía de desarrollo donde la plataforma tecnológica no está lo suficientemente desarrollada para absorber esta nueva tecnología y conocimientos, esto se debe en gran parte a que las empresas de base tecnológica son muy pequeñas, con bajos niveles de producción y utilizan metodologías de diseño desactualizadas; por otro lado, la dependencia hacia los productos asiáticos hace muy difícil que estas pequeñas empresas puedan crecer sin la protección del estado. Así mismo, exite una sobre-oferta de profesionales afines con la industria electrónica, una gran parte de ellos provienen de entidades poco consolidadas. La unión de estos factores genera una tasa de desempleo muy alta, salarios bajos, aumento de la dependencia a los productos extranjeros y una desconfianza hacia los productos generados localmente; lo que afecta de forma considerable el número de estudiantes que ingresan a los programas de formación relacionados con la electrónica, llegando hasta el punto del cierre de programas acreditados.
+
+Este artículo presenta una metodología para la transferencia tecnológica en el diseño de sistemas embebidos desarrollada en el Departamento de ingeniería eléctrica y electrónica de la Universidad Nacional de Colombia; esta metodología tiene como pilares el conocimiento como bien común, el movimiento de software libre y un concepto nuevo desarrollado en conjunto con un grupo de desarrolladores hardware y software: el \textit{hardware copyleft}.
+
+\end{abstract}
+
+
+\begin{keywords}
+Sistemas Embebidos, educación en ingeniería, hardware copyleft.
+\end{keywords}
+
+
+\IEEEpeerreviewmaketitle
+
+  \input intro
+
+\section{BIBLIOGRAFÍA}
+\bibliography{./biblio.bib}
+
+\end{document}

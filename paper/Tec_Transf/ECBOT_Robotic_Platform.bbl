@@ -1,0 +1,78 @@
+\begin{thebibliography}{10}
+
+\bibitem{swarmbot-ascona02}
+F.~Mondada, G.~C. Pettinaro, I.~Kwee, A.~Guignard, L.~Gambardella, D.~Floreano,
+  S.~Nolfi, J.-L. Deneubourg, and M.~Dorigo.
+\newblock {SWARM-BOT}: A swarm of autonomous mobile robots with self-assembling
+  capabilities.
+\newblock In C.K. Hemelrijk and E.~Bonabeau, editors, {\em Proceedings of the
+  International Workshop on Self-organisation and Evolution of Social
+  Behaviour}, pages 307--312, Monte Verit\`a, Ascona, Switzerland,
+  September~8-13, 2002. University of Zurich.
+
+\bibitem{balnolpar02}
+G.~Baldassarre, S.~Nolfi, and D.~Parisi.
+\newblock Evolving mobile robots able to display collective behaviours.
+\newblock In C.K. Hemelrijk and E.~Bonabeau, editors, {\em Proceedings of the
+  International Workshop on Self-Organisation and Evolution of Social
+  Behaviour}, pages 11--22, Monte Verit\`a, Ascona, Switzerland,
+  September~8-13, 2002. University of Zurich.
+
+\bibitem{JM03}
+C.~Jones and M.~Mataric.
+\newblock Adaptive {D}ivision of {L}abor in {L}arge-{S}cale {M}inimalist
+  {M}ulti-{R}obot {S}ystems.
+\newblock {\em Proceedings of the IEEE/RSJ International Conference on Robotics
+  and Intelligent Systems (IROS). Las Vegas, Nevada}, 2003.
+
+\bibitem{JaMJM05}
+{Jones and Maja J Mataric}.
+\newblock {\em Autonomous {M}obile {R}obots: {S}ensing, {C}ontrol,
+  {D}ecision-{M}aking, and {A}pplications}, chapter Behavior-Based Coordination
+  in Multi-Robot Systems.
+\newblock Marcel Dekker, Inc, 2005.
+
+\bibitem{JM06}
+{J. McLurkin}.
+\newblock Speaking {S}warmish.
+\newblock {\em AAAI Spring Symposium}, 2006.
+
+\bibitem{BGRTV03}
+{B.P. Gerkey}, {R. T. Vaughan}, and {A. Howard}.
+\newblock The {P}layer/{S}tage project: {T}ools for {M}ulti-robot and
+  {D}istributed {S}ensor {S}ystems,.
+\newblock {\em Proceedings of the International Conference on Advanced Robotics
+  (ICAR)}, pages 317--323, 2003.
+
+\bibitem{BGKS00}
+{B. Gerkey}, {K. Stoy}, and {R. T. Vaughan}.
+\newblock Player {R}obot {S}erver.
+\newblock Technical report, USC Robotics Labs, 22 November 2000.
+
+\bibitem{CC06}
+{C. Camargo}.
+\newblock First {C}olombian {L}inux {SBC} runs {D}ebian.
+\newblock http://www.linuxdevices.com/news/NS6698241512.html, 24 April 2006.
+
+\bibitem{AZMN03}
+{Abu Zaharin} and {Mohd Nasir}.
+\newblock A {S}tudy {O}n {T}he {DC} {M}otor {S}peed {C}ontrol {B}y {U}sing
+  {B}ack-{EMFV}oltage.
+\newblock {\em ASIAN CONFERENCE ON SENSORS}, July 2003.
+
+\bibitem{RL04}
+{R. LeGrand}.
+\newblock Closed-{L}oop {M}otion {C}ontrol for {M}obile {R}obotics.
+\newblock {\em Circuit Cellar Ink}, August 2004.
+
+\bibitem{CCNC}
+{C. Camargo}, {N. Castillo}, and {A. Calder\'on}.
+\newblock Free {ECB}\_{A}{T}91.
+\newblock http://wiki.emqbit.com/wiki.
+
+\bibitem{entry-2}
+EPFL.
+\newblock {e}-puck {EPFL} {E}ducation robot.
+\newblock http://www.e-puck.org/.
+
+\end{thebibliography}

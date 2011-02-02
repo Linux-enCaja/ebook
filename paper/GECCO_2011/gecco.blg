@@ -1,0 +1,64 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: gecco.aux
+The style file: plain.bst
+Database file #1: ./biblio_EHW.bib.bib
+I was expecting a `,' or a `}'---line 361 of file ./biblio_EHW.bib.bib
+ :   author 
+ :          = {R. Poli and J. Page},
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 371 of file ./biblio_EHW.bib.bib
+ :   author 
+ :          = {Zdenek Vasicek and Lukas Sekanina},
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 381 of file ./biblio_EHW.bib.bib
+ :  author 
+ :         = "V. Vassilev and D. Job and Julian F. Miller",
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 392 of file ./biblio_EHW.bib.bib
+ :   author 
+ :          = {Zbysek Gajda and Lukas Sekanina},
+I'm skipping whatever remains of this entry
+Warning--empty year in WSCC
+Warning--empty year in JJPR
+You've used 13 entries,
+            2118 wiz_defined-function locations,
+            566 strings with 5812 characters,
+and the built_in function-call counts, 3417 in all, are:
+= -- 310
+> -- 207
+< -- 0
++ -- 83
+- -- 68
+* -- 214
+:= -- 637
+add.period$ -- 39
+call.type$ -- 13
+change.case$ -- 72
+chr.to.int$ -- 0
+cite$ -- 15
+duplicate$ -- 129
+empty$ -- 232
+format.name$ -- 68
+if$ -- 669
+int.to.chr$ -- 0
+int.to.str$ -- 13
+missing$ -- 13
+newline$ -- 68
+num.names$ -- 26
+pop$ -- 85
+preamble$ -- 1
+purify$ -- 60
+quote$ -- 0
+skip$ -- 92
+stack$ -- 0
+substring$ -- 67
+swap$ -- 13
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 50
+warning$ -- 2
+while$ -- 26
+width$ -- 15
+write$ -- 130
+(There were 4 error messages)

@@ -1,0 +1,2245 @@
+\chapter{PLATAFORMA DE DESARROLLO ECBOT}
+
+
+\section{Introducción}
+En esta sección se realizará una explicación detallada del proceso de adaptación de Linux a la familia de plataformas ECB\_AT91, este proceso es aplicable a otros dispositivos que trabajen con procesadores soportados por la distribución de Linux. Adicionalmente, se explicará de forma detallada el funcionamiento de este sistema operativo, el proceso de arranque y su puesta en marcha, así como las principales distribuciones, aplicaciones y librerías disponibles para el desarrollo de aplicaciones. Esta y otra información recolectada durante más de tres años permite que la industria y la academia desarrollen aplicaciones comerciales utilizando herramientas de diseño modernas.
+
+\subsection{Contribuciones al desarrollo tecnológico en Colombia}
+
+Durante la realización de esta investigación se llevaron a cabo varias actividades, cuyo objetivo principal es contribuir al desarrollo tecnológico en Colombia, como se expuso anteriormente el país presenta serias dificultades en este campo y es deber de la comunidad académica nacional atacar los problemas locales. Por esta razón unoa de las matas del presente trabajo fué la creación de una plataforma hardware que permita implementar las diferentes modelos bio-inspirados. En la mayoría de estudios similares no se contempla la creación de estas plataformas ya que en los países donde se desarrollan la investigación existe una industria electrónica competitiva y que esta al tanto de los desarrollos tecnológicos a nivel mundial. Como se mencionó anteriormente este no es el caso de nuestro pais, en la mayoría de las industrias nacionales y en las facultades relacionadas con la electrónica se trabaja con tecnologías de hace 30 años (Familias 74 TTL y 40 CMOS) y se utilizan herramientas de programación de bajo nivel como el lenguaje ensamblador.
+
+ A continuación se mestran una lista del trabajo realizado sobre algunas de las recomendaciones dadas por los estudios acerca del desarrollo tecnológico en Colombia; vale la pena anotar que no todas están dentro del alcance de este trabajo, se eligieron en las que se podía hacer un aporte significativo.
+
+\begin{enumerate}
+
+  \item Realización de proyectos de aplicación: La primera decisión que se tomó en cuanto a la naturaleza de esta investigación fué la de generar una aplicación física real que validara los modelos propuestos, este trabajo no se limitará a realizar simulaciones, sino que se construirá una plataforma que sea tecnológicamente ``moderna'' y que esté al nivel de las plataformas utilizadas en estudios similares. Para esto se diseñó la primer \textit{Computadora en una sola placa} (SBC \footnote{Single Board Computer}) que utiliza un procesador de 32 Bits y utiliza Linux como sistema operativo. Adicionalmente, se crearon plataformas de desa
+  
+  \item Infraestructura institucional que impulse la actualización tecnológica en el sector mediante desarrollo de proyectos de tecnología de punta con una posible transferencia de tecnología: En las condiciones actuales no es posible que la industria electrónica del país se modernice por sí sola, es necesario que las Universidades doten al sistema productivo con profesionales que tengan habilidades especiales, siendo la más importante la capacidad de diseñar y construir dispositivos que puedan ser explotados comercialmente. En la actualidad, nuestros estudiantes se limitan a analizar y a simular la mayoría de los procesos, lo que es necesario pero no suficiente, el nivel de las implementaciones físicas que realizan en los últimos semestres de sus carreras es muy baja y un mínimo porcentaje llegan a un diseño de circuito Impreso. En la Sección \ref{academic} mostraremos los cambios introducidos en las asignaturas de la línea de Electrónica Digital y como estos generan las habilidades mencionadas anteriormente.       
+
+  \item El contacto con las empresas no debe ser encargada únicamente a los estudiantes, la Universidad debe desarrollar las competencias que la empresa requiere: Se realizó una investigación del estado actual de las empresas involucradas en el proceso de manufactura de dispositivos relacionados con la electrónica digital, se identificaron las empresas proveedoras de servicios con el fín de determinar que procesos se pueden realizar en el país, así mismo se identificaron algunas de las necesidades del sector productivo. En la sección \ref{industry} se muestra un ejemplo de creación de empresa con soporte de la Universidad, específicamente del presente trabajo.
+  
+  \item Interacción entre Universidades, Conviene que buena parte de los trabajos realizados en doctorado sean de investigación aplicada, orientadas a mejorar la productividad del sector empresarial: Es importante el dialogo continuo entre todas las Universidades del país y la divulgación de sus investigaciones, en muchas ocasiones los escasos recursos económicos son utilizados para repetir temas de investigación, o sus resultados no son dados a conocer. Adicionalmente, los programas académicos de programas curriculares equivalentes presentan diferentes enfoques y diferentes niveles de excelencia, lo que impide el conocimiento de los trabajos realizados.
+  
+  \item Innovación curricular, actualización continua de profesionales: Durante el último año se introdujeron cambios en los contenidos de las asignaturas del área de sistemas digitales, estos cambios tienen como objetivo crear una metodología de diseño unificada que pueda ser utilizada en los tres cursos, del mismo modo se realizó una actualización tecnológica en cuanto al software y al hardware utilizado en estos cursos, se eliminó el uso de tecnologías viejas y se abrió el paso a tecnologías y metodología de diseño que se utilizan en cursos similares en Universidades de paises desarrollados.
+  
+  
+  \item Necesidad de mejorar las competencias y habilidades generales de los ingenieros, (continuo aprendizaje) habilidad para innovar, investigar, desarrollar nueva tecnología: Se crearon alianzas con diferentes profesiones con el fín de crear condiciones de trabajo cercanas a las que se puedan encontrar en la industria, es importante para la situación del país que nuestros egresados sean capáces de crear nuevos productos que puedan satisfacer las necesidades de la industria local. Por esta razón durante este trabajo se dió un especial énfasis en el proceso de fabricación de dispositivos electrónicos.
+  
+\end{enumerate}
+
+
+\subsubsection{Contribuciones a Nivel Tecnológico y Académico}
+
+
+\subsubsection{Métodos de arranque}
+
+Como es obvio todo SoC debe ser programado para que pueda ejecutar una determinada tarea; este programa debe estar almacenado en una memoria no volátil y debe estar en el formato requerido por el procesador. Normalmente los SoCs proporcionan varios caminos (habilitando diferentes periféricos) para hacer esto. Un programa de inicialización \textit{(boot program)} contenido en una pequeña ROM del SoC se encarga de configurar, y revisar ciertos periféricos en búsqueda de un ejecutable, una vez lo encuentra, lo copia a la memoria RAM interna y lo ejecuta desde allí. No sobra mencionar que este ejecutable debe estar enlazado de tal forma que todas las secciones se encuentren en el espacio de la memoria RAM interna (0x0 después del REMAP \footnote{Los procesadores ARM pueden intercambiar el sitio de la memoria RAM interna y la memoria no volátil}). El AT91RM9200 posee una memoria interna SRAM de 16 kbytes. Después del reset esta memoria esta disponible en la posición 0x200000, después del remap esta memoria se puede acceder en la posición 0x0. Algunos fabricantes, en la etapa de producción graban en las memorias no volátiles las apliacaciones definitivas, y soldan en la placa de circuito impreso los dispoditivos programados, esto es muy conveniente cuando se trabaja con grandes cantidades ya que ahorra tiempo en el montaje de los dispositivos.
+
+El programa de inicialización del AT91RM9200 (se ejecuta si el pin BMS se encuentra en un valor lógico alto) busca una secuencia de 8 vectores de excepción ARM válidos en la DataFlash conectada al puerto SPI, en una EEPROM conectada a la interfaz I2C o en una memoria de 8 bits conectada a la interfaz de bus externo (EBI), estos vectores deben ser instrucciones LDR o Bbranch, menos la sexta instrucción (posición 14 a 17) que contiene información sobre el tamaño de la imágen (en bytes) a descargar y el tipo de dispositivo DataFlash. Si la secuencia es encontrada, el código es almacenado en la memoria SRAM interna y se realiza un remap (con lo que la memoria interna SRAM es accesible en la posición 0x0 ver Figura \ref{soc_boot_remap}).
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.6]{./images/soc_boot_remap} \end{center}
+  \caption{Diagrama de flujo del programa de inicialización del SoC AT91RM9200} \label{soc_boot_remap}
+\end{figure}
+
+Si no se encuentra la secuencia de vectores ARM, se inicializa un programa que configura el puerto serial de depuración (DBGU) y el puerto USB Device. Quedando en espera de la descarga de una aplicación a través del protocolo DFU (Digital Firmware Upgrade) por el puerto USB o con el protocolo XMODEM en el puerto DBGU. La figura \ref{soc_boot_proc} muestra el diagrama de flujo del programa de inicialización del SoC AT91RM9200
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.6]{./images/soc_boot_proc} \end{center}
+  \caption{Diagrama de flujo del programa de inicialización del SoC AT91RM9200} \label{soc_boot_proc}
+\end{figure}
+
+El programa descargado a la memoria SRAM interna debe ser capaz de programar una memoria no volátil (La Flash DataFlash SPI para el ECBOT), debe proporcionar un canal de comunicación que permita descargar ejecutables más grandes, y debe inicializar el controlador de memoria SDRAM para que almacene temporalmente el ejecutable a grabar, esto es necesario ya que la memoria interna del AT91RM9200 solo es de 16kBytes. Más adelante hablaremos detalladamente de la aplicación que realiza estas funciones.
+
+
+\subsection{Interfaz JTAG}
+A mediados de los 1970s, la estructura de pruebas para tarjetas de circuito impreso (PCB, Printed Circuit Boards) se basaba en el uso de la técnica ``bed-of-nails''. Este método hacia uso de un dispositivo que contenía una serie de puntos de prueba, que permitían el acceso a dispositivos en la tarjeta a través de puntos de prueba colocados en la capa de cobre, o en otros puntos de contacto convenientes. Las pruebas se realizaban en dos fases: La prueba del circuito apagado y la prueba del circuito funcionando. Con la aparición de los dispositivos de montaje superficial se empezó a colocar dispositivos en las dos caras de la tarjeta, debido a que las dimensiones de los dispositivos de montaje superficial son muy pequeñas, se disminuyó la distancia física entre las interconexiones, dificultando el proceso de pruebas.
+
+A mediados de los 1980s un grupo de ingenieros de pruebas miembros de compañías electrónicas Europeas se reunieron para examinar el problema y buscar posibles soluciones. Este grupo se autodenominó JETAG (Joint European Test Action Group). El método de solución propuesto por ellos estaba basado en el concepto de un registro de corrimiento serial colocado alrededor de la frontera dispositivo, de aquí el nombre ?Boundary Scan?. Después el grupo se asoció a compañías norteamericanas y la ``E'' de ``European'' desapareció del nombre de la organización convirtiéndose en JTAG (Join Test Action Group).
+
+\subsubsection{Arquitectura BOUNDARY SCAN} 
+A cada señal de entrada o salida se le adiciona un elemento de memoria multi-propósito llamado ``Boundary Scan Cell'' (BSC). Las celdas conectadas a los pines de entrada reciben el nombre de ``Celdas de entrada'', y las que están conectadas a los pines de salida ``Celdas de salida''. En la Figura \ref{jtag_basics} se muestra esta arquitectura.
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.6]{./images/jtag_basics} \end{center}
+  \caption{Arquitectura Boundary Scan} \label{jtag_basics}
+\end{figure}
+
+Las BSC se configuran en un registro de corrimiento de entrada y salida paralela. Una carga paralela de los registros (captura) ocasiona que los valores de las señales aplicadas a los pines del dispositivo pasen a las celdas de entrada y que opcionalmente los valores de las señales internas del dispositivo pasen a las celdas de salida. Una descarga paralela (Actualización) ocasiona que los valores presentes en las celdas de salida pasen a los pines del dispositivo, y opcionalmente los valores almacenados en las celdas de entrada pasen al interior del dispositivo.
+
+Los datos pueden ser corridos a través del registro de corrimiento, de forma serial, empezando por un pin dedicado TDI (Test Data In) y terminando en un pin de salida dedicado llamado TDO (Test Data Out). La señal de reloj se proporciona por un pin externo TCLK (Test Clock) y el modo de operación se controla por la señal TMS (Test Mode Select). Los elementos del Boundary Scan no afectan el funcionamiento del dispositivo. Y son independientes del núcleo lógico del mismo.
+
+\subsubsection{Instrucciones JTAG}
+El Standard IEEE 1149.1 describe tres instrucciones obligatorias: Bypass, Sample/Preload, y Extest \cite{TI96}.
+
+\begin{itemize}
+  \item \textbf{BYPASS} Esta instrucción permite que el chip permanezca en un modo funcional, hace que el registro de Bypass se coloque entre TDI y TDO; permitiendo la transferencia serial de datos a través del circuito integrado desde TDI hacia TDO sin afectar la operación. La codificación en binario para esta instrucción debe ser con todos los bits en uno. 
+  
+  \item \textbf{SAMPLE/PRELOAD} Esta instrucción selecciona el registro Boundary-Scan para colocarse entre los terminales TDI y TDO. Durante esta instrucción, el registro Boundary-Scan puede ser accesado a través de la operación Data Scan, para tomar una muestra de los datos de entrada y salida del chip. Esta instrucción también se utiliza para precargar los datos de prueba en el registro Boundary-Scan antes de ejecutar la instrucción EXTEST. La codificación de esta instrucción la define el fabricante.
+
+  \item \textbf{EXTEST} Esta instrucción coloca al circuito integrado en  modo de test externo (pruebas de la interconexión) y conecta el regsitro Boundary-Scan entre TDI y TDO. Las señales que salen del circuito son cargadas en el registro boundary-scan en el flanco de bajada de TCK en el estado Capture-DR; las señales de entrada al dispositivo son cargadas al registro boundary-scan durante el flanco de bajada de TCK en el estado Update-DR (ver Figura \ref{jtag_sm}) . La codificación para esta instrucción está definida con todos los bits en cero.
+  
+  \item \textbf{INTEST}  La instrucción opcional INTEST también selecciona el registro boundary-scan, pero es utilizado para capturar las señales que salen del núcleo lógico del dispositivo, y para aplicar valores connocidos a las señales de entrada del núcleo. La codificación para esta señal es asignada por el diseñador.
+\end{itemize}
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.8]{./images/jtag_sm} \end{center}
+  \caption{Arquitectura Boundary Scan} \label{jtag_sm}
+\end{figure}
+
+
+
+\subsubsection{Depuración del core ARM \cite{DR05}}
+
+Todos los nucleos ARM7 y ARM9 poseen soporte de depuración en modo halt, lo que permite detener por competo el núcleo. Durante este estado es posible modificar y capturar las señales del núcleo, permitiendo cambiar y examinar el core y el estado del sistema. En este estado la fuente de reloj del core es el reloj de depuración (DCLK) que es generado por la lógica de depuración. Los núcleos ARM7 y ARM9 implementan un controlador compatible con JTAG, con dos cadena boundary-scan alrededor de las señales del core, una con las señales del core, para pruebas del dispositivo y la otra es un sub-set de la primera con señales importantes para la depuración. La Figura \ref{arm_scan1}  muestra el orden de las señales en las cadenas para los núcleos ARM7TDMI y ARM9TDMI. Para popósitos de depuración es suficiente la cadena 1. Esta cadena puede ser utilizada en modo INTEST, permitiendo capturar las señales del core y aplicar vectores al mismo, o en modo EXTEST, permitiendo la salida y entrada de información hacia y desde exterior del core respectivamente.
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.6]{./images/arm_scan1} \end{center}
+  \caption{Cadena Boundary Scan 1} \label{arm_scan1}
+\end{figure}
+Las señales D[0:31] del ARM7TDMI están conectadas al bus de datos del núcleo y se utiliza para capturar instrucciones o lectura/escritura de información; la señal BREAKPT se utiliza para indicar que la instrucción debe ejecutarse a la velocidad del sistema, esto es, utilizando el reloj MCLK en lugar de DCLK.
+
+Las señales ID[0:31] del ARM9TDMI están conectadas al bus de instrucciones y se utilizan para capturar instrucciones, las señales DD[31:0] están conectadas al bus de dtaos bi-direccional y se utilizan para leer o escribir información. 
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.6]{./images/arm_scan2} \end{center}
+  \caption{Cadena Boundary Scan 2 (Embedded ICE)} \label{arm_scan2}
+\end{figure}
+
+Los ARM7 y ARM9 poseen un módulo ICE (In Circuit Emulator) que reemplaza el microcontrolador con una variación que posee facilidades para la depuración hardware. El emulador es conectado a un computador que ejecuta el software de depuración. Esto permite realizar depuración activa y pasiva, dando un punto de vista no intrusivo del flujo del programa. La Figura \ref{arm_scan2} muestra la cadena scan ICE, que es la misma para los núcleos ARM7 y ARM9, esta formada por 32 bits de datos, 5 bits de direcciones y un flag para diferenciar entre lectura (nRW bajo) y escritura. Se puede acceder a las características ICE a través de registros, cuya dirección es colocada en el bus de direcciones.
+
+El proyecto OPENOCD (Open On-Chip Debugger \footnote{http://openocd.berlios.de/web/}) permite la programación de la memoria flash interna de algunos procesadores ARM7TDMI, y la depuración de procesadores ARM7 y ARM9 utilizndo el módulo ICE. Este proyecto se ha convertido en el más popular dentro del grupo de desarrolladores de sistemas Embebidos. En \cite{DR05} se puede encontrar el funcionamiento interno de esta herramienta.
+
+\subsubsection{Programación de memorias Flash}
+Algunos SoC no poseen programas de inicialización que permitan la descarga de aplicaciones ya sea a las memorias externas o a la interna, una solución podría ser utilizar el protocolo JTAG para cargar las aplicaciones en la RAM interna, sin embargo, existen procesadore en los que no se conocen las espcificaciones del ICE y en en otros este módulo no existe. En estos casos se utiliza la interfaz JTAG en modo EXTEST para controlar directamente las memorias conectadas a los SoCs. El proyecto UrJTAG,  \footnote{http://urjtag.sourceforge.net/} permite la programación de diversas memorias flash, utilizando los pines del dispositivo. UrJTAG permite la creación de diferentes interfaces para conectarse con las memorias, estas interfaces reciben el nombre de buses y pueden ser creadas e incluidas en el código original de forma fácil. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                                  SECTION LINUX
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{El sistema Operativo Linux}
+\textit{Hello everybody out there using minix -
+I'm doing a (free) operating system (just a hobby, won't be big and
+professional like gnu) for 386(486) AT clones.
+}
+
+Con este mail enviado al foro de discusión comp.os.minix, Linus Torvalds, un estudiante de la  Universidad de Helsinki en Finlandia introduce Linux el 25 de Agosto de 1991. A principios de los 90, el sistema operativo Unix (desarrollado en \textit{The Bell Labs} a principios de los 60s), tenía una solida posición en el mercado de servidores, y estaba muy bien posicionado en las Universidades, por lo tanto, un gran número de estudiantes trabajaban a diario con él y muchos de ellos deseaban poder utilizarlo en sus computadores personales, sin embargo, Unix era un producto comercial muy costoso. La
+figura \ref{linuxhistory} muestra el desarrollo previo a la creación de la primera versión de linux hasta el día de hoy. Una de las características más importantes de Linux es que desde su creación, fue pensado como un sistema operativo gratuito y de libre distribución. Esta característica ha permitido que programadores a lo largo del mundo puedan manipular el código fuente para eliminar errores y para aumentar sus capacidades.
+
+Sin embargo, el crédito de las que conocemos hoy (Debian, Ubuntu, Suse, etc) no solo se debe a Torvalds, ya que linux es solo el kernel del sistema operativo. En 1983, Richard Stallman funda en proyecto GNU, el cual proporciona una parte esencial de los sistemas linux. A principios de los 90s, GNU había producido una serie de herramientas como librerías, compiladores, editores de texto, Shells, etc. Estas herramientas fueron utilizadas por Torvalds para escribir el elemento que le hacía falta al proyecto GNU para completar su sistema operativo: el kernel.
+
+Desde el lanzamiento de la primera versión de linux, cientos, miles, cientos de miles y millones de programadores se han puesto en la tarea de convertir a linux en un sistema operativo robusto, amigable y actualizado; tan pronto como se desarrolla una nueva pieza de hardware existen cientos de programadores trabajando en crear el soporte para linux.
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.5]{./images/linuxhistory} \end{center}
+  \caption{Linux: Historia Fuente.}\label{linuxhistory}
+\end{figure}
+
+\subsubsection{Porqué Linux}
+Existen varias motivaciones para escoger Linux frente a un sistema oeprativo tradicional para sistemas embebidos \cite{KYJM+08}:
+
+\begin{itemize}
+  \item \textbf{Calidad Y confiabilidad del código}: Aunque estas medidas son subjetivas, miden el nivel de confianza en el código, que compromete software como el kernel y las aplicacione proporcionadas por las distribuciones.
+  \item \textbf{Disponibilidad de Código:} Todo el código fuente de las aplicaciones, del sistema operativo y de las herramientas de compilación se encuentran disponibles sin ninguna restricción. Existen varios tipos de licencias: la GNU General Public License (GPL). BSD (Berkeley Software Distribution), la cual permite la distribución de binarios sin el código fuente.
+  \item \textbf{Soporte de Hardware:} Linux soporta una gran variedad de dispositivos y plataformas, a pesar de que muchos fabricantes no proporcionan soporte para Linux, la comunidad trabaja arduamente en incluir el nuevo hardware en las nuevas distribuciones de Linux. Linux en la actualidad se puede ejecutar en docenas de diferentes arquitecturas hardware, lo cual lo convierte en el Sistema Operativo más portable. 
+  \item \textbf{Protocolos de Comunicación y estándares de Software:} Linux proporciona muchos protocolos de comunicación, lo que permite su fácil integración a marcos de trabajo ya existentes.
+  \item \textbf{Disponibilidad de Herramientas:} La variedad de herramientas disponibles para Linux lo hacen muy versátil. Existen grandes comunidades como SourceForge\footnote{http://www.sourceforge.net} o Freshmeat \footnote{http://www.freshmeat.net} que permiten a miles de desrroladores compartir sus trabajos y es posible que en ellas se encuentre una aplicación que cumpla con sus necesidades.
+  \item \textbf{Soporte de la Comunidad:} Esta es la principal fortaleza de Linux. Millones de usuarios alrededor del mundo pueden encontrar errores en alguna aplicación y desarrolladores miembros de la cumonidad (en algunos casos los creadores de las aplicaciones) arreglarán este problema y difundirán su solución. El mejor sitio para hacer esto son las listas de correo de soporte y desarroll.
+  \item \textbf{Licencia:} Al crear una aplicación bajo alguna de las licencias usuales en Linux, no implica perder la porpiedad intelectual ni los derechos de autor la misma. 
+  \item \textbf{Independencia del vendedor:} No existe solo un distribuidor del sistema operativo GNU-Linux, ya que las licencias de Linux garantizan igualdad a los distribuidores. Algunos vendedores poporcionan aplicaciones adicionales que no son libres y pro lo tanto no se encuentran disponibles con otros vendedores. Esto debe tenerse en cuenta en el momento de elegir la distribución a utilizar.
+  \item \textbf{Costo:} Muchas de las herramientas de deasrrollo y componentes de Linux son gratuitos, y no requieren el pago por ser incluidos en productos comerciales.
+\end{itemize}
+
+
+\subsection{Arquitectura de Linux \cite{IBSS98} \cite{IB98}}
+
+Linux (Linus' Minix) es un clon del sistema operativo Unix para PC con procesador Intel 386. Linux toma dos características muy importantes de Unix: es un sistema multitarea y multiusuario, lo cual fue implementado posteriormente por los sistemas operativos Windows y MacOS. Con estas características es posible ejecutar tareas de forma independiente, y transparente para el/los usuarios.
+
+Linux está compuesto por cinco sub-módulos \cite{IB98}: El programador (Scheduler), el manejador de memoria, el sistema de archivos virtual, la interfaz de red y la comunicación entre procesos (IPC). Tal como se ilustra en la figura \ref{linux_kernel}.
+ 
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.55]{./images/kernel} \end{center}
+  \caption{Estructura del kernel de linux }\label{linux_kernel}
+\end{figure}
+
+Como puede observarse en la figura \ref{linux_kernel} el kernel de linux posee sub-módulos que son independientes de la arquitectura y otros que deben ser escritos para el procesador utilizado, esto hace que Linux sea un sistema operativo portable. En la actualidad existe una gran variedad de arquitecturas soportadas por linux, entre las que se encuentran: 
+
+alpha  arm26  frv    i386  m32r  m68knommu  parisc  ppc64  sh    sparc    um    x86\_64
+arm    cris   h8300  ia64  m68k  mips       ppc     s390   sh64  sparc64  v850
+
+Las funciones de estos componentes se describen a continuación \cite{IBSS98}:
+
+\subsubsection*{Programador de procesos (Scheduler)}
+
+Es el corazón del sistema operativo linux. Esta encargado de realizar las siguientes tareas:
+\begin{itemize}
+\item Permitir a los procesos hacer copias de si mismos. 
+\item Determinar que procesos pueden acceder a la CPU y efectuar la transferencia entre los procesos en ejecución.
+\item Recibir interrupciones y llevarlas al subsistema del kernel adecuado.
+\item Enviar señales a los procesos de usuario.
+\item Manejar el timer físico.
+\item Liberar los recursos de los procesos, cuando estos finalizan su ejecución.
+\end{itemize}
+
+El programador de procesos proporciona dos interfaces: Una limitada para los procesos de usuario y una interfaz amplia para el resto del kernel. El scheduler de Linux utiliza una interrupción del timer que se presenta cada 10 ms, por lo tanto, el cambio de estado del programador se realiza cada 10 ms. Esto debe ser tenido en cuenta a la hora de realizar procesos que manejen dispositivos hardware veloces. Un proceso puede estar en uno de los siguientes estados:
+
+\begin{itemize}
+\item En ejecución.
+\item Retornando de un llamado de sistema.
+\item Procesando una rutina de interrupción.
+\item Procesando un llamado del sistema.
+\item Listo.
+\item En espera.
+\end{itemize}
+
+
+\subsubsection*{Manejador de Memoria}
+
+
+En el momento en que se energiza la CPU, esta solo ve 1-MB de memoria física (Incluyendo las ROMs). El código de inicialización del Sistema Operativo debe activar el modo protegido del procesador, de tal forma que la memoria Extendida (incluyendo la memoria de los dispositivos) sea accesible. Finalmente el OS habilita la memoria virtual para permitir la ilusión de un espacio de memoria de 4 GB. El manejador de memoria proporciona los siguientes servicios (ver figuras \ref{kernel_mapping} y \ref{app_mapping}):
+\begin{itemize}
+\item \textbf{Gran espacio de memoria}. Los procesos usuario, pueden referenciar más memoria que la existente físicamente.
+\item \textbf{Protección} La memoria de un proceso es privada y no puede ser leída o modificada por 
+                otro proceso. Adicionalmente evita que los procesos sobreescriban datos de solo 
+                lectura.
+\item \textbf{Mapeo de memoria} Los usuarios pueden mapear un archivo en un área de memoria virtual
+                y accesar el archivo como una memoria.
+\item \textbf{Acceso transparente a la memoria física} esto asegura un buen desempeño del sistema.
+\item \textbf{Memoria compartida} 
+\end{itemize}
+
+Al igual que el programador el manejador de memoria proporciona dos diferentes niveles de acceso a memoria el nivel de usuario y el de kernel.
+
+\begin{itemize}
+\item  Nivel de Usuario
+  \begin{itemize}
+  \item \textit{malloc() / free()}. Asigna o libera memoria para que sea utilizada por un proceso.
+  \item \textit{mmap() / munmap() / msync() /mremap()} Mapea archivos en regiones de memoria virtual.
+  \item \textit{mprotect} Cambia la protección sobre una región de una memoria virtual.
+  \item \textit{mlock() / mlockall() / munlock() / munlockall()} Rutinas que permiten al super 
+                usuario prevenir el intercambio de memoria.
+  \item \textit{swapon() / swapoff()} Rutinas que le permiten al super-usuario agregar o eliminar 
+                archivos swap en el sistema.
+  \end{itemize}
+\item Nivel de kernel
+  \begin{itemize}
+  \item \textit{kmalloc() / kfree()} Asigna o libera memoria para que sea utilizada por estructuras de
+                datos del kernel.
+  \item \textit{verify\_area()} Verifica que una región de la memoria de usuario ha sido mapeada con 
+                los permisos necesarios.
+
+  \item \textit{get\_free\_page() / free\_page()} Asigna y libera páginas de memoria física.
+  \end{itemize}
+\end{itemize}
+
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.45]{./images/kernel_memory_mapping} \end{center}
+  \caption{Mapeo de memoria del Kernel.}\label{kernel_mapping}
+\end{figure}
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.45]{./images/application_memory_mapping1} \end{center}
+  \caption{Mapeo de memoria para una aplicación}\label{app_mapping}
+\end{figure}
+
+
+\subsubsection*{Comunicación Entre Procesos (IPC)}
+
+El mecanismo IPC de Linux posibilita la ejecución \textit{concurrente} de procesos, permitiendo compartir recursos, la sincronización e intercambio de datos entre ellos. Linux proporciona los siguientes mecanismos:
+
+\begin{itemize}
+\item \textbf{Señales} Mensajes asíncronos enviados a los procesos.
+\item \textbf{Listas de espera} Proporciona mecanismos para colocar a dormir a los procesos mientras
+                esperan que una operación se complete, o un recurso se libere.
+\item \textbf{Bloqueo de archivos} Permite a un proceso declarar una región de un archivo como solo 
+                lectura para los demás procesos.
+\item \textbf{Conductos (pipe)} Permite transferencias bi-direccionales entre dos procesos.
+\item \textbf{System V}
+   \begin{itemize}
+   \item \textbf{Semáforos} Una implementación del modelo clásico del semáforo.
+   \item \textbf{Lista de Mensajes} Secuencia de bytes, con un tipo asociado, los mensajes son 
+                escritos a una lista de mensajes y pueden obtenerse leyendo esta lista.
+   \item \textbf{Memoria Compartida} Mecanismo por medio del cual varios procesos tienen acceso a la
+                misma región de memoria física.
+   \end{itemize}
+\item \textbf{Sockets del dominio Unix} Mecanismo de transferencia de datos orientada a la conexión.
+\end{itemize}
+
+
+
+\subsubsection*{Interfaces de Red}
+
+Este sistema proporciona conectividad entre máquinas, y un modelo de comunicación por sockets. Se proporcionan dos modelos de implementación de sockets: BSD e INET. Además, proporciona dos protocolos de transporte con diferentes modelos de comunicación y calidad de servicio: El poco confiable protocolo UDP (\textit{User Datagram Protocol}) y el confiable TCP (\textit{Transmission Control Protocol}), este último garantiza el envío de los datos y que los paquetes serán entregados en el mismo orden en que fueron enviados. Se proporcionan tres tipos diferentes de conexión: SLIP (Serial), PLIP (paralela) y ethernet.
+
+\subsubsection*{Sistema de archivo virtual}
+El sistema de archivos de linux cumple con las siguientes tareas:
+
+\begin{itemize}
+\item \textbf{Controlar múltiples dispositivos hardware}
+\item \textbf{Manejar sistemas de archivos lógicos}
+\item \textbf{Soporta diferentes formatos ejecutables} Por ejemplo a.out, ELF, java)
+\item \textbf{Homogeneidad} Proporciona una interfaz común a todos los dispositivos lógicos o físicos.
+\item \textbf{Desempeño}
+\item \textbf{Seguridad}
+\item \textbf{Confiabilidad}
+\end{itemize}
+
+\subsubsection{Drivers de Dispositivos}
+La capa manejador de dispositivos es responsable de presentar una interfaz común a todos los dispositivos físicos. El kernel de Linux tiene 3 tipos de controladores de dispositivo: Caracter (acceso secuencial), bloque (acceso en múltiplos de tamaño de bloque) y red. Ejemplos de controladores secuenciales son el modem, el mouse; ejemplos de controladores tipo bloque son los dispositivos de almacenamiento masivo como discos duros, memorias SD. Los manejadores de dispositivos soportan las operaciones de archivo, y pueden ser tratados como tal. 
+
+\subsubsection{Sistema de Archivos lógico}
+Aunque es posible acceder a dispositivos físicos a través de un archivo de dispositivo, es común acceder a dispositivos tipo bloque utilizando un sistema de arcvhivos lógico, el que puede ser montado en un punto del sistema de archivos virtual. 
+
+Para dar soporte al sistema de archivos virtual, Linux utiliza el concepto de \textit{inodes}. Linux usa un inode para representar un archivo sobre un dispositivo tipo bloque. El inode es virtual en el sentido que contiene operaciones que son implementadas diferentemente dependiendo de el sistema lógico y del sistema físico donde reside el archivo. La interfaz inode hace que todos los archivos se vean igual a otros subsistemas Linux. El inode se utiliza como una posición de almacenamiento para la información relacionada con un archivo abierto en el disco. El inode almacena los buffers asociados, la longitud total del archivo en bloques, y el mapeo entre el offset del archivo y los bloques del dispositivo.
+
+\subsubsection{Módulos}
+
+La mayor funcionalidad del sistema de archivos virtual se encuentra disponible en la forma de módulos cargados dinámicamente. Esta cconfiguración dinámica permite a los usuarios de Linux compilar un kernel tan pequeño como sea posible, mientras permite cargar el manejador del dispositivo y módulos del sistema de archivos si solo son necesarios durante una sesión. Esto es útil en el caso de los dispositivos que se pueden conectar en caliente, como por ejemplo un scanner, si tenemos el manejador del scanner cragado aún sin que este este conectado a nuestro equipo se esta desperdiciando la memoria asociada a dicho controlador.
+
+
+\subsubsection*{Interfaces de Red}
+
+Este sistema proporciona conectividad entre máquinas, y un modelo de comunicación por sockets. Se proporcionan dos modelos de implementación de sockets: BSD e INET. Además, proporciona dos protocolos de transporte con diferentes modelos de comunicación y calidad de servicio: El poco confiable protocolo UDP (\textit{User Datagram Protocol}) y el confiable TCP (\textit{Transmission Control Protocol}), este último garantiza el envío de los datos y que los paquetes serán entregados en el mismo orden en que fueron enviados. Se proporcionan tres tipos diferentes de conexión: SLIP (Serial), PLIP (paralela) y ethernet.
+
+
+\section{Portando Linux a la plataforma ECBOT y ECB\_AT91}
+Como vimos anteriormente el kernel de Linux es el corazón del sistema operativo GNU/Linux y es el encargado de manejar directamente el Hardware asociado a una determinada plataforma, por lo tanto, es necesario que este sea capáz de manejar todos los periféricos asociados a esta y proporcione caminos para controlarlos. En esta sección se describirá el proceso que debe realizarse para hacer que Linux se ejecute de forma correcta en una plataforma y que permita controlar sus diferentes componentes hardware (este proceso recibe el nombre de \textit{Porting}).
+
+\subsection{El Kernel de Linux}
+El código fuente se encuentra dividido entre el código específico a una arquitectura y el código común. El código específico de cada arquitectura lo encontramos en los subdirectorios \textit{arch} y \textit{include/asm-xxx}, en ellos podemos encuentrar los archivos para las arquitecturas: alpha, blackfin, h8300, m68k, parisc, s390, sparc, v850, arm, cris, ia64, m68knommu, powerpc, sh, sparc64, x86,
+avr32, frv, m32r, mips, ppc, sh64, um, xtensa. A continuación se listan los directorios que hacen parte sdel código fuente de Linux.
+
+\begin{lstlisting}
+arch           fs              lib             net             block
+usr            include         crypto          ipc             scripts
+Documentation  mm              security        drivers         kernel
+sound
+\end{lstlisting}
+
+Dentro de cada arquitectura soportada por Linux (\textit{arch/xxx/}) encontramos los siguientes directorios:
+\begin{itemize}
+  \item \textbf{kernel} Código del núcleo del kernel.
+  \item \textbf{mm} Código para el manejo de memoria.
+  \item \textbf{lib} Librería de funciones internas, optimizadas para la arquitectura (backtrace, memcpy, funciones I/O, bit-twiddling etc);
+  \item \textbf{nwfpe} Implementaciones de punto flotante.
+  \item \textbf{boot} Sition donde reside la imágen del kernel una vez compilado, este directorio contiene herramientas para generar imágenes comprimidas.
+  \item \textbf{tools} Contiene scripts para la autogeneración de archivos, también contiene el archivo \textit{mach-types} que contiene la lista de las máquinas (plataformas) registradas.
+  \item \textbf{configs} Contiene el archivo de configuración para cada plataforma.
+\end{itemize}  
+
+Si deseamos dar soporte a una determinada plataforma debemos trabajar en el directorio que contiene la arquitectura del procesador a utilizar, en nuestro caso trabajaremos con la arquitectura \textit{arm}. En el código fuente de Linux se encuentran muchas plataformas que utilizan las diferentes architecturas, los archivos de configuración de estas pueden ser utilizados para crear una propia. En nuestro caso tomamos como referenica la plataforma \textit{Atmel AT91RM9200-EK} diseñada por ATMEL. Los archivos de configuración de esta plataforma se encuentra en: \textit{arch/arm/mach-at91/board-ek.c}; dentro de la arquitectura arm existen varias sub-arquitecturas que corresponden a las diferentes familias de SoC; El AT91RM9200 hace parte de la familia de SoCs AT91 de ATMEL. 
+
+Existen dos formas en las que podemos adaptar nuestra plataforma al kernel de Linux, la primera es utilizando un archivo de configuración de una plataforma existente, y la otra es registrar la nuestra. Cada plataforma es identificada por un \textit{machine ID}, el primero paso en el proceso de \textit{port} es obter un ID, lo cuál se puede hacer en línea: \textit{http://www.arm.linux.org.uk/developer/machines/}, mientras que se asigna un nuevo número puede asignarse uno que no este utilizado en el archivo: \textit{arch/arm/tools/mach-types}. La entrada correspondiente a la familia de plataformas ECBACT91 es:
+
+\begin{lstlisting}
+ecbat91                 MACH_ECBAT91            ECBAT91                 1072
+\end{lstlisting}
+
+Con este ID (o uno temporal) se debe crear la siguiente entrada en el archivo \textit{/arch/arm/mach-at91/Kconfig b/arch/arm/mach-at91/Kconfig}:
+
+\begin{lstlisting}
+config MACH_ECBAT91
+        bool "emQbit ECB_AT91 SBC"
+        depends on ARCH_AT91RM9200
+        help
+          Select this if you are using emQbit's ECB_AT91 board.
+          <http://wiki.emqbit.com/free-ecb-at91>
+\end{lstlisting}
+
+La que permite seleccionar nuestra plataforma desde el programa de configuración de Linux\footnote{este programa se ejecuta con el comando: \textit{make ARCH=arm CROSS\_COMPILE=arm-none-eabi-}}(Ver Figura \ref{ecb_at91_linux_config})
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.45]{./images/ecb_at91_linux_config} \end{center}
+  \caption{Herramienta de configuración de Linux mostrando la plataforma ECB\_AT91}\label{ecb_at91_linux_config}
+\end{figure}
+
+Al seleccionar nuestra plataforma el programa de configuración creará un archivo de configuración \textit{.config \footnote{los archivos que comienzan con ``.'' están ocultos}} localizado en la raíz del código fuente, este archivo refleja las selecciones realizadas para configurar la imagen del kernel; en este caso específico se agragará la línea:
+
+\begin{lstlisting}
+CONFIG_MACH_ECBAT91=y
+\end{lstlisting}
+
+Como veremos más adelante, la aplicación encargada de cargar la imágen del kernel de Linux le pasa a este el número de identificación de la plataforma, si este número no es el mismo que el kernel tiene registrado se generará un error, para evitar esto debemos incluir las siguientes líneas en el archivo \textit{arch/arm/boot/compressed/head-at91rm9200.S}
+
+\begin{lstlisting}
+   @ emQbit ECB_AT91 : 1072
+   mov     r3,     #(MACH_TYPE_ECBAT91 & 0xff)
+   orr     r3, r3, #(MACH_TYPE_ECBAT91 & 0xff00)
+   cmp     r7, r3
+   beq     99f
+\end{lstlisting}
+
+El archivo \textit{/arch/arm/mach-at91/Makefile b/arch/arm/mach-at91/Makefile} contiene una relación entre la plataforma seleccionada y el archivo de compilación a utilizar, por lo que debemos incluir las siguientes líneas:
+
+\begin{lstlisting}
+obj-$(CONFIG_MACH_ECBAT91)     += board-ecbat91.o
+\end{lstlisting}
+
+Con esto asignamos el archivo de configuración \textit{board-ecbat91.c} a la plataforma \textit{MACH\_ECBAT91}.
+
+\subsubsection{Archivo de configuración de la plataforma ECB\_AT91 }
+En esta sección realizaremos una descripción del archivo de configuración de la familia de plataformas \textit{ECB\_AT91} (\textit{board-ecbat91.c}) y se hará una explicación de cada uno de los parámetros de este archivo.
+
+Como todo archivo escrito en C al comienzo se declaran los encabezados que contienen las funciones utilizadas, en nuestro caso:
+
+\begin{lstlisting}[numbers=left]
+#include <linux/types.h>
+#include <linux/init.h>
+#include <linux/mm.h>
+#include <linux/module.h>
+#include <linux/dma-mapping.h>
+#include <linux/platform_device.h>
+#include <linux/spi/spi.h>
+#include <linux/spi/flash.h>
+#include <linux/leds.h>
+
+#include <asm/hardware.h>
+#include <asm/setup.h>
+#include <asm/mach-types.h>
+#include <asm/irq.h>
+
+#include <asm/mach/arch.h>
+#include <asm/mach/map.h>
+#include <asm/mach/irq.h>
+
+#include <asm/arch/board.h>
+#include <asm/arch/at91rm9200_mc.h>
+#include <asm/arch/gpio.h>
+#include <linux/gpio_keys.h>
+#include <linux/input.h>
+
+#include "generic.h"
+#include <asm/arch/at91_pio.h>
+
+#include <linux/w1-gpio.h>
+\end{lstlisting}
+
+Cada arquitectura (CPU) posee un archivo donde se declaran los diferentes periféricos que pueden ser utilizados: \textit{arch/arm/mach-at91/at91rm9200\_devices.c} en el caso del procesador AT91RM9200; En él podemos encontrar soporte para: USB Host, USB Device, Ethernet, Compact Flash / PCMCIA, MMC / SD, NAND / SmartMedia, TWI (i2c), SPI, Timer/Counter blocks, RTC, Watchdog, SSC -- Synchronous Serial Controller, UART. Este archivo además proporciona funciones que permiten incluir y configurar los diferentes controladores asociados al SoC, adicionalmente realiza las operaciones necesarias para poder utilizarlo, como por ejemplo, definir que el control de un determinado pin este a cargo del periférico.
+
+El primer dispositivo declarado en el archivo de configuración es el puerto serial (UART), este puerto es vital ya que es el único medio de comunicación que tenemos con nuestra plataforma.
+
+\begin{lstlisting}
+static struct at91_uart_config __initdata ecb_at91uart_config = {
+        .console_tty    = 0,                    /* ttyS0 */
+        .nr_tty         = 2,
+        .tty_map        = { 4, 0, -1, -1, -1 }   /* ttyS0, ..., ttyS4 */
+};
+\end{lstlisting}
+
+Los parámetros de configuración de la \textit{UART} se declaran utilizando la estructura \textit{at91\_uart\_config} declarada en el archivo \textit{include/asm-arm/arch/board.h}, la variable \textit{console\_tty} define el número del dispositivo \textit{tty} asociado a la consola serial, \textit{ttyS0} en nuestro caso, la variable \textit{nr\_tty} define el número de interfaces seriales disponibles \footnote{El AT91RM9200 tiene 4 USARTS y una UART para depuración}, \textit{ttyS0} y \textit{ttyS1} en nuestro caso; \textit{tty\_map} realiza la correspondencia entre los dispositivos \textit{tty} y las UART disponibles en el SoC, para este ejemplo asocia \textit{ttyS0} a la \textit{UART4} y \textit{ttyS1} a la \textit{UART0} 
+
+\begin{lstlisting}
+static void __init ecb_at91map_io(void)
+{
+        /* Initialize processor: 18.432 MHz crystal */
+        at91rm9200_initialize(18432000, AT91RM9200_PQFP);
+
+        /* Setup the LEDs */
+        at91_init_leds(AT91_PIN_PB20, AT91_PIN_PB20);
+
+        /* Setup the serial ports and console */
+        at91_init_serial(&ecb_at91uart_config);
+} 
+\end{lstlisting}
+
+La función \textit{at91rm9200\_initialize} declarada en \textit{arch/arm/mach-at91/at91rm9200.c} se encarga, como su nombre lo indica, de inicializar el procesador AT91RM9200, específicamente se encarga de configurar, el reloj interno del procesador (con la función \textit{at91\_clock\_init}), registra los Osciladores configurables PCK0 a PCK3 (utilizando la función \textit{at91rm9200\_register\_clocks}) y finalmente habilita el soporte para los pines de entrada/salida de propósito general \textit{GPIOs} (utilizando la función \textit{at91\_gpio\_init}). Adicionalmente informa que se está utilizando el empaquetado TQFP208 (Este chip viene en dos versiones TQFP y BGA).
+
+Las plataforma que carecen de un dispositivo de visualización como una pantalla, reflejan la actividad de procesos importantes en el estado de diodos emisores de luz LEDs, Linux permite visualizar la actividad de la CPU y el estado de un timer interno (\textit{at91\_init\_leds( cpu\_led, timer\_led)}). Nuestra plataforma utiliza un LED conectado al pin PB20 para estas indicaciones.
+
+La función \textit{at91\_init\_serial(\&ecb\_at91uart\_config)}, como su nombre lo indica inicializa las interfaces seriales utilizando como configuración la estructura \textit{at91\_init\_serial} explicada anteriormente.
+
+\begin{lstlisting}
+static void __init ecb_at91init_irq(void)
+{
+        at91rm9200_init_interrupts(NULL);
+}
+\end{lstlisting}
+
+La función \textit{at91rm9200\_init\_interrupts} inicializa el Controlador de Interrupciones del AT91RM9200 y permite que estas sean atendidas.
+
+\begin{lstlisting}
+static struct at91_usbh_data __initdata ecb_at91usbh_data = {
+        .ports          = 1,
+};
+\end{lstlisting}
+
+La estructra \textit{at91\_usbh\_data} fija el número de puertos USB host a 1 (El encapsulado TQFP solo tiene un puerto USB host, la versión BGA tiene 2).
+
+\begin{lstlisting}
+static struct at91_mmc_data __initdata ecb_at91mmc_data = {
+        .slot_b         = 0,
+        .wire4          = 1,
+};
+\end{lstlisting}
+
+El SoC AT91RM9200 puede manejar dos memorias SD, la variable \textit{slot\_b} determina cual se usa, el slot a en nuestro caso; la variable \textit{wire4} selecciona el número de líneas de datos entre 1 y 4 (\textit{wire4 = 1}).
+
+\begin{lstlisting}
+#if defined(CONFIG_MTD_DATAFLASH)
+static struct  mtd_partition __initdata my_flash0_partitions[] =
+{
+  {
+    .name = "Darrel-loader",         / 0x0
+    .offset = 0,
+    .size = 12* 1056,                // 12672 bytes
+  },
+  {
+    .name = "uboot",                 // 0x3180
+    .offset = MTDPART_OFS_NXTBLK,
+    .size = 118 * 1056,
+  },
+  {
+    .name = "kernel",                // 0x21840
+    .offset = MTDPART_OFS_NXTBLK,
+    .size = 1534 * 1056, /* 1619904 bytes */
+  },
+  {
+    .name = "filesystem",
+    .offset = MTDPART_OFS_NXTBLK,
+    .size = MTDPART_SIZ_FULL,
+  }
+};
+
+static struct flash_platform_data __initdata my_flash0_platform = {
+  .name = "Removable flash card",
+  .parts = my_flash0_partitions,
+  .nr_parts = ARRAY_SIZE(my_flash0_partitions)
+};
+#endif
+\end{lstlisting}
+
+Muchos dispositivos flash están divididos en secciones que reciben el nombre de particiones, similares a las particiones encontradas en un disco duro. El subsistema MTD proporciona soporte para estas particiones Flash, si esta función es seleccionada con la herramienta de configuración del kernel (CONFIG\_MTD\_DATAFLASH = y). La familia de plataformas ECB\_AT91 tiene un dispositivo DataFlash serial de 16 Mbits (2Mbytes), en la que creamos 4 particiones, en las que se almacenarán el loader, el u-boot, la imagen del kernel, y el sistema de archivos (En el dispositivo flash actual no hay suficiente espacio para este último). Cada partición se define con una estructura \textit{mtd\_partition} formada por 3 variables: \textit{name}, \textit{offset} (Dirección inicial de la partición) y .\textit{size}.
+
+\begin{lstlisting}
+ 
+static struct spi_board_info __initdata ecb_at91spi_devices[] = {
+        {       /* DataFlash chip */
+                .modalias       = "mtd_dataflash",
+                .chip_select    = 0,
+                .max_speed_hz   = 10 * 1000 * 1000,
+                .bus_num        = 0,
+                .platform_data  = &my_flash0_platform,
+        },
+        {       /* User accessable spi - cs1 (250KHz) */
+                .modalias       = "spi-cs1",
+                .chip_select    = 1,
+                .max_speed_hz   = 250 * 1000,
+        },
+        {       /* User accessable spi - cs2 (1MHz) */
+                .modalias       = "spi-cs2",
+                .chip_select    = 2,
+                .max_speed_hz   = 1 * 1000 * 1000,
+        },
+        {       /* User accessable spi - cs3 (10MHz) */
+                .modalias       = "spi-cs3",
+                .chip_select    = 3,
+                .max_speed_hz   = 10 * 1000 * 1000,
+        },
+};
+\end{lstlisting}
+
+La estructura \textit{spi\_board\_info} define los dispositivos SPI conectados al SoC, esta formada por la variable \textit{modalias}, \textit{chip\_select} y \textit{max\_speed\_hz}. Nuestro dispositivo DataFlash se controla utilizando un puerto SPI, por esto se define la variable \textit{platform\_data  = \&my\_flash0\_platform}
+
+\begin{lstlisting}
+static void __init ecb_at91board_init(void)
+{
+        /* Serial */
+        at91_add_device_serial();
+
+        /* USB Host */
+        at91_add_device_usbh(&ecb_at91usbh_data);
+
+        /* I2C */
+        at91_add_device_i2c(NULL, 0);
+
+        /* MMC */
+        at91_add_device_mmc(0, &ecb_at91mmc_data);
+
+        /* SPI */
+        at91_add_device_spi(ecb_at91spi_devices, ARRAY_SIZE(ecb_at91spi_devices));
+
+        /* Programmable Clock 1*/
+        at91_set_B_periph(AT91_PIN_PA4, 0);
+}
+\end{lstlisting}
+
+Una vez configurados los periféricos utilizados en la plataforma debemos agregar estos dispositos, con las funciones correspondientes \textit{at91\_add\_device\_(serial, usbh, i2c, mmc, spi) } estas funciones hacen un llamado a la función \textit{platform\_device\_register} la que adiciona el dispositivo a nivel de plataforma.
+
+\begin{lstlisting}
+MACHINE_START(ECBAT91, "emQbit's ECB_AT91")
+        /* Maintainer: emQbit.com */
+        .phys_io        = AT91_BASE_SYS,
+        .io_pg_offst    = (AT91_VA_BASE_SYS >> 18) & 0xfffc,
+        .boot_params    = AT91_SDRAM_BASE + 0x100,
+        .timer          = &at91rm9200_timer,
+        .map_io         = ecb_at91map_io,
+        .init_irq       = ecb_at91init_irq,
+        .init_machine   = ecb_at91board_init,
+MACHINE_END\end{lstlisting}
+
+\subsubsection{Archivo de Configuración del kernel}
+Finalmente debemos incluir un archivo de configuración para el kernel (\textit{arch/arm/configs/ecbat91\_defconfig}) el cual contiene la configuración inicial que cnfigura de forma correcta todos los periféricos de la plataforma.
+
+\subsection{Imagen del kernel}
+En esta sección se realizará una descripción de los pasos necesarios para compilar la imágen del kernel de Linux para la familia de plataforma ECB\_AT91; después, se realizará un análisis de la imagen, indicando su composición.
+
+\subsubsection{Compilación de la Imágen del kernel}
+En la sección anetrior vimos como dar soporte a nuestra plataforma, en esta sección describiremos el proceso de creación de la imágen del kernel. El primer paso obvio es obtener la imágen del kernel, la que obtenemos del sitio oficial \textit{ftp.kernel.org}
+
+\begin{lstlisting}
+wget http://ftp.kernel.org/pub/linux/kernel/v2.6/linux-2.6.24.4.tar.bz2
+tar xjf linux-2.6.24.4.tar.bz2
+cd linux-2.6.24.4
+\end{lstlisting}
+
+A continuación descargargamos un parche que mantienen los desarrolladores de la familia de SoCs de ATMEL, este parche modifica algunos archivos de la distribución oficial de Linux para dar sopote completo y actualizado a los procesadores ATMEL.
+
+\begin{lstlisting}
+wget http://maxim.org.za/AT91RM9200/2.6/2.6.24-at91.patch.gz
+zcat 2.6.24-at91.patch.gz | patch -p1
+\end{lstlisting}
+
+Los cambios que se deben realizar en el código fuente, mencionados anteriormente fueron enviados a los encargados de mantener estas actualizaciones, por lo que no es necesario modificarlos para dar soporte a la familia de plataformas ECB\_AT91.
+
+Finalmente debemos compilar el kernel utilizando la cadena de herramientas GNU, el resultado de este tipo de compilaciones son ejecutables para una arquitectura ARM, este proceso recibe el nombre de compilación cruzada, debido a que da como resultado archivos que se ejecutan en una arquitectura diferente (ARM) a la que realizó el proceso de compilación (X86 en nuestro caso). Lo primero que debemos hacer es hacer visibles los ejecutables de la cadena de herramientas, esto se hace adicionando la ruta donde se encuentran instalados a la variable de entorno \textit{PATH}. 
+
+\begin{lstlisting}
+export export PATH=$PATH:/home/at91/arm-2007q1/bin/
+alias crossmake='make ARCH=arm CROSS_COMPILE=arm-none-eabi-'
+\end{lstlisting}
+
+El alias \textit{crossmake} hace que cada vez que se escriba esta palabra el sistema lo reemplaze por \textit{make ARCH=arm CROSS\_COMPILE=arm-none-eabi-}, lo que ahorra tiempo al momento de pasar los parámetros a la herramienta make; estos parámetros son: 
+
+\begin{enumerate}
+  \item \textit{ARCH=arm} Define la arquitectura \textit{arm}.
+  \item \textit{CROSS\_COMPILE=arm-none-eabi-} Indica que se realizará una compilación cruzada y que los ejecutables de la cadena de herramientas (\textit{gcc, c++, ld, objcopy, etc}) comienzan con el prefijo \textit{arm-none-eabi-} (por lo que el nombre del ejecutable del compilador de c es arm-none-eabi-gcc)
+\end{enumerate}
+
+Una vez declaradas estas variables de entorno debemos generar el archivo oculto \textit{.config} \footnote{este archivo es utilizado por las herramientas de compilación para determinar que soporte fué incluido en el kernel} ejecutando el siguiente comando:
+
+\begin{lstlisting}
+ crossmake ecbat91_defconfig 
+ o 
+ make ARCH=arm CROSS_COMPILE=arm-none-eabi- ecbat91_defconfig
+\end{lstlisting}
+
+A continuación se muestra una sección de este archivo:
+\begin{lstlisting}
+#
+# Automatically generated make config: don't edit
+# Linux kernel version: 2.6.24.4
+# Sat Jul 25 11:39:07 2009
+#
+CONFIG_ARM=y
+.....
+#
+# AT91RM9200 Board Type
+#
+CONFIG_MACH_ECBAT91=y
+.....
+CONFIG_AEABI=y
+.....
+\end{lstlisting}
+
+Finalmente damos incio al proceso de compilación:
+
+\begin{lstlisting}
+ crossmake -j2 (o make ARCH=arm CROSS_COMPILE=arm-none-eabi- -j2)
+\end{lstlisting}
+
+Si no ocurre ningún error, al finalizar debemos observar lo siguiente:
+
+\begin{lstlisting}
+  LD      vmlinux
+  SYSMAP  System.map
+  SYSMAP  .tmp_System.map
+  OBJCOPY arch/arm/boot/Image
+  Building modules, stage 2.
+  MODPOST 1 modules
+  Kernel: arch/arm/boot/Image is ready
+  AS      arch/arm/boot/compressed/head.o
+  CC      drivers/scsi/scsi_wait_scan.mod.o
+  GZIP    arch/arm/boot/compressed/piggy.gz
+  LD [M]  drivers/scsi/scsi_wait_scan.ko
+  CC      arch/arm/boot/compressed/misc.o
+  AS      arch/arm/boot/compressed/head-at91rm9200.o
+  AS      arch/arm/boot/compressed/piggy.o
+  LD      arch/arm/boot/compressed/vmlinux
+  OBJCOPY arch/arm/boot/zImage
+  Kernel: arch/arm/boot/zImage is ready
+\end{lstlisting}
+
+y el contenido de los siguientes ditrectorios debe ser algo como:
+
+\begin{lstlisting}
+$ ls arch/arm/boot/
+bootp  compressed  Image  install.sh  Makefile  zImage
+
+$ ls vmlinux*
+vmlinux  vmlinux.o
+\end{lstlisting}
+
+\subsubsection{Componentes de la Imágen del kernel}
+
+Como nuestro insterés en este punto es entender la estructura de la imágen del kernel podemos indicarle a nuestra herramienta de compilación que nos muestre más información del proceso, ejecutando el comando:
+
+
+\begin{lstlisting}
+ crossmake -j2 V=1
+\end{lstlisting}
+
+Al finalizar el proceso de compilación obtenemos:
+
+\begin{lstlisting}
+arm-none-eabi-ld -EL  -p --no-undefined -X  -o vmlinux -T arch/arm/kernel/vmlinux.lds   
+ arch/arm/kernel/head.o         arch/arm/kernel/init_task.o  \
+ init/built-in.o                                             \
+--start-group                                                \
+ usr/built-in.o                 arch/arm/kernel/built-in.o   \
+ arch/arm/mm/built-in.o         arch/arm/common/built-in.o   \
+ arch/arm/mach-at91/built-in.o  arch/arm/nwfpe/built-in.o    \
+ kernel/built-in.o              mm/built-in.o                \
+ fs/built-in.o                  ipc/built-in.o               \
+ security/built-in.o            crypto/built-in.o            \
+ block/built-in.o               arch/arm/lib/lib.a           \
+ lib/lib.a                      arch/arm/lib/built-in.o      \
+ lib/built-in.o                 drivers/built-in.o           \
+ sound/built-in.o               net/built-in.o               \
+--end-group                                                  \
+.tmp_kallsyms2.o
+
+\end{lstlisting}
+
+
+En la primera línea de el listado anterior (\textit{arm-none-eabi-ld -EL  -p --no-undefined -X  -o vmlinux -T arch/arm/kernel/vmlinux.lds}) se realiza el proceso de enlace del archivo \textit{vmlinux}, utilizando el script de enlace \textit{vmlinux.lds}, incluyendo los objetos (archivos \textit{.o} indicados en la lista. Nótese que el primer archivo enlazado es \textit{head.o}, el cual se genera a partir de \textit{arch/arm/kernel/head.S}, y contiene rutinas de inicialización del kernel. Este proceso se explicará detalladamente más adelante. El siguiente objeto es \textit{init\_task.o}, el cual establece estructuras de datos e hilos que utilizará el kernel. A continuación se enlazan una serie de objetos con el nombre \textit{built-in.o}, la ruta del archivo indica la función que realiza el objeto, por ejemplo el objeto \textit{arch/arm/mm/built-in.o} realiza operaciones de manejo de memoria específicas a la arquitectura arm. En la Figura \ref{vmlinux_contents} se muestran los componentes de la imágen vmlinux y un tamaño de una compilación en particular que nos da una idea de la relación de tamaños.
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.7]{./images/vmlinux_contents} \end{center}
+  \caption{Componentes de la Imagén del kernel de Linux vmlinux}\label{vmlinux_contents}
+\end{figure}
+
+A continuación se realiza la descripción de los componentes de la imágen del kernel \textit{vmlinux}\cite{CH06} 
+
+
+\begin{enumerate}
+\item \textbf{arch/arm/kernel/head.o} Código de inicialización del kernel dependiente de la arquitectura.
+\item \textbf{init\_task.o} Hilos y estructuras inicialies utilizadas por el kernel.
+\item \textbf{init/built-in.o} Código de inicialización del kernel.
+\item \textbf{usr/built-in.o} Imágen interna \textit{initramfs}.
+\item \textbf{arch/arm/kernel/built-in.o} Código del kernel específico de la arquitectura.
+\item \textbf{arch/arm/mm/built-in.o} Código de manejo de memoria específico de la arquitectura.
+\item \textbf{arch/arm/common/built-in.o} Código genérico especifico de la arquitectura.
+\item \textbf{arch/arm/mach-at91/built-in.o} Código de inicialización específico de la plataforma.
+\item \textbf{arch/arm/nwfpe/built-in.o} Emulación de punto flotánte específico de la arquitectura.
+\item \textbf{kernel/built-in.o} Código de componentes comúnes del kernel.
+\item \textbf{mm/built-in.o} Código de componentes comúnes de manejo de memoria.
+\item \textbf{ipc/built-in.o} Comunicación Interproceso.
+\item \textbf{security/built-in.o} Componentes de seguridad de Linux.
+\item \textbf{lib/lib.a} Diferentes funciones auxiliares.
+\item \textbf{arch/arm/lib/lib.a} Diferentes funciones auxiliares, específico de la aquitectura.
+\item \textbf{lib/built-in.o} Funciones auxiliares comunes del kernel.
+\item \textbf{drivers/built-in.o} Drivers internos o drivers no cargables.
+\item \textbf{sound/built-in.o} Drivers de sonido.
+\item \textbf{net/built-in.o} Red de Linux.
+\item \textbf{.tmp\_kallsyms2.o} Tabla de símbolos.
+\end{enumerate}
+
+
+La imágen \textit{vmlinux} generada tiene un tamaño relativamente grande lo que la hace inconveniente para ser almacenada en un dispositivo Flash, por esta razón se acostrumbra comprimirla. A continuación describiremos el proceso que se realiza para crear una imágen compatible con \textit{u-boot}, el cargador de Linux más utilizado para las plataformas embebidas. El primer paso para es reducir el tamaño del ejecutable ELF \textit{vmlinux} es eliminar la información de depuración (notas y comentarios).
+
+\begin{lstlisting}
+$ crossmake  -j3 vmlinux (4.4MBytes)
+$ arm-none-eabi-objcopy -O binary -R .note -R .comment -S vmlinux linux.bin (3.4MBytes)
+$ gzip -c -9 linux.bin > linux.bin.gz (1.6M)
+\end{lstlisting}
+
+A continuación se comprime el archivo resultante utilizando la herramienta \textit{gzip}, como resultado obtenemos un archivo de 1.6M, la tercera parte del archivo original.
+
+\section{Inicialización del kernel}
+Como se mencionó anteriormente, el SoC AT91RM9200, posee un programa residente en una pequeña ROM interna que revisa los controladores de memorias flash en busca de un programa válido. En la familia de plataforma ECB\_AT91 se utiliza la memoria DataFlash para almacenar: el bootloader, el loader de Linux (u-boot) y la imagen del kernel. La Figura \ref{boot_process} indica la secuencia de ejecución de aplicaciones cuando se energiza nuestra plataforma.
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.7]{./images/boot_process} \end{center}
+  \caption{Flujo de ejecución en la inicialización de plataforma ECB\_AT91}\label{boot_process}
+\end{figure}
+
+La primera aplicación en ejecutarse es el loader de Darrel \footnote{Originalmente creado por Darrel Harmon: http://dlharmon.com/}. Debido a que la RAM interna del AT91RM9200 es de tan solo 16kBytes, es necesario utilizar otra aplicación para poder cargar el loader de Linux U-boot en la memoria SDRAM externa (con capacida de de 32Mbytes). Recordemos que incialmente el SoC no posee ninguna aplicación válida en la memoria DataFlash, por lo que el programa interno de inicialización dara comienzo a una comunicación Xmodem, para que se descargue una aplicación a la memoria RAM interna utilizando el puerto de depuración serial a una velocidad de 115200 baudios.
+
+
+\subsection{Darrel's Loader}
+Esta aplicación permite configurar la memoria externa SDRAM, configurar el puerto serie, implementar un protocolo xmodem que permita transferir aplicaciones a la memoria SDRAM, controlar la memoria DataFlash y almacenar aplicaciones en ella. El loader de Darrel está basado en u-boot, es una versión reducida de este y permite únicamente las operaciones mencioandas anteriormente, lo que resulta en un archivo adecuado para ser almacenado en la memoria RAM interna (9.3 kBytes).
+
+Es interesante analizar esta aplicación, ya que esta se ejecuta sin ningún soporte de sistema operativo, lo que lo hace interesante para plataformas en las que no se puede ejecutar Linux. Su código fuente lo podemos descargar utilizando el siguiente comando:
+
+\begin{lstlisting}
+$svn co http://svn.arhuaco.org/svn/src/emqbit/ECB_AT91_V2/darrell-loader/ 
+\end{lstlisting}
+
+La estructura del código fuente se muestra en el siguiente listado:
+\begin{lstlisting}
+|-- include
+|   |-- asm
+|   |   |-- arch
+|   |   |-- proc
+|   |   `-- proc-armv
+|   `-- linux
+|       |-- byteorder
+|       `-- mtd
+`-- src 
+\end{lstlisting}
+
+Antes de estudiar el código fuente demos un vistazo al archivo \textit{Makefile} para ver el proceso de compilación. De ella podemos extraer las partes más interesantes: Los objetos que hacen parte del ejecutable, el proceso de enlazado, y la creación del archivo a descargar en la plataforma:
+
+\begin{lstlisting}
+AOBJS      = src/start.o   //ASSEMBLER OBJECTS
+COBJS      = src/board.o src/serial.o src/xmodem.o src/dataflash.o src/div0.o src/interrupts.o
+LDSCRIPT  := u-boot.lds
+LDFLAGS   += -Bstatic -T $(LDSCRIPT) -Ttext $(TEXT_BASE)
+OBJCFLAGS += --gap-fill=0xff
+TEXT_BASE  = 0x00000000
+
+loader:         $(AOBJS) $(COBJS) $(LDSCRIPT)
+                $(LD) $(LDFLAGS) $(AOBJS) $(COBJS) \
+                        --start-group $(PLATFORM_LIBS) --end-group \
+                        -Map loader.map -o loader
+                      
+loader.bin:     loader
+                $(OBJCOPY) ${OBJCFLAGS} -O binary $< $@
+\end{lstlisting}
+
+Como podemos observar, esta aplicación esta compuesta por el código en ensamblador \textit{src/start.S} y el código en C \textit{src/board.c src/serial.c src/xmodem.c src/dataflash.c src/div0.c src/interrupts.c}. Para generar el ejecutable \textit{loader} (en formato ELF), encadenamos los objetos AOBJS y COBJS utilizando el script de enlazado \textit{u-boot.lds}. A continuación se muestra el comando ejecutado por las herramientas de compilación al crear el ejecutable \textit{loader}
+
+\begin{lstlisting}
+arm-elf-ld -Bstatic -T u-boot.lds -Ttext 0x00000000  
+src/start.o src/board.o src/serial.o src/xmodem.o src/dataflash.o src/div0.o src/interrupts.o
+--start-group 
+--no-warn-mismatch -L /home/at91/gnutools/arm-elf/bin/../lib/gcc-lib/arm-elf/3.2.1 -lgcc 
+--end-group -Map loader.map 
+-o loader
+\end{lstlisting}
+
+
+A continuación se muestra el contenido del archivo \textit{u-boot.lds}
+\begin{lstlisting}
+ OUTPUT_FORMAT("elf32-littlearm", "elf32-littlearm", "elf32-littlearm")
+/*OUTPUT_FORMAT("elf32-arm", "elf32-arm", "elf32-arm")*/
+OUTPUT_ARCH(arm)
+ENTRY(_start)
+SECTIONS
+{
+        . = 0x00000000;
+
+        . = ALIGN(4);
+        .text      :
+        {
+          src/start.o   (.text)
+          *(.text)
+        }
+
+        . = ALIGN(4);
+        .rodata : { *(.rodata) }
+
+        . = ALIGN(4);
+        .data : { *(.data) }
+
+        . = ALIGN(4);
+        .got : { *(.got) }
+
+        . = ALIGN(4);
+        __bss_start = .;
+        .bss : { *(.bss) }
+        _end = .;
+}
+\end{lstlisting}
+
+Este archivo indica que la primera dirección del ejecutable es la 0x0 y que la primera instrucción en ejecutarse (definida por \textit{ENTRY}) se encuentra en el símbolo \textit{\_start} definida en el archivo \textit{start.S}; por otro lado, este script de enlazado nos informa que las secciones \textit{.text} \textit{.rodata} \textit{.data} \textit{.got} y \textit{.bss} serán incluidas en el ejecutable y se encuentran en la misma región de memoria (lo que era de esperarse ya que solo tenemos la memoria interna RAM).
+
+\subsubsection{crt0.S (startup.S)}
+Cuando se crea un ejecutable para ser utilizado en una plataforma específica, es necesario incluir el archivo \textit{crt0.S (C runtime startup code)}. Este archivo contiene el punto de entrada \textit{\_start} y está encargado de las siguientes funciones:
+
+\begin{enumerate}
+  \item Inicilización de las pilas (\textit{stacks}).
+  \item Copiar el contenido de la sección \textit{.data} (datos inicializados) de la memoria no volátil.
+  \item Inicializar la sección \textit{.bss}
+  \item Hacer el llamado al punto de entrada \textit{main} ( \textit{start\_armboot} para el Darrel's loader)
+\end{enumerate}
+
+Y esta compuesto por:
+\begin{enumerate}
+\item \textbf{\_vectors} Tabla de vectores de excepciones. Deben estar colocados en la dirección 0x0000.
+\item \textbf{reset\_handler} Esta función maneja el reset , y es el punto de entrada principal de un ejecutable. Realiza operaciones de inicialización específica de la arquitectura. 
+\item \textbf{undef\_handler} Es el manejador de las instrucciones no definidas. 
+\item \textbf{swi\_handler} Manejador de las interrupciones software.
+\item \textbf{pabort\_handler} Manejador de las excepciones \textit{prefetch abort}.
+\item \textbf{dabort\_handler} Manejador de las excepciones \textit{data abort}.
+\item \textbf{irq\_handler} Manejador de las IRQ (Interrupt Request).
+\item \textbf{fiq\_handler} Manejador de las FIQ (Fast Iterrupt Request).
+\end{enumerate}
+
+El archivo \textit{crt0.S} es escrito en languaje ensamblador, y es fuertemente dependiente de la arquitectura, solo programadores expertos con un muy buen conocimiento de la arquitectura podrían escribirlo; sin embargo, los fabricantes proporcionan ejemplos de este tipo de archivos para que pueden ser utilizados sin tener que estudiar profundamente la arquitectura y el lenguaje ensamblador de la misma.
+
+Una vez se han ejecutado las operaciones mendionadas anteriormente se hace un llamado al punto de entrada \textit{start\_armboot} (\textit{ldr pc,\_start\_armboot})
+
+\subsubsection{serial.c, xmpdem.c, dataflash.c, div0.c, interrupts.c}
+A continuación se realiza una descripción de los archivos que hacen parte del loader de Darrel:
+\begin{itemize}
+  \item \textbf{serial.c}: Inicializa y configura el puerto serial de depuración (DBGU) a uan velocidad ed 115200 baudios, 8 bits de datos, paridad, par. Adicionalmente proporciona las funciones:
+    \begin{itemize}
+      \item \textit{putc}: Transmite un caracter por la interfaz serial de depuración.
+      \item \textit{puts}: Transmite una cadena de caracteres.
+      \item \textit{getc}: Recibe un caracter por la interfaz serial de depuración.
+    \end{itemize}
+  \item \textbf{xmodem.c}: Implementa la recepción serial utilizando elprotocolo xmodem.
+  \item \textbf{dataflash.c}: Inicializa el puerto SPI, y proporciona funciones de alto nivel para la escritura de la DataFlash.
+    \begin{itemize}
+      \item \textit{write\_dataflash(addr\_dest, addr\_src, size)}
+    \end{itemize}
+
+  \item \textbf{div0.c}: Remplazo (dummy) del manejador división por cero de GNU/Linux.
+  \item \textbf{interrupts.c}: Proporciona funciones para el manejo de interrupciones e implementación de retardos.
+\end{itemize}
+
+\subsubsection{board.c}
+El archivo \textit{board.c} proporciona el punto de entrada \textit{start\_armboot} y realiza las siguientes operaciones:
+
+\begin{itemize}
+  \item Configuración del Controlador de manejo de potencia (PMC).
+  \item Hace un llamado a la incialización del puerto serie de depuración \textit{serial\_init()}
+  \item Configura la SDRAM externa \textit{try\_configure\_sdram}
+  \item Despliega un menú de funciones.
+  \item Realiza las operaciones del menú.
+\end{itemize}
+
+Una vez se carga el archivo loader.bin, el que resulta de quitarle al archivo ELF la información de depuración y notas:
+
+\begin{lstlisting}
+/home/at91/gnutools/arm-elf/bin/arm-elf-objcopy --gap-fill=0xff -O binary loader loader.bin
+\end{lstlisting}
+
+El programa desplegará el siguiente menú:
+
+\begin{lstlisting}
+Darrell's loader - Thanks to the u-boot project                                                                                           
+Version 1.0. Build Jul 29 2007 12:04:04                                                                                                   
+RAM:32MB                                                                                                                                  
+                                                                                                                                          
+1: Upload Darrell's loader to Dataflash
+2: Upload u-boot to Dataflash
+3: Upload Kernel to Dataflash
+4: Start u-boot
+5: Upload Filesystem image
+6: Memory test
+\end{lstlisting}
+
+La opción 1. del menú permite almacenar el archivo \textit{loader.bin} en la memoria DataFlash, una vez hecho esto, el programa de inicialización almacenado en la memoria ROM interna lo ejecutará cada vez que se reinicie la plataforma.
+
+Las opciones 2 y 3 son similares a la 1, solo que se cargan las aplicaciones en diferentes direcciones de memoria, observemos el código fuente que implementa estas opciones:
+
+\begin{lstlisting}
+     else if(key == '2'){
+      puts("Please transfer u-boot.bin via Xmodem\n\0");
+      len = rxmodem((char *)0x20000000);
+      AT91F_DataflashInit ();
+      dataflash_print_info ();
+      if(write_dataflash(DATAFLASH_UBOOT_BASE, 0x20000000, len))
+        puts("Dataflash write successful\n");
+      dispmenu = 1;
+    }
+\end{lstlisting}
+
+Aca vemos como si se elije la opción 2, se despliega un mensaje indicandole al usuario que transmita el archivo \textit{u-boot.bin} utilizando el protocolo xmodem, después se ejecuta la función rxmodem la que recibe los datos por el serial y lo almacena en la SDRAM externa (dirección 0x20000000) y finalmente se almacena esta información en la dirección \textit{DATAFLASH\_UBOOT\_BASE}.
+
+La opción 4. del menú transfiere la ejecución 
+\begin{lstlisting}
+    else if(key == '4' || ((scans > 300000) && autoboot)){
+      if(AT91F_DataflashInit ()){
+        dataflash_print_info ();
+        if(read_dataflash(DATAFLASH_UBOOT_BASE, 0x1C000, (char *)0x20700000)){
+          puts("Dataflash read successful: Starting U-boot\n");
+          asm("ldr pc, =0x20700000");
+        }
+      }
+    }
+\end{lstlisting}
+En esta opción se copian 0x1C000 bytes del contenido de la memoria DataFlash comenzando en la posición \textit{DATAFLASH\_UBOOT\_BASE} a la dirección de memoria 0x20700000 (SDRAM externa) y luego se carga el contador de programa con la dirección 0x20700000, con lo que se inicia la ejecución del programa almacenado en la DataFlash, es importante hacer notar que el programa debe ser enlazado para que las secciones estén en la posición de memoria donde serán ejecutadas (0x20700000), no en la dirección donde son almacenadas.
+
+\subsection{U-boot}
+La opción número 4 del menú copia el programa u-boot almacenado en la DataFlash a la memoria SDRAM y comienza su ejecución, en esta sección se realizará una descrición del loader u-boot.
+
+U-boot es un \textit{bootloader} que permite cargar archivos utilizando una gran variedad de periféricos como: Puerto serie, Memoria SD, Memorias Flash Paraleas, seriales, NAND. NOR, Ethernet. Es capáz de iniciar una variedad de tipos de archivos, además de un formato especial propio; este último almacena información sobre el tipo de sistema operativo, la dirección de carga, el punto de entrada, verificación de integridad via CRC, tipos de compresión, y textos descriptivos. La siguiente información es desplegada cuando \textit{u-boot} se inicializa una imagen del kernel de linux.
+
+\begin{lstlisting}
+## Booting image at c0021840 ...                
+   Image Name:   Linux Kernel Image             
+   Image Type:   ARM Linux Kernel Image (gzip compressed)
+   Data Size:    1550369 Bytes =  1.5 MB                 
+   Load Address: 20008000                                
+   Entry Point:  20008000                                
+   Verifying Checksum ... OK                             
+   Uncompressing Kernel Image ... OK
+\end{lstlisting}
+
+Para crear una imágen con el formato \textit{U-boot} basta con ejecutar el siguiente comando:
+\begin{lstlisting}
+$ mkimage -A arm -O linux -T kernel -C gzip  -a 0x20008000 -e 0x20008000  -n "Linux Kernel Image" \
+-d linux.bin.gz ecb_at91.img
+\end{lstlisting}
+
+Acá definimos \textit{ARM} como arquitectura, \textit{linux} como sistema operativo, \textit{Kernel} como el tipo de imágen, \textit{gzip} el método de compresión, \textit{0x20008000} la dirección de carga y punto de entrada (son iguales para kernels superiores al 2.3.X) \textit{Linux Kernel Image} el nombre de la imágen \textit{linux.bin.gz} el archivo de entrada y \textit{ecb\_at91.img} el archivo de salida. Esta información es almacenada en el encabezado de la imágen y puede ser leido utilizando el comando:
+
+\begin{lstlisting}
+$mkimage -l /home/at91/binaries/ecb_at91.img
+
+Image Name:   Linux Kernel Image
+Created:      Fri Jun 26 09:26:03 2009
+Image Type:   ARM Linux Kernel Image (gzip compressed)
+Data Size:    1550369 Bytes = 1514.03 kB = 1.48 MB
+Load Address: 0x20008000
+Entry Point:  0x20008000
+\end{lstlisting}
+
+El siguiente listado muestra la estructura del envabezado definida por \textit{u-boot}, en ella podemos obervar sus componentes y el tamaño de cada uno de ellos.
+
+\begin{lstlisting}
+typedef struct image_header {
+        uint32_t        ih_magic;       /* Image Header Magic Number    */
+        uint32_t        ih_hcrc;        /* Image Header CRC Checksum    */
+        uint32_t        ih_time;        /* Image Creation Timestamp     */
+        uint32_t        ih_size;        /* Image Data Size              */
+        uint32_t        ih_load;        /* Data  Load  Address          */
+        uint32_t        ih_ep;          /* Entry Point Address          */
+        uint32_t        ih_dcrc;        /* Image Data CRC Checksum      */
+        uint8_t         ih_os;          /* Operating System             */
+        uint8_t         ih_arch;        /* CPU architecture             */
+        uint8_t         ih_type;        /* Image Type                   */
+        uint8_t         ih_comp;        /* Compression Type             */
+        uint8_t         ih_name[IH_NMLEN];      /* Image Name           */
+} image_header_t;
+\end{lstlisting}
+
+
+\subsection{Portando U-boot a la familia de plataformas ECB\_AT91}
+Es necesario modificar varios archivos para que \textit{u-boot} soporte la familia de plataformas ECB\_AT91:
+
+\subsubsection{Makefile}
+Se le debe indicar a las herramientas de compilación la nueva plataforma, adicionando las siguientes líneas.
+
+\begin{lstlisting}
+ecb_at91_config        :       unconfig
+       @$(MKCONFIG) $(@:_config=) arm arm920t ecb_at91 NULL at91rm9200
+\end{lstlisting}
+
+\subsubsection{MAKEALL}
+Se debe agregar la siguiente entrada en el archivo MAKEALL:
+\begin{lstlisting}
+ LIST_ARM9="    \
+ -----
+       at91rm9200dk cmc_pu2 ecb_at91
+\end{lstlisting}
+
+\subsubsection{board/ecb\_at91/Makefile}
+En el directorio \textit{board/ecb\_at91} se alojan los archivos que dan soporte a la nueva arquitectura, el archivo de reglas de Configuración se muestra a continuación:
+
+\begin{lstlisting}
+
+include $(TOPDIR)/config.mk
+
+LIB     = $(obj)lib$(BOARD).a
+
+COBJS   := $(BOARD).o at45.o flash.o
+
+SRCS    := $(SOBJS:.o=.S) $(COBJS:.o=.c)
+OBJS    := $(addprefix $(obj),$(COBJS))
+SOBJS   := $(addprefix $(obj),$(SOBJS))
+
+$(LIB): $(obj).depend $(OBJS) $(SOBJS)
+        $(AR) $(ARFLAGS) $@ $(OBJS) $(SOBJS)
+
+clean:
+        rm -f $(SOBJS) $(OBJS)
+
+distclean:      clean
+        rm -f $(LIB) core *.bak .depend
+
+# defines $(obj).depend target
+include $(SRCTREE)/rules.mk
+sinclude $(obj).depend
+\end{lstlisting}
+
+Este es el formato utilizado para todas las plataformas, la parte importante se encuentra en la definición de la variable \textit{COBJS}; en la que se incluyen los archivos \textit{ecb\_at91.o}: archivo de la plataforma \textit{at45.0}: soporte a las memorias DataFlash AT45 y \textit{flash.o}: soporte genérico para dispositivos flash\footnote{Estos archivos pueden ser descargados de:  http://svn.arhuaco.org/svn/src/emqbit/ECB\_AT91\_V2/u-boot/u-boot-1.1.6-ecbat91.patch}.
+
+\subsubsection{board/ecb\_at91/board.c}
+Este archivo contiene toda la configuración específica de la plataforma, y como se puede ver en el siguiente listado, fija el número de la plataforma a: MACH\_TYPE\_ECBAT91 (1072 definida en \textit{include/asm-arm/mach-types.h}) y los parámetros del boot en: \textit{PHYS\_SDRAM + 0x100;} (PHYS\_SDRAM = 0x20000000 está definido en \textit{include/configs/ecb\_at91.h}). Adicionalmente, inicializa la SDRAM, la interfaz de red y la memoria DataFlash.
+
+\begin{lstlisting}
+#include <common.h>
+#include <asm/arch/AT91RM9200.h>
+#include <at91rm9200_net.h>
+#include <lxt972.h>
+
+DECLARE_GLOBAL_DATA_PTR;
+
+/*
+ * Miscelaneous platform dependant initialisations
+ */
+
+void lowlevel_init(void)
+{
+       /* Required by assembly functions - do nothing */
+}
+
+int board_init (void)
+{
+       /* Enable Ctrlc */
+       console_init_f ();
+
+       /* arch number of ECB_AT91 board */
+       gd->bd->bi_arch_number = MACH_TYPE_ECBAT91;
+
+       /* adress of boot parameters */
+       gd->bd->bi_boot_params = PHYS_SDRAM + 0x100;
+
+       return 0;
+}
+
+int dram_init (void)
+{
+       gd->bd->bi_dram[0].start = PHYS_SDRAM;
+       gd->bd->bi_dram[0].size = PHYS_SDRAM_SIZE;
+       return 0;
+}
+
+#ifdef CONFIG_DRIVER_ETHER
+#if (CONFIG_COMMANDS & CFG_CMD_NET)
+
+/*
+ * Name:
+ *     at91rm9200_GetPhyInterface
+ * Description:
+ *     Initialise the interface functions to the PHY
+ * Arguments:
+ *     None
+ * Return value:
+ *     None
+ */
+
+void at91rm9200_GetPhyInterface(AT91PS_PhyOps p_phyops)
+{
+       p_phyops->Init = lxt972_InitPhy;
+       p_phyops->IsPhyConnected = lxt972_IsPhyConnected;
+       p_phyops->GetLinkSpeed = lxt972_GetLinkSpeed;
+       p_phyops->AutoNegotiate = lxt972_AutoNegotiate;
+}
+
+#endif /* CONFIG_COMMANDS & CFG_CMD_NET */
+#endif /* CONFIG_DRIVER_ETHER */
+
+#ifdef CONFIG_HAS_DATAFLASH
+#include <dataflash.h>
+
+void AT91F_DataflashMapInit(void)
+{
+       static int cs[][CFG_MAX_DATAFLASH_BANKS] = {
+               /* Logical adress, CS */
+               {CFG_DATAFLASH_LOGIC_ADDR_CS0, 0},
+               };
+
+       static dataflash_protect_t area_list[NB_DATAFLASH_AREA] = {
+               /*define the dataflash offsets*/
+               {DATAFLASH_LOADER_BASE /* 0 */, DATAFLASH_UBOOT_BASE - 1,
+                FLAG_PROTECT_SET, "Darrell loader"},
+               {DATAFLASH_UBOOT_BASE, DATAFLASH_ENV_UBOOT_BASE - 1,
+                FLAG_PROTECT_SET, "U-boot"},
+               {DATAFLASH_ENV_UBOOT_BASE, DATAFLASH_KERNEL_BASE - 1,
+                FLAG_PROTECT_CLEAR, "Environment"},
+               {DATAFLASH_KERNEL_BASE, DATAFLASH_FILESYSTEM_BASE - 1,
+                FLAG_PROTECT_CLEAR, "Kernel"},
+               {DATAFLASH_FILESYSTEM_BASE, 0x1fffff, FLAG_PROTECT_SET, "Filesystem"},
+               };
+
+       AT91F_MapInit (cs, area_list);
+}
+
+#endif
+\end{lstlisting}
+
+
+\subsubsection{include/configs/ecb\_at91.h}
+Este archivo contiene variables que son utilizadas para la inicialización de la plataforma, algunas de estas ellas definen el valor de registros de configuración de periféricos como: El controlador del reloj del sistema, controlador de memorias SDRAM y memorias Flash.
+
+A continuación se muestra un segmento de este archivo, en el que se define la arquitectura:
+
+\begin{lstlisting}
+
+/* ARM asynchronous clock */
+#define AT91C_MAIN_CLOCK       180000000
+#define AT91C_MASTER_CLOCK     60000000
+
+#define AT91_SLOW_CLOCK                32768   /* slow clock */
+
+#define CONFIG_ARM920T         1       /* This is an ARM920T Core      */
+#define CONFIG_AT91RM9200      1       /* It's an Atmel AT91RM9200 SoC */
+#define CONFIG_ECB_AT91        1       /* on an AT91RM9200DK Board     */
+#undef  CONFIG_USE_IRQ                 /* we don't need IRQ/FIQ stuff  */
+#define USE_920T_MMU           1
+
+#define CONFIG_CMDLINE_TAG     1       /* enable passing of ATAGs      */
+#define CONFIG_SETUP_MEMORY_TAGS 1
+#define CONFIG_INITRD_TAG      1
+
+#ifndef CONFIG_SKIP_LOWLEVEL_INIT
+#define CFG_LONGHELP
+\end{lstlisting}
+
+Este archivo también incluye el valor predeterminado de las variables de entorno utilizadas por \textit{u-boot}:
+
+\begin{lstlisting}
+#define CONFIG_BOOTARGS   "mem=32M root=/dev/mmcblk0p1 rootfstype=ext3 console=ttyS0,115200n8 rootdelay=1"
+#define CONFIG_ETHADDR     00:00:00:00:00:5b
+#define CONFIG_NETMASK     255.255.255.0
+#define CONFIG_IPADDR      192.168.0.135
+#define CONFIG_SERVERIP    192.168.0.128
+#define CONFIG_BOOTDELAY   2
+#define CONFIG_BOOTCOMMAND "bootm C0021840"
+#define CONFIG_BOOTFILE    "ecb_at91.img"
+#define CONFIG_ROOTPATH    "/home/at91/rootfs"
+#define CONFIG_LOADADDR    0x20200000
+\end{lstlisting}
+
+La variable \textit{bootargs} son parámetros pasados al kernel en su inicialización, y en este ejemplo fija la memoria RAM en 32 Mbytes, indica que el sistema de archivos se encuentra en el dispositivo \textit{/dev/mmcblk0p1} y utiliza el sistema de archivos \textit{ext3}, la consola es el dispositivo serial \textit{/dev/ttyS0} configurado a una velocidad de 115200 baudios, bit de paridad y 8 bits de datos y que debe esperar 1 segundo para montar el sistema de archivos.
+
+Las variables \textit{ethaddr, netmask, ipaddr, serverip} configuran la interfaz de red y las direcciones IP de la plataforma y de un servidor de donde puede descargarse la imágen del kernel. La variable \textit{bootdelay} fija el número de segundos que esperará u-boot para ejecutar el comando almacenado en \textit{bootcmd}, este conteo puede detenerse para interactuar con u-boot. El comando \textit{bootm C0021840 (bootcmd)} es utilizado para iniciar la imágen almacenada en la dirección de memoria 0xC0021840 (dirección donde almacena el loader de Darrel la imágen del kernel), \textit{bootm} utiliza la información almacenada en el encabezado de la imágen para utilizar el método de descompresión adecuado, almacenarlo en la dirección requerida y pasarle los parámetros almacenados en \textit{bootcmd}.
+
+\begin{lstlisting}
+#define CONFIG_COMMANDS                \
+               ((CONFIG_CMD_DFL | CFG_CMD_NET | CFG_CMD_PING | CFG_CMD_DHCP ) & \
+               ~(CFG_CMD_BDI | CFG_CMD_FPGA | CFG_CMD_MISC))
+
+/* Remember that you must have the same mapping in the Darrell loader  */
+#define NB_DATAFLASH_AREA                 5  /* protected areas (4 + u-boot env) */
+#define DATAFLASH_MAX_PAGESIZE         1056
+#define DATAFLASH_LOADER_BASE             (0*DATAFLASH_MAX_PAGESIZE)
+#define DATAFLASH_UBOOT_BASE             (12*DATAFLASH_MAX_PAGESIZE)
+#define DATAFLASH_ENV_UBOOT_BASE        (122*DATAFLASH_MAX_PAGESIZE)
+#define DATAFLASH_KERNEL_BASE           (130*DATAFLASH_MAX_PAGESIZE)
+#define DATAFLASH_FILESYSTEM_BASE      (1664*DATAFLASH_MAX_PAGESIZE)
+
+\end{lstlisting}
+
+\subsubsection{Compilación de U-boot en la familia de plataformas ECB\_AT91}
+A continuación se indican los pasos necesarios para generar el archivo \textit{u-boot.bin} que será almacenado en la memoria DataFlash por el loader de Darrel. 
+
+El primer paso  es obviamente descargar el código fuente de la versión 1.1.6 de \textit{http://sourceforge.net/projects/u-boot/}, después debemos descargar el patch que da soporte a la familia de plataformas ECB\_AT91:
+
+\begin{lstlisting}
+$ wget http://svn.arhuaco.org/svn/src/emqbit/ECB_AT91_V2/u-boot/u-boot-1.1.6-ecbat91.patch
+$ tar xjf u-boot-1.1.6.tar.bz2
+$ cd u-boot-1.1.6
+\end{lstlisting}
+
+Aplicamos el patch
+
+\begin{lstlisting}
+$ cat ../u-boot-1.1.6-ecbat91.patch | patch -p1
+\end{lstlisting}
+
+Configuramos y generamos las herramientas utilizadas por \textit{u-boot} (entre ellas \textit{mkimage}).
+
+\begin{lstlisting}
+$ make ecb_at91_config
+   Configuring for ecb_at91 board...  (Este es un comentario)
+$ make tools
+\end{lstlisting}
+
+Por último compilamos \textit{u-boot}:
+
+\begin{lstlisting}
+$ make ARCH=arm CROSS_COMPILE=arm-none-eabi-
+o
+crossmake (si el alias crossmake está definido)
+\end{lstlisting}
+
+Si el proceso se siguió correctamente y no se presentan errores al final del proceso obtenemos el mensaje:
+\begin{lstlisting}
+ arm-none-eabi-objcopy --gap-fill=0xff -O srec u-boot u-boot.srec
+ arm-none-eabi-objcopy --gap-fill=0xff -O binary u-boot u-boot.bin
+\end{lstlisting}
+Lo que nos indica que se generó exitosamente el archivo \textit{u-boot.bin}, que puede ser descargado utilizando la opción 2 del menú del loader de Darrel (\textit{Upload u-boot to Dataflash}) y el protocolo xmodem.
+
+Podemos verificar que el archivo fué generado y almacenado en la Dataflash podemos ejecutar la opción número 4 del menú del loader de Darrel (\textit{Start u-boot}), como se mencionó anteriormente esta opción copia el archivo \textit{u-boot} desde la DataFlash a la memoria SDRAM y es ejecutado desde alli, con lo que se desplegará el siguiente mensaje:
+
+\begin{lstlisting}
+Dataflash read successful: Starting U-boot                                                                                                
+U-Boot 1.1.6 (Jul 29 2007 - 12:12:38)
+
+DRAM:  32 MB
+Atmel: Flash:  0 kB
+DataFlash:AT45DB161
+Nb pages:   4096
+Page Size:    528
+Size= 2162688 bytes
+Logical address: 0xC0000000
+Area 0: C0000000 to C000317F (RO) Darrell loader
+Area 1: C0003180 to C001F73F (RO) U-boot
+Area 2: C001F740 to C002183F      Environment
+Area 3: C0021840 to C01ACFFF      Kernel
+Area 4: C01AD000 to C020FFFF (RO) Filesystem
+In:    serial
+Out:   serial
+Err:   serial
+PHY not connected!!
+Hit any key to stop autoboot:  2 
+\end{lstlisting}
+
+Si se presiona cualquier tecla antes de que el contador llegue a \textit{0}, podemos interactuar con \textit{u-boot}, si ejecutamos el comando \textit{print} (Despliega en pantalla las variables de entorno definidas):
+
+\begin{lstlisting}
+bootcmd=bootm C0021840
+bootdelay=2
+baudrate=115200
+ethaddr=00:00:00:00:00:5b
+ipaddr=192.168.0.135
+serverip=192.168.0.128
+rootpath="/home/at91/rootfs"
+netmask=255.255.255.0
+bootfile="ecb_at91.img"
+loadaddr=0x20200000
+bootargs=mem=32M root=/dev/mmcblk0p2 rootfstype=ext3 console=ttyS0,115200n8 rootdelay=1
+stdin=serial
+stdout=serial
+stderr=serial
+Environment size: 345/8188 
+\end{lstlisting}
+
+Podemos cambiar el valor predeterminado de la variable \textit{bootdelay} a \textit{1}:
+\begin{lstlisting}
+ecb_at91> setenv bootdelay 1                                                    
+\end{lstlisting}
+
+Y almacenamos los cambios realizados en una sección de la flash reservada para este fin con el comando:
+\begin{lstlisting}
+ecb_at91> save                                                                  
+Saving Environment to dataflash...
+\end{lstlisting}s
+
+Podemos generar una nueva variable de entorno, almacenarla en la DataFlash 
+\begin{lstlisting}
+
+ecb_at91> setenv nfsargs=mem=32M console=ttyS0,115200n8 root=/dev/nfs nfsroot=192.168.0.128:/home
+/at91/rootfs,timeo=200,retrans=500 ip=:::::eth0:on
+ 
+ecb_at91> save
+\end{lstlisting}
+
+
+\subsection{Almacenamiento de la imágen del kernel}
+Una vez creada la imágen del kernel (\textit{ecb\_at91.img}) con el formato de \textit{U-boot} debemos probar su correcto funcionamiento; esto lo podemos hacer de dos formas: Almacenandola directamente en una memoria no volátil o cargándola en la memoria RAM y ejecutándola desde allí.
+
+\subsubsection{Almacenamiento en la memoria DataFlash}
+Cuando almacenamos la imágen del kernel de Linux a un medio de almacenamiento no volátil, debemos tener presente que los ciclos de borrado y escritura de este toman un tiempo mucho mayor que en el caso de las memorias no volátiles, por esto, se recomienda esta opción cuando ya se cuente con una imágen estable o cuando no existan otros medios (como en el caso de la plataforma ECBOT).
+
+Inicialmente debemos ejecutar el loader de Darrel, esto se hace presionando el pulsador de \textit{Reset} disponible en todas las plataformas de la familia \textit{ECB\_AT91}. Inmediatamente después de observar el menú del loader debemos oprimir cualquier tecla para interrumpir la ejecución automática del \textit{u-boot}. 
+
+Seleccionando la opción del menú: \textit{3: Upload linux to Dataflash}, podemos iniciar la transferencia de la imágen a la memoria SDRAM de nuestra plataforma:
+
+\begin{lstlisting}
+Please transfer linux via Xmodem
+Receiving Xmodem transfer
+\end{lstlisting}
+
+Cuando aparezca este mensaje se debe transmitir el archivo \textit{ecb\_at91.img} utilizando el protocolo xmodem. Unos minutos después la transferencia finaliza, sin embargo, debemos esperar a que la información sea almacenada en la memoria DataFlash, mientras se completa la escritura la consola no mostrará ninguna actividad, eso es normal y no se debe reiniciar la board. Una vez finalizada la escritura observaremos el mensaje:
+\begin{lstlisting}
+%%%%%%%%%%%%%%%%%%%%%
+\end{lstlisting}
+
+\subsubsection{Almacenamiento en la memoria RAM}
+El proceso de grabación en la memoria DataFlash puede tomar alrededor de 6 minutos, lo que no lo hace conveniente cuando se está tratando de crear una imagen propia o se están realizando cambios a la misma. Cuando necesitamos modificar esta imágen ya sea porque queremos hacerlo nosotros mismos o porque deseamos una versión de kernel más moderna, es preferible utilizar un método de transferencia más rápido. 
+
+La plataforma \textit{ECB\_AT91} posee una interfaz de red que puede ser controlada por \textit{u-boot}. Utilizando el protocolo \textit{tftp} \textit{U-boot} puede descargar la imágen desde un servidor a la memoria SDRAM y ejecutarla desde allí, ese proceso se realiza en segundos, facilitando de esta forma el proceso de desarrollo. A continuación se desciben los pasos que deben seguirse para realizar esta operación:
+
+Primero debemos instalar y configurar el servidor \textit{tftp} en el computador donde se tiene las herramientas de desarrollo:
+
+\begin{lstlisting}
+$ aptitude install tftpd tftp.
+\end{lstlisting}
+
+Se debe agregar la siguiente línea al archivo \textit{/etc/inetd.conf}
+\begin{lstlisting}
+tftp            dgram   udp     wait    nobody  /usr/sbin/tcpd  /usr/sbin/in.tftpd /srv/tftp
+\end{lstlisting}
+
+Debe asegurarse que el protocolo \textit{tftp} utiliza el puerto \textit{UDP} 69
+
+\begin{lstlisting}
+$ cat /etc/services | grep tftp
+tftp            69/udp
+\end{lstlisting}
+
+Ahora creamos el directorio \textit{/srv/tftp}\footnote{Este directorio tiene restricciones de seguridad, debe contactarse con el administrador de su equipo para permitir el acceso a él} y colocamos la imagen en él:
+\begin{lstlisting}
+$ mkdir /srv/tftp/
+$ chown myuser. /srv/tftp/
+$ cp ecb_at91.img /srv/tftp/
+\end{lstlisting}
+
+Para verificar la correcta configuración del servidor, podemos utilizar un cliente \textit{tftp}:
+
+\begin{lstlisting}
+$ cd /tmp/
+$ tftp localhost # from the server
+tftp> get ecb_at91.img
+Received 1319525 bytes in 0.2 seconds
+tftp> quit
+\end{lstlisting}
+
+Ahora se deben configurar algunas variables de entorno en nuestra plataforma para indicarle a \textit{u-boot} la dirección \textit{IP}, el nombre y la ubicación de la imágen del kernel. Estas variables deben ser modificadas para que contengan los siguientes valores:
+
+\begin{lstlisting}
+loadaddr=0x20200000
+bootdelay=1
+bootfile="ecb_at91.img"
+fileaddr=20200000
+gatewayip=192.168.0.1
+netmask=255.255.255.0
+serverip=192.168.0.128
+\end{lstlisting}
+
+Estas variables fijan la dirección \textit{IP} de: la plataforma a \textit{192.168.0.2}, del gateway a \textit{192.168.0.1}, la del servidor \textit{tftp} a \textit{192.168.0.128\footnote{Dirección IP del PC donde están las herramientas de desarrollo}}. Adicionalmente define el nombre de la imágen del kernel a \textit{ecb\_at91.img}. Una vez configurado \textit{U-boot} podemos descargar la imágen a la dirección de memoria \textit{0x20200000}:
+
+\begin{lstlisting}
+ecb_at91 >tftp
+TFTP from server 192.168.0.1; our IP address is 192.168.0.2
+Filename 'ecb_at91.img'.
+Load address: 0x20200000
+Loading: #################################################################
+         #################################################################
+         #################################################################
+         #################################################################
+         ################
+done
+Bytes transferred = 1409031 (158007 hex)
+ecb_at91 >
+\end{lstlisting}
+
+
+
+\subsection{Inicialización del Kernel}
+En general los cargadores de Linux como el \textit{u-boot} realizan las siguientes funciones:
+
+\begin{itemize}
+\item \textbf{Configurar e inicializar la RAM}
+\item \textbf{Inicializar un puerto serial}
+\item \textbf{Detectar el tipo de máquina:} El boot loader debe proporcionar un valor \textit{MACH\_TYPE\_XXX} al kernel, como vimos anteriormente tanto \textit{u-boot} como \textit{Linux} fijan este valor a 1072.
+\item Configurar la \textit{kernel tagged list}: El boot loader debe crear e inicializar una estructura llamada \textit{kernel tagged list}, al cual comienza con \textit{ATAG\_CORE} y finaliza con \textit{ATAG\_NONE}. El tag \textit{ATAG\_CORE} puede o no estar desocupado, si se encuentra desocupado debe fijar el campo \textit{size} en '2'. El campo \textit{size} del tag \textit{ATAG\_NONE} debe fijarse en 0. Se pueden  definir cualquier número de tags, pero se deben definir por lo menos el tamaño y la localización de la memoria del sistema, y la localización del sistema de archivos. Esta \textit{tagged list} debe ser almacenada en RAM, en una región que no pueda ser modificada por el descompresor del kernel o por el programa \textit{initrd}. Se recomienda colocarlo en los primeros 16kBytes de la RAM.
+
+\item Hacer un llamado a la imágen del kernel: Existen dos formas de hacer este llamado, directamente desde la flash o en en cualquier posición de la RAM. Los dos métodos deben cumplir las siguientes condiciones:
+  \begin{itemize}
+    \item Desactiva los dispositivos que tienen capacidad de DMA, de tal forma que la memoria no se corrompa.
+    \item Fijar los registros de la CPU: \textit{r0 = 0}, \textit{r1 = típo de máquina}, \textit{r2 = dirección física de la \textit{tagged list} en RAM.}
+    \item Modo de la CPU: Deshabilitar todas las interrupcione (IRQs y FIQs) y colocar a la CPU en modo SVC
+    \item Caches, MMU: Debe estar desactivada la MMU, La cache de instrucciónes puede estar activada o desactivada, la cache de datos debe estar desactivada.
+  \end{itemize}
+\end{itemize}
+
+
+\subsubsection{Llamado a la Imágen del kernel}
+
+Como mencionamos anteriormente, \textit{u-boot} ejecuta las instrucciones almacenadas en la variable de entorno \textit{bootcmd}; que para la familia de plataformas ECB\_AT91 almacena el comando \textit{bootm C0021840}, esta instrucción le indica a \textit{u-boot} que ejecute el comando \textit{bootm} con una imágen almacenada en la posición de memoria \textit{0xC0021840}, en la que (como mencionamos anteriormente (Figura \ref{boot_process})) se almacena la imágen del kernel. El código que implementa el comando \textit{bootm} se encuentra en el archivo \textit{common/cmd\_bootm.c}; analizando este archivo podemos descubrir el proceso que realiza \textit{u-boot} al hacer el llamado a la imágen del kernel (la que almacenamos utilizando la opción 3 del loader de Darrel). La función \textit{do\_bootm} realiza las siguientes operaciones:
+
+\begin{itemize}
+  \item Verificar la existencia de un número mágico en los primeros 4 bytes de la imágen (0x27051956). Si no se encuentra este número se desplegará el mensaje: \textit{Bad Magic Number}
+  \item Verifica la integridad del encabezado de la imágen. De no pasar esta prueba se mostrará el mensaje: \textit{Bad Header Checksum}.
+  \item Imprime el encabezado de la imágen, aparecerá algo como:
+  \item Cálcula el CRC del archivo almacenado y lo compara con el almacenado en la cabecera de la imágen. Si no se supera esta prueba, se desplegará el mensaje: \textit{Bad Data CRC}
+  \item Comprueba que la arquitectura está soportada por \textit{u-boot}.
+  \item Descomprime la imágen almacenada en la dirección \textit{load\_address} (la cual se pasa como parámetro en el momento de la creación de la imágen).
+  \item Transferir el control a Linux en la función \textit{do\_bootm\_linux}\textit{U-boot es un loader que permite trabajar con: LYNXOS, RTEMS, VXWORKS, QNX, ARTOS, NETBSD}
+\end{itemize}
+
+La función \textit{do\_bootm\_linux} hace el llamado a la imagen del kernel utilizando el siguiente comando:
+\begin{lstlisting}
+(*kernel) (kbd, initrd_start, initrd_end, cmd_start, cmd_end);
+\end{lstlisting}
+
+en donde:
+\begin{itemize}
+  \item \textit{kbd} Información de la plataforma de desarrollo:
+%   \begin{itemize}\item
+  \begin{lstlisting}
+typedef struct bd_info {
+    int                 bi_baudrate;    /* serial baudrate */
+    unsigned long       bi_ip_addr;     /* IP Address */
+    unsigned char       bi_enetaddr[6]; /* Ethernet adress */
+    struct environment_s               *bi_env;
+    ulong               bi_arch_number; /* id for this board */
+    ulong               bi_boot_params; /* boot params */
+    struct                              /* RAM configuration */
+    {
+        ulong start;
+        ulong size;
+    }                   bi_dram[CONFIG_NR_DRAM_BANKS];
+} bd_t;  \end{itemize}
+  \end{lstlisting}
+%   \end{itemize}
+  \item \textit{initrd\_start} - \textit{initrd\_end}: Linux permite que el sistema de archivos sea almacenado en la memoria RAM, el sistema es almacenado en algún medio no volátil y después es descomprimido en la RAM, esto acelera la ejecución ya que como se mencionó anteriormente, el acceso a las memorias volátiles es mucho menor.  \textit{initrd\_start} - \textit{initrd\_end} indican el inicio y fin de este archivo
+  \item \textit{cmd\_start} - \textit{cmd\_end}: Posición de memoria donde se almacenan los parámetros pasados al kernel (\textit{mem=32M root=/dev/mmcblk0p2 rootfstype=ext3 console=ttyS0,115200n8 rootdelay=1})
+\end{itemize}
+En este punto termina el trabajo de \textit{u-boot} y el control es pasado al kernel. Como pudimos darnos cuenta lo más atractivo de \textit{u-boot} es su capacidad para manejar diferentes dispositivos de almacenamiento no volátiles como Memorias Flash, memorias SD y su capacidad para manejar interfaces de red y permitir utilizarlas para al carga de imágenes del kernel.
+
+\subsubsection{Punto de Entrada del Kernel \textit{head.o}}
+Como puede verse en \ref{vmlinux_contents} el primer archivo encadenado en la imágen del kernel es \textit{arch/arm/kernel/head.o}, y corresponde al punto de entrada del kernel de Linux, este archivo ejecuta las siguientes funciones:
+
+\begin{enumerate}
+  \item Verificar que la arquitectura y el procesador sean válidos. Si el procesador no es válido se generará un error y en la consola aparecerá una ``\textit{p}'', si la plataforma no corresponde se genera un error y se imprimirá una ``\textit{a}'' en la consola.
+  \item Se genera una estructura de datos (\textit{page table}) que almacena el mapeo entre las direcciones de memoria virtual y la memoria física. Antes de pasar el control al kernel, el procesador corre un un modo \textit{real}, en el que las direcciones corresponden a direcciones reales de los dispositivos conectados físicamente al procesador. 
+  \item Activa la unidad de manejo de memoria (MMU) del procesador. Cuando se activa la MMU el esquema de memoria físico se remplaza por un direccionamiento virtual determinado por los desarrolladores del kernel.
+  \item Establece un limitado mecanismo de detección y reporte de errores.
+  \item Hace un llamado a la función \textit{start\_kernel} en \textit{init/main.c}
+\end{enumerate}
+
+
+\begin{lstlisting}
+        setup_arch(&command_line);
+        setup_command_line(command_line);
+        sched_init();
+        preempt_disable();
+        page_alloc_init();
+        console_init();
+        mem_init();
+        kmem_cache_init();
+        setup_per_cpu_pageset();
+        numa_policy_init();
+        calibrate_delay();
+        pidmap_init();
+        pgtable_cache_init();
+        prio_tree_init();
+        anon_vma_init();
+        fork_init(num_physpages);
+        proc_caches_init();
+        buffer_init();
+        unnamed_dev_init();
+        key_init();
+        security_init();
+        vfs_caches_init(num_physpages);
+        radix_tree_init();
+        signals_init();
+
+        page_writeback_init();
+        proc_root_init();
+        cgroup_init();
+        cpuset_init();
+        taskstats_init_early();
+        delayacct_init();
+        acpi_early_init();
+        schedule();
+        preempt_disable();
+\end{lstlisting}
+
+
+En los últimos pasos en el proceso de arranque de Linux, se libera la memoria que será utilizada por los procesos de inicialización, abre un dispositivo que permita la interacción con el usuario \textit{/dev/console} (consola serial en nuestro caso) y ejecuta el primer proceso en espacio de usuario \textit{init}. El siguiente listado muestra el código que implementa esta última fase del proceso de arranque. 
+
+\begin{lstlisting}
+ static int noinline init_post(void)
+{
+        free_initmem();
+        unlock_kernel();
+        mark_rodata_ro();
+        system_state = SYSTEM_RUNNING;
+        numa_default_policy();
+
+        if (sys_open((const char __user *) "/dev/console", O_RDWR, 0) < 0)
+                printk(KERN_WARNING "Warning: unable to open an initial console.\n");
+
+        (void) sys_dup(0);
+        (void) sys_dup(0);
+
+        if (ramdisk_execute_command) {
+                run_init_process(ramdisk_execute_command);
+                printk(KERN_WARNING "Failed to execute %s\n",
+                                ramdisk_execute_command);
+        }
+
+        /*
+         * We try each of these until one succeeds.
+         *
+         * The Bourne shell can be used instead of init if we are
+         * trying to recover a really broken machine.
+         */
+        if (execute_command) {
+                run_init_process(execute_command);
+                printk(KERN_WARNING "Failed to execute %s.  Attempting "
+                                        "defaults...\n", execute_command);
+        }
+        run_init_process("/sbin/init");
+        run_init_process("/etc/init");
+        run_init_process("/bin/init");
+        run_init_process("/bin/sh");
+
+        panic("No init found.  Try passing init= option to kernel.");
+}
+\end{lstlisting}
+
+Como podemos obsever el último páso consiste en el llamado a un archivo en espacio de usuario llamado \textit{init} o \textit{sh}, en la siguiente subsección se describirá las acciones que se realizan cuando se ejecuta este archivo. De no encontrarse se desplegará el mensaje \textit{No init found.  Try passing init= option to kernel.} y la plataforma pasará a un estado de inactividad.
+
+\section{Inicialización del Sistema}
+En esta sección describiremos el proceso de inicialización de la plataforma embebida, en la sección anterior se estudió la inicialización del kernel de Linux. En esta sección se realizará una descripción del sistema de archivos que contiene aplicaciones que Linux requiere para inicializar servicios como los de red y la consola, cargar drivers (\textit{módulos}) de dispositivos y montar sistemas de archivos adicionales.
+
+\subsection{Sistema de Archivos}
+Anteriormente hemos hecho referencia a la localización de la raíz del sistema de archivos (\textit{root}), e indicamos que está se encuentra en una determinada memoria no volátil, estamos indicando donde se encuentra el nivel más alto del sistema de archivos, el cual se denota como \textit{``/''}. Existen varias opciones entre las que se encuentran:
+\begin{itemize}
+  \item \textbf{Second Extended File System (ext2)} : Este sistema de archivos utiliza bloques como unidad de almacenamiento básico, inodes como medio para mentener un seguimiento de archivos y objetos de sistema, grupos de bloques para dividir lógicamente el disco en secciones más menejables, directorios para proporcionar una organización jerárquica de archivos, bloques y mapas de bits (\textit{bitmap}) de bloques e inodes para mantener un seguimiento de bloques e inodes asignados, y superbloques para definir los parámetros del sistema de archivos y su estado general. Adicionalmente posee la capacidad de crear enlaces simbólicos, un tipo especial de archivo que contiene la referencia a otro archivo o directorio.
+
+ 
+  \item \textbf{Third Extended File System (ext3)}: \textit{ext3} es una extensión del sistema de archivos \textit{ext2} con capacidades de \textit{journaling}. El \textit{Journaling} es utilizado para seguir cambios de archivos y tiene como propósito asegurar que las transacciones sean procesadas de forma adecuada; adicionalmente permite arreglar daños en el sistema de archivos originados por una falla en la fuente de alimentación de la plataforma.
+ 
+  \item \textbf{ReiserFS}: Este sistema de archivos al igual que \textit{ext3} utiliza \textit{journaling}. Fué creado con el fín de aumentar el desempeño frente al sistema \textit{ext2}, es un sistema eficiente en espacio, y mejora el manejo de grandes directorios. 
+  
+  \item \textbf{Journalling FIle FLash System 2 (JFFS2)}: Sistema creado para trabajar con dispositivos Flash, los cuales son utilizados ampliamente en aplicaciones embebidas.
+  
+  \item \textbf{Compresed ROM file system (cramfs)}: Sistema de solo lectura, es utilizado cuando se dispone de una pequeña memoria flash NOR. El máximo tamaño de cramfs es de 256MB. Los archivos en este sistema de archivos se encuentran comprimidos.
+  
+  \item \textbf{Network File System}: Permite montar particiones de disco o directorios de sistemas remotos como un sistema de archivos local, esto permite compartir recursos como unidades de CDs, DVDs u otro medio de almacenamiento masivo. Por otro lado, reduce el tiempo de desarrollo ya que no es necesario transferir archivos entre el sitio donde se encuentran las herramientas de desarrollo y la plataforma.
+  
+  \item \textbf{Pseudo File System} Este sistema de archivos es utilizado por Linux para representar el estado actual del kernel. Este sistema de archivos está montado en el directorio \textit{/proc}, y dentro de él podemos encontrar información detallada del hardware del sistema. Adicionalmente algunos archivos pueden ser manipulados para informar al kernel cambios en la configuración. Este sistema de archivos es virtual y es constantemente actualizado por el kernel. Los archivos \textit{/proc/cpuinfo}, \textit{/proc/interrupt}, \textit{/proc/devices}, \textit{/proc/mounts} Proporcionan información sobre los dispositivos Hardware de la plataforma
+\end{itemize}
+
+
+\subsubsection{Estructura del Sistema de Archivos}
+Todas las distribuciones de linux se basan en el standard \textit{Filesystem Hierarchy Standard \footnote{}} utilizado en los sistemas operativos UNIX. Este standard permite que los programas y los usuarios conozcan de antemano la localización de los archivos instalados. Los siguientes directorios o links simbólicos son de uso obligatorio:
+
+\begin{enumerate}
+
+  \item \textbf{bin} Ejecutables esenciales.
+  \item \textbf{boot} Archivos estáticos del boot loader.
+  \item \textbf{dev} Archivos de dispositivos.
+  \item \textbf{etc} Configuración específica del host.
+  \item \textbf{lib} Librerías esenciales y módulos de kernel.
+  \item \textbf{media} Punto de montaje para sispositivos removibles.
+  \item \textbf{mnt} Punto de montaje temporal.
+  \item \textbf{opt} 
+  \item \textbf{sbin} Ejecutables esenciales del sistema. 
+  \item \textbf{srv} Datos de servicios suministrados por el sistema.
+  \item \textbf{tmp} Archivos temporales.
+  \item \textbf{usr} Segunda jerarquía.
+  \item \textbf{var} Datos variables.
+\end{enumerate}
+
+\subsection{Primer Programa en Espacio de Usuario \textit{init}}
+
+Como vimos anteriormente, la primera aplicación en espacio de usuario que ejecuta el kernel es \textit{/sbin/init}, todos los procesos que no sean del kernel son generados de forma directa o indirecta por él y es responsable de la inicialización de los scripts y terminales. Su papel más importante es generar procesos adicionales bajo la dirección de un archivo de configración especial \textit{/etc/inittab}  
+
+\subsubsection{Modos de operación}
+Existen dos modos de operación en Linux: Modo usuario simple y Multi-usuario, en el primero solo se activa una línea de comandos y el único usuario que puede utilizarla es el super-usuario \textit{root}; es utilizado para sistemas en mantenimiento y normalmente se le asigna el nivel de ejecución 1. En este nivel de ejecución, no existen procesos demonios\footnote{Proceso que se ejecuta de forma discreta sin intervención del usuario y es activado por la ocurrencia de una condición específica} en ejecución, y la interfaz de red no está configurada\cite{JF}.
+
+El modo multi-usuario es el modo normal de ejecución del sistema Linux, cuando Linux inicia en este modo se ejecutan los siguientes procesos:
+
+\begin{itemize}
+\item Se revisa el estado del sistema de archivos con \textit{fsck}.
+\item Se monta en sistema de archivos.
+\item \textit{init} analiza el archivo \textit{/etc/inittab} y
+  \begin{itemize}
+    \item Determina el nivel de ejecución
+    \item Ejecuta los scripts asociados con este nivel de ejecución.
+  \end{itemize} 
+\item Inicializa los demonios.
+\item Permite el acceso a usuarios.
+\end{itemize}
+
+\subsubsection{Niveles de ejecución}
+Un nivel de ejecución puede entenderse como un estado del sistema Hoy día, la mayoría de las distribuciones utilizan los siguientes niveles de ejecución\cite{JF}:
+\begin{enumerate}
+  \item 0. Cierre o detención del sistema (\textit{halt}).
+  \item 1. Modo usuario simple para configuración del sistema y mantenimiento.
+  \item 2. Modo multi-usuario sin red remota.
+  \item 3. Modo multi-usuario con red. Este es el modo de operación normal de un usuario de un sistema sin capacidades gráficas. 
+  \item 4. No utilizado - Definido por el usuario.
+  \item 5. Modo multi-usuario con interfáz gráfica. 
+  \item 6. Re-inicialización del sistema (\textit{reboot}).
+\end{enumerate}
+
+El nivel de ejecución pude ser cambiado por el super-usuario (\textit{root}) en cualquier momento utilizando el comando \textit{init n}, donde \textit{n} es el nivel de ejecución deseado.
+
+\subsubsection{El Archivo \textit{/etc/inittab}}
+Como se mencionó anteriormente el programa \textit{init} está encargado de montar el sistema de archivos y de analizar el archivo \textit{/etc/inittab}. Este archivo contiene:
+
+\begin{itemize}
+  \item Una entrada para el nivel de ejecución por defecto. Nivel de ejecución en que inicia el sistema a menos que especifique otra cosa en el boot loader.
+  \item Entradas que deben ser ejecutadas en todos o en un específico nivel de ejecución, su sintáxis es:
+  \textit{id:runlevels:action:process [arguments]}
+    \begin{itemize}
+      \item \textit{id} Cualquier cosa.
+      \item \textit{runlevels} Puede ser un número o lista de números de 0 a 6.
+      \item \textit{action} Acción a tomar:
+        \begin{itemize}
+          \item \textit{respawn} El proceso debe ser re-iniciado una vez finalice.
+          \item \textit{wait start} Ejecuta el proceso cuando se ingresa al nivel de ejecución y espera por su terminación.
+          \item \textit{bootwait} El proceso debe ser ejecutado durante la incialización del sistema.
+          \item \textit{initdefault} Especifica el nivel de ejecución al que se ingresa después de la inicialización del sistema.
+          \item \textit{sysinit} El proceso debe ejecutarse durante la inicialización del sistema. Debe ejecutarse antes de cualquier entrada \textit{boot} o \textit{bootinit}
+        \end{itemize}
+      \item \textit{process} Programa o script a ser ejecutado.
+    \end{itemize}
+\end{itemize}
+En el siguiente listado se muestra un archivo \textit{inittab} típico:
+
+\begin{lstlisting}
+# The default runlevel.
+id:5:initdefault:      
+
+# Boot-time system configuration/initialization script.
+# This is run first except when booting in emergency (-b) mode.
+si::sysinit:/etc/init.d/rcS                                    
+
+# What to do in single-user mode.
+~~:S:wait:/sbin/sulogin          
+
+# /etc/init.d executes the S and K scripts upon change
+# of runlevel.                                        
+
+l0:0:wait:/etc/init.d/rc 0
+l1:1:wait:/etc/init.d/rc 1
+l2:2:wait:/etc/init.d/rc 2
+l3:3:wait:/etc/init.d/rc 3
+l4:4:wait:/etc/init.d/rc 4
+l5:5:wait:/etc/init.d/rc 5
+l6:6:wait:/etc/init.d/rc 6
+# Normally not reached, but fallthrough in case of emergency.
+z6:6:respawn:/sbin/sulogin
+S:2345:respawn:/sbin/getty 115200 ttyS0
+# /sbin/getty invocations for the runlevels.
+
+1:2345:respawn:/sbin/getty 38400 tty1
+\end{lstlisting}
+
+En este archivo se define el nivel de ejecución 5 como el nivel por defecto. El primer script en ejecutarse es \textit{/etc/init.d/rcS} (ya que su acción es del tipo \textit{sysinit}). Luego se ingresa al nivel de ejecución 5 y se ejecuta el script \textit{/etc/init.d/rc} pasándole el argumento ``5'' y espera hasta que el script se complete. \textit{/etc/init.d/rc} ejecuta los scripts localizados en directorios individuales para cada nivel: \textit{/etc/rcX.d} (X un entero de 0 a 6); el nombre de los archivos localizados en estos directorios deben comenzar con el caracter ``\textbf{S}'' (para iniciar procesos) o ``\textbf{K}'' (para ``matar'' procesos), y dos caracteres numéricos: \textit{S[0-9][0-9]}, \textit{S[0-9][0-9]}. Un script típico de inicialización del demonio del servidor web \textit{cherokee} se muestra en el siguiente listado (\textit{/etc/rc5.d/S91cherokee}):
+
+\begin{lstlisting}
+#!/bin/sh
+DAEMON=/usr/sbin/cherokee
+CONFIG=/etc/cherokee/cherokee.conf
+PIDFILE=/var/run/cherokee.pid
+NAME="cherokee"
+DESC="Cherokee http server"
+
+test -r /etc/default/cherokee && . /etc/default/cherokee
+test -x "$DAEMON" || exit 0
+test ! -r "$CONFIG" && exit 0
+        
+case "$1" in
+  start)
+    echo "Starting $DESC: "
+    start-stop-daemon --oknodo -S -x $DAEMON -- -b -C $CONFIG
+    ;;
+
+  stop)
+    echo "Stopping $DESC:"
+    start-stop-daemon -K -p $PIDFILE
+    ;;
+
+  restart)
+    $0 stop >/dev/null 2>&1
+    $0 start
+    ;;
+
+  *)
+    echo "Usage: $0 {start|stop|restart}"
+    exit 0
+    ;;
+esac 
+\end{lstlisting}
+
+Como podemos ver existen tres parámetros que podemos pasar al script: \textit{start}, \textit{stop} y \textit{restart}, cuyas acciones son iniciar, detener y reiniciar el demonio respectivamente. El directorio \textit{/etc/init.d} contiene todos los scripts utilizados en los diferentes niveles de ejecución, el nombre de ellos en este directorio no incluyen los caracteres \textit{S[0-9][0-9]} o \textit{K[0-9][0-9]}.
+
+La línea \textit{S:2345:respawn:/sbin/getty 115200 ttyS0} inicia una consola por el puerto serial \textit{/dev/ttyS0} con una velocidad de 9200 baudios, cuando el nivel de ejecucion sea 2, 3, 4 o 5. Finalmente se crea una terminal virtual para los niveles de ejecución multi-usuario.
+
+Cuando el super-usuario cambia el nivel de ejecución con el comando \textit{init}, los procesos únicos al nievel anterior son terminados y los procesos únicos del nuevo nivel son iniciados.
+
+\subsection{Distribuciones Linux}
+Aunque es  posible construir el sistema de atchivos nosotros mismos, no es nada práctico ya que es una tarea tediosa que requiere cierto nivel de experiencia. En la actualidad, existen varias distribuciones que realizan estas tareas por nosotros, dentro de las más utilizadas se encuentran:
+
+\subsubsection{Busybox}
+Diseñado para optimizar el tamaño y rendimiento de aplicaciones embebidas, BusyBox \footnote{http://www.busybox.net/} combina en un solo ejecutable más de 70 utilidades estándares UNIX, en sus versiones ligeras. BusyBox es considerada la navaja suiza de los sistema embebidos, dado que permite sustituir la gran mayoría de utilidades que se suelen localizar en los paquetes GNU fileutils, shellutils, findutils, textutils, modutils, grep, gzip, tar, etc.
+
+Busybox hace parte de la mayoría de distribuciones de Linux para sistemas embebidos y en la actualidad proporciona las siguientes funciones:
+
+\textit{
+addgroup, adduser, adjtimex, ar, arping, ash, awk, basename, bunzip2, busybox, bzcat, cal, cat, chgrp,
+chmod, chown, chroot, chvt, clear, cmp, cp, cpio, crond, crontab, cut, date, dc, dd, deallocvt, delgroup,
+deluser, df, dirname, dmesg, dos2unix, dpkg, dpkg-deb, du, dumpkmap, dumpleases, echo, egrep, env, expr,
+false, fbset, fdflush, fdisk, fgrep, find, fold, free, freeramdisk, fsck.minix, ftpget, ftpput, getopt,
+getty, grep, gunzip, gzip, halt, head, hexdump, hostid, hostname, httpd, hwclock, id, ifconfig, ifdown,
+ifup, init, ip, ipaddr, ipcalc, iplink, iproute, iptunnel, kill, killall, klogd, last, length, linuxrc, ln,
+loadfont, loadkmap, logger, login, logname, logread, losetup, ls, makedevs, md5sum, mesg, mkdir, mkfifo,
+mkfs.minix, mknod, mkswap, mktemp, more, mount, mt, mv, nameif, nc, netstat, nslookup, od, openvt, passwd, 
+ patch, pidof, ping, ping6, pivot\_root, poweroff, printf, ps, pwd, rdate, readlink, realpath, reboot,
+ renice, reset, rm, rmdir, route, rpm, rpm2cpio, run-parts, sed, setkeycodes, sh, sha1sum, sleep, sort,
+ start-stop-daemon, strings, stty, su, sulogin, swapoff, swapon, sync, syslogd, tail, tar, tee, telnet,
+ telnetd, test, tftp, time, top, touch, tr, traceroute, true, tty, udhcpc, udhcpd, umount, uname,
+ uncompress, uniq, unix2dos, unzip, uptime, usleep, uudecode, uuencode, vi, vlock, watch, watchdog, wc,
+wget, which, who, whoami, xargs, yes, zcat}.
+
+\subsubsection{Buildroot}
+Buildroot\footnote{http://buildroot.uclibc.org/} Es un grupo de \textit{Makefiles} y \textit{patches} que facilita la generación de la cadena de herramientas y el sistema de archivos para un sistema embebido que usa Linux. Posee una interfaz que permite realizar de forma fácil la configuración; utiliza busybox para generar la utilidades básicas de Linux y permite adaptar software adicional de forma fácil \footnote{http://buildroot.uclibc.org/buildroot.html\#add\_software}.
+
+\subsubsection{Openembedded}
+Al igual que Buildroot, el proyecto openembedded proporciona un entorno que permite generar la cadena de herramientas y el sistema de atchivos para un sistema embebido, utiliza busybox y permite la creación de archivos que permiten compilar software que no se incluya en la distribución original. Adicionalmente openembedded crea archivos de instalación con un formato derivado del proyecto \textit{handhelds} \footnote{http://handhelds.org} \textit{ipk}, lo que permite la instalación de paquetes de forma similar a la distribución debian.
+
+La información necesaria para generar una distribución utilizando las herramientas de Openembedded se encuentra en http://www.emqbit.com/mediawiki/index.php/Main\_Page/ecb\_at91/OE.
+
+\section{Módulos del kernel}
+Los módulos son pequeñas piezas de código que pueden ser cargadas y descargadas en el kernel en el momento que sea necesario. Ellos extienden la funcionalidad del kernel, sin la necesidad de reiniciar el sistema y recompilar el kernel. Por ejemplo, un tipo de módulo es el controlador de dispositivo, el cual permite al kernel acceder a un dispositivo hardware conectado al sistema. Este tipo de módulos serán estudiados en esta sección.
+
+Existen tres tipos de dispositivos en Linux \cite{JCAR05}: 
+
+\begin{itemize}
+\item Tipo Caracter: Puede accederse de forma similar a un archivo; este tipo de dispositivos permite por lo menos las operaciones \textit{open}, \textit{close}, \textit{read}. Ejemplos de este tipo de dispositivo son el puerto serie (\textit{/dev/ttyS0}) y la consola (\textit{/dev/console}) 
+\item Tipo Bloque: Este tipo de dispositivo puede hospedar un sistema de archivos; normalmente realiza operaciónes de bloques de datos únicamente; un ejemplo de este tipo de dispositivo es el disco duro (\textit{/dev/hda}).
+\item Red: Toda transacción de red se realiza a través de una interfaz, esto es, un dispositivo hardware (\textit{/dev/eth0}) o software (\textit{loopback}) capaz de intercambiar datos con otros hosts.
+\end{itemize}
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.5]{./images/kernel_module} \end{center}
+  \caption{ Interacción entre el área de usuario y el driver del dispositivo. Fuente: \cite{Mo05}}\label{kernel_module}
+\end{figure}
+
+
+\subsection{Ejemplo de un driver tipo caracter}
+
+Recuerde que una aplicación en el área de usario, no puede acceder directamente al área del kernel; los dispositivos se acceden a través de archivos de dispositivos, localizados en \textit{/dev} (ver figura \ref{kernel_module}), A continuación se muestra la salida del comando \textit{ls -l /dev/}
+
+\begin{lstlisting}
+brw-rw----  1 root disk     3,   0 Nov 27 hda
+brw-rw----  1 root disk     3,   1 Nov 27 hda1
+brw-rw----  1 root disk     3,   2 Nov 27 hda2
+crw-rw----  1 root uucp     4,  64 Nov 27 ttyS0
+crw-rw----  1 root uucp     4,  65 Nov 27 ttyS1
+\end{lstlisting}
+
+
+Los archivos tipo caracter están identificados por una \textit{``c''} en la primera columna, mientras que los dispositivos tipo bloque por una \textit{``b''}. Podemos observar que existen dos números (5ta y 6ta columna) que identifican al driver, el número de la 5ta columna recibe el nombre de \textit{major number} y el de la sexta \textit{minor number}; estos números son utilizados por el sistema operativo para determinar el dispositivo y el driver que deben ser accesados ante una solicitud a nivel de usuario.
+
+El \textit{major number} identifica la clase o grupo del dispositivo, mientras que el \textit{minor number} se utiliza para identificar sub-dispositivos (Ver Figura \ref{major}).
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.5]{./images/major} \end{center}
+  \caption{ \textit{major} y \textit{minor} footnote{http://uw713doc.sco.com/en/HDK\_concepts/ddT\_majmin.html} }\label{kernel_module}
+\end{figure}
+
+El kernel de linux permite que los drivers compartan el número mayor, como el caso del disco duro, hda posee dos particiones hda1 y hda2, las cuales son manejadas por el mismo driver, pero se asigna un número menor único a cada una; lo mismo sucede con el puerto serie.
+
+\subsubsection{Implementación del driver de un LED}
+A continuación se realizará la descripción de un driver tipo caracter para un dispositivo muy sencillo, un LED \cite{OPPS05}. Este ejemplo fue implementado en un procesador PXA255 de Intel y realiza las siguientes operaciones:
+
+\begin{itemize}
+\item \textit{init}: Se ejecuta cuando se carga el módulo, el LED se apagará.
+\item \textit{close}: Se ejecuta cuando se descarga el módulo, el LED se encenderá.
+\item \textit{open}: Se ejecuta cuando se realiza una operación de lectura o escritura al dispositivo.
+\end{itemize}
+
+Existen dos funciones que deben estar presentes en todo tipo de módulo, estas son: \textit{module\_init} y \textit{module\_exit} las cuales se ejecutan cuando se carga y descarga el módulo respectivamente. 
+
+\begin{lstlisting}[firstnumber=40]
+struct file_operations fops = {
+  .open    = device_open,
+  .release = device_release,
+};
+
+static int __init blink_init(void)
+{
+  printk(KERN_INFO "BLINK module is Up.\n");
+
+  Major = register_chrdev(0, DEVICE_NAME, &fops);
+
+  if (Major < 0) {
+    printk(KERN_ALERT "Registering char device failed 
+        with %d\n", Major);
+    return Major;
+  } 
+
+  printk(KERN_ALERT  "I was assigned major number %d. 
+        To talk to\n", Major);
+  printk(KERN_ALERT  "the driver, create a dev file 
+        with\n");
+  printk(KERN_ALERT  "'mknod /dev/%s c %d 0'.\n", 
+        DEVICE_NAME, Major);
+
+  pxa_gpio_mode(GPIO_LED_MD);
+  pxa_gpio_mode(GPIO_LED_OFF);  /* Turn LED OFF*/
+
+  return 0;
+}
+
+
+static void __exit blink_exit(void)
+{
+  int ret;
+
+  ret = unregister_chrdev(Major, DEVICE_NAME);
+  if ( ret < 0 )
+    printk( KERN_ALERT "Error in unregister_chrdev: 
+        %d\n", ret );
+  printk( KERN_INFO "BLINK driver is down...\n" );
+}
+
+
+module_init(blink_init);
+module_exit(blink_exit);
+
+
+MODULE_LICENSE("GPL");
+MODULE_AUTHOR("Carlos Camargo UNAL");
+MODULE_DESCRIPTION("BLINKER LED driver");
+MODULE_VERSION("1:0.1");
+\end{lstlisting} \normalsize
+
+Las funciones \textit{module\_init} \textit{module\_exit} deben ser declaradas como \textit{static} ya que no serán visibles fuera del archivo. Como puede observarse en la línea 83 se hace la definición de las funciones que deben ejecutarse al cargar y descargar el módulo en nuestro caso \textit{blink\_init} y \textit{blink\_exit} respectivamente. La información sobre el módulo aparece en las líneas 87-90.
+
+En la línea 40 se define la estructura de operaciones de archivo del módulo; cada campo de la estructura corresponde a la dirección de una función definida por el driver para manejar una solicitud determinada. En nuestro caso solo existe una función \textit{open}, la cual será definida más adelante.
+
+Como se puede ver en la figura \ref{kernel_module} es necesario que el kernel sepa que driver está encargado del dispositivo, esto es, el \textit{major number} del driver que lo maneja; por esto, lo primero que se debe hacer es obtener este número. En la función \textit{blink\_init} (línea 49) podemos observar la forma en que se realiza el registro de nuestro dispositivo. La función \textit{register\_chrdev} retorna el número mayor asignado de forma dinámica, esto es recomendable ya que si se fijara un número de forma arbitaria, podría causar conflictos con otros dispositivos. De esta forma, al cargar el módulo con el comando: \textit{insmod blinker.ko}, el LED se apagará y aparecerá el siguiente mensaje en la consola:
+
+\footnotesize
+\begin{lstlisting}[numbers=none]
+BLINK module is Up.
+I was assigned major number 253. To talk to
+the driver, create a dev file with
+'mknod /dev/blink c 253 0'.
+\end{lstlisting}
+
+Con lo anterior, nuestro dispositivo es registrado y se le asigna el número 253 como \textit{major number}, en el archivo \textit{/proc/devices} aparecen los dispositivos que actualmente están siendo utilizados por el kernel, este archivo debe contener una entrada para blink de la forma: \textit{253 blink}.
+
+En la función \textit{blink\_exit} se realiza la liberación del dispositivo ( la función \textit{unregister\_chrdev}, línea 75), la cual se ejecuta cuando se lanza el comando: \textit{rmmod blinker.ko}, el que a su vez hace que se encienda el LED y se imprima en la consola el mensaje:
+
+\footnotesize
+\begin{lstlisting}[numbers=none]
+BLINK driver is down...
+\end{lstlisting}
+
+Como se mencionó anteriormente es posible manejar un archivo tipo caracter como si fuera un archivo de texto, por lo tanto, es posible adicionar funciones a las acciones de abrir, cerrar, escribir en o leer del dispositivo.
+
+\begin{lstlisting}[firstnumber=20, numbers=right]
+static int device_open(struct inode *inode, \
+                         struct file *file)
+{
+ unsigned int i;
+  printk( KERN_INFO "Open BLINKER\n" );
+  if (is_device_open)
+    return -EBUSY;
+
+  is_device_open = 1;
+
+  for( i=0; i<5; i++ ){
+    pxa_gpio_mode(GPIO_LED_ON);
+    mdelay(0x0080);
+    pxa_gpio_mode(GPIO_LED_OFF);
+    mdelay(0x0080);
+  }
+
+  try_module_get(THIS_MODULE);
+  return SUCCESS;
+}
+\end{lstlisting}
+
+Esta sección de código se ejecuta cada vez que el archivo de dispositivo /dev/blink es abierto, esto sucede en operaciones de lectura o escritura. Es decir si se utilizan los siguientes comandos:
+
+\begin{lstlisting}[numbers=none]
+more /dev/blink
+cat file > /dev/blink
+cp file /dev/blink
+\end{lstlisting}
+
+Con cada uno de estos comandos el LED se encenderá y apagará y en la consola se despliega el mensaje:
+
+\begin{lstlisting}[numbers=none]
+Open BLINKER
+Close BLINKER
+\end{lstlisting}
+
+\section{Interfaz con Periféricos dedicados}
+Es común que algunas aplicaciones requieran ciertos periféricos especiales que les permitan cumplir las restricciones temporales, es decir, es necesario crear tareas Hardware que ayuden a las tareas software a cumplir con las restricciones de diseño. Para esto es necesario implementar algunas funciones en periféricos externos al procesador. Si la tarea no se encuentra implementada en un dispositivo comercial es necesario implementarlas en un Dispositivo Lógico Programable (PLD) o en un Circuito Integrado de Aplicación Específica (ASIC).
+
+En esta sección realizaremos una explicación detallada del proceso de comunicación entre el procesador y un periférico implementado en una FPGA.
+
+\subsection{Comunicación Procesador - Periférico}
+La figura \ref{computer_arch} muestra una arquitectura básica para la comunicación de tareas Hardware - Software; en ella podemos observar que el procesador maneja tres buses:
+\begin{itemize}
+\item Bus de Datos: Bus bidireccional por donde se realiza el intercambio de información.
+\item Bus de Direcciones: Bis controlado por el procesador y es utilizado para direccionar un determinado periférico o una detrminada funcionalidad del mismo.
+\item Bus de control: Señales necesarias para indicarle a los periféricos el tipo de comunicación (Lectura o escritura).
+\end{itemize}
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.6]{./images/computer-simple} \end{center}
+  \caption{Arquitectura básica Hardware/Software}\label{computer_arch}
+\end{figure}
+
+Todos los periféricos que requieren intercambio de información con el procesador comparten el mismo bus de datos, por lo que es necesario que mientras el procesador no se comunique con ellos permanezcan en estadp de alta impedancia, esto es necesario para evitar corto - circuitos originados por diferentes niveles lógicos en el bus. Por lo tanto, las comunicaciones siempre son iniciadas por el procesador y se selecciona uno y solo un periférico. El decodificador de direcciones es el encargado de habilitar un determinado periférico ante una solicitud del procesador (mediante una dirección de memoria), esto lo hace activando la señal \textit{CSX}, cuando esta señal se encuentra en estado lógico alto el periférico coloca su bus de datos en alta impedancia, si se encuentra en estado lógico bajo el periférica escribe o lee el bus de datos, dependiendo de la activación de las señales del bus de control RD y WR.
+
+El decodificador de direcciones, como su nombre lo indica utiliza como entradas el bus de direcciones y activa solo una señal de selección de Chip (\textit{CSx}), basándose en un rango de direcciones asignado a cada periférico, este rango de direcciones no debe traslaparse para asegurar que solo un chip es seleccionado. Este rango de direcciones que se asigna a cada dispositivo que puede ser accesado por la unidad de procesamiento recibe el nombre de \textit{mapa de memoria} y puede ser único para cada plataforma.
+
+Cuando la unidad de procesamiento necesite comunicarse con un determinado periférico, colocará en el bus de direcciones una valor que se encuentre en el rango de direcciones asignado para ese periférico, esto hace que el decodificador de direcciones active la señal de selección adecuada para informarle al periférico que el procesador va a iniciar una transferencia de información. La Figura \ref{rd_wr_timing} muestra el diagrama de tiempos para un ciclo de lectura y escritura del procesador.
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.7]{./images/rd_wr_waveform} \end{center}
+  \caption{Ciclo de lectura y escritura para la arquitectura de la Figura \ref{computer_arch}}\label{rd_wr_timing}
+\end{figure}
+
+De lo anterior podemos concluir que un periférico es visto por el procesador como una posición de memoria más y las transacciones las inicia únicamente el procesador.
+
+\subsubsection{Implementación de Periféricos en una FPGA}
+Es importante tener en cuenta los siguientes items cuando se implemente una tarea Hardware en una FPGA:
+\begin{itemize}
+  \item La frecuencia del reloj de la FPGA es mucho mayor que la de las señales del bus de control, por lo que es necesario asegurarse que cada vez que el procesador realiza una solicitud de lectura o escritura, la señal de activación cambia del estado lógico alto al bajo; si solo se tiene en cuenta el estado bajo de la señal \textit{CSX} el periférico puede ejecutar la tarea varias veces en el mismo ciclo de activación, lo que puede llevar a resultados incorrectos.
+  \item La fase de los relojes del procesador y la FPGA no es la misma, por lo que es necesario sincronizar las señales del procesador con el reloj de la FPGA; si esto no se hace las señales fuera de fase pueden originar un estado de metaestabilidad en los Flip-Flops internos y por lo tanto el mal-funcionamiento del sistema.
+  \item El bus de datos es bidireccional, por lo que es necesario que la FPGA lo coloque en alta impedancia cuando no se esté habilitando un periférico.
+  \item La FPGA no permite implementar buffers tri-estado internamente por lo que es necesario separar los buses de entrada y salida a cada periférico. El bus de entrada es común a todos los periféricos mientra que es necesario utilizar un esquema de multiplexación entre los buses de salida.
+\end{itemize}
+
+La figura \ref{sw_hw_fpga_arch} muestra el diagrama de bloques de la interfaz necesaria para poder comunicar un grupo de periféricos o tareas Hardware con el bus de datos, dirección y control de un procesador. El bloque \textit{SYNC} se encarga de sincronizar las señales provenientes de la FPGA con el reloj interno de la misma.
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.7]{./images/sw_hw_fpga_arch} \end{center}
+  \caption{Diagrama de Bloques para la comunicación de tareas HW-SW \ref{computer_arch}}\label{sw_hw_fpga_arch}
+\end{figure}
+ 
+ El módulo \textit{Write Pulse generator} genera un pulso cuando las señales \textit{sncs} y \textit{snwe} son activadas como se indica en la figura \ref{cs_we_pulse}. El decodificador de direcciones selecciona un determinado periférico dependiendo del rango especificado para cado uno. Como mencionamos anteriormente, las FPGAs no permiten implementar buffers tri-estado internamente , por lo que cada periférico debe tener un bus de entrada y uno de salida de datos, los buses de entrada de datos son comunes, mientras que los de salida deben ser manejados por un dispositivo de salida, el cual puede ser un multiplexor controlado por el decodificador de direcciones o una compuerta OR, para este último caso es necesario que los periféricos coloquen el bus de datos en ``0'' cuando no estén seleccionados. Finalmente es necesario colocar un buffer tri-estado en los pines de la FPGA, este buffer está controlado por las señales \textit{nwe, noe, ncs} y solo se activa cuando \textit{nwe = 1, noe = 0, ncs = 0}, es decir, cuando se selecciona el rango de memoria de la FPGA y el procesador inicia una operación de lectura.
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.7]{./images/cs_we_pulse} \end{center}
+  \caption{Generación del pulso de escritura}\label{cs_we_pulse}
+\end{figure}
+
+\subsubsection{Programa en Espacio de Usuario para la comunicación}
+El kernel de Linux proporciona una interfaz que permite a una aplicación \textit{mapear} un archivo en memoria, lo que hace que exista una correspondencia uno a uno entre las direcciones de memoria y el contenido del archivo. Linux implementa la llamada de sistema \textit{mmap()} para \textit{mapear} objetos en memoria.\cite{RL07}
+
+\begin{lstlisting}
+  #include <sys/mman.h>
+
+  void * mmap (void *addr,
+               size_t len,
+               int prot,
+               int flags,
+               int fd,
+               off_t offset);
+\end{lstlisting}
+
+
+Un llamado a \textit{mmap()} le pide al kernel hacer un mapeo en la memoria de \textit{len} bytes del objeto representado por el descriptor de archivo \textit{fd}, comenzando a \textit{offset} bytes dentro del archivo. Si se especifica \textit{addr}, se utiliza este valor como la dirección inicial en la memoria. Los permisos de acceso son determinados por \textit{prot}; PROT\_READ habilita la lectura, PROT\_WRITE habilita escritura y PROT\_EXEC habilita la ejecución. El argumento \textit{flasgs} describe el tipo de mapeo, y algunos elementos de su comportamiento y puede tomar los valores:
+
+\begin{itemize}
+ \item  MAP\_FIXED: hace que \textit{addr} sea un requerimiento, si el kernel es incapaz de hacer el mapeo en esta dirección el llamado falla, si los parámetros de dirección y longitud traslapan un mapeo existente se descartan las áreas que se traslapan y se remplazan por el nuevo mapeo.
+ \item MAP\_PRIVATE: Establece que el mapeo no es compartido. Los cambios realizados a la memoria por este proceso no se reflejan en el archivo actual o en el mapeo de los otros procesos.
+ \item MAP\_SHARED: Comparte el mapeo con otros procesos que usan el mismo archivo. Escribir en el mapeo equivale a escribir en el archivo. 
+\end{itemize}
+
+A continuación se lista un ejemplo de la utilización del llamado \textit{mmap}
+
+\begin{lstlisting}
+#define MAP_SIZE 0x2000000l    // ECBOT USE A11 to A25 
+#define MAP_MASK (MAP_SIZE - 1)
+
+    int fd;
+    unsigned long i, j;
+    void *base;
+    volatile unsigned short *virt_addr;
+
+    io_map(0xFFFFFF7C);              // Configure CS3 as 16 bit Memory and 0 Wait States
+    off_t address = 0x40000000;      // CS3 Base Address
+
+    if ((fd = open ("/dev/mem", O_RDWR | O_SYNC)) == -1){
+      printf ("Cannot open /dev/mem.\n");
+      return -1;
+    }
+    printf ("/dev/mem opened.\n");
+
+    base = mmap (0, MAP_SIZE, PROT_READ | PROT_WRITE,
+      MAP_SHARED, fd, address);
+    if (base == (void *) -1){
+      printf ("Cannot mmap.\n");
+      return -1;
+    }
+    printf ("Memory mapped at address %p.\n", base);
+
+    virt_addr = base; 
+    
+\end{lstlisting}
+
+En este ejemplo utilizamos el llamado \textit{mmap} para hacer un mapeo de la dirección de memoria correspondiente al CS3 (0x40000000). El descriptor del archvio utilizado es el dispositivo \textit{/dev/mem} el cual permite operaciones de lectura y escritura a la memoria virtual. Adicionalmente permitimos operaciones de lectura/escritura (PROT\_READ | PROT\_WRITE) y permitimos el acceso a otros proceso. Finalmente podemos usar la variable \textit{virt\_addres} para escribir en cualquier posición de memoria desde \textit{0x40000000} hasta \textit{0x40000000 + MAP\_SIZE}. El siguiente listado muestra un ejemplo de la forma de hacer estas operaciones.
+
+\begin{lstlisting}
+  printf("Writing Memory..\n");
+  for (i = 0 ; i <32; i++){
+  virt_addr[i<<10] = i*3;       // ECBOT use A11 to A25
+  }
+        
+  printf("Reading Memory..\n");
+  for (i = 0 ; i < 32; i++)
+  {
+    j = virt_addr[i<<10];
+    printf("%X = %X\n", i, j );
+  }
+  if (munmap (base, MAP_SIZE) == -1)
+  {
+    printf ("Cannot munmap.\n");
+    return -1;
+  }
+\end{lstlisting}
+
+\subsection{Comunicación Periférico - Procesador}
+
+Cuando un periférico requiere atención por parte de la CPU debido a que terminó de realizar un proceso o porque requiere nuevas instrucciones para seguir operando, o un evento originado por un usuario necesita ser atendido, se debe iniciar un proceso para que la unidad de procesamiento se comunique con él. Como se mencionó anteriormente la unidad de procesamiento está encargada de forma exclusiva de iniciar las operaciones de lectura/ecritura con los periféricos, por esta razón, el periférico utiliza una señal (IRQ) para informarle al procesador que requiere ser atendido. Algunas arquitecturas poseen un mecanismo que permite el acceso a la memoria por parte de los periféricos sin utilizar el procesador, esto permite que periféricos de diferentes velocidades se comuniquen sin someter al procesador a una carga excesiva. En esta sección hablaremos de la forma de definir las interrupciones en un driver de Linux.
+
+\subsubsection{Manejo de Interrupciones}
+A continuación se describirá la forma de manejar las interrupciones utilizando un driver de Linux. Analicemos la función \textit{qem\_init}
+
+\begin{lstlisting}
+ static int __init qem_init(void)
+{
+  int res;
+  printk(KERN_INFO "FPGA module is Up.\n");
+         
+  Major = register_chrdev(0, DEVICE_NAME, &fops);         
+  
+  if (Major < 0) {
+    return Major;
+  } 
+  
+  /* Set up the FGPA irq line */ 
+  at91_set_gpio_input(FPGA_IRQ_PIN, 0);
+  at91_set_deglitch(FPGA_IRQ_PIN, 1);    
+
+  res = request_irq(FPGA_IRQ_PIN, irq_handler, IRQF_DISABLED, "FPGA - IRQ", NULL);
+  
+  set_irq_type(FPGA_IRQ, IRQT_RISING);
+  
+  ioaddress = ioremap(FPGA_BASE, 0x4000);
+
+  return 0;
+}
+
+\end{lstlisting}
+
+Esta rutina es similar a la presentada anteriormente, solo se agrega un par de comandos para definir un pin del procesador como entrada, para poder utilizarlo como señal IRQ,  en la línea:
+
+\begin{lstlisting}
+ res = request_irq(FPGA_IRQ_PIN, irq_handler, IRQF_DISABLED, "FPGA - IRQ", NULL);
+request_irq (int irq, handler, irqflags, devname, dev_id);   
+\end{lstlisting}
+
+Se hace un llamado a la función \textit{request\_irq} que asigna recursos a la interrupción, habilita el manejador y la línea de interrupción. En nuestro caso define el pin \textit{FPGA\_IRQ\_PIN} como la línea de interrupción, la rutina \textit{irq\_handler} será ejecutada cuando se presente una interrupción, el flag \textit{IRQF\_DISABLED} deshabilita las interrupciones locales mientras se procesa, el nombre del dispositivo que realiza la interrupción es \textit{FPGA - IRQ}.
+
+La función \textit{ioremap(offset, size)}, una secuencia de operaciones que permiten que la memoria de la CPU se pueda acceder con las funciones \textit{readb/readw/readl/writeb/writew/write}, utilizando la variable \textit{ioaddress}. Finalmente se define el tipo de interrupción del pin \textit{FPGA\_IRQ\_PIN} como \textit{IRQT\_RISING}.
+
+La función que se ejecuta cuando se presenta la interrupción, se define en el siguiente listado:
+
+\begin{lstlisting}
+irqreturn_t irq_handler(int irq, void *dev_id, struct pt_regs *regs)
+{
+  if(irq_enabled)
+  {
+    interrupt_counter++;
+    printk(KERN_INFO "interrupt_counter=%d\n",interrupt_counter);
+    printk("\n kernel: IREG_LP:%X \n", readb( &ioaddress[0x40] ) );
+    wake_up_interruptible(&wq);
+  }
+  return IRQ_HANDLED;
+}
+\end{lstlisting}
+
+Cada vez que se produce una interrupción y si la variable global \textit{irq\_enabled} es igual a 1, se aumenta en 1 el valor de \textit{interrupt\_counter}, se imprime su valor y el de un registro interno del periférico.
+
+En este driver utilizaremos la función \textit{device\_read} para enviar información a un programa en espacio de usuario. 
+\begin{lstlisting}
+static ssize_t device_read(struct file *filp, /* see include/linux/fs.h   */
+         char *buffer,  /* buffer to fill with data */
+         size_t count, /* length of the buffer     */
+         loff_t * offset)
+{ 
+  if(irq_enabled){
+    wait_event_interruptible(wq, interrupt_counter!=0);
+    copy_to_user ( buffer, &interrupt_counter, sizeof(interrupt_counter) );  
+    interrupt_counter=0;  
+  }
+  else{   
+    interrupt_counter = -1;
+    copy_to_user ( buffer, &interrupt_counter, sizeof(interrupt_counter) );  
+  } 
+  return sizeof(interrupt_counter);
+}
+
+\end{lstlisting}
+
+Cuando se realice una operación de lectura desde espacio de usuario, el proceso quedará bloqueado por la función \textit{wait\_event\_interruptible} hasta que la rutina de atención a la interrupción ejecute la función \textit{wake\_up\_interruptible}, pero es necesario que se cumpla la condición evaluada por \textit{wait\_event\_interruptible} para que se ejecute la tarea. Para este ejemplo:
+
+\begin{lstlisting}
+ wait\_event\_interruptible(wq, interrupt\_counter!=0);
+\end{lstlisting}
+
+Por lo que \textit{irq\_handler} debe hacer:
+
+\begin{lstlisting}
+ interrupt_counter++;
+ wake_up_interruptible(&wq);
+\end{lstlisting}
+
+Si no se hace esto el proceso nunca se despertará y el proceso de lectura quedará bloqueado.
+
+En la línea:
+
+\begin{lstlisting}
+ copy_to_user ( buffer, &interrupt_counter, sizeof(interrupt_counter) ); 
+  copy_to_user ( to, from, long n);
+\end{lstlisting}
+
+Se utiliza la función \textit{copy\_to\_user} para intercambiar información con el programa que se ejecuta en espacio de usuario. En este caso se copia a \textit{char *buffer}, la variable \textit{interrupt\_counter}. Existe una función análoga que recibe información proveniente del espacio de usuario \textit{copy\_from\_user} En la Figura \ref{copy_to_from_user} se muestran estas operaciones.
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.7]{./images/copy_to_from_user} \end{center}
+  \caption{Intercambio de información entre los espacios de kernel y usuario\label{copy_to_from_user}}
+\end{figure}
+
+En la función \textit{qem\_exit} se liberan los recursos de la interrupción y la variable \textit{ioaddress}.
+
+\begin{lstlisting}
+static void __exit qem_exit(void)
+{
+  int ret;
+  /*Tho order for free_irq, iounmap & unregister is very important */
+  free_irq(FPGA_IRQ_PIN, NULL);         
+  iounmap(ioaddress);
+  unregister_chrdev(Major, DEVICE_NAME);
+  
+  printk(KERN_INFO "FPGA driver is down...\n");
+} 
+\end{lstlisting}
+
+
+Finalmente el programa en espacion de usuario es:
+
+\begin{lstlisting}
+ int main(void) {
+
+  int     fileNum, bytes;
+  char    data[40];
+
+  fileNum = open("/dev/fpga", O_RDWR);
+  if (fileNum < 0) {
+     printf(" Unable to open file\n");
+     exit(1);
+  }
+
+  printf(" Opened device\n");
+
+  bytes = read(fileNum, data, sizeof(data));
+
+  if (bytes > 0)
+    printf("%x\n", data);
+
+  close(fileNum);
+
+  return (0);
+}
+\end{lstlisting}
+
+En este programa se abre el dispositivo \textit{/dev/fpga} que corresponde a nuestro driver y se utiliza la función \textit{read} para leer la información suministrada por el driver.
