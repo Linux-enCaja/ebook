@@ -1,0 +1,15 @@
+\select@language {spanish}
+\contentsline {chapter}{\numberline {1}Aplicaciones del SI en Control de Sistemas MRS}{5}
+\contentsline {section}{\numberline {1.1}Marco de Trabajo Basado en la Inmunidad para Control Multi-agente Distribuido \cite {HYKL06}}{5}
+\contentsline {subsection}{\numberline {1.1.1}Modelo Matem\'atico}{6}
+\contentsline {subsubsection}{Binding Affinity}{6}
+\contentsline {subsection}{\numberline {1.1.2}Modelos de Cooperaci\'on}{7}
+\contentsline {subsubsection}{Estados de Conmportamiento de un agente SIA}{7}
+\contentsline {subsubsection}{Definiciones}{7}
+\contentsline {subsection}{\numberline {1.1.3}Interacci\'on Entre Agentes SIA}{8}
+\contentsline {subsection}{\numberline {1.1.4}Umbral de Afinidad}{8}
+\contentsline {subsection}{\numberline {1.1.5}Manipulaci\'on de la Respuesta del Marco de Control Basado en SIA}{9}
+\contentsline {subsubsection}{Cadena de Capacidades y Complejidades}{9}
+\contentsline {subsection}{\numberline {1.1.6}Metodolog\IeC {\'\i }a de Coincidencia Espec\IeC {\'\i }fica}{10}
+\contentsline {subsubsection}{L\'ogica de Control}{10}
+\contentsline {subsubsection}{Comportamiento de un Agente SIA}{10}

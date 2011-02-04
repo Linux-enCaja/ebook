@@ -1,0 +1,243 @@
+RCV9 0 0 1012 738
+font 65 8 4
+Times 0 10
+Times 2 10
+Times 1 10
+Times 3 10
+Times 0 12
+Times 2 12
+Times 1 12
+Times 3 12
+Times 0 14
+Times 2 14
+Times 1 14
+Times 3 14
+Times 0 18
+Times 2 18
+Times 1 18
+Times 3 18
+Times 0 24
+Times 2 24
+Times 1 24
+Times 3 24
+Courier 0 10
+Courier 2 10
+Courier 1 10
+Courier 3 10
+Courier 0 12
+Courier 2 12
+Courier 1 12
+Courier 3 12
+Courier 0 14
+Courier 2 14
+Courier 1 14
+Courier 3 14
+Courier 0 18
+Courier 2 18
+Courier 1 18
+Courier 3 18
+Courier 0 24
+Courier 2 24
+Courier 1 24
+Courier 3 24
+Helvetica 0 10
+Helvetica 2 10
+Helvetica 1 10
+Helvetica 3 10
+Helvetica 0 12
+Helvetica 2 12
+Helvetica 1 12
+Helvetica 3 12
+Helvetica 0 14
+Helvetica 2 14
+Helvetica 1 14
+Helvetica 3 14
+Helvetica 0 18
+Helvetica 2 18
+Helvetica 1 18
+Helvetica 3 18
+Helvetica 0 24
+Helvetica 2 24
+Helvetica 1 24
+Helvetica 3 24
+Symbol 0 10
+Symbol 0 12
+Symbol 0 14
+Symbol 0 18
+Symbol 0 24
+pmap 0 1 2 102 20 100 103 36 37 3 4 5 6 7 8 9 10 11 12 183
+color fill 0 white 0
+color fill 1 yellow 5
+color fill 2 PaleGreen 4
+color fill 3 LightBlue 3
+color fill 4 gray 1
+color fill 5 red 2
+color fill 6 blue 3
+color fill 7 black 1
+color line 0 gray 1
+color line 1 cyan 6
+color line 2 violet 6
+color line 3 green 4
+color line 4 red 2
+color line 5 blue 3
+color line 6 SlateGray 1
+color line 7 black 1
+color text 0 white 0
+color text 1 LightGray 1
+color text 2 yellow 5
+color text 3 orange 6
+color text 4 red 2
+color text 5 SlateGray 1
+color text 6 MediumBlue 3
+color text 7 black 1
+pool 24 22 23 23
+page 1
+1 23 21 18 0
+n 21 4 23 1678 398 1798 422 0 0
+n 4 20 6 1678 630 1798 654 0 0
+n 20 19 22 1678 606 1798 630 0 0
+n 19 17 21 1678 582 1798 606 0 0
+n 17 16 19 1678 242 1798 266 0 0
+n 16 13 18 1678 218 1798 242 0 0
+n 13 15 15 1960 982 2064 1022 0 0
+n 15 14 17 1942 902 2082 946 0 0
+n 14 12 16 1960 820 2064 860 0 0
+n 12 3 14 2090 744 2194 776 0 0
+n 3 11 5 1960 744 2064 776 0 0
+n 11 10 13 1830 744 1934 776 0 0
+n 10 9 12 1926 656 2098 704 0 0
+n 9 8 11 1960 570 2064 610 0 0
+n 8 7 10 1960 486 2064 526 0 0
+n 7 6 9 1942 394 2082 438 0 0
+n 6 5 8 1960 306 2064 346 0 0
+n 5 2 7 1942 214 2082 258 0 0
+n 2 1 4 1960 122 2064 162 0 0
+n 1 0 3 1942 26 2082 74 0 0
+F 18 0 1 63 0 8 80 1
+\e
+f 18 22 18 5 2 2 0 24 0 0
+ 2280 236
+ 2280 142
+F 22 0 1 63 0 8 80 1
+\e
+f 22 21 22 13 6 2 24 24 0 0
+ 2280 1002
+ 2280 326
+F 21 0 1 63 0 8 80 1
+\e
+f 21 20 21 13 8 2 24 24 0 0
+ 2280 1002
+ 2280 506
+F 20 0 1 63 0 8 80 1
+\e
+f 20 19 20 13 9 2 24 24 0 0
+ 2280 1002
+ 2280 590
+F 19 0 1 63 0 8 80 1
+\e
+f 19 17 19 10 2 4 0 24 0 0
+ 2280 680
+ 2280 142
+ 2282 148
+ 2282 142
+F 17 0 1 63 0 8 80 1
+\e
+f 17 16 17 13 2 3 24 24 0 0
+ 2280 1002
+ 2280 592
+ 2280 142
+F 16 0 1 63 0 8 80 1
+\e
+f 16 15 16 20 10 0 33 39 0 0
+F 15 0 1 63 64 8 80 1
+\e
+f 15 14 15 21 7 0 25 33 0 0
+F 14 0 1 63 64 8 80 1
+\e
+f 14 13 14 17 5 0 21 30 0 0
+F 13 0 1 63 0 8 80 1
+\e
+f 13 12 13 15 13 0 16 8 0 0
+F 12 0 1 63 0 8 80 1
+\e
+f 12 11 12 14 15 0 40 48 0 0
+F 11 0 1 63 0 8 80 1
+\e
+f 11 10 11 3 14 0 40 8 0 0
+F 10 0 1 63 0 8 80 1
+\e
+f 10 9 10 10 12 0 12 4 0 0
+F 9 0 1 63 0 8 80 1
+\e
+f 9 2 9 10 11 0 20 12 0 0
+F 2 0 1 63 0 8 80 1
+\e
+f 2 8 2 10 3 0 16 8 0 0
+F 8 0 1 63 0 8 80 1
+\e
+f 8 7 8 8 9 0 40 8 0 0
+F 7 0 1 63 0 8 80 1
+\e
+f 7 6 7 9 10 0 40 48 0 0
+F 6 0 1 63 0 8 80 1
+\e
+f 6 5 6 6 7 0 40 48 0 0
+F 5 0 1 63 0 8 80 1
+\e
+f 5 4 5 7 8 0 16 8 0 0
+F 4 0 1 63 0 8 80 1
+\e
+f 4 3 4 2 5 0 40 48 0 0
+F 3 0 1 63 0 8 80 1
+\e
+f 3 1 3 5 6 0 16 8 0 0
+F 1 0 1 63 0 8 80 1
+\e
+f 1 0 1 1 2 0 16 8 0 0
+N 23 6 2 63 16 8 80 1 1 0 0 0 0 0
+Analisis\e
+N 6 22 2 63 16 8 80 1 1 0 0 0 0 0
+Analisis\e
+N 22 21 2 63 16 8 80 1 1 0 0 0 0 0
+Verificacion Formal\e
+N 21 19 2 63 16 8 80 1 1 0 0 0 0 0
+Simulacion\e
+N 19 18 2 63 16 8 80 1 1 0 0 0 0 0
+Verificacion Formal\e
+N 18 15 2 63 16 8 80 1 1 0 0 0 0 0
+Simulacion\e
+N 15 17 2 63 16 8 80 1 1 0 0 0 0 0
+Pruebas\e
+N 17 16 0 63 16 8 80 1 1 0 0 0 0 0
+Prototipo\e
+N 16 14 2 63 16 8 80 1 1 0 0 0 0 0
+Prototipado\e
+N 14 5 2 63 16 8 80 1 1 0 0 0 0 0
+Sintesis SW\e
+N 5 13 2 63 16 8 80 1 1 0 0 0 0 0
+Sintesis de la 
+comunicacion\e
+N 13 12 2 63 16 8 80 1 1 0 0 0 0 0
+Sintesis HW\e
+N 12 11 0 63 26 8 80 1 1 0 0 0 0 0
+Modelo del 
+planificador y del mapeo\e
+N 11 10 2 63 26 8 80 1 1 0 0 0 0 0
+Planificacion\e
+N 10 9 2 63 18 8 80 1 1 0 0 0 0 0
+Particionamiento
+y mapeo\e
+N 9 8 0 63 26 8 80 1 1 0 0 0 0 0
+Arquitectura del 
+Sistema\e
+N 8 7 2 63 26 8 80 1 1 0 0 0 0 0
+Eleccion de la 
+Arquitectura\e
+N 7 4 0 63 26 8 80 1 1 0 0 0 0 0
+Modelo del 
+Sistema\e
+N 4 3 2 63 26 8 80 1 1 0 0 0 0 0
+Modelamiento\e
+N 3 0 0 63 16 8 80 1 1 0 0 0 0 0
+Especificacion del 
+Sistema\e

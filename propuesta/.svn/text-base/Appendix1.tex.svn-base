@@ -1,0 +1,41 @@
+\chapter{}
+
+\section{Diagramas esquemáticos}
+  \begin{center} \includegraphics[scale=.6]{./images/ECBOT_Schematics-0.png} \end{center}
+  \begin{center} \includegraphics[scale=.8]{./images/ECBOT_Schematics-1.png} \end{center}
+  \begin{center} \includegraphics[scale=.8]{./images/ECBOT_Schematics-2.png} \end{center}
+  \begin{center} \includegraphics[scale=.8]{./images/ECBOT_Schematics-3.png} \end{center}
+  \begin{center} \includegraphics[scale=.8]{./images/ECBOT_Schematics-4.png} \end{center}
+  \begin{center} \includegraphics[scale=.8]{./images/ECBOT_Schematics-5.png} \end{center}
+  \begin{center} \includegraphics[scale=.8]{./images/ECBOT_Schematics-6.png} \end{center}
+  \begin{center} \includegraphics[scale=.8]{./images/ECBOT_Schematics-7.png} \end{center}
+  \begin{center} \includegraphics[scale=.8]{./images/ECBOT_Schematics-8.png} \end{center}
+  \begin{center} \includegraphics[scale=.8]{./images/ECBOT_Schematics-9.png} \end{center}
+
+
+\section{Placa de Circuito Impreso}
+
+  \begin{figure}[h] 
+  \begin{center} \includegraphics[scale=.8]{./images/TOP_layer} \end{center} 
+  \caption{Capa TOP del robot móbil ECBOT} \label{ecbot_real} \end{figure}
+
+  \begin{figure}[h] 
+  \begin{center} \includegraphics[scale=.8]{./images/BOT_layer} \end{center}
+  \caption{Capa BOTTOM del robot móbil ECBOT} \label{ecbot_real} \end{figure}
+  
+  \begin{figure}[h] 
+  \begin{center} \includegraphics[scale=.8]{./images/PWR_layer} \end{center}
+  \caption{Capa POWER del robot móbil ECBOT} \label{ecbot_real} \end{figure}
+  
+  \begin{figure}[h] 
+  \begin{center} \includegraphics[scale=.8]{./images/GND_layer} \end{center}
+  \caption{Capa GROUND del robot móbil ECBOT} \label{ecbot_real} \end{figure}
+  
+  \begin{figure}[h] 
+  \begin{center} \includegraphics[scale=.8]{./images/SSTOP_layer} \end{center}
+  \caption{Capa SilkScreen TOP del robot móbil ECBOT} \label{ecbot_real} \end{figure}
+  
+  \begin{figure}[h] 
+  \begin{center} \includegraphics[scale=.8]{./images/SSBOT_layer} \end{center}
+  \caption{Capa SilkScreen BOT del robot móbil ECBOT} \label{ecbot_real} \end{figure}
+

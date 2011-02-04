@@ -1,0 +1,161 @@
+\chapter{ECBOT}
+
+
+
+\section{Introducción}
+En este capítulo se realiza la presentación de la plataforma Hardware y Software utilizada en el desarrollo de esta investigación. Uno de los objetivos de este trabajo, es la creación de una plataforma Embebida que permita la apropiación de nuevas herramientas y metodologías de diseño. El mercado de los sistemas embebidos continúa en aumento y su campo de acción se ha extendido en casi todas las actividades humanas. Según BBC, inc.  \footnote{http://www.bccresearch.com/} el mercado para el software embebido puede crecer de \$1.6 billones a \$3.5 billones en 2009, con una tasa de crecimiemto anual (AAGR) del 16\%, mientras la tasa de crecimiento para las tarjetas embebidas es del 10\%. (Favor ver Figura \ref{GESM}).
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.6]{./images/embedded_system_market}   \end{center}
+%                  \includegraphics[scale=.6]{./images/glob-emb-software-rev-regio}  \end{center}
+  \caption{Mercado Global de Sistemas Embebidos 2003-2009. Fuente: BCC Inc.} \label{GESM}
+\end{figure}
+
+Esto unido a: el gran nivel de integración obtenido por la industria de los semiconductores en los \textit{SOC}, la disponibilidad de herramientas software de desarrollo gratuitas (compiladores, simuladores, librerías, Sistemas Operativos) abre grandes posibilidades comerciales para paises en vía de desarrollo ya que no son necesarias grandes inversiones de capital para la implementación de estos sistemas.
+
+\subsection{Sistema Operativo}
+Más de un billón de dispositivos embebidos fueron vendidos en el 2004, según \textit{Venture Development Corporation (VDC)}. De acuerdo con VDC el porcentaje de dispositivos basados en Sistemas Operativos comerciales tiende a disminuir callendo del 43.1\% en 2001 a 37.1\% en 2004, esta tendencia se debe al aumento de complejidad de los dispositivos y a las necesidades de conexión (tales como Ethernet, bluetooth, WiFi, etc); además, la caida de precios del hardware, elimina la necesidad de eficiencia en el manejo de recursos proporcionada por muchos productos comerciales. Otro factor es el deseo de utilizar el mismo Sistema Operativo para varios proyectos.
+
+Recientes investigaciones de VDC sugieren que entre el 13  y el 15\% de los desarrolladores utilizan linux como su sistema operativo principal, y se espera que esta cifra aumente al madurar la tecnología y el soporte de los recursos de la comunidad aumenten. La figura \ref{os_trends} muestra una encuenta realizada a 932 desarrolladores de todo el mundo por \textit{linuxdevices} \footnote{http://www.linuxdevices.com} 
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.6]{./images/embedded_OS_sourcing_trends} \end{center}
+  \caption{Preferencia de Sistema Operativo para Sistemas Embebidos 2003-2007. Fuente: linuxdevices.} \label{os_trends}
+\end{figure}
+
+La elección de Linux como herramienta de desarrollo esta fuertemente influenciada por su caracter libre, la gran disponibilidad de herramientas de desarrollo, aplicaciones, librerías y la posibilidad de modificar o adaptar código ya existente.
+
+\subsection{Procesador}
+El corazón de todo sistema embebido es su procesador, en la actualidad existen diversos fabricantes que ponen a disposición de los desarrolladores \textit{System On Chip} (SOC) que incluyen una gran variedad de periféricos que incluyen dispositivos de comunicación (UARTs, USB, Ethernet), interface con el humano (Controladores de: LCD, tarjetas de sonido, dispositivos touch screen), almacenamiento (memorias: RAM, SDRAM, SD, MMC). Al incluir la mayoría de los periféricos en el mismo Chip se reduce el espacio de la placa de circuito impreso (PCB) y se reduce la posibilidad de errores debido a interconexión y contrario a lo que se podría esperar, el costo de este SOC es muy bajo (en comparación con el costo de cada periférico por separado). La figura \ref{cpu_trends} muestra la preferencia de los desarrolladores encuestados por \textit{linuxdevices}.
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.6]{./images/embedded_processor_preference_history} \end{center}
+  \caption{Preferencia de CPU para Sistemas Embebidos 2004-2007. Fuente: linuxdevices.} \label{cpu_trends}
+\end{figure}
+
+Como puede verse en la Figura \ref{cpu_trends} existe una clara preferencia entre los procesadores x86 y los procesadores ARM, siendo estos últimos los más populares en dispositivos de consumo como PDAs, Routers, teléfonos celulares, consolas de juego p\ref{cpu_trends}ortátiles.
+
+\subsection{CPU y Sistema operativo}
+Para la impementación de la plataforma robótica se seleccionó \textbf{Linux} como sistema operativo y el procesador \textbf{ARM} como CPU, esta elección sigue las tendencias actuales en el mercado de los sistemas embebidos. Existen varios fabricantes de procesadores ARM, dentro de los que se encuentran: Intel, Freescale, Atmel, Samsung, Phillips. El procesador elegido es de la familia AT91 de ATMEL el AT91RM9200, el cual goza de gran popularidad dentro de los desarrolladores de Linux y se encuentra soportado totalmente por el kernel de Linux.
+
+
+
+\section{Arquitectura Global}
+
+
+\subsection{Plataforma Player/Stage}
+El sistema utiliza la pataforma Player/Stage \cite{BGRTV03}, la cual integra funciones de alto nivel que hacen posible la programación del robot móbil en una variedad de lenguajes (Java, C/C++, Lisp, Python, etc). Esta plataforma esta compuesta por dos componentes: El servidor (Player), el cual proporciona una interfaz para el robot móbil (sensores y actuadores) y el simulador (Stage para simulación 2D y Gazebo para simulación 3D). La Figura \ref{player} muestra la arquitectura global de esta plataforma.
+
+Player utiliza un modelo Cliente - Servidor basado en los protocolos TCP o UDP, por lo que las aplicaciones en el cliente pueden ser implementadas en cualquier lenguaje de programación y puede ejecutarse en cualquier plataforma que esté conectada a la misma red del servidor. Cada cliente utiliza un socket TCP/UDP para conectarse con el servidor. Si el servidor y el cliente se encuentran en la misma plataforma la conexión será un loop-back.
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.4]{./images/player_stage} \end{center}
+  \caption{Arquitectura del servidor Player. Fuente: \cite{GLRBR+}} \label{player}
+\end{figure}
+
+Por otro lado, Player se conecta con los dispositivos físicos a través de un puerto de comunicaciones, normalmente el puerto serial, lo cual posibilita la conexión a un computador personal en el que se encuentra el servidor de Player. Sin embargo, nuestra plataforma permite la ejecución del servidor en el mismo robot, lo que permite utilizar cualquier puerto (I2C, SPI, serie) y elimina la necesidad de un computador personal. Nuestra plataforma utiliza el puerto de comunicaciones I2C; este puerto permite trabajar hasta con 128 dispositivos y utiliza solo 2 líneas. En la figura \ref{ecbot_sw} se presenta la arquitectura de nuestra plataforma \textbf{ECBOT}
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.46]{./images/sw_arch_ecbot} \end{center}
+  \caption{Arquitectura de la plataforma ECBOT.} \label{ecbot_sw}
+\end{figure}
+
+
+
+
+
+\subsection{Plataforma ECBOT}
+
+En esta sección se realizará la presentación de la plataforma móbil \textbf{ECBOT}. La cual, como ya se mencionó anteriormente, debe utilizar a Linux como sistema operativo y debe ser capáz de ejecutar el cliente de Player de forma nativa. Estos dos requisitos, en especial el primero fijan fuertes restricciones al procesador y memorias utilizadas en la plataforma:
+\begin{itemize}
+ \item Tipo de Procesador: Debe ser de 32 bits y poseer unidad de manejo de memoria (MMU).
+ \item Unidades de Almacenamiento:
+  \begin{itemize}
+   \item Memoria no Volátil: Utilizada para almacenar: la imagen del kernel + el bootloader, (2M Bytes) el sistema de archivos y las aplicaciones (del orden de 200M Bytes).
+   \item Memoria Volátil: Memoria RAM de proósito general (Mayor o igual a 16M Bytes)
+  \end{itemize}
+\end{itemize}
+
+ECBOT posee un procesador AT91RM9200, el cual cumple con las restricciones mencionadas anteriormente y proporciona los drivers necesarios para manejar:
+\begin{itemize}
+ \item Las memorias seleccionadas: Memoria SDRAM de 32MB, Memoria DataFlash de 2MB y memoria SD de 256M,
+ \item Un puerto de comunicaciones I2C.
+ \item Un puerto SPI.
+ \item Periféricos externos: Tiene disponibles las señales del bus de datos, dirección y control
+\end{itemize}
+
+\subsubsection{Diagrama de Bloques del Robot Móbil ECBOT}
+En la figura \ref{ecbot_hw} se muestra el diagrama de bloques del robot móbil ECBOT. Como puede observarse ECBOT posee:
+
+\begin{itemize}
+ \item 4 procesadores de 8 bits encargados de manejar:
+  \begin{itemize}
+   \item 8 sensores de proximidad: Utilizados para navegación.
+   \item 8 Leds RGB: Utilizados como elemento de comunicación indirecta.
+   \item Puerto de comunicación I2C con la CPU.
+  \end{itemize}
+ \item Un sensor de imágen. Se utiliza una FPGA para realizar la conversión de voltajes entre la CPU y el sensor y como buffer para los datos provenientes del mismo.
+ \item Un puerto USB de propósito general, utilizado inicialmente como WiFi para la plataforma Player/Stage.
+ \item Un tranceiver RF: Proporciona un canal de comunicación adicional entre robots.
+ \item Un procesador de 8 bits encargado de manejar dos motores DC y la comunicación I2C con la CPU.
+\end{itemize}
+
+Debido a que el procesador AT91RM9200 no posee conversores Análogo/Digital se incluyeron 4 procesadores de 8 bits para suplir esta necesidad, el utilizar procesadores de 8 bits como elementos de captura análoga,  hace posible encapsularlo como un dispositivo I2C, lo cual minimiza las conexiones entre estos módulos y el procesador. En el Apéndice 1 se presenta el diagrama esquemático, el layout de la placa de circuito Impreso y los planos de la estructuras  de la plataforma.
+
+\begin{figure}
+  \begin{center} \includegraphics[scale=.6]{./images/ECBOT_Block} \end{center}
+  \caption{Diagrama de Bloques del Robot Móbil ECBOT} \label{ecbot_hw}
+\end{figure}
+
+\subsubsection{Servidor Player en la plataforma ECBOT}
+
+Player es una interfaz de dispositivos roboticos, que permite al usuario interactuar con dispositivos hardware (robots reales) o con dispositivos simulados (modúlo de simulación Stage o Gazebo). Para esto, Player define un set de interfaces standard, es decir, especificaciones de la forma de interacción con algún tipo de dispositivo. Como resultado, un código de control de Player puede trabajar con diferentes tipos de robots una vez definido sus drivers correspondientes. El driver es una pieza de código que se comunica directamente con el hardware del robot (sensor, actuador o algoritmo) y traslada sus entradas y salidas para formar una o más interfaces. De tal forma que oculta las características específicas del hardware y hace que el robot soporte la interfaz standard.
+
+En la figura \ref{ecbot_server} se presenta la ubicación física de los sensores de la plataforma ECBOT\footnote{este diseño esta inspirado en el proyecto e-puck del EPFL} y los drivers disponibles en el servidor player del mismo; donde cada color representa el procesador (de 8 bits) al cual esta asociado cada Sensor o LED. El dispositivo ECBOT proporciona los drivers:
+
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.55]{./images/ecbot_server} \end{center}
+  \caption{Servidor Player del Robot Móbil ECBOT y disposición física de los sensores} \label{ecbot_server}
+\end{figure}
+
+\begin{itemize}
+ \item \textbf{POSITION2D:} Permite controlar la posición del motor, modificar las constantes de los controladores PID de posición y velocidad de los motores DC.
+ \item \textbf{IR:} Proporciona una medida del valor de los sensores de posición.
+ \item \textbf{LED:} Permite modificar el color de los LEDs de la plataforma, los cuales están relacionados con el estado interno de la misma.
+ \item \textbf{BLOBFINDER:} Implementación de un algoritmo de detección y seguimiento de color.
+\end{itemize}
+
+En la figura \ref{ecbot_real} se muestran dos fotografías del lado de componentes y del lado de soldadura del robot móbil ECBOT
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.45]{./images/ECBOT_TOP_small} \space \space \space \space
+                 \includegraphics[scale=.45]{./images/ECBOT_BOT_small} \end{center}
+  \caption{Fotografías de la tarjeta principal del robot móbil ECBOT} \label{ecbot_real}
+\end{figure}
+
+
+\subsubsection{Programación en Sitio (ISP)}
+
+Como se mencionó anteriormente la plataforma ECBOT cuenta con cinco procesadores de 8 bits (ATMEGA168) y una FPGA (XC3S), los cuales deben ser programados para que cumplan con una función determinada; con el fín de hacer que la plataforma ECBOT sea independiente y no requiera de un computador personal para su programación, se implementaron interfaces de programación para los 5 procesadores y la FPGA, los procesadores son programados utilizando la herramienta UISP (Link here) y la FPGA con xc3sprog  (link here), para utilizarlos fué necesario realizar la compilación cruzada para el sistema de archivos utilizado en la plataforma. En el caso de UISP fué necesario emular el puerto paralelo del computador con un driver de Linux que realiza la emulación utilizando los GPIOs del procesador AT91RM9200, para el xc3sprog se creo un puerto de programación que utiliza también los pines GPIO. Los archivos creados y/o modificados se encuentran disponibles en la página del proyecto: http://www.emqbit.com/ecbot.
+
+
+Estas interfaces de programación pueden verse representadas en la figura \ref{ecbot_hw} como ISP1 - ISP5 (para los procesadores) y el puerto JTAG para la FPGA. Con la crecaión de estas interfaces de programación es posible modificar la funcionalidad de la plataforma cuando esta se encuentre en estado de operación.
+
+\subsubsection{Sensor de Imágen}
+
+ECBOT cuenta con una cámara que permite capturar imágenes de hasta 640x480 con una resolución de 16 bits por pixel. La figura \ref{image_module} muestra el diagrama de bloques del módulo encargado de la captura de la imágen. Debido a que el sensor de imágen requiere una alimentación de 2.8V y que la imágen requiere 600 kB para su almacenamiento, se decidió incluir en el diseño una FPGA para que realizara la conversión de voltajes 
+
+En la figura \ref{photo_sample} puede observarse una imágen capturada por la plataforma ECBOT.
+
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.45]{./images/tux2} \end{center}
+  \caption{Diagrama de bloques del módulo de imágen de ECBOT} \label{image_module}
+\end{figure}
+
+
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.45]{./images/tux2} \end{center}
+  \caption{Imágen capturada por la plataforma robótica ECBOT} \label{photo_sample}
+\end{figure}

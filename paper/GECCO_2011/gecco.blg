@@ -2,63 +2,47 @@ This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: gecco.aux
 The style file: plain.bst
 Database file #1: ./biblio_EHW.bib.bib
-I was expecting a `,' or a `}'---line 361 of file ./biblio_EHW.bib.bib
- :   author 
- :          = {R. Poli and J. Page},
-I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 371 of file ./biblio_EHW.bib.bib
- :   author 
- :          = {Zdenek Vasicek and Lukas Sekanina},
-I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 381 of file ./biblio_EHW.bib.bib
- :  author 
- :         = "V. Vassilev and D. Job and Julian F. Miller",
-I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 392 of file ./biblio_EHW.bib.bib
- :   author 
- :          = {Zbysek Gajda and Lukas Sekanina},
-I'm skipping whatever remains of this entry
 Warning--empty year in WSCC
 Warning--empty year in JJPR
-You've used 13 entries,
+You've used 24 entries,
             2118 wiz_defined-function locations,
-            566 strings with 5812 characters,
-and the built_in function-call counts, 3417 in all, are:
-= -- 310
-> -- 207
-< -- 0
-+ -- 83
-- -- 68
-* -- 214
-:= -- 637
-add.period$ -- 39
-call.type$ -- 13
-change.case$ -- 72
+            632 strings with 7370 characters,
+and the built_in function-call counts, 8058 in all, are:
+= -- 791
+> -- 383
+< -- 9
++ -- 153
+- -- 126
+* -- 494
+:= -- 1324
+add.period$ -- 72
+call.type$ -- 24
+change.case$ -- 134
 chr.to.int$ -- 0
-cite$ -- 15
-duplicate$ -- 129
-empty$ -- 232
-format.name$ -- 68
-if$ -- 669
+cite$ -- 26
+duplicate$ -- 339
+empty$ -- 591
+format.name$ -- 126
+if$ -- 1716
 int.to.chr$ -- 0
-int.to.str$ -- 13
-missing$ -- 13
-newline$ -- 68
-num.names$ -- 26
-pop$ -- 85
+int.to.str$ -- 24
+missing$ -- 24
+newline$ -- 123
+num.names$ -- 48
+pop$ -- 154
 preamble$ -- 1
-purify$ -- 60
+purify$ -- 111
 quote$ -- 0
-skip$ -- 92
+skip$ -- 283
 stack$ -- 0
-substring$ -- 67
-swap$ -- 13
-text.length$ -- 0
+substring$ -- 420
+swap$ -- 108
+text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 50
+type$ -- 94
 warning$ -- 2
-while$ -- 26
-width$ -- 15
-write$ -- 130
-(There were 4 error messages)
+while$ -- 73
+width$ -- 26
+write$ -- 250
+(There were 2 warnings)

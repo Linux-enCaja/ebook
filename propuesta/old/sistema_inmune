@@ -1,0 +1,190 @@
+RCV9 0 0 669 541
+font 65 8 4
+Times 0 10
+Times 2 10
+Times 1 10
+Times 3 10
+Times 0 12
+Times 2 12
+Times 1 12
+Times 3 12
+Times 0 14
+Times 2 14
+Times 1 14
+Times 3 14
+Times 0 18
+Times 2 18
+Times 1 18
+Times 3 18
+Times 0 24
+Times 2 24
+Times 1 24
+Times 3 24
+Courier 0 10
+Courier 2 10
+Courier 1 10
+Courier 3 10
+Courier 0 12
+Courier 2 12
+Courier 1 12
+Courier 3 12
+Courier 0 14
+Courier 2 14
+Courier 1 14
+Courier 3 14
+Courier 0 18
+Courier 2 18
+Courier 1 18
+Courier 3 18
+Courier 0 24
+Courier 2 24
+Courier 1 24
+Courier 3 24
+Helvetica 0 10
+Helvetica 2 10
+Helvetica 1 10
+Helvetica 3 10
+Helvetica 0 12
+Helvetica 2 12
+Helvetica 1 12
+Helvetica 3 12
+Helvetica 0 14
+Helvetica 2 14
+Helvetica 1 14
+Helvetica 3 14
+Helvetica 0 18
+Helvetica 2 18
+Helvetica 1 18
+Helvetica 3 18
+Helvetica 0 24
+Helvetica 2 24
+Helvetica 1 24
+Helvetica 3 24
+Symbol 0 10
+Symbol 0 12
+Symbol 0 14
+Symbol 0 18
+Symbol 0 24
+pmap 0 1 2 102 20 100 103 36 37 3 4 5 6 7 8 9 10 11 12 183
+shape 0 v m 88 48 n
+0000C003300C081004200420024002400240042004200810300CC00300000000
+128,64 128,70 127,76 125,83 123,88 120,94 117,100 113,105 109,109 105,113 100,117 94,120 88,123 83,125 76,127 70,128 64,128 58,128 52,127 45,125 40,123 34,120 28,117 23,113 19,109 15,105 11,100 8,94 5,88 3,83 1,76 0,70 0,64 0,58 1,52 3,45 5,40 8,34 11,28 15,23 19,19 23,15 28,11 34,8 40,5 45,3 52,1 58,0 64,0 70,0 76,1 83,3 88,5 94,8 100,11 105,15 109,19 113,23 117,28 120,34 123,40 125,45 127,52 128,58 128,64 
+A 0,0 128 128 0 360 
+A 0,0 128 128 0 360 
+color fill 0 white 0
+color fill 1 yellow 5
+color fill 2 PaleGreen 4
+color fill 3 LightBlue 3
+color fill 4 gray 1
+color fill 5 red 2
+color fill 6 blue 3
+color fill 7 black 1
+color line 0 gray 1
+color line 1 cyan 6
+color line 2 violet 6
+color line 3 green 4
+color line 4 red 2
+color line 5 blue 3
+color line 6 SlateGray 1
+color line 7 black 1
+color text 0 white 0
+color text 1 LightGray 1
+color text 2 yellow 5
+color text 3 orange 6
+color text 4 red 2
+color text 5 SlateGray 1
+color text 6 MediumBlue 3
+color text 7 black 1
+pool 23 20 10 10
+page 1
+3 4 1 1 1
+n 1 2 4 2134 448 2258 472 0 0
+n 2 3 5 1824 452 1948 476 0 0
+n 3 4 6 2064 490 2096 522 0 0
+n 4 5 7 2056 482 2104 530 0 0
+n 5 6 8 1992 490 2024 522 0 0
+n 6 7 9 1984 482 2032 530 0 0
+n 7 8 10 2032 272 2048 288 0 0
+n 8 9 11 2096 336 2144 400 0 0
+n 9 10 12 2016 336 2064 400 0 0
+n 10 11 13 1952 456 2128 552 0 0
+n 11 12 14 1936 336 1984 400 0 0
+n 12 13 15 1896 288 2184 416 0 0
+n 13 14 16 1824 64 1984 96 0 0
+n 14 15 17 2032 96 2048 112 0 0
+n 15 16 18 1992 16 2088 48 0 0
+n 16 17 19 2248 160 2328 192 0 0
+n 17 18 20 2136 144 2232 208 0 0
+n 18 19 21 1992 144 2088 208 0 0
+n 19 0 22 1848 144 1944 208 0 0
+F 1 0 1 63 0 8 80 1
+\e
+f 1 2 1 2 5 0 35 37 0 0
+F 2 0 1 63 0 8 80 1
+\e
+f 2 3 2 1 3 0 43 0 0 0
+F 3 0 1 63 0 8 80 1
+\e
+f 3 4 3 12 10 0 16 48 0 0
+F 4 0 0 63 0 8 80 1
+\e
+f 4 5 4 18 7 0 16 0 0 0
+F 5 0 0 63 0 8 80 1
+\e
+f 5 6 5 15 14 0 40 0 0 0
+F 6 0 1 63 64 8 80 1
+\e
+f 6 7 6 18 17 1 15 16 0 0
+ 2120 208
+F 7 0 1 63 64 8 80 1
+\e
+f 7 8 7 18 19 0 16 16 0 0
+F 8 0 1 63 0 8 80 1
+\e
+f 8 9 8 18 17 0 0 32 0 0
+F 9 0 1 63 0 8 80 1
+\e
+f 9 0 9 19 18 0 0 32 0 0
+N 4 5 2 7 0 8 80 1 3 0 0 0 0 0
+Celulas de Plasma\e
+N 5 6 2 7 0 8 80 1 3 0 0 0 0 0
+Celulas de Memoria\e
+N 6 7 0 63 16 8 80 1 3 0 0 0 0 0
+\e
+N 7 8 0 63 16 8 80 1 3 0 0 0 0 0
+\e
+N 8 9 0 63 16 8 80 1 3 0 0 0 0 0
+\e
+N 9 10 0 63 16 8 80 1 3 0 0 0 0 0
+\e
+N 10 11 4 63 31 8 80 1 3 0 0 0 0 0
+\e
+N 11 12 0 63 26 8 80 1 3 0 0 0 0 0
+Rc\e
+N 12 13 0 63 26 8 80 1 3 0 0 0 0 0
+Rc\e
+N 13 14 0 63 16 8 80 1 3 0 0 0 0 0
+\e
+N 14 15 0 63 26 8 80 1 3 0 0 0 0 0
+Rc\e
+N 15 16 0 63 16 8 80 1 3 0 0 0 0 0
+Expansion Clonal y Seleccion
+
+
+
+
+\e
+N 16 17 3 63 16 8 80 1 3 0 0 0 0 0
+Reconocimiento de  patron\e
+N 17 18 4 63 31 8 80 1 3 0 0 0 0 0
+\e
+N 18 19 2 63 19 8 80 1 3 0 0 0 0 0
+Estimulo Ag\e
+N 19 20 3 63 16 8 80 1 3 0 0 0 0 0
+Red Inmune\e
+N 20 21 0 63 27 8 80 1 3 0 0 0 3 0
+Celula B\e
+N 21 22 0 63 27 8 80 1 3 0 0 0 2 0
+Celula B\e
+N 22 0 0 63 27 8 80 1 3 0 0 0 1 0
+Celula B\e

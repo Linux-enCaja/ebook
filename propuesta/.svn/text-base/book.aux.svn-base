@@ -1,0 +1,48 @@
+\relax 
+\catcode`.\active
+\catcode`\.=12
+\catcode`"\active
+\catcode`<\active
+\catcode`>\active
+\es@quoting
+\bibstyle{unsrt}
+\select@language{spanish}
+\@writefile{toc}{\select@language{spanish}}
+\@writefile{lof}{\select@language{spanish}}
+\@writefile{lot}{\select@language{spanish}}
+\citation{HYKL06}
+\citation{HYKL06}
+\@writefile{toc}{\contentsline {chapter}{\numberline {1}Aplicaciones del SI en Control de Sistemas MRS}{5}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {1.1}Marco de Trabajo Basado en la Inmunidad para Control Multi-agente Distribuido \cite  {HYKL06}}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Flujo de control de un agente del sistema inmune}}{6}}
+\newlabel{control_flow}{{1.1}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.1}Modelo Matem\'atico}{6}}
+\@writefile{toc}{\contentsline {subsubsection}{Binding Affinity}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.2}Modelos de Cooperaci\'on}{7}}
+\@writefile{toc}{\contentsline {subsubsection}{Estados de Conmportamiento de un agente SIA}{7}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.1}{\ignorespaces Estados de Comportamiento de un Agente SIA}}{7}}
+\newlabel{states}{{1.1}{7}}
+\@writefile{toc}{\contentsline {subsubsection}{Definiciones}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.3}Interacci\'on Entre Agentes SIA}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.4}Umbral de Afinidad}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces Modelo de Transici\'on de Estados de un agente SIA}}{9}}
+\newlabel{State_flow}{{1.2}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.5}Manipulaci\'on de la Respuesta del Marco de Control Basado en SIA}{9}}
+\@writefile{toc}{\contentsline {subsubsection}{Cadena de Capacidades y Complejidades}{9}}
+\bibdata{biblio}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.6}Metodolog\IeC {\'\i }a de Coincidencia Espec\IeC {\'\i }fica}{10}}
+\@writefile{toc}{\contentsline {subsubsection}{L\'ogica de Control}{10}}
+\@writefile{toc}{\contentsline {subsubsection}{Comportamiento de un Agente SIA}{10}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.3}{\ignorespaces Algoritmo de manipulaci\'on de respuesta}}{11}}
+\newlabel{response_man_algorithm}{{1.3}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.4}{\ignorespaces Algoritmo \textit  {Absolute String Matching}}}{12}}
+\newlabel{string_matching}{{1.4}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.5}{\ignorespaces Secuencia del proceso de manipulaci\'on de capacidades}}{12}}
+\newlabel{capability_man_process}{{1.5}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.6}{\ignorespaces L\'ogica de Control de un marco de control basado en ASI}}{13}}
+\newlabel{control_logic}{{1.6}{13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.7}{\ignorespaces Arbol de decisiones que define las acciones de un agente SIA}}{14}}
+\newlabel{Decision_tree}{{1.7}{14}}
+\bibcite{HYKL06}{1}

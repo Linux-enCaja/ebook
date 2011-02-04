@@ -1,0 +1,516 @@
+\section{Definici\'on del problema }
+
+\section{Introducción}
+Uno de los objetivos principales del presente trabajo es la realización de actividades que ayude al país en su desarrollo tecnológico; en la actualidad Colombia es un consumidor de tecnología, es decir, busca en el exterior soluciones a sus problemas, en la mayoría de las ocasiones, estas soluciones no se ajustan a los requerimientos, ya que no tienen en cuenta la situación política, cultural y social del país. En la mayoría de los casos, no se aumenta el conocimiento tecnológicos del país, y reduce las opciones de negocios para las empresas locales a representantes de ventas o suministro de sevicios de mantenimiento.
+
+Este esquema es nocivo para la industria Colombiana, ya que no existen mecanismos que permita su desarrollo, protegiéndola de alguna forma frente a los productos foráneos. Esto unido a las politicas de estado encaminadas a la apertura comercial, en donde los productos nacionales compiten con productos de paises con mayor desarrollo tecnológico nos llevará a la eliminación total de la industrias Colombianas. A continuación se presenta un resúmen del estudio realizado por Hector Martínez sobre la Apropiación del conocimiento en Colombia \cite{Mar04} durante los años 1991 a 2000.
+
+En la actualidad Colombia atraviesa por una $''$\textit{\textit{crisis}}$''$ a
+nivel de diseño de sistemas digitales, existe un atraso muy grande en esta
+\'area; a mi modo de ver existen dos grandes responsables de esta situaci\'on.
+Por un lado, las pol\'{\i}ticas de la mayor\'{\i}a de las industrias al no
+realizar inversi\'on de capital en sus departamentos de I+D; algunas de ellas
+ni siquiera cuentan con este departamento. Por otro lado, las Universidades no
+cuentan con programas actualizados que permitan explotar los avances
+realizados en las industrias electr\'onica y de semiconductores; en un gran
+n\'umero de Universidades Colombianas a\'un se trabaja con dispositivos de
+funci\'on fija como las familias 74 y 40. Los lenguajes de descripci\'on de
+hardware han sido adoptados recientemente en la mayor\'{\i}a de programas de
+ingenier\'{\i}a electr\'onica, pero en algunos casos no existe una base
+metodol\'ogica que soporte su adecuada utilizaci\'on. La disponibilidad de
+dispositivos l\'ogicos programables (FPGAs, CPLDs) es limitada debido a la
+inexistencia de un proveedor local. Se dedican cursos completos para
+$''$enseñar$''$ a programar microprocesadores de 8 bits en lenguaje
+ensamblador y muchos educadores a\'un miran con desconfianza a los lenguajes
+de alto nivel como el C, C++ o UML. En muy pocos programas de Ingenier\'{\i}a
+Electr\'onica no se cuenta con una asignatura dedicada a sistemas operativos y
+en muchos de ellos no se le da la importancia que tiene la enseñanza de
+lenguajes estructurados.
+
+La situaci\'on se agrava a\'un m\'as al ver el estado de la relaci\'on entre
+la universidad y la industria, la cual no existe en algunos casos. Desde el
+punto de vista industrial los resultados obtenidos en la academia parten de
+entornos ideales y no se tienen en cuenta las caracter\'{\i}sticas de los
+entornos industriales, lo cual da como resultado sistemas poco robustos y con
+problemas funcionales. Por otro lado, los tiempos de desarrollos son muy
+largos ya que la mayor\'{\i}a de las universidades Colombianas no se cuenta
+con grupos de investigaci\'on cuyos miembros se encuentren dedicados de forma
+exclusiva al desarrollo de este tipo de proyectos, la mayor\'{\i}a \ de los
+miembros de estos grupos son temporales (estudiantes de pregrado) y sin paga,
+lo cual no garantiza el cumplimiento ni la continuidad de las investigaciones.
+
+\subsection{Apropiación de Conocimiento}
+  
+Para que Colombia deje de ser un país que consume tecnología y llegue en algún momento a ser generador de productos tecnológicos, es necesario que se genere un conocimiento que permita esta transición. ``Para que el conocimiento sea motor de desarrollo es necesario el traspaso desde sus creadores a la sociedad, mediante la conversión a tecnologías que produzcan cambios radicales que incrementen la producción. Esa transmisión de tecnología generadora de crecimiento económico esta influenciada por diversos factores: medio geográfico, leyes de propiedad industrial, costos laborales, nivel de ciencia y tecnología, religión, tipos de instituciones, resistencia a innovar, políticas de estado, guerras, factores demográficos, entre otros'' \cite{Mok90}
+ 
+Pero como apropiar este conocimiento? Arrow \cite{Arr62} afirma que la apropicación de conocimiento puede efectuarse de varias formas: ``aprender haciendo'', ``aprender usando'', ``aprender leyendo''. Cuando una empresa decide transmitir su conocimiento disponible, lo hace en procesos de investigaciones conjuntas, en actividades de producción, y distribución, mercadeo, servicio y soporte operativo o riesgo compartido.                    También se presentan alianzas entre firmas como: contratos de I+D, acuerdos de licencias, licencias cruzadas. La conformación de estas asociaciones permite crear redes tecnológicas dominadas por países industrializados con sus respectivas empresas multinacionales monopolizando conocimiento \cite{Mar04}
+ 
+Para Colombia, el problema radica en que mediante contratos de importación de tecnología, las empresas de capital nacional no están adquiriendo el conocimiento necesario para lograr innovaciones al interior de las mismas. De forma que puedan ser competitivas y logren acceder a mercados internacionales ofreciendo productos innovadores, de calidad y a precios competitivos. Con efectos directos como: generación de empleos especializados, desarrollo tecnológico e industrial sostenido, ampliación del acervo de conocimiento nacional y disminución de la salida de divisas (al mejorar los procesos de negociación) y creación de externalidades positivas \cite{Mar04}.
+ 
+Ligado al problema de la senda tecnológica está el del grado de lo tácito del conocimiento científico. Teece \cite{Tee81} señala que al existir conocimiento tácito toda la tecnología disponible no se transfiere de los productores a los receptores o compradores de la misma. Por tanto, los países seguidores siempre van a estar a la zaga tecnológica. Forbes y Wield \cite{FW00} señalan que los esfuerzos adaptativos son mayores porque deben acomodar las ``innovaciones'' a los materiales locales, fuerza laboral nativa, mercados internos y medio ambiente local. Entonces, el problema no se limita a cómo transferir conocimiento, cómo develar su parte tácita y cómo extraerlo de las multinacionales, sino que radica en el bajo poder de negociación y adquisición de tecnología por firmas pequeñas y medianas, las cuales carecen de recursos y tienen procesos deficientes de contratación.
+ 
+En este orden de ideas, si el país no es un innovador neto ¿no debería más bien mostrar una tendencia a importar conocimiento? Y las firmas nacionales ¿no deberían ser las que más efectuaran este tipo de contratos, para así acceder al conocimiento de la tecnología adquirida? En resumen, conociendo mejor qué tecnología se importa y qué tipos de contratos se utilizan, es posible crear marcos de referencia para empresas nacionales que estén interesadas en adquirir tecnología. Esto produciría externalidades positivas en empresas importadoras de conocimiento y, a su vez, en la economía del país. Con una adecuada importación de conocimientos tecnológicos se crearía una ventaja competitiva de carácter estructural, basada en un acervo de conocimiento tecnológico que permita incrementar la productividad en todos los sectores económicos de manera permanente \cite{Mar04}.
+ 
+Según los estudios realizados por Martínez, con base en registros del Decreto 259/92, del Incomex. La importación de conocimiento no está siendo empleada con el propósito de utilizar tecnologías de punta que permitan efectuar innovaciones al interior de las empresas y de los sectores. Las empresas nacionales se limitan a comprar un determinado dispositivo, sin tener el conocimiento para operarlo, hacerle mantenimiento ni mucho menos mejorarlo, por lo que se ven obligadas a contratar con el vendedor contratos para dicho fín. Esto indica que la adquisición de tecnología no se realiza con base en programa desarrollado de antemano, sino son una respuesta a cambios en el mercado, lo cual evidencia la inexistencia de programas de innovación encaminados a la disminución de la brecha tecnológica.
+ 
+\subsubsection{Situación de la Industria Electrónica en Colombia}
+ 
+La industria electrónica nacional no es ajena a las políticas que siguen las empresas nacionales en cuanto a la apropiación de tecnología; Colombia depende totalmente de economías más desarrolladas para el suministro de dispositivos electrónicos en diversas areas (comunicaciones, entretenimiento, industria, medicina, etc). Mientras en otros sectores de la economía han pasado de ser consumidores a exportadores, y adquieren nuevas tecnologías para ser más competitivos, el sector electrónico del país ha reducido sus actividades de Investigación y Desarrollo hasta el punto de depender totalmente de productos externos unos de baja calidad y que no suplen los requerimientos del mercado local, pero que son muy económicos.
+ 
+En la actualidad la industria electrónica presenta una gran dinámica a nivel mundial, el uso de los sistemas electrónicos se extiende a todas las actividades humanas; La demanda mundial de este tipo de sistemas aumentará de forma dramática en los próximos años, especialmente en los sectores de tecnología médica, movilidad, seguridad, comunicaciones y consumo \cite{ETPoSSI(09}. El mercado de los sistemas embebidos es una industria que movió alrededor de 25 billones de dólares en el 2008 según Venture Development Corporation \cite{Vc08}. Por otro lado, la inversión de capital necesaria para el diseño de Sistemas Embebidos es relativamente baja, gracias a la gran demanda originada, los insumos y los servicios de fabricación son muy económicos, por otro lado, las herramientas de desarrollo necesarias para la programación y depuración de este tipo de sistemas son de libre distribución.  
+
+
+Desafortunadamente en Colombia la industria electrónica se encuentra muy rezagada en relación a las de los países industrializados, y las ventajas y oportunidades de negocios mencionadas anteriormente no son aprovechadas en la actualidad. 
+
+
+Según ASESEL \footnote{Asociación de entidades del Sector Electrónico} en el 2001 existían 154 empresas productoras de componentes y equipos de la cadena electrónica. Dentro de los productos que la industria electrónica exporta se encuentran registrados: Circuitos integrados, circuitos impresos, microestructuras, instrumentos para medida y control, Instrumentos y aparatos eléctricos o electrónicos. Es importante decir que la industria colombiana, en la actualidad no fabrica circuitos integrados, ni microestructuras, por lo que estas son ventas de productos comprados en países desarrollados. Según Proexport el 91\% de las exportaciones son realizadas por Bogotá y los destinos se encuentran en países cercanos como Venezuela, Perú, Ecuador y USA. 
+
+La electrónica en Colombia y en el mundo hace parte de esas industrias que se mueven velozmente en un
+camino desconocido, como consecuencia se hace necesario tener una actualización constante de los
+avances tecnológicos y las proyecciones futuras del sector. Debido a la importancia del sector tecnológico es primordial que en Colombia se esté consciente del estado actual y que se puede hacer en términos de
+Investigación Científica y Desarrollo Tecnológico (I+D) en Ingeniería Electrónica.
+
+Un estudio realizado en la Universidad Nacional de Colombia \cite{MTRR07} identificó los siguientes obstáculos para el desarrollo de la industria electrónica en Colombia: Deficientes relaciones Universidad Empresa, Pobre enfoque académico hacia la industria, Calidad de los productos nacionales, políticas gubernamentales, falta de cultura de Investigación y Reducida apropiación tecnológica, competencia de países asiáticos, atraso tecnológico, limitado recurso humano con formación avanzada.
+
+De los problemas expuestos anteriormente podemos identificar cuales son los que más afectan el desarrollo de la industria electrónica en Colombia, el que más perjudica sin lugar a dudas es el atraso tecnológico, no es posible ser competitivo en el mercado electrónico mundial con tecnologías y metodologías de diseño obsoletas, en Colombia trabajamos aún con circuitos integrados que se crearon en la decada de los 80 del siglo pasado y utilizamos lenguajes de programación como el assembler, para el cual el tiempo de aprendizaje, desarrollo y de depuración es muy largo. La culpa de este atraso tecnológico no es exclusiva de la induatria, aunque, como vimos anteriormente muchas industrial Colombianas se resisten al cambio y prefieren comprar equipos en el exterior a buscarlos localmente, la falta de confiabilidad en los productos Colombianos agrava este problema, esta falta de confianza en la industria local no es infundada, la mayoría de los productos Colombianos no cumplen con las normas mínimas de calidad y utilizan productos de bajo costo obtenidos en remates de componetes.
+
+Otro actor que contribuye al retraso tecnológico es el sector académico; según el Sistema Nacional de Información Superior, durante los últimos 10 años se han abierto 230 programas relacionados con la industria electrónica, estos programas están repartidos entre programas de formación Universitaria, tecnológica terminal y de técnica profesional, la mayoría de estos centros de formación se encuentran ubicados en 3 Departamentos: Bogotá, Antioquia y Valle \cite{DZSC+07}. El número de Ingenieros graduados en un año es entre 2 y 8 veces mayor que en los países en vía de desarrollo y doce veces mayor que los que se gradúan en los países desarrollados, en Colombia, este aumento es aportado por instituciones de poca consolidación. Además las preferencias en la educación superior son Formación técnica / form. tecnológica / form. profesional que es justamente lo opuesto a la de los países desarrollados \cite{MDAG99}.
+
+Por otro lado, el contenido de las asignaturas relacionadas directamente con la industria electrónica se encuentran muy desactualizados, y fuera del contexto mundial, se utilizan metodologías de diseño antiguas en las que primaba la experiencia del diseñador, se realizan tareas manuales, repetitivas que pueden ser realizadas por herramientas de diseño moderno, los currículos son conservadores hay poca experimentación y su estructuración y metodologías son muy clásicas. Otro problema adicional radica en la falta de experiencia en el sector productivo por parte del personal académico, un componente importante de los profesores nunca han sido parte de un proceso productivo o de un proceso de desarrollo que tenga como fín la creación de un producto comercial, razón por la cual se evita la experimentación y se da más énfasis al análisis y solo se llega a una simulación. 
+
+De lo anterior podemos concluir que en Colombia se presenta una sobre-oferta de profesionales en el área electrónica, muchos de los cuales provienen de instituciones educativas con poca consolidación, y que han sido formados con programas desactualizados que no tienen en cuenta los avances tecnológicos y metodológicos, lo cual explica la pobreza de ingenieros con altos niveles de formación. Por esta razón no es de extrañar la poca confianza que tienen los industriales en los productos nacionales.
+
+Lo anterior unido a la falta de políticas de estado que: tracen normas encaminadas a incentivar la inversión en investigación y desarrollo, defina líneas y campos de investigación, regulación de la oferta laboral, regulación de los programas académicos, generan el clima perfecto para que el atraso tecnológico se mantenga durante mucho tiempo y Colombia no deje de ser un consumidor de tecnología.
+
+
+\subsubsection{Pasos a seguir para iniciar la solución al problema de atraso tecnológico}
+
+Estudios consultados \cite{MDAG99} \cite{DZSC+07} \cite{MTRR07} \cite{Mar04}, coinciden en que para dar solución a los problemas expuestos anteriormente se deben seguir las siguientes recomendaciones:
+
+Al gobierno:
+
+\begin{itemize}
+   \item Fomento gubernamental de centros de investigación y productividad para fortalecer la relaciones universidad empresa.
+   \item Fomentar cooperación internacional e inversión extranjera con transferencia de tecnología. a nivel gubernamental, Apoyo del gobierno a personas que tienen un alto potencial de crear y desarrollar tecnología.
+   \item Definir agendas de investigación acordes con las tendencias mundiales y desarrollar capacidades en el país.
+\end{itemize}
+
+A los centros de Enseñanza:
+\begin{itemize}
+   \item Creación de portafolio de servicios.
+   \item Realizar seminarios y líneas de profundización de temas afines a la administración y la gerencia en empresas de base tecnológica.
+   \item Montar laboratorios de pruebas e incentivar los productores nacionales para que logren una calidad que cumpla con los estándares internacionales.
+   \item Infraestructura institucional que impulse la actualización tecnológica en el sector mediante desarrollo de proyectos de tecnología de punta con una posible transferencia de tecnología.
+   \item Incentivar la formación de maestrías y doctorados nacionales acorde con una agenda de investigación.
+   \item Realización de proyectos de aplicación.
+   \item El contacto con las empresas no debe ser encargada únicamente a los estudiantes, la Universidad debe desarrollar las competencias que la empresa requiere.
+   \item Interacción entre Universidades, Conviene que buena parte de los trabajos realizados en doctorado sean de investigación aplicada, orientadas a mejorar la productividad del sector empresarial 
+   \item Innovación curricular, actualización continua de profesionales.
+   \item Las facultades de Ingeniería deben acompañar las demandas que surgen del sector productivo.
+   \item Necesidad de mejorar las competencias y habilidades generales de los ingenieros, (continuo aprendizaje) habilidad para innovar, investigar, desarrollar nueva tecnología.   
+\end{itemize}
+
+
+
+\subsubsection{Estado de la Electrónica Digital en la Universidad Nacional de Colombia}
+
+Hasta hace un año en las asignaturas del área de electrónica digital de la Universidad Nacional de Colombia (La Universidad más grande e importante del pais), se trabajaba con dispositivos que fueron sacados al mercado en 1966 y 1968, las familia lógica TTL 7400 y CMOS 4000. El problema principal al utilizar esta tecnología no es su año de creación, ni siquiera que en la actualidad se consideren obsoletas para el diseño de un sistema digital completo. \footnote{En la actualidad estas compuertas se utilizan para la implementación de pequeñas operaciones lógicas} El problema detrás del uso de esta tecnología se encuentra en la ausencia total de metodologías de diseño (en el caso Colombiano). Y el desconocimiento en herramientas tipo CAD. El proceso de diseño que realizaban los estudiantes era:
+
+\begin{enumerate}
+  \item Especificaciones del sistema.
+  \item Generación manual de ecuaciones boolenas.
+  \item Minimización manual utilizando mapas de Karnaugh.
+  \item Implementación de las ecuaciones minimizadas utilizando las familias lógicas 7400 y 4000, sobre placas de pruebas (protoboards, breadboards)
+  \item Pruebas del sistema.
+\end{enumerate}
+
+A manera de ejercicio académico se justifica el uso de las familias 7400 y 4000, sin embargo, el quedarse ahi no es bueno para una industria electrónica desactualizada, debido a que este tipo de implementaciones no pueden generar productos competitivos a nivel mundial. La razón de esto es que existen muchas fuentes de error en el proceso, generados por la ausencia de herramientas CAD que realizan las operaciones tediosas como las minimización de ecuaciones booleanas, las cuales están sujetas a errores humanos originados por cansancio, falta de concentración, etc. Otro aspecto que vale la pena resaltar es la falta de ua simulación funcional, la mayoría de los estudiantes consultados no realizaban simulaciones funcionales y preferían probar el diseño una vez implementado físicamente, esto unido a la dificultad de depuración innata a este tipo de implementaciones, aumentaba considerablemente el tiempo requerido para realizar las pruebas al sistema.
+
+A los problemas mencionados anteriormente se suma la gran cantidad de circuitos integrados necesarios para implementar un sistema sencillo, se observaron hasta 8 placas de pruebas con cerca de 50 circuitos integrados interconectados entre sí, lo cual aumenta las posibles causas de error y aumenta el tiempo de desarrollo en forma considerable.
+
+
+En el segundo curso del área de electrónica digital, se introduce al estudiante al uso de los dispositivos lógicos programables (PLD) y los lenguajes de descripción de hardware (HDL) como herramientas para el diseño de sistemas digitales, al comienzo, el contenido de estos cursos se limitaba al uso de una herramienta de diseño y la enseñanza de nociones básicas del lenguaje VHDL, se daba más importancia al uso de la herramienta y no a la metodología de diseño, de nuevo el estudiante ataca los problemas sin una metodología de diseño clara. Vale la pena indicar que este curso fue dictado por profesores ocasionales durante los últimos cuatro años, cada profesor utilizaba contenidos y niveles de exigencia diferentes.
+
+En la tercera parte del curso se trabaja con sistemas microcontrolados, se utilizan microcontroladores de 8 bits de diferentes familias y se utiliza el lenguaje ensamblador como herramienta de desarrollo. Una de las principales desventajas que presenta este curso (y de la línea en general) es la falta de continuidad en los contenidos y en la metodología utilizada, ya que el contenido de este curso se encuentra totalmente desligado al de los dos anteriores. Sin embargo, durante este curso se proporciona una metodología de diseño en la que los estudiantes emulan el comportamiento del microcontrolador antes de ser programado, sin embargo, esta práctica no es seguida por la mayoría de los estudiantes, una posible causa de este comportamiento puede ser la falta de metodologías de diseño en los cursos anteriores.
+
+La sensación que queda al terminar el área de electrónica digital es que lo único que importa son los microcontroladores y que lo visto en los primeros cursos no es muy útil. La siguiente tabla muestra los problemas encontrados en el área de electrónica digital de las carreras de Ingeniería Eléctrica y Electrónica de la Universidad Nacional de Colombia:
+
+\begin{enumerate}
+  \item Falta de una metodología de diseño.
+  \item Utilización de herramientas obsoletas: Familias Lógicas, lenguajes de programación.
+  \item Poco uso de las herramientas CAD.
+  \item Falta de continuidad en las asignaturas.
+  \item Falta de docentes.
+  \item No se suministra una formación adecuada que ayude a la industria electronica a salir del retraso tecnológico.
+\end{enumerate}
+
+
+
+\begin{enumerate}
+  
+  \item Estudio de sistemas y algoritmos bio-inspirados: Algoritmos
+  Gen\'eticos (GA), Sistema Inmune Artificial (AIS), Hardware Evolutivo (EHW),
+  Chips de ADN, Aut\'omatas Celulares (CA), entre otros. el cu\'al ha
+  producido las siguientes publicaciones \cite{JSCC04c},\cite{JSCC04},\cite{JSCC03},\cite{JSCC04b}:
+  \begin{itemize}
+    \item J. Sep\'ulveda and C. Camargo. Implementaci\'on de un
+    Sistema InmuneArtificial sobre un FPGA para Reconocimiento de Patrones.
+    \textit{Memorias del X WorkShop de Iberchip}, 2004.
+    
+    \item J. Sep\'ulveda, C. Camargo, and A. Delgado. El Problema
+    SAT: Enfoque Comparativo con ADN y FPGA. \textit{Memorias del
+    IX Workshop de Iberchip}, 2003.
+    
+    \item J. Sep\'ulveda, C. Camargo, and A. Delgado.
+    Implementaci\'on de Chip de ADN en FPGA. \textit{Memorias del X Workshop de Iberchip}, 2004.
+    
+    \item J. Sep\'ulveda, C. Camargo, and S. Bolivar.
+    Metodolog\'{\i}a de Implementaci\'on de Aut\'omatas Celulares
+    en FPGA. \textit{Memorias del X Workshop de Iberchip}, 2004.
+  \end{itemize}
+  \item Estudio del proyecto Embrionics, implementaci\'on de un arreglo de
+  c\'elulas en una FPGA; como resultado se obtuvo el siguiente art\'{\i}culo
+  {\cite{JEFS05}}:
+  \begin{itemize}
+    \item J. Espinosa, C. Camargo, and F. Segura. Evoluci\'on de un
+    Arreglo de C\'elulas Utilizando Algoritmos Gen\'eticos.
+    \textit{Memorias del XI Workshop de Iberchip}, 2005.
+  \end{itemize}
+  
+  
+  \item Estudio del proyecto Amorphous Computing.
+  
+  
+  
+  \item Investigaci\'on en nuevas tecnolog\'{\i}as y en metodolog\'{\i}as de
+  diseño de sistemas digitales:
+  \begin{enumerate}
+    \item Implementaci\'on de aplicaciones de Sistemas Embebidos utilizando
+    herramientas GNU y el sistema operativo de libre distribuci\'on
+    eCos{\footnote{http://sources.redhat.com/ecos}}, sobre un procesador ARM
+    (AT91 de Atmel y GameBoy Advance de Nintendo); como parte de este estudio
+    se publicaron los art\'{\i}culos {\cite{CC05}}, {\cite{FPFS+05}}:
+    \begin{itemize}
+      \item C. Camargo. Implementaci\'on de Sistemas Digitales
+      Complejos Utilizando Sistemas Embebidos. \textit{Memorias
+      del XI Workshop de Iberchip}, 2005.
+      
+      \item F. Pedraza, C. Camargo, F. Segura, and A. Gauthier.
+      Control Adaptativo Embebido. \textit{Memorias
+      del XI workshop de Iberchip}, 2005.
+    \end{itemize}
+    \item Implementaci\'on de aplicaciones linux sobre una FPGA Spartan 3 de
+    Xilinx, utilizando el procesador microblaze de Xilinx.
+    
+    \item Implementaci\'on de aplicaciones Java sobre una JVM implementada en
+    hardware{\footnote{http://www.jopdesign.com}} sobre una FPGA Spartan 3 de
+    Xilinx.
+    
+    \item Desarrollo de aplicaciones sobre el sistema operativo linux
+    utilizando el SoC de Sharp LH79520.
+    
+    \item Desarrollo de plataformas de desarrollo para FPGAs, SoC y
+    Procesadores ARM.
+    
+  \end{enumerate}
+  \item Construcci\'on de la plataforma rob\'otica y desarrollo de Software y
+  Hardware para su funcionamiento:
+  \begin{itemize}
+    \item C. Camargo ECBOT: Arquitectura Abierta para Robots M\'obiles.
+    \textit{IEEE CWCAS'07 Noviembre Bogot\'a - Colombia.}
+  \end{itemize}
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Paradigmas para la inteligencia Ubicua}
+
+\section{Trabajo Previo}
+En esta sección realizaremos una revisión de los trabajos realizados en las áreas relacionadas con auto-organización con implementaciones Hardware.....
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% AUTO - ORGANIZACION
+\subsection{Auto-Organización}
+
+Trabajos en Auto-Organización han sido desarrollados en muchos campos, Por ejemplo, en \cite{SOQX04} utilizan un protocolo de auto-organización para optimizar la energía de una red de sensores inalámbricos, proporcionar adaptabilidad (en tamaño, topología y densidad) a la infraestructura de comunicaciones y permite comunicaciones multi-hop
+
+Las técnicas para modelamiento de sistemas complejos se pueden dividir en aproximaciones \cite{JLXJ}:
+\begin{itemize}
+ \item Top-Down: Comienza con una descripción de alto nivel del sistema y utiliza herramientas como ecuaciones diferenciales. Trata cada parte del sistema complejo de forma genérica y es efectivo modelando casos promedio, donde la diferencia de comportamiento de los individuos puede ser ignorada. Sin embargo, esta aproximación no puede ser utilizada en todos los casos. Por ejemplo, las ecuaciones diferenciales no pueden modelar de forma precisa, la dinámica y el comportamiento emergente de algunos de los sistemas biológicos (la distribución de anticuerpos en el sistema inmunológico humano tiende a ser heterogéneo)
+\item Bottom-Up: Comienza con una descripción de la entidad más pequeña del sistema complejo y modela su funcionamiento de la siguiente forma:
+  \begin{itemize}
+    \item Autónomo: Los elementos del sistema son individuos racionales que actúan de forma independiente.
+    \item Emergente: Exhiben comportamientos complejos que no estan presentes o son predefinidos en el funcionamiento de las unidades autónomas.
+    \item Adaptativo: Modifican su comportamiento ante cambios en el entorno donde estan localizados.
+    \item Auto-Organizado: Son capaces de organizar los elementos para alcanzar los funcionamientos anteriormente mencionados.
+  \end{itemize}
+
+\end{itemize}
+ 
+
+Autonomy-Oriented Computing (AOC) \cite{JLXJ} es una aproximación bottom-up que intenta resolver problemas computacionales de alto grado de dificultad o caracterizar el funcionamiento de sistemas complejos basado en la observación de la naturaleza, los pasos para construir un modelo AOC son:
+
+\begin{enumerate}
+ \item Observar el comportamiento macroscópico del sistema natural
+ \item Diseñar las entidades funcionamiento deseado asi como el entorno donde residen dichas entidades.
+ \item Observar el comportamiento macroscópico del sistema artificial.
+ \item Validar el comporatmiento del sistema artificial con su contraparte natural.
+ \item Modificar el diseño obtenido en 2) de acuerdo a los resultados obtenidos en 4)
+ \item Repetir 3) y 5) hasta encontrar el comportamiento deseado.
+ \item Encontrar un modelo de 1) en términos de 2).
+\end{enumerate}
+
+\subsection{Auto-Organización de sensores}
+\cite{KPJZ} 
+
+
+El CEBOT \cite{TUTF} esta conformado por un gran número de unidades robóticas autónomas, llamadas celúlas, cada una con capaz de realizar una función simple. CEBOT permite configurar de forma dinámica la estructura del SW y HW con el fín de realizar una determminada función o ante cambios en el entorno, esta reconfiguración se logra modificando la interacción entre las células. En este trabajo el comportamiento cooperativo se define como un comportamiento de la célula para generar la configuración estructural.
+
+
+
+\section{Coordinación basada en el comportamiento de un sistema multi-robot\cite{JaMJM05}}
+
+\subsection{Arquitecturas de control de robots}
+
+\subsubsection{Control de un robot}
+Aca se define el control de un robot como el proceso de mapear la información obtenida por los sensores del mismo en acciones en el mundo real. las aproximaciones para controlar un robot pueden describirse como un espectro que va desde el control deliberativo al reactivo.
+
+La aproximación deliberativa es computacionalmente intensiva, ya que utiliza razonamiento o planeación explícita utilizando una representación simbólica y modelos del mundo \cite{RK95}. Para que el proceso de razonamiento sea efectivo, se requiere que los modelos del mundo sean completos y precisos. En dominios donde dicho modelo es difiícil de obtener, por ejemplo, en entornos dinámicos y de rápido cambio o en situaciones donde exista una gran incertidumbre sobre los sensores y acciones de los robots, puede ser imposible para un robot actuar de forma adecuada utilizando este tipo de control.
+
+En contraste al control deliberativo, el reactivo se caracteriza por tener un fuerte acople entre el sensado y la acción, donde típicamente no existe ningún tipo de razonamiento\cite{BC86}\cite{Bro91}. El control reactivo no requiere la creación o el mantenimiento de modelos del mundo, ya que no se basa en procesos de razonamientos complejos utilizados en el control deliberativo. En lugar de esto, utilizan métodos que involucran una cantidad mpinima de computación, representación interna o cinicimiento del mundo. Esto hace al control reactivo adecuado para entornos dinámicos,  donde tener un modelo del mismo no es muy realista. Aún mejor, la baja necesidad computacional permite a los sistemas reactivos responder de forma adecuada a dinámicas de cambios rápidos.
+
+El control híbrido se encuentra localizado entre el control deliberativo y reactivo, en el cual un controlador posee componentes reactivos y deliberativos. EL control reactivo maneja tareas de control a bajo nivel que requieren una respuesta rápida, tal como evación local de obstáculos. La parte deliberativa del control maneja tareas de alto nivel saobre una mayor escala de tiempo, tales como planeación de camino (path planning). Adicionalmente el control hibrido debe tener una tercera capa que realice la interfaz entre el componente reactivo y el deliberativo. Esta arquitectura de tres capas pretende extraer lo mejor del control reactivo en términos de control dinámico y tiempo de respuesta y lo mejor lo mejor de los controladores deliberativos en la forma de acciones globales eficientes sobre una gran escala de tiempo. Sin embargo existen asuntos complejos que involucrados en la interfaz de estos dos componentes fundamentalmente distintos y la forma en la cual su funcionalidad puede ser particionada no es muy clara aún.
+
+
+\subsection{Control Basado en el Comportamiento (BB)}
+
+La aproximación BB para el control de robots no puede ser clasificada como reactiva o deliberativa, ya que puede ser, y en mucho casos son, las dos. Sin embargo, el control BB se identifica más con el control reactivo del espectro de control, porque se presta una gran atención en mantener una estrecha realación entre sensado y acción. \cite{Con92} \cite{Gat98}
+
+Fundamentalmente un Controlador Basado en el Comportamiento esta compuesto por un grupo de componentes modulares,llamados \textit{funcionamientos}, los cuales, son ejecutados en paralelo. Un \textit{funcionamiento} es una ley de control que agrupa una serie de restricciones con el fín de alcanzar y mantener una meta.\cite{Mat97}\cite{Ark88}
+
+Cada funcionamiento recibe entradas desde los sensores y/o otros funcionamientos y proporciona salidas los actudores del robot o a otros funcionamientos.
+
+Los actuadores pueden compartir entradas de sensores y enviar comandos de salida a los mismos actuadores. El escoger una determinada acción ante múltiples entradas de sensores y funcionamientos secibe el nombre de \textit{Selección de acción}\cite{Pir00}. Uno de los mecanimos mejor conocidos para selección de acción es el uso de una jerarquía de funcionamiento predefinida, como la \textit{Subsumption Architecture \cite{Bro86}}, en la cual, los comandos de los funcionamientos activos de mayor-rango son enviados al actuador y los otros son ignorados. 
+
+
+Los sistemas BB son variados, pero existem dos principios fundamentales a los que todos los sistemas BB se adhieren inherentemente: 1) En robot posee un cuerpo físico y su funcionamiento está limitado por realidades fisicas, incertidumbres y consecuencias de sus acciones, todas ellas difíciles de predecir y 2) El robot está imerso en un mundo real y actúa directamente en base a la información de sus sensores, no sobre una representación abstracta o procesada del mismo.
+
+\subsection{Desde el control de un robot a control de múltiples robots}
+
+Los Sistemas distribuidos Multi-Robot contrastan con los sistemas centralizados Multi-Robot, en los cuales, todas las acciones de un robot no son determinadas localmente, ellas deben ser determinadas por una entidad externa, tal como otro robot o por cualquier tipo de comando externo. En los sistemas multi-Robot distribuidos, cada robot debe tomar sus propias decisiones de control, basándose únicamente en la información de sus sensores, la cual es limitada, local y con presencia de ruido.
+
+\subsubsection{Ventajas y Retos en los sistemas Multi-Robot}
+Las potenciales ventajas de los Sistemas Multi-Robot sobre los SRS (Simple Robot System) incluyen una reducción del costo total del sistema, al utilizar robots simples y económicos en lugar de un robot complejo y costoso. Además, una arquitectura Multi-Robot puede aumentar la flexibilidad y robustez del sistema tomando ventaja del paralelismo y la redundancia. Asimismo, la complejidad inherente de algunos entornos de trabajo requiere el uso de una arquitectura Multi-Robot, cuando las capacidades o los requerimientos de recursos necesarios son muy grandes para ser alcanzados por un solo robot.
+
+Sin embargo, la utilización de Sistemas Multi-Robot (MRS) presenta desventajas potenciales y retos adicionales que deben ser tratados para que presenten una alternativa efectiva y viable a los SRS. Un sistema MRS diseñado pobremente, con robots individuales trabajando en oposición, puede ser menos efectivo que un sistema SRS diseñado cuidadosamente. El reto más grande en el diseño de sistemas MRS efectivos es el manejo de la complejidad introducida por la interacción entre los robots. 
+
+\subsubsection{Necesidad de Coordinación en Sistemas Multi-Robot}
+Con el fín de maximizar la efectividad de un MRS, las acciones de los robots deben ser espacio-temporalmente coordinadas y dirigirlas hacia el logro de una determinada tarea o un determinado objetivo a nivel de sistema. El solo hecho de tener robots interactuando entre si, no es suficiente para producir un comportamiento a nivel de sistema coordinado, interesante o práctico. Para que la interacción de los robots produzcan funcionamientos coherentes, debe existir algun mecanismo de coordinación que organice espacio-temporalmente las interacciones de forma apropiada para la tarea.
+
+
+\subsection{Coordinación global a partir de interacciones locales}
+
+Existen muchos mecanismos por los cuales se pueden organizar las interacciones. Nosotros los clasificaremos en tres  clases: Interacción a través del entorno, interacción a través de sensores, e interacción a través de comunicacion. Estas clases no son mutuamente excluyentes ya que los MRS pueden y en algunos casos utilizan mecanismos simultáneos de cualquiera o de las tres clases para alcanzar un funcionamieno coordinado a nivel de sistema.
+
+
+\subsubsection{Interacción por medio del entorno}
+
+El primer mecanismo de interacción es através del entorno compartido de los robots. Esta forma de interacción es indirecta, ya que no existe comunicación explícita o física entre los robots. En lugar de esto, el mismo entorno se utiliza como medio de la comunicación indirecta.
+
+Con el cuidadoso diseño de los sensores, actuadores y las cualidades del control, es posible utilizar el concepto de 
+\textit{stigmergy \cite{HM99}\footnote{\textit{Stigmergy} es un método de comunicación indirecta en un sistema de auto-organización emergente, donde sus partes individuales se comunican con las otras modificando su entorno local.}} en MRS. Este poderoso mecanismo de coordinación es muy atractivo ya que típicamente requiere capacidades mínimas de los robots individuales. Los robots no requieren comunicación directa, solo reconocer a los otros robots o distinguirlos entre diferentes objetos en el entorno, tampoco requieren realizar razonmientos computacionales intensivos de razonamiento y planeación.
+
+Las acciones de construcción de un robot alteran el entorno, y por lo tanto la información de los sensores disponible para los otros robots. Esta nueva información activa acciones de construcción posteriores.
+
+\subsubsection{Iteracción através de sensores}
+El segundo mecanismo para la interacción entre robots es através de sensores. Como se describe en \cite{CFK97}, la interacción utilizando sensores se refiere a interacciones locales que pueden ocurrir entre robots como resultado de el sensado de otro robot., pero sin comunicación explícita. Al igual que la interacción por medio del entorno, la interacción utilizando sensores es también indirecta ya que no existe comunicación explícita entre los robots; sin embargo, requiere que cada robot sea capaz de distinguir otros robots entre diferentes objetos del entorno. En algunas circunstancias, cada robot puede ser requerido para identificar a todos los demás robots, o clases de los otros robots. En otros casos, puede ser necesario distingir robots de otros objetos del entorno.
+
+La interación por medio de sensores puede ser usada por un robot para modelar el comportamiento de otros robots o para determinar que está haciendo otro robot con el fín de tomar decisiones y reponder de forma adecuada. Por ejemplo, las bandadas de aves utilizan sus sensores para monitorear las acciones de otras aves en su vecindad para hecer correcciones locales a su propio movimiento. Ha sido demostrado que los resultados efectivos del grupo  a partir de relativamente simples reglas locales seguidas por cada ave respondiendo a la dirección y velocidad de los vecinos locales \cite{Rey87}.
+
+Otros dominios en los cuales la interacción a través de sensores han sido utilizada en MRS inclute \textit{flocking}\cite{Mat95}, en donde cada robot ajusta su movimiento de acuerdo al movimiento de los robots observados localmente. La interacción a través de sensores también ha sido demostrada en el dominio de división adaptativa de tareas \cite{JM03}. En este dominio, cada robot cambia de forma dinámica las tarea que está ejecutando basándose en las acciones observadas de otros robots y la disponibilidad de tareas en el entorno.
+
+\subsubsection{Caso de Estudio Interacción por medio de Sensores: Formación de marcha}
+
+La aproximación a la formación de marcha aca descrita fué presentada en \cite{FM02}. La idea general de esta aproximación es que cada robot en el MRS se posiciona el mismo relativamente a un robot vecino designado. Este robot vecino, a su vez, se posisiona el mismo de forma relativa a su propio robot vecino designado. Ya que todos los robots solo tienen en cuanta su posición relativa con respecto a su robot vecino, ningún robot esta, ni necesita estar pendiente de, la posición global de todos los robots en la formación. Cada robot solo necesita ser capaz de determinar la distancia y dirección a su vecino. La geometría global de la formación fue determinada a través de la cadena de vecinos. La formación puede ser cambiada de forma dinámica alterando la estructura de la relación local del vecino.
+
+\subsubsection{Interacción por medio de comunicación}
+La comunicación en los robots físicos no es gratuita o confiable y puede ser restringida limitanfo el ancho de banda y el alcance, y la inpredecible interferencia. En los sistemas reales de robots, el rango y la confiabilidad de la comunicación son factores de diseño muy importantes \cite{GM(.I.W01}.
+
+Existen muchos tipos de comunicación. La comunicación puede ser directa de un robot a otro, de un robot a una clase de robots, o difundir desde un robot a todos los demás robots. Así mismo, los protocolos pueden ir desde esquemas simples carentes de protocolo a esquemas complejos basados en negociación y comunicación intensiva. La información codificada en una comunicación puede ser información de estado, un comando a uno o más robots, una petición de información adicional por otros robots.
+
+\subsubsection{Casi de estudio Interacción por medio de comunicación: Seguimiento de múltiples objetivos}
+
+En \cite{Par97}, el objetivo es tener un grupo de robots con rangos de sensores limitados se posicionan y orientan ellos mismos de tal forma que son capaces de adquirir y seguir multiples objetos que se mueven a través de su entorno. Las posiciones, trayectorias y numero de objetivos no se conocen a priori. Estas dificultades son compuestas en un MRS distribuido, donde el sistema debe determinar que robot(s) deben monitorear que objetivo(s). Cada robot tiene un rango limitado de sensores y comunicación. La comunicación fue utilizada por cada robot para transmitir la posición y velocidad de todos los objetivos dentro de su rango de sensado a los demás robots dentro de su rango de comunicación.
+
+Cada robot evalúa constantemente la importancia de su actual actividad de seguimiento y los posibles cambios de posición que podrían aumentar la importancia de sus actividades de seguimiento. La comunicación fue utilizada para permitir a cada robot mantener un mapa local de los movimientos de los objetivos dentro del rango de comunicación pero fuera fuera de su rango de sensado. Como resultado, el grupo como un todo, pudo seguir un número máximo de objetivos, con un mínimo número de robots.
+
+
+\subsection{Diseño formal y análisis de un Sistema Multi-Robot}
+
+El diseño de los mecanismos de coordinación para un sistema multi-robot (MRS) ha probado ser un problema dificil de resolver. En la última década, el diseño de una variedad de tales mecanismos sobre un amplio rango de dominios de aplicación ha sido estudiado \cite{CFK97b} \cite{DJM+02}.
+
+Las siguientes preguntas deben ser resueltas antes de poder producir rápida y eficientemente un MRS efectivo para una nuevo dominio:
+
+\begin{itemize}
+ \item Que tan apropiado es un determinado mecanismo de coordinación para un dominio en particular.
+ \item Que características de desempeño se pueden esperar de el.
+ \item Como esta relacionado con otros mecanismos de coordinación.
+ \item Como se puede modificar para aumentar el desempeño del sistema.
+\end{itemize}
+
+El paradigma BB para control multi-robot es popular en MRS debido a su robustez a las interacciones dinámicas inherentes a cualquier MRS. Un MRS representa un sistema de alta no linealidad en el cual las acciones de un robot son afectadas por las acciones de los demás rebots. Esto hace que cualquier esquema de control que se base en razonamiento o planeación complejos no sean efectivos debido a que es muy difícil predecir de forma precisa futuros estados de un sistema MRS no trivial. Por esta razón, el control BB es utilizado frecuentemente en MRS. La simplicidad del robot individual tambien presenta una ventaja al permitir que sea posible el análisi externo para predecir el desempeño del sistema.
+
+\subsubsection{Analisis de Sistemas Multi-Robot Utilizando Modelos Macroscópicos}
+
+Los modelos macroscópicos se enfocan en el funcionamiento a nivel de sistema del MRS sin considerar de forma explícita cada robot individualmente en el sistema.
+
+Un modelo matemático macroscópico MRS ha sido demostrado en el dominio de tareas de recolección de alimentos \cite{LG02}. El modelo fué usado para estudiar los efectos de la interferencia entre robots, el resultado pudo ser utilizado para modificar el control individual de los robots o para determinar la densidad óptima de robots con el fín de maximizar el desempeño de la tarea. Un modelo analítico macroscópico ha sido aplicado para el estudio de  la dinámica del comportamiento colectivo en un dominio colaborativo utilizando una serie de ecuaciones diferenciales \cite{LGM+01}.
+
+Un modelo macroscópico general para el estudio de sistemas adaptativos multi-agente fué presentado en \cite{LG03} y fué aplicado al análisis en el dominio de localización de tareas que fué realizado de forma experimental en \cite{JM03}. En este trabajo los robors que forman el MRS mantienen una cantidad limitada de estados internos persistentes para representar una historia corta de eventos pasados, pero no se comunican de forma explícita con otros robots.
+
+
+\subsubsection{Análisi de Sistemas Multi-Robot Utilizando Modelos Microscópicos}
+
+El modelamiento microscópico considera directamente cada robot en el sistema y puede modelar de forma individual las interacciones de un robot con otros robots y con la tarea con un detalle arbitrario, incluyendo la simulación exacta del funcionamiento de cada robot. Sin embargo, la mayoría de las aproximaciones microscópicas modelan el funcionamienro de cada robot como una serie de eventos estocásticos. Típicamente, el controlador del robot individual es abstraido a algún grado y las trayectorias e interacciones no son consideradas directamente.
+
+Una metodología de modelamiento microscópico probabilístico para el estudio de funcionamiento colectivo en en dominio de clustering fué presentado en \cite{MIM99}. El modelo fué validado a través de un acuerdo cuantitativo entre la predicción de la evolución del tamaño del cluster, con la simulación de experimentos y con experimentos sobre robots reales. La efectividad y precisión de las técnicas de modelamiento macroscópico y microscópico comparadas con los experimentos con robots reales y simulaciones se discuten en \cite{ME02}.
+
+Un paso hacia adelante en las metodologías para el análisis formal de un determinado diseño MRS se encuentra en las metodologías formales para la síntesis de controladores MRS. La síntesis es el proceso de construcción de un controlador MRS que cumple con las restricciones del diseño, tales como alcanzar el nivel de desempeño deseado mientras cumple las restricciones impuestas por las limitadas capacidades del robot.
+
+Ser capaz de definir un dominio de aplicación y tener un método formal que diseñe el MRS para cumplir con la tarea mientras se alcanza el criterio de desempeño especificado es uno de los objetivos de largo plazo en la comunidad MRS.
+
+Una herramienta de trabajo importante en el diseño formal de MRS coordinados fué el desarrollo de \textit{information invariants}, la cual intenta definir los requerimientos de información de una tarea dada e indica cual de estos requerimientos pueden ser alcanzados en un contolador \cite{Don95}. El concepto de \textit{information invariants}  fué estudiado experimentalmente en el dominia de manipulación distribuida de tareas \cite{DJR95} y fué extendido a través de la definición de equivalencia de clases entre definiciones de tareas y capacidades del robot para ayudar en la elección de una clase de controlador apropiada en un dominio dado \cite{Par98}.
+
+
+Otras aproximaciones alternativas a la síntesis de controladores MRS pueden ser encontrados en métodos evolutivos \cite{Mat95} \cite{Par98b}. También existen un número de entornos de diseño de MRS, arquitecturas de control, y lenguajes de programación, los cuales ayudan en el diseño de MRS coordinados \cite{Mat95b} \cite{AB97} \cite{AGH+00}
+
+
+%*******************************************************************************************************************
+
+\subsection{Asignación dínámica de tareas \cite{KLCJ+0}}
+
+En un MRS distibuido no existe un mecanismo de control centralizado, a cambio, cada robot opera de forma independiente bajo control y sensado local, con un comportamiento coordinado a nivel de sistema que resulta de las interacciones locales entre los robots y entre los robots y el entorno. El diseño efectivo de un MRS coordinado está restringido por la carencia de herramientas de diseño y metodologías formales. El diseño de un SRS (Single Robot System) se ha visto beneficiado en gran medida por los formalismos proporcionados por la teoría de control -- el diseño de MRS esta necesitando un formalismo análogo.
+
+Para que un grupo de robots realicen de forma efectiva una determinada tarea a nivel de sistema, el diseñador debe hacerse la pregunta: ¿Qué robot puede realizar que tarea y cuando?. La asignación dinámica de tareas es una clase de asignación de tareas en la cual, la asignación de robots a las sub-tareas es un proceso dinámico y puede requerir un ajuste continuo en respuesta a cambios en el entorno de la tarea o al desempeño del grupo. El problema de la asignación de la asigación de tareas en un MRS distribuido esta compuesto por el hecho que la asignación debe ocurrir como resultado de un proceso distribuido ya que no existe un coordinador central para hacer estas asignaciones. Esto aumenta la complejidad del problema ya que debido al rango local de los sensores del robot, ningún robot posee una visión completa del estado del mundo. Con esta información incompleta y en algunos casos ruidosa, cada robot debe hacer decisiones locales de control sobre que acciones realizar y cuando, sin un conocimiento completo de que estén haciendo otros robots que la hayan realizado en el pasado, o que harían en el futuro \cite{KLCJ+}.
+
+Existe un número de modelos y filosofías de asignación de tareas. Históricamente, la más popular se basa en la coordinación intencional para lograr la asignación de tareas \cite{Par98b}. En esta, los robots coordinan sus respectivas acciones de forma explícita a través de comunicaciones y negocioaciones deliberadas. Debido a problemas relacioados con la escala, dichas aproximaciones son utilizadas en MRS con un numero relativamente pequeño de robots (i.e. menor que 10). Este método es el preferido debido a que es el más conocido, fácil de diseñar e implementar, y más adecuado para el análisis formal \cite{BPG}.
+
+Al aumentar el tamaño del MRS, la complejidad introducida al aumentar las interacciones de los robots, hace que estos sistemas sean más difíciles de analizar y diseñar. Esto lleva a la alternativa de coordinación intencional, es decir, asignación de tareas utilizando coordinación emergente. En sistemas que utilizan la coordinación emergente, los robots individuales coordinan sus acciones basadándose únicamente en información local de sensores e interacciones locales. Típicamente, existe muy poca o ninguna comunicación directa o negociaciones explícitas entre los robots. Ellos son, por lo tanto, más escalables a grandes números de robots y son más capaces de tomar ventaja de la robustez y paralelismo provisto por la agregación de grandes números de robots coordinados.
+
+
+\subsubsection{Trabajo relacionado}
+
+Sugawara et al \cite{KSMS97} \cite{KSMS+} desarrollaron un modelo simple de recolección de alimentos cooperativo en grupos de robots con y sin comunicación. Kazadi et al. [11] \cite{SKAA02} estudió la propiedad general de una agregación multi-robot utilizando modelos mocroscópicos fenomenológicos. Agassounon y Martinoli \cite{WAAM02} presentan un modelo de agregación en el cual el número de robots toman parte de en la tarea de clustering se basa en el mecanismo de división de labores de las antenas.
+
+
+Estos modelos son ad-hoc y e dominio específico, y los autores no dan explicación de como aplicar estos modelos a otros dominios. En trabajos recientes hemos desarrollado un marco de trabajo general para crear modelos fenomenológicos de funcionamiento colectivo en grupos de robots \cite{KLAG04} \cite{KLAM05}. 
+
+Muchas de las aproximaciones listadas arriba están de forma implícita o explícita basadas en la teoría de procesos estocásticos. Otro ejemplo de una aproximación estocástica es el modelo probabilístico desarrollado por Martinoli y sus colaboradores \cite{AMPt99} \cite{AMAJI99} \cite{AJI+01} para estudiar el funcionamiento colectivo de un grupo de robots.
+
+Muy poco trabajo ha sido desarrollado sobre análisis de sistemas multirobot en entornos dinámicos. En \cite{KLAG03} se extiende el marco de trabajo de los procesos estocásticos desarrollado en trabajos recientes, a robots que cambian su comportamiento basándose en la historia de observaciones locales del (probablemente cambiante) entorno \cite{LG03}.
+
+En \cite{BAH88} Huberman y Hogg, realizaron un estudio matemático sobre funcionamiento colectivo de sistemas de agentes adaptativos utilizando la dinámica de juego como un mecanismo de adaptación. En los sistemas de dinámica de juegos, las estrategias ganadoras son premiadas, y los agentes utilizan las mejores estrategias para decidir su próximo movimiento.
+
+
+\subsubsection{Mecanismos de asignación de tareas}
+El esenario de asignación de tareas dinámico estudiado considera un mundo poblado con tareas de \textit{T} tipos diferentes y robots que son igualmente capaces de realizar cada tarea, pero solo se les puede asignar un tipo de tarea en un momento dado. El estado de un robot es un atajo para el tipo de tarea asignada al robot. Un robot puyede cambiar su estado de acuerdoa sus políticas de control cuando lo determine apropiado (evitando cambios de tarea no necesarios).
+
+El propósito de la asignación de tareas es asignar robots a las tareas de una forma que aumente el desempeño del sistema, lo que normalmente significa reducir el tiempo total de ejecución. Esto es, si todas las tareas toman igual cantidad de tiempo en completarse, en la mejor asignación, la fracción de robots en el estado \textit{i} será igual a la fracción de tareas de tipo \textit{i}.  En general, sin embargo, la asignación deseada puede tomar otras formas, -- por ejemplo, puede estar relacionada a la recompensa relativa o costo de realización total (completing) de cada tipo de tarea -- sin cambiar nuestra aproximación. En el escenario de asignación dinámica de tareas, el número de tareas y el número de robots disponibles pueden variar en el tiempo, por ejemplo, agragando nuevas tareas, desarrollando nuevos robots, o removiendo robots defectuosos.
+
+El reto al que se enfrenta el diseñador es divisar un mecanismoque permita una asignación de tareas deseada en un MRS distribuido ante cambios en el entorno. Se asume que los robots son capaces de observar tareas y discriminar sus tipos. Ellos también son capaces de observar y discriminar los estados de las tareas de los otros robots.
+
+Una forma de dar al robot la habilidad de responder a cambios en el entorno es dotarlo con un estado interno donde el puede almacenar su conocimiento del mundo capturado por sus observaciones \cite{CVJ03} \cite{KLAG03}.  Las observaciones son almacenadas en una lista continua cíclica de longitud finita, donde las nuevas observaciones reemplazan las anteriores. El robot consulta estas observaciones periódicamente y actualiza su estado de acuerdo a una función de transición especificada por el diseñador \cite{LG03} \cite{CVJ03}.
+
+
+\subsection{Analisis de Asignción Automática de Tareas}
+
+En esta sección asumiremos que existen dos tipos de tareas, -- denominadas de forma arbitraria \textit{red} y \textit{green}. Esta simplificación se hace con fines pedagógicos, el modelo puede expandirse. Durante un intervalo de tiempo suficientemente corto, puede considerarse que cada robot permanece en la tarea Red o Green, cada tarea esta compuesta por muchas acciones y funcionamientos del robot, por ejemplo, buscando nuevas tareas, detectando y ejecutándolas, evitando obstáculos, etc. Sin embargo, ya que lo que se desea es modelar como evoluciona en el tiempo la fracción de robots en cada tarea, es suficiente considerar solo estos dos estados. Si encontramos que se necesitan niveles de detalle adicionales para explicar el funcionamiento del sistema podemos elaborar el modelo descomponiendo los estados de alto nivel en sus componentes.
+
+\subsubsection{Observación de tareas}
+En esta sección estudiaremos en mecanismo en el cual los robots hacen decisiones paea cambiar de estado de tarea basándose únicamente en la observación de las tareas disponibles. Sean $m_{r}$ y $m_{g}$ el número de tareas Red y Green observadas, en la memoria de un robot. El robot elige cambiar su estado o el tipo de tarea a la que esta asignado, con probabilidades dadas por las funciones de transición $f_{g \to r}(m_{r}, m_{g})$ (probabilidad de cambiar a Red desde Green) y $f_{r \to g}(m_{r}, m_{g})$ (probabilidad de cambiar a Green desde Red). Se desea definir reglas de transición de tal forma que la fracción de tiempo que el robot esté en el estado Red (Green) sea igual a la fracción de tareas Red (Green). Esto asegura que en promedio el número de robots Red y Green refleja la distribución de tareas deseada. Si los robots tienen conocimiento global sobre el número de tareas Red Y Green $M_{r}$ y $M_{g}$, entonces cada robot podría elegir cada estado con probabilidades igual a la fracción de las tareas del tipo correspondiente. Dicho conocimiento no está disponible; por eso, se desea investigar comoo el observamiento incompleto del entorno (a través de observaciones locales) así como de los cambios dinámicos del mismo (por ejemplo, cambiando la relación entre tareas Red y Green), afectan la asignación de tareas. 
+
+\subsection{Recolección múltiple con Múltiples Robots}
+
+\subsubsection{Descripción de la tarea}
+La tarea tradicional de recolección se define al tener un robot o grupo de robots recolectando un grupo de objetos del entorno, cada uno consume uno y regrese a un lugar común \cite{DGMJM02}. La recolección múliple, es una variación de la recolección tradicional, se define en \cite{TB99} y consiste en una arena poblada por objetos de varios tipos que deben ser recolectados de forma concurrente.
+
+Existen dos tipos de objetos dispersados de forma aleatoria a lo largo de la arena: \textit{PuckRed} y \textit{PuckGreen}. Cada robot es capaz de recolectar ambos tipos de objetos, pero solo puede ser asignado a la recolección de un tipo en un instante de tiempo dado. Adicionalmente, todos los robots están recolectando todo el tiempo, es decir, no existen robots en estado de ``inactividad''. Un robot puede cambiar el tipo de objeto que está recolectando de acuerdo a su política de control, cuando el determina que es apropiado hacerlo. Los robots se mueven en un espacio cerrado y recogen los objetos que van encontrando. Cuando un robot recoge un objeto, el objeto es consumido y el robot lo lleva al sitio de recolección de los otros objetos. Una vez que se consume el objeto, se coloca otro del mismo tipo de forma inmediata en un lugar aleatorio. Esto se hace para mantener la densidad de objetos constante.
+
+
+\textit{En algunas ocaciones, la densidad de objetos puede afectar la precisión o la velocidad de convergencia a la asignación de tareas deseada. \textbf{Nos reservamos el estudio del impacto de la variación de densidad para trabajos futuros}}
+
+El papel de la asignación dinámica de tareas en este dominio requiere que los robots dividan su número recolectando unos los objetos \textit{PuckRed} y otros los \textit{PuckGreen}. En este experimento, se desea que la asignación de robots converja a una situación en la que la proporción de robots recolectando objetos \textit{PuckRed} sea igual a la proporción de objetos \textit{PuckRed} presentes en la arena.
+
+Se ha observado que las capacidades limitadas de sensado y la falta de comunicación directa de los robots, les impide adquirir información global tal como el tamaño y forma de la arena de recolección, el número inicial o actual de objetos a ser recolectados (total o por tipo), o el número inicial o total de robots recolectores (total o por tipo).
+
+
+\textit{Utilizar la red idiotípica para aumentar el conocimiento del robot sobre el entorno}
+
+\subsubsection{Controlador del robot basado en funcionamiento}
+
+Todos los robots tienen controladores idénticos basados en el comportamiento, los cuales consisten en los siguientes comportamientos mutuamente excluyentes:
+
+\begin{itemize}
+ \item El comportamiento \textit{ovoiding} provoca que el robot gire para evitar obstáculos en su camino.
+ \item El comportamiento \textit{wandering (caminar sin una dirección determinada)} provoca que el robot se mueva hacia adelante y, después de un lapso de tiempo aleatorio, gire a la izquierda o a la derecha describiendo un arco aleatorio por un período de tiempo aleatorio.
+ \item El comportamiento \textit{Puck Servoing} hace que el robot se mueva hacia un objeto (detectado) del tipo deseado.
+ \item El comportamiento \textit{Grasping} hace que el robot recoja y consuma un objeto.
+ \item El comportamiento \textit{Observing} hace que el robot tome la información de sus sensores y almacene los objetos y robots detectados en su respsctiva historia. El robot entonces actualiza su estado de recolección basado en esas historias.
+\end{itemize}
+
+
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \multirow{2}{1.8cm}{Obstáculo Detectado} & \multirow{2}{1.8cm}{Objeto Detectado} & \multirow{2}{2.7cm}{Gripper Break-Beam On} & \multirow{2}{2cm}{Señal de Observación} & \multirow{2}{2.2cm}{Funcionamiento Activo} \\ \\ \hline
+    X & X & X & 1 & Observing     \\ \hline
+    1 & X & X & X & Avoiding      \\ \hline
+    0 & 1 & 0 & 0 & Puck Servoing \\ \hline
+    0 & X & 1 & 0 & Grasping      \\ \hline
+    0 & X & X & X & Wandering     \\ \hline
+    \end{tabular}
+
+\tablename{Condiciones de activación de los comportamientos}
+
+Todos los robots mantienen tres tipos de información de estado: estado de recolección, historia de objetos observados, e historia de robots observados. Cada robot es dotado con un indicador luminoso observable por los robots cercanos, el cual indica el estado actual del robot. Es decir, este indicador luminoso actúa como una comunicación local, pasiva.
+
+
+Todos los robots mantienen una historia limitada de tamaño constante donde se almacena el estado de recolección de los robots observados recientemente. Ninguna de estas historias contiene una identidad única o localización de los objetos o robots detectados.
+
+
+Después que el robot hace una observación, hace una re-evaluación y cambia de forma probabilística su estado actual de recolección dadas las nuvas historias de objetos y robots. La probabilidad con la cual el robot cambia su estado de recolección se define con la función de transición.
+
+
+
+
+

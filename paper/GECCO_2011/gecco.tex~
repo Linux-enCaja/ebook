@@ -19,7 +19,7 @@
 % \mainmatter  % start of an individual contribution
 
 % first the title is needed
-\title{Intrinsic Evolvable Hardware for Combinational Synthesis}
+\title{Intrinsic Evolvable Hardware for Combinational Synthesis Based on SoC+FPGA and GPU Platforms}
 
 \numberofauthors{2}
 

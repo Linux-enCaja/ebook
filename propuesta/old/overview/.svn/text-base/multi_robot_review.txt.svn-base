@@ -1,0 +1,560 @@
+Proceedings of the 2003 IEEE/RSJ
+InU. Conference on Intelligent Robols and Systems Las Vegas, Nevada ' October 2003
+Adaptive Division of Labor in Large-scale Minimalist Multi-Robot Systems
+Chris Jones and Maja J Mataric
+
+
+I. INTRODUCTIAONND MOTIVATION
+A Large-scale Minimalist Multi-Robot System (LMMS) is a multi-robot system composed of a large number of robots, each having limited capabilities in terms of sensing, computational power, and communication range and bandwidth. We define a minimlist mbot as one which maintains little or no state information, extracts limited, local, and noisy information from its available sensors, and lacks the capability for active communication with other robots. Due to these limited capabilities, the world in which a minimalist robot is situated is formally partiallyobservable and highly non-stationary, and it is therefore not practical to assume that such a robot is capable of reliably lolowing a significant portion of the current global state of the environment or of overall task progress.
+These limitations in sensing, communication, and computation preclude a minimalist robot from performing tasks requiring significant computation or communication capabilities. Nonetheless, minimalist robots have been shown to be highly effective at a number of collective tasks, such as multi-robot formation control [4], collection [7]. and robot soccer [IQ A system composed of a large number of such minimalist robots has the potential of conferring advantages including increased robustness to individual robot failure as no single robot is critical to task performance, the prospect of scaling to increasingly larger numbers of robots as there are few bottlenecks in terms of complex communication, planning, or coordination requirements, and increased adaptability to changes in the environment since individuals act based on local information and are not tied to globally coordinated plans. 
+The aim of this work is to investigate a method by which to endow a LMMS with the capability to achieve a desired division of labor over a set of dynamically evolving concurrent tasks, a critical requirement of any task achieving large-scale multi-robot system. We define division of labor as the phenomenon in which individuals in a multi-robot system concurrently execute a set of tasks. Such division of labor may need to be continuously adjusted in response to changes in the task environment or group performance. The broader scope of this work is in understanding the ways in which to achieve robust, scalable, and efficient coordination in a LMMS.
+
+
+RELATED WORK 
+Here we summarize briefly the related work in physical LMMS using robots with similar capabilities to those on which OUT system is based. Matarif [13] provides early work on group coordination in LMMS using a collection of simple basis behaviors. Agassounon and Martinoli [1] present minimalist methodologies for coordination in robot groups. Beckers et al. [2] demonstrate the capabilities of minimalist multi-robot systems in object clustering and sorting. Kube and Zhang [10] present an approach to box-pushing using a group of robots with simple sensors and reactive control. Werger and Matarid [17] present a minimalist solution in the multi-robot foraging domain. Martinoli et al. [12] present work on the probabilistic modeling of robot behavior in the task regulation domain, demonstrating its performance as compared to experiments on physical and simulated robots. Werger [18] presents coordinated behavior in a robot soccer team using a minimalist behavior-based control system. Krieger and Billeter [9] present a decentralized task allocation mechanism for large mobile robot groups based on individual task-associated response thresholds in a collection domain. Holland and Melhuish [8] use probabilistic behavior selection in minimalist robotic clustering and sorting. Goldberg and MatariC [7] precisely define the foraging task for LMMS and provide a collection of general distributed behavior-based algorithms and their empirical evaluation. Fredslund and Matarif [4] present work on the problem of achieving coordinated behavior in the context of formations using a distributed group of physical robots using only local sensing and minimal communication. Lerman and Galstyan [11] describe a method of macroscopic analysis in a multi-robot division of labor domain very similar to the one we experimentally investigate.
+
+In the multi-robot literature, there is work on more communication and computationally complex forms of task regulation in multi-robot systems through the use of publishkubscribe and market-based methods (e.g., [6]) and systems in which significant global state is made known to all robots (e.g., [14]). Research that studies and simulates insect colonies and their behaviors is also relevant. Theraulaz et ai. [15] describe how the adaptability of complex social insect societies is increased by allowing members of the society to dynamically change tasks (behaviors) when necessary. Giving that ability to robots allows a LMMS to operate in domains requiring the simultaneous regulation of many tasks. Bonabean et al. [3] describe a model of a task regulation mechanism in insect societies through the use of response thresholds for task-related stimuli. Théraulaz et al. [15] extend that model by introducing an adaptive threshold that changes over time based on individual task performance. 
+
+The division of labor mechanism we present can be considered an instance of a response threshold model as presented in Bonabeau et al. [3], Krieger and Billeter [9], Théraulaz et al. [15], and Agassonnon and Martinoli [1]. However, our task domain and division of labor mechanism differ in that the task-related stimuli are perceived locally by the individual robots and are not altered as a result of task performance. Furthermore, the individual robots are initially homogeneous, as opposed to Krieger and Billeter [9] in which robot are initially assigned different response thresholds, and the robots do not lean or become specialized through adaptive response thresholds as is the case in Théraulaz et al. [15] and Agassounon and Martinoli [I].
+
+THE ROBOTS
+The robots used in the experimental simulations are realistic models of the ActivMedia Pioneer 2DX mobile robot. Each robot, approximately 30 cm in diameter, is equipped with a differential drive, an odometry system using wheel rotation encoders, 8 evenly spaced sonars covering the front 180 degrees used for obstacle avoidance, and a forward-looking Sony color camera with a 60-degree field-of-view and a color blob detection system (used for puck and robot detection and classification through color). Each robot is also equipped with a 2-DOF gripper on the front, capable of picking up a single 8 cm diameter puck at a time. There is no capability available for explicit, direct communication between robots nor can pucks and other robots be uniquely identified.
+
+ A. Behavior-Based Controller All robots have identical behavior-based coutrollers consisting of the following mutually exclusive behaviors: Avoiding, Wandering, Wsual Servoing, Grasping, and Observing.
+B. State Information All robots maintain three types of state information: foraging state, observed puck history, and observed robot history. The foraging state identifies the type of puck the robot is currently involved in foraging.
+C. Foraging State Transiiion Function After it makes an observation, the robot re-evaluates its current foraging state given the newly updated puck and robot histories and probabilistically changes foraging state.
+
+[1] W. Agassounon and A. Martinoli. Efficiency and robustness of threshold-based distributed allocation algorithms in multi-agent systems. In First In:. Joint Conf. on Autonomous Agents and Multi-Agent Systems, pages 1090-1097, Bologna, Italy, 2002.  ACM Press.
+[2] R. Beckers, 0. Holland, and J. Deneubourg. From local actions to global tasks: Stigmergy and collective robotics. In R. Brooks and P. Maes, editors, Artifrcal Life IK Proceedings of the Fourth International Workshop on the Synthesis and Simulation of Living Systems, pages 181-189, Cambridge, MA, 1994. MIT Press.
+[31 E. Bonabeau, G. Théraulaz, and J. Deneubourg. Quantitative study of the fixed threshold model for the regulation of division of labour in insect societies. Proceedings Royal Society of London B. 263: 1565- 1569, 1996.
+[4] I. Fredslund and M. J. Mataric. A general, local algorithm for robot formations. IEEE Transactions on Robotics and Automation, Special Issue on Multi- Robot Systems, 18(5):837-846, 2002.
+[5] B. Gerkey, R. Vaughan, K. Stoy, A. Howard, G. Sukhatme, and M. Mataric. Most valuable player: A robot device server for distributed control. In IEEE/RSJ International Conference on Intelligent Robots and Systems, (IROS-OI), pages 1226-1231, Maui, Hawaii, 2001.
+[6] B. P. Gerkey and M. J. Mataric. Sold': Auction methods for multi-robot coordination. IEEE Transactions on Robotics and Automation, Special Issue on Multi-Robot Systems, 18(5):758-768, 2002.
+[7] Dani Goldberg and Maja J. Mataric. Design and evaluation of robust behavior-based controllers for distributed multi-robot collection tasks. In Tucker Balch and Lynne E. Parker, editors, Robot Teams: From Diversity to Polymorphism, pages 3 15-344. AK Peters, 2002.
+[8] 0. Holland and C. Melhuish. Stigmergy, selforganization, and sorting in collective robotics. Artificial Life, 5(2):173-202, 2000.
+[9] M. B. Krieger and J.-B. Billeter. The call for duty: Self-organized task allocation in a population of up to twelve mobile robots. Robotics and Autonomous Systems, 30(1-2):65-84, 2000. 
+[10] C. Kube and H. Zhang. The use of perceptual cues in multi-robot box-pushing. In IEEE lntemational Conference on Robotics and Automation, pages 2085-2090, Minneapolis, Minnesota, 1996.
+[11] K. Lerman and A. Galstyan. Macroscopic analysis of adaptive task allocation in robots. In IEEE lnternatronal Conference on Intelligent Robots and Systems, La Vegas, Nevada, Oct 2003. 
+[12] A. Martinoli, A. J. Ijspeert, and F. Mondada. Understanding collective aggregation mechanisms: From probabititic modeling to experiments with real robots. Robotics and Autonomous Systems, 2 9 5 - 63, 1999.
+[13] M. Mataric. Designing and understanding adaptive group behavior. Adaptive Behavior, 4:1:51-80, December 1995. 
+[14] L. E. Parker. Alliance: An architecture for fault tolerant multi-robot cooperation. IEEE Transactions on Robotics and Automation, 14(2):220-240, 1998. 
+[15] G. Théraulaz, Bonabeau E., and J. Deneubourg. Threshold reinforcement and the regulation of division of labour in insect societies. Proceedings Royal Society of London B, 2651321-335, 1998.
+[16] R. Vaughan. Stage: A multiple robot simulator. Institute for Robotics and Intelligent Systems Technical Report IRIS-00-394, Univ. of Southern California, 2000.
+[17] B. Werger and M. Mataric. Robotic "food" chains: Externalization of state and program for minimalagent foraging. In P. Maes, M. Matarif, J.A. Meyer, J. Pollack, and S. Wilson, editors, From Animals to Animals 4, Fourth Intemational Conference on the Simulation of Adaptive Behavior (SAB-96). pages 625634, Cape Cod, Massachusetts, 1996. 
+[18] Cooperation without deliberation: A minimal behavior-based approach to multi-robot teams. Artificial Intelligence, 110:293-320, 1999.
+
+
+***************************************************************************************************
+A Framework for Multirobot Foraging over the Internet
+Pui Wo Tsui and Huosheng Hu
+
+
+Abstract
+To be successfil in real-world applications, online robots require a high degree of autonomy and local intelligence to deal with both the uncertainties in their surroundings and the arbitrary transmission delay of the Intemet. This paper descnhes our progress in building a new framework for remote operation of multiple online robots, which can he accessed through any Java-enabled browsers. Our approach to the operation of multiple robotic agents remotely through the Intemet using a low cost and portable solution is presented. A simulated experiment on multi-robot foraging is discussed. The experiment results show that the proposed approach is easily extended to include more functionality and more robotic agents. The local intelligence and communication of remote robotic agents provides simpler control, stability and steady performance.
+
+***************************************************************************************************
+Agent-Based Robot Control Design for Multi-Robot Cooperation
+Chia-How Lin and Kai-Tai Song     Gary T. Anderson
+
+Abstract - This paper presents an agent-based robot control (ARC) architecture. ARC features a flexible realtime control system, which is suitable for multi-robot cooperative tasks. It also provides an efficient platform for building up a multi-robot system consisting of heterogeneous robots. In this paper, an experimental study of this architecture is investigated. A cooperative exploration using two mobile robots will be demonstrated. In this experiment, one robot explores the environment by looking for a color-coded target and the other is responsible for task execution at the target position. While exploring in an unknown environment, the first robot, which is equipped with ultrasonic sensors for exploration, records its position as it sees deployed checkpoints. In a later phase, the second robot plans a path to the target directly using information passed from the first robot and get to the target position in an efficient way.
+
+
+1 Introduction
+For many complex tasks in service robotics, such as cleaning or load transport, it is desirable to take advantage of the flexibility provided by using multiple robots. It would also be interesting to adopt a multi-robot approach to assisting disaster rescue, such as if an earthquake or fire occurs. A multi-robot cooperative system appears to be more effective and adaptive to accomplish various complex tasks, relative to a single robot approach. The complexity of each robot can be reduced to minimum, which means lower costs, simpler design, and faster computation [1]. The execution of specific tasks, e.g. exploration, can be more efficient and robust since many robots can work collaboratively [2, 3]. Moreover, the system can be altered easily to adapt to different circumstances and missions, by forming teams with robots that have the necessary abilities. These benefits, however, often come with drawbacks such as increased complexity in software for control and coordination of multiple robots, the need for inter-robot communications, etc.
+
+The multi-robot control system ACTRESS
+proposed by Asama et al. [4] is an excellent example of such concept. In their architecture, it is necessary to access to the state of a multi-robot system, which is required for  decision-making and control. Also, it is needed for coordination of the activities of individual robots to accomplish a desired team activity.
+
+In order to synchronize the motion of each robot in a multi-robot system, inter-robot communication plays an important role. In most robot control architectures, communication is treated as a lower-level function. However, it would be more general and flexible to handle the communication as a higher level perception, in order to be managed within the framework of whole system. This is especially useful for a multi-robot system, where in practice the communication might encounter problems such as latency or even break off, and the system should be able to handle the problem under a global scope of view. Furthermore, onboard devices and programming representation of components are often different on heterogeneous robots. Thus a high level abstraction such as  using middleware agent will be beneficial to solving this problem in system development.
+
+[1] P. Flocchini, G. Prencipe, N. Santoro, and P. Widmayer, “Hard Tasks for Weak Robots: The Role of Common Knowledge in Pattern Formation by Autonomous Mobile Robots,” In Proc. 10th Int. Symp. on Algorithm and Computation, 1999, pp. 93-102. 
+[2] A. Sgorbissa and R. C. Arkin, “Local Navigation Strategies for a Team of Robots,” Robotica, Vol. 21, pp. 461-473, 2003.
+[3] A. Das, G. Kantor, V. Kumar, G. Pereira, R. Peterson, D. Rus, S. Singh, and J. Spletzer, “Distributed Search and Rescue with Robot and Sensor Teams,” in Proc. the 4th International Conference on Field and Service Robotics, Japan, 2003
+[4] H. Asama, A. Matsumoto, and Y. Ishida. Design of an autonomous and distributed robot system: ACTRESS. In Proc. of IEEE/RSJ International Conference on Intelligent Robots and Systems, pp. 283–290, Tsukuba, Japan, 1989.
+
+***************************************************************************************************
+An Analysis of Coordination in Multi-Robot Systems
+Alessandro Farinelli, Luca Iocchi, Daniele Nardi
+
+2 A taxonomy for MRS
+The taxonomy that we propose for analyzing the works on MRS is constituted by two groups of dimensions: Coordination Dimensions and System Dimensions. We have identified four Coordination Dimensions that are: Cooperation, Knowledge, Coordination, and Organization. 
+
+Regarding the Coordination Dimension (see fig. 1) the first level of the taxonomy is concerned with the ability of the system to cooperate in order to accomplish a specific task. At the Cooperation Level we distinguish cooperative systems from not cooperative ones. A cooperative system is composed of “robots that operate together to perform some global task” [22]. In this work we are interested only in cooperative MRS.  Therefore, in the following, the term MRS will refer to a team of cooperative robots. This notion of cooperation is borrowed from the MAS literature; however, in MAS, cooperation is often compared and merged with competition, which, up to now, has received little attention in the recent works on MRS. 
+
+The second level of the proposed hierarchical structure concerns the knowledge that each robot in the team has about its team mates. Aware robots have some kind of knowledge of their team mates while Unaware robots act without any knowledge of the other robots in the system. The interest in cooperating unaware MRS (that is not as common in MAS) is motivated from an engineering point of view by the simplicity of such systems, with respect to aware ones. Observe also that the notion of knowledge is not equivalent to communication: in fact, using a communication mechanism does not entail awareness and vice versa, a MRS can be aware even though there is no direct communication among the robots.
+
+The Coordination Level, is concerned with the mechanisms used for cooperation. Following [12] we consider Coordination as: “cooperation in which the actions performed by each robotic agent take into account the actions executed hy the other robotic agents in such a way that the whole ends up being a coherent and highperformance operation”. However, there are different ways a robot can take into account the actions of the other members of the team, depending on the use of an explicit coordination protocol, that is defined as a set of rules that the robots must follow in order to interact with each other in the environment. We thus consider Strong (Weak) coordination as a form of coordination that relies (does not rely) on a coordination protocol.
+
+The fourth level of our hierarchical structure is concerned with the way the decision system is realized within the MRS. The Organization Level introduces a distinction between centralized and distributed approaches [6]. A precise characterization of this issue is given for example in [11] in which distribution is regarded as the autonomy of each component in the system to take decisions about the actions to perform according to all the possible knowledge about the world. In particular, a Centralized system has a robotic agent (leader) that is in charge of organizing the work of the other robots: the leader is involved in the decisional process for the whole team, while the other members act according to the directions of the leader. On the other hand a Distributed system is composed by robotic agents which are completely autonomous in the decisional process with respect to each other. A further classification of centralized systems can he introduced depending on the way the leader role is played. In particular Strong centralization is a centralization in which decisions are taken by a leader that remains the same during the entire mission duration, while in a Weakly centralized systems the leader may change during the mission.
+
+Along with the classification introduced by the hierarchical structure, four more System Dimensions have been identified: Communication, Team Composition, System Architecture and Team Size. 
+
+Cooperation among robots is often obtained by a communication mechanism that allows the robots to exchange messages among each other. A detailed analysis of the various technical problems related to communication in MAS is given for example in [12]. However, when MRS are considered the communication mechanisms are very different; in addition, most of the MRS that we consider in this article operate with a limited number of robots (i.e. less than 10), except for a few  recent projects for large-scale MRS that take into account about 100 robots, while in large-scale MAS the number of agents can often be in the order of 10,000-100,000. These observations show that communication issues have, in general, different characteristics for MAS and MRS. Therefore, even though it is possible to have a more precise characterization of communication systems (e.g. regarding topology, range and bandwidth as studied in [10]), we distinguish two different types of communication depending on the way the robots exchange information: direct or indirect communication. Direct communication makes use of some on board dedicated hardware device, while indirect communication makes use of stigmergy [17].
+
+
+The team composition can be divided in two main classes, heterogeneous and homogeneous [29]. Homogeneous teams are composed by team members that have exactly the same hardware and control software, while in heterogeneous teams the robotic agents differ either in the hardware devices or in the software control procedures. 
+
+System architecture is an important feature for classifying MRS. In this work we will refer always to the architecture of the whole MRS and not to the architecture of the single robotic agent. A precise characterization of MRS with respect to reactive or deliberative architecture is presented in [15]. However, we consider a team architecture as deliberative if it allows the team members to cope with the environmental changes by providing a strategy that can be adopted to reorganize the overall team behaviors. On the other hand in reactive architectures each single robot in the team copes with the environmental changes by providing a specific solution to reorganize its own task in order to fulfill the accomplishment of its originally assigned goal. 
+
+Finally, the team size is an important issue for MAS and it is becoming a relevant issue also in MRS development, and a number of recent works explicitly address large scale MRS [24,16]. However, the number of robots acting in the same environment is still quite limited with respect to the number of agents in a MAS. Therefore, rather than a quantitative measure of the size of the MRS in our taxonomy we distinguish those approaches that explicitly consider as a design choice the opportunity to deal with a large number of robots, from those that do not address explicitly the problem of coordination within a large team. 
+
+[6] Y. Uny Can, A. Fukunaga, and A. Kahng. Cooperative mobile robotics: Antecedents and directions. Autonomous Robots, 4:l-23, 1997. 
+[10] G. Dudek, M. Jenkin, E. Milios, and D. Wilkes. A taxonomy for multi-agent robotics. Autonomous Robots, 3(4):375-397, 1996.
+[11] Edmund Durfee, Victor Lesser, and Daniel Corkill. Trends in cooperative distributed problem solving. IEEE Pansactions on Knowledge and Data Engineering, KDEl(l):63-83, Mach 1989.
+[12] J. Ferber. Multi-Agent Systems. Addison-Wesley,1999.
+[16] K. Konolige et al. Centibots: Large scale robot teams. In Alan C. Shultz and Lynne E. Parker, editors, Proocedings of the 2003 NRL Workshop on Multi-Robot Systems, volume 11, Washington, DC, 2003. Kluwer Academic Publishers.
+[17] C. Ronald Kube and E: Bonabeau. Cooperative transport by ants and robots. Robotics and Autonomous Systems, 30(1):85-101, 2000.
+[22] Fabrice R. Noreils. Toward a robot architecture integrating cooperation between mobile robots: Application to indoor environment. Int. Journal of Robotics Research, 12(1):79-98, 1993.
+[24] L. E. Parker. The effect of heterogeneity in teams of 100+ mobile robots. In Alan C. Shultz and Lynne E. Parker, editors, Proocedings of the 20O3 NRL Workshop on Multi-Robot Systems, volume 11,Washington, DC, 2003. Kluwer Academic Publishers.
+***************************************************************************************************
+Proceedings of the 2005 IEEE International Conference on Robotics and Automation Barcelona, Spain, April 2005
+A New Multi-Robot Self-Determination Cooperation Method Based on Immune Agent Network
+
+Yunyuan Gao   Wei Wei
+
+
+Abstract - In this paper, we propose an immune agent model combining the artificial immune system with the agent technology. In the model, a robot is regarded as an antibody and each environmental condition as an antigen respectively. Furthermore, based on the model, a new multi-robots cooperation algorithm is designed to build self-determination cooperation among robots even in a new environment. Inspired by pheromone from ants algorithm, a new pheromone as Inter-stimulus between robots in the model is introduced to the algorithm. By comparing the inter-stimulus value between antigen and antibody and among antibodies, the system will autonomously produce appropriate antibodies to kill the  antigen.
+
+
+The multi-robot cooperation system has become a highly active research area in robotic research. The most  distinctive advantage of multi-robots system against the single robot system is that the former leads to a better performance in achieving a goal by cooperation. Many studies have been reported on this area. Parker has designed the famous ALLIANCE system, which developed a software architecture that facilitated fault tolerant cooperative control of teams of robots working towards a common goal [1]. And they successfully finished the sweep task in the experiment. Multi-robot systems can also be used in the fields of formation control [2], space exploration [3] and material handling [4]. But the limitation of current cooperation systems is the lack of the ability for the system to decide autonomously that how many robots should work together for each task, which we called self-determination cooperation. However, such ability is essential for multi-robot system in a new or a hard environment. Therefore, to achieve the goal of self-determination cooperation in the system, the robots need communicate and interact with others effectively, and the system need adopt appropriate activity arbitration mechanism. Biological systems will be referred to explorean effective solution.  
+
+Biological information systems can be seen as distributed autonomy systems, which are sources of rich ideas in constructing intelligent information processing systems. To imitate such systems, several novel computational methodologies have been produced such as genetic algorithms, neural networks and immune engineering that are useful in solving complex engineering problems [5]. The immune system is a decentralized system with no central  controller, in which antibody interacts with antigens and other antibodies through immune network. The immune system automatically selects proper antibodies to kill antigens through interaction between them. The properties of the immune system can be used to imitate and apply in the multi-robot system to realize the self-determination cooperation ability in an unknown environment. 
+
+Two vast areas of artificial intelligence are respectively  Distributed Problem Solving (DPS) that deals with thought processes and Multi Agent System (MAS) that is based on behavior management in collections of several independent entities, or agents. These ideas have been used in distributed systems such as the multi-robot area, and have received some development [6].
+
+
+
+II. IMMUNE AGENT MODEL
+A. Artificial Immune System(AIS) AIS is a simulation of the biological immune system. It is expected to be a potential research subject with powerful information-processing ability. The protection system that eliminates foreign substances that invade living body is called immune system [7]. The basic components of the immune system are lymphocytes that exist as two major types, B cells (B lymphocytes) and T cells (T lymphocytes). The immune system recognizes and kills the invading foreign substances by emitting various lymphocytes throughout the living body.
+
+Jerne proposed a remarkable hypothesis, which is called the “idiotypic network hypothesis” [8]. This network hypothesis is the concept that antibodies/lymphocytes are not just isolated, namely they are communicating, suppressing and activating each other among different species of antib-odies/lymphocytes. This idea is schematically shown in Fig1. The network model, which is widely used in AIS, is the theoretical foundation of this paper. The immune system is a decentralized control system, which performs its functions by the lymphocytes throughout the body. However, their actions are towards a common goal to prevent and eliminate the foreign antigen substance. Likewise, multi-agent systems consist of a number of agents with individual goals. Each system studies and utilizes its intelligence to perform a global goal [6]. This is a main similarity between the immune system and agent system. In this way, the immune system can be regarded as a distributed multi-agent autonomous cooperation system [9]. Based on such an immune theory, AIS has the following properties: 1) Distributed system: The immune cells perform various immune functions by the distributed spatio-temporal network architecture. 2) Self-adapted system: By proliferation and maturation of immune cells, the AIS produces new antibodies and eliminates antigens, to dynamically adapt the changes of foreign environment. 3) Dynamic balance system: The AIS forms a dynamic balance network system through the antibody-antigen and antibody-antibody interactions. 4) Pattern recognition: The AIS has powerful pattern recognition ability by self and non-self cells recognition system. 
+
+ A biological immune system is distributed, self-adapted and dynamically balanced. It can be used as a reference to build an artificial immune network model. 
+ 
+ B. Immune Agent Network Model There have been some immune network theories based on the immune system, e.g. Jerne’s idiotypic network [8], Ishiguro’s mutual-coupled immune network [10].
+ 
+ The model is constituted by a number of immune agents(Ag). The environment is looked as antigen, and Ag as antibody. Each Ag has the ability to identify antigens, and Ag declares a stimulus defined by the stimulus function once it finds some antigens within the sensory neighborhood. Activating and suppressing others within the immune network [13], Ags select one or more colleagues to solve the problem and maintain the dynamic balance of the system. And by sharing the immune memory in the knowledge library, the model produces the second immune response immediately to improve the system efficiency, once it meets the similar or the same antigens.
+ 
+ C. Immune Agent Model
+
+The mechanism of individual immune Agent:
+
+1) By sensors, Each agent collects the surrounding information and identifies antigens. Then each agent transmits and receives information from the others through the immune agent network. It declares a stimulus defined by the antigenic stimulation function once it finds some antigens within the sensory neighborhood.
+2) Each agent checks the knowledge library to find whether there is any similar or the same antigen. If there exists, it brings forward the correlative information of the antigen from the library, takes corresponding actions, produces the second immune response and goes back to step 1). If not, it turns to step 3).
+3) Among the agents simulated by antigens, the system automatically selects the proper agent for each antigen by comparing the stimulus values. During the whole process, several agents, which were selected by synthesized effects produced by the immune activation and suppression, achieve the goal autonomously. Other agents, which don’t get enough stimulus, receive the immune suppression, wonder and search for new antigens.
+4) Having eliminated antigens by self-determination cooperation, the system memorizes the different properties of the each antigen, which include the number of agents it needs to finish the task. Then the system establishes the immune memory in the knowledge library. 
+5) The system updates the knowledge library shared by the agents for the use of producing the second immune response. 
+
+In conclusion, the cells in the immune agent system communicate, interact and cooperate with others, memorize and produce immune responses. These feathers lead the immune system into a flexible, robust, steady and dynamically updated autonomous system.
+
+III. MULTI-ROBOT SELF-DETERMINATION COOPERATION SYSTEM BASED on THE IMMUNE AGENT MODEL 
+Based on the immune agent network model, a new algorithm for multi-robot self-determination cooperation system is designed.
+
+
+Suppose there are n robots and m tasks ina a new environment. With no knowledge of the tasks, e.g. the positions and weights of the tasks, the multi-robot system should work by self-determination cooperation to finish the tasks. At the beginning, robots wander ramdomly to search the tasks and the stimulus among robots Tij are zero Robot i(i=1,,…n) gets an antigen stimulus when it identifies the task s(s=1,2,…m) with sensors. Then tries to finish the task itself. If failed, it informs other robots about the task, and set the value of stimulus with Tjs =( Tjs	 = DeltaT/ djs >0 )  (1) (where DeltaT  is a fixed positive value). Then robot i stays beside task s, waiting until other robot comes to cooperate. If robot j declares many antibody stimulus (Tjs >0) from k tasks separately, it calculates the corresponding probability, then chooses the task s with the highest probability. Tjs is set to zero if robot j can finish the task s with the cooperation of robot(s) waiting beside the task s. Otherwise Tjs is modified increases the antibody stimulus between other robots and the robots waiting beside the task s, and correspondingly improve the probability Pjs , then it will attract more robots to achieve the goal cooperatively.
+
+In the application, the boxes are considered as antigens while robots as antibodies
+
+
+ANALOGY AMONG IMMUNE SYSTEM , IMMUNE AGEN MODEL AND BOX-PUSHING TASK
+
+Immune system 							Immune agent model 								Box-pushing task
+Antigen 											Environment 													Boxes
+Antibody 										Immune agent (Ag) 									Mobile robots
+Epitopes 								Environmental information 	the positions and weights of the boxes
+B cells receptors 		Immune agent’s information 				the positions of the robots
+Pattern recognition 					Sensors 									Box identification by sensors
+Immune network 					Agents communication network 			Communication among robots
+Antigenic stimulus 	Antigenic stimulation function 				Stimulus when finding a box
+Antibody stimulus 			Stimulation between agents				The robot can’t push the box by itself, and stimulate other robot to cooperate
+Suppression response 		Suppression function 							Random movement of the robots on no box information
+Immune memory 							Knowledge library 						The memory information of the different boxes
+
+[1] Lynne E. Parker, “ALLIANCE: An Architecture for Fault Tolerant Multirobot Cooperation,” IEEE Transaction on Robotics and Automation, vol.14, 1998.
+[2] T. Balch and Ronald C. Arkin, “Behavior-Based Formation Control for Multi-robot Teams,” IEEE Trasation on Robtic and Automation, 1999.
+[3] E J P Earon and T D Barfoot, “Development of a Multiagent Robotic System with Application to Space Exploration,” International Conference on Advanced Intelligent Mechatronics Proceeding, 2001.
+[4] Brain P. Gerkey and Maja J. Mataric, “Push-watcher: An approach to Fault-Tolerant Tightly-Coupled Robot Coordination,” In Proceedings of the IEEE International Conference on Robotics and Automation, 2002.
+[5] D. Dasgupta and N. Attoh-Okine, “Immunity Based System: A Survey,” Proceedings of the IEEE International Conference on System Made and Cybernetics, 1997. [6] M. Wooldridge, “Multiagent Systems: A Modern Approach to Distributed Artificial Intelligence,” Gerhard Weiss, The MIT press, Massachusetts, USA, 1999.
+[7] Ivan Roitt, “Immunology Compendium,” People’s Sanitation Publishing Company in Bei Jing, 1980. 
+[8] K. Jerne, “Idiotypic Networks and Other Preconceived Ideas,” Immunological
+Rev, 1984.
+[9] Ma Xiao-xiao, Huang Xi-yue, “Concept and Model of Immune Agent,” Control and Decision, 2002. 
+[10] A. Ishiguro, Y. Wantanabe, “Gait Control of Hexapod Walking Robots Using Mutual Coupled Immune Network,” Advanced Robotics, 1996.
+[11] M. Dorigo, E. Bonabeaub and G. Theraulaz, “Ant Algorithms and Tigmergy,” Future Generation Computer Systems, 2000.
+[12] Ding Ying-ying and He Yan, “Multi-Robot Cooperation Method Based on the Ant Algorithm,” ROBOT,2003.
+[13] D. Dasgupta, “Artificial Immune Systems and Their Applications,” Springer-Verlag,1998.
+
+
+
+***************************************************************************************************
+Proceedings of the 2005 IEEE International Conference on Robotics and Automation Barcelona, Spain, April 2005
+ASyMTRe: Automated Synthesis of Multi-Robot Task Solutions through Software Reconfiguration
+Fang Tang and Lynne E. Parker
+
+I. INTRODUCTION
+When dealing with heterogeneous multi-robot teams, two issues are particularly challenging: 
+(1) determining how to  share sensor and perceptual resources across heterogeneous team members, 
+(2) determining the appropriate teaming behaviors to accomplish a task when the definition of how to solve a task is dependent on the available collection of robots and their sensory, perceptual, and motor resources.
+In typical approaches to multi-robot teaming, the task tree describing the decomposition of the team task into subtasks is defined by the human designer in advance of the robot team performance. The robots then choose from one of the alternative task decomposition trees, followed by the use of an automated approach for task allocation to determine the dynamic mapping of subtasks to robots. In these typical approaches, the predefined task decomposition tree defines the available multirobot task solutions in advance of the mission (i.e., the how).
+
+ASyMTRe automated task synthesis approach is inspired by the concept of information invariants [5], which showed the equivalences between different combinations of sensing, communication, and action based upon information content. ASyMTRe allows the robots to reason about how to solve an application based upon the fundamental information needed to accomplish the task. The information needed to activate a certain behavior remains the same regardless of the way that the robot may obtain or generate it. Robots can collaborate to define different task strategies in terms of the required flow of information in the system.
+
+The basic building blocks of our approach are collections of environmental sensors, perceptual schemas [9], motor schemas [1], and a simple new component we introduce, called communication schemas. These schemas are assumed to be preprogrammed into the robots at design time, and represent fundamental individual capabilities of the robots. Perceptual schemas process input from environmental sensors to provide information to motor schemas, which then generate an output control vector corresponding to the way the robot should move in response to the perceived stimuli. Communication schemas transfer information between various schemas. ASyMTRe automatically determines the proper connections between the sensors and the schemas – across multiple robots – to ensure that the team-level goals are achieved.
+
+
+
+II. THE PROBLEM
+
+The problem we address in this paper is the automation of task solution synthesis that enables a collection of heteroge-neous robots to reorganize into subteams as needed depending upon the requirements of the application tasks and the sensory, perceptual, and effector resources available to the robots. We assume that there is a sufficient mixture of robot capabilities available to solve the problem, although those capabilities may be distributed across multiple robots. An additional assumption is that with a large team of heterogeneous robots, different combinations of robots will be able to solve certain tasks in different ways. We also assume that the robots are team members that share high-level goals and the intent is to cooperate with each other to ensure that the high-level goals are achieved.
+
+III. THE ASYMTRE APPROACH
+A. Information Representation: We represent three types of information in the ASyMTRe system – the information of robot team capabilities, the flow of information required into and out of schemas, and the sensing costs and success probabilities of all sensori-computational systems. Robot team capabilities describe each robot and its sensor resources in the format (robotID, ES1, ES2 , ...). The sensing costs and success probabilities are provided to estimate the fitness of a solution among other possible solutions. Most importantly is the flow of information, which is a set of information types F that constitutes the input and output of the available schemas. This information flow allows us to distribute the perceptual input or the calculation of effector output across multiple robots. With the introduction of communication schema, information can flow within and across robot team members, which increases the number of possible solutions to the problem.
+
+B. Reasoning Process: Our reasoning process enables robot team members to autonomously connect the inputs and outputs of their available schemas to result in dynamic task solution strategies that are a function of the current team’s capabilities. Given the information representation of robot team capabilities and the flow of information, the collaborative reasoning among robots must generate such a mapping that leads to all required connections being made for each robot to accomplish its task. None of the schemas are connected initially and connections can be made within or across robots depending on the required information flow. A connection within a robot can be built between two schemas if and only if the input information type of one schema is exactly the output information type of another schema, and these two schemas can be implemented on one robot. Figure 1 shows some possible connections between two robots. According to the connection rules, the general task solutions are converted to combinations of various schemas, providing different ways to accomplish the task so that each robot can determine its possible solution.
+
+C. The Configuration Algorithm
+The core of the ASyMTRe configuration algorithm shown in Table I is a greedy search algorithm which first handles robots with fewer sensor resources (less capable robots). Each robot is assigned a priority at the beginning of a task according to its sensing capability. Less capable robots have higher priorities to configure their solutions, since these robots will likely have fewer solutions for success. When a robot does not have the required sensor to fulfill a task, the algorithm will find a robot with the least sensing capability and maximal utility to provide the needed information. Therefore, robots with more sensor resources are saved for future configuration, since they likely can be helpful in many different ways.
+
+[1] R. C. Arkin, T. Balch, and E. Nitz. Communication of behavioral state in multi-agent retrieval tasks. In Proceedings of the International Conference on Robotics and Automation, pages 588–594, 1993.
+[5] B. R. Donald, J. Jennings, and D. Rus. Information invariants for distributed manipulation. International Journal of Robotics Research, 16(5):673–702, 1997.
+[9] R. R. Murphy. In Introduction to AI Robotics. MIT Press, Cambridge, MA, 2000.
+
+***************************************************************************************************
+Proceedings of 2004 1EEE/RSJ International Conference on Intelligent Robots and Systems
+September 28. October 2,2004, Sendai, Japan
+Automatic Synthesis of Communication-Based Coordinated Multi-Robot Systems 
+Chris Jones and Maja J MatariC
+
+I. INTRODUCTION
+The study of multi-robot systems (MRS) has received increased attention in recent years. This is not surprising as continually improving technology has made it realistic to consider the deployment of MRS consisting of increasingly larger numbers of robots. With the growing interest in MRS comes the expectation that, at least in some important respects, multiple robots will be superior to a single  robot in achieving a given task. Potential advantages of MRS over a single robot are frequently expounded in the literature. For example, total system cost, it is frequently claimed, may be reduced by utiliring multiple simple and cheap robots as opposed to a single complex and expensive robot. Furthermore, the inherent complexity of some task environments may require the use of a heterogeneous group of robots as the necessary capabilities are too substantial to he met by a single robot. Finally, multiple robots may provide increased robustness by taking advantage of inherent parallelism and redundancy. 
+
+However, the utilization of MRS poses potential disadvantages and additional challenges that must be addressed if MRS are to present a viable and effective altemative to single robot systems. Of paramount importance is the complexity introduced by the management of multiple, interacting robots. In order for a task-achieving MRS to be effective, the robots’ actions must be carried out in a coordinated fashion and directed towards the achievement of the given task. A MRS lacking effective coordination is less likely to present a solution that is more desirable or effective than a single robot solution. Correctly executing a task in a multi-robot system presents fundamentally different issues from doing so in a single robot system. In a MRS. it cannot be assumed that a particular robot is always aware of the task progress resulting from the actions of other robots. Formally, from the perspective of an individual robot in a MRS, the task environment is highly non-stationary. 
+
+From a few robots performing a manipulation task, to tens of robots exploring a large spacc, to thousands of ecosystem monitoring nano-robots, as the number of robots in the system increases, so does the necessity and importance of coordination. Coordination is defined as “the act of regulating and combining so as to produce harmonious results” [1]. In the context of MRS, coordination is the process of appropriately regulating the robots’ actions such that a given task or goal is successfully achieved.
+
+Our work is focused on disrrihfed MRS, in which each robot operates independently under local sensing and control, with coordinated group behavior arising out of local interactions between the robots and (he task environment. The design of such coordinated distributed MRS can be quite challenging because unexpected collective behaviors may emerge due to unanticipated ramifications of the robots’ local interactions.
+
+"A central challenge facing the MRS community is the design of principled methods for the synthesis and analysis of coordination mechanisms".
+
+
+To address this issue, we have developed a formalism which provides a principled framework for precisely defining and reasoning about the intertwined entities involved in any task-achieving MRS - the world, task definition, and the capabilities of the robots themselves, including action selection, sensing, maintenance of internal state. and inter-robot communication. We taxonomize controllers based on the following three characteristics: deterministic or probabilistic action selection (DA/PA), using internal state or stateless (IS/NS) , and capable or incapable of inter-robot communication (Comm/NComm).
+
+We aim to facilitate formal answers to fundamental questions, such as: 'In what conditions is it necessary for the robots to be able to communicate?, 'In what conditions is communication alone insuficient?. and 'When are the use of internal state and communication interchangeable?'
+
+A method for the synthesis of DAct-IS-NoComm controllers and defined situations in which internal state is useful to achieve the necessary coordination [10] and a  macroscopic MRS modeling approach directed to the analysis of homogeneous MRS composed of robots executing DAct-IS-NoComm controllers [11].
+
+
+II. RELATED WORK
+Related work on the synthesis and analysis of MRS coordination mechanisms includes, but is not limited to, the work of Donald [5] that presents the derivation of information invariants aimed at defining the informational requirements of a given task and ways in which those requirements can be satisfied in a robot controller. Parker [19] extends the idea of information invariants by defining equivalence classes among task definitions and robot capabilities to assist in the choice of an appropriate controller class. Dudek et al. [6] present a taxonomy which classifies multi-robot systems based on communication and computational capabilities, Martinoli et al. [14] presents a general methodology by which the collective behavior of a group of mobile robots can be accurately studied using a simple probabilistic model. Balch [4] presents hierarchic social entropy, an information theoretic measure of robot team diversity in an effort to understand the role of heterogeneity in MRS coordination. Gerkey and MatariC [8] present a principled  framework and an analysis methodology for the formal study of multi-robot task allocation. krman and Galstyan [13] present a mathematical model of the dynamics of collective behavior in a multi-robot adaptive task allocation domain. Alternative approaches to the synthesis of MRS controllers can be found in evolutionary methods [7] and learning methods [15, 18]. There also exist a number of MRS design environments, control architectures, and programming languages which assist in the design of task-achieving coordinated MRS [16, 3, 2].
+
+111. DEFINITIONS AND NOTATIONS
+
+The world is the environment in which the MRS is expccted to pcrform a defined task: the world is Markovian, the state is an element of the finite set S of all possible states, and is populated by a finite set of homogeneous robots R. An action performed in the world by a single robot is drawn from the finite set A of all possible actions. An observation x made by a robot, drawn from the finite set of all observations X, consists of accessible information external to the robot and formally represents a subset of the world state. The world is defined by a probabilistic state transition function P(s, x, a s') that states the probability the world state at time t + 1 is s' given the world state at time t is s and a robot making observation x executes action a. In this represcntation, an observation x is equated with the spatial location where the action a is performed. Therefore, an action a, executed upon the observation of xi, will transition the world differently than the same action a, performed upon the observation of xj. The probabilistic observation function O(s, x) gives the probability the observation x will be made by a robot in world state s. We assume that an observation x may only be made at one physical location in the world in a state s. We define a task, assumed to be Markovian. as a set of n ordered world states Ts = {s0;s1, ... ,sn} which  must be progressed through in sequence. We assume the initial state of the world is S0 and the task terminates when the world state sn, is achieved. We define correct task execution to be the case where, for all task states Si E Ts, i < n the only actions executed by any robot are those that transition the world state to si+1. Therefore, we define an observation and action pair, x and a, to be correct for task state si if P(si, x, a, si+1) > 0. We assume that an observation x and action a cannot be correct far more than one task state.
+
+
+The robots we consider do not maintain any internal state or representation; however, they are capable of inter-robot communication. The set of all possible communication messages a robot may send and receive is denoted bv the set C. Two functions define a robot's behavior in the world, known collectively as the robot's controller. The action function Act(x, cr, a)  specifies the probability a robot will execute action a given it is currently observing x and receiving communication messages cr. The commnunication function Comm(x, c) specifies the probability a robot will send communication message c given that it is currently observing x.
+
+IV. DAcT-NOIS-COMM COXTROLLERS
+
+
+A. Synthesis: There are four high-level steps in the synthesis process: 
+1) synthesize a baseline DAct-Not-NoComm controller,
+2) identify situations in which communication can be used to better facilitate coherent coordination, 
+3) assign specific communication messages to each of these situations, and 
+4) incorporate these communication assignments into a DAct-NolS-Comm controller.
+
+
+Step 1: We synthesize a DAct-NoIS-NoComm controller, which is simply a stateless, non-communicative controller that we will augment with communication to synthesize the DAct-NoIS-Comm controller.  For each si E Ts, the synthesis procedure adds a rule to the action function of the form Act(x. {},a) = 1, such that x and a are correct for task state si. However, such a DAct-NoIS-NoComm controller leaves room for error if x and a are correct for some task state s, but there exists another task state si where x and a are not correct and O(sj, x ) > 0. In such situations, an MRS composed of robots with DAct-NoIS-NoComm controllers cannot enforce the action sequence necessary for correct task execution
+
+Step 2: We define a set of observations that will serve as the basis of the DAct-NoIS-Comm controller's communication function.
+
+Step 3. We assign specific communication messages to all observations in {Xc(si) - Xa(si)} for each si E Ts, as defined in Step 2.
+
+Step 4: We synthesize the DAct-NolS-Comm controller by augmcnting the DAct-NoIS-NoComm controller synthesized in Step 1. This is accomplished by adding the communication function and appropriately modifying the action function such that an action is not executed unless all necessary communications are being simultaneously received. Through the graph coloring approach presented in Step 3,
+
+
+[1] Websfer's Revised Unabridged Dictionary. C. & G. Merriam Co., 1996. 
+[2] R. Alur. R. Grosu, Y. Hur, V. Kumar, and I. Lee. Modular specification of hybrid systems in charon. In Proceedings of the 3rd international Workshop on Hybrid Systems: Computation and Control, pages 6- 19- Pittsburgh, PA, Mar 2000. 
+[3] R. Arkin and T. Balch. Aura: Principles and practive in review. Jounnal of Experimental and Theoretica1  Artificial Intelligence, 9:17S-189, 1997.
+[4] T. Balch. Measuring robot group diversity. In T. Balch and L. E. Parker, editors, Robot Earns: From Diversity to Polymorphism, pages 93-135. AK Peters, 2002.
+[5] B. R. Donald. Information invariants in robotics. Artifitial Intelligence, 72(1-2):217-304, 1995
+[6] G. Dudek, M. Jenkin, E. Milios, and D. Wilkes. A taxonomy for multi-agent robotics. Autonomous Robots 3, (4):375-397, 1996.
+[7] D. Floreano. Patterns of interactions in shared environments. In Proceedings of the Second European Conference on Artifcial Life, pages 347-366, Brussels.Belgium, May 1993.
+[8] B. Gerkey and M. Matarit. Multi-robot task allocation: Analyzing the complexity and optimality of key architectures. In Proceedings of the IEEE Inrernational Conference on Robotics and Automation, pages 3862-3867, Taipei, Taiwan, Sep 2003.
+[9] B. Gerkey, R. Vaughan, K. Stoey, A. Howard, G. Sukhatme, and M. Mataric. Most valuable player: A robot device server for distributed control. In Proceedings of rhe IEEE/RSJ Internarional Conference on Inrelligent Robots arid Systems, pages 122&1231, Maui, Hawaii, Oct 2001.
+[10] C. Jones and M. Mataric. Towards a mulli-robot coordinaton formalism. In Proc. of the Workshop on the Mathematics and Algoritms of Social insects, pages 60-67, Atlanta, Georgia, 2003.
+[11] C. Jones and M. Mataric. Synthesis and analysis of non-reactive controllers for multi-robot sequential task domains. In Proceedings of the International Symposium on Experimental Robotics, Singapore, Jun 2004.
+[12] N. Koenig and A. Howard. Design and use paradigms for gazebo, an open-source multi-robot simulator. Technical report, USC Center for Robotics and Embedded Systems. CRES-04-002, 2004.
+[13] K. Lerman and A. Galstyan. Macroscopic analysis of adaptive task allocation in robots. In Proceedings of the IEE/RSJ International Conference on intelligent Robots and Systems, pages 1951-1956, Las Vegas, Nevada, Oct 2003.
+[14] A. Martinoli, A. Ijspeert, and E Mondada. Understanding collective aggregation mechanisms: From probabilistic modeling to experiments with real robots. Robotics and Autonomous Systems, 295 1-63, 1999.
+[15] M. Mataric. Designing and understanding adaptive group behavior. Adaptive Behavior, 4 5 - 8 0 , Dec 1995.
+[16] M. Mataric. Issues and approaches in the design of collective autonomous agents. Robotics and Autonomous Systems, 16(24):321-331, Dec 1995.
+
+***************************************************************************************************
+Characteristics of Object-Searching and Object-Fetching Behaviors of Multi-Robot System Using Local Communication 
+Sumiaki Ichikawa and Fumio Hara
+
+1. INTRODUCTION
+On the other hand, it is the law of nature that the entropy is generally increased when the system stay in its own course. This law, from another viewpoint, implies that the low of nature is one of resources to be utilized for creation of robust system. 
+Considering such speculative reasoning mentioned above we applied this general idea to the problem of cooperation in our multi-robot system. Here let’s briefly examine one example: A single robot is moving toward a certain destination in a work space where other robots are also moving round and they become obstacle to each other. Thus it obviously happen at high probability that the robot moving toward its destination meets with another robot moving around which becomes obstacle to the robot. Then the robot must steer its proceeding direction to avoid an obstacle for the present and after ward the robot must adjust its moving direction into the previous one. This is a fundamental obstacle avoidance problem of robot locomotion, and this means a that a robot does not always proceed straightforward in the real space where certain obstacles exist. Then the robot walk would be random-walk-like manner 
+
+
+2. SMALL MOBILE ROBOT
+
+2.1 Definitions of function and intelligence: In this paper, a single robot is considered as an agent that senses the situation where it is and that carries out its own action in the environment. The robot is consisted of three kinds of functions. One is a device to input information about their environmental situation. We call such function ‘input function’. Another is a device to generate an action in their environment. We call such function ‘output function’. The other is a device to memorize their status. We call it ‘memory function’. The robot obtains some information from both ‘input function’ and ‘memory function’. On the other hand, the robot is able to give some information to both ‘output function’ and ‘memory function’. We call the farmer information ‘input information’ and call the last information ‘output information’. And we can define the robot’s intelligence as translation from ‘input information’ into ‘output information’.
+
+2.2 Functions of robot: Three functions, SD (Signal senDing), LC (LoComotion) and TM (TiMer count) are given as output functions. The amount of information of the output function is shown by the number of binary digits in center column of Table. The total amount of information of the three output functions is four bits. Six functions, CD (Communication Direction), RC (Regular Communiction), RV (single communication), OB (OBstacle detection), TG (TarGet detection) and TM (TiMer status), are given as input functions. The total amount of information of the six input functions is eight bits. Two functions, MD (action MoDe) and 11-1(Last steering detection), are given as memory function.
+
+***************************************************************************************************
+Proceedings of the 2003 IEEE Changsha, China - October 2003
+Intemational Conference on Robotics,Intelligent Systems and Signal Processing 
+
+Collision-avoidance Mechanism of Multi Agent System
+Huang Qianwei Ma Hongxu Zhang Hui
+
+1. Introduction
+With the development of electronic technique, artificial intelligence and computer science, multi intelligent robot systems have been a focus of interest in the filed of robot research. According to Stuart Russell, "An agent is anything that can be viewed as' perceiving its environment through sensors and acting upon that environment through effectors [1] Multi agent system consists of some intelligent agents and the environment, it is superior to single agent in many aspects, especially in executing complicated tasks.
+
+2. Characteristics of Collision-avoidance in Multi , Agent System In an unstructured environment, the multi agent system may encounter obstacles that have various shapes. For these agents, how to avoid the obstacles to get to their respective destinations without deadlock is a big problem. To avoid obstacles in multi agent system is dramatically different from that of single agent. Although in surface, both are problems of keeping away from obstacles. In multi agent system, because there are phenomena of competing for environment resources (generally for path), it is not sure for each agent whether they can get to their respective destination or not. Usually, "resource conflict" will happen. 
+
+(1) Fail to get path resource needed. An agent requires vacant path resource to get to its destination when planning. When two or more agents require the same vacant path resource, conflicts appear between its request and other requests of agents in the system. If the agent fails to get the path resource needed, that is to say, it fails in the requests competition, then its path planning cannot be realized at least for the moment.
+
+(2) Traffic block made by other agents. When an agent needs to use path resource that is being used by another agent, traffic block occurs. The simple and direct solution is: the agent who cannot obtain its path resource wait at its place until the required path resource is released. But the waiting agent itself is using a path resource and it may be an obstacle to other agents. When the block happens in chain among many agents, we call it "deadlock". Obviously, it is useless for agents to wait at their present place, just waiting for the path resource needed.
+
+
+***************************************************************************************************
+Proceedings 2003 IEEE International Symposium on
+Computational Intelligence in Robotics and Automation July 16-20,2QO3, Kobe, Japan
+Cooperative Behavior Acquisition Mechanism for a Multi-Robot System based on Reinforcement Learning in Continuous Space
+Toshiyuki YASUDA, Kazuhiro OHKURA, and Toshiharu TAURA
+
+Abstract
+This paper describes an approach to controlling an autonomous multi-robot system. One of the most important issues for this type of system is how to design an online autonomous behavior acquisition mechanism which is capable of developing each robot's role in an embedded environment. Our approach is applying reinforcement learning that uses Bayesian discrimination method for segmenting the continuous state and action spaces simnltaneously. In addition to this, neural networks are provided for predicting the other robots' moves at the next time step in order to support the learning in a dynamic environment that originates from the other learning robots. The output signals are utilized as the sensory information for the reinforcement learning to increase the stability of the learning problem. A homogeneous multi-robot system is built for evaluation.
+
+1 Introduction
+In recent years, a multi-robot system research has been widely noticed in various forms, such as robot soccer [1], [2], foraging problem [3], block/box pushing problem[4, 5], formation control [6]. from the viewpoint of complex adaptive system, we see that the most important point in a multi-robot system is a method of developing coordinated  behavior to solve a given task. A multi-robot system has at least three advantages compared to a traditional single robot system[7]. The first one is parallel processing performed by autonomous and asynchronous robots in the system. The second one is robustness realized by the redundant situation where the system has a larger number of robots than the required. The third one is scalability. A new robot can be added to the system or removed from the system quite easily. 
+
+To date, many research projects have been started. Although their problem settings are largely different  from each other, the common point can be found in that a task is given simply to a robot group without detailed specification enough to identify how to solve it. The most popular approach is to provide the strategies for cooperation to each robot before running the system. Or a task which is given is quite easy to solve without cooperation between robots. The distinctive feature of a multi-robot system is that the system has the potential ability of solving a task even when it is apparently unsolvable by a single robot. Considering that it is practically impossible to give hand-crafted behavior rules for all possible situations that a robot will  encounter, the most important point is developing cooperative behavior through its experience in a group of robots autonomously: That is the methodology of designing an on-line autonomous behavior acquisition mechanism capable of developing the robot's role in an embedded environment.
+
+This paper introduces a reinforcement learning (RL) [8] approach to this problem. However, it is well-known that RL is quite sensitive to the segmentation of the state space and the action space: RL often fails when the segmentation is not appropriate. Or, even if RL is successful, the achieved rule set may not have a high quality as we are expecting. Thus, in this paper, a novel reinforcement learning which can work in continuous space is applied. Another concern is that RL theoretically needs a static environment for successful learning[9], although a robot in a multi-robot system has the environment including the dynamics originated from the moves of the other robots.
+
+Various approaches have heen proposed for controlling this system. The most popular one is providing a set of predefined behavior rules to each robot so as to play a particular role in a group, such as a leader for finding a route to the goal or a follower for simply moving not to interfere in its leader[10]. For providing the online adaptability to those robots, some people use the rules including parameters and apply tuning techniques, such as Fuzzy/AI techniques[11], genetic algorithms[12] or biologically inspired  techniques[13]. However. the roles re- L 1 m&iixkd.
+
+
+3 Proposed Approach
+3.1 Multi-Robot RL
+
+Autonomous Discretization: In a standard usage of RL, the state space and the action space should be predefined and discretized. This is the critical point of applying RL to our problem, which may roughly determine the success or the failure of RL. However, no methodology of how to discretize the spaces is known. 
+
+Decreasing the Dynamics in the Environment: RL expects a static (i.e., Markovian) learning environment. However, in a multi-robot system, this condition cannot he assumed, because the other robots are moving in the environment. Therefore, a compensation mechanism should be added for decreasing the dynamics observed from a learning robot.
+
+3.2 Reinforcement Learning in Continuous spaes
+
+Basic Concept of Bayesian-discrimination-functionbased Reinforcement Learning (BRL)[14]. When a new sensory input is registered, theoretically, the control system of the robot should generate a new rule that consists of the current sensory input and the action to be executed. However, if a rule which memorizes a similar sensory input is already presented in the state space, there is no need to generate a new rule. To be able to classify similar rules, we utilize the Bayes decision theory for comparing the sensory input with the states of the memorized rules. The Bayes decision theory is one of the well-known methods of clustering input data[15]. 
+
+Pm(Cm)p(xlCm) = my{Pc (C,)p( xl C,)}. (1)
+
+It is known that the Bayes decision theory estimates the loss of misclassification of the sensory input. In BRL, the action rules are associated with clusters, and the clusters are segmented hy the Bayes boundaries. Basically, the robot selects one of the rules with smallest estimated losses and executes the corresponding action. If the action gets no punishment, the selected rules are placed near around the sensory input and its utility increases . On the other hand, if the selected rule gets a punishment its utility decreases. In BRL, the robot cannot generate and cluster new rules, but also can remove the rules whose fitness is under a certain threshold
+
+
+Neural Networks Approach
+To make the learning problem Markovian the state space should be expanded by adding information. As examples, memory-base method[16] and decision-tree[17] which build up the learning mechanisms to be able to deal with non-Markovian problems are proposed. But, length of the time series makes the state space with which learning mechanisms deal large in these methods. Since the expansion size should, of course, be as small as possible, our research group proposes one of the approach, which can deal with non-Markovian problems by prediction of time series with the smaller expansion size[18]. But in the previous work, the state and action space is discrete. Here, in this research, neural networks are provided for predicting the other robots' moves at the next time step in continuous space. The output signals are utilized as the sensory information of the reinforcement learning, BRL. Each robot is equipped with the neural networks that uses three-layer, feedforward, backpropagation model.
+
+
+[1] H. Kitana, editor, RoboCup-B7: Robot Soccer World Cup I, lecture not- in AI. Springer Verlag, 1998.
+[2] P. Stone, M. Velwo, Task Decompcsition and Dynamic Role Assignment for "Time Strategic Teamwork", In Proceedings of the Fifth International Workshop on Agent Theories, Architectures, and Languages (ATALW), 100(2), 1999.
+[3] M. J. Mataric, Learning Social Behaviors, Journal of Robotics and Autonomous Systems, 20: 191-204, 1997. 
+[4] S. Sen, M. Sekaran, J. Hale, Learning to Coordinate without  Sharing Information, In Proceedings of the 12th National conference on Artificial Intelligence, 4(1), pages 426-431, 1994. 
+[5] S. Yamada, J. Saito, Adaptive Action Selection without Explicit Communication For Multi-robot Box-pushing, In Procedinos of 1999 IEEE/RSJ International Conference on intelligent Robots and Systems (IROS'SS), pipes 14441449, 1999. 
+[6] Tucker Balch, R. Arkin, Motor Schem+basd Formation Control for Multiagent Robot Teams, In Proceedings of the First International Conference on Multiagent Systems, pages 10-16, 1999.
+[7] P. Stone. M. Velm. Multiagent systems: A survev from a machine learning perspective, Autonomous Robots, 8(3): 345-383, 2000.
+[8] R. S. Sutton, A. G. Barto, Reinforcement Learning : An Intrduction, MIT Press, 1998.
+[9] S. Mikami, M. Wada, T. K h u , Acquiring Cooperation without Communication by Reinforcement Learning and Dynamic Identification, In Proceedings of Distributed Autonomous Systems 2, pages439-445, 1996.
+[10] K. Kcsuge, M. Sato, Transportation of a Single Object by Multiple Decentralized-Controlled Nonholomonic Mobile Robots, In Proceedings of 1999 IEEE/RSJ International Conference on Intelligent Robots and Systems, pages 1681-1686, 1999. 
+[11] V.Masek, M. Kajitani, A. Ming, C. Kanamori, Local Path Planning for Cooperative Mobile Robots", In Proceedings of JSME Annual Conference on Robotics and  Mechatmnics'96, A, page 734737. 1996.
+[12] R. Ghanea-Hercock, D. P. Barns, Evolved Fuzzy Control System for Cooperation, International Journal of Advanced Robotics, Special Issue on Learning and Behaviors in Robotics: 599-607, 1996. 
+[13] N. Mitsumoto, T. Fukuda, K. Shimojima, A. Ogawa, Micro Autonomous Robotic System and Biologically Inspired Immune Swarm Strategy as a Multi Agent Robotic System, In Pmedings of IEEE Internotional Conference on Robotics and Automation, pages 2187-2192, 1995.
+[14] K. Yamada, M. Svinin, K. Ueda. Reinforcement Learning with Autonomous State Space Construction Using Unsupervised Clustering Method, In Proceedings of the 6th International Conference on Intelligent Autonomous Systems, IAS-6, pages 503-510, 2000. 
+[15] R.O. Duda, P.E. Hart, Pattern Clasification and Scene Analysis, Wiley-Interscience, N.Y., 1972.
+[16]A. W. Moore, C. G. Atkson, Memory-Based Reinforcement Learning: Converging with Less Data and Less Real Time, Machine Learning, 13 103-130, 1993. 
+[17] S. Suzuki, T. Tamura, M. Asada, Learning from conceptual aliasing caused by direct teaching, In Proceedings of the 2999 IEEE International Conferece on Systems, Man, and Cybernetics, pages 698-1103. 1999.
+[18] K. Kawakami, K. Ohkura, K. Ueda, Adaptive Role Development in a Homogeneous Connected Robot Group, In Proceedings of 1999 IEEE International Conference on Systems, Man and Cyberneties(SMCW). 3, pages 251-256, 1999.
+
+***************************************************************************************************
+Proceedings of the 2003 IEEE International Conference on Robotics & Automation Taipei, Taiwan, September 14-19, 1003 
+Cooperative Task Planning of Multi-Robot Systems with Temporal Constraints
+Feng-Li Lian Richard Murray
+
+I. INTRODUCTION 
+For large-scale autonomous multi-agent systems, several distributed, hierarchical decompositions of controller algorithms have been proposed to overcome the problems in design complexity and computational limitation. The key feature of decomposing large-scale agent systems into a hierarchical architecture is that it translates a complicated controller design problem into several computationally tangible control sub-problems. Research on Advanced Highway Systems (AHS), for example, proposes a hierarchical control architecture of five layers which decomposes a complicate problem into several manageable units [1]. The five layers and their key functionalities are 
+(1)  Network for deciding routes, 
+(2) Link for assigning paths and target speeds, 
+(3) Planning for managing maneuvers,
+(4) Regulation for completing tasks, and 
+(5) Physical for controlling a vehicle itself. 
+
+Vehicle control engineers can easily and systematically specify design requirements and goals, and design different controller algorithms for each individual layer. Similarly, a multi-layer planning, assessment, and control architecture of distributed semiautonomous forces with collective objectives has been studied in the Mixed Initiative Control of Automa (MICA) program of DARPA. Conceptually, the MICA hierarchy includes Operations and Resources Supervisory (ORS) for resource planning and human interaction, Team  Composition and Tasking (TCT) for specifying group-level tasks, Team Dynamics and Tactics (TDT) for tasking team activities, Cooperative Path Planning (CPP) for generating feasible vehicle missions, and Vehicle Dynamics and Control (VDC). Planning and Control algorithms are accordingly designed to achieve functional goals specified at each layer [2].
+
+At the robot trajectory planning layer, i.e., the Regulation layer of AHS and the CPP layer of MICA, one of the challenging problems is to plan and follow a trajectory in the  presence of uncertainty and limited information. Limited information is due to the distributed nature of a multi-robot system and the range limitation of robot sensing and communication capabilities. To effectively control such systems, a two-degree-of-freedom design technique with a feedforward compensator and a feedback controller, as shown in Fig. 2, may be adopted. Based on the pre-defined goal, the feedforward compensator generates a nominal trajectory for the feedback controller to follow and produce proper actuation to the system input. Furthermore, the trajectory should be generated in real time and customized for the changes in mission, condition, and environment.
+
+The proposed design architecture considers three scenarios of grouping and cooperation of multiple robots. Bsed on desired missions and available information, the real-time trajectory is generated by the Nonlinear Trajectory Generation (NTG) algorithm that has been developed at Caltech [3], [4]. In [8], we have discussed the case of  cluding only spatial constraints in generating trajectory for the cooperative path planning of multi-vehicle systems. In order to satisfy temporal as well as spatial constraints in a cooperative multi-robot system, the NTG formulation  has been further modified. Given system dynamics and state and input constraints, the NTG algorithm first finds trajectory curves in a lower dimensional space and. then, parameterizes the curves by B-splines. The coefficients of the B-splines are further solved by sequential quadratic programming to satisfy the optimization objectives and constraints. Finally, using the representation of these Bspline curves, the state and input trajectories are obtained to accomplish the designated activity. In order to incorporate the timing requirements in task planning, the actual timing variable is then redefined to become a new state variable and can be arbitrarily designed to fulfill any required temporal constraint. The actual running time will then he recovered from the solution of the optimization approach adopted.
+
+[1] P. Varaiya. Smart cars on smart roads: Problems of control. IEEE Transactions on Automatic Control, 38(2):195-206, Feb. 1993.
+[2] Mixed Initiative Control of Automa-teams program of DARPA at http://dtsn.darpa.mil/ixo/mica.asp
+[3] M. B. Milam, K. Mushamhi, and R. M. Murray. A new computational approach to real-time trajectory generation for constrained mechanical s stems. 2000 Conference on Decision and Control, Sydney, Australia,  Dec. 12-15, 2000.
+[4] N. Petit, M. B. Milam, and R. M.,Murray. Inversion based constrained trajectory optimization. 2001 IFAC symposium on Nonlinear Control Systems Design, Saint Petesburg, Rusia , July 4-6 2001.
+[8] F-L. Lian, and R. M. Murray. Red-Time Trajectory Generation for the Cooperative Path Planning of Multi-Vehicle Systems. 2002 Conference on Decision and Control. Las Vegas. Nevada. Dec. 10-13. 2002.
+***************************************************************************************************
+Coordination and leanning in multirobot sysiems
+Maja J Mataric
+
+Finding methods for generating coherent, robust, useful, and adaptive behavior in groups of autonomous robots is an increasingly active area of research. The incremental approach to robotics  -first studying control and learning in a single robot- is not sufficient or even relevant (for some problems) to the multirobot coordination and learning problem. Instead, the problem requires a general approach fundamentally different from most of today’s robot control and learning-to make the necessary strides in this challenging domain.
+
+
+Definig the problem
+
+Nature presents us with numerous examples of highly efficient, adaptive, and faulttolerant distributed multiagent systems in which individuals (insects, animals, humans, cultures, nations) successfully cope with incomplete and noisy information (state, knowledge), nondeterministic environments, delayed feedback in response to actions, collaborators, opponents, and competition for resources. The robotics domain presents many of the same challenges:  
+- robot sensors provide noisy and incomplete information,
+- effectors slip and accumulate errors,
+- communication is typically low-bandwidth and lossy,
+- resources (time, battery power) are limite,
+- feedback may be delayed or in some cases absent,
+- other robots get in the way, and
+- the world can appear hostile, inconsistent, and nonstationary.
+
+Single-robot control can encounter many of these challenges, but multirobot coordination faces and amplifies them all. As a result, some critics claim that the field of robotics is far from being ready to tackle the problem and should first focus on the single-agent, single-robot case.
+
+
+A different view
+
+At the USC Robotics Research Lab, our work with robots  argues for a different view. Based on our research of situated, embodied systems, we suggest that control and learning in multirobot systems must be addressed as a separate, novel, and unified problem-not an additional “module” in a single-robot approach. We propose a bottom-up methodology to produce the desired system behavior. This behavior results from 
+- the interaction dynamics between the robots and their environment (including other robots and potentially the user) and 
+- the biases and constraints introduced by the system designer.
+
+
+Adding flexibility. 
+We seek to remove the abstraction barrier between the agent and the group and, in some cases even more profoundly, between the different processing elements in and between individual robots. Responding to the ever-changing dynamics-as well as individual failures and inconsistencies-in multirobot systems, this approach allows us more flexibility and robustness. Furthermore, the approach lets us directly address the properties of distributed systems, which include locality, nonstationarity, and noise. Then, rather than trying to design solutions that attempt to avoid these properties, we incorporate them into a system's dynamics. We focus on the system's efficient, rather than optimal, behavior. In the complex multirobot domains we are addressing, optimality is difficult to specify and evaluate, and is often illdefined due to nonstationarity. To quickly exploit dynamics and respond and adapt to changes, we look for solutions that combine built-in knowledge and bias with real-time environment interaction. 
+
+Learning behavior.
+Our approach uses behaviors, goal-driven control laws, as a substrate for representation, control, and learning. The behaviors couple sensory inputs and effector outputs, and programmers use them to construct flexible internal representations (such as for constructing world models, storing history, and reinforcing behavior use). The whole system is a distributed collection of agents and robots, each controlled by a collection of behaviors. We do not impose centralized control at any level. If appropriate, we can add hierarchies a priori or establish them dynamically. If desired. we can also impose external inputs, influences, and constraints on individuals or the entire group to guide runtime behavior.
+
+We started by designing a basis behavior set (consisting of safewandering, following, homing, aggregation, and dispersion) for a collection of up to 13 interacting mobile robots. We then used the basis set as a substrate for demonstrating higher-level behaviors, such as foraging (used as a prototype for  collection, clean up, mine clearance, and distributed mapping) and flocking (coordinated movement). The basis set then became a substrate for learning-we demonstrated:
+- a group learning to forage,  
+- the same group learning social rules (yielding and proceeding), 
+- coordinated object moving, and discovery of novel, 
+- refined, and specialized strategies based on the history of behavior use.
+
+
+Finding new solutions
+What is novel and general about our approach? First, we do not divide the system's representation into low- and highlevel layers that employ very different representations and time-scales and require an intermediate “translation” layer-typical of hybrid systems. This lack of abstraction barrier is crucial in multirobot systems, where a lack of representational inconsistency allows us to eliminate the abstraction barrier between single-robot and multirobot control. Second, OUT unified treatment of sensing and action (in the behavioral framework, similar to schemas) allows for flexible generation of active, distributed representations. These can then scale to the needs of multirobot tasks and be flexibly distributed over multiple agents with different amounts of available information. Third, the approach enables flexible learning by providing a rich substrate (in which  the behavior structure elevates the representation level and includes some built-in knowledge and bias) and by eliminating a rigid dependence on either low-granularity control or symbol manipulation. Perhaps most importantly, the fully distributed, bottom-up philosophy imposes constraints on the types of solutions that will be found, and points us toward efficient solutions that are not always intuitive, given our generally top-down views of control.
+
+1. P.E. Agre, The Dynamic Structure of Everyday Life, PhD thesis, MIT, Cambridge, Mass., 1988.
+2. P.E. Arge and D. Chapman, “What Are Plans For?’ Designing Autonomous Agents, P. Maes, ed., MIT Press, 1990, pp. 17-34.
+3. R.A. Brooks, “Intelligence without Reason,” Proc. IJCAI-91, AAAU MIT Press, Cambridge, Mass., 1991, pp. 569-595.
+4. M.J. Mataric, “Behavior-Based Control: Examples from Navigation, Learning, and Group Behavior,” J. Experimental and Theoretical Artificial Intelligence, Vol. 9, Nos. 2-3, 1997, pp. 323-336.
+5. M.J. Mataric, “Reinforcement Learning in the Multi-Robot Domain,” Autonomous Robots, Vol. 4, No. 1, 1996, pp. 73-83.
+6. M.J. Matarit, Using Communication to Reduce Locality in Distributed Multi-Agent Learning, Tech. Report CS-96-190, Computer Science Dept., Brandeis Univ., Waltham, Mass., 1996.
+7. R.C. Arkin, “Towards the Unification of Navigational Planning and Reactive Control,” Proc. AAAI Spring Syip. Robot Navigation, AAAI Press, Menlo Park, Calif., 1989, pp. 1-5.
+8. J.H. Connell, “SSS: A Hybrid Architecture Applied to Robot Navigation,” Proc. IEEE Intnl Conf Robotics and Automation, IEEE Press, Piscataway, N.J., 1991, pp. 2719-2724.
+9. E. Gat. “On Three-Layer Architectures,” Artificial Intelligence and Mobile Robotics, D. Kortenkamp, R.P. Bonnasso, and R. Murphy, eds, AAAI Press, 1998.
+10. M. Arbib, “Perceptual Structures and Distributed Motor Control,” Handbook of Physiology: Motor Control, V.B. Brooks, ed., MIT Press, 1981, pp. 809-813. 
+11. M. Resnick, Beyond the Centralized Mindset: Exp}loration in Massively- Parallel Microworlds, PhD thesis, MIT Media Lab, MIT Press. 1992.
+
+***************************************************************************************************
+Proceeding of the 2003 IEEE/RSJ INtl. Conference on INtelligent Robots and Systems
+EPFL, Laussane Switzerland October 2003
+
+Development of an immunology-Based Multi-Robot Coordination Algorithm for Exploration and Mapping Domains.
+Scott M. Thayer   Surya P. N. Singh
+
+***************************************************************************************************
+Proceedings of the 2002 IEEE International Conference on Robotics &Automation Washington, DC * May 2002
+Dynamic Role Assignment for Cooperative Robots 
+Luiz Chaimowicz, Mario F. M. Campos and Vijay Kumar
+
+
+2 Dynamic Role Assignment
+2.1 Role
+Before describing the role assignment mechanism, it is necessary to define what is a role in a cooperative task. Webster’s Dictionary1 defines Role as:
+ (a) a function or part performed especially an a particular operation or process and
+ (b) a socially expected behavior pattern usually determined by an individual’s status in a particular society. 
+
+We consider that a role is a function that one or more robots performs during the execution of a cooperative task. Each robot will be performing a role while certain internal and external conditions are satisfied, and will assume another role otherwise. Thus. a role depends on the internal robot state and on information about the environment and other robots, and defines the set of controllers that will lie controlling tlie robot in that moment.
+
+In [11],a role is defined as the specification of an agent’s internal and external behaviors. A formation is a set of roles, decomposing the task space. Each agent knows the current formation and keeps mappings from teammates to roles in the current formation. Our definition of role is similar, the main difference being that we do not have the concept of formation and we use a more formal model to describe roles and role assignments. as it will be further explained in the next sections. As mentioned before, each role defines a robot controller and the role assignment allows the robots to change their behaviors dynamically during the task execution.
+
+
+***************************************************************************************************
+Proceedings of 2004 1EEElRS.J International Conference on Intelligent Robots and Systems September 28 -October 2.2004. Smdai. Japan
+Foraging Behavior of Interacting Robots with Virtual Pheromone
+Ken Sugawara, Toshiya Kazama and Toshinori Watanabe
+
+In multi-robot system, communication is indispensable for effective cooperative working. In this system, direct communication by physical methods such as light, sound, radio wave etc. is quite general. But in biological system, especially io the insect world, not only the physical hut also the chemical communication methods can be observed, As the chemical methods have some unique properties, it is challenging to apply such a method to the cooperative multi-robot system. Unfortunately, to treat real chemical materials for the robots is not easy for now because of some technical difficulties. In this paper, we propose virtual pheromone system in which chemical signals are simulated with the graphics projected on the floor, and in which the robots decide their action depending an the color infarmation of the graphics. We examined the performance of this system through the foraging task, which is one of the most popular tasks for multi-robot system and is generally observed in ant societies.
+
+I. Introduction
+
+Social insects such as ants and bees establish well ordered societies[1]. In their society, what each individual does is only simple tasks responding to circumstantial conditions. No central control is there, but the whole system exhibits complex and adaptive functions. What mechanism composes individual actions of many simple elements into effective behaviors in total? Many researchers have studied such clusters. Not only scientists but also engineers are interested in such interactive biological systems[2]. Recently, research in the area of multi-robot systems has also been very active, and many researchers are currently studying the behavior of these types of systems[3][4]. One of the most important aspects in amulti-robot system is the ability of robots working cooperatively. Working together, they complete tasks that a single robot cannot. 
+
+
+[l] D. M. Gordon and M. Schmengel, Ants at Work How an Insect Society Is Organized, Simon & Schuster, (1'399).
+[2] E.Bonabeau, M.Darigo and G.Theraulaz, Swarm Intelligenee - From Natural to Artificial Systems, Oxford University Press, (1999).
+[3] Y.U.Cao, A.S.Fukunaga and A.B.Kahng, "Cooperative Mobile Robotics: Antecedents and Directions," Autonomous Robots, 4, (1997) pp.7-27.
+[4] L.E.Parker, '"Current Research in Multi-Robot Systems", Journal of Artificial Life and Robotics, vol. 7 (to appear).
+[5] A.T. Hayes, A. Martinoli, and R.M. Goodman, "Dktributed
+***************************************************************************************************
+Multi-Robot Cooperation Method Based On The Ant Algorithm
+Ding YmgYing, He Yan, J i g Jingping
+
+ABSTRACT Ant Algorithm is an optimization algorithm that gained by obseving the real ant colonies, and it is very useful in solving difficult optimization and control problems.
+***************************************************************************************************
+Proceedings of the 2003 IEEE International Conference on Robotics &Automation Taipei, Taiwan, September 14-19,2003
+Multi-Robot Task Allocation: Analyzing the Complexity and Optimality of Key Architectures 
+Brian P. Gerkey Maja J MatariC
+
+Abstract- Important theoretical aspects of multi-robot coordination mechanisms have, to date, been largely ignored. To address part of this negligence, we focus on the problem of multi-rnbot task allocation. We give a formal, domainindependent, statement of the problem and show it to be an instance of another, well-studied, optimization problem. In this light, we analyze several recently proposed approaches to multi-rnbot task allocation, describing their fundamental characteristics in such a way that they can he ohieetively studied, compared, and evaluated.
+
+11. PROBLEM STATEMENT
+We claim that multi-robot task allocation can be reduced to an instance of the Optimal Assignmenr Problem (OAP) [11], a well-known problem from Operations Research. A recurring special case of particular interest in several fields of study, this problem can be formulated in many ways. Given our application domain, it is fitting to describe the problem in terms of jobs and workers. There are n workers, each looking for one job, and m available jobs, each requiring one worker. The jobs can be of different priorities, meaning that it is more important to fill some jobs than others. Each worker has a nonnegative skill rating estimating hisher performance for each potential job (if a worker is incapable of undertaking a job, then the worker is assigned a rating of zero for that job). The problem is to assign workers to jobs in order to maximize the overall expected performance, taking into account the priorities of the jobs and the skill ratings of the workers.
+
+
+Our multi-robot task allocation problem can be posed as an assignment problem in the following way: given n robots, m prioritized (i.e., weighted) single-robot tasks, and estimates of how well each robot can be expected to perform each task, assign robots to tasks so as maximize overall expected performance. However, because the problem of task  allocation is a dynamic decision problem that varies in time with phenomena including environmental changes, we cannot be content with this static assignment  problem. Thus we complete our reduction by iteratively solving the static assignment problem over time.
+
+
+
+***************************************************************************************************
+Proceedings of the 2003 IEE/RSJ
+Intl. Conference on Intelligent Robots and Systems Las Vegas, Nevada October 2003
+
+Self-organizing Behavior of a Multi-robot System by a Neural Network Approach 
+Anmin Zhu and Simon X. Yang
+
+Abstract-In this paper, a novel neural network approach to self-organizing behavior of a multi-robot system is proposed, which is capable of controlling a group of mobile robots tu achieve multiple tasks at several different locations, such that the desired number of robots will arrive at every target location from any arbitrary initial robot locations. The proposed model is based on a self-organizing map (SOM) neural network. Unlike some conventional approaches to multi-robot path planning for multiple tasks where the task assignment and path planning are handled separately, this model combines the robot task requirement and motion planning together, such that the robots can start to move unce the total tasks are set. The robot narigation can he dynamically adjusted to guarantee each target location will have the desired number of robots, even under unexpected uncertainties, such as one robot breaks down. In addition, unlike the conventional models that are suitable for static enyironment only, the proposed approach is also capable of dealing with changing enihnment. The effectiveness of the proposed approach is demonstrated by simulation studies.
+
+The proposed model is based on a SOM neural network. It combines the robot task requirement and motion planning together, which are normally handled separately in some conventional approaches [7], [12],[14], [3], [1], [4], where the robots can start to move once the total tasks are set. The robot navigation can be dynamically adjusted to guarantee each target location will have the desired number of robots. The approach can handle unexpected uncertainties, such as one robot breaks down. In addition, the proposed approach is capable of dealing with changing environment, e.g., the target locations are movable.
+
+II. THE PROPOSED APPROACH The proposed approach is extended from a conventional SOM neural network algorithm by modifying the initial weights of the neural network, the rule to select the winner, the rule of the neighborhood function, and the rule to update the weights.
+
+A. A Typical SOM Neural Network The original SOM neural network approach, proposed by Kohonen [5], combines a competitive learning principle with a topological structure of nodes such that adjacent nodes tend to have similar weight vectors, that means to put the associated output of similar inputs as much as possible close to each other. The motivation of the approach is the structure of mammalian brain where each pan is dedicated for a specific task and each group of neurons becomes sensitive to a particular type of input signals.
+
+Usually, the SOM is a two-layer neural network. The first layer is the input layer including N nodes, where N represents the number of pattern features. The second layer is the output layer including M nodes or M x M nodes, where M has different meaning according to different problem. For example, M means the number of possible clusters for clustering problem. The connection among nodes in the second layer represents the neighborhood relationship. Every node j in the second layer has connections from all the input nodes, with connection strengths given by the N-dimensional vector  Wj = {wjl,wj2, ...,wjN} The learning algorithm ensures that most highly (or lowly) activated node (Winner ofthe competition) as well as its neighbors moves toward a sample presented to the network. The network is selforganizing in those nodes tend to attain weight vectors that capture characteristics of the input vector space.
+
+The main steps of the algorithm are that: The first step is to select an input sample, calculate the activity of nodes of the output layer, and get a winner. The second step is to decide the neighborhood function. The third step is to modify weights of the winner and its neighbors. Repeat the first to the third step until all of the weights do not change. There are three important rules: the rule to select a winner, the rule to decide the neighborhood function, the rule to update the weights.
+
+
+***************************************************************************************************
+***************************************************************************************************
+***************************************************************************************************
+***************************************************************************************************
+***************************************************************************************************
+***************************************************************************************************
+***************************************************************************************************
+***************************************************************************************************
+***************************************************************************************************
+***************************************************************************************************
+***************************************************************************************************
+***************************************************************************************************
+***************************************************************************************************
+***************************************************************************************************
+***************************************************************************************************
+***************************************************************************************************
+***************************************************************************************************

@@ -1,0 +1,95 @@
+% FLOW.STY - skeleton plain TeX macro to flow text round an illustration.
+%            (c) Peter Flynn, December 1992
+%
+% Call with \flow{L|R}{text}{box} where <box> is the name or number of a \box
+% containing the illustration (see example at end). The L or R specifies the
+% direction of flow (round to left or round to right) [default is L].
+%
+\newbox\testflowbox\newbox\illbox
+\newdimen\theight\newdimen\iheight\newcount\lines
+\newcount\diff\newcount\extent
+\newdimen\twidth\newdimen\nflow
+\newcount\flowcount\newcount\flowlim
+\newdimen\backup\newdimen\offset
+\newwrite\flowfile
+ 
+\long\def\flow#1#2#3{%
+\global\let\flowindent=\indent
+\ifhmode{\setbox0=\lastbox\endgraf
+ \ifvoid0 \global\let\flowindent=\noindent\fi}\fi
+\setbox\illbox=\flowboxit{\copy#3}
+    \if#1L\message{Flow to left}\else
+          \if#1R\message{Flow to right}\else
+          \message{Defaulting to flow to left}\fi\fi
+    \setbox\testflowbox=\vbox{\flowindent\strut#2\strut}
+    \theight=\ht\testflowbox
+    \divide\theight by\baselineskip
+    \iheight=\ht\illbox
+    \divide\iheight by\baselineskip\advance\iheight by1sp
+    \diff=\theight\advance\diff by-\iheight
+    \divide\diff by2 \ifnum\diff<1 \diff=1 \fi
+    \extent=\iheight\advance\extent by\diff\advance\extent by\diff
+    \flowlim=\iheight
+    \twidth=\hsize\advance\twidth by-\wd\illbox
+    \advance\twidth by-1pc
+    \offset=0pt\if#1R\offset=\hsize\advance\offset by-\twidth\fi
+    \immediate\openout\flowfile=flow.tmp
+    \immediate\write\flowfile{\parshape}
+    \immediate\write\flowfile{\number\extent}
+    \flowcount=0
+    \loop\immediate\write\flowfile{0pt \the\hsize}\advance\flowcount by1
+         \ifnum\flowcount<\diff\repeat
+    \flowcount=0
+    \loop\immediate\write\flowfile{\the\offset \the\twidth}\advance\flowcount by
+ 1
+         \ifnum\flowcount<\flowlim\repeat
+    \flowcount=0
+    \loop\immediate\write\flowfile{0pt \the\hsize}\advance\flowcount by1
+    \ifnum\flowcount<\diff\repeat
+    \immediate\closeout\flowfile
+%
+    \setbox\testflowbox=\vbox{\spaceskip=3pt plus3pt minus1.5pt\input
+    flow.tmp  \flowindent\strut#2\strut}
+    \theight=\ht\testflowbox
+    \divide\theight by\baselineskip
+    \iheight=\ht\illbox
+    \divide\iheight by\baselineskip\advance\iheight by1sp
+    \ifnum\iheight>\theight\message{Cannot insert illustration}
+          \setbox\testflowbox=\vbox{\flowindent\strut#2\strut}
+          \par\if#1R\hbox to\hsize{\copy\illbox\hss\box\testflowbox}
+          \else\hbox to\hsize{\box\testflowbox\hss\copy\illbox}\fi
+    \else
+    \diff=\theight\advance\diff by-\iheight
+    \divide\diff by2 \ifnum\diff<1 \diff=1 \fi
+    \extent=\iheight\advance\extent by\diff\advance\extent by\diff
+    \flowlim=\iheight
+    \twidth=\hsize\advance\twidth by-\wd\illbox
+    \advance\twidth by-1pc
+    \offset=0pt\if#1R\offset=\hsize\advance\offset by-\twidth\fi
+    \immediate\openout\flowfile=flow.tmp
+    \immediate\write\flowfile{\parshape}
+    \immediate\write\flowfile{\number\extent}
+    \flowcount=0
+    \loop\immediate\write\flowfile{0pt \the\hsize}\advance\flowcount by1
+         \ifnum\flowcount<\diff\repeat
+    \flowcount=0
+    \loop\immediate\write\flowfile{\the\offset \the\twidth}\advance\flowcount by
+ 1
+         \ifnum\flowcount<\flowlim\repeat
+    \flowcount=0
+    \loop\immediate\write\flowfile{0pt \the\hsize}\advance\flowcount by1
+         \ifnum\flowcount<\diff\repeat
+    \immediate\closeout\flowfile
+    \setbox\testflowbox=\vbox{\spaceskip=3pt plus3pt minus1.5pt\input
+    flow.tmp \flowindent\strut#2\strut}
+    \iheight=\ht\illbox
+    \theight=\ht\testflowbox
+    \backup=\theight\advance\backup by-\diff\baselineskip
+    \advance\backup by-\iheight\advance\backup by-1ex
+    \par\if#1R\hbox to\hsize{\raise\backup\hbox{\copy\illbox}\hss\box\testflowbo
+ x}
+    \else\hbox to\hsize{\box\testflowbox\hss\raise\backup\hbox{\copy\illbox}}\fi
+    \fi}
+ 
+\def\flowboxit#1{\vbox{\hrule\hbox{\vrule\kern6pt\vbox{%
+\kern6pt#1\kern6pt}\kern6pt\vrule}\hrule}} % TeXbook, p.331, exercise 21.3

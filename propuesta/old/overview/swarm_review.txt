@@ -1,0 +1,320 @@
+Adaptive Distributed Fetching and Retrieval of Goods By a Swarm-Bot
+
+
+Abstract—Swarm robotics is a rising paradigm which aims at designing new robot artifacts by extracting engineering guidelines from Nature. The work presented here shows the use of a particular swarm of robots called swarm-bot for carrying out distributed missions of fetching and retrieval of objects. To solve this task, a high level description plan defined in terms o behaviors is synthesized. A mission is divided in four different stages: searching for a target, calling for a swarm to aggregate as soon as one is found, jointly fetching it, and jointly retrieving it back. All robots used (s-bots) are assumed to know the same set of behaviors as well as the same behavioral plan for carrying out the task. Units are kept purely reactive, thus they do not keep any memory of their previous history. This allows to withstand changes in a highly dynamic environment. Coordination is achieved asynchronously by using light signals, whereas cooperation for the actual transportation is realized by using a force sensor located between the turret and the tracks of each s-bot. A swarm-bot, which is formed by a group of s-bots physically connected to their target, is capable of behaving during its homeward motion as if it were a single entity. Experiments show the high level of adaptability and resilience of a swarm-bot with respect to occasional possible failures of its members.
+
+A great deal of research in robotics has for a long time dealt mainly with studying how to accomplish a mission with a single unit. It is just during the past few years that the approach of using multiple agents for carrying out complex tasks has progressively increased momentum. The reason for this lies in the high level of robustness and resilience offered by such an approach. The success of a mission is, in fact, not bound to the physical conditions of any specific unit: any member incapable of contributing to the common goal of a collectivity is simply left behind or recalled back. A group of robots acting together for jointly achieving a task may be viewed as an entity on its own right capable of withstanding possible mechanical and electronic failures which may occur to its own members.
+
+
+II. RELATED WORKS
+Considering the advantages offered by distributed systems with respect to monolithic architectures, it is easy to understand the rising interest of the scientific community towards this type of approach [1]–[3]. In this regard, we distinguish three main research threads: coordination [4], cooperation, and communication [5]. This last is strongly intertwined with the others, since agents, supposedly independent from each other, have to convey information one another in order to coordinate themselves, and hence cooperate for the achievement of a common goal.
+Concerning coordination, the units composing a group agree the terms with which to accomplish a given task either by a direct communication of the units involved or indirectly by
+means of stigmergy, that is, by means of physically modifying the environment they are in [6]. The advantage offered by the latter is that it does not involve any message passing, that is, any communication protocol. Each unit simply detects the state of its surrounding and reacts to it accordingly with an opportune sequence of primitive actions (behaviors) supposedly known by the whole group [7]. As far as cooperation is concerned, autonomous physical agents have to work together and help each other for accomplishing
+an assigned mission. Given the full autonomy of each unit composing a team, it is clear that some dynamic agreements have to take place throughout the execution of the whole task [8]. These agreements may take place because each member of the group works in synchrony with the others [9] or simply by asynchronously adapting to the constraints caused or enacted by the others [10]. Cooperation performed as the result of a synchronous collaboration does not necessarily require any communication among members at all. This is because it assumes either that each unit is capable of maintaining a perfect timing with its coworkers or that the whole group is centrally controlled by an external source. Asynchronous collaboration, instead, occurs as the result of a constant reciprocal adaptation to the constraints imposed by the environment and other peers, while they are all trying to achieve their common goal [11]. Such an adaptation can be implemented by means of direct messaging or by detecting features present in the surrounding environment.
+
+During the past few years, the research threads outlined above converged into a new branch of distributed robotics known as swarm robotics. Such a branch, by taking inspiration
+from Nature, aimed at extracting design engineering guidelines from biological experiments [12], [13]. The rationale behind this approach is that a colony of social insects, such as ants or termites, is capable as a whole of achieving feats much greater than what each element can ever be able to achieve alone. This macroscopic behavior known as swarm intelligence has been the subject of extensive studies [6], [14].
+
+ A swarm of robots has interesting characteristics which make it very appealing. It is very robust to hardware and software failures, since the execution of an assigned task does not depend on any specific unit. It is very reliable, since a task can always be carried out by the group regardless of its size and of the initial distribution of its members. It is also structurally quite simple, since it is composed of relatively basic units. The macroscopic behavior, which is indeed regarded as intelligent,
+stems merely from the primitive interactions occurring among its members, which are promptly reactive but not necessarily capable of any global form of planning. All of these characteristics make robot swarms apt for tasks requiring high adaptability to the environment constraints, low sensitivity to hardware failures, low level of human monitoring, and high level of global resilience [15].
+
+The particular task we considered in the work presented here is object fetching and retrieval. Despite its apparent simplicity, a careful analysis reveals all the complexities hidden in it. A  general solution to such a problem would in fact need to find acceptable answers to handle the sub-problems of coordination and cooperation in a group of autonomous physical agents even in presence of mechanical failures of some members. By examining the task, three different phases can be identified: searching for a target, assembling and grasping the target found,  and retrieving it to a base. 
+
+Concerning searching, we fall in the category of swarm exploration. In this regard, it is interesting the work of Hayes et al. [16] which shows how a collaborative approach by a
+group of simulated robots drastically improves the search for an infrared target beacon with respect to several metrics. The collaboration among the members of the group is thought of occurring by means of a simple binary signalling schema. As will be pointed out later, our approach to collaboration is realized by means of light signals, hence we do not resort to  any explicit synchronized message passing.
+
+Another interesting work in swarm searching is that of Navarro-Serment et al. [17]. These researchers use a group of very simple robots called Millibots which have very limited
+sensing, computation, and communication capabilities. They show that, by specializing each Millibot with specific features, it is possible to accomplish a cooperative mapping and exploration of indoor areas. The swarm resulting after such a specialization is heterogeneous as opposed to the type of swarm we employ which is fully homogeneous.
+
+Concerning assembling, Trianni and his colleagues managed to develop aggregation behaviors exploiting evolutionary techniques [18]. The robots they used (s-bots) are simulated
+abstractions of the very ones we employed in our research. Differently from them, however, we make robots coordinate their assembly at a target location by means of a behavioral
+architecture. As will be pointed out later on, our version of virtual s-bots is quite a faithful replica of the correspondent real robot which we both refer to.
+
+
+An interesting work on robot aggregation is also that of Agmon and Peleg [19]. They proposed a fault tolerant algorithm allowing a group of autonomous robots, each executing
+its own program, to gather at a specific point within a finite period of time. Robots are shown to be capable of realizing the aggregation as long as the number of faulty units is below one third of the group. Our approach for gathering and grasping the target is not linked to the size of the swarm: each unit is in fact unaware of its companions. The entire group would strives to attain its global goal. Indeed, as long as the resultant force is not null, the entire swarm would be able as a whole to move the target to the base.
+
+Concerning the actual transportation of an object, this may be carried out either by means of pushing and pulling techniques [20], or by means of an adaptive behavioral control [21]. Our approach follows this latter.
+
+
+B. Basic Competences
+The basic behaviors known by all s-bots are of two types: sensor’s signal processing and motor control. The former is made of IRs and force monitoring, vision processing, light detecting, and LED signalling, whereas the latter is composed of stand alone navigation, obstacle avoidance, waiting, grasping, moving maintaining orientation, and following a light source.
+ 
+As far as sensor related behaviors are concerned, vision processing is the most important and complex. Every s-bot is equipped with an on board omni-directional camera which
+allows to take a picture in JPEG format every 200ms. What this behavior does is first to unpack the picture into an array of 640×480 pixels, each expressed in its 3 RGB components, and then to look into such an array for an area having a specific color. As soon as that is found, the behavior triggers a signal. In this regard, we have to point out that color detection is affected by luminosity which changes according to different points of view. To avoid this problem, every picture is immediately translated into the Hue-Saturation-Value (HSV) space and then filtered with the specific color wanted expressed in terms of HSV. This transformation allows color search and tracking to be quite robust with respect to different light conditions.
+
+To process a picture efficiently, every omni-directional view is divided into 64 sectors and 64 concentric circles so as to form a grid (Figure 4). Each annular sector element in
+such a grid may be regarded as a point into a discrete polar coordinates system whose center is the robot itself and whose angular starting point is the back side of one s-bot. Sectors are numbered counter-clockwise from 0 to 63, whereas concentric circles are numbered increasingly from 0 to 63.
+
+Synchronization and cooperation are all achieved by resorting to a light emitting behavior which opportunely signals a situation using the RGB LEDs available on each s-bot. The two codes chosen for the implementation of fetching and retrieval are blue for calling for the swarm to aggregate and red for warning that a target has been firmly grasped.
+
+Concerning motor related behaviors, a special discussion is required by obstacle avoidance. Such a behavior is supposed to subsume control of normal navigation every time a hindrance is detected. It is interesting to point out that, once a swarm is physically connected into a swarm-bot, the activation of an obstacle avoidance does not lead to a breaking of the structure: the detection of a hindrance is simply indirectly transmitted to the partners as a push or pull. The other robots connected to the s-bot running obstacle avoidance sense the strain using their force sensor located between their turret and their corresponding tracks. By moving towards the lowest gradient of the strain forces sensed by each robot, the whole group behaves as if it were a single entity trying to get around the detected hindrance. 
+
+The behavior accomplishing the actual physical grasping is activated as soon as the target is located on the left and right side of the front gripper arm. The behavior simply drives the s-bot’s jaws to close until a target is firmly held between them. 
+
+Moving while maintaining the same orientation of the turret is another important basic competence. This is achieved simply by rotating turret and tracks with the same speed about the same angle but in opposite directions. Such a behavior turns out to be very useful when robots are moving together in a group while jointly holding their load.
+The last basic behavior which every s-bot is supposed to know is light following. Once activated, it has the goal of driving a unit towards the maximum gradient of light. This
+is perceived by means of the light detectors evenly distributed on the robot’s turret.
+
+[1] M. K. Habib, I. Endo, A. Matzumoto, and Y. Ishida, “Simulation Environment for an Autonomous Decentralized Multi-Agent Robotic System,” in Proceedings of the IEEE/RSJ International Conference on Intelligent Robot and Systems (IROS 1992), Raleigh, North Carolina, U.S.A., July 7–10 1992, pp. 1150–1157.
+[2] L. E. Parker, “Adaptive Action Selection for Cooperative Agent Teams,” in Proceedings of the 2nd International Conference on Simulation of Adaptive Systems, December 1992, pp. 442–450.
+[3] Y. U. Cao, A. S. Fukunaga, and A. B. Kahng, “Cooperative Mobile Robotics: Antecedents and Directions,” Autonomous Robots, vol. 4, no. 1, pp. 7–27, March 1997.
+[4] A. Farinelli, L. Iocchi, and D. Nardi, “Multirobot Systems: a Classification Focused on Coordination,” IEEE Transactions on Systems, Man, and Cybernetics – Part B: Cybernetics, vol. 34, no. 5, pp. 2015–2028, October 2004.
+[5] M. J. Matari´c, “Using Communication to Reduce Locality in Distributed Multi-Agent Learning,” Journal of Experimental and Theoretical Artificial Intelligence, vol. 10, no. 3, pp. 357–369, July 1998.
+[6] E. Bonabeau, M. Dorigo, and G. Theraulaz, Swarm Intelligence: From Natural to Artificial Systems. New York, NY, USA: Oxford University Press, 1999.
+[7] L. Chaimowicz and V. K. M. F. M. Campos, “A Paradigm for Dynamic Coordination of Multiple Robots,” Autonomous Robots, vol. 17, no. 1, pp. 7–21, July 2004. 
+[8] M. N. Ahmadabadi and E. Nakano, “A “Constrain and Move” Approach to Distributed Object Manipulation,” IEEE Transactions on Robotics and Automation, vol. 17, no. 2, pp. 157–172, April 2001.
+[9] D. P. Garg and M. Kumar, “Multiple Robot Control Using Force/Torque and Vision Sensors,” in Proceedings of the 9th IEEE Conference on Mechatronics and Machine Vision in Practice (M2VIP 2002), Chiang Mai, Thailand, September 10–12 2002, pp. 142–151. 
+[10] R. C. Kube and H. Zhang, “Task Modelling in Collective Robotics,” Autonomous Robots, vol. 4, no. 1, pp. 53–72, March 1997.
+[11] J. Spletzer, A. K. Das, R. Fierro, C. J. Taylor, V. Kumar, and J. P. Ostrowski, “Cooperative Localization and Control for Multi-Robot Manipulation,” in Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Sytems (IROS 2001), vol. 1. Outrigger Wailea Resort, Maui, Hawaii, USA: IEEE Press, Piscataway, New Jersey, USA,
+October 29–November 3 2001, pp. 476–481. 
+[12] J.-L. Deneubourg, S. Goss, N. Franks, A. Sendova-Franks, C. Detrin, and L. Chatier, “The Dynamics of Collective Sorting: Robot-Like Ant and Ant-Like Robot,” in Simulation of Adaptive Behavior: From Animals to Animats, J.-A. Mayer and S. W. Wilson, Eds. MIT Press, Boston, Massachusetts, USA, 1991, pp. 356–365. 
+[13] C. Detrain and J.-L. Deneubourg, “Scaveging by pheidole pallidula: a Key for understanding Decision-Making Systems in Ants,” Animal Behaviour, vol. 53, no. 3, pp. 537–547, March 1997.
+[14] M. Dorigo, V. Trianni, E. S¸ahin, T. H. Labella, R. Gross, G. Baldassarre, S. Nolfi, J.-L. Deneubourg, F. Mondada, D. Floreano, and L. M. Gambardella, “Evolving Self-Organizing Behavors for a Swarm-bot,” Autonomous Robots, vol. 17, no. 2–3, pp. 223–245, September/November 2004.
+[15] G. C. Pettinaro, “Teamwork by Swarms of All Terrain Mobile robots,” Industrial Robot: an International Journal, vol. 31, no. 6, pp. 519–526, October 2004.
+[16] A. T. Hayes, A. Martinoli, and R. M. Goodman, “Comparing Distributed Exploration Strategies with Simulated and Real Robots,” in Proceedings of the 5th International Symposium on Distributed Autonomous Robotic Systems (DARS 2000). Knoxville Hilton, Knoxville, Tennessee, USA: Springer-Verlag, Berlin, Germany, October 4–6 2000, pp. 261–270.
+[17] L. E. Navarro-Serment, R. Gabrowski, C. J. J. Paredis, and P. K. Khosla, “Modularity in Small Distributed Robots,” in Proceedings of the SPIE Conference on Sensor Fusion and Decentralized Control in Robotic Systems II. Hynes Convention Center, Boston Massachussetts: SPIE, P.O. Box 10, Bellingham, Washington 98227-0010, USA, September 19–22 1992.
+[18] V. Trianni, R. Groß, T. H. Labella, E. S¸ahin, and M. Dorigo, “Evolving Aggregation Behaviors in a Swarm of robots,” in Advances in Artificial Life – Proceedings of the 7th European Conference on Artificial Life (ECAL ’03), ser. Lecture Notes in Artificial Intelligence, W. Banzhaf, T. Christaller, P. Dittrich, J. T. Kim, and J. Ziegler, Eds., vol. 2801. Springer Verlag, Heidelberg, Germany, 2003, pp. 865–874.
+[19] N. Agmon and D. Peleg, “Fault-Tolerant Gathering Algorithms for Autonomous Mobile Robots,” in Proceedings of the 15th Annual ACM/SIAM Symposium on Discrete Algorithms (SODA ’04), Astor Crowne Plaza Hotel, New Orleans, Louisiana, USA, January 11–13 2004, pp. 1070–1078.
+
+
+***************************************************************************************************
+Proceedings of the 2003 IEEE Changsha, China - October 2003
+International Conference on Robotics,Intelligent Systems and Signal Processing  A Novel Optical Signal Detecting and Processing Method for Swarm Robot Vision System
+Dongtang Ma, Jib0 Wei, Zhaowen Zhuang
+
+
+Abstract
+Communication capability plays an important role in the Robot Swarm Systems (RSS), especially when they are used as soldiers during a war. Free Space Optical @SO) communication is one of the best ways to exchange information between the leader and the followers in the RSS under a bad electromagnetic condition. It can be integrated as a part of the Robot Vision System (RVS). Pulse Position Modulation (PPM) is one of the most often used modulation techniques for FSO communication. As Avalanche Photo Diode (APD) detector has high gain, high sensitivity and high response speed, it is a likely candidate to detect laser signals to meet the demands of RVS. This paper discusses the characteristics of noises in the optical signal detecting and processing subsystem as the PPM signal is considered in the RVS. Based on the ability of achieving topical characteristics of signals of wavelet transform, this paper brings forward a novel method of processing the APD detecting signals based on wavelet analysis. The soft threshold .,/='/a is used to process the empirical wavelet coeficients. A primary simulation experiment and some analysis results are given.
+
+
+Introduction
+FSO communication has some advantages over RF technology: smaller size and less weight of the terminal, smaller transmitter power, great immunity to interference, large data rate and smaller transmitting beam divergence. The above advantages indicate that FSO is one of the best choices to exchange information between the leader and the followers in the RSS when the robots are used as soldiers in a war (heavy electromagnetic interference cases). The rapid development of micro-optical elements makes the terminal be very small and light. It can be easily integrated with the CCD image scanner system and assembled in the RVS. This paper focuses on the optical signal detecting and processing method of the FSO communication receivers for RVS.
+
+
+***************************************************************************************************
+Artificial Potential Field Controllers for Robust Communications in a Network of Swarm Robots
+Thomas W. Dunbar Joel M. Esposito
+
+Abstract - An active area of research in the robotics community is %warm control,” where many simple robots work together to execute tasks which are beyond the capability of any single robot acting alone. Yet in order for the swarm members to work together effectively they must maintain a reliable and robust wireless communication network among them. The goal of this project is to investigate motion control laws which fulfill t h e dual and sometimes conflicting requirements of executing a primary mission (e.g. search and rescue) while maintaining a robust mobile wireless communication network among the swarm members. Three different spatial requirements for robust communication are considered
+in this project: proximity, line of sight and redundancy. To this end, several artificial potential fields have been developed and simulated to determine their success in
+controlling the swarm. The strengths and weaknesses, the design process and the interaction of the controllers constitute the heart of the paper. At a higher level, we
+address the challenge of how to compose these motion control laws to achieve the primary mission in a meaningful way.
+
+I. INTRODUCTION
+A swarm of robots consists of many small, cheap, unsophisticated robots working together to accomplish a task more efficiently than a single robot. There are many potential applications for swarm robotics including but not limited to; military applications involving mine countermeasures both in water and on land. A swarm of robots can spread out and effectively cover a large area in a short time. In addition, if one robot is destroyed by a mine, the rest of the swarm continues to function. For these reasons, swarms are
+exceIllent disaster recovery, reconnaissance and search and rescue. Yet in order for the swarms to work together effectively they must have reliable and robust communication among the team members. This project focuses on the theoretical design of a distributed motion control methodology for communicating swarms of robots.
+
+The success or failure in sending or receiving a wireless message between robots is inherently probabilistic, but the odds of successfully relaying a message increase considerably based upon the spatial arrangement of the swarm members. This imposes a variety of constraints on each robot’s motion; each iobot sending a message should:
+1. maintain a line of sight to a receiving robot (especially in an enviionment like a cave or bunker with dense walls); and
+2. stay within close proximity of the receiving robot (the range is dictated by the power of the transmitter).
+
+Furthermore, a good control methodologv will exploit the redundancy of the swarm to improve robustness to robot failure. To that end a third requirement can be introduced:
+3. the robots can be constrained to move so that each robot. is communicating (i.e. meeting objectives I and 2) with at least two other units at all times.
+
+Many task level control techniques are available (see 1 for examples). However, only certain approaches are appropriate for swarm applications. A suitable task-controller should be reactive and closed loop to deal with changing environments. It should also be computationally efficient and distributed (meaning that each robot computes its own motion, without relying on a leader robot for instructions). This ensures that the algorithm scales well as the swarm increases in size. Artificial potential fields meet all of these criteria [2]. The artificial potential field method involves projecting an artificial potential ( i . e . scalar) field onto the domain in which the robot is working. If 2 and y are coordinates describing the robot’s position the potential function is o/(x, y). Using this method velocity is calculated by finding -Vo/ By moving in the direction of the negative gradient the robot will move to a lower potential in the shortest amount of time.
+
+ Most problems with potential fields arise from the summation or superposition of multiple potentials. To correctly compose functions, so that one does not inadvertently  overpower another, the functions must be scaled to a common, arbitrary magnitude. Because mme function’s negative gradients are unbounded, the velocity magnitude must be capped at a maximum value. C a p ping the velocity is partly based on the physical limitations of the robot motors. The motors saturate at a certain velocity and therefore, it is not an accurate model of the physical systems if the functions can return a near infinite velocity. 
+ 
+ Local minima are a petpetual problem when designing a potential field controller, especially when dealing with a single robot. However, in s \ w " robotics, local minima are  not as serious. If a single robot is immobilized by a local minimum, the rest of the swarm can still continue to function, as swarms should be fault tolerant. This project intends to specifically design controllers which are able to function should the swarm lose a few of its members.
+ 
+ The first work on "swarms" U'S [3]. This work attempted to devise a set of motion laws for a group of agents so that the collective motion would mimic that of biological system such as schools of fish and flocking birds. The resulting motjon is called flocking. This work was primarily targeted at computer graphics applications. It was not considered appropriate for robotics because it did not display robust behavior in the face of unstructured 01- ,changing environments, Little work appeared in the field until 4, 5, 6, etc. began considering robot formations, primarily inspired by the automated highway project and military applications. In cont.rast to swarms, formation applications require that a group of robots maintain a fixed relative spatial orientation, despite movement of the group as a whole. In addition, some members of the group are arbitraiily selected as the "lead" robots, making the control scheme somewhat centralized rather than distributed.
+
+More recently there has been increased interest in swarm applications. As a result, the work of [3] has inspired a new round of developments in the &ea of flocking. Flocking implies that, while the entire group of robots does not need to maintain a fixed relative spatiai orientation as in formations, however the entire group is required to possess identical velocity vectors at steady state. Related work includes [7], [8] and [9]. The primary theoretical challenge in this work is to show collective stability (i.e. that the
+velocity of the members converges to some constant) and ensuring that the members do not collide. In the works cited in this paragraph it is sbomn that either all-t@aIl member information sharing is required or some centralized signal must be broadcast to guarantee stability.
+
+
+REFERENCES
+
+[1] J. Latombe. Robot Motion Planning Kluwer Academic Publishers, 1991.
+[2] 0. Khatib. Real-time obstacle avoidance for manipulators and mobile robots. In International Journal of Robotics Research, volume 5(1), pages 90-98, 1986.
+[3] C. Reynolds. Flocks, herds and schools: a distributed behavior model. In ACM SIGRAPH Proceedings, volume 21, pages 24-34, July 1987.
+[4] J. Desai, J. Ostrowski, and V. Kumar. Modelling and Control of Formations of non-holonomic mobile robots. IEEE Transactions on mbotics and automation, 17(6):905-9I6, 200f.
+[5] D. Swaroop and J. Hedrick. String stability of interconnected systems. IEEE Transactions on Automatic Control, 41(3):349-357,March 1996.
+[6] R. Olfati-Saber and R. hlurray Distributed cooperative control of multiple vehicle formations using structural potential functions. In 15th IFAC Wold Congress, Barcelona, Spain, 2002.
+[7] R. Olfati-Saber. Flocking for multi-agent dynamic systems: alegorithms and theory. IEE Transactions on Automatic Contml, 49(2), June 2004.
+[8] H. Tanner, A. Jadbabaie, and G. Pappas. Flocking in fixed and switching networks. Automatica, July 2003.
+[9] A. Jadbabaie, J. Wn, and A. hlorse. Coordination of groups of mobile autonomous agents using nearest neighbor rules. IEEE Transactions on Automutic Contml, 48(6):988-1001, June 2003.
+
+***************************************************************************************************
+Proceedings of the 1993 IEEE/RSJ international Conference on Intelligent Robots and Systems Yokohama, Japan July 26-30,1993
+A Taxonomy for Swarm Robots
+G. Dudek M. Jenkin E. Milios and D. Wilkest
+
+
+Abstract
+In many cases several mobile robots (autonomous agents) can be used together to acomplish tasks that would be either more difficult or impossible for a robot acting alone. Many different models have been suggested fore the makeup of such ollections of robots. In this paper we present a taxonomy of the different ways in which such a collection of autonomous robotic agents can be structured. It is showas the authors that certains swarms provide little or no advantage over having a single robot, while other swarms can obtain better than linear speedup over a single robot. There exist both trivial and non-trivial problems for which a swarm of robots can succeed where a single robot will fail. Swarms are more than just networks of independent processors - they are potentially reconfigurable networks of communicating agents capable of coordinated sensing and interaction with the environment.
+
+Introduction
+Although most mobile robotic systems involve a single robot operating in an environment, a number of researchers have considered the problems and potential advantages involved in having an environment inhabited by a number of robots. For some specific robotic tasks, such as exploring an unknown planet, it has been suggested that rather than sending one very complex robot to perform the task it would more effective to send a large number of smaller, simpler robots. Such a collection of robots is sometimes described as a swarm[2]. Using multiple robots rather than a single robot can have several advantages and leads to a variety of design tradeoffs. In particular, large numbers of simple robots
+may be simpler in terms of individual physical design and thus the ensuing system can be more economical, more scalable and less sensitive to overall failure. Likewise, destruction of a single member of a large swarm may not be catastrophic while the failure of a single subsystem of a conventional robot is usually disastrous.
+Swarms offer the possibility of enhanced task performance, task reliability and decreased cost over more traditional robotic systems. Although they have this potential, many possible swarm designs are neither more efficient, nor more reliable, nor more robust than a comparable single (more complex) robot. In order for a swarm to have these advantages the swarm must be designed with these properties in mind. Many possible swarms architectures are neither efficient, inexpensive, or robust in the face of failures of elements of the swarm.
+
+In addition to having these properties, it is essential that the swarm of robots have a collective behaviour or set of actions that accomplishes the same behaviour or action that the single more complex robot was required to do. For the swarm to have an intelligent behaviour, the members of the swarm must be able to communicate with each other. This communication can take place directly via an explicit communication channel or indirectly through one robot sensing a change in other robots in its environment. Intra-swarm communication presents difficulties in terms of swarm efficiency, fault tolerance, and cost.
+
+Many different swarm models have been proposed. The behaviour based control strategy put forward by Brooks (5) is quite well known and it has been applied to collections of simple independent robots, usually for simple tasks. Other authors have also considered how a collection of simple robots can be used to solve complex problems. Ueyama et. al. (15) propose a scheme whereby complex robots are organized in tree-like hierarchies with communication between robots limited to the structure of the hierarchy. Hackwood and Beni [10] propose a model in which the robots are particularly simple but act under the influence of “signpost robots”. These signposts can modify the internal state of the swarm units as they pass by. Under the action of the signposts, the entire swarm acts as a unit to carry out complex behaviors.
+
+Mataric [13] describes experiments with a homogeneous population of actual robots acting under different communication constraints. The robots either act in ignorance of one  another, informed by one another, or intelligently (cooperating) with one another. As inter-robot communication improves, more and more complex behaviors are possible. In the limit, in which all of the robots have complete communication, then the robots CM be considered as appendages of a single larger robot (or robotic “intelligence”). One major goal of a robotic swarm is to distribute not only the sensing (and possibly actions) of the robots, but also the intelligence. What sort of processing can be accomplished
+by a collection of robots that cannot be accomplished by a single one? What effects do limits on communications and unit processing capabilities have on the potential actions of the swarm? How do we compare the structure of various possible swarms?
+
+The information processing ability of a swarm is dependent upon a large number of factors including the number of units, their sensing abilities, their communication mechanisms, etc.(1, 14). In order more fully to understand the properties of various designs of swarms, i,t is instructive to group swarms into classes and to determine the processing ability of each class. It may be the case that certain swarm organizations have more potential processing ability than others, and that some swarm organizations may be similar to existing parallel models of computation.
+
+Swarm Taxonomy
+Given the variety of possible designs of groups of mobile robots, we suggest that it is useful to organize these concepts along taxonomic axes. The objective here is to both clarify the strengths, constraints and tradeoffs of various designs, and also to highlight various design alternatives. We suggest that there are several natural dimensions along which robotic swarms can be classified. These dimensions address the characteristics of the swarm as a whole rather then the architectural characteristics of individual
+robots. These dimensions follow with key sample points from each dimension noted. 
+
+By swarm size:
+ALONE 1 robot. The swarmless swarm case.
+PAIR 2 robots. The simplest group.
+LIM-GROUP Multiple robots. The number n is small relative to the size of the task or enviroment.
+INF-GROUP n >> 1 robots. There is effectively an infinite number of robots.
+
+Two robots can, of course, perform problems which are impossible with a single robot. Almost any operation involving simultaneity or near simultaneity of events (such as turning two keys at the same time), is impossible with a single spatially limited robot. Multiple robots can be used to obtain speedups in terms of task performance subject to robot task synchronization. A number of robot swarms assume either that the time available for the task (or the number of robots applied to the task) is unbounded and this provides a number of simplifications in terms of probabilistic task completion. As a simple example, consider the task of utilizing a number of non-communicating robots to clean an enclosed area. A randomly moving robot (or a swarm of randomly moving robots) will with probability approaching one eventually clean all of the environment. The robots can operate completely independently of each other. Note that if there are time (or robot) constraints, then it may not be possible to utilize such a simple swarm to complete the task. 
+
+By communication range: In most systems there are limits to the range of direct communication for any single robot. This is a function both of the communications medium and the robot distribution. We list three key classes for this dimension. 
+
+COM-NONE 
+Robots cannot communicate with other robots directly. It is possible for robots to communicate with each other indirectly by observing their presence, absence or behavior
+(as many animals seem to). In order to have “ignorant robots”[13], the robots must not only not communicate with each other they must not try to signal each other symbolically through behaviour. For robots to be able to navigate they must be able to sense in at least a limited manner, and this suggests that they should be able to sense other robots. Sensing implies the possibility of symbolic communication. It may not be realistic to have truly ignorant robots.
+
+COM-NEAR 
+Robots can only communicate with other robots which are sufficiently nearby. This corresponds to the communication mechanism proposed in [10]. Distance, in this context, can be interpreted either topologically (e.g. nearest neighbor) or in a Euclidean sense (neighbours within some range). Limited communication distance can occur due to physical  communication constraints (the power of the communication signal). It may also be the case that the robots do not communicate through a separate communication channel, but rather communicate by performing some overt action (blinking lights, spinning, etc.), which can only be sensed by other robots in the local neighborhood.
+
+COM-INF 
+Robots can communicate with any other robot. A classical assumption which is probably impractical in practice if n >> 1.
+
+By communication topology:
+
+Robots may not be able to communicate with an arbitrary element of the swarm regardless of its proximity. Robots may only be allowed to communicate within a particularly hierarchy [15], or with specific controller robots [10]. Individual robots may have names and messages may be sent to them directly, or messages may be broadcast to all robots. Many possibilities exist. These include
+
+TOP-BROAD Broadcast. Every robot can communicate with all of the other robots. It is not possible to send a message to a particular swarm element.
+TOP-ADD Address. Every robot can communicate with any arbitrary robot by name or address. 
+TOP-TREE Tree. Robots are linked in a tree and may only communicate through this hierarchy.
+TOP-GRAPH Robots are linked in a general graph. This is a more general connectivity scheme than the tree and is more robust since redundant links can prevent the entire swarm
+from becoming disconnected. Communication strategies based on either tree-like or Address based communication topologies are likely to be highly sensitive to failure of particular robots in the swarm. Failure of a particular robot will isolate robots on either side of the failed node in the hierarchy. Addressing implies distinctive roles for individuals; resulting in reduced interchangeability. Note that the actual set of robots that can communicate directly at any time is a function both of this dimension and of the communication range and robot distribution in space. 
+
+Swarm reconflgurability: The rate at which the swarm can spatially re-organize itself; roughly equivalent to the rate at which members can move with respect to one another. For example, bees can presumably reconfigure their spatial layout with respect to one another very quickly while soldiers marching in lock-step or cars on a highway cannot. This dimension is closely related to the communication range of members of the swarm. Changes in topology, however, will alter the nearest-neighbor relationships and thus are not equivalent to simple scaling of the communication range In practice, there may be topological constraints to the allowed reconfigurations (for example, if the members of
+a robotic swarm drive on roads, then only certain topological changes are allowed irrespective of member velocity).
+
+ARR-STATIC Static arrangement. The topology is fixed.
+ARR-COMM Coordinated rearrangement. Re-arrangement with members that communicate.
+ARR-DYN Dynamic arrangement. The relationship of members of the swarm can change arbitrarily. Static swarm arrangement is likely to result in very fragile swarms.
+
+By swarm unit processing ability: Each unit of the swarm has a particular model of computation. For simplicity, we will deal only with the common simple sequential computational models. Note that this is a non-continuous dimension.
+
+PROC-SUM Non-linear summation unitlll]. This very simple
+unit is used in constructing a simulated neural network but
+may be too simple to be a realistic model for a single robot
+although it illustrates the near-extremum of this dimension.
+PROC-FSA Finite state automaton. This is the computational
+model preferred by the subsumption architecture computational
+systems[4].
+PROC-PDA Push-down automaton.
+PROC-TME Turing machine equivalent. The computational
+model assumed by most robotic systems.
+
+References
+[1] R. C. Arkin and J. D. Hobbs. Dimensions of communication and social organization in multi-agent robotics systems. In SAB 92, 1992.
+[2] G. Beni and J. Wang. Swarm intelligence in cellular robotic systems. In Proc. NATO Advanced- Workshop on Robotics and Biological Systems, I1 Ciocco, Tuscany, Italy, 1989.
+[3] P. Boas. Machine models and simulations. Technical Report CT-89-02, Institute for language, logic and information, University of Amsterdam, 1989.
+[4]R. A. Brooks. A robust layered control system for a mobile robot. IEEE J. of Robotics and Automation, 2:14-23, 1986.
+[5]R. A. Brooks. Intelligence without reason. Technical Report AI Memo No. 1293, MIT, 1991.
+[6] G. Dudek, M. Jenkin, E. Milios, and David Wilkes. Robotic exploration as graph construction. IEEE Trans. on Robotics and Automation, 7(6):859-864, 1991. 
+[7] G. Dudek, M. Jenkin, E. Milios, and David Wilkes. On the utility of multi-agent autonomous systems. In IJCAI- 99 Workshop on dynamically interacting robots, 1993. (to appear).
+[8] G. Dudek, M. Jenkin, E. Milios, and David Wilkes. Robust positioning with a multi-agent robotic system. In IJCAI- 93 Workshop on dynamically interacting robots, 1993. (to
+appear).
+[9]F. E. Fich, P. L. Radge, and A. Widgerson. Relations between concurrent-write models of parallel computation. SIAM J. Comput., 17:606-627,1988.
+[10] S. Hackwood and G. Beni. Self-organization of sensors for swarm intelligence. In Proc. Int. Conf. on Robotics and Automation, pages 819-829, 1992.
+[11] J. Hertz, A. Krogh, and R. Palmer. Introduction to the theory of neural computing. Adison Wesley, Redwood City, CA, 1991.
+[12] J. Hopcroft and J. Ullman. Introduction to automata theory, languages and computation. Addison Wesley, Reading, MA, 1979.
+[13] M. Mataric. Minimizing complexity in controlling a mobile robot population. In Proc. IEEE Int. Conj. on Robotics and Automation, pages 830-835, 1992. 
+[14] E. Nitz and R. Arkin. Communication of behavioral state in multi-agent retrieval tasks. In Int. Coni Cons. R. and A., Hawaii, 1993. (to appear).
+[15] T. Ueyama, T. Fukuda, and F. Arai. Configuration of communication structure for distributed intelligent robot system. In Proc. IEEE Int. Conf. on Robotics and Automation,
+pages 807-812, 1992.
+
+***************************************************************************************************
+Cognitive Maps in Swarm Robots for the Mine Detection Application
+Vignesh Kumar   Ferat Sahin
+
+3 Cognitive Maps
+
+Self-organization in neurons exhihits similar characteristics to swarms in many respects. Communication can be defined as an action of an entity in a group of entities that can influence the probability pattern in another entity in a manner conducive to both. Actions that have the ability to influence a group of individuals are called group  communications or collective communication. A fine example of group communication is stigmergy where individual’s actions are produced on the environment. These actions act as a medium of information conveyance as against direct communication found in other sophisticated mechanisms. Many factors such as pheromone deposition, cognitive map constructions are brought into effect when group or collective communication has to be exhibited. Direct actions involve the observance of individual agents or entities producing them, which generally are not huge or complex. Collective communication on the other hand involves the collection and observation of large data and their statistical processing. ’ The observer in numerous interpretations can manipulate the inference fkom this collected data Often the results produced, generally called the reactions to the collective actions, depends mostly on initial conditions and behavioral assumptions. It is difficult to determine which behavioral actions are required to effect a particular reaction and which are sufficient [9, 10,15]. What we would like to show in our experiments is that numerical analyses of the actions are possible and that there are similarities between the underlying dynamics and the emergent properties of the ants and its cognitive map construction and organization.
+
+Cognitive maps are mental representations of physical observations on a terrain [10, 15]. Cognitive maps can he used in navigation by most of the living forms. Cognitive maps form an assorted means of information storage, which can be utilized in navigation and path finding in most organisms. Two important themes occur in this information representation of cognitive maps; (i) a notion of global representation and (ii) local representation [4, 9, 15]. Global representations of data relate to cognitive ideas and information formed which can aid in fullfilling the ultimate of final goal of the system. Local representations of cognitive data are those, which help the system to surmount local problems. Associated with these are two cognitive maps retentive terms called relatively long-term and relatively short-term memories.
+
+Cognitive map based foraging is reported in most ant species. The effective utilization of these maps in devising foraging patterns and strategies enables the ant colony to successfully raid a patch of terrain for objects of interest. Cognitive memory is the ability of the ants to remember points of interest on the terrain, which may be useful for them in foraging activities globally. The utilization of cognitive memory in foraging and navigation effectively enhances the maximization of resources in the foraging process. In this paper we deal with the implementation of a foraging strategy for the ants to bring an increase in the overall efficiency of the mine detection process.
+Ants, to effectively carry out their colony level foraging, use cognitive meandering or moving among cognitive maps in a controlled fashion. The amount of adaptivity that is directly related to the computational and memory management resources that the ants are equipped with. Cognitive meandering in ants is the ability used in foraging wherein local foraging decisions are made based on the history of visits to the terrain. Thus newer regions are constantly explored in the proximity of the nest. Random fluctuations in exploration routes are helpful in overcoming deadlocks and cyclic paths in foraging.
+
+[4] M. Collet, T.S. Collet, S.Bisch and R. Wehnar, “Local and global vectors in desert ant navigation” Letters to Nature, 1998
+
+[9]  V. Kumar, and F. Sahm, “A Swarm intelligence based approach to the mine detection problem” IEEE Conf: System, Man and Cybernetics, Oct 2002. 
+[10] V. Kumar and F. Sahin, “Foraging in Ant Colonies applied to the Mine Detection Problem”, SMC-IEEE International Workshop on Soft Compuiting in Industrial Applications, 2003.
+
+[15] LA. Wagner, and M. Lindenbaum, A.M. Bruckstein, ANTS Agents, Networks and Subgraphs, Future General Computer System journal, Holland, June 2000.
+
+***************************************************************************************************
+Proceedings of the 2003 IEEE/RSJ Int. Conference On intelligent Robots and Systems Las Vegas, Nevada ’ October 2003
+Distributed Task Negotiation in Self-Reconfigurable Robots
+Behnam Salemi, Peter Will, and Wei-Min Shen
+
+Introduction
+A self-reconfigurable robot consists of many autonomous modules that can simultaneously initiate tasks on their own [1-3]. Driven by their local information, the modules may generate tasks that are competing even conflicting with one another. For example, in a snake configuration, the tail module may wish to move forward, while the head module may want to avoid an obstacle. How to select the correct task when there are many competing choices is then a critical problem for controlling the self-recodigurable robots.
+
+Distributed Task Negotiation is a process by which modules in a self-reconfigurable robot can negotiate and select a single coherent task among many different and even conflicting choices. This is a very challenging problem due to several reasons: the relationships among modules are not static but change with configurations, modules have no unique global identifiers or addresses, modules do not know the global configuration in advance, and can only communicate with immediate neighbors. Under these circumstances, the task negotiation problem demands a distributed solution. Modules must negotiate and select tasks through local communication, and they must synchronously terminate the negotiation process when every module knows locally that its current task has been accepted globally.
+
+
+2 Related Work
+The distributed task negotiation problem occurs in many types of distributed systems including, for example, sensor networks [4], swarm robots [SI, or multi-agent systems. In distributed multi-robot systems, previous approaches such as [6] often assume a designated central agent to dictate a task for all the conflicting agents. Another field that faces the same problem is distributed computing and algorithm design [7]. For example, our approach to detecting the termination of negotiation is inspired by the algorithm for termination detection in distributed computing systems [8].                              
+
+This work is different from all existing approaches. Unlike centralized approaches, DISTINCT can scale well with configurations and is robust to individual module failures. Compared to most existing algorithms, our solution can deal with both task negotiation and termination detection among many modules. 
+
+
+
+3 Distributed Task Negotiation
+Although the distributed task negotiation problem is prominent in self-reconfigurable robots, it is also critical for many other reconfigurable systems such as sensor networks or multi-agent organizations. Thus, we defme the problem in the context of a network of nodes that have communication links. For a self-reconfigurable robot, nodes are modules and links are physical connections between modules. For a multi-agent system, nodes are agents and links are communication channels between agents. The difference is that nodes in this paper do not have unique global identifiers or addresses, and they can only communicate with their immediate neighbors through existing links. The links are half duplex, which means that two nodes connected by a link can transmit messages in both directions but not at the same time. We suppose that all nodes in the network can autonomously initiate tasks and many tasks can compete simultaneously in the network.
+
+1 Yim, M., Y. Zbang, D. Duff, Modular Robots, in IEEE 4ectrum. 2002. 
+2 Rus, D., Z. Butler, K. Kotay, M. Vona, Self-Reconfiguriing Robors, in ACM Communication. 2002.
+3 Shen, W.-M., B. Salemi, P. Will, Hormone-Inspired Adaptive Communicafion and Distributed Control for CONRO Self-Reconfrgrable Robots. IEEE Transactions on Robotics and Automation, 2002. 18(5).
+4 Estrin, D., R. Govindan, J. S. Heidemann, S. Kumar, Next Cenhny Challenges: Scalable Coordination in Sensor Network, in Mobile Computing and Networking. 1999. p. 263.210.
+5 Bonabeau, E., M. Dorigo, G. Theradaz, Swarm Intelligence: From Natural to Arliifcinl Systems. 1999: Oxford University Press.
+6 Mataric, M., Inregrotion of Representation Info Goal-Driven Behmior-Bared Robofs. IEEE Transactions on Robotics and Automation, 1992. S(3): p. 304-312.
+7 Lynch, N., Distributed and Parallel Algorithms. 1990: MIT Press. 
+8 Dijkstra, E.W., C.S. Scholten, Termination Detection for Diffusing Computations. Information Processing Letters, 1980.11.
+
+***************************************************************************************************
+Proceedings of the 2003 IEEW/RSJ Inty. Conference on Intelligent Robots and Systems
+Las Vegas, Nevada ' October 2003
+
+SWARM-BOT: From Concept to Implementation
+
+
+Absrtract-This paper presents a new robotic concept, called SWARM-BOT, based on a swarm of autonomous mobile robots with self-assembling capabilities. SWARM-BOT takes advantage from collective and distributed approaches to ensure robustness to failures and to hard environment conditions in tasks such as navigation, search and transportation in rough terrain. One SWARM-BOT b composed  of a number of simpler robots, called s-bots, physically interconnected. The SWARM-BOT is provided with selfassembling and self-reconfiguring capabilities whereby s-bots can connect and disconnect forming large flexible structures. This paper introduces the SWARM-BOT concept and describes its implementation from a mecatronic perspective.
+
+I. INTRODUCTION
+Robust, all terrain, flexible operation is interesting in applications like semi-automatic space exploration [17], rescue [6] or underwater exploration [3]. Despite international research effort in rover design [9], [17], [15], [4], and self-reconfigurable robots (overview in [11], [18]), the combination of flexibility, robustness and all-terrain navigation, even if semi-autonomous, is still difficult to achieve. Biological systems, on the other hand, combine very well these features and show interesting examples of self-organizing structures able to deal with very different complex tasks. Social insects, in particular, show ability to self-organize in colonies which can solve problems of navigation and transportation unfeasible for a single individual [12]. This is the case of ants building bridges between branches of a tree, building rafts to survive inundations or bridges over rivers (see overview in [2]). The goal of the SWARM-BOTS project1 is to take inspiration from ant self-assembling mechanisms and structures and translate some features into a robotic system. The project includes design, hardware implementation, test and use of this type of self-assembling, self-organizing, metamorphic robotic systems. An important part of the project consists in the physical construction of at least one SWARM-BOT, that is, a self-assembling and selforganizing robot colony composed of a number (30-35) of smaller devices, called s-bois, physically interconnected.
+
+
+[2] C. Anderson, G. Theraulau, and J.-L. Deneubourg. Self-assemblages in insect societies. Insectes Sociam, 49:99-110,2002.
+[3] J. Ayers., P. Zavracky, N. McGruer, D. Massa, V. Vorns, R. Mukherjee, and S. Cume. A modular behavioral-based architecture for biomimetic autonomous undenvater robots. In Proceedings of the Autonomous Vehicles in Mine Countemasures Symposium, 1998.
+[4] D. Bares, J. an Wettergreen. Dante II: Technical description, results and lessons learned. Infemational Journul of Robotics Research, 18(7):621649, 1999.
+[11] A. Kamimura, S. Murata, E. Yosbida, H. Kurokawa, K. Tomita, and S. Kokaji. Self-reconfigurable mcdular robot ~ experiments on reconfiguration and locomotion. In T. J. Tam et al., editor, Pmc. of the 2001 IEEWRSJ Infernational Conference on Intelligent Robots and Systems IROS2001, pages 606-612, Piscataway, NJ, 2001. IEEE. Conference, Maui,Hawaii, USA, October 29 - November 3, 2001. 
+[12] A. Lioni, C. Sauwens, G. Theraulaz, and J.L. Deneubourg. Chain formation in oecophylla longinoda. Joumal of Insect Behaviour, 15:679-696,2001.
+[15] H. W. Stone. Mars pathfinder microrover: A lowcost, low-power spacecraft. In Proceedings of the I996 AIM Forum on Advanced Developments in Space Robotics, 1996.
+[17] G. Wsentin, M. Van Winnendael, and P. htz. Advanced mecatronics in ESA space robotics developments. In T. J. Tam et al., editor, Proc. of the 2001 IEEW/RSJ International Conference on Intelligent Robots and Systems IROS2001, pages 1261-1266, Piscataway, NJ, 2001. IEEE. Conference, Maui, Hawaii. USA. October 29 - November 3, 2001.
+[18] M. Y i , Y. Zhang, and D. Duff. Modular robots. IEEE Spectrum, pages 30-34, February 2002.
+***************************************************************************************************
+
+WM17-1 
+Swarming Robots - Collective Behavior of Interacting Robots 
+
+Ken Sugawar and Toshinori Watanabe
+
+
+Abstract: Many livings form groups that we consider as collective systems. Their collective behaviors are good model for the development of useful distributed systems. In this paper, we discussed the group of motile elements that is described by simple model. The dynamics of each element is described by simple Idnanatics, but the group shows various types of motions. In addition, mre found out the formation of the group changes by modifying rc which is an optimum distance between eaeh element. This modification shows us to observe close-packed structure, face-centered lattice, simple lattice and double me.
+
+1. Introduction
+There are many livings that make groups in t hn~at ure. Various kinds of birds and fishes form a cluster and live together. Some kinds of birds and fishes such as crane and tuna make an ordered cluster, some kinds of them such as swallow and sparrow make a relatively disordered cluster. Some livings such as masquito make a group but their cluster is completely disordered. In this paper, we propose simple physical dynamics of mobile elements that shows various types of dynamics and patterns.
+
+
+

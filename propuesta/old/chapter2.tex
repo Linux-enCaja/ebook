@@ -1,0 +1,1748 @@
+\chapter{Paradigmas Computacionales Para Coordinación de Sistemas Masivamente Paralelos} \label{paradigmas}
+
+\section{Computaci\'on Amorfa \ (AmCom)}
+
+En 1996 un grupo de investigaci\'on del MIT liderado por Abelson, describen
+los principios de la computaci\'on amorfa {\cite{HA99}}:
+
+\begin{quote}
+  \textit{La computaci\'on amorfa es el desarrollo de principios
+  organizacionales y lenguajes de programaci\'on, para obtener un
+  funcionamiento coherente de la cooperaci\'on de m\'ultiples partes poco
+  confiables, que est\'an interconectadas de forma desconocida, irregular, y
+  variante en el tiempo}
+\end{quote}
+
+
+
+AmCom est\'a inspirada en los desarrollos de la Biolog\'{\i}a y de la
+microfabricaci\'on (nuevos materiales, nanotecnolog\'{\i}a, MEMs, etc) la cual
+hace posible la fabricaci\'on de unidades de informaci\'on id\'enticas a una
+escala gigantesca. Estas unidades pueden formar parte de estructuras de
+superficies inteligentes o pueden ser parte de redes de sensores altamente
+distribuidos, podr\'{\i}an ser esparcidos en grandes extensiones ya sea de
+mar, tierra o nieve para proporcionar informaci\'on \'util para la
+prevenci\'on de tsunamis, terremotos o avalanchas, respectivamente (ver figura
+3.2).
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.6]{./images/ac} \end{center}
+  \caption{Computaci\'on amorfa.}
+\end{figure}
+
+Los computadores digitales siempre han sido diseñados a partir de componentes
+confiables y las t\'ecnicas para organizar su funcionamiento dependen de esta
+confiabilidad. Contraria a esta forma de diseño, el objetivo de la
+computaci\'on amorfa es dar respuesta a las siguientes preguntas:
+\begin{enumerate}
+  \item ?`Como se puede obtener un funcionamiento coherente a partir de la
+  cooperaci\'on de grandes n\'umeros de part\'{\i}culas no confiables que
+  est\'an interconectadas de forma desconocida, irregular y variable en el
+  tiempo?
+  
+  \item ?`Cu\'ales son los m\'etodos para instruir a millones de entidades a
+  cooperar para alcanzar objetivos particulares?
+  
+\end{enumerate}
+\ El objetivo principal del proyecto \textit{Amorphous Computing} (AmCom) no
+es el estudio y utilizaci\'on de los principios de auto-organizaci\'on, sino
+construir e ingeniar sistemas que puedan hacerlo. Comparado con la
+programaci\'on tradicional de sistemas masivamente paralelos, este proyecto se
+plantea un gran reto: los mecanismos deben ser independientes de la
+distribuci\'on, interconexi\'on y confiabilidad de sus elementos. El modelo
+b\'asico de AmCom {\cite{CT04}} est\'a compuesto por numerosos elementos
+id\'enticos (part\'{\i}culas) que son distribuidos aleatoriamente sobre una
+superficie (o un volumen), como se muestra en la figura 3.2. Cada
+part\'{\i}cula tiene recursos limitados y el poder computacional disponible
+est\'a restringido por su costo, el cual debe ser \ muy bajo.
+
+Cada part\'{\i}cula puede comunicarse directamente con un n\'umero limitado de
+vecinos. En el modelo original, todas las part\'{\i}culas comparten el mismo
+canal de comunicaci\'on (comunicaci\'on inal\'ambrica) de tal forma que se
+pueden presentar colisiones cuando dos procesadores dentro del radio de
+comunicaci\'on env\'{\i}an mensajes de forma simult\'anea. Los principales
+paradigmas de la computaci\'on amorfa son a simple vista, similares a los de
+los aut\'omatas celulares, sin embargo, en AmCom cada part\'{\i}cula puede
+comunicarse con un n\'umero diferente de vecinos y los vecindarios pueden
+traslaparse, los canales de comunicaci\'on y las part\'{\i}culas no son
+confiables (en los aut\'omatas celulares se asume que las c\'elulas no
+fallan).
+
+La tolerancia a fallos en AmCom se obtiene v\'{\i}a redundancia hardware y
+v\'{\i}a redundancia en las representaciones, en lugar de v\'{\i}a
+perfeccionamiento del hardware. El concepto b\'asico de la computaci\'on
+amorfa permite que las part\'{\i}culas sean m\'oviles, sin embargo, el trabajo
+realizado hasta el momento en esta \'area asume posiciones fijas, este reto
+fue asumido por el proyecto BLOB {\cite{FGYL+04}}, el cual proporciona
+movilidad a las part\'{\i}culas de un arreglo amorfo. A continuaci\'on se
+resumen las propiedades de los procesadores miembros de un computador amorfo:
+
+
+\begin{itemize}
+  \item Son id\'enticos y se producen masivamente.
+  
+  \item No poseen informaci\'on acerca de su localizaci\'on, orientaci\'on, ni
+  sobre la identidad de sus vecinos.
+  
+  \item Operan as\'{\i}ncronamente, sin embargo, tienen velocidades de reloj
+  similares.
+  
+  \item Se encuentran distribuidos de forma densa y aleatoria.
+  
+  \item Su comunicaci\'on es local.
+  
+  \item Pueden existir sobre superficies de dos o tres dimensiones.
+  
+  \item Poseen un radio de transmisi\'on y recepci\'on fijos y comparten el
+  mismo canal.
+\end{itemize}
+
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.6]{./images/amorphous_architecture} \end{center}
+  \caption{\label{ca_arch}Estructura de un Computador Amorfo.}
+\end{figure}
+
+  Un computador amorfo (ver figura \ref{ca_arch}) puede ser definido como:
+%$\[ \tmop{AMC} = (V, E) \]$
+Lo que representa un grafo dirigido y donde:
+
+
+\begin{enumerate}
+  \item $\left. \left. V = \right\{ (x_1, y_1, z_1, c_1), \ldots . (x_N, y_N,
+  z_N, c_N) \right\}$ es un grupo de part\'{\i}culas, i.e. los nodos del
+  grafo, $(x_i, y_i, z_i)$ es la posici\'on f\'{\i}sica de la part\'{\i}cula
+  \textit{i} en alg\'un sistema coordenado. $c_{\min} < c_i < c_{\max}$ es el
+  radio de comunicaci\'on de la part\'{\i}cula \textit{i}, $c_{\min}$ y
+  $c_{\max}$ garantizan que $c_i$ tenga el mismo valor aproximadamente.
+  
+  \item $N = |V|$ es el n\'umero de part\'{\i}culas.
+  
+  \item $E =\{(i, j) / j \in V \wedge r = \sqrt{x^2 + y^2 + z^2} < c_i \}$ es
+  el conjunto de fronteras, \textit{r} es la distancia f\'{\i}sica entre dos
+  nodos \textit{i}, \textit{j}.
+  
+  \item $n (i) =\{j / (i, j) \in E\}$ es el vecindario local del procesador
+  \textit{i}.
+  
+  \item $d (i) = | n (i) |$ es el grado del vecindario del procesador
+  \textit{i}.
+  
+  \item $d_{avg} = \frac{1}{N} \underset{i =
+  1}{\overset{}{\overset{N}{\sum}}} d (i)_{}$ es el tamaño promedio del
+  vecindario, $d_{avg} \ll N$..
+\end{enumerate}
+
+
+Cada procesador ocupa un espacio f\'{\i}sico y no pueden superponerse. Por lo
+tanto se puede colocar un n\'umero determinado de procesadores en una
+superficie dada y dentro de una regi\'on de comunicaci\'on: $d (i) <
+\rho_{\max} = \pi r^2 / \alpha$ ($\alpha$ = tamaño del procesador). Por lo
+tanto, el n\'umero de vecinos dentro de \textit{h} \textit{hops} est\'a
+limitado a un m\'aximo de $h^2 \rho_{\max}$
+
+\subsection{Jerarqu\'{\i}a en Computaci\'on Amorfa {\cite{DCRN97}}}
+
+La organizaci\'on jer\'arquica, estructurada y agrupada es com\'un en la
+naturaleza y en la Biolog\'{\i}a. Por un lado, la combinaci\'on de elementos
+individuales dentro de un grupo es \'util para optimizar recursos adem\'as de
+aumentar la confiabilidad del sistema. Por otro lado, es un medio de reducir
+la complejidad del diseño ya que no es necesario crear un gran n\'umero de
+funciones, y los elementos de sincronizaci\'on y programaci\'on de estas, en
+lugar de esto, cada elemento del grupo realiza un n\'umero limitado de
+funciones sencillas que interact\'uan de forma local con un vecindario finito.
+
+En esta secci\'on se describir\'a la forma en la que la computaci\'on amorfa
+genera grupos y crea estructuras jer\'arquicas de diferentes grados de
+granularidad. Este resultado es muy importante, ya que los grupos emergen de
+forma aut\'onoma, lo cual se ve como un mecanismo de auto-organizaci\'on,
+caracter\'{\i}stica necesaria para aplicaciones futuras de los sistemas
+digitales. Una jerarqu\'{\i}a en computaci\'on amorfa es una secuencia
+ordenada de niveles, un nivel es una colecci\'on de grupos y los medios
+asociados de intercomunicaci\'on.
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.4]{./images/amorphous_hierarchy} \end{center}
+  \caption{Jerarqu\'{\i}a en AmCom. Basada en {\cite{DCRN97}}}
+\end{figure}
+
+
+\subsubsection{Caracter\'{\i}sticas de la jerarqu\'{\i}a en AmCom}
+
+\begin{itemize}
+  \item Una frontera de nivel cero ($u_0, v_0$) existe, s\'{\i} y solo
+  s\'{\i}, existen procesadores $u_0 y v_0$ dentro de la regi\'on de
+  comunicaci\'on de otros procesadores.
+  
+  \item El grupo $u_n$ es un conjunto de grupos conectados de nivel
+  \textit{n - 1} con un di\'ametro limitado por $D_n$ fronteras de
+  nivel n - 1, internas a $u_n$.
+  
+  \item Una frontera de nivel \textit{n} ($u_n, v_n$) existe, s\'{\i} y
+  solo s\'{\i}, existe una frontera $(x_{n - 1}, y_{n - 1})$ tal que $x_{n - 1} \in u_n y y_n \in v_n .$
+  La frontera $u_n, v_n$ debe ser construida utilizando nodos de nivel \textit{n -1} miembros
+  de $u_n o v_n$.
+  
+  \item El n\'umero de \textit{hops} requeridos para cruzar una frontera a
+  cualquier nivel tiene un l\'{\i}mite superior. Esto es una consecuencia del
+  l\'{\i}mite del di\'ametro de los grupos y de la restriccion impuesta de
+  utilizar solo nodos miembros de los grupos. En el nivel cero el m\'aximo
+  n\'umero de \textit{hops} en una frontera es 1.
+  
+  
+  
+   $B_n =$ l\'{\i}mite a nivel n $= \prod (2 D_i + 1)$ donde: $0 < i <  n$
+  
+  \item La distancia f\'{\i}sica asociada con cualquier frontera de nivel
+  \textit{n} est\'a limitada por una constante $P_n$ (distancia
+  m\'axima entre procesadores de grupos diferentes). El rango de
+  comunicaci\'on de un procesador es fijo, entonces $P_n = t{P_n}r$.
+  
+  \item El \'area ocupada por cualquier grupo de nivel \textit{n} est\'a
+  limitada por una constante $A_n$, debido a las limitaciones del
+  di\'ametro del grupo y la distancia entre fronteras, el grupo no no puede
+  cubrir un \'area mayor que un c\'{\i}rculo con radio $D_nP_n$.
+\end{itemize}
+
+
+\subsubsection{Beneficios de la Jerarqu\'{\i}a en AmCom.}
+
+\begin{itemize}
+  \item Simplificaci\'on de la programaci\'on: La met\'afora de grupo
+  proporciona una abstracci\'on de la programaci\'on, al descomponer tareas
+  sin preocuparse por los detalles de coordinaci\'on. Para soportar esta
+  abstracci\'on los grupos deben tener una forma de coordinar su
+  funcionamiento y pasar mensajes entre ellos.
+  
+  \item Divisi\'on de tareas entre niveles: La abstracci\'on permite al
+  programador expresar facilmente diferentes algoritmos para diferentes
+  niveles de abstracci\'on.
+  
+  \item Facilita el an\'alisis de algor\'{\i}tmos: Los l\'{\i}mites de los
+  di\'ametros de los grupos proporcionan estimativos del tiempo necesario para
+  coordinar la actividad de un grupo. La m\'axima distancia entre fronteras a
+  un nivel espec\'{\i}fico, proporciona un estimativo de los costos de
+  comunicaci\'on entre grupos.
+  
+  \item Aumenta la eficiencia y la robustez: La jerarqu\'{\i}a se utiliza
+  com\'unmente para aumentar la eficiencia de una determinada tarea. La
+  uni\'on de procesadores que act\'uan como una unidad, puede aumentar la
+  confiabilidad de la unidad por encima de la de un solo procesador.
+\end{itemize}
+
+\subsection{Construcci\'on de la jerarqu\'{\i}a}
+
+
+
+En secci\'on se presenta dos algoritmos para la construcci\'on del primer
+nivel de jerarqu\'{\i}a de un computador amorfo: \textit{clubes traslapados} y
+\textit{clubes herm\'eticos}, y un tercer algoritmo que construye niveles de
+jerarqu\'{\i}a superiores: \textit{tree regions}. Estos algoritmos cumplen con
+las siguientes condiciones:
+\begin{itemize}
+  \item Son eficientes y escalables
+  
+  \item La construcci\'on de la jerarqu\'{\i}a es espont\'anea.
+  
+  \item La comunicaci\'on es local.
+  
+  \item Son tolerantes a p\'erdidas de mensajes.
+  
+  \item Minimizan la interferencia de comunicaci\'on y producen grupos
+  robustos que pueden tolerar fallas en sus miembros.
+\end{itemize}
+El siguiente algoritmo resume los pasos que se deben llevar a cabo para la
+formaci\'on del primer nivel de jerarqu\'{\i}a. Los algoritmos presentados a
+continuaci\'on (un resumen de otros algoritmos que pueden ser utilizados en AC
+se encuentra en {\cite{NLBP92}}) siguen la siguiente estructura:
+
+\begin{lstlisting}
+DO
+  : Los procesadores compiten por el liderazgo
+  : Los nuevos líderes reclutan a sus vecinos. Los procesadores reclutados
+  por un líder pasan a ser miembros del grupo del líder y terminan su competencia por el
+  liderazgo.
+
+UNTIL Terminación: Todos los procesadores son líderes o miembros de un grupo. 
+                   Los procesadores deben ser capaces de detectar la terminación.
+
+DO (opcional)
+  Redistribución: Los procesadores son transferidos desde grupos grandes a grupos   
+  pequeños. Esto con el fín de reducir la disparidad entre grupos del mismo nivel.
+\end{lstlisting}
+
+
+\subsubsection{Primer nivel de Jerarqu\'{\i}a}
+
+El objetivo del primer nivel de jerarqu\'{\i}a es reducir los problemas de
+interferencia entre los procesadores vecinos. Los algoritmos presentados a
+continuaci\'on no requieren identificadores globales \'unicos, cada procesador
+elige un ID que es único dentro de un radio de 2 \textit{hops}. Esto se
+puede lograr utilizando un generador de n\'umeros aleatorios y un esquema de
+correcci\'on que depende de comunicaciones locales.
+
+\textbf{Clubes traslapados}
+
+Nagpal y Coore {\cite{RN98b}} describen un algoritmo llamado \textit{clubs}
+que permite organizar un computador amorfo en grupos, haciendo uso de la
+comunicaci\'on local. El tiempo tomado por el algoritmo es proporcional a la
+densidad local de procesadores. Este algoritmo no necesita acceder a la
+posici\'on global o identificaci\'on de las part\'{\i}culas ni a la
+topolog\'{\i}a del computador amorfo. Un \textit{club} es un grupo de
+procesadores que cumplen las siguientes propiedades:
+
+
+\begin{enumerate}
+  \item Todos los procesadores deben ser miembros del mismo del mismo grupo.
+  
+  \item Todos los grupos deben tener el mismo di\'ametro m\'aximo.
+  
+  \item El grupo debe permitir ruteo local, es decir, todos los procesadores
+  dentro del grupo deben ser capaces de comunicarse con los dem\'as utilizando
+  solo procesadores dentro del mismo grupo.
+\end{enumerate}
+
+\begin{figure}[h]
+\begin{lstlisting} 
+integer R
+boolean leader, follower = false
+ti = R
+ri = random[0,R[
+while not (follower) and not(leader) do
+  ti = ti - 1
+  if ri > 0 then
+   ri = ri - 1
+   if not_empty(msg_queue) then
+     if first(msg_queue = "recruit") then
+       follower = true
+   else
+     leader = true
+     broadcast("recruit")
+while ti >= 0 do
+  listen for others leaders
+  ti = ti - 1
+\end{lstlisting}
+  \caption{\label{traslapados}Ejecuci\'on del algoritmo para clubes
+  traslapados. Fuente:{\cite{ED00}}}
+\end{figure}
+
+A continuaci\'on se muestra un algoritmo club que permite la formaci\'on de
+grupos con un di\'ametro m\'aximo de 2 \textit{hops}. Cada club tiene un
+l\'{\i}der que fue elegido de la siguiente manera: cada elemento del
+procesamiento tiene un RNG generador de n\'umeros aleatorios que genera un
+n\'umero en el intervalo [0,R[. El procesador disminuye este n\'umero hasta
+que sea interrumpido por un mensaje de sus vecinos o hasta que el n\'umero sea
+cero. En el \'ultimo caso el procesador se auto proclama l\'{\i}der y comienza
+a reclutar procesadores envi\'andoles el mensaje \textit{recruit}. La
+dimensi\'on del grupo es determinada por el radio de comunicaci\'on. Si un
+procesador es declarado seguidor (recibi\'o el mensaje antes de alcanzar el
+cero) detiene su conteo y espera el mensaje \textit{recruit}. Un procesador
+puede ser asignado a varios grupos. Si un procesador detecta una colisi\'on el
+asume que dos de sus vecinos tratan de reclutarlo al mismo tiempo, en este
+caso el se declara un seguidor y despu\'es toma la decisi\'on sobre quien
+ser\'a su l\'{\i}der. Para eliminar conflictos de l\'{\i}deres, el algoritmo
+debe ejecutarse varias veces. En la figura \ref{traslapados} se muestra un
+resultado de la ejecuci\'on de este algoritmo.
+
+
+
+Este algoritmo exhibe las siguientes caracter\'{\i}sticas:
+
+
+\begin{itemize}
+  \item Los l\'{\i}deres act\'uan como coordinadores de las actividades de sus
+  grupos
+  
+  \item Cada grupo tiene un solo l\'{\i}der, esto garantiza una separaci\'on
+  m\'{\i}nima entre l\'{\i}deres de un radio de transmisi\'on y reduce el
+  traslape entre clubes vecinos
+  
+  \item El l\'{\i}mite de comunicaci\'on en el grupo es de m\'aximo 2
+  \textit{hops}.
+  
+  \item El l\'{\i}der del grupo puede comunicarse con los miembros en 1
+  \textit{hop}.
+  
+  \item Los mensajes entre l\'{\i}deres requieren m\'aximo 3 \textit{hops}.
+  
+  \item Si la frontera se elige de forma eficiente, utilizando a los
+  procesadores miembros de 2 grupos, la comunicaci\'on entre l\'{\i}deres
+  puede realizarse en 2 \textit{hops}.
+  
+  \item El n\'umero de vecinos de cada club est\'a limitado a 37.
+\end{itemize}
+
+
+Desventajas del algoritmo de clubes traslapados:
+
+
+\begin{itemize}
+  \item Los l\'{\i}deres son el punto de falla, si un l\'{\i}der falla, el
+  grupo pierde funcionalidad ya que queda incomunicado.
+  
+  \item El algoritmo es no determinista, ya que utiliza n\'umeros aleatorios
+  para la elecci\'on de l\'{\i}deres.
+\end{itemize}
+
+
+\textbf{Clubes herm\'eticos}
+
+Fase 1 \textbf{Construcci\'on de los clubs}:
+
+Inicialmente todos los procesadores se encuentran en estado activo. Los
+procesadores utilizan su ID \'unico para determinar un l\'{\i}der, los
+procesadores con el m\'{\i}nimo ID local se declaran l\'{\i}deres y reclutan
+procesadores. \ El l\'{\i}der recluta a los procesadores con los que pueda
+comunicarse directamente, (lo cual garantiza que no se reclutan procesadores
+defectuosos) cuando se recluta a un procesador este pasa a estado inactivo y
+notifica esta situaci\'on. Los procesadores no l\'{\i}deres escuchan mensajes
+y esperan a ser reclutados o hasta que ellos tengan el menor ID entre sus
+vecinos activos. En el \'ultimo caso ellos comienzan un nuevo club.
+
+
+\begin{figure}[h]
+\begin{lstlisting}
+procedure check_ids
+  if(my_id < lowest id in active)
+    leader = true
+    recruit()
+  else
+    listen_for_msgs()
+    
+procedure recruit()
+  while(potential not-empty)
+    low_id = lowest id in potential
+    send("recruit") to low_id
+    wait for msg from low_id
+    recruit_nbrs = pop(msg_queue)
+    if(recruit_nbrs != false)
+      potential = potential (intersec) recruit_nbrs
+  broadcast("inactive", my_id)
+  done()
+
+procedure listen_for_msgs()
+  wait for msg
+  if(msg = "recruit")
+    broadcast("inactive")
+    send(neigbor_list) to msg_source_id
+    done()
+  else if(msg = "inactive")
+    active = active - msg_source_id
+    check_ids()
+
+procedure done()
+  while(active not-empty)
+    wait for msg
+    if(msg = "recruit")
+      send(false) to msg_source_id
+    else if(msg = "inactive")
+    active = active - msg_source_id
+\end{lstlisting}
+  \caption{\label{hermetico}Ejecuci\'on del algoritmo clubes herm\'eticos.
+  Fuente : {\cite{ED00}}}
+\end{figure}
+
+
+Fase 2 \textbf{Redistribuci\'on de Procesos}:
+
+El objetivo de esta fase es aumentar la robustez mediante la distribuci\'on de
+procesadores, aumentando el n\'umero de procesadores en clubes pequeños. Al
+finalizar esta fase se obtiene una distribuci\'on \'optima; lo cual implica
+que la diferencia de tamaños entre cualquier par de clubes vecinos no es mayor
+a uno si existen procesadores que puedan ser transferidos. La figura
+\ref{hermetico} muestra el resultado de la ejecuci\'on de este algoritmo.
+
+
+
+\textbf{Ventajas:}
+\begin{itemize}
+  \item A diferencia del algoritmo de clubes traslapados, el algoritmo de
+  clubes herm\'eticos es determinista.
+  
+  \item Escalable.
+  
+  \item El algoritmo depende \'unicamente del valor \'unico local ID, elegido
+  de forma aleatoria.
+  
+  \item Los procesadores conocen el estado de sus vecinos.
+\end{itemize}
+
+
+\textit{Propiedades:}
+\begin{itemize}
+  \item Los procesadores dentro de un grupo pueden actuar individualmente o en
+  consenso, esto permite aplicar las t\'ecnicas tradicionales de tolerancia a
+  fallos al interior del grupo.
+  
+  \item En el caso de fallos, los clubes pequeños pueden intentar reclutar
+  miembros, de forma similar a la fase de redistribuci\'on para aumentar su
+  robustez.
+  
+  \item El l\'{\i}mite de frontera entre dos miembros de grupos diferentes es
+  a lo sumo 3 \textit{hops}.
+\end{itemize}
+
+
+\subsubsection{Niveles superiores de Jerarqu\'{\i}a}
+
+Una vez creados los grupos de niveles inferiores, se procede a la creaci\'on
+de los niveles de jerarqu\'{\i}a superiores. En esta secci\'on se presentar\'a
+el algoritmo \textit{tree regions}, inspirado en el crecimiento de los
+\'arboles. Este algoritmo permite crear diferentes niveles de granularidad
+para los algoritmos de clubes mencionados anteriormente.
+
+
+
+En el algoritmo \textit{tree regions}, los l\'{\i}deres son elegidos de forma
+similar a los clubes traslapados. La diferencia se encuentra en la etapa de
+reclutamiento. El algoritmo presenta un par\'ametro \textit{h} que determina
+el l\'{\i}mite del di\'ametro de los grupos formados. Cuando se construye el
+nivel \textit{n} el l\'{\i}der reci\'en elegido no solo recluta grupos
+\textit{n-1} inmediatamente vecinos, sino a grupos que se encuentren a una
+distancia \textit{h} (La distancia es medida en \textit{hops} de grupos
+\textit{n - 1}).
+
+
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.4]{./images/tree_algorithm} \end{center}
+  \caption{\label{tree_regions}Resultado de la ejecuci\'on del algoritmo para
+  una jerarqu\'{\i}a basada en \'arbol. Fuente: \ {\cite{ED00}}.}
+\end{figure}
+
+Una vez un grupo se proclama l\'{\i}der (ra\'{\i}z) planta un \'arbol de
+altura \textit{h}, reclutando a sus vecinos como hijos. Si un grupo recibe el
+mensaje de reclutamiento antes de alcanzar el cero (como se dijo la elecci\'on
+de l\'{\i}deres sigue el mecanismo de clubes traslapados), se convierte en
+\textit{hijo} del transmisor del mensaje (grupo l\'{\i}der,
+\textit{ra\'{\i}z}). Los grupos \textit{hijos} reclutan a grupos vecinos como
+hijos, solo si se encuentran a una distancia \textit{h} del grupo
+\textit{ra\'{\i}z}. El algoritmo finaliza cuando todos los grupos han sido
+reclutados o han plantado un \'arbol. La figura \ref{tree_regions} muestra un
+resultado de la ejecuci\'on de este algoritmo donde \textit{h} = 2.
+
+\subsection{Establecimiento de un Sistema de Coordenadas}
+
+En muchas aplicaciones (ambientes inteligentes, muros inteligentes, sensores
+distribuidos) es necesario que los componentes de un computador amorfo
+conozcan su posici\'on f\'{\i}sica relativa a otros elementos, con el fin de
+interpretar la informaci\'on de los sensores. Coore {\cite{DC97}} propone un
+algoritmo para determinar las coordenadas relativas de las part\'{\i}culas en
+un computador amorfo, basado en la resoluci\'on de la ecuaci\'on de laplace
+dentro de un c\'{\i}rculo. Por otro lado, la soluci\'on presentada en
+{\cite{RN99}} est\'a inspirada en los sistemas biol\'ogicos, los cuales
+utilizan gradientes qu\'{\i}micos para determinar la posici\'on de las
+c\'elulas. Un qu\'{\i}mico es liberado por la c\'elula de forma tal que la
+concentraci\'on del qu\'{\i}mico disminuye al aumentar la distancia a la
+c\'elula.
+
+
+
+El algoritmo se basa en el hecho de que la posici\'on de un punto en un plano
+de dos dimensiones puede ser descrita a partir de su distancia a tres puntos
+de referencia no colineales. El algoritmo se divide en tres partes:
+\begin{enumerate}
+  \item Se eligen 3 procesadores de referencia, no colineales, el proceso de
+  elecci\'on puede ser: por estimulaci\'on externa, por el algoritmo de
+  selecci\'on de l\'{\i}der, o por un algoritmo similar a la construcci\'on de
+  un tri\'angulo utilizando un comp\'as, en este \'ultimo, los procesadores
+  utilizan su generador de n\'umeros aleatorios para elegir un l\'{\i}der, el
+  cual utiliza un gradiente{\footnote{Algoritmo gradiente: Un procesador
+  inicia un gradiente enviando a sus vecinos un mensaje con un conteo en uno.
+  Cada receptor del mensaje env\'{\i}a a sus vecinos un mensaje con el valor
+  recibido aumentado en 1. Los procesadores almacenan el valor m\'{\i}nimo
+  recibido e ignoran mensajes con valores mayores, esto evita que la
+  $''$onda$''$ se devuelva. Finalmente el valor almacenado por los
+  procesadores es su distancia al procesador que inici\'o el gradiente en
+  \textit{hops} de comunicaci\'on.}} para encontrar a los procesadores que
+  est\'an a una distancia dada, selecciona uno de esos procesadores como
+  segundo punto de referencia. Finalmente las dos procesadores \textit{puntos
+  de referencia} utilizan gradientes para determinar el tercer punto de
+  referencia.
+  
+  \item Cada procesador de referencia produce un gradiente que permite a los
+  dem\'as procesadores determinar su distancia a ellos.
+  
+  \item Se obtienen las coordenadas cartesianas por triangulaci\'on.
+\end{enumerate}
+
+
+
+\subsection{Implementaci\'on Hardware}
+
+En el proyecto de computaci\'on amorfa se han desarrollado una serie de
+herramientas software que permiten la simulaci\'on de algoritmos; la
+herramienta con la que se han realizado la mayor\'{\i}a de simulaciones es
+HLSIM {\cite{HLSIM}}. Sin embargo, las implementaciones hardware en AC no son
+muy numerosas, la primera implementaci\'on hardware es el $''$HC11
+Gunk$''${\footnote{http://swiss.ai.mit.edu/projects/amorphous/HC11}},
+realizada en 1998, como su nombre lo indica las part\'{\i}culas est\'an \
+basadas en el microprocesador HC11 de Motorola, dichas part\'{\i}culas est\'an
+comunicadas por una transmisi\'on cableada, y est\'an equipadas con cuatro
+leds y sensores \'opticos. El cap\'{\i}tulo 3 de {\cite{ED00}} realiza una
+presentaci\'on detallada de medios para la computaci\'on amorfa y simuladores.
+
+
+
+Posteriormente en el año 2002, W. Butera {\cite{WB02}} realiz\'o un estudio,
+en el cual se daban los lineamientos generales para construir un computador
+distribuido, el cual exhib\'{\i}a las caracter\'{\i}sticas de un computador
+amorfo. Butera no realiz\'o ning\'un tipo de implementaci\'on f\'{\i}sica,
+pero su trabajo proporcion\'o las bases para implementaciones hardware
+posteriores {\cite{MB05}}, {\cite{AW04}}, {\cite{JL02}}, {\cite{JS02}}. A
+continuaci\'on se realizar\'a un resumen de las caracter\'{\i}sticas
+principales de estas implementaciones.
+
+
+
+\subsubsection{Pushpin Computer {\cite{WB02}}}
+
+Objetivo: Se desea programar un n\'umero desconocido de procesadores
+distribuidos de forma desconocida con interacciones locales, lentas y
+as\'{\i}ncronas, que presentan los siguientes problemas y
+caracter\'{\i}sticas:
+\begin{itemize}
+  \item As\'{\i}ncronos: No existe sincronismo a nivel de reloj, no se
+  garantiza que dos part\'{\i}culas vecinas tengan la misma frecuencia de
+  reloj. Por lo tanto la ejecuci\'on en una part\'{\i}cula podr\'{\i}a no
+  sincronizarse nunca con los eventos generados en otra.
+  
+  \item Tolerancia a Fallos: Los individuos son propensos a fallar
+  completamente.
+  
+  \item Red local: Las part\'{\i}culas solo pueden comunicarse con la vecindad
+  espacial inmediata, el conocimiento de la part\'{\i}cula termina en los
+  l\'{\i}mites de su vecindario. Dentro del vecindario las part\'{\i}culas no
+  poseen conocimiento de su orientaci\'on relativa, o de la distancia a sus
+  vecinos.
+  
+  \item Topolog\'{\i}a adaptativa: La topolog\'{\i}a no se conoce cuando se
+  diseña una aplicaci\'on, (sin embargo, es posible obtener un sistema de
+  coordenadas aproximado en tiempo de ejecuci\'on) por lo tanto no se puede
+  direccionar de forma expl\'{\i}cita a una part\'{\i}cula utilizando su
+  localizaci\'on, ya sea absoluta o relativa.
+  
+  \item C\'odigo compacto: La memoria de la part\'{\i}cula es limitada, el
+  ancho de banda de la comunicaci\'on entre part\'{\i}culas es baja en
+  comparaci\'on con la velocidad del procesador.
+\end{itemize}
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.4]{./images/pushpin} \end{center}
+  \caption{\label{pushpin_computer}Pushpin Computer. Fuente: {\cite{JLea02}}}
+\end{figure}
+
+En la figura \ref{pushpin_computer} se muestra la estructura f\'{\i}sica de un
+computador \textit{pushpin}. La unidad de procesamiento b\'asico (las cuales
+se colocan de forma aleatoria) cuenta con tres pines de diferente longitud,
+cuyas funciones son: VCC, GND y comunicaci\'on, estas unidades se colocan en
+una estructura formada por 7 capas, dos capas de un material conductor
+proporcionan la alimentaci\'on a las unidades, una capa resistiva proporciona
+el canal de comunicaci\'on entre las part\'{\i}culas, restringiendo el alcance
+de las transmisiones. Las cuatro capas restantes se intercalan entre las tres
+primeras para suministrar aislamiento.
+
+En su trabajo {\cite{WB02}} Butera parti\'o del principio ''\textit{Si no es
+posible para nosotros estructurar un procedimiento para resolver los problemas
+mencionados anteriormente, tenemos que hacer que el procedimiento se
+estructure a s\'{\i} mismo}''. Esta expresi\'on toma su inspiraci\'on de
+trabajos como {\cite{RJSB+98}}, {\cite{DGJT+00}}, en los cuales, se reporta
+que es posible formar una estructura relativamente compleja a partir de
+componentes b\'asicos simples, descomponerla en dichos componentes, sumergirla
+en un medio que permita el movimiento, agitar dicho medio y al final del
+proceso obtener la estructura inicial. Butera traslad\'o estas ideas al campo
+de la electr\'onica y vio a las estructuras como programas de computador, los
+componentes b\'asicos son fragmentos de procesos, y el medio que permite el
+auto-ensamble es la memoria del procesador donde residen los fragmentos de
+procesos.
+
+
+
+\section{Proyecto Embrionics}
+
+En esta secci\'on se realizar\'a una descripci\'on de un proyecto basado en el
+modelo de Aut\'omata Celular propuesto por von Neumann: el proyecto
+\textit{embrionics} desarrollado por la \'Ecole Polytechnique F\'ed\'erale de
+Lausanne {\cite{DMMT98}}, {\cite{PMPN+66}}, {\cite{GT98}}. A diferencia del
+proyecto Amorphous Computing, \textit{Embrionics} toma como fuente de
+inspiraci\'on el proceso de desarrollo embrionario, sus unidades b\'asicas de
+procesamiento son c\'elulas, las cuales exhiben caracter\'{\i}sticas de
+auto-replicaci\'on, autoreparaci\'on y diferenciaci\'on celular. Aunque el
+objetivo principal del proyecto Embrionics es la realizaci\'on de un circuito
+integrado, sus resultados pueden aplicarse de forma directa a part\'{\i}culas
+computacionales masivas.
+
+
+
+\subsection{Inspiraci\'on Biol\'ogica en el proyecto Embrionics}
+
+El proyecto embrionics ({\cite{DMMT98}}, {\cite{PMPN+66}}, {\cite{GT98}}) es
+un proyecto de largo plazo que tiene como objetivo aplicar conceptos
+biol\'ogicos a la computaci\'on, un aspecto notable es que la implementaci\'on
+hardware juega un papel importante en el desarrollo del proyecto, esto
+diferencia a embrionics de proyectos similares, los cuales solo realizan
+estudios a nivel de simulaci\'on tales como el proyecto blob{\footnote{
+http://www.blob.lri.fr}}.
+
+
+
+Recientemente, la barrera que separa los mundos de la biolog\'{\i}a y la
+electr\'onica se ha reducido considerablemente. Cada vez m\'as aplicaciones
+electr\'onicas son utilizadas en la medicina y en la biolog\'{\i}a, mientras
+que las met\'aforas biol\'ogicas son utilizadas en el diseño de computadores.
+
+
+
+\subsubsection{El Modelo POE}
+
+Los sistemas biol\'ogicos crecen, viven, se autoreparan \ y se reproducen,
+caracter\'{\i}sticas que no son compartidas por los sistemas computacionales
+existentes. El concepto de \textit{viviente} tiene un n\'umero de
+consecuencias en t\'ermino de adaptaci\'on, interacci\'on con el ambiente y la
+habilidad de manejar recursos limitados. Si se mira la vida en la tierra desde
+sus inicios, se pueden distinguir tres niveles de organizaci\'on
+{\cite{MSES+96}}, {\cite{XZ01}}.
+
+
+\begin{itemize}
+  \item \textbf{Filogenia:} Concierne a la evoluci\'on
+  temporal de una especie (animal o planta). Su mecanismo es fundamentalmente
+  no determinista, la reproducci\'on de un organismo viviente depende de la
+  replicaci\'on del material gen\'etico; las tasas de mutaci\'on y de
+  recombinaci\'on proporcionan la principal fuente de diversidad, la cual es
+  indispensable para: la supervivencia de las especies, la adaptaci\'on
+  constante a un entorno cambiante, y propicia la aparici\'on de nuevas
+  especies.
+  
+  \begin{figure}[h]
+  \begin{center} \includegraphics[scale=.4]{./images/PO_life} \end{center}
+    \caption{\label{embrionario}Proceso Embrionario en la Naturaleza. Basado
+    en: {\cite{MSES+96}}}
+  \end{figure}
+  
+  \item \textit{Ontogenia:} Con la aparici\'on de los organismos
+  multicelulares, se manifest\'o un segundo nivel de organizaci\'on
+  biol\'ogica. La sucesiva divisi\'on de la c\'elula madre, el
+  \textit{zigoto}, en donde cada nueva c\'elula posee una copia del genoma
+  original, es seguida por una especializaci\'on de las c\'elulas hijas
+  determinada por su posici\'on dentro del conjunto. Esta \'ultima fase recibe
+  el nombre de diferenciaci\'on celular. La ontogenia es el proceso de
+  desarrollo de un organismo multicelular. Este proceso es determinista. Es
+  importante entender que los genes, constituyentes b\'asicos del genoma,
+  act\'uan sobre dos niveles muy diferentes; ellos participan en el proceso
+  embrionario, influenciando el desarrollo del fenotipo en una generaci\'on
+  dada, y participan en gen\'etica, siendo copiados en las generaciones
+  posteriores. La figura \ref{embrionario} muestra la separaci\'on entre estos
+  dos niveles, la gen\'etica es el estudio de las flechas verticales, las
+  relaciones entre genotipos en las generaciones sucesivas, mientras la
+  embriolog\'{\i}a estudia las l\'{\i}neas horizontales, la relaci\'on entre
+  fenotipo y genotipo en una generaci\'on. \
+\end{itemize}
+
+\begin{itemize}
+  \item \textit{Epig\'enesis:} Un programa ontog\'enico dado (por ejemplo
+  el genoma humano) est\'a limitado por la capacidad de informaci\'on que
+  puede ser almacenada. En muchos organismos, esta informaci\'on no es
+  suficiente para especificarlo completamente. Por lo tanto, emerge un proceso
+  diferente que permite al individuo la extensa cantidad de interacciones con
+  el mundo exterior. Este proceso es conocido como \textit{epig\'enesis} e
+  incluye al sistema nervioso, al sistema inmune y al sistema endocrino. Estos
+  sistemas poseen una estructura b\'asica definida por el genoma (el
+  componente innato), el cual est\'a sujeto a modificaciones a trav\'es de
+  interacciones del individuo con su entorno (componente adquirido).
+\end{itemize}
+
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.4]{./images/POE_Model} \end{center}
+  \caption{\label{modelo_poe}El Modelo POE. Particionamiento de los sistemas
+  bio-inspirados en tres ejes: \textit{filogenia}, \textit{ontogenia}, y
+  \textit{epigenesis}. Basado en: {\cite{CT04}} }
+\end{figure}
+
+An\'alogamente, el espacio de los sistemas biol\'ogicamente inspirados, puede
+ser particionado a lo largo de los mismos tres ejes: \textit{filogenia},
+\textit{ontogenia}, y \textit{epigenesis} (ver figura \ref{modelo_poe}).
+
+
+\subsubsection{Caracter\'{\i}sticas generales de los seres vivos}
+
+Las caracter\'{\i}sticas de los seres vivos tomadas como fuente de
+inspiraci\'on por el proyecto embrionics son:
+\begin{itemize}
+  \item \textbf{Organizaci\'on Multicelular:} Divide al organismo en un
+  n\'umero finito de c\'elulas, cada una de las cuales realiza una funci\'on
+  simple.
+  
+  \item \textbf{Divisi\'on Celular}: Proceso mediante el cual la c\'elula
+  se duplica. Durante esta fase, la c\'elula copia su material gen\'etico
+  (genoma) y se divide en dos c\'elulas hijas id\'enticas.
+  
+  \item \textbf{Diferenciaci\'on Celular:} La funci\'on que realiza cada
+  c\'elula depende de su posici\'on en el organismo, se obtiene a trav\'es de
+  la $''$ejecuci\'on$''$ de una parte del genoma.
+\end{itemize}
+Estas tres propiedades muestran que en un organismo multicelular, cada
+c\'elula (la cual contiene el material gen\'etico de todo el organismo) es
+universal. Por lo tanto en presencia de una degradaci\'on f\'{\i}sica, cada
+organismo viviente es capaz de auto-repararse (por ejemplo, cicatrizaci\'on,
+regeneraci\'on) y de auto-replicarse.
+
+
+
+\subsubsection{Objetivo}
+
+El objetivo principal del proyecto embrionics, es realizar en un circuito
+integrado, un sistema que integre las caracter\'{\i}sticas mencionadas en
+anteriormente. Por lo tanto este sistema debe exhibir propiedades de
+auto-diagn\'ostico y auto-reparaci\'on.
+
+
+
+En las siguientes secciones se realizar\'a un breve marco te\'orico que
+comprende tres temas b\'asicos en el desarrollo del proyecto embrionics: Los
+Aut\'omatas Celulares (CA), las m\'aquinas de Turing y las t\'ecnicas de
+auto-replicaci\'on de von Neumann, Langton, Codd y Tempesti.
+
+\subsection{Aut\'omatas Celulares (CA)}
+
+Este modelo fue introducido a finales de los 40's por Stanislaw Ulam, a
+finales de los 60s John von Neumann {\cite{JVN66}} utiliz\'o estas ideas con
+el f\'{\i}n de proporcionar una herramienta para investigar la
+auto-replicaci\'on. Los Aut\'omatas celulares son una colecci\'on de elementos
+id\'enticos (c\'elulas) colocados en los nodos de una cuadr\'{\i}cula que
+recibe el nombre de \textit{espacio celular}. Las c\'elulas contenidas en este
+espacio se interconectan localmente. El vecindario de una c\'elula es un grupo
+de c\'elulas que est\'an interconectadas con una determinada c\'elula (i,j),
+existen dos tipos de vecindarios:
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.4]{./images/neighborhood} \end{center}
+  \caption{\label{vecindario}a) Vecindario von Neumann. b) Vecindario Moore}
+\end{figure}
+\begin{enumerate}
+  \item Vecindario Von Neumann (ver figura \ref{vecindario}): $N_{i, j} =\{(k,
+  l) \in L / |k - i| + |l - j| \leqslant 1\}$
+  
+  \item Vecindario Moore: $N_{i, j} =\{(k, l) \in L / |k - i| \leqslant 1 y |l
+  - j| \leqslant 1\}$
+\end{enumerate}
+donde \textit{(k,l)} es una c\'elula en el espacio celular \textit{L}.
+
+
+
+Cada c\'elula es representada por un valor llamado estado, cada elemento en el
+espacio celular actualiza este valor de acuerdo a una señal global, la cual
+puede ser vista como el reloj del sistema. Esta actualizaci\'on se realiza
+utilizando un grupo de reglas conocidas por cada c\'elula. En un pulso de
+reloj, cada c\'elula utiliza el estado del vecindario y las reglas globales
+para actualizar su propio estado.
+
+
+
+En los estudios te\'oricos, un CA se compone de un espacio celular infinito.
+Sin embargo, en la pr\'actica, este espacio es limitado. Esta limitaci\'on
+pr\'actica nos obliga a introducir restricciones de frontera (fijas o
+peri\'odicas). Con restricciones fijas, los vecinos faltantes son reemplazados
+por estados fijos, mientras que con restricciones de frontera peri\'odicas los
+bordes opuestos del espacio celular se unen con el fin de transformarlo en una
+superficie continua y homog\'enea. Cada aut\'omata en un CA tiene el mismo
+comportamiento de sus vecinos y utiliza sus estados como variables de entrada
+para realizar su tarea computacional, dada por la \ actualizaci\'on de su
+estado interno.
+
+
+
+\subsection{M\'aquinas de Turing}
+
+Una m\'aquina de turing es una m\'aquina de estados finitos que controla una
+cabeza m\'ovil, la cual opera sobre una cinta. La cinta est\'a compuesta por
+una secuencia de celdas, cada una de las cuales contiene un s\'{\i}mbolo. La
+cabeza, que es colocada sobre una celda de la cinta, tiene que ejecutar tres
+operaciones para completar un paso de c\'omputo, correspondiente a un ciclo de
+operaci\'on de la m\'aquina de estados finitos. Las operaciones son:
+\begin{enumerate}
+  \item Leer la celda sobre la que est\'a colocada la cabeza.
+  
+  \item Escribir sobre la celda.
+  
+  \item Mover la cabeza a la siguiente celda.
+\end{enumerate}
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.4]{./images/turing} \end{center}
+  \caption{M\'aquina de Turing.}
+\end{figure}
+
+Se puede definir una m\'aquina de Turing a partir de tres
+funciones{\footnote{Q Estado, S S\'{\i}mbolo, D Direcci\'on. El prefijo +
+denota el valor de la funci\'on en el siguiente cilo de reloj}}:
+\begin{itemize}
+  \item $Q^+ = f_1 (Q, S)$ \ \ \ \ \ Estado siguiente
+  
+  \item $S^+ = f_2 (Q, S)$ \ \ \ \ \ S\'{\i}mbolo siguiente
+  
+  \item $D^+ = f_3 (Q, S)$ \ \ \ \ \ Direcci\'on
+\end{itemize}
+Supongamos que en un instante dado, la cabeza se posiciona sobre una celda de
+la cinta, la m\'aquina de Turing se encuentra en uno de sus estados internos.
+% Podemos utilizar una qu\'{\i}ntupla (Q, S, Q^+, S^+, D$^+$) para especificar
+el comportamiento de la m\'aquina para cada combinaci\'on posible de
+s\'{\i}mbolos y estados. Si una m\'aquina de Turing se encuentra en una
+condici\'on para la cual no existe instrucci\'on, se detiene.
+
+\subsection{Auto-replicaci\'on}
+
+\subsubsection{Máquina Auto-replicante de von Neumann}
+
+Uno de los deseos de von Neumann {\cite{JVN66}} era crear sistemas
+computacionales tolerantes a fallos. El vio a la vida como el sistema m\'as
+complejo y se inspir\'o en ella para crear sus m\'aquinas auto-replicantes.
+Como \'el mismo anot\'o: $''$ \textit{la robustez de un sistema natural radica
+en su redundancia extrema}$''$. A nivel celular, un plano del organismo
+entero (el genoma) est\'a contenido en cada c\'elula. Cada c\'elula del
+organismo es capaz de auto-replicarse y los organismos son capaces de
+auto-reproducirse. Para resolver el problema de la autoreplicaci\'on, Neumann
+utiliz\'o un CA de dos dimensiones con un vecindario de cinco c\'elulas, \'el
+demostr\'o que el sistema tiene el poder computacional de la m\'aquina de
+Turing, puede ser embebido en un espacio celular finito, pero tan grande como
+se desee, en el cual cada c\'elula puede utilizar 29 estados. Sin embargo, su
+sistema fue y contin\'ua siendo muy complejo para ser utilizado en
+aplicaciones \'utiles{\footnote{El n\'umero de reglas de transici\'on es
+. Teniendo en cuenta que cada c\'elula debe contener esta tabla
+de verdad o por lo menos tener acceso a ella, no es posible la
+implementación HW de esta máquina de estados.}}.
+
+
+
+Neumann defini\'o un \textit{constructor universal}, una m\'aquina de Turing
+trabajando sobre una cuadr\'{\i}cula de c\'elulas bi-dimensional. Esta
+m\'aquina celular con 29 estados y 5 vecinos por c\'elula es capaz de
+construir cualquier m\'aquina (celular) descrita en su cinta de entrada,
+copiar la cinta de entrada y pasarla a la nueva m\'aquina construida. Esta
+m\'aquina realiza auto-reproducci\'on si el constructor es descrito en la
+cinta de entrada. Dicha m\'aquina est\'a compuesta por tres componentes
+separados:
+\begin{itemize}
+  \item Una \textbf{cinta de memoria} (una secuencia de c\'elulas en una
+  dimensi\'on) donde se almacena la descripci\'on de la m\'aquina a construir.
+  
+  \item \textit{El constructor}, compuesto por
+  alrededor de 80 x 400 c\'elulas. Este componente es cap\'az de leer e
+  interpretar la informaci\'on contenida en la cinta de memoria.
+  
+  \item Un brazo constructor utilizado para construir la m\'aquina descrita en
+  la cinta de memoria y controlado por el constructor. Este brazo se mueve en
+  el espacio celular fijando el estado de la c\'elula destino, con el f\'{\i}n
+  de construir una nueva m\'aquina.
+\end{itemize}
+
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.4]{./images/von_neumann_universal_constructor} \end{center}
+  \caption{a) Constructor Universal. b) Auto-replicaci\'on.}
+\end{figure}
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.4]{./images/auto_repl_univ_comp} \end{center}
+  \caption{\label{compuniversal}Auto-replicaci\'on de un \ computador
+  universal.}
+\end{figure}
+
+Sin embargo, un sistema compuesto \'unicamente por constructores universales
+no es suficiente para lograr la auto-replicaci\'on de m\'aquinas
+computacionales. Por esta raz\'on Neumann modific\'o su m\'aquina para
+proporcionar funcionalidades adicionales interesantes a la ingenier\'{\i}a; el
+adicion\'o a su constructor universal un computador universal, una m\'aquina
+de Turing, un aut\'omata capaz de realizar cualquier c\'omputo ](ver figura
+\ref{compuniversal}).
+
+
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.4]{./images/data_path} \end{center}
+  \caption{\label{codd}Caminos de Datos. Reproducci\'on de {\cite{CJ97}}}
+\end{figure}
+
+Una variante del constructor universal de Neumann con una considerable
+reducci\'on de complejidad fue definida por E. Codd {\cite{EC68}}, quien
+redujo el n\'umero de estados por c\'elula a ocho. La auto-replicaci\'on es
+tratada como un caso especial de la construcci\'on universal. La estructura
+del aut\'omata definida por Codd est\'a basada en la fisiolog\'{\i}a del
+sistema nervioso. Las señales codifican instrucciones para la formaci\'on
+estructural del aut\'omata, viajan a lo largo de caminos de datos, an\'alogos
+a los impulsos el\'ectricos en las c\'elulas nerviosas. Estos caminos de datos
+son modelados con tres filas de c\'elulas (ver figura \ref{codd}).
+
+
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.4]{./images/crossing_t_DP} \end{center}
+  \caption{\label{cross}Duplicaci\'on de señales en un cruce en T. (a) i=0,
+  (b) i=1. (c)i=2. Reproducci\'on de {\cite{CJ97}}}
+\end{figure}
+
+
+
+Cada camino de datos es considerado como un canal de señal, conformado por
+c\'elulas en estado 1, rodeados por c\'elulas de estado 2. De acuerdo a las
+reglas de transformaci\'on, las señales se mueven una c\'elula cada
+iteraci\'on. Si una secuencia de señales alcanza un cruce en T, las señales
+entrantes son copiadas a la derecha y arriba (ver figura \ref{cross}).
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.4]{./images/config_loop} \end{center}
+  \caption{\label{loop}Configuraci\'on de un lazo auto-reproducible.
+  Reproducci\'on de {\cite{CJ97}}}
+\end{figure}
+
+Si el camino de datos es organizado como un lazo (ver figura \ref{loop}), se
+obtienen un elemento perfecto de almacenamiento. Todas las señales copiadas en
+el cruce en T reingresan al lazo, pero pueden utilizarse para iniciar la
+construcci\'on en el extremo derecho del camino de datos.
+
+\subsubsection{Auto-replicaci\'on de Langton}
+
+Las caracter\'{\i}sticas del lazo de Cood fueron utilizados por Langton
+{\cite{CL84}} para modelar un sistema auto-reproducible. Este modelo no tiene
+las caracter\'{\i}sticas de un constructor universal de Neumann, pero exhibe
+la esencia de un sistema auto-reproducible. El aut\'omata de Langton est\'a
+compuesto por 877 reglas, 219 reglas b\'asicas, cada una con cuatro variantes
+(rotadas 90) para un vecindario von Nuemann y una regla neutra adicional. El
+lazo est\'a formado por tres cuadrados conc\'entricos y un brazo constructor,
+los lazos interno y externo cumplen funciones estructurales (armadura). El
+cuadrado central posee la informaci\'on de la construcci\'on, est\'a compuesto
+por un grupo de tres estados, los cuales definen la instrucci\'on (giro en
+sentido horario y avance), el tercer estado se crea cuando el lazo se
+encuentra consigo mismo, en este punto se debe finalizar la replicaci\'on y
+cortar el brazo constructor.
+
+
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.4]{./images/langton_loop} \end{center}
+  \caption{\label{langton}Lazo de Langton.}
+\end{figure}
+
+La figura \ref{langton} muestra algunos pasos del proceso de autoreplicaci\'on
+del lazo de Langton, primero el brazo es elongado (i=40), a continuaci\'on se
+construye un giro a la izquierda (i=80). Las instrucciones para la
+construcci\'on del brazo son codificadas en las secuencias de señales
+almacenadas en el lazo. Iterando este proceso de crecimiento se inicia la
+construcci\'on de un segundo lazo (i=110 ), quien finalmente se separa del
+lazo madre (i=130). El lazo hijo a completado la copia de la secuencia
+original.
+
+
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.4]{./images/langton_die} \end{center}
+  \caption{\label{muerte}Muerte de un lazo de Langton}
+\end{figure}
+
+A continuaci\'on cada copia act\'ua de forma independiente iniciando el ciclo
+de reproducci\'on, hacia las direcciones oriente (lazo hijo) y norte (lazo
+madre). Como puede observarse de la figura \ref{langton} el lazo madre inicia
+el ciclo de reproducci\'on hacia el oriente (i=10), el siguiente ciclo al
+norte (i=150), el siguiente al occidente (i=350) y finalmente al sur (i=450).
+Los lazos hijos tambi\'en exhiben este comportamiento. Si el lugar donde se va
+acopiar el lazo est\'a ocupado (i=437 de la figura \ref{muerte}), el lazo se
+retrae (i=441), destruye \ la informaci\'on contenida en \'el y se detiene
+(i=467). Este proceso constituye la muerte de un lazo.
+
+\subsubsection{Lazo de Tempesti }
+
+La investigaci\'on realizada por Tempesti {\cite{GT95}} contin\'ua el trabajo
+de Langton, implementando capacidades de computo y permitiendo la posibilidad
+de variaci\'on de tamaño.
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.4]{./images/tempesti} \end{center}
+  \caption{\label{tempesti}Configuraci\'on inicial del lazo. Reproducci\'on
+  de: {\cite{GT98}}}
+\end{figure}
+
+El lazo de Tempesti (ver figura \ref{tempesti}) est\'a compuesto por una
+cubierta interna y una cinta externa rotativa, la cual contiene informaci\'on.
+Se implementa sobre una cuadr\'{\i}cula de dos dimensiones y utiliza un
+vecindario Moore de nueve c\'elulas. Adicionalmente dispone de cuatro
+compuertas fuera del lazo, en las esquinas del aut\'omata, las cuales
+controlan el funcionamiento de los brazos constructores. Inicialmente dichas
+compuertas se encuentran abiertas, lo cual permite que se realicen copias en
+las direcciones de los puntos cardinales al mismo tiempo, una vez completado
+el ciclo de reproducci\'on, las compuertas se cierran. Si el brazo encuentra
+otro aut\'omata en el sitio de la copia, el brazo se retrae y la
+correspondiente compuerta se cierra. Los elementos del arreglo requieren cinco
+estados b\'asicos y por lo menos un estado tipo dato (informaci\'on almacenada
+en el lazo). El estado cero (negro) es el \textit{estado inactivo:} representa
+el fondo inactivo. El estado 1 (blanco) es el \textit{estado}
+\textit{cubierta}, es el estado de los elementos que construyen la cubierta y
+las cuatro compuertas. El estado 2 (rojo) es el \textit{estado de
+activaci\'on} o \textit{estado de control}; los elementos del lazo que
+dirigen la reproducci\'on se encuentran en el estado 2. El estado 3 (azul
+intenso) es el \textit{estado de construcci\'on}. Este estado construye la
+cubierta, informa al lazo madre que la cubierta est\'a construida, y conduce
+los datos duplicados al lazo hijo. Estado 4 (verde), es el estado de
+destrucci\'on: destruye el brazo constructor cuando se completa la copia.
+Adicionalmente se encuentran los \textit{estados dato} (gris claro y oscuro):
+representan la informaci\'on almacenada en el lazo.
+
+
+
+El brazo contructor del lazo de Tempesti avanza de forma autom\'atica, si se
+desea que el brazo gire, se debe enviar una señal en el momento oportuno al
+extremo del brazo, esto se logra enviando \textit{mensajeros} de forma
+constante al extremo del brazo constructor, el cual avanza m\'as lento que los
+mensajeros. El ciclo de auto-replicaci\'on no realiza una copia del lazo
+completo, en lugar de ello, primero construye la cubierta interna del mismo
+tamaño que la del lazo madre, y despu\'es copia la informaci\'on que circunda
+el lazo. En otras palabras, el proceso puede dividirse en una fase
+estructural, en la cual se fija la estructura del lazo en el espacio
+vac\'{\i}o y la fase de configuraci\'on, donde la funcionalidad del padre es
+enviada a su descendencia.
+
+
+
+A diferencia del lazo de Langton, el lazo de Tempesti nunca muere, una vez que
+se completa el ciclo de duplicaci\'on, la informaci\'on almacenada en el lazo
+no sufre ninguna modificaci\'on, por lo tanto se puede ejecutar el programa
+contenido en ella. Otra caracter\'{\i}stica importante del lazo de tempesti es
+que cuando se llaga al borde del arreglo, el brazo constructor lo detecta y se
+retrae, lo cual es muy \'util en sistemas reales los cuales poseen una
+dimensi\'on finita.
+
+\subsection{Implementaci\'on Hardware}
+
+Como se mencion\'o anteriormente, una de las caracter\'{\i}sticas interesantes
+del proyecto embrionics es su inter\'es por la implementaci\'on hardware,
+desde sus inicios se han construido plataformas de desarrollo que permiten
+comprobar de forma pr\'actica los resultados te\'oricos. En esta secci\'on se
+realizar\'a una descripci\'on del trabajo realizado por Gianluca Tempesti
+{\cite{GT98}} en su tesis Doctoral, la cual re\'une las caracter\'{\i}sticas
+esenciales del proyecto y es el punto de partida para implementaciones
+recientes {\cite{EP04}}.
+
+
+
+En hardware, un organismo artificial se implementa sobre un circuito
+integrado, el cual est\'a compuesto por c\'elulas id\'enticas distribuidas en
+los nodos de una cuadr\'{\i}cula de dos dimensiones. Cada c\'elula posee un
+pequeño procesador y una memoria, en la cual se almacena un programa
+id\'entico para todas las c\'elulas (lo \'unico que difiere es el estado de
+las c\'elulas), este programa representa el genoma.
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.4]{./images/organismo_embrionics} \end{center}
+  \caption{\label{organismo}Organismo multicelular. Reproducci\'on de:
+  {\cite{EP04}}}
+\end{figure}
+
+En el organismo artificial, cada c\'elula realiza una funci\'on \'unica,
+definida por un subprograma llamado \textit{gen}, el cual es parte del genoma.
+Cada c\'elula debe conocer su posici\'on (coordenadas x, y) con el fin de
+determinar el gen que define su funci\'on (ver figura \ref{organismo}).
+
+
+
+\subsubsection{Proceso de auto-replicaci\'on}
+
+Este proceso sigue fielmente el proceso de auto-replicaci\'on del lazo de
+Tempesti, y como se mencion\'o anteriormente se divide en dos partes:
+\begin{enumerate}
+  \item \textbf{Fase estructural:} Se crea un esqueleto que divide el
+  espacio f\'{\i}sico en una colecci\'on de grupos de mol\'eculas, las cuales
+  son c\'elulas vac\'{\i}as.
+  
+  \item \textbf{Fase de Configuraci\'on:} Se env\'{\i}a a las c\'elulas
+  vac\'{\i}as (creadas en la fase estructural) el genoma que describe al
+  organismo artificial.
+\end{enumerate}
+La fase estructural se realiza por medio de un aut\'omata que utiliza dos
+estados \'unicamente: Estado \textit{muro}: el cual define los bordes de los
+bloques y el Estado \textit{uni\'on}: cuya funci\'on es definir la
+intersecci\'on de los muros.
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.4]{./images/auto_replicac_6x4} \end{center}
+  \caption{\label{autoreplica}Auto-replicaci\'on de un organismo de 6
+  c\'elulas. Reproducci\'on de {\cite{EP04}}}
+\end{figure}
+
+La operaci\'on comienza cuando el primer elemento de datos (un estado
+\textit{uni\'on}) ingresa al arreglo. A partir de este punto se propagan dos
+ramas, una hacia el norte y otra hacia el oriente (ver figura
+\ref{autoreplica}).
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.4]{./images/auto_replicac_6x6_cycle_2} \end{center}
+  \caption{\label{fase_estructural}Fase estructural. Reproducci\'on de
+  {\cite{GT98}}}
+\end{figure}
+
+Cuando un estado \textit{uni\'on} alcanza el extremo de la rama, se genera una
+nueva divisi\'on, es decir, una rama hacia el oriente y otra hacia el norte.
+Como resultado el \'area se divide en bloques cuadrados, cuyo tamaño
+corresponde a la distancia entre dos uniones en la cinta de datos. La figura
+\ref{fase_estructural} muestra un ejemplo del proceso de particionamiento.
+
+
+
+Esta estructura resultante puede verse como la membrana de la c\'elula
+artificial. Una vez finalizada la fase estructural, se env\'{\i}a en paralelo
+a todos los bloques un \textit{bitstream} de configuraci\'on que contiene el
+genoma, con lo cual se crean de forma autom\'atica copias de la misma c\'elula
+artificial.
+
+\subsubsection{La Arquitectura de Embrionics Muxtree {\cite{CO00}}
+{\cite{GT98}}}
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.4]{./images/muxtree} \end{center}
+  \caption{\label{muxtree}Componente b\'asico de un Sistema Embri\'onico.}
+\end{figure}
+
+La figura \ref{muxtree} muestra una arquitectura b\'asica (MuxTree) de un
+sistema embri\'onico gen\'erico. Cada c\'elula interpreta uno de los registros
+de configuraci\'on localizados en su memoria. La elecci\'on del registro de
+configuraci\'on depende de la posici\'on de la c\'elula dentro del arreglo, la
+cual es calculada localmente a partir de las c\'elulas vecinas m\'as cercanas.
+Cada c\'elula en el arreglo embri\'onico tiene una coordenada \'unica en su
+correspondiente columna. La c\'elula ubicada al sur tiene su coordenada fija
+en cero, esta c\'elula transfiere su coordenada aumentada en 1, a la c\'elula
+vecina al norte, la cual lo almacena como coordenada, y a su vez aumenta en
+uno este valor y lo propaga a su vecina del norte; si el mecanismo encargado
+de supervisar el correcto funcionamiento de la c\'elula (BIST por Build In
+Self Test) detecta un fallo en la c\'elula, esta se convierte en un
+$''$puente$''$ y transfiere el valor recibido sin aumentarlo. El elemento de
+procesamiento es un multiplexor cuya funcionalidad y conexiones de
+entrada/salida son controladas por un registro de configuraci\'on que es
+seleccionado por el m\'odulo \textit{coordinate}, el cual toma esta
+configuraci\'on de la secci\'on del genoma correspondiente a la posici\'on de
+la c\'elula.
+
+
+
+Esta arquitectura presenta las siguientes ventajas:
+\begin{itemize}
+  \item Es altamente regular, lo cual facilita su implementaci\'on en silicio.
+  
+  \item La funci\'on del elemento de procesamiento es independiente de la
+  funci\'on de los dem\'as elementos. Lo cual puede ser utilizado para
+  producir arreglos con diferentes funcionalidades y complejidades.
+  
+  \item Con el f\'{\i}n de mantener la arquitectura de la unidad de proceso lo
+  m\'as simple posible, se incluye una unidad BIST para proporcionar
+  auto-diagn\'ostico.
+\end{itemize}
+
+
+\subsubsection{Auto-Reparaci\'on}
+
+
+
+Una vez definido el mecanismo de auto-reproducci\'on, se describen a
+continuaci\'on las estrategias utilizadas en el proyecto embrionics para
+realizar la auto-reparaci\'on.
+
+
+
+Cuando se detecta una falla en una c\'elula por BIST, se activa un mecanismo
+de reconfiguraci\'on de tal forma que el arreglo alcance un estado donde pueda
+continuar con su funcionalidad. Existen dos estrategias para realizar este
+proceso: la eliminaci\'on de fila y la eliminaci\'on de c\'elula.
+
+
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.4]{./images/row_elimination} \end{center}
+  \caption{\label{fila}Reconfiguraci\'on por eliminaci\'on de fila en un
+  arreglo embri\'onico. (a) Arreglo sano, (b) Fallo en una c\'elula, (c)
+  Arreglo reparado.}
+\end{figure}
+
+\textbf{Eliminaci\'on de fila}: Las eliminaciones de fila y columna son
+estrategias equivalentes. En la eliminaci\'on de fila, el fallo de una
+c\'elula origina la eliminaci\'on de su fila correspondiente, la cual es
+reemplazada por la fila contigua al norte. La figura \ref{fila} muestra un
+ejemplo de esta estrategia.
+
+
+
+Aunque esta estrategia no optimiza la utilizaci\'on de las c\'elulas de
+reserva, el proceso de reconfiguraci\'on se realiza muy r\'apidamente, lo cual
+es muy atractivo para las aplicaciones de tiempo real.
+
+
+
+\textbf{Eliminaci\'on de C\'elula}
+
+
+
+En la estrategia de eliminaci\'on de c\'elula, las c\'elulas defectuosas son
+reemplazadas por las de reserva en dos etapas. Primero las c\'elulas de
+reserva localizadas en la misma fila reemplazan la c\'elula defectuosa. Cuando
+el n\'umero de c\'elulas defectuosas en una fila sobrepasan el n\'umero de
+c\'elulas de reserva, se elimina la fila de forma similar a la estrategia de
+eliminaci\'on de fila.
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.4]{./images/cell_elimination} \end{center}
+  \caption{\label{celula}Reconfiguraci\'on por eliminaci\'on de c\'elula en un
+  arreglo embri\'onico.}
+\end{figure}
+
+La figura \ref{celula}, ilustra este proceso, en donde inicialmente ocurre un
+fallo en la c\'elula de la fila 2, columna 2, debido a la existencia de una
+c\'elula de reserva en la fila, la funcionalidad de la c\'elula afectada se
+copia en su vecina del oriente y la funcionalidad de esta se copia a la
+c\'elula de reserva (ver figura partes (a) y (b)). En la parte (c) se presenta
+una nueva falla en la segunda fila, debido a que se agotaron las c\'elulas de
+reserva de esta fila, la funcionalidad de la fila completa se pasa a la
+tercera fila, y la de esta se pasa a la fila de c\'elulas de reserva (figura
+\ref{celula} (d)). El arreglo resultante puede tolerar un nuevo fallo en una
+sola c\'elula por fila, si ocurren dos fallos en la misma fila, el sistema no
+puede auto-repararse y funcionar\'a de forma defectuosa.
+
+
+
+Las estrategias anteriores indican que la confiabilidad del sistema depende
+del n\'umero de c\'elulas de reserva disponibles en el arreglo. Sin embargo,
+al aumentar el n\'umero de c\'elulas, aumenta el \'area del circuito
+integrado, lo cual eleva el costo de producci\'on. Es posible implementar
+otras estrategias de reconfiguraci\'on rediseñando la c\'elula b\'asica, pero,
+el aumento de la complejidad de la c\'elula reduce la confiabilidad de la
+misma y del arreglo en general.
+
+
+
+\subsection{Inmuno-Embrionics}
+
+La confiabilidad de una c\'elula individual en un arreglo embrionico es
+realizada mediante la duplicaci\'on de los componentes funcionales
+(multiplexores y Flip-Flops) {\cite{GTDM97}}. Actualmente las c\'elulas
+carecen de un mecanismo de verificaci\'on en tiempo real que permita
+determinar su correcto funcionamiento, con respecto a las c\'elulas vecinas.
+El mecanismo existente utiliza una soluci\'on \textit{off-line}, lo cual no es
+una soluci\'on satisfactoria, debido a que fallas en el generador de
+direcciones o en el registro de configuraci\'on pueden generar funcionamientos
+y ruteos incorrectos, es m\'as, el mismo m\'odulo BIST puede tener fallos.
+Estudios realizados en la Universidad de York {\cite{DBCO00}}, {\cite{AT99}}
+proponen la incorporaci\'on de una capa adicional de c\'elulas a la
+arquitectura embrionica (c\'elulas anticuerpos), las cuales imitan las
+acciones de los anticuerpos del sistema inmune. Estas c\'elulas monitorean y
+eval\'uan constantemente el estado de cada c\'elula embrionica.
+
+
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.4]{./images/inmunotronics} \end{center}
+  \caption{\label{immuno}C\'elulas anticuerpo monitoreando cuatro c\'elulas
+  embri\'onicas.}
+\end{figure}
+
+
+
+Se han considerado varias configuraciones potenciales para este sistema, una
+de ellas es utilizar una c\'elula anticuerpo para supervisar una c\'elula
+embri\'onica, sin embargo, esta soluci\'on genera otro punto de falla, la
+c\'elula anticuerpo misma. Una mejor soluci\'on es la creaci\'on de una red de
+c\'elulas anticuerpos. Cada c\'elula del arreglo embrionario, es supervisada
+por un n\'umero de c\'elulas del arreglo inmune. La figura \ref{immuno}
+muestra un arreglo en el que cada c\'elula embrionaria es supervisada por
+cuatro c\'elulas del arreglo inmune. Con esto se puede realizar un consenso
+entre las c\'elulas anticuerpo para determinar si existe un daño real en la
+c\'elula embri\'onica o existe un daño en una de las c\'elula anticuerpo.
+
+
+
+\subsection{Proyecto POEtic Tissue}
+
+El proyecto embrionics evolucion\'o en el proyecto Europeo \textit{POEtic
+Tissue} {\cite{htt}} cuyos objetivos son: Desarrollo de un sustrato
+computacional optimizado para la implementaci\'on de sistemas digitales
+inspirados en el modelo POE {\cite{MSES+96}}, desarrollo distribuido con
+crecimiento y diferenciaci\'on.
+
+
+
+\textit{POEtic Tissue} es un sustrato flexible, autocontenido y f\'{\i}sico
+diseñado para interactuar con un entorno cambiante, con el f\'{\i}n de
+desarrollar y adaptar su funcionalidad a trav\'es de un proceso de
+evoluci\'on, crecimiento y aprendizaje {\cite{YTGT+04}}. Las principales
+caracter\'{\i}sticas de \textit{POEtic Tissue} son:
+\begin{itemize}
+  \item Posee un procesador RISC de 32 bits encargado del proceso de
+  evoluci\'on.
+  
+  \item Los individuos celulares son implementados sobre una estructura
+  molecular flexible que permite realizar cualquier circuito digital, pero
+  especializada en la implementaci\'on eficiente de sistemas bio-inspirados.
+  
+  \item El c\'odigo gen\'etico de los circuitos se obtiene por evoluci\'on
+  artificial.
+  
+  \item Las c\'elulas pueden tener formas arbitrarias.
+  
+  \item Las c\'elulas pueden estar en cualquier posici\'on.
+  
+  \item Es cap\'az de auto-configuraci\'on, caracter\'{\i}stica \'util para
+  los procesos de crecimiento y auto-reparaci\'on.
+  
+  \item Mecanismo de auto-ruteo para comunicaci\'on intra-celular, permite
+  cambios de la red celular en tiempos de ejecuci\'on.
+\end{itemize}
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.4]{./images/POEtic_architecture} \end{center}
+  \caption{\label{poeticarch}Circuito POEtic compuesto por dos subsistemas:
+  Org\'anico y ambiental.}
+\end{figure}
+
+\subsubsection{Estructura }
+
+El circuito POEtic est\'a compuesto por dos partes (ver figura
+\ref{poeticarch}): el subsistema org\'anico, el cual es la parte funcional del
+circuito, y el subsistema ambiental.
+
+
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.4]{./images/POEtic_processor} \end{center}
+  \caption{\label{move}Procesador MOVE. Fuente{\cite{GT04}} }
+\end{figure}
+
+\textbf{Subsistema Ambiental} Est\'a compuesto principalmente por un
+procesador RISC de 32 bits. Sus funciones son: configuraci\'on de las
+mol\'eculas y ejecuci\'on de los algoritmos evolutivos. El procesador (ver
+figura \ref{move}) ejecuta el programa utilizando un grupo de unidades
+funcionales (FU), cada una con varias entradas y salidas, las cuales
+corresponden a un registro. Solo existe la instrucci\'on MOVE, la cual
+transfiere datos de la salida de una unidad a la entrada de otra unidad. Esta
+arquitectura maneja las FUs como cajas negras, sin ning\'un conocimiento de su
+funcionalidad. Esto implica que cada FU puede ser manejada utilizando el mismo
+lenguaje y la funcionalidad de la FU puede ser adaptada a las funciones
+requeridas por la aplicaci\'on {\cite{GT04}}.
+
+
+
+\textbf{Subsistema Org\'anico} Esta compuesto por dos capas: un arreglo
+de dos dimensiones de elementos b\'asicos llamados mol\'eculas y un arreglo
+bi-dimensional de unidades de ruteo. Cada mol\'ecula se conecta a sus cuatro
+vecinas en una estructura regular.
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.4]{./images/POEtic_four_modes} \end{center}
+  \caption{\label{op_modes}Estructura de una mol\'ecula en modo (a) Normal,
+  (b) 3-LUT, (c)Shift Memory, y (d) Direcci\'on de entrada}
+\end{figure}
+
+\subsubsection{Estructura Molecular}
+
+La mol\'ecula est\'a compuesta por un look-up table (LUT) de 16 bits y un flip
+flop (DFF) y \ posee los siguientes ocho modos de operaci\'on (ver figura
+\ref{op_modes}):
+\begin{itemize}
+  \item Normal: LUT de 16 bits.
+  
+  \item 3-LUT: La LUT se divide en 2 LUTs de ocho bits. Esto permite la
+  implementaci\'on de operaciones aritm\'eticas r\'apidas.
+  
+  \item Comunicaci\'on: La LUT se divide en una LUT de ocho bits y un registro
+  de desplazamiento de 8 bits.
+  
+  \item Shift Memory: La LUT se convierte en un registro de corrimiento de 16
+  bits; este modo es muy \'util para almacenar el genoma en cada c\'elula.
+  
+  \item Configuraci\'on: La c\'elula posee la capacidad de configurar a sus
+  vecinas. Una parte del genoma puede ser almacenado en las LUT de c\'elulas
+  vecinas.
+  
+  \item Direcci\'on de entrada: La LUT es un registro de 16 bits conectado a
+  la unidad de ruteo, los 16 bits representan la direcci\'on de la c\'elula de
+  la que provine la informaci\'on. La salida de la c\'elula toma el valor que
+  proviene de la capa de ruteo intra-celular.
+  
+  \item Direcci\'on de salida: Similar al modo anterior, pero el valor
+  almacenado en el registro corresponde a la direcci\'on de la c\'elula. La
+  c\'elula env\'{\i}a el valor de una de sus entradas a la unidad de ruteo.
+  
+  \item Trigger: La LUT es un registro de 16bits conectado a la unidad de
+  ruteo. Su tarea es suministrar un disparo cada \textit{n} ciclos de reloj
+  (\textit{n} es el n\'umero de bits de la direcci\'on), la cual es necesaria
+  para la sincronizaci\'on del algoritmo de ruteo.
+\end{itemize}
+
+
+\textbf{Ruteo Intra-celular}
+
+
+
+El sistema de ruteo din\'amico est\'a diseñado para conectar de forma
+autom\'atica las entradas y salidas de las c\'elulas. Cada salida de una
+c\'elula tiene una identificaci\'on \'unica a nivel de organismo. Para cada
+entrada la c\'elula almacena el identificador de la fuente de informaci\'on.
+Una entrada (target) o una salida (source) no conectadas pueden iniciar la
+creaci\'on de un camino, transmitiendo su identificaci\'on en el caso de una
+salida o la identificaci\'on de la fuente si es una entrada. El camino se crea
+utilizando una implementaci\'on paralela del algoritmo de b\'usqueda primero
+en amplitud (\textit{breadth-first}). Cuando se crean todos los caminos, el
+organismo puede comenzar su operaci\'on y ejecutar su tarea hasta que se lance
+una nueva operaci\'on de ruteo. El algoritmo de ruteo se divide en tres fases:
+\begin{enumerate}
+  \item \textbf{Encontar un maestro:} En esta etapa cada \textit{target} o
+  \textit{source} desconectado trata de convertirse en un maestro del proceso
+  de ruteo. Un mecanismo de prioridad elige a la unidad m\'as cercana al borde
+  inferior izquierdo del arreglo.
+  
+  \item \textit{Transmitir la direcci\'on:} El maestro transmite su
+  identificaci\'on en el caso de una salida o la identificaci\'on de la fuente
+  si es una entrada. Cada unidad, receptora compara el valor transmitido con
+  el suyo propio. Al final de este paso las unidades que forman parte del
+  camino conocen este estado.
+  
+  \item \textit{Construir el camino m\'as corto:} Se crea el camino m\'as
+  corto entre las fuentes y destinos.
+\end{enumerate}
+
+
+\textbf{Herramientas de Diseño}
+
+
+
+La creaci\'on del diseño del arreglo molecular es una tarea tediosa, para
+facilitar esta labor se creo una plataforma de desarrollo llamada POEticMol
+{\cite{YTDR+04}}, la cual permite la creaci\'on de diseños a nivel molecular y
+la visualizaci\'on del sistema durante la simulaci\'on, mientras que un editor
+esquem\'atico permite al usuario desarrollar sistemas a nivel de compuertas.
+
+
+
+\section{Proyecto BLOB {\cite{FGYL+04}}}
+
+El objetivo del proyecto BLOB {\cite{FGGM04}}, {\cite{FGYL+04}},
+{\cite{YW04}}, {\cite{FGJT00}} {\cite{FGPM02b}} es construir un nuevo modelo
+computacional para una m\'aquina masivamente paralela incluyendo una
+arquitectura escalable y un lenguaje de programaci\'on. Este proyecto tiene
+como fuente de inspiraci\'on a Amorphous Computing, y los resultados obtenidos
+pueden ser utilizados para aumentar la funcionalidad de AmCom.
+
+\subsection{Arquitectura}
+
+Los componentes b\'asicos de una \textit{m\'aquina blob} (BM)
+abstracta reciben el nombre de \textit{elementos de procesamiento} (PEs), los
+cuales, al igual que las part\'{\i}culas en AC, no poseen informaci\'on sobre
+su posici\'on ni de la topolog\'{\i}a general del arreglo y se comunican
+localmente. Pero a diferencia de estas contienen el mismo programa.
+
+
+
+
+
+
+
+
+
+
+
+\textbf{Blobs}
+
+Un \textit{blob} es una imagen hardware de un aut\'omata de estados finitos,
+puede utilizar los recursos computacionales de uno o muchos PEs, dependiendo
+de los datos del aut\'omata. Recibe este nombre debido a su continua
+variaci\'on de forma y a su desplazamiento sobre los PEs. Los \textit{blobs}
+deben mantener dos propiedades: el aislamiento de otros \textit{blobs} y la
+conectividad de ellos mismos. Debido a que no existe un control general, \
+deben ser aut\'onomos para mantener estas propiedades esenciales (y otras
+m\'as complejas). La autonom\'{\i}a es implementado con reglas locales dentro
+del programa de cada PE.
+
+
+
+Un aut\'omata est\'a compuesto por un grupo de transiciones de estados
+individuales, llamadas part\'{\i}culas. Cada part\'{\i}cula realiza una
+transici\'on de estado del aut\'omata y/o operaciones aritm\'eticas/l\'ogicas
+asociadas con esa transici\'on (una part\'{\i}cula corresponde a un PE). Los
+PEs que no contienen datos reciben el nombre de \textit{c\'elulas
+vac\'{\i}as}, por tanto un \textit{blob} est\'a formado por part\'{\i}culas y
+c\'elulas vacias. Estas \'ultimas ayudan a reducir el n\'umero de ciclos de
+retardo originados en el movimiento del \textit{blob}, ya que si no existen
+c\'elulas vac\'{\i}as, el movimiento de una part\'{\i}cula debe esperar hasta
+que se mueva otra part\'{\i}cula en el PE destino.
+
+\subsubsection{Computaci\'on orientada al espacio}
+
+
+
+El modelo computacional \textit{blob} se basa en un lenguaje orientado al
+espacio donde un programa es una combinaci\'on de c\'omputos y operaciones de
+manejo del espacio. Sus principales caracter\'{\i}sticas son:
+\begin{itemize}
+  \item Es un modelo que incluye de forma impl\'{\i}cita el paralelismo en la
+  sem\'antica del lenguaje.
+  
+  \item Habilidad para ejecutar programas irregulares con estructuras de datos
+  din\'amicas.
+  
+  \item Especifica la estructura espacial del algoritmo.
+  
+  \item Mantiene la orientaci\'on espacial de las arquitecturas basadas en
+  AmCom, pero propone un lenguaje independiente de la m\'aquina y f\'acil de
+  usar.
+\end{itemize}
+
+
+Los PEs implementan un aut\'omata de estados finitos de Mealy, cuyas acciones
+son especificadas en los enlaces de transici\'on. Los enlaces (identificados
+con etiquetas) conectan (de forma bidireccional) elementos de procesamiento
+para formar una red, esta red puede ser irregular, pero la comunicaci\'on de
+los elementos es local.
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.4]{./images/PEs_BLOB} \end{center}
+  \caption{\label{peblob}Un aut\'omata representado por blobs/PE \ y Enlaces.
+  Fuente: {\cite{YW04}}}
+\end{figure}
+
+
+
+Los blobs pueden enviar (recibir) datos hacia (desde) otros blobs, a los
+cuales se encuentran enlazados, y puede identificar uno de sus enlaces
+utilizando su etiqueta y direcci\'on, (ver figura \ref{peblob}). La
+evoluci\'on de una \textit{m\'aquina blob} abstracta se compone de una
+secuencia infinita de transiciones de estado del aut\'omata (c\'omputos),
+comunicaciones entre PEs, nuevas transiciones, etc, aunque la implementaci\'on
+final de la MB ser\'a as\'{\i}ncrona, por simplicidad se asume un modelo
+s\'{\i}ncrono en el que las comunicaciones se realizan al mismo tiempo.
+
+
+
+\subsubsection{Redes Aut\'onomas de Aut\'omatas }
+
+Debido a que los \textit{blobs} son aut\'onomos, sus redes son aut\'onomas,
+gracias a la habilidad de explotar el espacio y el paralelismo. El tamaño y la
+estructura de la red de aut\'omatas puede ajustarse para adaptarse a una gran
+cantidad de datos (m\'as memoria) o a un gran n\'umero de c\'alculos paralelos
+(m\'as operadores l\'ogicos/aritm\'eticos). Al distribuir datos sobre varios
+aut\'omatas se posibilitan operaciones paralelas entre esos datos. Un
+\textit{programa blob} realiza dos tipos de operaciones: operaciones de
+control y de datos y operaciones de desarrollo de la red, las cuales se pueden
+realizar de forma separada o simult\'anea.
+
+
+
+Se han definido siete primitivas que resumen la codificaci\'on celular de
+forma lo suficientemente simple como para ser implementadas en una m\'aquina:
+\{Send, Receive, Copy node, Copy link, Delete link, Set link polarity\}. Un
+nodo computacional, es una versi\'on muy simplificada de la c\'elula utilizada
+en la codificaci\'on celular; es un aut\'omata de estados finitos, cuya
+funci\'on de salida toma uno de las siete instrucciones de m\'aquina. Las
+instrucciones \textit{send} y \textit{receive} \ permite construir redes de
+aut\'omatas tradicionales con arquitecturas fijas. Las otras cinco
+instrucciones permiten que la red se auto-desarrolle, adicionando o eliminando
+nodos y enlaces. La m\'aquina que resulta es intr\'{\i}nsecamente paralela, ya
+que una vez un nodo se ha duplicado, ambas copias contin\'uan ejecut\'andose
+en paralelo. Para ilustrar los principios de un \textit{computador blob} se
+realizar\'a un ejemplo donde se ordenan los n\'umeros 3, 4 y 8.
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.4]{./images/sort_blob} \end{center}
+  \caption{\label{exblob}Ejemplo de una computaci\'on blob, en donde se pueden
+  observar las operaciones de desarrollo y c\'alculo al mismo tiempo.}
+\end{figure}
+
+Cuando un aut\'omata recibe un valor (ver figura \ref{exblob}), eval\'ua el
+estado y el valor propios. Si su estado es \textit{vacio} (color gris), crea
+un PE entre el mismo y el enlace fuente y almacena el valor en este nuevo PE,
+permaneciendo en el estado \textit{vacio}. El nuevo PE se encuentra en estado
+\textit{elemento} (color blanco). Cuando un PE en estado \textit{elemento}
+recibe un valor, lo compara con el valor almacenado, si este valor es mayor
+que el valor propio, lo pasa al PE superior, en caso contrario, pasa el valor
+almacenado al PE superior y lo reemplaza por el valor entrante. Estos
+procedimientos se repiten hasta no recibir m\'as datos. De esta forma, la red
+de PEs (de una dimensi\'on, en este caso) se expande para ajustarse a los
+nuevos valores y los ordena de forma simult\'anea.
+
+
+
+
+
+\subsubsection{Comportamiento de los blobs}
+
+En el ejemplo anterior se puede observar un comportamiento t\'{\i}pico del
+\textit{blob:} cuando un \textit{blob} se duplica, es necesario espacio
+adicional, moviendo los blobs vecinos; las versiones actuales de blobs tienen
+las siguientes caracter\'{\i}sticas:
+\begin{itemize}
+  \item \textbf{Movimiento y colisi\'on} Basado en reglas de
+  part\'{\i}culas de gases:
+  \begin{enumerate}
+    \item Una part\'{\i}cula modifica la trayectoria de otra part\'{\i}cula
+    transfiri\'endole su momentum cuando colisionan. Esto implementa la
+    presi\'on que un \textit{blob} ejerce sobre otro a trav\'es de sus
+    part\'{\i}culas.
+    
+    \item Mientras que una part\'{\i}cula pueda moverse \ en una determinada
+    direcci\'on, su trayectoria es localmente err\'atica. El papel de esta
+    regla es permitir a las part\'{\i}culas encontrar un camino por si solas.
+  \end{enumerate}
+  Las reglas anteriores tienen como caracter\'{\i}stica principal su
+  interacci\'on local, es decir, no es necesario conecer lo que sucede con
+  otros \textit{blobs}. Esto facilita la implementaci\'on al reducir la la
+  complejidad de la arquitectura y la programaci\'on.
+  
+  
+  
+  \item \textit{Divisi\'on:} Tiene como objetivo duplicar nodos de
+  computaci\'on, este proceso est\'a fuertemente influenciado por la mitosis
+  celular. Cuando un \textit{blob} recibe la señal de divisi\'on, todas las
+  part\'{\i}culas se duplican; cada part\'{\i}cula es etiquetada - o +; las
+  part\'{\i}culas son acumuladas en dos grupos (solo part\'{\i}culas + y solo
+  part\'{\i}culas -); cuando se completa la separaci\'on, los dos grupos se
+  convierten en \textit{blobs} independientes (ver figura \ref{blobdiv} ).
+  
+  \begin{figure}[h]
+  \begin{center} \includegraphics[scale=.4]{./images/blob_division} \end{center}
+    \caption{\label{blobdiv}Etapas de la divisi\'on Blob.}
+  \end{figure}
+  
+  \item \textit{Comunicaci\'on:} Los \textit{blobs} est\'an
+  interconectados entre s\'{\i} a trav\'es de enlaces, los cuales son
+  implementados utilizando unos blobs espec\'{\i}ficos llamados \textit{blobs
+  enlace}, los cuales son unidos a los \textit{blobs} est\'andar a trav\'es
+  de una \textit{part\'{\i}cula enlace}. Con el f\'{\i}n de mantener las
+  distribuciones espaciales, estos \textit{blob enlace} son manejados por
+  leyes de elasticidad (poseen el mismo funcionamiento que los resortes o las
+  bandas el\'asticas).
+\end{itemize}
+
+\subsection{Programaci\'on de un Computador Blob}
+
+Como se mencion\'o anteriormente existen dos operaciones b\'asicas en el
+modelo computacional \textit{blob:} operaciones aritm\'eticas y operaciones de
+desarrollo de la red, por lo tanto existen instrucciones para especificar las
+operaciones aritm\'eticas/l\'ogicas tradicionales y se definen unas nuevas
+señales de control para el desarrollo de la red. Estas \'ultimas contraen o
+expanden la red de aut\'omatas y son similares a las instrucciones en
+ensamblador de los procesadores tradicionales. El proceso de duplicar un PE se
+realiza en dos pasos:
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.4]{./images/blob_instructions} \end{center}
+  \caption{\label{instrblob}Instrucciones Blob. Reproducci\'on de:
+  {\cite{FGYL+04}}}
+\end{figure}
+\begin{enumerate}
+  \item Se copian los enlaces del PE a duplicar (ver figura \ref{instrblob}
+  (a), (b), y (c)) utilizando la señal \textit{CpL} (Copy Link). Se les asigna
+  un apolaridad a cada PE para poder distinguirlos.
+  
+  \item Se duplica el PE utilizando la señal \textit{CpN} (Copy Node), el cual
+  crea dos copias del PE con etiquetas +/-.
+\end{enumerate}
+
+De igual forma se puede eliminar un enlace utilizando la señal \textit{RmL}
+(Remove Link) o un Pe con la señal \textit{RmN} (Remove Node). Otra señal
+importante es \textit{MgN} (Merge Node), cuando se elimina un PE con
+\textit{RmN}, se eliminan los enlaces asociados a dicho PE, por lo que los PE
+unidos a estos enlaces se desconectan del arreglo. Utilizando MgN es posible
+eliminar un PE y conservar la conectividad (ver figura \ref{instrblob} (a)
+$\rightarrow$ (e)).
+

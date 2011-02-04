@@ -1,0 +1,507 @@
+\chapter{Estado del Arte}
+
+
+\section{Motivación}
+
+El gran avance de las técnicas de fabricación de Circuitos Integrados ha
+permitido que los sistemas digitales sean partes fundamentales de nuestra
+vida, aún sin darnos cuenta, diariamente interactuamos con ellos,
+facilitando las tareas cotidianas. Los niveles de integración actuales
+permiten construir sistemas cada vez más pequeños, veloces y de menor
+consumo de potencia, lo cual ha favorecido su difusión.
+.El uso de los sistemas
+digitales en \'áreas como la aviación, la industria automovil\'{\i}stica, la
+bioingenier\'{\i}a, etc. demanda de estos un alto desempeño y un
+funcionamiento continuo, el no cumplimiento de estas exigencias traer\'{\i}a
+consecuencias desastrosas.
+
+
+
+Una de las t\'ecnicas utilizadas actualmente para aumentar la confiabilidad
+de un sistema es la redundancia hardware, esta redundancia se logra
+adicionando unidades funcionales de reserva, que entrar\'an en operaci\'on
+cuando la unidad operativa en un determinado momento falle. Otra t\'ecnica
+utilizada es la distribuci\'on de tareas en varias unidades de procesamiento.
+Con esto no se depende de la confiabilidad de un sistema complejo y costoso
+sino que se dispone de muchas unidades de c\'omputo simples y econ\'omicas;
+pero que en conjunto son m\'as robustas que el sistema centralizado. Sin
+embargo, contar con varias unidades de procesamiento genera nuevos retos como
+la divisi\'on y coordinaci\'on de tareas; la forma de realizar estas funciones
+de forma \'optima ha sido el objetivo de muchos estudios, los cuales
+contin\'uan hasta hoy.
+
+
+
+La tecnolog\'{\i}a de los semiconductores adelanta a la capacidad de
+utilizaci\'on por parte de los diseñadores, lo cual crea una brecha en la
+productividad: cada año, el n\'umero de transistores disponibles aumenta en un
+58\% mientras las utilizaci\'on por parte de los diseñadores lo hace en un
+21\% {\cite{KAK01}}. A medida que aumenta el campo de aplicaci\'on de los
+sistemas digitales, lo hacen las exigencias de funcionamiento a ellos
+impuestas, nuevos retos en el diseño se presentan a medida que los sistemas
+embebidos se integran a nuestra vida diaria, se hace necesario diseñar nuevas
+t\'ecnicas que permitan eliminar la brecha en la productividad.
+
+
+
+En la actualidad existe un n\'umero creciente de investigadores que ven a la
+naturaleza como fuente de inspiraci\'on para realizar sus diseños (por
+ejemplo: aplicaciones inspiradas en, los sistemas inmunes artificiales,
+algoritmos gen\'eticos, aut\'omatas celulares). La naturaleza ha creado
+sistemas muy complejos que est\'an formados por millones de elementos, los
+cuales ejecutan sus funciones en paralelo, cada elemento realiza una
+determinada tarea para lograr un objetivo com\'un. Los seres vivos cuentan con
+mecanismos que supervisan a diferentes niveles, el estado y funcionamiento de
+sus componentes; si se detecta una anomal\'{\i}a, estos mecanismos son capaces
+de reparar componentes defectuosos (regeneraci\'on) o de iniciar procesos de
+eliminaci\'on de elementos nocivos {\cite{PRGJ}}; ante la presencia de un
+organismo externo el Sistema Inmune inicia un proceso de eliminaci\'on, el
+cual consiste en la especializaci\'on de ciertas c\'elulas para la detecci\'on
+del agente nocivo, este proceso se realiza de forma paralela y distribuida, lo
+cual mejora el tiempo de respuesta. Estas c\'elulas especializadas finalmente
+generan mecanismos para la eliminaci\'on de dichos elementos. Los diseñadores
+de sistemas computacionales encuentran especialmente atractivas las
+propiedades de auto-replicaci\'on, auto-reparaci\'on y asociaci\'on; en la
+actualidad existen varias l\'{\i}neas de investigaci\'on cuyo objetivo es
+crear metodolog\'{\i}as de diseño que buscan \textit{trasladar} estas
+propiedades al campo de los sistemas digitales y computacionales
+{\cite{FGPM02b}}, {\cite{RN99}}, {\cite{MWMJ95}}, {\cite{KLRR99}},
+{\cite{YTDR+04}}.
+
+
+
+Por otro lado, es muy interesante la forma en que comportamientos complejos
+emergen de la interacci\'on local de millones de elementos sencillos. Ejemplos
+de este tipo se observan a diario en la naturaleza: los card\'umenes de peces
+o las bandadas de aves. Existen muchas personas que creen que el
+comportamiento de las aves o los peces obedecen al seguimiento de
+l\'{\i}deres, esto debido a la forma de pensar centralizada de los seres
+humanos, sin embargo, el comportamiento global depende de la reacci\'on
+individual a acciones de sus vecinos inmediatos. Otro ejemplo se puede
+observar en el comportamiento de las colonias de insectos, cada individuo
+realiza una funci\'on espec\'{\i}fica para contribuir a un objetivo general:
+la supervivencia y la conservaci\'on de la especie; a partir de interacciones
+locales estas colonias crean estructuras complejas, las cuales no podr\'{\i}an
+ser realizadas por un solo individuo. La respuesta a la pregunta ?`C\'omo
+emerge un determinado comportamiento global a partir de interacciones locales?
+ha sido la inspiraci\'on de un gran n\'umero de investigaciones
+{\cite{SSST02}}, {\cite{ED00}}, {\cite{BBCM01}}, {\cite{MR94}}. Sin embargo,
+esta pregunta no ha sido completamente respondida y existe un largo camino por
+recorrer hasta que seamos capaces de formular reglas locales que permitan
+obtener de forma colectiva la soluci\'on a cualquier problema complejo.
+
+
+Existe un considerable n\'umero de trabajos en los que se explotan las
+caracter\'{\i}sticas distribuidas de los sistemas inmunes artificiales (AIS)
+para controlar un gran n\'umero de robots en tareas de b\'usqueda y rescate, y
+detecci\'on de minas {\cite{SS02}}, {\cite{ST02}}, {\cite{SSST02}},
+{\cite{ST01}}; otros investigadores comienzan a estudiar la forma de explotar
+las capacidades de los AIS en el entorno de computaci\'on ubicua
+{\cite{MW93}}, {\cite{MRT04}}, por otro lado, la utilizaci\'on de los AIS como
+medio para obtener tolerancia a fallos en sistemas digitales, ya est\'a siendo
+estudiada {\cite{AARA01}}, {\cite{AA97}}, {\cite{DBAT02}}. Esta gama de
+aplicaciones de los AIS hace pensar en la posibilidad de su utilizaci\'on para
+formular un nuevo paradigma computacional o para complementar los ya
+existentes, por ejemplo, adicionando la capacidad de detecci\'on y remoci\'on
+de fallas. Sin embargo, existen muchas consideraciones que deben tomarse en
+cuenta en el desarrollo de estos sistemas {\cite{JTMA02}} antes de obtener un
+progreso significante en la utilizaci\'on de los AIS como medio para obtener
+la tolerancia a fallos.
+
+
+Ejemplos como los anteriores evidencian el creciente inter\'es en el estudio y
+desarrollo de sistemas que utilizan met\'aforas Biol\'ogicas en su
+funcionamiento; tal vez una de las caracter\'{\i}sticas m\'as importantes de
+estos sistemas bioinspirados (desde el punto de vista electr\'onico) es su
+capacidad intr\'{\i}nseca de adaptaci\'on a entornos cambiantes, lo cual les
+permite exhibir propiedades de tolerancia a fallos. El campo de aplicaci\'on
+de estos sistemas no se limita solo al campo de la electr\'onica, sino que se
+extiende a un gran n\'umero de actividades humana, como por ejemplo:
+actividades econ\'omicas, pol\'{\i}ticas comerciales. Por otro lado,
+proporcionan una fuente de inspiraci\'on y una motivaci\'on para trabajar con
+sistemas distribuidos masivos. Sin embargo, para poder ser capaces de crear
+dispositivos que se comporten de forma similar, primero debemos cambiar la
+forma de ver el mundo y cambiar nuestra tendencia al centralismo y entrar a
+una era descentralizada. Sin embargo, el intereés en la descentralizaci\'on no
+es nuevo; las ideas de la descentralizaci\'on se expanden hoy m\'as
+r\'apidamente y penetran m\'as profundamente en diferentes dominios de las
+actividades humanas: organizaciones, tecnolog\'{\i}as, modelos
+cient\'{\i}ficos y teor\'{\i}as del conocimiento. En el caso de las
+tecnolog\'{\i}as actuales como los MEMs (Micro-Electro Mechanical devices) es
+posible la construcci\'on de millones de dispositivos computacionales
+equipados con sensores y actuadores y su integraci\'on en materiales,
+estructuras y entornos {\cite{WBaVB}}, {\cite{AB94}}. Se estima que en el
+futuro aumenten las aplicaciones de estas tecnolog\'{\i}as, por lo que su
+programaci\'on ser\'a un reto constante {\cite{RN01}}; al igual que entender
+c\'omo diseñar y programar grandes sistemas descentralizados.
+
+Sin embargo, para estar en condiciones de crear sistemas digitales inspirados en las \textit{sociedades naturales} es necesario dar respuestas a nuevas preguntas y afrontar nuevos retos que se presentan en el momento de diseñar este tipo de sistemas. A continuación se enumeran los principales problemas a los que nos debemos enfrentar:
+
+    \begin{itemize}
+     \small
+     \item{\textbf{Diseño}: ¿Qué técnicas y métodos permiten el diseño y control de estos sistemas?}
+     \item{\textbf{Organización}: ¿Cómo pueden reorganizarse y coordinar su comportamiento?}
+     \item{\textbf{Uso}: ¿Qué usos se darán a estos sistemas?}
+     \item{\textbf{Adaptación}: ¿Como conforman funciones colectivas y como las memorizan?}
+     \item{\textbf{Desarrollo}: ¿Qué tipos de protocolos de interacción y comunicación, que modos de organización podrán crear sistemas seguros, confiables y flexibles?}
+     \item{\textbf{Validación}: ¿Cómo evaluar la validez de estos sistemas?}
+    \end{itemize}
+
+Para dar respuesta a estas preguntas realizaremos un estudio basado en \textit{Colonias de Robots}, las cuales constituyen un entorno de trabajo adecuado para explorar las diferentes variables que intervienen en el problema; en el presente trabajo no nos limitaremos solo a obtener resultados experimentales sino que estos resultados serán llevados al mundo físico con robots construidos por nosotros, esto se hace con el fín de adoptar nuevas metodologías de diseño de sistemas digitales y evaluar la validez de las soluciones propuestas.
+
+
+\section{Sistemas Distribuidos en la Naturaleza}
+Las colonias de hormigas, abejas, termita y avispas son ejemplos increibles de trabajo colectivo. Estos insectos \textit{sociales} han tenido un gran éxito en el proceso de adapadaptaciónos lugares más variados y difíciles de la tierra 
+
+Durante años se han realizado estudios sobre las hormigas, abejas y avispas y su comportamiento ha sido tomado como fuente de inspiraci\'on, debido a la impresionante eficiencia de sus sociedades {\cite{BBCM01}}. Considere una
+colonia de termitas, las cuales, individualmente poseen una inteligencia limitada y trabajan sin supervisi\'on, colectivamente construyen estructuras complejas, capaces de mantener la temperatura y los niveles de concentraci\'on
+de di\'oxido de carbono y ox\'{\i}geno en valores adecuados para el crecimiento de sus larvas. Estas estructuras sociales son auto-organizadas, coordinadas por interacciones individuales de miembros de la colonia. En conjunto estos individuos pueden resolver problemas complejos, como por ejemplo, encontrar el camino m\'as corto entre la fuente de comida y la colonia. El funcionamiento colectivo que emerge de un grupo de insectos sociales recibe el nombre de {\textit{inteligencia de enjambre}} ({\textit{swarm intelligence}}). El \'exito de las sociedades de insectos se debe a tres caracter\'{\i}sticas:
+
+\begin{enumerate}
+  \item Flexibilidad: Adaptabilidad a cambios en el ambiente.
+  \item Robustez: Si uno o m\'as individuos fallan (mueren) el grupo contin\'ua realizando su funci\'on.
+  \item Auto-organizaci\'on: Las actividades no se controlan de manera   centralizada, ni se realiza una supervisi\'on local. El funcionamiento del grupo emerge de las interacciones colectivas de todos los individuos.
+\end{enumerate}
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.6]{./images/auto_organizacion} \end{center}
+  \caption{En la naturaleza el comportamiento global de las colonias emerge de interacciones locales.} \label{ants}
+\end{figure}
+
+Para entender el poder de la auto-organizaci\'on, considere como ciertas especies de hormigas son capaces de encontrar el camino m\'as corto a una fuente de comida solo con colocar y seguir caminos qu\'{\i}micos. Individualmente, las hormigas segregan feromonas, las cuales atraen a otras hormigas; en un ejemplo simple dos hormigas abandonan la colonia al mismo tiempo y toman diferentes caminos hacia la fuente del alimento; la hormiga que 
+elige el camino m\'as corto regresar\'a primero y su camino estar\'a marcado por el doble de concentraci\'on de feromonas (las de ida y las de vuelta), esto hace m\'as atractivo este camino para las otras hormigas las cuales al
+recorrerlo contin\'uan aumentando la concentraci\'on de feromonas.
+
+Un modelo \'util que puede ser tomado del comportamiento de las sociedades de insectos es la divisi\'on de tareas: en las colonias los individuos se especializan en ciertas tareas, esta distribuci\'on es muy flexible y permite el cambio de funciones, por ejemplo, cuando el alimento escasea las abejas enfermeras (encargadas de cuidar las larvas) ayudan a las recolectoras.
+
+\section{Colonias de Robots}
+Existen varias motivaciones científicas al trabajar con colonias de robots \cite{AM99}. La primera es una motivación de ingeniería: ¿Podemos encontrar mejores soluciones a ciertas tareas si utilizamos  grupo de robots de baja complejidad en lugar de usar un robot muy sofisticado?. La segunda motivación es biológica: ¿Pueden los experimentos con colonias de robots ayudarnos a entender los comportamientos colectivos en la naturaleza?. La tercera esta orientada a los sistemas complejos: Los robots reales trabajan en un entorno dinámico y con ruido extremo pero sus reglas de comportamiento individual pueden ser implementadas (programadas o aprendidas) de forma precisa y determinista. ¿Qué comportamiento emerge de las interacciones locales robot-robot  y robot-entorno? ¿Podemos predecirlas y controlarlas?
+
+Sin embargo el trabajar con grupos de robots simples trae con sigo una serie de beneficios y desventajas \cite{ARC98}:
+\begin{itemize}
+ \item \textbf{Beneficios}
+   \begin{itemize}
+     \item Aumento del desempeño gracias a la división de tareas. Si las tareas son divisibles de forma natural, la especialización puede ayudar a aumentar el desempeño del grupo.
+     \item Capacidad de ejecución de tareas: Todas las tareas no pueden ser ejecutadas por un solo robot.
+     \item Sensores y actuadores distribuidos.
+     \item Aumento de la robustes del sistema. En cualquier momento un robot puede reemplazar a otro compañero de equipo.
+   \end{itemize}
+ \item \textbf{Desventajas}
+   \begin{itemize}
+     \item Interferencia entre los miembros del grupo. Las interacciones robot-robot son un factor importante en el pobre desempeño del grupo.
+     \item Aumento de la incertidumbre y dinámica del entorno. Los robots deben tener en cuenta las acciones de sus compañeros con el fin de colaborar con ellos y no interferir en sus tareas. Lo cual no siempre es fácil de realizar en entornos reales con pobre comunicación.
+     \item Costo global del sistema.
+   \end{itemize}
+
+\end{itemize}
+
+
+\section{Conceptos Básicos}
+Martinoli en \cite{AM99} realiza unas definiciones básicas para este estudio y son presentadas a continuación:
+
+\subsection{Autonomía}
+Los \textit{robots móbiles} trabajan en entornos imprevisibles y dinámicos. Como consecuencia los robots deben ser provistos con un buen número de sensores y con un poder de procesamiento adecuado. Los robots pueden dividirse en dos categorías: autonomos y guiados por humanos. En \cite{AM99} los robots muestran su auto-suficiencia en los siguientes niveles:
+\begin{enumerate}
+ \item Energético: EL robot no tiene un cable de alimentación.
+ \item Computacional: Todos los sensores, actuadores y recursos computacionales están en el robot.
+ \item Decisión: Los contrladores exhiben un comportamiento reactivo, algunas veces extendido con capacidades de memoria.
+\end{enumerate}
+
+\subsection{Localidad y Globalidad}
+El termino \textit{local} es utilizado para indicar proximidad física. \textit{La comunicación local} o \textit{sensado} se refiere a una percepción idividual del mundo, basado en un marco de referencia individual.
+
+El término \textit{global} involucra la totalidad del grupo independientemente de la posición de sus miembros dentro del entorno, lo cual requiere un marco de referencia para los miembros del grupo. Por lo tanto la \textit{Comunicación Global} implica un rango de comunicación sin límites.
+
+\subsection{Inteligencia}
+Un idividuo se considera \textit{inteligente} si \cite{BETG94} es capaz de actuar en su entorno de tal forma que la condición de \textit{viabilidad} siempre se satisface. En otras palabras, un individuo inteligente puede mantener su \textit{identidad} durante toda su vida, no solo en cuanto a su mera existencia sino a sus funciones vitales y objetivos. Para un robot móbil autónomo esto significa el cumplimiento de su tarea sin quedar atascado en puntos muertos mientras evita obstáculos.
+
+Esta definición contrasta con la definición de inteligencia en AI, en la que el paradigma adoptado normalmente se basa en la condición \textit{a priori}: tadas las acciones posibles en un estado de percepción dado son conocidas de antemano y el agente debe escoger para poder ser considerado \textit{Inteligente}.
+
+Una de las posibles formas de inteligencia colectiva (la viabilidad del grupo es necesaria para lograr la del individuo) es la inteligencia de enjambre (\textit swarm intelligence)\footnote{Fukuda y Ueyama \cite{FTUT94} proponen la siguiente definición: La inteligencia de Grupo puede dividirse en Inteligencia Colectiva y en Inteligencia de enjambre. La primera emerge de la interacción entre individuos racionales, inteligentes, con capacidad de negociación, mientras la inteligencia de enjambre emerge de individuos no inteligentes}. Bonabeau, Dorigo, and Theraulaz expanden el concepto de inteligencia de enjambre ``para incluir cualquier intento de diseñar algoritmos o dispositivos que resuelven problemas distribuidos inspirado por el comportamiento colectivo de colonias de insectos sociales y otras sociedades de animales''.
+
+
+\subsection{Auto-organización}
+Según \cite{BETG+97}, la auto-organizacuión en insectos sociales se basa en los siguientes mecanismos:
+\begin{itemize}
+ \item Realimentación Positiva, e.g. reclutamiento de otros individuos o reforzamiento de un determinado comportamiento a nivel individual.
+ \item Realimentación Negativa en forma de saturación extinción de recursos o competencia.
+ \item Amplificación de fluctuaciones tales como caminatas aleatorias, errores o cambios de contexto aleatorios.
+ \item Interacciones múltiples: se requiere una densidad mínima de individuos mutuamente tolerantes. (los individuos pueden ser capaces de explotar los resultados de sus propias actividades, asi como las de sus compañeros).
+\end{itemize}
+
+Según \cite{BETG+97}, las características de los sistemas auto-organizados son:
+\begin{itemize}
+ \item Creación de patrones espacio-temporales desde un medio inicialmente homogéneo. 
+ \item Estabilidad múltiple (coexistencia de varios estados estables).
+ \item Existencia de bifurcaciones cuando se varían algunos parámetros.
+ \item 
+\end{itemize}
+
+Es importante notar que los sistemas auto-organizados no son necesariamente adapatativos a nivel individual o cooperativos Sin embargo, la naturaleza favorece a las formas de auto-organización que observamos en los insectos sociales porque ellos son cooperativos y/o adaptativos \cite{BETG+97}.
+
+
+\subsection{Comportamiento Emergente}
+Podemos hablar de \textit{comportamiento emergente individual} si el comportamiento resultante del robot no fué programado de forma explícita en cualquiera de sus bloques funcionales y emerge de interacciones entre ellos (bloque-bloque). De forma similar podemos hablar de \textit{Comportamiento Emergente de Grupo} solo si no existe 
+rastro del comportamiento obtenido (o deseado) en el controlador individual y este comportamiento emerge de forma auto-organizada y con interacciones robot-entorno \cite{MDBU93}.
+
+%##############################################################################################################
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TRABAJO PREVIO
+%##############################################################################################################
+
+\section{Trabajo Previo}
+En esta sección realizaremos una revisión de los trabajos realizados en las áreas relacionadas con auto-organización con implementaciones Hardware.....
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% AUTO - ORGANIZACION
+\subsection{Auto-Organización}
+
+Trabajos en Auto-Organización han sido desarrollados en muchos campos, Por ejemplo, en \cite{SOQX04} utilizan un protocolo de auto-organización para optimizar la energía de una red de sensores inalámbricos, proporcionar adaptabilidad (en tamaño, topología y densidad) a la infraestructura de comunicaciones y permite comunicaciones multi-hop
+
+Las técnicas para modelamiento de sistemas complejos se pueden dividir en aproximaciones \cite{JLXJ}:
+\begin{itemize}
+ \item Top-Down: Comienza con una descripción de alto nivel del sistema y utiliza herramientas como ecuaciones diferenciales. Trata cada parte del sistema complejo de forma genérica y es efectivo modelando casos promedio, donde la diferencia de comportamiento de los individuos puede ser ignorada. Sin embargo, esta aproximación no puede ser utilizada en todos los casos. Por ejemplo, las ecuaciones diferenciales no pueden modelar de forma precisa, la dinámica y el comportamiento emergente de algunos de los sistemas biológicos (la distribución de anticuerpos en el sistema inmunológico humano tiende a ser heterogéneo)
+\item Bottom-Up: Comienza con una descripción de la entidad más pequeña del sistema complejo y modela su funcionamiento de la siguiente forma:
+  \begin{itemize}
+    \item Autónomo: Los elementos del sistema son individuos racionales que actúan de forma independiente.
+    \item Emergente: Exhiben comportamientos complejos que no estan presentes o son predefinidos en el funcionamiento de las unidades autónomas.
+    \item Adaptativo: Modifican su comportamiento ante cambios en el entorno donde estan localizados.
+    \item Auto-Organizado: Son capaces de organizar los elementos para alcanzar los funcionamientos anteriormente mencionados.
+  \end{itemize}
+
+\end{itemize}
+ 
+
+Autonomy-Oriented Computing (AOC) \cite{JLXJ} es una aproximación bottom-up que intenta resolver problemas computacionales de alto grado de dificultad o caracterizar el funcionamiento de sistemas complejos basado en la observación de la naturaleza, los pasos para construir un modelo AOC son:
+
+\begin{enumerate}
+ \item Observar el comportamiento macroscópico del sistema natural
+ \item Diseñar las entidades funcionamiento deseado asi como el entorno donde residen dichas entidades.
+ \item Observar el comportamiento macroscópico del sistema artificial.
+ \item Validar el comporatmiento del sistema artificial con su contraparte natural.
+ \item Modificar el diseño obtenido en 2) de acuerdo a los resultados obtenidos en 4)
+ \item Repetir 3) y 5) hasta encontrar el comportamiento deseado.
+ \item Encontrar un modelo de 1) en términos de 2).
+\end{enumerate}
+
+\subsection{Auto-Organización de sensores}
+\cite{KPJZ} 
+
+
+El CEBOT \cite{TUTF} esta conformado por un gran número de unidades robóticas autónomas, llamadas celúlas, cada una con capaz de realizar una función simple. CEBOT permite configurar de forma dinámica la estructura del SW y HW con el fín de realizar una determminada función o ante cambios en el entorno, esta reconfiguración se logra modificando la interacción entre las células. En este trabajo el comportamiento cooperativo se define como un comportamiento de la célula para generar la configuración estructural.
+
+
+
+\section{Coordinación basada en el comportamiento de un sistema multi-robot\cite{JaMJM05}}
+
+\subsection{Arquitecturas de control de robots}
+
+\subsubsection{Control de un robot}
+Aca se define el control de un robot como el proceso de mapear la información obtenida por los sensores del mismo en acciones en el mundo real. las aproximaciones para controlar un robot pueden describirse como un espectro que va desde el control deliberativo al reactivo.
+
+La aproximación deliberativa es computacionalmente intensiva, ya que utiliza razonamiento o planeación explícita utilizando una representación simbólica y modelos del mundo \cite{RK95}. Para que el proceso de razonamiento sea efectivo, se requiere que los modelos del mundo sean completos y precisos. En dominios donde dicho modelo es difiícil de obtener, por ejemplo, en entornos dinámicos y de rápido cambio o en situaciones donde exista una gran incertidumbre sobre los sensores y acciones de los robots, puede ser imposible para un robot actuar de forma adecuada utilizando este tipo de control.
+
+En contraste al control deliberativo, el reactivo se caracteriza por tener un fuerte acople entre el sensado y la acción, donde típicamente no existe ningún tipo de razonamiento\cite{BC86}\cite{Bro91}. El control reactivo no requiere la creación o el mantenimiento de modelos del mundo, ya que no se basa en procesos de razonamientos complejos utilizados en el control deliberativo. En lugar de esto, utilizan métodos que involucran una cantidad mpinima de computación, representación interna o cinicimiento del mundo. Esto hace al control reactivo adecuado para entornos dinámicos,  donde tener un modelo del mismo no es muy realista. Aún mejor, la baja necesidad computacional permite a los sistemas reactivos responder de forma adecuada a dinámicas de cambios rápidos.
+
+El control híbrido se encuentra localizado entre el control deliberativo y reactivo, en el cual un controlador posee componentes reactivos y deliberativos. EL control reactivo maneja tareas de control a bajo nivel que requieren una respuesta rápida, tal como evación local de obstáculos. La parte deliberativa del control maneja tareas de alto nivel saobre una mayor escala de tiempo, tales como planeación de camino (path planning). Adicionalmente el control hibrido debe tener una tercera capa que realice la interfaz entre el componente reactivo y el deliberativo. Esta arquitectura de tres capas pretende extraer lo mejor del control reactivo en términos de control dinámico y tiempo de respuesta y lo mejor lo mejor de los controladores deliberativos en la forma de acciones globales eficientes sobre una gran escala de tiempo. Sin embargo existen asuntos complejos que involucrados en la interfaz de estos dos componentes fundamentalmente distintos y la forma en la cual su funcionalidad puede ser particionada no es muy clara aún.
+
+
+\subsection{Control Basado en el Comportamiento (BB)}
+
+La aproximación BB para el control de robots no puede ser clasificada como reactiva o deliberativa, ya que puede ser, y en mucho casos son, las dos. Sin embargo, el control BB se identifica más con el control reactivo del espectro de control, porque se presta una gran atención en mantener una estrecha realación entre sensado y acción. \cite{Con92} \cite{Gat98}
+
+Fundamentalmente un Controlador Basado en el Comportamiento esta compuesto por un grupo de componentes modulares,llamados \textit{funcionamientos}, los cuales, son ejecutados en paralelo. Un \textit{funcionamiento} es una ley de control que agrupa una serie de restricciones con el fín de alcanzar y mantener una meta.\cite{Mat97}\cite{Ark88}
+
+Cada funcionamiento recibe entradas desde los sensores y/o otros funcionamientos y proporciona salidas los actudores del robot o a otros funcionamientos.
+
+Los actuadores pueden compartir entradas de sensores y enviar comandos de salida a los mismos actuadores. El escoger una determinada acción ante múltiples entradas de sensores y funcionamientos secibe el nombre de \textit{Selección de acción}\cite{Pir00}. Uno de los mecanimos mejor conocidos para selección de acción es el uso de una jerarquía de funcionamiento predefinida, como la \textit{Subsumption Architecture \cite{Bro86}}, en la cual, los comandos de los funcionamientos activos de mayor-rango son enviados al actuador y los otros son ignorados. 
+
+
+Los sistemas BB son variados, pero existem dos principios fundamentales a los que todos los sistemas BB se adhieren inherentemente: 1) En robot posee un cuerpo físico y su funcionamiento está limitado por realidades fisicas, incertidumbres y consecuencias de sus acciones, todas ellas difíciles de predecir y 2) El robot está imerso en un mundo real y actúa directamente en base a la información de sus sensores, no sobre una representación abstracta o procesada del mismo.
+
+\subsection{Desde el control de un robot a control de múltiples robots}
+
+Los Sistemas distribuidos Multi-Robot contrastan con los sistemas centralizados Multi-Robot, en los cuales, todas las acciones de un robot no son determinadas localmente, ellas deben ser determinadas por una entidad externa, tal como otro robot o por cualquier tipo de comando externo. En los sistemas multi-Robot distribuidos, cada robot debe tomar sus propias decisiones de control, basándose únicamente en la información de sus sensores, la cual es limitada, local y con presencia de ruido.
+
+\subsubsection{Ventajas y Retos en los sistemas Multi-Robot}
+Las potenciales ventajas de los Sistemas Multi-Robot sobre los SRS (Simple Robot System) incluyen una reducción del costo total del sistema, al utilizar robots simples y económicos en lugar de un robot complejo y costoso. Además, una arquitectura Multi-Robot puede aumentar la flexibilidad y robustez del sistema tomando ventaja del paralelismo y la redundancia. Asimismo, la complejidad inherente de algunos entornos de trabajo requiere el uso de una arquitectura Multi-Robot, cuando las capacidades o los requerimientos de recursos necesarios son muy grandes para ser alcanzados por un solo robot.
+
+Sin embargo, la utilización de Sistemas Multi-Robot (MRS) presenta desventajas potenciales y retos adicionales que deben ser tratados para que presenten una alternativa efectiva y viable a los SRS. Un sistema MRS diseñado pobremente, con robots individuales trabajando en oposición, puede ser menos efectivo que un sistema SRS diseñado cuidadosamente. El reto más grande en el diseño de sistemas MRS efectivos es el manejo de la complejidad introducida por la interacción entre los robots. 
+
+\subsubsection{Necesidad de Coordinación en Sistemas Multi-Robot}
+Con el fín de maximizar la efectividad de un MRS, las acciones de los robots deben ser espacio-temporalmente coordinadas y dirigirlas hacia el logro de una determinada tarea o un determinado objetivo a nivel de sistema. El solo hecho de tener robots interactuando entre si, no es suficiente para producir un comportamiento a nivel de sistema coordinado, interesante o práctico. Para que la interacción de los robots produzcan funcionamientos coherentes, debe existir algun mecanismo de coordinación que organice espacio-temporalmente las interacciones de forma apropiada para la tarea.
+
+
+\subsection{Coordinación global a partir de interacciones locales}
+
+Existen muchos mecanismos por los cuales se pueden organizar las interacciones. Nosotros los clasificaremos en tres  clases: Interacción a través del entorno, interacción a través de sensores, e interacción a través de comunicacion. Estas clases no son mutuamente excluyentes ya que los MRS pueden y en algunos casos utilizan mecanismos simultáneos de cualquiera o de las tres clases para alcanzar un funcionamieno coordinado a nivel de sistema.
+
+
+\subsubsection{Interacción por medio del entorno}
+
+El primer mecanismo de interacción es através del entorno compartido de los robots. Esta forma de interacción es indirecta, ya que no existe comunicación explícita o física entre los robots. En lugar de esto, el mismo entorno se utiliza como medio de la comunicación indirecta.
+
+Con el cuidadoso diseño de los sensores, actuadores y las cualidades del control, es posible utilizar el concepto de 
+\textit{stigmergy \cite{HM99}\footnote{\textit{Stigmergy} es un método de comunicación indirecta en un sistema de auto-organización emergente, donde sus partes individuales se comunican con las otras modificando su entorno local.}} en MRS. Este poderoso mecanismo de coordinación es muy atractivo ya que típicamente requiere capacidades mínimas de los robots individuales. Los robots no requieren comunicación directa, solo reconocer a los otros robots o distinguirlos entre diferentes objetos en el entorno, tampoco requieren realizar razonmientos computacionales intensivos de razonamiento y planeación.
+
+Las acciones de construcción de un robot alteran el entorno, y por lo tanto la información de los sensores disponible para los otros robots. Esta nueva información activa acciones de construcción posteriores.
+
+\subsubsection{Iteracción através de sensores}
+El segundo mecanismo para la interacción entre robots es através de sensores. Como se describe en \cite{CFK97}, la interacción utilizando sensores se refiere a interacciones locales que pueden ocurrir entre robots como resultado de el sensado de otro robot., pero sin comunicación explícita. Al igual que la interacción por medio del entorno, la interacción utilizando sensores es también indirecta ya que no existe comunicación explícita entre los robots; sin embargo, requiere que cada robot sea capaz de distinguir otros robots entre diferentes objetos del entorno. En algunas circunstancias, cada robot puede ser requerido para identificar a todos los demás robots, o clases de los otros robots. En otros casos, puede ser necesario distingir robots de otros objetos del entorno.
+
+La interación por medio de sensores puede ser usada por un robot para modelar el comportamiento de otros robots o para determinar que está haciendo otro robot con el fín de tomar decisiones y reponder de forma adecuada. Por ejemplo, las bandadas de aves utilizan sus sensores para monitorear las acciones de otras aves en su vecindad para hecer correcciones locales a su propio movimiento. Ha sido demostrado que los resultados efectivos del grupo  a partir de relativamente simples reglas locales seguidas por cada ave respondiendo a la dirección y velocidad de los vecinos locales \cite{Rey87}.
+
+Otros dominios en los cuales la interacción a través de sensores han sido utilizada en MRS inclute \textit{flocking}\cite{Mat95}, en donde cada robot ajusta su movimiento de acuerdo al movimiento de los robots observados localmente. La interacción a través de sensores también ha sido demostrada en el dominio de división adaptativa de tareas \cite{JM03}. En este dominio, cada robot cambia de forma dinámica las tarea que está ejecutando basándose en las acciones observadas de otros robots y la disponibilidad de tareas en el entorno.
+
+\subsubsection{Caso de Estudio Interacción por medio de Sensores: Formación de marcha}
+
+La aproximación a la formación de marcha aca descrita fué presentada en \cite{FM02}. La idea general de esta aproximación es que cada robot en el MRS se posiciona el mismo relativamente a un robot vecino designado. Este robot vecino, a su vez, se posisiona el mismo de forma relativa a su propio robot vecino designado. Ya que todos los robots solo tienen en cuanta su posición relativa con respecto a su robot vecino, ningún robot esta, ni necesita estar pendiente de, la posición global de todos los robots en la formación. Cada robot solo necesita ser capaz de determinar la distancia y dirección a su vecino. La geometría global de la formación fue determinada a través de la cadena de vecinos. La formación puede ser cambiada de forma dinámica alterando la estructura de la relación local del vecino.
+
+\subsubsection{Interacción por medio de comunicación}
+La comunicación en los robots físicos no es gratuita o confiable y puede ser restringida limitanfo el ancho de banda y el alcance, y la inpredecible interferencia. En los sistemas reales de robots, el rango y la confiabilidad de la comunicación son factores de diseño muy importantes \cite{GM(.I.W01}.
+
+Existen muchos tipos de comunicación. La comunicación puede ser directa de un robot a otro, de un robot a una clase de robots, o difundir desde un robot a todos los demás robots. Así mismo, los protocolos pueden ir desde esquemas simples carentes de protocolo a esquemas complejos basados en negociación y comunicación intensiva. La información codificada en una comunicación puede ser información de estado, un comando a uno o más robots, una petición de información adicional por otros robots.
+
+\subsubsection{Casi de estudio Interacción por medio de comunicación: Seguimiento de múltiples objetivos}
+
+En \cite{Par97}, el objetivo es tener un grupo de robots con rangos de sensores limitados se posicionan y orientan ellos mismos de tal forma que son capaces de adquirir y seguir multiples objetos que se mueven a través de su entorno. Las posiciones, trayectorias y numero de objetivos no se conocen a priori. Estas dificultades son compuestas en un MRS distribuido, donde el sistema debe determinar que robot(s) deben monitorear que objetivo(s). Cada robot tiene un rango limitado de sensores y comunicación. La comunicación fue utilizada por cada robot para transmitir la posición y velocidad de todos los objetivos dentro de su rango de sensado a los demás robots dentro de su rango de comunicación.
+
+Cada robot evalúa constantemente la importancia de su actual actividad de seguimiento y los posibles cambios de posición que podrían aumentar la importancia de sus actividades de seguimiento. La comunicación fue utilizada para permitir a cada robot mantener un mapa local de los movimientos de los objetivos dentro del rango de comunicación pero fuera fuera de su rango de sensado. Como resultado, el grupo como un todo, pudo seguir un número máximo de objetivos, con un mínimo número de robots.
+
+
+\subsection{Diseño formal y análisis de un Sistema Multi-Robot}
+
+El diseño de los mecanismos de coordinación para un sistema multi-robot (MRS) ha probado ser un problema dificil de resolver. En la última década, el diseño de una variedad de tales mecanismos sobre un amplio rango de dominios de aplicación ha sido estudiado \cite{CFK97b} \cite{DJM+02}.
+
+Las siguientes preguntas deben ser resueltas antes de poder producir rápida y eficientemente un MRS efectivo para una nuevo dominio:
+
+\begin{itemize}
+ \item Que tan apropiado es un determinado mecanismo de coordinación para un dominio en particular.
+ \item Que características de desempeño se pueden esperar de el.
+ \item Como esta relacionado con otros mecanismos de coordinación.
+ \item Como se puede modificar para aumentar el desempeño del sistema.
+\end{itemize}
+
+El paradigma BB para control multi-robot es popular en MRS debido a su robustez a las interacciones dinámicas inherentes a cualquier MRS. Un MRS representa un sistema de alta no linealidad en el cual las acciones de un robot son afectadas por las acciones de los demás rebots. Esto hace que cualquier esquema de control que se base en razonamiento o planeación complejos no sean efectivos debido a que es muy difícil predecir de forma precisa futuros estados de un sistema MRS no trivial. Por esta razón, el control BB es utilizado frecuentemente en MRS. La simplicidad del robot individual tambien presenta una ventaja al permitir que sea posible el análisi externo para predecir el desempeño del sistema.
+
+\subsubsection{Analisis de Sistemas Multi-Robot Utilizando Modelos Macroscópicos}
+
+Los modelos macroscópicos se enfocan en el funcionamiento a nivel de sistema del MRS sin considerar de forma explícita cada robot individualmente en el sistema.
+
+Un modelo matemático macroscópico MRS ha sido demostrado en el dominio de tareas de recolección de alimentos \cite{LG02}. El modelo fué usado para estudiar los efectos de la interferencia entre robots, el resultado pudo ser utilizado para modificar el control individual de los robots o para determinar la densidad óptima de robots con el fín de maximizar el desempeño de la tarea. Un modelo analítico macroscópico ha sido aplicado para el estudio de  la dinámica del comportamiento colectivo en un dominio colaborativo utilizando una serie de ecuaciones diferenciales \cite{LGM+01}.
+
+Un modelo macroscópico general para el estudio de sistemas adaptativos multi-agente fué presentado en \cite{LG03} y fué aplicado al análisis en el dominio de localización de tareas que fué realizado de forma experimental en \cite{JM03}. En este trabajo los robors que forman el MRS mantienen una cantidad limitada de estados internos persistentes para representar una historia corta de eventos pasados, pero no se comunican de forma explícita con otros robots.
+
+
+\subsubsection{Análisi de Sistemas Multi-Robot Utilizando Modelos Microscópicos}
+
+El modelamiento microscópico considera directamente cada robot en el sistema y puede modelar de forma individual las interacciones de un robot con otros robots y con la tarea con un detalle arbitrario, incluyendo la simulación exacta del funcionamiento de cada robot. Sin embargo, la mayoría de las aproximaciones microscópicas modelan el funcionamienro de cada robot como una serie de eventos estocásticos. Típicamente, el controlador del robot individual es abstraido a algún grado y las trayectorias e interacciones no son consideradas directamente.
+
+Una metodología de modelamiento microscópico probabilístico para el estudio de funcionamiento colectivo en en dominio de clustering fué presentado en \cite{MIM99}. El modelo fué validado a través de un acuerdo cuantitativo entre la predicción de la evolución del tamaño del cluster, con la simulación de experimentos y con experimentos sobre robots reales. La efectividad y precisión de las técnicas de modelamiento macroscópico y microscópico comparadas con los experimentos con robots reales y simulaciones se discuten en \cite{ME02}.
+
+Un paso hacia adelante en las metodologías para el análisis formal de un determinado diseño MRS se encuentra en las metodologías formales para la síntesis de controladores MRS. La síntesis es el proceso de construcción de un controlador MRS que cumple con las restricciones del diseño, tales como alcanzar el nivel de desempeño deseado mientras cumple las restricciones impuestas por las limitadas capacidades del robot.
+
+Ser capaz de definit un dominio de aplicación y tener un método formal que diseñe el MRS para cumplir con la tarea mientras se alcanza el criterio de desempeño especificado es uno de los objetivos de largo plazo en la comunidad MRS.
+
+Una herramienta de trabajo importante en el diseño formal de MRS coordinados fué el desarrollo de \textit{information invariants}, la cual intenta definir los requerimientos de información de una tarea dada e indica cual de estos requerimientos pueden ser alcanzados en un contolador \cite{Don95}. El concepto de \textit{information invariants}  fué estudiado experimentalmente en el dominia de manipulación distribuida de tareas \cite{DJR95} y fué extendido a través de la definición de equivalencia de clases entre definiciones de tareas y capacidades del robot para ayudar en la elección de una clase de controlador apropiada en un dominio dado \cite{Par98}.
+
+
+Otras aproximaciones alternativas a la síntesis de controladores MRS pueden ser encontrados en métodos evolutivos \cite{Mat95} \cite{Par98b}. También existen un número de entornos de diseño de MRS, arquitecturas de control, y lenguajes de programación, los cuales ayudan en el diseño de MRS coordinados \cite{Mat95b} \cite{AB97} \cite{AGH+00}
+
+
+%*******************************************************************************************************************
+
+\subsection{Asignación dínámica de tareas \cite{KLCJ+0}}
+
+En un MRS distibuido no existe un mecanismo de control centralizado, a cambio, cada robot opera de forma independiente bajo control y sensado local, con un comportamiento coordinado a nivel de sistema que resulta de las interacciones locales entre los robots y entre los robots y el entorno. El diseño efectivo de un MRS coordinado está restringido por la carencia de herramientas de diseño y metodologías formales. El diseño de un SRS (Single Robot System) se ha visto beneficiado en gran medida por los formalismos proporcionados por la teoría de control -- el diseño de MRS esta necesitando un formalismo análogo.
+
+Para que un grupo de robots realicen de forma efectiva una determinada tarea a nivel de sistema, el diseñador debe hacerse la pregunta: ¿Qué robot puede realizar que tarea y cuando?. La asignación dinámica de tareas es una clase de asignación de tareas en la cual, la asignación de robots a las sub-tareas es un proceso dinámico y puede requerir un ajuste continuo en respuesta a cambios en el entorno de la tarea o al desempeño del grupo. El problema de la asignación de la asigación de tareas en un MRS distribuido esta compuesto por el hecho que la asignación debe ocurrir como resultado de un proceso distribuido ya que no existe un coordinador central para hacer estas asignaciones. Esto aumenta la complejidad del problema ya que debido al rango local de los sensores del robot, ningún robot posee una visión completa del estado del mundo. Con esta información incompleta y en algunos casos ruidosa, cada robot debe hacer decisiones locales de control sobre que acciones realizar y cuando, sin un conocimiento completo de que estén haciendo otros robots que la hayan realizado en el pasado, o que harían en el futuro \cite{KLCJ+}.
+
+Existe un número de modelos y filosofías de asignación de tareas. Históricamente, la más popular se basa en la coordinación intencional para lograr la asignación de tareas \cite{Par98b}. En esta, los robots coordinan sus respectivas acciones de forma explícita a través de comunicaciones y negocioaciones deliberadas. Debido a problemas relacioados con la escala, dichas aproximaciones son utilizadas en MRS con un numero relativamente pequeño de robots (i.e. menor que 10). Este método es el preferido debido a que es el más conocido, fácil de diseñar e implementar, y más adecuado para el análisis formal \cite{BPG}.
+
+Al aumentar el tamaño del MRS, la complejidad introducida al aumentar las interacciones de los robots, hace que estos sistemas sean más difíciles de analizar y diseñar. Esto lleva a la alternativa de coordinación intencional, es decir, asignación de tareas utilizando coordinación emergente. En sistemas que utilizan la coordinación emergente, los robots individuales coordinan sus acciones basadándose únicamente en información local de sensores e interacciones locales. Típicamente, existe muy poca o ninguna comunicación directa o negociaciones explícitas entre los robots. Ellos son, por lo tanto, más escalables a grandes números de robots y son más capaces de tomar ventaja de la robustez y paralelismo provisto por la agregación de grandes números de robots coordinados.
+
+
+\subsubsection{Trabajo relacionado}
+
+Sugawara et al \cite{KSMS97} \cite{KSMS+} desarrollaron un modelo simple de recolección de alimentos cooperativo en grupos de robots con y sin comunicación. Kazadi et al. [11] \cite{SKAA02} estudió la propiedad general de una agregación multi-robot utilizando modelos mocroscópicos fenomenológicos. Agassounon y Martinoli \cite{WAAM02} presentan un modelo de agregación en el cual el número de robots toman parte de en la tarea de clustering se basa en el mecanismo de división de labores de las antenas.
+
+
+Estos modelos son ad-hoc y e dominio específico, y los autores no dan explicación de como aplicar estos modelos a otros dominios. En trabajos recientes hemos desarrollado un marco de trabajo general para crear modelos fenomenológicos de funcionamiento colectivo en grupos de robots \cite{KLAG04} \cite{KLAM05}. 
+
+Muchas de las aproximaciones listadas arriba están de forma implícita o explícita basadas en la teoría de procesos estocásticos. Otro ejemplo de una aproximación estocástica es el modelo probabilístico desarrollado por Martinoli y sus colaboradores \cite{AMPt99} \cite{AMAJI99} \cite{AJI+01} para estudiar el funcionamiento colectivo de un grupo de robots.
+
+Muy poco trabajo ha sido desarrollado sobre análisis de sistemas multirobot en entornos dinámicos. En \cite{KLAG03} se extiende el marco de trabajo de los procesos estocásticos desarrollado en trabajos recientes, a robots que cambian su comportamiento basándose en la historia de observaciones locales del (probablemente cambiante) entorno \cite{LG03}.
+
+En \cite{BAH88} Huberman y Hogg, realizaron un estudio matemático sobre funcionamiento colectivo de sistemas de agentes adaptativos utilizando la dinámica de juego como un mecanismo de adaptación. En los sistemas de dinámica de juegos, las estrategias ganadoras son premiadas, y los agentes utilizan las mejores estrategias para decidir su próximo movimiento.
+
+
+\subsubsection{Mecanismos de asignación de tareas}
+El esenario de asignación de tareas dinámico estudiado considera un mundo poblado con tareas de \textit{T} tipos diferentes y robots que son igualmente capaces de realizar cada tarea, pero solo se les puede asignar un tipo de tarea en un momento dado. El estado de un robot es un atajo para el tipo de tarea asignada al robot. Un robot puyede cambiar su estado de acuerdoa sus políticas de control cuando lo determine apropiado (evitando cambios de tarea no necesarios).
+
+El propósito de la asignación de tareas es asignar robots a las tareas de una forma que aumente el desempeño del sistema, lo que normalmente significa reducir el tiempo total de ejecución. Esto es, si todas las tareas toman igual cantidad de tiempo en completarse, en la mejor asignación, la fracción de robots en el estado \textit{i} será igual a la fracción de tareas de tipo \textit{i}.  En general, sin embargo, la asignación deseada puede tomar otras formas, -- por ejemplo, puede estar relacionada a la recompensa relativa o costo de realización total (completing) de cada tipo de tarea -- sin cambiar nuestra aproximación. En el escenario de asignación dinámica de tareas, el número de tareas y el número de robots disponibles pueden variar en el tiempo, por ejemplo, agragando nuevas tareas, desarrollando nuevos robots, o removiendo robots defectuosos.
+
+El reto al que se enfrenta el diseñador es divisar un mecanismoque permita una asignación de tareas deseada en un MRS distribuido ante cambios en el entorno. Se asume que los robots son capaces de observar tareas y discriminar sus tipos. Ellos también son capaces de observar y discriminar los estados de las tareas de los otros robots.
+
+Una forma de dar al robot la habilidad de responder a cambios en el entorno es dotarlo con un estado interno donde el puede almacenar su conocimiento del mundo capturado por sus observaciones \cite{CVJ03} \cite{KLAG03}.  Las observaciones son almacenadas en una lista continua cíclica de longitud finita, donde las nuevas observaciones reemplazan las anteriores. El robot consulta estas observaciones periódicamente y actualiza su estado de acuerdo a una función de transición especificada por el diseñador \cite{LG03} \cite{CVJ03}.
+
+
+\subsection{Analisis de Asignción Automática de Tareas}
+
+En esta sección asumiremos que existen dos tipos de tareas, -- denominadas de forma arbitraria \textit{red} y \textit{green}. Esta simplificación se hace con fines pedagógicos, el modelo puede expandirse. Durante un intervalo de tiempo suficientemente corto, puede considerarse que cada robot permanece en la tarea Red o Green, cada tarea esta compuesta por muchas acciones y funcionamientos del robot, por ejemplo, buscando nuevas tareas, detectando y ejecutándolas, evitando obstáculos, etc. Sin embargo, ya que lo que se desea es modelar como evoluciona en el tiempo la fracción de robots en cada tarea, es suficiente considerar solo estos dos estados. Si encontramos que se necesitan niveles de detalle adicionales para explicar el funcionamiento del sistema podemos elaborar el modelo descomponiendo los estados de alto nivel en sus componentes.
+
+\subsubsection{Observación de tareas}
+En esta sección estudiaremos en mecanismo en el cual los robots hacen decisiones paea cambiar de estado de tarea basándose únicamente en la observación de las tareas disponibles. Sean $m_{r}$ y $m_{g}$ el número de tareas Red y Green observadas, en la memoria de un robot. El robot elige cambiar su estado o el tipo de tarea a la que esta asignado, con probabilidades dadas por las funciones de transición $f_{g \to r}(m_{r}, m_{g})$ (probabilidad de cambiar a Red desde Green) y $f_{r \to g}(m_{r}, m_{g})$ (probabilidad de cambiar a Green desde Red). Se desea definir reglas de transición de tal forma que la fracción de tiempo que el robot esté en el estado Red (Green) sea igual a la fracción de tareas Red (Green). Esto asegura que en promedio el número de robots Red y Green refleja la distribución de tareas deseada. Si los robots tienen conocimiento global sobre el número de tareas Red Y Green $M_{r}$ y $M_{g}$, entonces cada robot podría elegir cada estado con probabilidades igual a la fracción de las tareas del tipo correspondiente. Dicho conocimiento no está disponible; por eso, se desea investigar comoo el observamiento incompleto del entorno (a través de observaciones locales) así como de los cambios dinámicos del mismo (por ejemplo, cambiando la relación entre tareas Red y Green), afectan la asignación de tareas. 
+
+\subsection{Recolección múltiple con Múltiples Robots}
+
+\subsubsection{Descripción de la tarea}
+La tarea tradicional de recolección se define al tener un robot o grupo de robots recolectando un grupo de objetos del entorno, cada uno consume uno y regrese a un lugar común \cite{DGMJM02}. La recolección múliple, es una variación de la recolección tradicional, se define en \cite{TB99} y consiste en una arena poblada por objetos de varios tipos que deben ser recolectados de forma concurrente.
+
+Existen dos tipos de objetos dispersados de forma aleatoria a lo largo de la arena: \textit{PuckRed} y \textit{PuckGreen}. Cada robot es capaz de recolectar ambos tipos de objetos, pero solo puede ser asignado a la recolección de un tipo en un instante de tiempo dado. Adicionalmente, todos los robots están recolectando todo el tiempo, es decir, no existen robots en estado de ``inactividad''. Un robot puede cambiar el tipo de objeto que está recolectando de acuerdo a su política de control, cuando el determina que es apropiado hacerlo. Los robots se mueven en un espacio cerrado y recogen los objetos que van encontrando. Cuando un robot recoge un objeto, el objeto es consumido y el robot lo lleva al sitio de recolección de los otros objetos. Una vez que se consume el objeto, se coloca otro del mismo tipo de forma inmediata en un lugar aleatorio. Esto se hace para mantener la densidad de objetos constante.
+
+
+\textit{En algunas ocaciones, la densidad de objetos puede afectar la precisión o la velocidad de convergencia a la asignación de tareas deseada. \textbf{Nos reservamos el estudio del impacto de la variación de densidad para trabajos futuros}}
+
+El papel de la asignación dinámica de tareas en este dominio requiere que los robots dividan su número recolectando unos los objetos \textit{PuckRed} y otros los \textit{PuckGreen}. En este experimento, se desea que la asignación de robots converja a una situación en la que la proporción de robots recolectando objetos \textit{PuckRed} sea igual a la proporción de objetos \textit{PuckRed} presentes en la arena.
+
+Se ha observado que las capacidades limitadas de sensado y la falta de comunicación directa de los robots, les impide adquirir información global tal como el tamaño y forma de la arena de recolección, el número inicial o actual de objetos a ser recolectados (total o por tipo), o el número inicial o total de robots recolectores (total o por tipo).
+
+
+\textit{Utilizar la red idiotípica para aumentar el conocimiento del robot sobre el entorno}
+
+\subsubsection{Controlador del robot basado en funcionamiento}
+
+Todos los robots tienen controladores idénticos basados en el comportamiento, los cuales consisten en los siguientes comportamientos mutuamente excluyentes:
+
+\begin{itemize}
+ \item El comportamiento \textit{ovoiding} provoca que el robot gire para evitar obstáculos en su camino.
+ \item El comportamiento \textit{wandering (caminar sin una dirección determinada)} provoca que el robot se mueva hacia adelante y, después de un lapso de tiempo aleatorio, gire a la izquierda o a la derecha describiendo un arco aleatorio por un período de tiempo aleatorio.
+ \item El comportamiento \textit{Puck Servoing} hace que el robot se mueva hacia un objeto (detectado) del tipo deseado.
+ \item El comportamiento \textit{Grasping} hace que el robot recoja y consuma un objeto.
+ \item El comportamiento \textit{Observing} hace que el robot tome la información de sus sensores y almacene los objetos y robots detectados en su respsctiva historia. El robot entonces actualiza su estado de recolección basado en esas historias.
+\end{itemize}
+
+
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \multirow{2}{1.8cm}{Obstáculo Detectado} & \multirow{2}{1.8cm}{Objeto Detectado} & \multirow{2}{2.7cm}{Gripper Break-Beam On} & \multirow{2}{2cm}{Señal de Observación} & \multirow{2}{2.2cm}{Funcionamiento Activo} \\ \\ \hline
+    X & X & X & 1 & Observing 	  \\ \hline
+    1 & X & X & X & Avoiding 	  \\ \hline
+    0 & 1 & 0 & 0 & Puck Servoing \\ \hline
+    0 & X & 1 & 0 & Grasping 	  \\ \hline
+    0 & X & X & X & Wandering 	  \\ \hline
+    \end{tabular}
+
+\tablename{Condiciones de activación de los comportamientos}
+
+Todos los robots mantienen tres tipos de información de estado: estado de recolección, historia de objetos observados, e historia de robots observados. Cada robot es dotado con un indicador luminoso observable por los robots cercanos, el cual indica el estado actual del robot. Es decir, este indicador luminoso actúa como una comunicación local, pasiva.
+
+
+Todos los robots mantienen una historia limitada de tamaño constante donde se almacena el estado de recolección de los robots observados recientemente. Ninguna de estas historias contiene una identidad única o localización de los objetos o robots detectados.
+
+
+Después que el robot hace una observación, hace una re-evaluación y cambia de forma probabilística su estado actual de recolección dadas las nuvas historias de objetos y robots. La probabilidad con la cual el robot cambia su estado de recolección se define con la función de transición.
+
+
+
+
+
