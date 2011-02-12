@@ -1,0 +1,143 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                     INTRODUCCION                           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Introducción}
+
+El gran avance de las técnicas de fabricación de circuitos integrados ha permitido que los sistemas digitales sean partes fundamentales de nuestra vida, aún sin darnos cuenta, diariamente interactuamos con ellos, facilitando las tareas cotidianas. Los niveles de integración actuales permiten construir sistemas cada vez más pequeños, veloces y de menor consumo de potencia, lo cual ha favorecido su difusión. El uso de los sistemas digitales en áreas como la aviación, la industria automovil\'{\i}stica, la bioingenier\'{\i}a, etc. demanda de estos un alto desempeño y un funcionamiento continuo, el no cumplimiento de estas exigencias traer\'{\i}a consecuencias desastrosas.
+
+La tecnolog\'{\i}a de los semiconductores adelanta a la capacidad de utilizaci\'on por parte de los diseñadores, lo cual crea una brecha en la productividad: cada año, el n\'umero de transistores disponibles aumenta en un 58\% mientras las utilizaci\'on por parte de los diseñadores lo hace en un 21\% {\cite{KAK01}}. A medida que aumenta el campo de aplicaci\'on de los sistemas digitales, lo hacen las exigencias de funcionamiento a ellos impuestas, nuevos retos en el diseño se presentan a medida que los sistemas embebidos se integran a nuestra vida diaria, se hace necesario diseñar nuevas t\'ecnicas que permitan eliminar la brecha en la productividad.
+
+
+\subsubsection{Futuro de los Sistemas Computacionales}
+
+\begin{quote}
+  "The best way to predict the future is to invent it."
+  
+  Alan Kay
+\end{quote}
+
+Observando la tendencia actual de los sistemas electr\'onicos, se puede especular que el computador tal como lo conocemos actualmente desaparecer\'a {\cite{WM91}}, ya que estar\'a en todas partes, ubicuo, interactuando con los seres humanos para realzar el mundo que ellos viven. Se pasar\'a de un esquema en el que existe un computador para uno o varios usuarios (PC, mainframe) a uno en el que existan muchos computadores para un usuario. Estos computadores disponen de grandes capacidades de c\'alculo y de comunicaci\'on, pero a la vez, poseen un grado de integraci\'on tal que ser\'an invisibles; para aclarar como se puede lograr esta invisibilidad, imag\'{\i}nense que existen sistemas embebidos construidos con t\'ecnicas de microfabricaci\'on y que son capaces de tomar su energ\'{\i}a de fuentes alternas como la temperatura, la radiaci\'on solar, o a partir de fen\'omenos qu\'{\i}micos, debido a su reducido tamaño, estos sistemas pueden integrarse a objetos o pintarse sobre ellos, de tal forma que no sean visibles ante los ojos humanos. Esta desaparici\'on no solo ser\'a una consecuencia de la tecnolog\'{\i}a, sino de la sicolog\'{\i}a humana; cuando las personas asimilan perfectamente algo y se convierte en parte de la vida diaria no se es consciente de su utilizaci\'on. Por ejemplo, cuando observamos una señal de tr\'ansito capturamos la informaci\'on sin ser conscientes de la realizaci\'on del acto de la lectura.
+
+\begin{figure}[h]
+\begin{center} \includegraphics[scale=.6]{./images/Ubiquitous.jpg} \end{center}
+\caption{Concepto de Computador Ubiquo.}
+\end{figure}
+
+Hasta el momento el diseño de sistemas tanto software como hardware se ha centrado en las m\'aquinas, las personas se encargan de crear condiciones adecuadas de trabajo para ellas. Nos vemos obligados a interactuar con estas utilizando su propio lenguaje, lo cual dificulta su manejo. En el futuro la computaci\'on tendr\'a como centro al ser humano, estar\'a en todas partes dispuesta a ayudarle en sus tareas diarias. No tendr\'an que llevar computadoras con ellos, se podr\'a interactuar con ellas en cualquier parte atrav\'es de dispositivos como HandHelds, tel\'efonos celulares, etc  no tendremos que preocuparnos por nuestra privacidad ya que ellas se encargar\'an de eso {\cite{Oxygen}}.
+
+\subsection{Sistemas Embebidos.}
+
+En la actualidad, cada vez con m\'as frecuencia, se notan signos de la invasi\'on digital, por ejemplo, en el aumento de chips embebidos en los dispositivos que utilizamos a diario. Se ha demostrado {\cite{MW93}} que una persona que vive en un pa\'{\i}s industrializado se ve confrontada con un promedio de 40 chips al d\'{\i}a, de los cuales 5 son capaces de comunicarse en redes. Se estima que dentro de 10 años estaremos en contacto con cientos de estos chips, la mayor\'{\i}a de los cuales acceden a densas redes de informaci\'on {\cite{DS02}}, muchos de estos artefactos toman la apariencia de objetos que utilizamos en nuestra vida diaria (herramientas, vestuario, electrodom\'esticos, etc) pero son mejorados con sensores, actuadores, procesadores y software embebido. Una de las razones de la aparici\'on de estos sistemas es econ\'omica. Las industrias han visto como se muestran signos de recesi\'on en los mercados tradicionales. Por lo tanto, buscan nuevos productos en los que pueden ser embebidos chips y software.
+
+
+La aparici\'on de los dispositivos digitales en nuestras vidas no es una revoluci\'on, por el contrario es una consecuencia l\'ogica de la evoluci\'on de las relaciones entre los usuarios y los sistemas digitales, los cuales se han caracterizado por una democratizaci\'on de acceso a los equipos y una descentralizaci\'on de la infraestructura subyacente. En el primer per\'{\i}odo (1950-1970) se compart\'{\i}an recursos a trav\'es de terminales, es decir, se contaba con un computador para muchos usuarios. En los 80s, la aparici\'on de los computadores personales impulsa la relaci\'on personal entre los computadores y usuarios. El los 90s la aparici\'on de Internet permiti\'o compartir recursos a trav\'es de un computador personal. Internet no es m\'as que un paso adelante hacia la llegada de los sistemas de computaci\'on ubicua. La misma filosof\'{\i}a de simplificaci\'on y descentralizaci\'on prevalece hasta hoy y nos conducir\'a a una situaci\'on donde miles de dispositivos computacionales estar\'an disponibles para realizar nuestras tareas y se compartir\'an recursos a trav\'es de redes m\'as intrincadas que Internet. En conclusi\'on se pasar\'a de un esquema en el que se ten\'{\i}a un computador para muchos usuarios a uno en el que se tienen muchos (tal vez miles o millares) elementos computacionales para servir a un usuario.
+
+\subsection{Porqué los Sistemas Embebidos?}
+
+\subsubsection{Mercado de los Sistemas Embebidos}
+
+Según BCC, inc.  \footnote{http://www.bccresearch.com/} el mercado de los sistemas embebidos es de \$92 billones de dólares y se estima que sea de \$112.5 billones en 2013, con una tasa compuesta de crecimiemto anual (CAGR) del 4.1\%. El hardware embebido tuvo un valor de \$89.8 biloones en 2008 y se espera que crezca a un CAGR del 4.1\% para alcanzar \$109.6 billones en 2013. El software embebido generó \$2.2 billones en 2008 y podrá aumentar a \$2.9 billones en 2013 para un CAGR del \$5.6\%. La figura \ref{GESRR} muestra los ingresos por regíon, de ella se puede deducir que USA y Canada, y los países asiáticos dominan este creciente mercado.
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.6]{./images/world_embedded_revenue_region.png}   \end{center}
+  \caption{Sistemas Embebidos: Ingresos por región 2004-2009. Fuente: "Future of Embedded System Technology" BCC report G-229R} 
+  \label{GESRR}
+\end{figure}
+
+
+\subsubsection{Penetración de los Sistemas Embebidos}
+
+Más de un billón de dispositivos embebidos fueron vendidos en el 2004, siendo sus principales áreas de aplicación los computadores, las telecomunicaciones, consumo, automóviles, medicina, oficina, industria, militar. La figura \ref{GESR} muestra las ganancias obtenidas en el 2004 y en el 2009 para cada una de estas categorías.
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=1]{./images/world_embedded_revenue.png}   \end{center}
+  \caption{Sistemas Embebidos: Ingresos Globales 2004-2009. Fuente: "Future of Embedded System Technology" BCC report G-229R} 
+  \label{GESR}
+\end{figure}
+
+\subsubsection{Perspectivas de Empleo}
+La industria de los sistemas embebidos proporciona empleo a diferentes niveles de especialización:
+
+\begin{itemize}
+ \item Software
+   \begin{itemize} 
+    \item Soluciones y aplicaciones embebidas: Desarrollo de aplicaciones software que implementan funcionalidades específicas al área de acción del dispositivo; utilización de entornos de programación, lenguajes de alto nivel, interfaces para programación de aplicaciones (APIs)
+    \item Integración de sistemas: Utilización de dispositivos comerciales existentes (como plataformas de desarrollo, librerías) para la creación de nuevos productos.
+    \item Creación de drivers de dispositivos: Soporte de dispositivos hardware como puertos de comunicaciones, interfaces hombre-máquina, dispositivos de almacenamiento a un determinado sistema operativo.
+    \item Desarrollo de paquetes para soporte a plataformas: Generación de distribuciones de un determinado sistema operativo donde se icluya soporte a todos los periféricos de una determinada plataforma de desarrollo, software necesario para administrar aplicaciones y entornos de programación de aplicaciones.
+   \end{itemize}
+
+ \item Hardware
+   \begin{itemize} 
+    \item Diseño y verificación ASIC: Diseño y cerificación de circuitos integrados de aplicación específica, esto es la mejor opción desde el punto de vista económico cuando se superan las 20000 unidades de un determinado producto.
+    \item Diseño de placas de circuito impreso: Placas electrónicas diseñadas a la medida de una determinada aplicación. 
+    \item Diseño de carcasas: Diseño de la caja donde se colocará la palca de circuito impreso y que permitirá la interacción con el usuario.
+    \item Certificaciones: Pruebas que certifican el cumplimiento de normas locales e internacionales que permiten el uso de dispositivos electrónicos.
+   \end{itemize}
+
+ \item No Técnicos
+   \begin{itemize}
+    \item Comercialización
+    \item Ventas
+    \item Servicios post-venta
+    \item Soporte
+   \end{itemize}
+  
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                      ESTADO DEL ARTE                                       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Estado de la Industria Electrónica en Colombia}
+
+En la actualidad Colombia atraviesa por una ``crisis'' a nivel de diseño de sistemas digitales, existe un atraso muy grande en esta \'area; a nuestro modo de ver existen dos grandes responsables de esta situaci\'on; por un lado, las pol\'{\i}ticas de la mayor\'{\i}a de las industrias al no realizar inversi\'on de capital en sus departamentos de I+D; algunas de ellas ni siquiera cuentan con este departamento; por otro lado, algunas universidades no cuentan con programas actualizados que permitan explotar los avances realizados en las industrias electr\'onica y de semiconductores; en un gran n\'umero de universidades colombianas a\'un se trabaja con dispositivos de funci\'on fija como las familias 74 y 40, los lenguajes de descripci\'on de hardware han sido adoptados recientemente en la mayor\'{\i}a de programas de ingenier\'{\i}a electr\'onica, pero en algunos casos no existe una base metodol\'ogica que soporte su adecuada utilizaci\'on. La disponibilidad de dispositivos l\'ogicos programables (FPGAs, CPLDs) es limitada debido a la inexistencia de un proveedor local; se dedican cursos completos para ``enseñar''  a programar microprocesadores de 8 bits en lenguaje ensamblador y muchos educadores a\'un miran con desconfianza a los lenguajes de alto nivel como el C, C++; en muy pocos programas de ingenier\'{\i}a electr\'onica no se cuenta con una asignatura dedicada a sistemas operativos y en muchos de ellos no se le da la importancia que tiene la enseñanza de lenguajes estructurados.
+
+La situaci\'on se agrava a\'un m\'as al ver el estado de la relaci\'on entre la universidad y la industria, la cual no existe en algunos casos. Desde el punto de vista industrial los resultados obtenidos en la academia parten de entornos ideales y no se tienen en cuenta las caracter\'{\i}sticas de los entornos industriales, lo cual da como resultado sistemas poco robustos y con problemas funcionales. Por otro lado, los tiempos de desarrollos son muy largos ya que la mayor\'{\i}a de las universidades colombianas no cuenta con grupos de investigaci\'on consolidados en estas áreas; esto, debido a la falta de recursos económicos y de personal especializado que posea las habilidades necesarias para abordar este tipo de proyectos.
+
+
+\subsubsection{Apropiación de Conocimiento y Transferencia Tecnológica}
+  
+Unestudio reciente \cite{Mok90} asegura que para que Colombia llegue a ser generador de productos tecnológicos, es necesario generar un conocimiento que permita esta transición. ``Para que el conocimiento sea motor de desarrollo es necesario el traspaso desde sus creadores a la sociedad, mediante la conversión a tecnologías que produzcan cambios radicales que incrementen la producción. Esa transmisión de tecnología generadora de crecimiento económico esta influenciada por diversos factores: medio geográfico, leyes de propiedad industrial, costos laborales, nivel de ciencia y tecnología, religión, tipos de instituciones, resistencia a innovar, políticas de estado, guerras, factores demográficos, entre otros'' \cite{Mok90}.
+ 
+Pero como apropiar este conocimiento? Arrow \cite{Arr62} afirma que la apropicación de conocimiento puede efectuarse de varias formas: ``aprender haciendo'', ``aprender usando'', ``aprender leyendo''. Cuando una empresa decide transmitir su conocimiento disponible, lo hace en procesos de investigaciones conjuntas, en actividades de producción, y distribución, mercadeo, servicio y soporte operativo o riesgo compartido. También se presentan alianzas entre firmas como: contratos de I+D, acuerdos de licencias, licencias cruzadas. La conformación de estas asociaciones permite crear redes tecnológicas dominadas por países industrializados con sus respectivas empresas multinacionales monopolizando conocimiento \cite{Mar04}.
+ 
+El problema colombiano radica en que las empresas de nacionales no adquirien el conocimiento necesario para innovar al interior de las mismas; de forma que puedan ser competitivas y logren acceder a mercados internacionales ofreciendo nuevos productos, de calidad y a precios competitivos. Con efectos directos como: generación de empleos especializados, desarrollo tecnológico e industrial sostenido, ampliación del conocimiento nacional y disminución de la salida de divisas \cite{Mar04}.
+ 
+En este orden de ideas, si el país no es un innovador neto ¿no debería más bien mostrar una tendencia a importar conocimiento? Y las firmas nacionales ¿no deberían ser las que más efectuaran este tipo de contratos, para así acceder al conocimiento de la tecnología adquirida? En resumen, conociendo mejor qué tecnología se importa y qué tipos de contratos se utilizan, es posible crear marcos de referencia para empresas nacionales que estén interesadas en adquirir tecnología. Esto produciría externalidades positivas en empresas importadoras de conocimiento y, a su vez, en la economía del país. Con una adecuada importación de conocimientos tecnológicos se crearía una ventaja competitiva de carácter estructural, basada en un acervo de conocimiento tecnológico que permita incrementar la productividad en todos los sectores económicos de manera permanente \cite{Mar04}.
+ 
+Según los estudios realizados por Martínez \cite{Mar04}, con base en registros del Decreto 259/92, del Incomex, la importación de conocimiento no está siendo empleada con el propósito de utilizar tecnologías de punta que permitan efectuar innovaciones al interior de las empresas y de los sectores; las empresas nacionales se limitan a comprar un determinado dispositivo o equipo, sin tener el conocimiento para operarlo, hacerle mantenimiento, mejorarlo ni mucho menos producirlo, por lo que se ven obligadas a contratar con el vendedor para dicho fín; esto indica, que la adquisición de tecnología no se realiza con base en un programa desarrollado de antemano, sino son una respuesta a cambios en el mercado, lo cual evidencia la inexistencia de programas de innovación encaminados a la disminución de la brecha tecnológica.
+ 
+
+\subsubsection{Situación de la Industria Electrónica en Colombia}
+ 
+La industria electrónica nacional no es ajena a las políticas que siguen las empresas nacionales en cuanto a la apropiación de tecnología; Colombia depende totalmente de economías más desarrolladas para el suministro de dispositivos electrónicos en diversas áreas (comunicaciones, entretenimiento, industria, medicina, etc). Mientras en otros sectores de la economía han pasado de ser consumidores a exportadores, y adquieren nuevas tecnologías para ser más competitivos, el sector electrónico del país ha reducido sus actividades de investigación y desarrollo hasta el punto de depender totalmente de productos externos, de los cuales, algunos son de baja calidad y no suplen los requerimientos del mercado local, pero son utilizados porque son muy económicos.
+ 
+En la actualidad la industria electrónica presenta una gran dinámica a nivel mundial, el uso de los sistemas electrónicos se extiende a todas las actividades humanas; la demanda mundial de este tipo de sistemas aumentará de forma dramática en los próximos años, especialmente en los sectores de tecnología médica, movilidad, seguridad, comunicaciones y consumo \cite{ETPoSSI(09}. Por otro lado, la inversión de capital necesaria para el diseño de SE es relativamente baja, gracias a la gran demanda originada y que los insumos y los servicios de fabricación son muy económicos, las herramientas de desarrollo necesarias para la programación y depuración de este tipo de sistemas son de libre distribución. Desafortunadamente en Colombia la industria electrónica se encuentra muy rezagada en relación a las de los países industrializados, y las ventajas y oportunidades de negocios mencionadas anteriormente no son aprovechadas en la actualidad. 
+
+Según ASESEL \footnote{Asociación de entidades del Sector Electrónico} en el 2001 existían 154 empresas productoras de componentes y equipos de la cadena electrónica; dentro de los productos que la industria electrónica exporta se encuentran registrados: circuitos integrados, circuitos impresos, microestructuras, instrumentos para medida y control, instrumentos y aparatos eléctricos o electrónicos. Es importante decir que la industria colombiana, en la actualidad no fabrica circuitos integrados, ni microestructuras, por lo que estas son ventas de productos comprados en países desarrollados. Según Proexport el 91\% de las exportaciones son realizadas por Bogotá y los destinos se encuentran en países cercanos como Venezuela, Perú, Ecuador y USA. 
+
+La electrónica en Colombia y en el mundo hace parte de esas industrias que se mueven velozmente en un camino desconocido, como consecuencia se hace necesario tener una actualización constante de los avances tecnológicos y las proyecciones futuras del sector. Debido a la importancia del sector tecnológico es primordial que en Colombia se esté consciente del estado actual y que se puede hacer en términos de investigación científica y desarrollo tecnológico (I+D) en ingeniería electrónica.
+
+\subsubsection{Causas del Atraso Tecnológico en Colombia}
+
+Estudios realizados en la Universidad Nacional de Colombia \cite{MTRR07} y en otros países \cite{MO90} \cite{IAI} \cite{MDAG99} \cite{DZSC+07} \cite{Mar04} identificaron los siguientes obstáculos para el desarrollo de la industria electrónica: Deficientes relaciones universidad - empresa, pobre enfoque académico hacia la industria, baja calidad de los productos nacionales, fata de políticas gubernamentales, falta de cultura de investigación y reducida apropiación tecnológica, competencia de países asiáticos, atraso tecnológico y limitado recurso humano con formación avanzada.
+
+De los problemas expuestos anteriormente se pueden identificar los que más afectan el desarrollo de la industria electrónica en Colombia, el que más perjudica sin lugar a dudas es el atraso tecnológico, no es posible ser competitivo en el mercado electrónico mundial con tecnologías y metodologías de diseño obsoletas. \footnote{En Colombia trabajamos aún con circuitos integrados que se crearon en la decada de los 80 del siglo pasado y utilizamos lenguajes de programación como el \textit{assembler}, para el cual el tiempo de aprendizaje, desarrollo y de depuración es muy largo} La culpa de este atraso tecnológico no es exclusiva de la industria, aunque, como se mencionó anteriormente muchas industrial colombianas se resisten al cambio y prefieren comprar equipos en el exterior a buscarlos localmente, la falta de confiabilidad en los productos colombianos agrava este problema, esta falta de confianza en la industria local no es infundada, la mayoría de los productos colombianos no cumplen con las normas mínimas de calidad y utilizan productos de bajo costo obtenidos en remates de componetes.
+
+Otro actor que contribuye al retraso tecnológico es el sector académico; según el Sistema Nacional de Información Superior, durante los últimos 10 años se han abierto 230 programas relacionados con la industria electrónica, estos programas están repartidos entre programas de formación universitaria, tecnológica terminal y de técnica profesional, la mayoría de estos centros de formación se encuentran ubicados en 3 departamentos: Bogotá, Antioquia y Valle \cite{DZSC+07}. El número de ingenieros graduados en un año es entre 2 y 8 veces mayor que en los países en vía de desarrollo y doce veces mayor que los que se gradúan en los países desarrollados. En Colombia, este aumento es aportado por instituciones de poca consolidación académica; además, las preferencias en la educación superior son formación técnica / formación tecnológica / formación profesional que es justamente lo opuesto a la de los países desarrollados \cite{MDAG99}.
+
+Por otro lado, el contenido y metodologías de las asignaturas relacionadas directamente con la industria electrónica se encuentran muy desactualizados, y fuera del contexto mundial; se utilizan metodologías de diseño antiguas en las que primaba la experiencia del diseñador, se realizan tareas manuales, repetitivas que pueden ser realizadas por herramientas de diseño moderno, los currículos son conservadores, hay poca experimentación y su estructuración y metodologías son muy clásicas. Adicionalmente, muchos investigadores dedican sus estudios en proyectos que no aportan al desarrollo del país pero que pueden brindarles más reconocimiento internacional. Otro problema adicional radica en la falta de experiencia en el sector productivo por parte del personal académico, un componente importante de los profesores nunca han sido parte de un proceso productivo o de un proceso de desarrollo que tenga como fín la creación de un producto comercial, razón por la cual se evita la experimentación y se da más énfasis al análisis y solo se llega a una simulación. 
+
+De lo anterior se puede concluir que en Colombia se presenta una sobre-oferta de profesionales en el área electrónica, que han sido formados en programas desactualizados que no tienen en cuenta los avances tecnológicos y metodológicos, lo cual explica la falta de ingenieros con altos niveles de formación y la escasa demanda de profesionales en el área. Por esta razón no es de extrañar la poca confianza que tienen los industriales en los productos nacionales. Esto unido a la falta de políticas de estado que tracen normas encaminadas a ince|ntivar la inversión en investigación y desarrollo, defina líneas y campos de investigación, regule la oferta laboral y los programas académicos, generan el clima perfecto para que el atraso tecnológico se mantenga durante mucho tiempo y Colombia siga siendo consumidor de tecnología. Según John Kao, uno de los grandes expertos del mundo en innovación, los países desarrollados no invierten en Ciencia Tecnología e Innovación (CTI) porque son ricos, sino que son ricos porque invierten en CTI.
+
+\subsubsection{El conocimiento Como Bien Común}
+
+Es indudable que el desarrollo tecnológico de un país se encuentra ligado al mejoramiento de la calidad de vida de sus habitantes, y que para que en un país en vía de desarrollo se realice una transferencia tecnológica (y de conocimientos asociados a la tecnología que se transfiere) exitosa que permita desarrollar productos similares, pero ajustados al contexto socio-económico local, es necesario que el país cuente con la capacidad de absorber las habilidades, técnicas, información y organización asociadas a dicha tecnología. Esta absorción de conocimientos debe ser realizada por un gran número de personas y entidades para que la transferencia tenga un impacto significativo en la sociedad, este conocimiento debe ser considerado como un bien público, y como tal, el acceso a él, debe ser un derecho y por lo tanto, la sociedad debe garantizar los mecanismos de difusión para que llegue a los sectores interesados en él. De igual forma, es un deber, de los sectores que utilizan este bien, contribuir a su difusión, actualización, mejoramiento, y crecimiento.
+
+El conocimiento en esta propuesta se refiere a las ideas intangible; información y datos en el que el conocimiento es expresado u obtenido; y como el entendimiento adquirido a través de la experiencia o estudio ya sea propio, científico, académico o no académico. La adqusición y descubrimiento de conocimiento es un proceso social y personal. \textit{El descubrimiento de conocimiento es un bien común y un tesoro que dejamos a futuras generaciones y el reto de nuestra generación es en mantener los caminos del descubrimiento abiertos}. El acceso al conocimiento debe garantizarse sin restricción alguna a las personas interesadas, al considerar el conocimiento como un producto comercial se limita su difusión favoreciendo a un grupo de la población, lo cual es inaceptable, ya que representa una forma de discriminación. En nuestro pais, el acceso a la información ha ido aumentando gracias a la aparición de Internet y a la gran cantidad de proyectos que buscan difundir todo tipo de conocimientos. Sin embargo, para poder asimilar este conocimiento se requieren ciertas habilidades que se adquieren después de un procesos de enseñanza formal; en Colombia, el acceso a la educación superior de calidad es limitado, la cobertura de las universidades públicas está limitada por la inversión del estado; por lo tanto, hacer del conocimiento un bien común requiere la intervención de diferentes sectores que garanticen y regulen el acceso, generen, clasifiquen y administren la forma en la que se divulga el conocimiento.
+
+La diferencia entre esta propuesta y las existentes promovidas por los organismos gubernamentales, es el énfasis en la transferencia y difusión del conocimiento, del \textit{saber hacer}, muchas políticas existentes se enfocan en la compra de equipo, el cual no es el medio más eficiente para la transferencia tecnológica. Nuestros esfuerzos están enfocados a crear un conocimiento básico en la Concepción, Diseño, Implementación y Operación de Sistemas Embebidos. 
+
+

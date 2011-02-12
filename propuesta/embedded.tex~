@@ -1,0 +1,77 @@
+\chapter{Sistemas Embebidos} 
+\label{ch:embedded}
+
+
+% Descripcion de las plataformas diseñadas, aplicaciones, como se llegó a ellas, los 6 pasos de la metodología.
+% Trabajo realizado por la empresa
+
+\section{Introducción}
+
+% QUE ES UN SISTEMA EMBEBIDO
+\subsection{Qué es un sistema Embebido}
+Un Sistema Embebido (ES) es un sistema de propósito específico en el cual, el computador es encapsulado completamente por el dispositivo que el controla. A diferencia de los computadores de propósito general, un Sistema Embebido realiza tareas pre-definidas, lo cual permite su optimización, reduciendo el tamaño y costo del producto \cite{Wik}
+
+Los sistemas embebidos son diseñados para una aplicación espec\'{\i}fica, es decir, estos sistemas realizan un grupo de funciones previamente definidas y una vez el sistema es diseñado, no se puede cambiar su funcionalidad (por ejemplo, el control de un asensor siempre realizar\'a las mismas acciones durante su vida \'util); debido a su interacción con el entorno deben cumplir esctríctamente restricciones temporales, el t\'ermino {\textit{sistemas de tiempo real}} es utilizado para enfatizar este aspecto; son heterog\'eneos, es decir, est\'an compuestos por componentes hardware (PLDs, ASICs) y software ($\mu$-controladores, $\mu$-procesadores, DSPs); tienen grandes requerimientos en t\'erminos de confiabilidad, errores en aplicaciones para aviaci\'on o automovilismo, pueden tener consecuencias desastrosas.
+
+\subsection{Arquitectura}
+
+En la Figura \ref{es_arch} se muestra la arquitectura típica de un Sistema Embebido. La cual integra un componente hardware, implementado ya sea en un (CPLD, FPGA) o en un ASIC, (conocido con el nombre de periféricos) y un componente software capáz de ejecutar software, 
+la parte del procesador está dividida en la CPU (En algunos casos posee una caché) y las unidades de Memoria.
+
+\begin{figure}
+  \begin{center} \includegraphics[scale=.6]{./images/ES_Architecture} \end{center}
+  \caption{Arquitectura de un Sistema Embebido}\label{es_arch}
+\end{figure} 
+
+Al momento de diseñar un Sistema Embebido encontramos diferentes opciones de implementación, la más adecuada resultará de un análisis económico donde se valora el costo de la solución ante el cumplimiento de los requerimientos del sistema:
+
+\begin{itemize}
+\item Componente HW y SW Integrado en un dispositivo semiconductor (SoC, ASIC): En la actualidad existen muchas compañías que fabrican procesadores de 32 bits integrados a una gran variedad de periféricos, lo cual simplifica el diseño y reduce costos; este tipo de implementación es muy popular en los dispositivos de consumo masivo (Reproductores de MP3, consolas de juego, etc), debido a los grandes niveles de producción (del orden de millones de unidades) resulta más económico contar con un dispositivo que integre el mayor número de funcionalidades, esto disminuye el costo de componentes y reduce el área de circuito impreso.
+
+\item Componente SW en un SoC y componente HW en una FPGA: Cuando no existe en el mercado un SoC con la cantidad de periféricos requerida para una determinada aplicación, o con una funcionalidad específica, es necesario recurrir a la utilización de dispositivos comerciales que implementen dicha función, en algunas ocaciones el periférico puede relizar funciones poco comúnes y no se proporciona comercialmente, la solución es entonces, implementar estas funcionalidades en una FPGA. También se recomienda la utilización de FPGAs en sistemas que requieren la utilización de la misma funcionalidad un gran número de veces (puertos seriales, pines de entrada/salida). Esta decisión esta atada al nivel de producción, ya que al incluir una FPGA aumenta el costo global del proyecto y al consumo de potencia, el consumo de las las FPGAs actuales las hace poca prácticas para aplicaciones móviles.
+
+\item Componente SW y HW en una FPGA: Esta es tal vez la opción más flexible, pero la de menor desempeño, ya que al utilizar los recursos lógicos de la FPGA para la implementación del procesador (softcore) la longitud y capacitancia asociada a los caminos de interconexión entre los bloques lógicos aumentan el retardo de las señales, lo que disminuye la máxima velocidad de funcionamiento. Los procesadores \textit{softcore} más populares en la actualidad son: Microblaze y Picoblaze de Xilinx, Leon de Gaisler Research y Lattice-Mico32 de Lattice Semiconductors.
+
+\end{itemize}
+
+
+\subsection{Metodología de Diseño}
+
+El proceso de diseño de un Sistema Embebido comienza con la {\textit{especificaci\'on del sistema}}, (ver Figura \ref{des_flow}), en este 
+punto se describe la funcionalidad y se definen las restricciones f\'{\i}sicas, el\'ectricas y econ\'omicas. Esta especificaci\'on debe ser muy general y no deben existir dependencias (tecnol\'ogicas, metodol\'ogicas) de ning\'un tipo, se suele utilizar lenguajes de alto nivel, como UML, C++, System-C, Spec-C. La especificaci\'on puede ser verificada a trav\'es de una serie de pasos de an\'alisis cuyo objetivo es determinar la validez de los algor\'{\i}tmos seleccionados, por ejemplo, determinar si el algoritmo siempre termina o sus resultados satisfacen las especificaciones. Desde el punto de vista de la re-utilizaci\'on, algunas partes del funcionamiento global pueden tomarse de una librer\'{\i}a de algor\'{\i}tmos existentes.
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.55]{./images/design_flow} \end{center}
+  \caption{Flujo de Diseño de un Sistema Embebido \cite{Cor05}}\label{des_flow}
+\end{figure} 
+
+
+Una vez definidas las especificaciones del sistema se debe realizar un modelamiento que permita extraer de estas su funcionalidad. El modelamiento es crucial en el diseño ya que de \'el depende el paso existoso de la especificaci\'on a la implementaci\'on. Es importante definir que modelo matem\'atico debe soportar el entorno de diseño; los modelos m\'as utilizados son: M\'aquinas de estados algorítmicas, diagramas de flujos de datos, sistemas de eventos discretos y redes de petri; cada modelo posee propiedades matem\'aticas que pueden explotarse de forma eficiente para responder preguntas sobre la funcionalidad del sistema sin llevar a cabo dispendiosas tareas de verificaci\'on. \ Todo modelo obtenido debe ser verificado para comprobar que cumple con las restricciones del sistema.
+
+Una vez se ha obtenido el modelo del sistema se procede a determinar su {\textit{arquitectura}}, esto es, el n\'umero y tipo de componentes y su inter-conexi\'on; este paso no es m\'as que una exploraci\'on del espacio de diseño en b\'usqueda de soluciones que permitan la implementaci\'on de una funcionalidad dada, y puede realizarse con varios criterios en mente: costos, confiabilidad, viabilidad comercial.
+
+Utilizando como base la arquitectura obtenida en el paso anterior las tareas del modelo del sistemas son mapeadas dentro de los componentes; esto es, asignaci\'on de funciones a los componentes de la arquitectura. Existen dos opciones a la hora de implementar las tareas o procesos:
+
+\begin{enumerate}
+  \item Implementaci\'on software: La tarea se va a ejecutar en un procesador.
+  \item Implementaci\'on hardware: La tarea se va a ejecutar en un sistema digital dedicado ASIC o PLD.
+\end{enumerate}
+
+Para cumplir las especificaciones del sistema algunas tareas deben ser implementadas en hardware, esto con el f\'{\i}n de no ocupar al procesador en tareas c\'{\i}clicas, un ejemplo t\'{\i}pico de estas tareas es la generaci\'on de bases de tiempos. La decisi\'on de que tareas se implementan en SW y que tareas se implementan en HW recibe el nombre de {\textit{particionamiento}}, esta selecci\'on es fuertemente dependiente de restricciones econ\'omicas y temporales.
+
+
+Las tareas Software deben compartir los recursos que existan en el sistema (procesador y memoria), por lo tanto se deben hacer decisiones sobre el orden de ejecuci\'on y la prioridad de estas. Este proceso recibe el nombre de {\textit{planificaci\'on}}. En este punto del diseño el modelo debe incluir informaci\'on sobre el mapeo, el particionamiento y la planificaci\'on del sistema.
+
+
+Las siguientes fases corresponden a la implementaci\'on del modelo, para esto las tareas hardware deben ser llevadas al dispositivo elegido (ASIC o FPGA) y se debe obtener el $''$ejecutable$''$ de las tareas software, este proceso recibe el nombre de {\textit{s\'{\i}ntesis}} HW y SW respectivamente, as\'{\i} mismo se deben sintetizar los mecanismos de comunicaci\'on entre las tareas hardware y software.
+
+
+El proceso de prototipado consiste en la realizaci\'on f\'{\i}sica del sistema, finalmente el sistema f\'{\i}sico debe someterse a pruebas para verificar que se cumplen con las especificaciones iniciales.
+
+Como puede verse en el flujo de diseño existen realimentaciones, estas permiten depurar el resultado de pasos anteriores en el caso
+de no cumplirse con las especificaciones iniciales.
+
+
+\section{Implementación de la Metodología Propuesta Para la Transferencia Tecnológica en Diseño de Sistemas Embebidos}
+
+
