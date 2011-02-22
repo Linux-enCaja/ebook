@@ -573,9 +573,6 @@ En el capítulo \ref{education} se realizará una descripción del contenido y meto
 
 \subsubsection{Info-ware}
 
-
-********************************
-
 Información utilizada por humanware para manejar technoware. Existen tres categorías de información específicas a:
 Technoware: Información requerida para operar, mantener y configurar a technoware en un sistema de producción.
 Especificaciones técnicas
@@ -630,7 +627,7 @@ Orgaware
 
 Maneja y controla la eficiencia de technoware utilizando humanware
 Convención: Filosofía adoptada.
-Organización: Funciónes del recurso humano (habilidades y jnow-how) para un manejo eficiente del technoware.
+Organización: Funciónes del recurso humano (habilidades y know-how) para un manejo eficiente del technoware.
 Facilidades: Desarrolla un entorno que elimina los obstáculos para alcanzar los objetivos.
 Evaluación de la organización para detectar problemas.
 Modificación: Ajuste de los puntos anteriores teniendo en cuenta los impactos de los cambios.
@@ -652,24 +649,37 @@ Mercadeo y ventas.
 
 \subsection{Etapas de la Metodología}
 
+En la figura \ref{meth_flow} se muestran los 6 etapas que componen la metodología propuesta, en las cinco primeras se realizan acciones encaminadas a entender,  asimilar, aplicar y desarrollar la tecnología y en la última se realizan actividades de difusión que permitan el acceso de los conocimientos generados a quien le interese.
 
-\begin{sidewaysfigure}[htpb]
-  \begin{center} \includegraphics[scale=.6]{./images/TT_Methodology_phases.png} \end{center}
-  \caption{Etapas de la metodología propuesta para } \label{thesis_flow}
-\end{sidewaysfigure}
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.7]{./images/TT_Methodology_phases.png} \end{center}
+  \caption{Etapas de la metodología propuesta para la transferencia tecnológica y de conocimientos en el área de diseño de sistemas embebidos} \label{meth_flow}
+\end{figure}
 
+\subsubsection{Elección}
+Identificación del estado de la plataforma tecnológica existente para identificar facilidades y necesidades; identificación de niveles de complejidad de la tecnología; selección de una alternativa que pueda implementarse y de resultados a mediano y corto plazo con no muy altas inversiones de capital.
 
+\subsubsection{Adquisición}
+Adquisición de plataformas adecuadas de desarrollo HW y SW; identificación de herramientas de desarrollo HW y SW y su origen (abierto/cerrado). 
 
-\subsubsection{}
-
-
-
-
- 
-
-
-
+\subsubsection{Adopción}
+Utilización de plataformas de desarrollo para estudio de metodologías de diseño; uso de ingeniería inversa para entender la arquitectura, funcionamiento y programación de productos comerciales; utilización de productos comerciales para adaptarlos a problemas locales (Integración); tomar conciencia de la importancia del uso de esta tecnología.
 
 
+\subsubsection{Absorción}
+Desarrollo o adaptación de metodologías de diseño y procesos de fabricación; desarrollo de productos tecnológicos propios; enseñanza de metodologías de diseño y procesos de fabricación en centros de educación consolidados.
+
+
+\subsubsection{Aplicación}
+Desarrollo de soluciones a problemas locales; uso de metodologías de diseño en la concepción, diseño e implementación de sistemas digitales utilizando la tecnología; utilización de procesos de fabricación adaptados al entorno local; desarrollo de proyectos académicos utilizando esta tecnología.
+
+
+\subsubsection{Difusión y Desarrollo}
+Vinculación de la academia para incluir los conocimientos generados en los programas académicos de las carreras relacionadas; capacitación a la industria local sobre el uso de la tecnología, las metodologías de diseño y procesos de producción; creación de una comunidad que utilice, mejore y aumente el conocimiento generado; hacer que el conocimiento generado en los pasos anteriores este disponible a todos los interesados; dar a conocer los procesos, productos y conocimientos creados a los generadores de políticas de estado.
+
+Aumento de la demanda de productos, bienes y servicios relacionados; compra de maquinaria que permita la fabricación masiva de forma local; diseño de nuevos componentes (Circuitos Integrados, IPs, software CAD); creación de políticas gubernamentales que protejan la producción local; participación activa de la academia en la solución de problemas y en la formulación de políticas de gobierno relacionadas.
+
+
+En el capítulo \ref{embedded} se describiran las actividades realizadas en cadas una de estas etapas y los resultados obtenidos al aplicar esta metodología.
 
 \end{itemize}

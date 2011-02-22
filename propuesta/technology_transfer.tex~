@@ -573,81 +573,71 @@ En el capítulo \ref{education} se realizará una descripción del contenido y meto
 
 \subsubsection{Info-ware}
 
-
-********************************
-
 Información utilizada por humanware para manejar technoware. Existen tres categorías de información específicas a:
-Technoware: Información requerida para operar, mantener y configurar a technoware en un sistema de producción.
-Especificaciones técnicas
-Operación y software utilizado para manejar technoware
-Mantenimiento del componente físico y software.
-Resolución de problemas.
-Especificaciones de diseño, y teoría necesaria para producir el technoware.
-Humanware: Información necesaria para para diseñar el uso de technoware en un sistema de producción eficiente.
-Información sobre requerimientos del sistema de producción , conceptos de diseño.
-Información técnica, estándares, métodos de calibración, de pruebas.
-Orgaware: Información necesaria para asegurar la interacción entre technoware y humanware.
-Información para disenar y controlar actividades
-Información y software necesarios para mejorar el planeamiento y control de actividades.
 
-***************************************
-Infoware
-(Diseño de Sistemas Embebidos)
+\begin{itemize}
+ \item Tecno-ware
+   \begin{itemize}
+    \item Información sobre configuración, mantenimiento y operación de los equipos de producción. 
+    \item Puntos de ajuste donde se obtiene la mayor calidad.
+    \item Procesos de estandarización, control de calidad, 
+   \end{itemize}
 
-Technoware: 
- Información sobre configuración, mantenimiento y operación de los equipos de producción. Puntos de ajuste donde se obtiene la mayor calidad.
- Procesos de estandarización, control de calidad, 
-
-humanware: 
-Información necesaria para generar las habilidades requeridas para la concepción, diseño e Implementación de Sistemas Digitales.  Esta información puede almacenarse en forma de tutoriales, manuales o cursos de capacitación.
-
-Orgaware: 
-Información sobre los proveedores de servicios y de distribuidores. Iinventario de recursos. 
-Información sobre mejoramiento de procesos
+ \item Human-ware
+   \begin{itemize}
+    \item Información necesaria para generar las habilidades requeridas para la concepción, diseño e implementación de sistemas digitales. Esta información puede almacenarse en forma de tutoriales, manuales o cursos de capacitación.
+   \end{itemize}
+ \item Orga-ware
+   \begin{itemize}
+    \item Información sobre los proveedores de servicios y de distribuidores. 
+    \item Inventario de recursos. 
+    \item Información sobre mejoramiento de procesos
+   \end{itemize}
 
 
-**********************************************
-
-Infoware: TRANSFERENCIA
-(Diseño de Sistemas Embebidos)
-
-Technoware: 
- Información sobre procesos de producción. 
-
-humanware: 
- Ajuste del contenido de las asignaturas relacionadas para que se generen las habilidades requeridas.
-Generación de material de formación.
-
-Orgaware: 
- Información sobre las actividades necesarias para la creación de nuevos dispositivos digitales.
+\end{itemize}
 
 
-*********************************************
+Los aportes del presente trabajo a la transferencia de este componente de la tecnología serán:
+
+\begin{itemize}
+ \item Tecno-ware
+   \begin{itemize}
+    \item Información sobre procesos de producción.
+    \item Diseños de referencia.
+
+   \end{itemize}
+
+ \item Human-ware
+   \begin{itemize}
+    \item Ajuste del contenido de las asignaturas relacionadas para que se generen las habilidades requeridas.
+    \item Generación de material de formación: tutoriales, diseños de referencia, notas de aplicación.
+
+   \end{itemize}
+
+ \item Orga-ware
+   \begin{itemize}
+    \item  Información sobre las actividades necesarias para la creación de nuevos dispositivos digitales.
+   \end{itemize}
+
+\end{itemize}
+
+
+
 
 \subsubsection{Orga-ware}
+Tareas de \texit{orga-ware} en la creación de dispositivos digitales
 
-Orgaware
+\begin{itemize}
+ \item Búsqueda de componentes electrónicos y de proveedores de servicios de manufactura.
+ \item Establecer relaciones con los fabricantes de componentes electrónicos para obtener información detallada de sus productos y procesos de producción.
+ \item Planeación de la producción.
+ \item Control y depuración de la información.
+ \item Control de inventarios.
+ \item Administración
+ \item Mercadeo y ventas.
+\end{itemize}
 
-Maneja y controla la eficiencia de technoware utilizando humanware
-Convención: Filosofía adoptada.
-Organización: Funciónes del recurso humano (habilidades y jnow-how) para un manejo eficiente del technoware.
-Facilidades: Desarrolla un entorno que elimina los obstáculos para alcanzar los objetivos.
-Evaluación de la organización para detectar problemas.
-Modificación: Ajuste de los puntos anteriores teniendo en cuenta los impactos de los cambios.
-Encargado de tareas de administración, manejo de recursos y comercialización
-
-*************************************************
-
-Orgaware
-(Diseño de Sistemas Embebidos)
-
-Búsqueda de componentes electrónicos y de proveedores de servicios de manufactura.
-Establecer relaciones con los fabricantes de componentes electrónicos para obtener información detallada de sus productos y procesos de producción.
-Planeación de la producción.
-Control y depuración de la información.
-Control de inventarios.
-Administración
-Mercadeo y ventas.
 
 
 \subsection{Etapas de la Metodología}
@@ -674,16 +664,15 @@ Desarrollo o adaptación de metodologías de diseño y procesos de fabricación; des
 
 
 \subsubsection{Aplicación}
+Desarrollo de soluciones a problemas locales; uso de metodologías de diseño en la concepción, diseño e implementación de sistemas digitales utilizando la tecnología; utilización de procesos de fabricación adaptados al entorno local; desarrollo de proyectos académicos utilizando esta tecnología.
+
 
 \subsubsection{Difusión y Desarrollo}
+Vinculación de la academia para incluir los conocimientos generados en los programas académicos de las carreras relacionadas; capacitación a la industria local sobre el uso de la tecnología, las metodologías de diseño y procesos de producción; creación de una comunidad que utilice, mejore y aumente el conocimiento generado; hacer que el conocimiento generado en los pasos anteriores este disponible a todos los interesados; dar a conocer los procesos, productos y conocimientos creados a los generadores de políticas de estado.
+
+Aumento de la demanda de productos, bienes y servicios relacionados; compra de maquinaria que permita la fabricación masiva de forma local; diseño de nuevos componentes (Circuitos Integrados, IPs, software CAD); creación de políticas gubernamentales que protejan la producción local; participación activa de la academia en la solución de problemas y en la formulación de políticas de gobierno relacionadas.
 
 
-
- 
-
-
-
-
-
+En el capítulo \ref{embedded} se describiran las actividades realizadas en cadas una de estas etapas y los resultados obtenidos al aplicar esta metodología.
 
 \end{itemize}

@@ -16,7 +16,7 @@
 \usepackage{pdfpages}
 \usepackage{listings}
 \lstset{language=C} 
-% \lstset{ basicstyle=\small, keywordstyle=\color{blue}\bfseries, identifierstyle=, commentstyle=\color{gray}, showstringspaces=false, keywordstyle=\color{blue}, morekeywords={one,three,five}}
+% \lstset{ basicstyle=\small,		 keywordstyle=\color{blue}\bfseries, identifierstyle=, commentstyle=\color{gray}, showstringspaces=false, keywordstyle=\color{blue}, morekeywords={one,three,five}}
 \lstset{backgroundcolor=\color{gray},frame=single,emph={EMPTY},emphstyle=\color{white}, showstringspaces=false,commentstyle=\itshape, morekeywords={printf}, tabsize=2, fontadjust=true,
 basicstyle=\footnotesize}
 %\lstset{framexleftmargin=5mm, frame=shadowbox, rulesepcolor=\color{black}, backgroundcolor=\color[gray]{.9}}
@@ -53,12 +53,12 @@ basicstyle=\footnotesize}
 
 
 \parindent=1cm            
-%      \input title
+     \input title
 \tableofcontents
-%     \input intro
-%     \input description
-%     \input technology_transfer
-     \input embedded
+      \input intro
+%       \input technology_transfer
+      \input description
+%      \input embedded
 %     \input commons
 %     \input education
 %     \input platform
@@ -66,5 +66,34 @@ basicstyle=\footnotesize}
 \bibliography{biblio}
 
 \end{document} 
+
+
+
+
+presentación:
+
+Tabla de contenido:
+
+Cual es el problema , como se resuelve y contribución.
+
+Introducción:
+
+El problema es:
+
+Atraso existente en Colombia en diseño digital; 
+  - Inversión en I+D
+  - Número de facultades de electrónica, 
+  - Porque falló la transferencia.
+
+
+Después expicar el problema
+
+
+Y despues decir que se hizo para resolver el problema.
+
+
+
+!!!30 minutos !!!!  15 diapositivas
+
 
 

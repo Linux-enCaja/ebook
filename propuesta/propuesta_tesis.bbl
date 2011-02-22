@@ -1,49 +1,15 @@
 \begin{thebibliography}{10}
 
-\bibitem{FBFP07}
-{F. Bar}, {F. Pisani}, and {M. Weber}.
-\newblock Mobile technology appropriation in a distant mirror: baroque
-  infiltration, creolization and cannibalism.
-\newblock {\em Seminario sobre Desarrollo Econ\'omico, Desarrollo Social y
-  Comunicaciones M\'oviles en Am\'erica Latina. Buenos Aires}, April 2007.
+\bibitem{Wik}
+Wikipedia.
+\newblock Wikipedia, the free encyclopedia.
+\newblock http://en.wikipedia.org/.
 
-\bibitem{GC04}
-{Goel Cohen}.
-\newblock {\em Technology transfer: strategic management in developing
-  countries}.
-\newblock Sage Publications inc, 2004.
-
-\bibitem{KGSB95}
-{K. Goel} and {Sayers B.}
-\newblock Modelling {G}lobal-{O}riented {E}nergy {T}ecnology {T}ransfer to
-  {DC}s.
-\newblock {\em Sixth Global Warning International Conference, San Francisco},
-  1995.
-
-\bibitem{Mo94}
-{M. odedra-straub}.
-\newblock The {M}yths and {I}llusions of {T}echnology {T}ransfer.
-\newblock {\em IFIP World Congress Proceedings}, August 1994.
-
-\bibitem{Jol77}
-James~A. Jolly.
-\newblock The {T}echnology {T}ransfer {P}rocess: {C}oncepts, {F}ramework and
-  {M}ethodology.
-\newblock {\em The Journal of Technology Transfer. Springer}, 1977.
-
-\bibitem{UNE}
-UNESCO-Uruguay.
-\newblock Rasgos {P}rincipales de la {I}nstitucionalizaci\'on de la {C}iencia,
-  la {T}ecnolog\'{\i}a y la {I}nnovaci\'on en {A}m\'erica {L}atina y el
-  {C}aribe y {T}endencias de la {C}ooperaci\'on {I}nternacional.
-\newblock {\em http://www.unesco.org.uy/}.
-
-\bibitem{LV98}
-{L. Vaccarezza}.
-\newblock Ciencia, {T}ecnolog\'{\i}a y {S}ociedad: el estado de la cuesti\'on
-  en {A}m\'erica {L}atina.
-\newblock {\em Revista Iberoamericana de Educaci\'on, No 18 - Ciencia,
-  Tecnolog\'{\i}a y Sociedad ante la Educaci\'on}, 1998.
+\bibitem{Cor05}
+{Luis Alejandro Cort\'es}.
+\newblock {\em Verification and {S}cheduling {T}echniques for {R}eal-{T}ime
+  {E}mbedded {S}ystems}.
+\newblock PhD thesis, Link\"opings universitet Institute of Technology, 2005.
 
 \bibitem{MO90}
 {M. Odedra}.
@@ -82,52 +48,17 @@ H\'ector Mart\'{\i}nez.
   contratos de importaci\'on de tecnolog\'{\i}a.
 \newblock {\em Revista Cuadernos de Econom\'{\i}a}, 2004.
 
-\bibitem{CFHJ02}
-{C. Forero} and {H. Jaramillo}.
-\newblock The access of researchers from developing countries to international
-  science and technology.
-\newblock {\em International Social Science Journal, Volume 54, Issue 171},
-  2002.
+\bibitem{JH09}
+{Jon Hall}.
+\newblock P{OR} {GRANDES} {QUE} {SEAN}...: {ASEGURE} {EL} {FUTURO} {DE} {SU}
+  {NEGOCIO}.
+\newblock {\em Linux magazine,}, ISSN 1576-4079(58):92, 2009.
 
-\bibitem{Ost00}
-Elinor Ostrom.
-\newblock Reformulating the {C}ommons.
-\newblock {\em Swiss Political Science Review, Volume 6, Number 1}, 2000.
-
-\bibitem{EO92}
-{E. OSTROM}.
-\newblock The {R}udments of a theory of the {O}rigins, {S}urvival, and
-  {P}erformance of {C}ommon-{P}roperty {I}nstitutions.
-\newblock {\em BROMLEY, D.W. et al. (eds.) Making the Commons Work: Theory,
-  Practice, and Policy. San Francisco, CA: ICS Press}, 1992.
-
-\bibitem{EO90}
-{Elinor Ostrom}.
-\newblock {\em Governing the {C}ommons: {T}he {E}volution of {I}nstitutions for
-  {C}ollective {A}ction ({P}olitical {E}conomy of {I}nstitutions and
-  {D}ecisions) ({P}aperback)}.
-\newblock Cambridge University Press, November 1990.
-
-\bibitem{AC09}
-{A. Cortesi}.
-\newblock Elinor {O}strom, the commons problem and {O}pen {S}ource.
-\newblock {\em URL: http://corte.si/posts/opensource/ostrom/index.html}, 2009.
-
-\bibitem{WCI}
-{Worldwide CDIO Initiative}.
-\newblock "{B}enefits of {CDIO}" {URL}:http://www.cdio.org/benefits-cdio on
-  {N}ovember, 2009.
-
-\bibitem{CC06}
-{C. Camargo}.
-\newblock First {C}olombian {L}inux {SBC} runs {D}ebian.
-\newblock URL:
-  http://www.linuxfordevices.com/c/a/News/First-Colombian-Linux-SBC-runs-Debia%
-n/, 2006.
-
-\bibitem{emQ}
-emQbit.
-\newblock {e}m{Q}bit {L}inux {P}owered {D}evices {C}ompany.
-\newblock URL: http://www.emqbit.com/.
+\bibitem{AG10}
+{A. Grove}.
+\newblock How {A}merica {C}an {C}reate {J}obs.
+\newblock
+  http://www.businessweek.com/magazine/content/10\_28/b4186048358596.htm, May
+  2010.
 
 \end{thebibliography}

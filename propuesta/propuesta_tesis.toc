@@ -1,47 +1,17 @@
 \select@language {spanish}
-\contentsline {chapter}{\numberline {1}TRANSFERENCIA TECNOL\'OGICA}{3}
-\contentsline {section}{\numberline {1.1}Tecnolog\IeC {\'\i }a}{3}
-\contentsline {section}{\numberline {1.2}Definici\'on}{5}
-\contentsline {subsection}{\numberline {1.2.1}Tipos de Transferencia Tecnol\'ogica}{5}
-\contentsline {subsection}{\numberline {1.2.2}Canales Para la Transferencia de tecnolog\IeC {\'\i }a}{6}
-\contentsline {subsubsection}{Adquisici\'on de IT}{7}
-\contentsline {subsubsection}{Educaci\'on y Entrenamiento}{7}
-\contentsline {subsubsection}{Asistencia T\'ecnica}{8}
-\contentsline {subsubsection}{Licenciamiento}{8}
-\contentsline {subsubsection}{Inversi\'on Extranjera Directa}{8}
-\contentsline {subsection}{\numberline {1.2.3}Conclusi\'on}{9}
-\contentsline {section}{\numberline {1.3}Modelo}{9}
-\contentsline {subsection}{\numberline {1.3.1}Los factores formales}{10}
-\contentsline {subsubsection}{Documentaci\'on}{10}
-\contentsline {subsubsection}{Distribuci\'on}{10}
-\contentsline {subsubsection}{Organizaci\'on}{10}
-\contentsline {subsubsection}{Selecci\'on de Proyectos}{10}
-\contentsline {subsection}{\numberline {1.3.2}Factores Informales}{10}
-\contentsline {subsubsection}{Capacidad}{11}
-\contentsline {subsubsection}{Enlace (contacto)}{11}
-\contentsline {subsubsection}{Credibilidad}{11}
-\contentsline {subsubsection}{Recompensa}{11}
-\contentsline {subsubsection}{Disposici\'on}{12}
-\contentsline {section}{\numberline {1.4}Transferenica Tecnol\'ogica en Latinoam\'erica \cite {UNE}}{12}
-\contentsline {subsection}{\numberline {1.4.1}Trasfondo hist\'orico}{12}
-\contentsline {subsection}{\numberline {1.4.2}Financiaci\'on}{13}
-\contentsline {section}{\numberline {1.5}Obst\'aculos para una Transferencia Exitosa}{14}
-\contentsline {section}{\numberline {1.6}Recomendaciones Para una Transferencia Tecnol\'ogica Exitosa}{15}
-\contentsline {subsection}{\numberline {1.6.1}Recomendaciones para los generadores de pol\IeC {\'\i }ticas}{15}
-\contentsline {subsection}{\numberline {1.6.2}Recomendaciones para la academia}{16}
-\contentsline {subsection}{\numberline {1.6.3}Recomendaciones para el Gobierno}{17}
-\contentsline {section}{\numberline {1.7}Actividades Prioritarias Para Obtener Una Transferencia de Tecnolog\IeC {\'\i }a Exitosa}{18}
-\contentsline {section}{\numberline {1.8}Actividades}{20}
-\contentsline {section}{\numberline {1.9}Metodolog\IeC {\'\i }a para la Transferencia Tecnol\'ogica y de Conocimientos en el Dise\~no de Sistemas Embebidos}{22}
-\contentsline {subsection}{\numberline {1.9.1}Componentes de la Tecnolog\IeC {\'\i }a}{23}
-\contentsline {subsubsection}{Techno-ware}{23}
-\contentsline {subsubsection}{Human-ware}{25}
-\contentsline {subsubsection}{Info-ware}{26}
-\contentsline {subsubsection}{Orga-ware}{27}
-\contentsline {subsection}{\numberline {1.9.2}Etapas de la Metodolog\IeC {\'\i }a}{27}
-\contentsline {subsubsection}{Elecci\'on}{29}
-\contentsline {subsubsection}{Adquisici\'on}{29}
-\contentsline {subsubsection}{Adopci\'on}{29}
-\contentsline {subsubsection}{Absorci\'on}{29}
-\contentsline {subsubsection}{Aplicaci\'on}{29}
-\contentsline {subsubsection}{Difusi\'on y Desarrollo}{29}
+\contentsline {chapter}{\numberline {1}Sistemas Embebidos}{5}
+\contentsline {section}{\numberline {1.1}Introducci\'on}{5}
+\contentsline {subsection}{\numberline {1.1.1}Qu\'e es un sistema Embebido}{5}
+\contentsline {subsection}{\numberline {1.1.2}Arquitectura}{5}
+\contentsline {subsection}{\numberline {1.1.3}Aplicaciones}{7}
+\contentsline {subsection}{\numberline {1.1.4}Metodolog\IeC {\'\i }a de Dise\~no}{7}
+\contentsline {section}{\numberline {1.2}Implementaci\'on de la Metodolog\IeC {\'\i }a Propuesta Para la Transferencia Tecnol\'ogica en Dise\~no de Sistemas Embebidos}{9}
+\contentsline {subsection}{\numberline {1.2.1}Elecci\'on}{9}
+\contentsline {subsubsection}{Niveles de complejidad de la tecnolog\IeC {\'\i }a}{9}
+\contentsline {subsubsection}{Diagn\'ostico de la Industria Local}{12}
+\contentsline {subsubsection}{Diagn\'ostico de la Academia}{12}
+\contentsline {subsubsection}{Conclusi\'on}{13}
+\contentsline {subsection}{\numberline {1.2.2}Adquisici\'on}{14}
+\contentsline {subsubsection}{Herramientas de Desarrollo}{14}
+\contentsline {subsubsection}{Dispositivos Semiconductores}{15}
+\contentsline {subsubsection}{Dispositivos disponibles}{16}
