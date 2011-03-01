@@ -10,12 +10,6 @@ La tecnolog\'{\i}a de los semiconductores adelanta a la capacidad de utilizaci\'
 
 \subsubsection{Futuro de los Sistemas Computacionales}
 
-\begin{quote}
-  "The best way to predict the future is to invent it."
-  
-  Alan Kay
-\end{quote}
-
 Observando la tendencia actual de los sistemas electr\'onicos, se puede especular que el computador tal como lo conocemos actualmente desaparecer\'a {\cite{WM91}}, ya que estar\'a en todas partes, ubicuo, interactuando con los seres humanos para realzar el mundo que ellos viven. Se pasar\'a de un esquema en el que existe un computador para uno o varios usuarios (PC, mainframe) a uno en el que existan muchos computadores para un usuario. Estos computadores disponen de grandes capacidades de c\'alculo y de comunicaci\'on, pero a la vez, poseen un grado de integraci\'on tal que ser\'an invisibles; para aclarar como se puede lograr esta invisibilidad, imag\'{\i}nense que existen sistemas embebidos construidos con t\'ecnicas de microfabricaci\'on y que son capaces de tomar su energ\'{\i}a de fuentes alternas como la temperatura, la radiaci\'on solar, o a partir de fen\'omenos qu\'{\i}micos, debido a su reducido tamaño, estos sistemas pueden integrarse a objetos o pintarse sobre ellos, de tal forma que no sean visibles ante los ojos humanos. Esta desaparici\'on no solo ser\'a una consecuencia de la tecnolog\'{\i}a, sino de la sicolog\'{\i}a humana; cuando las personas asimilan perfectamente algo y se convierte en parte de la vida diaria no se es consciente de su utilizaci\'on. Por ejemplo, cuando observamos una señal de tr\'ansito capturamos la informaci\'on sin ser conscientes de la realizaci\'on del acto de la lectura.
 
 \begin{figure}[h]

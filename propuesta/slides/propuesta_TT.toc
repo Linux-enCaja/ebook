@@ -1,0 +1,25 @@
+\beamer@endinputifotherversion {3.07pt}
+\select@language {english}
+\beamer@sectionintoc {1}{Introducci\'on}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Definici\'on de Tecnolog\IeC {\'\i }a}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Transferencia Tecnol\'ogica}{4}{0}{1}
+\beamer@subsubsectionintoc {0}{1}{2}{1}{6}{1}{Transferencia Tecnol\'ogica Exitosa}
+\beamer@subsectionintoc {1}{3}{Canales de Transferenica}{7}{0}{1}
+\beamer@sectionintoc {2}{Situaci\'on Colombiana}{8}{0}{2}
+\beamer@subsectionintoc {2}{1}{Causas del Atraso}{9}{0}{2}
+\beamer@subsubsectionintoc {0}{2}{1}{1}{10}{2}{Inversi\'on en I+D}
+\beamer@subsectionintoc {2}{2}{Obst\'aculos para la Transferencia}{11}{0}{2}
+\beamer@subsectionintoc {2}{3}{Recomendaciones}{12}{0}{2}
+\beamer@subsubsectionintoc {0}{2}{3}{1}{12}{2}{A los generadores de pol\IeC {\'\i }ticas}
+\beamer@subsubsectionintoc {0}{2}{3}{2}{13}{2}{Para la academia}
+\beamer@sectionintoc {3}{Porqu\'e TT en Dise\~no de Sistemas Embebidos (SE)?}{14}{0}{3}
+\beamer@subsectionintoc {3}{1}{Sistemas Embebidos: Aplicaciones}{14}{0}{3}
+\beamer@subsectionintoc {3}{2}{Sistemas Embebidos: Mercado}{15}{0}{3}
+\beamer@sectionintoc {4}{Actividades Para Realizar una TT Exitosa}{16}{0}{4}
+\beamer@sectionintoc {5}{Metodolog\IeC {\'\i }a Propuesta}{18}{0}{5}
+\beamer@subsectionintoc {5}{1}{Elecci\'on}{19}{0}{5}
+\beamer@subsectionintoc {5}{2}{Adquisici\'on}{20}{0}{5}
+\beamer@subsectionintoc {5}{3}{Adopci\'on}{21}{0}{5}
+\beamer@subsectionintoc {5}{4}{Absorci\'on}{22}{0}{5}
+\beamer@subsectionintoc {5}{5}{Aplicaci\'on}{24}{0}{5}
+\beamer@subsectionintoc {5}{6}{Difusi\'on}{26}{0}{5}

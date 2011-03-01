@@ -1,0 +1,45 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: Transferencia.aux
+The style file: unsrtnat.bst
+Database file #1: ./TT_UN_biblio.bib.bib
+You've used 1 entry,
+            2481 wiz_defined-function locations,
+            557 strings with 4725 characters,
+and the built_in function-call counts, 355 in all, are:
+= -- 24
+> -- 21
+< -- 0
++ -- 8
+- -- 6
+* -- 27
+:= -- 66
+add.period$ -- 3
+call.type$ -- 1
+change.case$ -- 2
+chr.to.int$ -- 1
+cite$ -- 1
+duplicate$ -- 18
+empty$ -- 29
+format.name$ -- 7
+if$ -- 67
+int.to.chr$ -- 1
+int.to.str$ -- 2
+missing$ -- 1
+newline$ -- 13
+num.names$ -- 3
+pop$ -- 9
+preamble$ -- 1
+purify$ -- 1
+quote$ -- 0
+skip$ -- 10
+stack$ -- 0
+substring$ -- 2
+swap$ -- 3
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 7
+warning$ -- 0
+while$ -- 2
+width$ -- 0
+write$ -- 19

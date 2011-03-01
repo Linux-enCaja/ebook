@@ -61,7 +61,7 @@ Según Jolly \cite{Jol77} la innovación tecnológica es entendida como un nuevo mé
 
 \subsection{Tipos de Transferencia Tecnológica}
 
-Mansfield clasifica la transferencia tecnológica en transferencia de material, diseño y capacidades, la transferencia de material no constituye una transfencia tecnológica real, ya que no genera el conocimiento necesario para transformarlos y generar nuevos productos que cumplan con las necesidades locales
+Mansfield clasifica la transferencia tecnológica en transferencia de material, diseño y capacidades, la transferencia de material no constituye una transfencia tecnológica real, ya que no genera el conocimiento necesario para transformarlos y generar nuevos productos que cumplan con las necesidades locales.
  
 \begin{itemize}
  \item Transferencia material: Artefactos tecnológicos: Materiales, productos finales, componentes, equipos.
@@ -341,13 +341,10 @@ Estudios consultados \cite{MO90} \cite{IAI} \cite{MDAG99} \cite{DZSC+07} \cite{M
       \item Elevar la transferencia tecnológica a un nivel superior y promover la excelencia.
       \item Concientizar a los creadores de políticas gubernamentales sobre la importancia de la transferencia tecnológica y las alianzas con la investigación industrial.
       \item Interacción entre Universidades, Conviene que buena parte de los trabajos realizados en doctorado sean de investigación aplicada, orientadas a mejorar la productividad del sector empresarial 
-      \item Infraestructura institucional que impulse la actualización tecnológica en el sector mediante desarrollo de proyectos de tecnología de punta con una posible transferencisarial 
+
       \item Infraestructura institucional que impulse la actualización tecnológica en el sector mediante desarrollo de proyectos de tecnología de punta con una posible transferencia de tecnología.
    \end{itemize}
 
-   \item{Búsqueda de Financiación para Investigación y Desarrollo}
-   \begin{itemize}  a de tecnología.
-   \end{itemize}
 
    \item{Búsqueda de Financiación para Investigación y Desarrollo}
    \begin{itemize}  
@@ -626,7 +623,7 @@ Los aportes del presente trabajo a la transferencia de este componente de la tec
 
 
 \subsubsection{Orga-ware}
-Tareas de \texit{orga-ware} en la creación de dispositivos digitales
+Tareas de \textit{orga-ware} en la creación de dispositivos digitales
 
 \begin{itemize}
  \item Búsqueda de componentes electrónicos y de proveedores de servicios de manufactura.

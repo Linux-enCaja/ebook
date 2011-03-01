@@ -1,0 +1,70 @@
+\documentclass{book}
+
+\usepackage{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[usenames,dvipsnames]{color}
+
+\usepackage{tikz}
+\usepackage{colortbl}
+
+\usetikzlibrary{arrows,shapes,snakes,automata,backgrounds,petri}
+
+\usepackage{times}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{pdfpages}
+\usepackage{listings}
+\lstset{language=C} 
+% \lstset{ basicstyle=\small, keywordstyle=\color{blue}\bfseries, identifierstyle=, commentstyle=\color{gray}, showstringspaces=false, keywordstyle=\color{blue}, morekeywords={one,three,five}}
+\lstset{backgroundcolor=\color{gray},frame=single,emph={EMPTY},emphstyle=\color{white}, showstringspaces=false,commentstyle=\itshape, morekeywords={printf}, tabsize=2, fontadjust=true,
+basicstyle=\footnotesize}
+%\lstset{framexleftmargin=5mm, frame=shadowbox, rulesepcolor=\color{black}, backgroundcolor=\color[gray]{.9}}
+\lstset{backgroundcolor=\color[gray]{.8}}
+
+\usepackage{float}
+\usepackage{rotating}
+\usepackage{subfigure}
+\usepackage{pdflscape}
+
+
+\usepackage{pstricks}
+
+
+\definecolor{code-color}{cmyk}{0, 0, 0, 0.1}
+
+\usepackage{amsmath,amssymb,latexsym,array, bm, times}
+
+\pagestyle{myheadings}
+\markboth{Sistemas Embebidos}{Carlos Iván Camargo Bareño}
+
+\usepackage{longtable}
+\parindent 1cm
+\parskip 0.2cm
+\topmargin 0.2cm
+\oddsidemargin 1cm
+\evensidemargin 0.5cm
+\textwidth 15cm
+\textheight 21cm
+
+
+\begin{document}
+\bibliographystyle{unsrt}
+
+
+\parindent=1cm            
+     \input title
+\tableofcontents
+%      \input intro
+%      \input technology_transfer
+%      \input description
+     \input embedded
+%     \input commons
+%     \input education
+%     \input platform
+
+\bibliography{biblio}
+
+\end{document} 
+
+
