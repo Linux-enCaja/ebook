@@ -15,3 +15,13 @@
 \contentsline {subsubsection}{Herramientas de Desarrollo}{14}
 \contentsline {subsubsection}{Dispositivos Semiconductores}{15}
 \contentsline {subsubsection}{Dispositivos disponibles}{16}
+\contentsline {subsection}{\numberline {1.2.3}Adopci\'on}{17}
+\contentsline {subsubsection}{Metodolog\IeC {\'\i }a}{17}
+\contentsline {subsubsection}{Arquitectura: SoC, Memorias, perif\'ericos}{18}
+\contentsline {subsubsection}{Programaci\'on}{20}
+\contentsline {subsubsection}{Programaci\'on utilizando el puerto JTAG}{23}
+\contentsline {subsubsection}{Aplicaciones \textit {Standalone} vs Aplicaciones con sistema operativo}{23}
+\contentsline {subsubsection}{Conocimientos Adquiridos}{25}
+\contentsline {subsection}{\numberline {1.2.4}Absorci\'on}{26}
+\contentsline {subsubsection}{Aplicaci\'on}{26}
+\contentsline {subsubsection}{Difusi\'on y Desarrollo}{27}

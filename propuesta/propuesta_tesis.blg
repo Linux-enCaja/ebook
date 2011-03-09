@@ -4,45 +4,46 @@ The style file: unsrt.bst
 Database file #1: biblio.bib
 Warning--empty journal in IAI
 Warning--empty year in IAI
-You've used 10 entries,
+Warning--can't use both author and editor fields in Sta99
+You've used 11 entries,
             1791 wiz_defined-function locations,
-            505 strings with 5154 characters,
-and the built_in function-call counts, 1442 in all, are:
-= -- 116
-> -- 70
+            511 strings with 5358 characters,
+and the built_in function-call counts, 1593 in all, are:
+= -- 128
+> -- 74
 < -- 0
-+ -- 29
-- -- 19
-* -- 61
-:= -- 274
-add.period$ -- 29
-call.type$ -- 10
++ -- 31
+- -- 20
+* -- 67
+:= -- 297
+add.period$ -- 32
+call.type$ -- 11
 change.case$ -- 9
 chr.to.int$ -- 0
-cite$ -- 12
-duplicate$ -- 69
-empty$ -- 143
-format.name$ -- 19
-if$ -- 304
+cite$ -- 14
+duplicate$ -- 79
+empty$ -- 162
+format.name$ -- 20
+if$ -- 339
 int.to.chr$ -- 0
-int.to.str$ -- 10
-missing$ -- 4
-newline$ -- 52
-num.names$ -- 10
-pop$ -- 32
+int.to.str$ -- 11
+missing$ -- 6
+newline$ -- 57
+num.names$ -- 11
+pop$ -- 38
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 28
+skip$ -- 30
 stack$ -- 0
 substring$ -- 6
-swap$ -- 7
+swap$ -- 9
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 2
-while$ -- 11
-width$ -- 12
-write$ -- 103
-(There were 2 warnings)
+warning$ -- 3
+while$ -- 12
+width$ -- 13
+write$ -- 113
+(There were 3 warnings)

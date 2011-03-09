@@ -127,7 +127,7 @@ El la figura \ref{GA_vs_ASIC_vs_FPGA} se muestra un comparativo de la utilizació
   \caption{Comparación de costos entre FPGAs, Arreglos de Compuertas y ASIC basado en celdas Standard, Fuente: Application-Specific Integrated Circuits, MJS Smith} \label{GA_vs_ASIC_vs_FPGA}
 \end{figure}
 
-En Colombia es muy común el uso de micro-controladores y micro-procesadores de 8 bits como herramienta para la implementación de sistemas digitales, la mayor parte de los centros de educación del país (de todo nivel) proporcionan cursos de programación y es posibe encontrar en el mercado un suministro continuo de ciertas referencias. Gracias a esto existen numerosos desarrollos basados en ellos; sin embargo, debido a los limitados recursos de estos dispositivos (velocidad, periféricos, herramientas de programación) no es posible utilizarlos para la implementación de aplicaciones actuales que requieren conectividad con diferentes redes, manejo de pantallas de cristal líquido, aplicaciones multimedia, y diversos medios de almacenamiento de información.
+En Colombia es muy común el uso de micro-controladores y micro-procesadores de 8 bits como herramienta para la implementación de sistemas digitales, la mayor parte de los centros de educación del país (de todo nivel) proporcionan cursos de programación y es posible encontrar en el mercado un suministro continuo de ciertas referencias. Gracias a esto existen numerosos desarrollos basados en ellos; sin embargo, debido a los limitados recursos de estos dispositivos (velocidad, periféricos, herramientas de programación) no es posible utilizarlos para la implementación de aplicaciones actuales que requieren conectividad con diferentes redes, manejo de pantallas de cristal líquido, aplicaciones multimedia, y diversos medios de almacenamiento de información.
 
 Los \textit{System on Chip} (SoC) proporcionan una excelente alternativa para la implementación de aplicaciones modernas; integran un procesador de 32 bits que corre a frecuencias que van desde los 75MHz hasta los 800 MHz y poseen periféricos que permiten controlar directamente una gran capacidad de dispositivos, muchos de ellos están diseñados para apliacaciones que requien manejo de pantallas táctiles de cristal líquido, conexión a intenet, diferentes medios de almacenamiento, reproducción de audio, manejo de sensores de imágen, entre otros; muchas de estas tareas son realizadas por procesadores dedicados diferentes al procesador principal del SoC. Adicionalmente, existe una gran gama de productos ofrecidos por diveros fabricantes como Freescale, NXP, Ingenic, Analog Devices, Altera, Marvell; por otro lado su uso en aplicaciones de consumo masivo ha reducido el costo de estos dispositivos y es posible comprarlos en cualquier cantidad a precios que oscilan entre 4 y 20 USD.
 
@@ -176,7 +176,311 @@ Existe una gran oferta de SoC en la actualidad, grandes compañias proporcionan c
 \end{figure}
 
 \subsubsection{Dispositivos disponibles}
-Existen dos tipos de dispositivos que pueden ser utilizados en el proceso de transferencia tecnológica y de conocimientos: productos de consumo, productos fabricados a grandes volúmenes y que se pueden adquirir fácilmente a bajo precio; dispositivos \textit{Commercial off-the-shelf} (COTS), diseñados para ser utilizados como punto de partida en el desarrollo de una aplicación, se pueden encontrar en la forma de tarjetas de desarrollo, las cuales incluyen una gran variedad de dispositivos hardware (puertos de comunicación, LEDs, Displays, LCDs, pulsadores) que permiten explorar la capacidad de un determinado SoC, o se pueden encontrar en forma de unidades genéricas que proporcionan las conexiones para su funcionamiento básico (alimentación, memorias), proporcionando todas las señales que controlan periféricos externos para que sean utilizadas en una tarjeta que integre los componentes requeridos en una determinada aplicación.
+Existen dos tipos de dispositivos que pueden ser utilizados en el proceso de transferencia tecnológica y de conocimientos: productos de consumo, productos fabricados a grandes volúmenes y que se pueden adquirir fácilmente a bajo precio; dispositivos \textit{Commercial off-the-shelf} (COTS), diseñados para ser utilizados como punto de partida en el desarrollo de una aplicación, se pueden encontrar en la forma de tarjetas de desarrollo, las cuales incluyen una gran variedad de dispositivos hardware (puertos de comunicación, LEDs, Displays, LCDs, pulsadores) que permiten explorar la capacidad de un determinado SoC, o se pueden encontrar en forma de unidades genéricas que proporcionan las conexiones para su funcionamiento básico (alimentación, memorias), proporcionando todas las señales que controlan periféricos externos para que sean utilizadas en una tarjeta que integre los componentes requeridos en una determinada aplicación. El término OEM (Original Equipment Manufacturer) se aplica a las organizaciones que compran estos artículos y los revenden; en algunas ocasiones se realizan mejoras como valor agregado. 
+
+En la actualidad existe una gran oferta de este tipo de dispositivos a nivel mundial, muchas compañías realizan diseños para que sean utilizados como punto de partida de productos comerciales, o que sean parte de ellos, lo cual reduce los costos y tiempos de desarrollo; desafortunadamente en el país no existe una gran demanda, por lo que deben ser importados, lo que hace que su costo se eleve por lo menos en un 26\% (arancel e IVA). Las plataformas adquiridas para este estudio se muestran en la figura \ref{plataformas_adquiridas}, la primera de izquierda a derecha es una combinación de la consola de juegos \copyright NINTENDO (basado en ARM7) y la plataforma \textit{XPORT} de la compañía norteamericana Charmedlabs (basado en una FPGA Spartan3), la segunda es la plataforma de la compañía china \textit{Embest} basada en el SoC AT91R40008 (ARM7), la tercera es la agenda electrónica Zaurus de Toshiba (basado en el StrongARM de Intel SA-1110), la cuarta es el chumby (basado en un ARM de freescale iMX233) y finalmente un portaretratos digital de la empresa china \textit{SUNGALE}
+
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.6]{./images/plataformas_adquiridas.png}
+   \includegraphics[scale=.6]{./images/plataformas_adquiridas2.png}
+\end{center}
+  \caption{Plataformas adquiridas para el estudio de los Sistemas Emebebidos} \label{plataformas_adquiridas}
+\end{figure}
+
+
+
+\subsection{Adopción}
+
+En esta etapa se utilizarán las plataformas comerciales mencionadas anteriormente y las herramientas de desarrollo abiertas para: explorar las diferentes alternativas de implementación; entender y aplicar la metodología de diseño adoptada internacionalmente; generación de conocimiento sobre el uso de las herramientas de desarrollo. 
+
+Los dispositivos comerciales con grandes niveles de producción son un buen punto de partida para el estudio de la arquitectura de sistemas digitales que utilizan SoCs, ya que están optimizadas (en número de componentes) para ser utilizadas en una aplicación específica, gracias a esto su costo es muy bajo (en comparación con plataformas de desarrollo). Por otro lado, es posible encontrar estos dispositivos en el mercado local; por lo anterior, este tipo de plataformas reduce de forma considerable la inversión necesaria para realizar las actividades de esta etapa.
+
+\subsubsection{Metodología}
+Se utilizará ingeniería inversa para determinar como están construidos, como funcionan y como son programados los productos adquiridos. Esta tarea no se ejecutará en un determinado instante de tiempo, ya que el estudio se realizó de forma gradual, cada vez que se trataba un nuevo tópico se repetía el proceso con un producto que permitiera su estudio. 
+
+
+Como podemos ver en la figura \ref{os_trends} existen dos formas de realizar las aplicaciones de un sistema embebido: con sistema operativo (OS) y sin OS (\textit{standalone}). Las aplicaciones standalone son muy eficientes debido a que son escritas teniendo en cuenta los recursos hardware (memoria, velocidad del procesador, periféricos) de la plataforma donde van a ser ejecutadas, sin embargo, requiere el desarrollo completo de toda la funcionalidad. Por otro lado, los sistemas operativos proporcionan servicios (manejo de periféricos, capacidad de ejecución multi-tarea, manejo de sistemas de archivos, librerías) que facilitan el desarrollo de aplicaciones; sin embargo, al ser diseñados para ser ejecutados en cualquier dispositivo, es necesario cumplir con unos requerimientos de recursos mínimos para que el sistema operativo pueda ejecutarse. En este estudio se trabajó con dos sistemas operativos abiertos: \textit{eCos} desarrollado por Redhat y \textit{Linux} desarrollado por Linus Torvalds. A continuación se muestran los temas de estudio que se abordaron en esta etapa.
+
+\begin{itemize}
+ \item Arquitectura: Determinar los componentes más utilizados y las diferentes topologías.
+ \item Programación: Mecanismos que permiten cambiar el \textit{firmware} original del dispositivo.
+ \item Aplicaciones sin sistema operativo:  Estudio de herramientas que permiten gener nuevas aplicaciones en los dispositivos sin el uso de sistemas operativos.
+ \item Aplicaciones con sistema operativo: Uso de sistemas operativos para acelerar el proceso de desarrollo de aplicaciones, utilizando las facilidades que ellos proporcionan.
+   \begin{itemize}
+      \item eCos: Sistema operativo de tiempo real altamente configurable que permte el uso eficiente de los recursos hardware.
+      \item Linux: Sistema operativo ampliamente utilizado que posee una gran cantidad de aplicaciones y un numero considerable de desarrolladores.
+        \begin{itemize}
+          \item Inicialización: Requerimientos mínimos para la ejecución de Linux.
+          \item Imágen del kernel: Adaptación del kernel de Linux a una determinada plataforma.
+          \item Sistema de archivos: Distribuciones y aplicaciones mínimas necesarias para la ejecución de Linux.
+          \item Drivers de dispositivos: Como dar soporte a nuevos periféricos.
+          \item Comunicación con periféricos dedicados implementados en FPGAs: Comunicación entre FPGAs y SoCs.
+          \item Aplicaciones gráficas: Uso de librerías gráficas para el desarrollo de aplicaciones.
+        \end{itemize}
+   \end{itemize}
+ \item Desarrollo de Aplicaciones que den solución a problemas locales.
+\end{itemize}
+ 
+\subsubsection{Arquitectura: SoC, Memorias, periféricos}
+Los SoC comerciales se pueden dividir en dos grandes grupos dependiendo de la existencia o no de memoria no volátil para el almacenamiento del programa (memoria de instrucciones) dentro del SoC. Los SoC que poseen memoria no volátil (hasta 512 Kbytes) normalmente incorporan una memoria RAM (hasta 32 kbytes) junto con una serie de periféricos (timers, I2C, SPI, USARTs, ADCs, Watchdog, USB device, canales para acceso directo a memoria - DMA); están diseñados para no utilizar componentes externos; normalmente este tipo de dispositivos utilizan procesadores que no tienen unidad de manejo de memoria \footnote{La MMU permite el manejo de memoria, dentro de sus funciones se encuentra el traslado de la memoria física a virtual, protección de la memoria, control de cache, arbitramento de buses} (MMU) como la famila ARM7, cuyas velocidades de ejecución varían entre los 50 y 70MHz. En la figura \ref{soc_int_volatil} se muestra la arquitectura típica de un sistema basado en estos dispositivos.
+
+\begin{figure}[htpb]
+   \begin{center} \includegraphics[scale=.6]{./images/soc_int_volatil.pdf} \end{center}
+  \caption{Arquitectura típica de un sistema embebido que utiliza SoC con memoria volátil interna} \label{soc_int_volatil}
+\end{figure}
+
+Los procesadores que no poseen memoria no volátil interna se dividen en dos grupos: los que poseen o no unidad de manejo de memoria; en ambos casos, se cuenta con una memoria RAM (hasta 128 Kbytes) y adicionamente a los periféricos mencionados anteriormente se suministran controladores para USB host, puertos SSI, controlador de LCD, codecs de audio, controlador de touch screen; debido a la ausencia de memoria no volátil interna, estos dispositivos poseen periféricos dedicados al manejo de memorias no volátiles NAND flash, NOR flash, SPI, I2C  y SD; y memorias volátiles SDRAM y DDR; su velocidad de operación varía entre los 75MHz y 800MHz. En la figura \ref{soc_no_int_volatil} se muestra a arquitectura típica de un sistema basado en estos procesadores.
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.6]{./images/soc_no_int_volatil_mmu.pdf} \end{center}
+  \caption{Arquitectura típica de un sistema embebido que utiliza SoC sin memoria volátil interna} \label{soc_no_int_volatil}
+\end{figure}
+
+
+Debido a la falta de memoria volátil, las aplicaciones de este tipo de dispositivos requieren una memoria externa de este tipo, en la actualidad las más populares son las memorias NAND flash, NOR flash, SPI, EEPROM y SD. Normalmente, este tipo de procesadores son utilizados en aplicaciones que utilizan sistemas operativos, como veremos más adelente, para que ciertos sistemas operativos (Linux, Windows CE) puedan ejecutarse se requiere una mínima cantidad de memoria RAM (del orden de los Mbytes), por esta razón es necesario incluir una memoria RAM externa, en la actualidad las más utilizadas son las SDRAM, DDR y DDR2. 
+
+Como conclusión, podemos decir que en el mercado existen opciones que nos permiten realizar proyectos con diferentes grados de complejidad y que se ajustan a las opciones más utilizadas por los desarrolladores; la opción más económica es la utilización de SoC que incluyan las memorias no volátiles y ram internamente; sin embargo, hasta el momento no existen dispositivos con grandes capacidades memoria Flash y RAM internas, por lo que no es posible su uso para ciertas aplicaciones que utilicen grandes cantidades de memoria; por ejemplo, aplicaciones gráficas con LCDs con resoluciones mayores a la VGA. Utilizar SoC que no integren las memorias no volátiles proporciona una mayor flexibilidad, ya que estos dispositivos proporcionan periféricos que pueden controlar varios tipos de memorias, y se puede elegir la más económica, algo similar ocurre con la memoria RAM; sin embargo, el costo total de las memorias externas, SoC y área de circuito impreso es mayor que en el caso anterior. A continuación se resume la arquitectura de las plataformas utilizadas.
+
+    \begin{tabular}{|l|l|l|l|l|l|}
+      \hline
+      \textbf{Plataforma}  & \textbf{CPU}  & \textbf{Mem. volátil} & \textbf{Mem. no volátil} & \textbf{MMU} & \textbf{OS}
+      \\ \hline 
+       Game Boy            & ARM  &Externa NOR  & Interna       & NO & Propietario
+      \\ \hline 
+       Zaurus              & ARM  &Externa NAND & Externa SDRAM & SI & Linux
+      \\ \hline 
+       iPAQ H3600          & ARM  &Externa NAND & Externa SDRAM & SI & Windows CE
+      \\ \hline 
+       Chumby              & ARM  &Externa NAND & Externa SDRAM & SI & Linux
+      \\ \hline 
+       Ainol V2000         & MIPS &Externa NAND & Externa SDRAM & SI & Linux
+      \\ \hline 
+       SUNGALE DPF         & MIPS &Externa NAND & Externa SDRAM & SI & Linux
+      \\ \hline 
+
+    \end{tabular}
+
+Aunque estos procesadores operan a velocidades entre los 75 y 800 MHz, no todos los componentes del SoC operan a esta frecuencia, el componente externo que requiere la mayor velocidad de operación es la memoria RAM y puede estar entre los 50 y 130 MHz, los demás periféricos funcionan a frecuencias del orden de las decenas de MHz o KHz; por esta razón estos SoC suministran un circuito PLL que permite generar la frecuencia de operación a partir de cristales de frecuencias del orden de las decenas de MHz, lo que facilita el diseño de la placa de circuito impreso.
+
+Cada periférico requiere una conexión específica con el dispositivo que controla, los SoC modernos incluyen la mayor parte del circuito internamente con el objetivo de minimizar las conexiones y dispositivos adicionales. Existen tendencias de los fabricantes a agrupar periféricos teniendo en mente dos aplicaciones: Multimedia, e industriales; para aplicaciones multimedia se proporciona controladores de LCDs, mouse, teclado, touch screen, CODECs de audio, control de potencia, relojes de tiempo real, control de carga de baterías entre otros; para aplicaciones industriales se proporcionan controladores de red cableada, puertos CAN, I2C, SPI.
+
+\subsubsection{Programación}
+
+Como se mencionó anteriormente, para este estudio se utilizarán herramientas abiertas para la creación de aplicaciones, en la figura \ref{sw_flow_diagram} se muestra el flujo de creación de las tareas software usando la cadena de herramientas GNU \cite{Sta99}. La ventaja de utilizar estas herramientas (adicional a la económica) es el soporte a diferentes procesadores (24 diferentes CPUs, incluyendo micro-controladores de 8 bits), lo que permite la fácil migración entre CPUs; adicionalmente su alto grado de configurabilidad permite el cambio de disposición de las memorias volátiles y no volátiles de forma fácil (a través del script de enlazado). 
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.6]{./images/SW_design_flow.png} \end{center}
+  \caption{Flujo de diseño software para creación de aplicaciones.} \label{sw_flow_diagram}
+\end{figure}
+
+El proceso de generación de el archivo binario que debe ser grabado en la memoria no volátil de la plataforma puede ser realizado en su totalidad por la cadena de herramientas GNU. Los SoC proporcionan la capacidad de \textit{iniciar} desde diferentes dispositivos; cuando se activa la señal de \textit{reset} a un SoC que no posee memoria volátil interna, el primer programa en ejecutarse es el que reside en una memoria ROM interna, este programa revisa varios periféricos en búsqueda de un programa válido; los periféricos soportados varían según el fabricante, pero por lo general siempre soportan el uso de memorias NOR Flash (paralelas) y en SoC más recientes memorias NAND Flash, SPI, o SD; sin embargo, la mayoría de SoC soportan memorias que se encuentran soldadas en la placa de circuito impreso, lo que hace necesario buscar métodos de programación que no implique desoldar las memorias. 
+
+Existen dos formas de realizar esta programación: utilizando un canal de comunicación suministrado por el SoC; en la mayoría de los SoC cuando el programa residente en la ROM no encuentra ninguna aplicación válida en los periféricos soportados, establece una comunicación por uno de sus puertos seriales o USB y queda en espera del envío de un programa válido, el programa enviado es almacenado en la memoria RAM interna, y una vez finaliza su descarga se ejecuta desde la RAM interna. La figura \ref{soc_boot} muestra este proceso.
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.4]{./images/SoC_boot.pdf} \end{center}
+  \caption{Inicialización de un SoC cuando las memorias no volátiles no están programadas.} \label{soc_boot}
+\end{figure}
+
+Debido a que la RAM interna normalmente es pequeña (del orden de Kbytes), no es posible cargar aplicaciones muy grandes en ella, por lo que es necesario realizar el proceso de programación en varias etapas: en la primera etapa se carga una aplicación (\textit{first - stage bootloader}) que se encarga de configurar el procesador (pila, frecuencia de operación), configurar la memoria RAM externa y habilitar un canal de comunicación para descarga de aplicaciones, de esta forma, es posible almacenar aplicaciones tan extensas como la capacidad de la memoria RAM externa (del orden de MBytes); la segunda aplicación se descarga a la memoria externa debe tener la capacidad de programar las memorias no volátiles externas con un programa que permita futuras actualizaciones, este segundo programa recibe el nombre de \textit{booloader} y es almacenado en las primeras posiciones de la memoria no volátil, de tal forma que es el primero que se ejecuta cuando se activa la señal de reset. 
+
+
+Una vez programada la memoria no volátil con una aplicación válida los SoC realizan una serie de pasos para ejecutar las aplicaciones almacenadas en ella, esto debido a la poca capacidad de la memoria RAM interna; como se dijo anteriormente, una vez se activa la señal de reset se ejecuta un programa contenido en la memoria ROM interna del SoC (figura \ref{soc_boot2} (a)), esta aplicación configura un periférico que permite la comunicación con los dispositivos de almacenamiento masivo externos, y además copia una determinada cantidad de información desde la memoria no volátil externa a la memoria RAM interna (figura \ref{soc_boot2} (b)), esto se hace porque el programa en la ROM no conoce la configuración de la plataforma y esta puede cambiar según la aplicación; después de esto ejecuta la aplicación copiada a la memoria RAM interna colocando en el contador de programa (PC) el valor correspondiente a la memoria RAM externa (figura \ref{soc_boot2} (c)).
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.6]{./images/SoC_boot2.pdf} \end{center}
+  \caption{Inicialización de un SoC cuando la memoria no volátil está programada, parte 1.} \label{soc_boot2}
+\end{figure}
+
+
+Este programa (\textit{loader})está encargado de: configurar la memoria RAM externa (su capacidad varía dependiendo de la aplicación) y de copiar la aplicación propiamente dicha desde la memoria no volátil a la memoria RAM externa, (con lo que es posible cargar aplicaciones de mayor tamaño que la memoria RAM interna); finalmente, el \textit{loader} ejecuta la aplicación almacenada en la memoria RAM haciendo que el contador de programa (PC) sea igual a la dirección donde se almaceno esta aplicación (ver figura \ref{soc_boot3})
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.6]{./images/SoC_boot3.pdf} \end{center}
+  \caption{Inicialización de un SoC cuando la memoria no volátil está programada, parte 2.} \label{soc_boot3}
+\end{figure}
+
+\subsubsection{Programación utilizando el puerto JTAG}
+Algunos SoC no suministran un camino para la programación de la memoria RAM interna, para estos casos, se puede utilizar una utilidad que la mayoría de los dispositivos proporciona: el puerto JTAG; creado inicialmente como un mecanismo para realizar pruebas en las tarjetas d ecircuito impreso para verificar la correcta conexión entre componentes, y verificar el correcto funcionamiento de los circuitos integrados; se basa en un registro de desplazamiento (ver figura \ref{jtag_basics} que controla el paso de información desde y hacia cada uno de los pines del circuito integrado, permitiendo realizar varias operaciones. Con el paso del tiempo se han adicionado funcionalidades a este protocolo y una de ellas es el control de circuitos especializados dentro de los SoC para realizar emulación en circuito (ICE), suministrando un canal para la programación de la memoria RAM interna.
+
+Algunos SoC antiguos no poseen una unidad de emulación en circuito por lo que no es posible acceder a la memoria RAM interna, en estos casos es posible utilizar el protocolo JTAG para controlar los pines del SoC conectados a las memorias no volátiles y ejecutar los protocolos de programación de las mismas; debido a que es necesario programar todos los registros de la cadena Boundary Scan, el tiempo de programación suele ser muy largo.
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.6]{./images/jtag_basics.png} \end{center}
+  \caption{Cadena Boundary Scan fuente: Texas Instruments.} \label{jtag_basics}
+\end{figure}
+
+
+\subsubsection{Aplicaciones \textit{Standalone} vs Aplicaciones con sistema operativo}
+
+Los sistemas operativos proporcionan facilidades al programador que permiten acelerar el desarrollo de aplicaciones, suministrando una capa de abstracción de hardware que permite manejar los periféricos a alto nivel sin preocuparse por el manejo tedioso a nivel de registros; adicionalmente, proporciona soporte para aplicaciones en red, manejo de sistemas de archivos, multitarea, seguridad, entre otras (ver figura \ref{kernel_arch}; adicionalmente, existen librerías especializadas que ayudan al desarrollo en diferentes áreas. Sin embargo, el uso de sistemas operativos como Linux, Android, Mac OS o Windows, exige el cumplimiento de condiciones mínimas para su uso; por ejemplo, Linux requiere 8 Mbytes de memoria RAM y 2 Mbytes de memoria no volátil, Android requiere 32 Mbytes de memoria RAM y 32 Mbyte de memoria no volátil; por esta razón es necesario agregar dos memorias externas, lo que aumenta la complejidad de la placa de circuito impreso y el costo del dispositivo. Por otro lado, los sistemas operativos tienen una particularidad en su funcionamiento que recibe el nombre de \textit{latenica}; y se definie como el tiempo que transcurre entre la generación de un evento (interrupciones hardware o software ) y la respuesta ante este evento, este tiempo varía según el estado de carga del sistema; en un sistema operativo de tiempo real esta latencia es conocida y no depende de la carga de sistema. Esta latencia en algunas aplicaciones hace imposible el manejo de eventos ya que es posible que se pierdan algunos cuando el sistema se encuentre muy cargado.
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.6]{./images/kernel.jpg} \end{center}
+  \caption{Estructura del kernel de Linux.} \label{kernel_arch}
+\end{figure}
+
+
+Por otro lado, las aplicaciones standalone utilizan los recursos necesarios y dependiendo de su complejidad pueden ajustarse a SoC que incorparan memoria RAM y no volátil internas; adicionalmente, su programación puede reducir el problema que se presenta con los sistemas operativos con la latencia a las interrupciones. Sin embargo; es necesario  
+
+
+Conocimientos adquiridos
+Metodología de diseño usando software libre
+Sistema Operativo eCos, Linux
+Diseño de periféricos en PLDs y drivers
+
+Plataformas Utilizadas y conocimientos adquiridos
+
+ Game Boy de Nintendo + Chamedlabs Xport
+Programación de procesadores de 32 bits.
+Cadena de Herramientas GNU
+Sistema operativo eCos.
+Programación de memorias no volátiles.
+Interfaz entre procesadores y periféricos implementados en una FPGA.
+Diseño de periféricos en HDL.
+ Zaurus SL-5500
+Desarrollo de aplicaciones utilizando el sistema operativo Linux.
+Desarrollo de aplicaciones gráficas
+Requerimientos HW para ejecutar aplicaciones Linux.
+
+ Chumby
+Modificación del kernel de Linux.
+Creación de módulos del kernel.
+Desarrollo de aplicaciones gráficas usando QT
+
+
+Arquitectura de sistemas digitales. 
+Metodología de diseño de sistemas embebidos.
+
+
+Aplicaciones Realizadas
+
+ Game Boy de Nintendo + Chamedlabs Xport
+Académicas
+Osciloscopio Digital utilizando FPAAs
+Automatización de un Puente grúa a escala.
+Control Adaptativo Embebido
+Control de un horno de reflujo para componentes de montaje superficial.
+Dispositivo de visualización de variables que suministra el computador de un automóvil.
+Comerciales
+Adquisición de datos para medición de calidad de energía.
+Plataforma robótica didáctica.
+ Chumby
+Registro de aceleración de vehiculos para compañías de seguros.
+Sistema de seguimiento vehicular.
+ Porta Retrato Digital
+Monitor de signos vitales.
+Diccionario basado en Wikipedia.
+Menú electrónico y consola de juegos.
+
+
+Ventajas de utilizar plataformas comerciales
+
+ Facilita el aprendizaje del funcionamiento de la tecnología.
+ Permite estudiar metodologías de diseño y evaluación de herramientas de desarrollo.
+ Reduce el tiempo y el costo de desarrollo.
+ Variedad y disponibilidad.
+
+
+Desventajas
+No se puede o es muy costoso modificarlas.
+No son productos exclusivos y pueden ser duplicados facilmente.
+Dependencia del fabricante.
+Reducción de la demanda de diseñadores y proveedores de bienes y servicios de manufactura
+ Diseñadas para una aplicación específica
+Dificiles de adaptar a nuevas aplicaciones
+Escasa documentación.
+No se puede utilizar en productos comerciales.
+Limita el aprendizaje.
+ Diseñadas como plataformas de desarrollo
+En ocaciones son sobredimensionadas.
+Es necesario diseñar tarjetas adicionales y carcasas para adaptarlas a una aplicación comercial.
+
+
+
+
+
+
+\subsection{Absorción}
+Desarrollo o adaptación de metodologías de diseño y procesos de fabricación; desarrollo de productos tecnológicos propios; enseñanza de metodologías de diseño y procesos de fabricación en centros de educación consolidados.
+
+Integración de nuevo conocimiento para el país pero no es
+nuevo para el mundo.
+Adaptación de metodologías de diseño y procesos de
+fabricación al entorno local.
+Desarrollo de productos tecnológicos propios.
+Transmisión de conocimientos a la academia
+
+
+Actividades Realizadas
+
+ Transferencia de conocimientos a la academia.
+ Desarrollo de técnicas de fabricación de prototipos.
+ Aplicación de metodologías de diseño en la solución de problemas.
+ Consideraciones de diseño para cumplir normas internacionales. 
+ Diseño de aplicaciones comerciales y académicas.
+ Contacto con empresas manufactureras locales y asiáticas para fabricación de PCBs.
+
+
+
+Productos Comerciales
+
+ Control de tornos industriales.
+ Plataforma robótica didáctica.
+ Monitoreo de Temperatura.
+ Sistema de seguimiento vehicular.
+ Sistema de medición de la calidad del suministro de energía eléctrica.
+ Monitor de signos vitales (UNAL).
+ Sistema de comunicación encriptada utilizando el canal GSM (MICROENSAMBLE).
+ Switch de 4 canales de radio frecuencia (TESAMERICA).
+
+
+Productos Académicos
+
+ Plataformas de desarrollo para:
+CPLD
+FPGAs
+Procesadores ARM
+Robótica
+Linux Embebido
+Codiseño HW/SW y Linux.
+ Programa académico para la enseñanza de sistemas digitales utilizando tecnología de punta que crea las habilidades necesarias para concebir, diseñar, implementar y operar dispositivos digitales modernos.
+ Definición del concepto hardware copyleft y su utilización como herramienta en la enseñanza de diseño de sistemas embebidos.
+
+
+
+
+
+\subsubsection{Aplicación}
+Desarrollo de soluciones a problemas locales; uso de metodologías de diseño en la concepción, diseño e implementación de sistemas digitales utilizando la tecnología; utilización de procesos de fabricación adaptados al entorno local; desarrollo de proyectos académicos utilizando esta tecnología.
+
+
+Uso de metodologías de diseño en la concepción, diseño
+e implementación de sistemas digitales utilizando la
+tecnología.
+Utilización de procesos de fabricación adaptados al
+entorno local.
+Desarrollo de soluciones a problemas locales.
+Control de tornos industriales; Plataforma robótica didáctica; Monitoreo de
+Temperatura; Sistema de seguimiento vehicular; Sistema de medición de
+la calidad del suministro de energía eléctrica; Monitor de signos vitales;
+sistema de comunicación encriptada utilizando el canal GSM; switch de 4
+canales de radio frecuencia.
+Desarrollo de proyectos académicos utilizando esta
+tecnología.
+Plataformas de desarrollo para: FPGAs, proc. ARM; Linux Embebido;
+codiseño HW/SW. Programa académico para la enseñanza de sistemas
+digitales.
+
+
+
+
+\subsubsection{Difusión y Desarrollo}
+Vinculación de la academia para incluir los conocimientos generados en los programas académicos de las carreras relacionadas; capacitación a la industria local sobre el uso de la tecnología, las metodologías de diseño y procesos de producción; creación de una comunidad que utilice, mejore y aumente el conocimiento generado; hacer que el conocimiento generado en los pasos anteriores este disponible a todos los interesados; dar a conocer los procesos, productos y conocimientos creados a los generadores de políticas de estado.
+
+Aumento de la demanda de productos, bienes y servicios relacionados; compra de maquinaria que permita la fabricación masiva de forma local; diseño de nuevos componentes (Circuitos Integrados, IPs, software CAD); creación de políticas gubernamentales que protejan la producción local; participación activa de la academia en la solución de problemas y en la formulación de políticas de gobierno relacionadas.
+
 
 
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.11.20)  21 FEB 2011 15:42
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.11.20)  9 MAR 2011 07:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -915,12 +915,67 @@ d_os_trends.png (PNG copy)>]
 File: ./images/plataformas_adquiridas.png Graphic file (type png)
 
 <use ./images/plataformas_adquiridas.png>
-<./images/SW_design_flow.png, id=69, 366.61969pt x 298.86656pt>
+<./images/plataformas_adquiridas2.png, id=69, 628.3475pt x 175.65625pt>
+File: ./images/plataformas_adquiridas2.png Graphic file (type png)
+
+<use ./images/plataformas_adquiridas2.png> [16 <./images/embedded_processor_pre
+ference_history.jpg>] [17 <./images/plataformas_adquiridas.png> <./images/plata
+formas_adquiridas2.png (PNG copy)>]
+<./images/soc_int_volatil.pdf, id=76, 402.50375pt x 217.81375pt>
+File: ./images/soc_int_volatil.pdf Graphic file (type pdf)
+
+<use ./images/soc_int_volatil.pdf>
+<./images/soc_no_int_volatil_mmu.pdf, id=78, 491.8375pt x 217.81375pt>
+File: ./images/soc_no_int_volatil_mmu.pdf Graphic file (type pdf)
+
+<use ./images/soc_no_int_volatil_mmu.pdf> [18] [19 <./images/soc_int_volatil.pd
+f> <./images/soc_no_int_volatil_mmu.pdf>] [20]
+<./images/SW_design_flow.png, id=118, 366.61969pt x 298.86656pt>
 File: ./images/SW_design_flow.png Graphic file (type png)
 
-<use ./images/SW_design_flow.png>) (./propuesta_tesis.bbl [16 <./images/embedde
-d_processor_preference_history.jpg>] [17 <./images/plataformas_adquiridas.png> 
-<./images/SW_design_flow.png (PNG copy)>] [18
+<use ./images/SW_design_flow.png>
+<./images/SoC_boot.pdf, id=119, 686.565pt x 594.22pt>
+File: ./images/SoC_boot.pdf Graphic file (type pdf)
+
+<use ./images/SoC_boot.pdf> [21 <./images/SW_design_flow.png (PNG copy)>]
+<./images/SoC_boot2.pdf, id=124, 633.36626pt x 231.86626pt>
+File: ./images/SoC_boot2.pdf Graphic file (type pdf)
+
+<use ./images/SoC_boot2.pdf> [22 <./images/SoC_boot.pdf> <./images/SoC_boot2.pd
+f>] <./images/SoC_boot3.pdf, id=159, 317.185pt x 191.71625pt>
+File: ./images/SoC_boot3.pdf Graphic file (type pdf)
+
+<use ./images/SoC_boot3.pdf>
+<./images/jtag_basics.png, id=161, 286.06876pt x 325.215pt>
+File: ./images/jtag_basics.png Graphic file (type png)
+
+<use ./images/jtag_basics.png>
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 318.
+ [23 <./images/SoC_boot3.pdf>]
+<./images/kernel.jpg, id=190, 437.635pt x 271.0125pt>
+File: ./images/kernel.jpg Graphic file (type jpg)
+
+<use ./images/kernel.jpg> [24 <./images/jtag_basics.png (PNG copy)> <./images/k
+ernel.jpg>] [25]
+Overfull \hbox (1.63913pt too wide) in paragraph at lines 440--446
+[]\OT1/ptm/m/n/10 Integraci[]on de nue-vo conocimien-to para el pa[]^^Ps pero n
+o es nue-vo para el mun-do. Adaptaci[]on de metodolog[]^^Pas
+ []
+
+
+Overfull \hbox (14.82451pt too wide) in paragraph at lines 461--469
+[]\OT1/ptm/m/n/10 Control de tornos in-dus-tri-ales. Platafor-ma rob[]otica did
+[]acti-ca. Mon-i-toreo de Tem-per-atu-ra. Sis-tema de seguimien-
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [26]
+File: ./images/SW_design_flow.png Graphic file (type png)
+
+<use ./images/SW_design_flow.png>) (./propuesta_tesis.bbl [27] [28
 
 ]
 Overfull \hbox (76.89471pt too wide) in paragraph at lines 58--63
@@ -928,30 +983,30 @@ Overfull \hbox (76.89471pt too wide) in paragraph at lines 58--63
 ssweek.com/magazine/content/10[]28/b4186048358596.htm,
  []
 
-) [19] (./propuesta_tesis.aux)
+) [29] (./propuesta_tesis.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 15541 strings out of 495061
- 273548 string characters out of 1182620
- 370667 words of memory out of 3000000
- 18274 multiletter control sequences out of 15000+50000
- 40006 words of font info for 98 fonts, out of 3000000 for 9000
+ 15599 strings out of 495061
+ 274940 string characters out of 1182620
+ 370789 words of memory out of 3000000
+ 18322 multiletter control sequences out of 15000+50000
+ 41635 words of font info for 100 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 47i,8n,69p,2227b,303s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 47i,11n,69p,2227b,303s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
 ve/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/ty
 pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/
 amsfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/urw/courier/ucrr8a.
 pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texm
-f-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type
-1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.
-pfb>
-Output written on propuesta_tesis.pdf (19 pages, 1004451 bytes).
+f-texlive/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-texlive/fonts/typ
+e1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.
+pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
+Output written on propuesta_tesis.pdf (29 pages, 1455782 bytes).
 PDF statistics:
- 110 PDF objects out of 1000 (max. 8388607)
+ 240 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 63 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 103 words of extra memory for PDF output out of 10000 (max. 10000000)
 

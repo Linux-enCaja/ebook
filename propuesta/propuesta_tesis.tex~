@@ -55,10 +55,10 @@ basicstyle=\footnotesize}
 \parindent=1cm            
      \input title
 \tableofcontents
-      \input intro
-%       \input technology_transfer
-      \input description
-%      \input embedded
+%      \input intro
+%      \input technology_transfer
+%      \input description
+     \input embedded
 %     \input commons
 %     \input education
 %     \input platform
