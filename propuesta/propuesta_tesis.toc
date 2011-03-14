@@ -26,7 +26,7 @@
 \contentsline {subsection}{\numberline {1.2.4}Absorci\'on}{26}
 \contentsline {subsubsection}{Plataformas de Desarrollo }{26}
 \contentsline {subsubsection}{T\'ecnicas de Fabricaci\'on}{30}
-\contentsline {subsubsection}{Proceso de fabricaci\'on}{31}
+\contentsline {subsubsection}{Proceso de dise\~no y fabricaci\'on}{31}
 \contentsline {subsubsection}{Aplicaciones Acad\'emicas Realizadas}{31}
-\contentsline {subsubsection}{Aplicaci\'on}{32}
-\contentsline {subsubsection}{Difusi\'on y Desarrollo}{32}
+\contentsline {subsubsection}{Aplicaci\'on}{33}
+\contentsline {subsubsection}{Difusi\'on y Desarrollo}{33}

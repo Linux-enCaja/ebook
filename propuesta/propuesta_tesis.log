@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.11.20)  14 MAR 2011 11:36
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.11.20)  14 MAR 2011 15:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -315,27 +315,7 @@ File: pgfmodulematrix.code.tex 2008/01/15  (rcs-revision 1.1)
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopat
 hs.code.tex
 File: tikzlibrarytopaths.code.tex 2008/01/09 v2.00 (rcs-revision 1.1)
-))) (/usr/share/texmf-texlive/tex/latex/colortbl/colortbl.sty
-Package: colortbl 2001/02/13 v0.1j Color table columns (DPC)
-
-(/usr/share/texmf-texlive/tex/latex/tools/array.sty
-Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen149
-\extrarowheight=\dimen150
-\NC@list=\toks23
-\extratabsurround=\skip43
-\backup@length=\skip44
-)
-\everycr=\toks24
-\minrowclearance=\skip45
-)
-(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrow
-s.code.tex
-File: tikzlibraryarrows.code.tex 2008/01/09 v2.00 (rcs-revision 1.1)
-
-(/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
-File: pgflibraryarrows.code.tex 2007/06/07 v2.00 (rcs-revision 1.7)
-))
+)))
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshape
 s.code.tex
 File: tikzlibraryshapes.code.tex 2008/01/09 v2.00 (rcs-revision 1.1)
@@ -383,6 +363,27 @@ File: pgflibraryshapes.multipart.code.tex 2008/01/15 v2.00 (rcs-revision 1.7)
 \pgfnodepartthirdbox=\box36
 \pgfnodepartfourthbox=\box37
 )))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrow
+s.code.tex
+File: tikzlibraryarrows.code.tex 2008/01/09 v2.00 (rcs-revision 1.1)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+File: pgflibraryarrows.code.tex 2007/06/07 v2.00 (rcs-revision 1.7)
+))
+(/usr/share/texmf-texlive/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2001/02/13 v0.1j Color table columns (DPC)
+
+(/usr/share/texmf-texlive/tex/latex/tools/array.sty
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen149
+\extrarowheight=\dimen150
+\NC@list=\toks23
+\extratabsurround=\skip43
+\backup@length=\skip44
+)
+\everycr=\toks24
+\minrowclearance=\skip45
+)
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarysnake
 s.code.tex
 File: tikzlibrarysnakes.code.tex 2008/02/05 v2.00 (rcs-revision 1.6)
@@ -739,19 +740,19 @@ LaTeX Warning: Label `es_processor' multiply defined.
 )
 \openout1 = `propuesta_tesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 51.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 53.
  (/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
@@ -832,7 +833,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--35
 
 [2])
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 57.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 59.
  (./propuesta_tesis.toc
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
@@ -1054,17 +1055,20 @@ Overfull \hbox (13.99033pt too wide) in paragraph at lines 465--487
  []
 
 [30 <./images/ECB_BF532_Block.pdf> <./images/ECB_BF532.png> <./images/SIE_block
-_diagram.png> <./images/SIE.jpg>] [31]
-Overfull \hbox (14.82451pt too wide) in paragraph at lines 553--561
+_diagram.png> <./images/SIE.jpg>]
+<./images/proceso_de_fabricacion_PCBs.pdf, id=274, 496.85625pt x 641.39626pt>
+File: ./images/proceso_de_fabricacion_PCBs.pdf Graphic file (type pdf)
+
+<use ./images/proceso_de_fabricacion_PCBs.pdf> [31 <./images/proceso_de_fabrica
+cion_PCBs.pdf>]
+Overfull \hbox (14.82451pt too wide) in paragraph at lines 562--570
 []\OT1/ptm/m/n/10 Control de tornos in-dus-tri-ales. Platafor-ma rob[]otica did
 []acti-ca. Mon-i-toreo de Tem-per-atu-ra. Sis-tema de seguimien-
  []
 
 [32]
 File: ./images/SW_design_flow.png Graphic file (type png)
- <use ./images/SW_design_flow.png>) (./propuesta_tesis.bbl [33] [34
-
-]
+ <use ./images/SW_design_flow.png>) (./propuesta_tesis.bbl [33] [34]
 Overfull \hbox (76.89471pt too wide) in paragraph at lines 58--63
 []\OT1/ptm/m/n/10 A. Grove.  How Amer-i-ca Can Cre-ate Jobs.  http://www.busine
 ssweek.com/magazine/content/10[]28/b4186048358596.htm,
@@ -1076,7 +1080,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 83--88
 :
  []
 
-[35]) [36] (./propuesta_tesis.aux)
+[35
+
+]) [36] (./propuesta_tesis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1085,10 +1091,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 15690 strings out of 495061
- 276698 string characters out of 1182620
- 371980 words of memory out of 3000000
- 18400 multiletter control sequences out of 15000+50000
+ 15698 strings out of 495061
+ 276992 string characters out of 1182620
+ 372000 words of memory out of 3000000
+ 18407 multiletter control sequences out of 15000+50000
  43261 words of font info for 102 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  47i,12n,69p,2227b,303s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1100,9 +1106,9 @@ pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texm
 f-texlive/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-texlive/fonts/typ
 e1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.
 pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on propuesta_tesis.pdf (36 pages, 4057493 bytes).
+Output written on propuesta_tesis.pdf (36 pages, 4094027 bytes).
 PDF statistics:
- 323 PDF objects out of 1000 (max. 8388607)
+ 339 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 163 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 168 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -456,10 +456,10 @@ Finalmente, se desarrolló la plataforma SIE\cite{CC11c}, la cual permite el estu
 \end{figure}
 
 \subsubsection{Técnicas de Fabricación}
-Durante el proceso de concepción, diseño, implementación y operación de estas plataformas se trabajó con diferentes proveedores de bienes y servicios nacionales y extranjeros, y se utilizaron diferentes posibilidades para su construcción y montaje; en la tabla \ref{plat_review} se resumen las principales características de cada plataforma: CPU utilizada, número de capas del PCB, tipo de montaje: manual o automático, cantidad de unidades producidas, sistema operativo (OS) estudiado y adaptado totalmente a la plataforma,  finalmente las universidades que utilizan estas plataformas (UN: Universidad Nacional de Colombia, UIS: Universidad Industrial de Santander, USTA: Universidad Santo Tomás de Aquino, ULA: Universidad de Los Andes, UDFJC: Universidad Distrital Francisco José de Caldas, ECI: Escuela Colombiana de Ingeniería, ENAP: Escuela Naval Almirante Padilla)
+Durante el proceso de concepción, diseño, implementación y operación de estas plataformas se trabajó con diferentes proveedores de bienes y servicios nacionales y extranjeros, y se utilizaron diferentes técnicas para su construcción y montaje; en la tabla \ref{plat_review} se resumen las principales características de cada plataforma: CPU utilizada, número de capas del PCB, tipo de montaje: manual o automático, cantidad de unidades producidas, sistema operativo (OS) estudiado y adaptado totalmente a la plataforma,  finalmente las universidades que utilizan estas plataformas (UN: Universidad Nacional de Colombia, UIS: Universidad Industrial de Santander, USTA: Universidad Santo Tomás de Aquino, ULA: Universidad de Los Andes, UDFJC: Universidad Distrital Francisco José de Caldas, ECI: Escuela Colombiana de Ingeniería, ENAP: Escuela Naval Almirante Padilla)
 
 \begin{table}[htpb]
-  \caption{Conocimientos Adquiridos durante el proceso de concepción, diseño, implementación y operación de las plataformas de desarrollo}
+  \caption{Características de las plataformas de desarrollo concebidas, diseñadas e implementadas}
   \centering
     \footnotesize
     \begin{tabular}{|l|l|l|l|l|l|l|}
@@ -486,14 +486,31 @@ Durante el proceso de concepción, diseño, implementación y operación de estas pl
   \label{plat_review}
 \end{table}
 
+Durante la elaboración de estas plataformas se adquirieron habilidades en el diseño e implementación de estas 
+
 \subsubsection{Proceso de diseño y fabricación}
-A contiuación se listan los pasos que hacen parte de proceso de fabricación 
+La figura \ref{pcb_design_flow} muestra los pasos que se siguieron en la elaboración de las plataformas de desarrollo; esta metodología peuede ser utilizada para la realización de cualquier nivel de producción; el montaje de prototipos puede realizarse de forma manual o automática, dependiendo de los recursos económicos, de ls disponibilidad de equipo y de personal especilizado.
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[scale=.45]{./images/proceso_de_fabricacion_PCBs.pdf}
+  \caption{Flujo de diseño para las placas de circuito impreso} \label{pcb_design_flow}
+\end{figure}
+
+En esta etapa se adquirieron las siguientes habilidades:
 
 \begin{itemize}
- \item	
+ \item Concepción, diseño, implementación y operación de tarjetas electrónicas que utilizan SoC de 32 bits.
+   \subitem Técnicas de diseño de placas de circuito impreso.
+   \subitem Técnicas de montaje manual.
+   \subitem Metodología para el diseño e implementación de tarjetas electrónicas.
+   \subitem Diseño de protocolo de pruebas.
+   \subitem 
+ \item Adaptación del sistema operativo Linux a una nueva plataforma.
+ \item 
+ \item 
+ \item 
 \end{itemize}
-
-
 
 
 \subsubsection{Aplicaciones Académicas Realizadas}
@@ -515,7 +532,11 @@ Durante esta etapa (que se realiza de forma continua cada vez que se desea inclu
     \subitem 
 \end{itemize}
 
-Todos los productos académicos mencionados tienen como característica el desarrollo de placas de circuito impreso y la utilización de los conocimientos adquiridos durante este estudio. Inicialmente, las placas de circuito impreso fueron diseñadas con herramientas comerciales debido a la falta de una herramienta abierta, en los últimos dos años el desarrollo de la herramienta \textit{Kicad} permitió la eliminación de estas herramientas propietarias; a partir de ese momento solo se utilizaron herramientas abiertas en todo el flujo de diseño. 
+Todos los productos académicos mencionados tienen como característica el desarrollo de placas de circuito impreso y la utilización de los conocimientos adquiridos durante este estudio. Inicialmente, las placas de circuito impreso fueron diseñadas con herramientas comerciales debido a la falta de una herramienta abierta, en los últimos dos años el desarrollo de la herramienta \textit{Kicad} permitió la eliminación de estas herramientas propietarias; a partir de ese momento solo se utilizaron herramientas abiertas en todo el flujo de diseño.
+
+\subsubsection{Conclusiónes}
+La fabricación de placas de circuito impreso "a la medida" permite reducir el costo final de un dispositivo digital; en su proceso de diseño y fabricación intervienen diferentes personas con diversos niveles de formación, lo que la hace muy atractivo como actividad generadora de empleo. La situación actual de las empresas manufactureras del país (solo 2) no permite la producción a grandes escalas ya que en el país no se cuenta con empresas que suministren componentes electrónicos a precios competitivos (los impuestos locales producen un sobre-costo de cerca del 26\%). En el país se pueden construir prototipos de muy buena calidad, por lo que la mejor opción es la fabricación local del prototipo y la producción en masa en el exterior.
+
 
 
 
