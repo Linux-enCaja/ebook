@@ -1,5 +1,6 @@
 \appendix
 \chapter{PLATAFORMA DE DESARROLLO ECBOT}
+\label{ap:platform}
 
 
 \section{Introducción}
@@ -90,6 +91,58 @@ El Standard IEEE 1149.1 describe tres instrucciones obligatorias: Bypass, Sample
 
 
 
+
+
+\section{Herramientas Software de libre distribución \textit{GNU  toolchain}}
+En el mercado existe una gran variedad de herramientas de desarrollo para Sistemas Embebidos, 
+sin embargo, en este estudio nos centraremos en el uso de las herramientas de libre distribución;
+esta elección se debe a que la mayoría de los productos comerciales utilizan el toolchain de GNU\footnote{http://www.gnu.org} internamente y proporcionan un entorno gráfico para su fácil manejo. Otro factor considerado a la hora de realizar nuestra elección es el económico, ya que la mayoría de los productos comerciales son costosos y poseen soporte limitado. Por otro lado, el toolchain de GNU es utilizado ampliamente en el medio de los diseñadores de sistemas embebidos y se encuentra un gran soporte en múltiples foros de discusión (ver Figura \ref{tools}).
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.7]{./images/embedded-linux-tool-trends-sm} \end{center}
+  \caption{Tendencia de utilización de herramientas de desarrollo}\label{tools}
+\end{figure}
+
+\subsubsection{GNU binutils\cite{A1}}
+Son una colección de utilidades para archivos binarios y estan compuestas por:
+
+\begin{itemize}
+ \item  \textbf{addr2line} Convierte direcciones de un programa en nombres de archivos y números de línea. Dada una dirección y un ejecutable, usa la información de depuración en el ejecutabe para determinar que nombre de atchivo y número de lpinea está asociado con la dirección dada.
+ \item  \textbf{ar} Esta utilidad crea, modifica y extrae desde ficheros. Un fichero es una colección de otros archivos en una estructura que hace posible obtener los archivos individuales miembros del archivo. 
+ \item  \textbf{as} Utilidad que compila la salida del compilador de C (GCC).
+ \item  \textbf{c++filt} Este program realiza un mapeo inverso: Decodifica nombres de bajo-nivel en nombres a nivel de usuario, de tal forma que el linker pueda mantener estas funciones sobrecargadas (overloaded) ``from clashing''. 
+ \item  \textbf{gasp} GNU Assembler Macro Preprocessor
+ \item  \textbf{ld} El \textit{linker} GNU combina un número de objetos y ficheros, re-localiza sus datos y los relaciona con referencias. Normalmente el último paso en la construcción de un nuevo programa compilado es el llamado a ld.
+ \item  \textbf{nm} Realiza un listado de símbolos de archivos tipo objeto.
+ \item  \textbf{objcopy} Copia los contenidos de un archivo tipo objeto a otro. \textit{objcopy} utiliza la librería GNU BFD para leer y escribir el archivo tipo objeto. Permite esccribibr el archivo destino en un formato diferente al del archivo fuente. 
+ \item  \textbf{objdump} Despliega información sobre archivos tipo objeto. 
+ \item  \textbf{ranlib} Genera un índice de contenidos de un fichero, y lo almacena en él.
+ \item  \textbf{readelf} Interpreta encabezados de un archivo ELF.
+ \item  \textbf{size} Lista el tamaño de las secciones y el tamaño total de un archivo tipo objeto.
+ \item  \textbf{strings} Imprime las secuencias de caracteres imprimibles de almenos 4 caracteres de longitud. 
+ \item  \textbf{strip} Elimina todos los símbolos de un archivo tipo objeto.
+
+\end{itemize}
+
+\subsubsection{GNU Compiler Collection}
+El \textit{GNU Compiler Collection} normalmente llamado GCC, es un grupo de compiladores de lenguajes de programación producido por el proyecto GNU. Es el compilador standard para el software libre de los sistemas operativos basados en Unix y algunos propietarios como Mac OS de Apple. Soporta los siguientes lenguajes: ADA, C, C++, Fortran, Java, Objective-C, Objective-C++ para las arquitecturas: Alpha, ARM, Atmel AVR, Blackfin, H8/300, System/370, System/390, IA-32 (x86) and x86-64, IA-64 i.e. the "Itanium", Motorola 68000, Motorola 88000, MIPS, PA-RISC, PDP-11, PowerPC, SuperH, SPARC, VAX, Renesas R8C/M16C/M32C,  MorphoSys.
+
+Como puede verse GCC soporta una gran cantidad de lenguajes de programación, sin embargo, en el presente estudio solo lo utilizaremos como herramienta de compilación para C y C++. Una característica de resaltar de GCC es la gran cantidad de plataformas que soporta, esto lo hace una herramienta Universal para el desarrollo de sistemas embebidos, el código escrito en una plataforma (en un lenguaje de alto nivel) puede ser implementado en otra sin mayores cambios, esto elimina la dependencia entre el código fuente y el HW\footnote{Esto recibe el nombre de re-utilización de código}, lo cual no ocurre al utilizar lenguaje ensamblador. 
+
+Por otro lado, el tiempo requerido para realizar aplicaciones utilizando C o C++ disminuye, ya que no es necesario aprender las instrucciones en assembler de una plataforma determinada; además, la disponibilidad de librerías de múltiples propósitos reduce aún más los tiempos de desarrollo, permitiendo de esta forma tener bajos tiempos \textit{time to market} y reducir de forma considerable el costo del desarrollo.
+
+\subsubsection{GNU Debugger}
+El depurador oficial de GNU (GDB), es un depurador que al igual que GCC tiene soporte para múltiples lenguajes y plataformas. GDB permite al usuario monitorear y modificar las variables internas del programa y hacer llamado a funciones de forma independiente a la ejecución normal del mismo. Además, permite establecer sesiones remotas utilizando el puerto serie o TCP/IP. Aunque GDB no posee una interfaz gráfica, se han desarrollado varios front-ends como DDD o GDB/Insight.
+
+\subsubsection{Librerías C}
+Adicionalmente es necesario contar con una librería que proporcione las librerías standard de C: stdio, stdlib, math; las más utilizadas en sistemas embebidos son:
+
+\begin{itemize}
+ \item \textbf{glibc\footnote{http://www.gnu.org/software/libc/}} Es la librería C oficial del proyecto GNU. Uno de los inconvenientes al trabajar con esta librería en sistemas embebidos es que genera ejecutables de mayor tamaño que los generados a partir de otras librerías, lo cual no la hace muy atractiva para este tipo de aplicaciones. 
+ \item \textbf{uClibc\footnote{http://uclibc.org/}} Es una librería diseñada especialmente para sistemas embebidos, es mucho más pequeña que \textbf{glibc}.
+ \item \textbf{newlib\footnote{http://sources.redhat.com/newlib/}} Al igual que \textbf{uClibc}, está diseñada para sistemas embebidos. El típico ``Hello, world!'' ocupa menos de 30k en un entorno basado en newlib, mientras que en uno basado en glibc, puede ocupar 380k \cite{BG}. 
+ \item \textbf{diet libc\footnote{http://www.fefe.de/dietlibc/}} Es una versión de \textit{libc} optimizada en tamaño, puede ser utilizada para crear ejecutables estáticamente enlazados para linux en plataformas alpha, arm, hppa, ia64, i386, mips, s390, sparc, sparc64, ppc y x86\_64.
+\end{itemize}
 
 
 

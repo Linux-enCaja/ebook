@@ -76,7 +76,7 @@ Las tareas Software deben compartir los recursos que existan en el sistema (proc
 Las siguientes fases corresponden a la implementaci\'on del modelo, para esto las tareas hardware deben ser llevadas al dispositivo elegido (ASIC o FPGA) y se debe obtener el $''$ejecutable$''$ de las tareas software, este proceso recibe el nombre de {\textit{s\'{\i}ntesis}} HW y SW respectivamente, as\'{\i} mismo se deben sintetizar los mecanismos de comunicaci\'on entre las tareas hardware y software.
 
 
-El proceso de prototipado consiste en la realizaci\'on f\'{\i}sica del sistema, finalmente el sistema f\'{\i}sico debe someterse a pruebas para verificar que se cumplen con las especificaciones iniciales.
+El proceso de prototipado consiste en la realización f\'{\i}sica del sistema, finalmente el sistema f\'{\i}sico debe someterse a pruebas para verificar que se cumplen con las especificaciones iniciales.
 
 Como puede verse en el flujo de diseño existen realimentaciones, estas permiten depurar el resultado de pasos anteriores en el caso
 de no cumplirse con las especificaciones iniciales.
@@ -178,7 +178,7 @@ Existe una gran oferta de SoC en la actualidad, grandes compañias proporcionan c
 \subsubsection{Dispositivos disponibles}
 Existen dos tipos de dispositivos que pueden ser utilizados en el proceso de transferencia tecnológica y de conocimientos: productos de consumo, productos fabricados a grandes volúmenes y que se pueden adquirir fácilmente a bajo precio; dispositivos \textit{Commercial off-the-shelf} (COTS), diseñados para ser utilizados como punto de partida en el desarrollo de una aplicación, se pueden encontrar en la forma de tarjetas de desarrollo, las cuales incluyen una gran variedad de dispositivos hardware (puertos de comunicación, LEDs, Displays, LCDs, pulsadores) que permiten explorar la capacidad de un determinado SoC, o se pueden encontrar en forma de unidades genéricas que proporcionan las conexiones para su funcionamiento básico (alimentación, memorias), proporcionando todas las señales que controlan periféricos externos para que sean utilizadas en una tarjeta que integre los componentes requeridos en una determinada aplicación. El término OEM (Original Equipment Manufacturer) se aplica a las organizaciones que compran estos artículos y los revenden; en algunas ocasiones se realizan mejoras como valor agregado. 
 
-En la actualidad existe una gran oferta de este tipo de dispositivos a nivel mundial, muchas compañías realizan diseños para que sean utilizados como punto de partida de productos comerciales, o que sean parte de ellos, lo cual reduce los costos y tiempos de desarrollo; desafortunadamente en el país no existe una gran demanda, por lo que deben ser importados, lo que hace que su costo se eleve por lo menos en un 26\% (arancel e IVA). Las plataformas adquiridas para este estudio se muestran en la figura \ref{plataformas_adquiridas}, la primera de izquierda a derecha es una combinación de la consola de juegos \copyright NINTENDO (basado en ARM7) y la plataforma \textit{XPORT} de la compañía norteamericana Charmedlabs (basado en una FPGA Spartan3), la segunda es la plataforma de la compañía china \textit{Embest} basada en el SoC AT91R40008 (ARM7), la tercera es la agenda electrónica Zaurus de Toshiba (basado en el StrongARM de Intel SA-1110), la cuarta es el chumby (basado en un ARM de freescale iMX233) y finalmente un portaretratos digital de la empresa china \textit{SUNGALE}
+En la actualidad existe una gran oferta de este tipo de dispositivos a nivel mundial, muchas compañías realizan diseños para que sean utilizados como punto de partida de productos comerciales, o que sean parte de ellos, lo cual reduce los costos y tiempos de desarrollo; desafortunadamente en el país no existe una gran demanda, por lo que deben ser importados, lo que hace que su costo se eleve por lo menos en un 26\% (arancel e IVA). Las plataformas adquiridas para este estudio se muestran en la figura \ref{plataformas_adquiridas}, la primera de izquierda a derecha en la primera fila, es una combinación de la consola de juegos \copyright NINTENDO (basado en ARM7) y la plataforma \textit{XPORT} de la compañía norteamericana Charmedlabs (basado en una FPGA Spartan3), la segunda es la plataforma de la compañía china \textit{Embest} basada en el SoC AT91R40008 (ARM7), la tercera es la agenda electrónica Zaurus de Toshiba (basado en el StrongARM de Intel SA-1110), la cuarta es el chumby (basado en un ARM de freescale iMX21); en la segunda fila de izquierda a derecha aparece el MP4 de Ainol V2000 que posee un procesador MIPS fabricado por la compañía china Ingenic, seguido por la agenda iPAQ H3600 fabricada por Compaq basada en un procesador Strong ARM de Intel, a continuación se muestra el portaretratos digital de la empresa china \textit{SUNGALE} basada en un procesador MIPS de la empresa Ingenic, finalmente se muestra un lector de libros electrónicos de Barnes \& Noble basado en un procesador ARM fabricado por Samsung.
 
 
 \begin{figure}[htpb]
@@ -219,7 +219,6 @@ Como podemos ver en la figura \ref{os_trends} existen dos formas de realizar las
           \item Aplicaciones gráficas: Uso de librerías gráficas para el desarrollo de aplicaciones.
         \end{itemize}
    \end{itemize}
- \item Desarrollo de Aplicaciones que den solución a problemas locales.
 \end{itemize}
  
 \subsubsection{Arquitectura: SoC, Memorias, periféricos}
@@ -240,26 +239,32 @@ Los procesadores que no poseen memoria no volátil interna se dividen en dos grup
 
 Debido a la falta de memoria volátil, las aplicaciones de este tipo de dispositivos requieren una memoria externa de este tipo, en la actualidad las más populares son las memorias NAND flash, NOR flash, SPI, EEPROM y SD. Normalmente, este tipo de procesadores son utilizados en aplicaciones que utilizan sistemas operativos, como veremos más adelente, para que ciertos sistemas operativos (Linux, Windows CE) puedan ejecutarse se requiere una mínima cantidad de memoria RAM (del orden de los Mbytes), por esta razón es necesario incluir una memoria RAM externa, en la actualidad las más utilizadas son las SDRAM, DDR y DDR2. 
 
-Como conclusión, podemos decir que en el mercado existen opciones que nos permiten realizar proyectos con diferentes grados de complejidad y que se ajustan a las opciones más utilizadas por los desarrolladores; la opción más económica es la utilización de SoC que incluyan las memorias no volátiles y ram internamente; sin embargo, hasta el momento no existen dispositivos con grandes capacidades memoria Flash y RAM internas, por lo que no es posible su uso para ciertas aplicaciones que utilicen grandes cantidades de memoria; por ejemplo, aplicaciones gráficas con LCDs con resoluciones mayores a la VGA. Utilizar SoC que no integren las memorias no volátiles proporciona una mayor flexibilidad, ya que estos dispositivos proporcionan periféricos que pueden controlar varios tipos de memorias, y se puede elegir la más económica, algo similar ocurre con la memoria RAM; sin embargo, el costo total de las memorias externas, SoC y área de circuito impreso es mayor que en el caso anterior. A continuación se resume la arquitectura de las plataformas utilizadas.
+Como conclusión, podemos decir que en el mercado existen opciones que nos permiten realizar proyectos con diferentes grados de complejidad y que se ajustan a las opciones más utilizadas por los desarrolladores; la opción más económica es la utilización de SoC que incluyan las memorias no volátiles y ram internamente; sin embargo, hasta el momento no existen dispositivos con grandes capacidades memoria Flash y RAM internas, por lo que no es posible su uso para ciertas aplicaciones que utilicen grandes cantidades de memoria; por ejemplo, aplicaciones gráficas con LCDs con resoluciones mayores a la VGA. Utilizar SoC que no integren las memorias no volátiles proporciona una mayor flexibilidad, ya que estos dispositivos proporcionan periféricos que pueden controlar varios tipos de memorias, y se puede elegir la más económica, algo similar ocurre con la memoria RAM; sin embargo, el costo total de las memorias externas, SoC y área de circuito impreso es mayor que en el caso anterior. En la tabla \ref{arquitectura_plataformas_comerciales} se resume la arquitectura de las plataformas utilizadas.
 
+\begin{table}[htpb]
+  \caption{Arquitectura de las plataformas comerciales utilizadas en la etapa de aborción}
+  \centering
     \begin{tabular}{|l|l|l|l|l|l|}
       \hline
       \textbf{Plataforma}  & \textbf{CPU}  & \textbf{Mem. volátil} & \textbf{Mem. no volátil} & \textbf{MMU} & \textbf{OS}
       \\ \hline 
-       Game Boy            & ARM  &Externa NOR  & Interna       & NO & Propietario
+       Game Boy            & ARM 7         &Externa NOR  & Interna       & NO & Propietario
       \\ \hline 
-       Zaurus              & ARM  &Externa NAND & Externa SDRAM & SI & Linux
+       Zaurus              & Strong ARM    &Externa NAND & Externa SDRAM & SI & Linux
       \\ \hline 
-       iPAQ H3600          & ARM  &Externa NAND & Externa SDRAM & SI & Windows CE
+       iPAQ H3600          & Strong ARM    &Externa NAND & Externa SDRAM & SI & Windows CE
       \\ \hline 
-       Chumby              & ARM  &Externa NAND & Externa SDRAM & SI & Linux
+       Chumby              & ARM MC94MX21  &Externa NAND & Externa SDRAM & SI & Linux
       \\ \hline 
-       Ainol V2000         & MIPS &Externa NAND & Externa SDRAM & SI & Linux
+       Ainol V2000         & MIPS JZ4740   &Externa NAND & Externa SDRAM & SI & Linux
       \\ \hline 
-       SUNGALE DPF         & MIPS &Externa NAND & Externa SDRAM & SI & Linux
+       SUNGALE DPF         & MIPS JZ4740   &Externa NAND & Externa SDRAM & SI & Linux
       \\ \hline 
-
+       B\&N NOOK           & ARM  S3C6410  &Externa SD   & Externa SDRAM & SI & Android
+      \\ \hline 
     \end{tabular}
+  \label{arquitectura_plataformas_comerciales}
+\end{table}
 
 Aunque estos procesadores operan a velocidades entre los 75 y 800 MHz, no todos los componentes del SoC operan a esta frecuencia, el componente externo que requiere la mayor velocidad de operación es la memoria RAM y puede estar entre los 50 y 130 MHz, los demás periféricos funcionan a frecuencias del orden de las decenas de MHz o KHz; por esta razón estos SoC suministran un circuito PLL que permite generar la frecuencia de operación a partir de cristales de frecuencias del orden de las decenas de MHz, lo que facilita el diseño de la placa de circuito impreso.
 
@@ -322,41 +327,197 @@ Los sistemas operativos proporcionan facilidades al programador que permiten ace
 \end{figure}
 
 
-Por otro lado, las aplicaciones standalone utilizan los recursos necesarios y dependiendo de su complejidad pueden ajustarse a SoC que incorparan memoria RAM y no volátil internas; adicionalmente, su programación puede reducir el problema que se presenta con los sistemas operativos con la latencia a las interrupciones. Sin embargo; es necesario  
+Por otro lado, las aplicaciones standalone utilizan los recursos necesarios y dependiendo de su complejidad pueden ajustarse a SoC que incorparan memoria RAM y no volátil internas; adicionalmente, su programación puede reducir el problema que se presenta con los sistemas operativos con la latencia a las interrupciones. Sin embargo; es necesario dar soporte a todos los periféricos que se utilizarán y se deben escribir todas las rutinas, lo que puede aumentar el tiempo de desarrollo. 
+
+En conclusión, el uso de sistemas operativos o aplicaciones standalone depende de la complejidad de la aplicación, y de consideraciones económicas como el \textit{time to market} y costo de los desarrolladores. 
 
 
-Conocimientos adquiridos
-Metodología de diseño usando software libre
-Sistema Operativo eCos, Linux
-Diseño de periféricos en PLDs y drivers
+\subsubsection{Conocimientos Adquiridos}
+En la tabla \ref{absor_conocimientos_adquiridos} se muestran los conocimientos adquiridos al aplicar ingeniería inversa a las plataformas comerciales utilizadas en esta etapa.
 
-Plataformas Utilizadas y conocimientos adquiridos
+\begin{table}[htpb]
+  \caption{Conocimientos Adquiridos durante la etapa de absorción}
+  \centering
+    \begin{tabular}{|l|l|l|p{1.6in}|}
+      \hline
+      \textbf{Plataforma}  & \textbf{Herramientas de desarrollo} & \textbf{Programación} & \textbf{Sistema Operativo y Aplicaciones}
+      \\ \hline 
+       Game Boy            &ARM GNU toolchian         & Puerto serie       & eCos, implementación de periféricos en FPGAs.
+      \\ \hline 
+       Zaurus              &ARM GNU toolchian         & Puerto serie       & Linux 2.4, sistema de archivos, QT.
+      \\ \hline 
+       iPAQ H3600          &ARM GNU toolchian         & Puerto serie       & Linux 2.4, Buildroot, QT.
+      \\ \hline 
+       Chumby              &ARM GNU toolchian         & Puerto serie       & Linux 2.6, u-boot, OpenEmbedded, QT, flash.
+      \\ \hline 
+       Ainol V2000         &MIPS - ELF  GNU toolchian & Puerto serie       & Linux 2.6, openwrt, QT.
+      \\ \hline 
+       SUNGALE DPF         &MIPS - ELF  GNU toolchian & Puerto serie       & Linux 2.6, openwrt, QT.
+      \\ \hline 
+       B\&N NOOK           &ARM  GNU toolchian        & Puerto JTAG, serie & Linux 2.6, Android Dalvik (VM).
+      \\ \hline 
+    \end{tabular}
+  \label{absor_conocimientos_adquiridos}
+\end{table}
 
- Game Boy de Nintendo + Chamedlabs Xport
-Programación de procesadores de 32 bits.
-Cadena de Herramientas GNU
-Sistema operativo eCos.
-Programación de memorias no volátiles.
-Interfaz entre procesadores y periféricos implementados en una FPGA.
-Diseño de periféricos en HDL.
- Zaurus SL-5500
-Desarrollo de aplicaciones utilizando el sistema operativo Linux.
-Desarrollo de aplicaciones gráficas
-Requerimientos HW para ejecutar aplicaciones Linux.
 
- Chumby
-Modificación del kernel de Linux.
-Creación de módulos del kernel.
-Desarrollo de aplicaciones gráficas usando QT
+\subsubsection{conclusiones}
+En la etapa de Adopción se utilizaron herramientas comerciales para aprender como están construidos, como funcionan y como se programan dispositivos ceomerciales, gracias a los altos niveles de producción estos dispositivos se pueden conseguir fácilmente a precios económicos; su utilización facilita el aprendizaje del funcionamiento de la tecnología, permitiendo estudiar metodologías de diseño y evaluación de herramientas de desarrollo, reduciendo el tiempo y el costo de desarrollo de plataformas propias diseñadas para dicho fin; adicionalmente, pueden ser utilizadas como base de nuevos productos comerciales. Sin embargo, se notaron los siguientes inconvenientes durante su utilización: al ser diseñadas para una aplicación específica son difíciles de adaptar a nuevas aplicaciones; los fabricantes no proporcionan documentación sobre su arquitectura, su uso crea dependencia del fabricante y puede reducir la demanda de diseñadores y proveedores de bienes y servicios de manufactura; solo pueden utilizarse en aplicaciones similares para las que fueron creadas.
+
+En esta etapa se utilizaron plataformas de desarrollo comerciales diseñadas para proporcionar herramientas en el estudio de un determinado procesador, en la mayoría de los casos utilizan la mayor parte de los recursos del procesador y ponene a disposición del usuario una gran cantidad de periféricos, conectores y señales, lo que facilita el aprendizaje y su uso en aplicaciones comerciales. Sin embargo, su costo es relativamente alto (en comparación con los dispositivos comerciales de alto nivel de producción); debido a su gran oferta de conexiones son tarjetas muy grandes y difíciles de adaptar en algunas aplicaciones reales; adicionalmente, es necesario fabricar tarjetas adicionales para que se adapten a la aplicación lo que incrementa el costo final.
 
 
-Arquitectura de sistemas digitales. 
-Metodología de diseño de sistemas embebidos.
+
+
+\subsection{Absorción}
+
+En esta etapa se realizan actividades que integran nuevo conocimiento para el país pero que no es nuevo para el mundo y están encaminadas al desarrollo o adaptación de metodologías de diseño y procesos de fabricación, desarrollo de productos tecnológicos propios, enseñanza de metodologías de diseño y procesos de fabricación.
+
+La utilización de plataformas de desarrollo o dispositivos comerciales como punto de partida para nuevos productos es viable en casos donde solo se requiera un cambio de software, ya que adiciones en el hardware aumentarían el costo total en un caso y son imposibles en el otro. Para poder ser competitivos, es necesario reducir los costos de componentes y de fabricación, una parte importante para lograr esto es utilizar la mínima cantidad de componentes para la aplicación, lo que implica la producción de placas de circuito impreso (PCBs). El país no cuenta con una buena oferta para la producción de PCBs, solo existen tres empresas que pueden ofrecer productos que cumplan con los requerimientos: Microensamble en Bogotá (2 capas), Colcircuitos en Medellín y Microcircuitos en Cali, y de ellos solo los dos últimas proporcionan el servicio de tarjetas de 4 o más capas. 
+
+El diseño de PCBs es una actividad que da empleo a profesionales de diferentes niveles de formación (técnicos, inegenieros) en países asiáticos; desafortunadamente en Colombia existen muy pocas empresas que proporcionan este servicio, lo que evidencia la falta de demanda interna en las actividades relacionadas con la manufactura de dispositivos digitales; adicionalmente, en la mayoría de las universidades no se enseñan normas para el diseño de PCBs ni se somete a los estudiantes a este diseño, aceptando soluciones intermedias como el uso de placas de proyectos (project boards) o baquelitas universales o simplemente se ignora la parte de implementación física y el último paso es la simulación. Por estos motivos, una parte importante en esta etapa es el diseño y construcción de tarjetas de desarrollo que serán utilizadas para explorar las técnicas de fabricación y montaje y posteriormente ser utilizadas en el desarrollo de aplicaciones académicas.
+
+
+\subsubsection{Plataformas de Desarrollo }
+
+La primera plataforma desarrollada en este proyecto utiliza el SoC AT91R40008 de ATMEL y se le dió el nombre de ECB\_ARM7, el diagrama de bloques de la plataforma y la foto del prototipo se muestra en la figura \ref{ECB_ARM7}, ECB\_ARM7 posee componentes de montaje superficial y fué el punto de partida para el estudio de técnicas de fabricación de placas de circuito impreso, con ella se reaizaron aplicaciones \textit{standalone} y con el sistema operatio eCos. Dentro del proceso de diseño de sistemas digitales, algunas de las tareas deben ser implementadas en hardware para cumplir con los requerimientos temporales; por este motivo es importante realizar implementaciones de tareas hardware en dispositivos lógicos programables (PLDs); para estudiar la forma de comunicar estas tareas hardware con SoC comerciales se diseño un clon de la tarjeta comercial XPORT de la empresa norteamericana Charmedlabs, que permite conectarse con el procesador de la plataforma comercial \copyright GameBoy Advance de Nintendo \cite{SBME07} (ver figura\ref{ECB_xport}).
+  
+
+\begin{figure}[htpb]
+  \centering
+    \mbox{
+      \subfigure[Diagrama de bloques]{\includegraphics[scale=.45]{./images/ECB_ARM7_Block.pdf}}
+      \subfigure[Prototipo]{\includegraphics[scale=.35]{./images/ECB_ARM7.jpg}}
+    }
+  \caption{Plataforma de desarrollo ECB\_ARM7} \label{ECB_ARM7}
+\end{figure}
+
+
+\begin{figure}[htpb]
+  \centering
+     \mbox{
+      \subfigure[Diagrama de bloques]{\includegraphics[scale=.4]{./images/xport_Block.pdf}}
+      \subfigure[Prototipo]{\includegraphics[scale=.25]{./images/xport.jpg}}
+     }
+  \caption{Plataforma de desarrollo UNAL\_UIS\_XPORT} \label{ECB_xport}
+\end{figure}
+
+El uso de Linux como herramienta de desarrollo ha aumentado en los últimos años, llegando a ser el sistema operativo más utilizado por los desarrolladores (ver figura\ref{os_trends}); empresas como Nokia, Motorola, Google, Dlink, Hewlett Packard utilizan Linux para desarrollar el firmware de sus dispositivos; por este motivo se diseñaron plataformas que soportan la ejecución de este sistema operativo. Se diseñó una familia de plataformas denominadas ECB\_AT91 V1 (ver figura \ref{ECB_AT91_V1} \cite{CC} \cite{CC06} ), ECB\_AT91 V2 (ver figura \ref{ECB_AT91_V2}) y ECBOT (ver figura \ref{ECBOT} \cite{CC08b} \cite{CC08} \cite{CC07}); esta familia de plataformas se encuentran registradas en el kernel oficial de Linux, por lo tanto, su soporte queda garantizado en futuras versiones del kernel de Linux. ECB\_AT91 V1 fué el punto de partida para el estudio de técnicas de fabricación de placas de circuito impreso para SoC que operan a velocidades mayores de 180MHz, y para aprender el proceso completo de adaptar el kernel de Linux a una plataforma nueva, el proceso detallado se muestra en el apéndice \ref{ap:platform}; en la figura \ref{ECBOT} (a) se muestra el diagrama de bloques de estas tres arquitecturas; todas poseen el SoC de 180MHz de Atmel AT91RM9200, debido a que este SoC no posee conversores análogos - digitales internos fué necesario incluir un micro-controlador de 8 bits que se comunica con el SoC vía I2C, el SoC realiza la programación del microcontrolador emulando un puerto paralelo en sus pines de entrada/salida de propósito general (GPIOs) que van conectados a los pines del puerto ISP del microcontrolador.
+
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[scale=.45]{./images/ECB_AT91_V1.jpg}
+  \caption{Plataforma de desarrollo ECB\_AT91 V1} \label{ECB_AT91_V1}
+\end{figure}
+
+
+La plataforma ECB\_AT91 V2 es el resultado del interés de utilizar dispositivos lógicos programables y SoC comerciales para crear periféricos dedicados y la creación de nuevos drivers de Linux que los controlaren, su arquitectura es idéntica a la de la plataforma ECB\_AT91 V1 pero el bus de datos, dirección y control del SoC se conectan a la FPGA para permitir la comunicación con los periféricos implementados en ella; la FPGA es configurada por el SoC utiizando unos GPIOs que van conectados a lpuerto JTAG de la FPGA, lo que elimina la necesidad de cables adicionales de conexión, permitiendo su reprogramación total de forma remota.
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[scale=.4]{./images/ECB_AT91_V2.jpg}
+  \caption{Plataforma de desarrollo ECB\_AT91 V2} \label{ECB_AT91_V2}
+\end{figure}
+
+La plataforma ECBOT fué diseñada con el propósito de dar soporte a los grupos de robótica de los departamentos de Sistemas y mecatrónica de la Universidad Nacional de Colombia, su arquitectura es similar a la de la plataforma ECB\_AT91 V2, con la adición de circuitos especializados para el control de sensores (6 sensores de choque, 1 sensor de imágen, movimiento de los motores basado en BEMF \footnote{Back Electro Magnetic Force} ), actuadores (8 leds RGB, 2 motores DC) y un coversor DC/DC que garantiza el máximo uso de las baterías.
+
+
+\begin{figure}[htpb]
+  \centering
+     \mbox{
+      \subfigure[Diagrama de bloques]{\includegraphics[scale=.3]{./images/ECBOT_Block.png}}
+      \subfigure[Prototipo]{\includegraphics[scale=.35]{./images/ECBOT.png}}
+     }
+  \caption{Plataforma de desarrollo ECBOT} \label{ECBOT}
+\end{figure}
+
+Los SoC utilizados hasta el momento no pueden ser utilizados en aplicaciones de procesamiento de señales o de imágenes en tiempo real (a menos que se implemente algún periférico en la FPGA para ello), ya que su arquitectura no está disenada para ellos, los DSPs son procesadores especializados para ejecutar las operaciones más comunes en procesamiento digital de señales, pensando en este tipo de aplicaciones se diseñó la plataforma ECB\_BF532 que utiliza el DSP de la familia Blackfin BF532 de Analog Devices.
+
+\begin{figure}[htpb]
+  \centering
+     \mbox{
+       \subfigure[Diagrama de bloques]{\includegraphics[scale=.4]{./images/ECB_BF532_Block.pdf}}
+      \subfigure[Prototipo]{\includegraphics[scale=.35]{./images/ECB_BF532.png}}
+     }
+  \caption{Plataforma de desarrollo ECB\_BF532} \label{ECB_BF532}
+\end{figure}
+
+
+Finalmente, se desarrolló la plataforma SIE\cite{CC11c}, la cual permite el estudio y desarrollo de aplicaciones gráficas; y puede ser utilizada en los cursos del área de electrónica digital; esta plataforma utiliza un procesador MIPS fabricado por la compañía china Ingenic. Adicionalmente se cuenta con una FPGA (Spartan 3E de Xilinx) lo que posibilita la implementación de tareas hardware y la creación de controladores específicos en el sistema operativo Linux. 
+
+\begin{figure}[htpb]
+  \centering
+     \mbox{
+      \subfigure[Diagrama de bloques]{\includegraphics[scale=.5]{./images/SIE_block_diagram.png}}
+      \subfigure[Prototipo]{\includegraphics[scale=.35]{./images/SIE.jpg}}
+     }
+  \caption{Plataforma de desarrollo SIE} \label{SIE}
+\end{figure}
+
+\subsubsection{Técnicas de Fabricación}
+Durante el proceso de concepción, diseño, implementación y operación de estas plataformas se trabajó con diferentes proveedores de bienes y servicios nacionales y extranjeros, y se utilizaron diferentes posibilidades para su construcción y montaje; en la tabla \ref{plat_review} se resumen las principales características de cada plataforma: CPU utilizada, número de capas del PCB, tipo de montaje: manual o automático, cantidad de unidades producidas, sistema operativo (OS) estudiado y finalmente los usuarios (UN: Universidad Nacional de Colombia, UIS: Universidad Industrial de Santander, USTA: Universidad Santo Tomás de Aquino, ULA: Universidad de Los Andes, UDFJC: Universidad Distrital Francisco José de Caldas, ECI: Escuela Colombiana de Ingeniería, ENAP: Escuela Naval Almirante Padilla)
+
+\begin{table}[htpb]
+  \caption{Conocimientos Adquiridos durante el proceso de concepción, diseño, implementación y operación de las plataformas de desarrollo}
+  \centering
+    \scriptsize
+    \begin{tabular}{|l|l|l|l|l|l|l|}
+      \hline
+      \textbf{Plataforma} & \textbf{CPU}  & \textbf{Capas} 
+                                              & \textbf{Montaje}    & \textbf{Cant.}
+                                                                          &\textbf{OS} &\textbf{Usuario}
+      \\ \hline 
+       ECB\_ARM7          &ARM7,33M      & 2 & local Manual.       & 2   & eCos    & UN
+      \\ \hline 
+       UN\_UIS\_XPORT     &ARM7,50M      & 2 & local Manual.       & 2   & eCos    & UN UIS
+      \\ \hline 
+       ECB\_AT91\_V1      &ARM920,180M   & 2 & local Manual/Autom. & 100 & Linux   & UN, USTA, ULA, UDFJC, ENAP  
+      \\ \hline 
+       ECB\_AT91\_V2      &ARM920 180M   & 4 & local Manual.       & 30  & Linux   & UDFJC, ENAP, UN
+      \\ \hline 
+       ECBOT              &ARM920 180M   & 4 & local Manual.       & 20  & Linux   & UN
+      \\ \hline 
+       ECB\_BF532         &Blackfin 400M & 4 & local Manual.       & 5   & uCLinux & UN
+      \\ \hline 
+       SIE                &MIPS32  300M  & 2 & externo Autom.      & 80  & Linux   & UN, ECI, UIS, ULA
+      \\ \hline 
+    \end{tabular}
+  \label{plat_review}
+\end{table}
+
+
+\subsubsection{Proceso de fabricación}
+
+
+
+
+\subsubsection{Aplicaciones Académicas Realizadas}
+Durante esta etapa (que se realiza de forma continua cada vez que se desea incluir un nuevo tema de estudio) se desarrollaron una serie de trabajos de grado a nivel de pregrado en las universidades Nacional de Colombia, de los Andes e Industrial de Santander y se diseñó un nuevo curso llamado Sistemas Embebidos y fué dictado en varias ocasiones como electiva en la Universidad de los Andes. Se ayudo a dos egresados de la carrera de Ingeniería Electrónica en la creación de la empresa \textit{EM Electrónica}, la cual, utilizando prototipo diseñados por el autor de este trabajo, suministraron las herramientas que fueron utilizadas en los cursos del área de electrónica digital en el departamento de ingeniería eléctrica y electrónica de la Universidad Nacional de Colombia. A continuación se resumen los trabajo realizados durante esta etapa:
+
+\begin{itemize}
+ \item Tesis de pregrado 
+    \subitem UIS: \cite{SBME07}
+    \subitem UNAL:\cite{DODM04} 
+    \subitem ULA: 
+ \item Tesis de Posgrado
+    \subitem 
+    \subitem 
+    \subitem 
+ \item Artículos
+    \subitem \cite{CC05} \cite{CC09} \cite{CC06b} \cite{CCOS06} \cite{ICCC06} \cite{JEFS05} \cite{CC08}
+    \subitem \cite{CC11c} \cite{CC08c}    \cite{CC11}\cite{CC11b}\cite{CC11d}\cite{CC11e}\cite{CC07}
+    \subitem 
+    \subitem 
+\end{itemize}
+
+Todos los productos académicos mencionados tienen como característica el desarrollo de placas de circuito impreso y la utilización de los conocimientos adquiridos durante este estudio. Inicialmente, las placas de circuito impreso fueron diseñadas con herramientas comerciales debido a la falta de una herramienta abierta, en los últimos dos años el desarrollo de la herramienta \textit{Kicad} permitió la eliminación de estas herramientas propietarias; a partir de ese momento solo se utilizaron herramientas abiertas en todo el flujo de diseño. 
+
 
 
 Aplicaciones Realizadas
 
- Game Boy de Nintendo + Chamedlabs Xport
+ Game Boy de Nintendo + Charmedlabs Xport
 Académicas
 Osciloscopio Digital utilizando FPAAs
 Automatización de un Puente grúa a escala.
@@ -374,43 +535,6 @@ Monitor de signos vitales.
 Diccionario basado en Wikipedia.
 Menú electrónico y consola de juegos.
 
-
-Ventajas de utilizar plataformas comerciales
-
- Facilita el aprendizaje del funcionamiento de la tecnología.
- Permite estudiar metodologías de diseño y evaluación de herramientas de desarrollo.
- Reduce el tiempo y el costo de desarrollo.
- Variedad y disponibilidad.
-
-
-Desventajas
-No se puede o es muy costoso modificarlas.
-No son productos exclusivos y pueden ser duplicados facilmente.
-Dependencia del fabricante.
-Reducción de la demanda de diseñadores y proveedores de bienes y servicios de manufactura
- Diseñadas para una aplicación específica
-Dificiles de adaptar a nuevas aplicaciones
-Escasa documentación.
-No se puede utilizar en productos comerciales.
-Limita el aprendizaje.
- Diseñadas como plataformas de desarrollo
-En ocaciones son sobredimensionadas.
-Es necesario diseñar tarjetas adicionales y carcasas para adaptarlas a una aplicación comercial.
-
-
-
-
-
-
-\subsection{Absorción}
-Desarrollo o adaptación de metodologías de diseño y procesos de fabricación; desarrollo de productos tecnológicos propios; enseñanza de metodologías de diseño y procesos de fabricación en centros de educación consolidados.
-
-Integración de nuevo conocimiento para el país pero no es
-nuevo para el mundo.
-Adaptación de metodologías de diseño y procesos de
-fabricación al entorno local.
-Desarrollo de productos tecnológicos propios.
-Transmisión de conocimientos a la academia
 
 
 Actividades Realizadas

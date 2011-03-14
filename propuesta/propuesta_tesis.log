@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.11.20)  9 MAR 2011 07:24
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.11.20)  14 MAR 2011 11:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -910,72 +910,159 @@ File: ./images/embedded_os_trends.png Graphic file (type png)
 File: ./images/embedded_processor_preference_history.jpg Graphic file (type jpg
 )
  <use ./images/embedded_processor_preference_history.jpg> [15 <./images/embedde
-d_os_trends.png (PNG copy)>]
-<./images/plataformas_adquiridas.png, id=68, 639.89063pt x 172.85196pt>
+d_os_trends.png (PNG copy)>] [16 <./images/embedded_processor_preference_histor
+y.jpg>]
+<./images/plataformas_adquiridas.png, id=71, 639.89063pt x 172.85196pt>
 File: ./images/plataformas_adquiridas.png Graphic file (type png)
 
 <use ./images/plataformas_adquiridas.png>
-<./images/plataformas_adquiridas2.png, id=69, 628.3475pt x 175.65625pt>
+<./images/plataformas_adquiridas2.png, id=72, 773.89125pt x 176.66pt>
 File: ./images/plataformas_adquiridas2.png Graphic file (type png)
 
-<use ./images/plataformas_adquiridas2.png> [16 <./images/embedded_processor_pre
-ference_history.jpg>] [17 <./images/plataformas_adquiridas.png> <./images/plata
-formas_adquiridas2.png (PNG copy)>]
-<./images/soc_int_volatil.pdf, id=76, 402.50375pt x 217.81375pt>
+<use ./images/plataformas_adquiridas2.png>
+Overfull \hbox (37.547pt too wide) in paragraph at lines 185--187
+ [] 
+ []
+
+[17 <./images/plataformas_adquiridas.png> <./images/plataformas_adquiridas2.png
+ (PNG copy)>] <./images/soc_int_volatil.pdf, id=76, 402.50375pt x 217.81375pt>
 File: ./images/soc_int_volatil.pdf Graphic file (type pdf)
 
-<use ./images/soc_int_volatil.pdf>
-<./images/soc_no_int_volatil_mmu.pdf, id=78, 491.8375pt x 217.81375pt>
+<use ./images/soc_int_volatil.pdf> [18]
+<./images/soc_no_int_volatil_mmu.pdf, id=81, 491.8375pt x 217.81375pt>
 File: ./images/soc_no_int_volatil_mmu.pdf Graphic file (type pdf)
 
-<use ./images/soc_no_int_volatil_mmu.pdf> [18] [19 <./images/soc_int_volatil.pd
-f> <./images/soc_no_int_volatil_mmu.pdf>] [20]
-<./images/SW_design_flow.png, id=118, 366.61969pt x 298.86656pt>
+<use ./images/soc_no_int_volatil_mmu.pdf> [19 <./images/soc_int_volatil.pdf> <.
+/images/soc_no_int_volatil_mmu.pdf>]
+Overfull \hbox (2.80627pt too wide) in paragraph at lines 247--267
+ [][] 
+ []
+
+<./images/SW_design_flow.png, id=115, 366.61969pt x 298.86656pt>
 File: ./images/SW_design_flow.png Graphic file (type png)
 
-<use ./images/SW_design_flow.png>
+<use ./images/SW_design_flow.png> [20]
 <./images/SoC_boot.pdf, id=119, 686.565pt x 594.22pt>
 File: ./images/SoC_boot.pdf Graphic file (type pdf)
 
-<use ./images/SoC_boot.pdf> [21 <./images/SW_design_flow.png (PNG copy)>]
-<./images/SoC_boot2.pdf, id=124, 633.36626pt x 231.86626pt>
+<use ./images/SoC_boot.pdf>
+<./images/SoC_boot2.pdf, id=121, 633.36626pt x 231.86626pt>
 File: ./images/SoC_boot2.pdf Graphic file (type pdf)
 
-<use ./images/SoC_boot2.pdf> [22 <./images/SoC_boot.pdf> <./images/SoC_boot2.pd
-f>] <./images/SoC_boot3.pdf, id=159, 317.185pt x 191.71625pt>
+<use ./images/SoC_boot2.pdf>
+<./images/SoC_boot3.pdf, id=123, 317.185pt x 191.71625pt>
 File: ./images/SoC_boot3.pdf Graphic file (type pdf)
 
-<use ./images/SoC_boot3.pdf>
+<use ./images/SoC_boot3.pdf> [21 <./images/SW_design_flow.png (PNG copy)>]
+[22 <./images/SoC_boot.pdf> <./images/SoC_boot2.pdf>]
 <./images/jtag_basics.png, id=161, 286.06876pt x 325.215pt>
 File: ./images/jtag_basics.png Graphic file (type png)
 
 <use ./images/jtag_basics.png>
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 318.
- [23 <./images/SoC_boot3.pdf>]
-<./images/kernel.jpg, id=190, 437.635pt x 271.0125pt>
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 320.
+
+<./images/kernel.jpg, id=162, 437.635pt x 271.0125pt>
 File: ./images/kernel.jpg Graphic file (type jpg)
 
-<use ./images/kernel.jpg> [24 <./images/jtag_basics.png (PNG copy)> <./images/k
-ernel.jpg>] [25]
-Overfull \hbox (1.63913pt too wide) in paragraph at lines 440--446
-[]\OT1/ptm/m/n/10 Integraci[]on de nue-vo conocimien-to para el pa[]^^Ps pero n
-o es nue-vo para el mun-do. Adaptaci[]on de metodolog[]^^Pas
+<use ./images/kernel.jpg> [23 <./images/SoC_boot3.pdf>] [24 <./images/jtag_basi
+cs.png (PNG copy)> <./images/kernel.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 345--346
+[]|\OT1/ptm/m/n/10 eCos, im-ple-mentaci[]on de
  []
 
 
-Overfull \hbox (14.82451pt too wide) in paragraph at lines 461--469
+Underfull \hbox (badness 10000) in paragraph at lines 347--348
+[]|\OT1/ptm/m/n/10 Linux 2.4, sis-tema de
+ []
+
+[25] <./images/ECB_ARM7_Block.pdf, id=198, 509.905pt x 217.81375pt>
+File: ./images/ECB_ARM7_Block.pdf Graphic file (type pdf)
+
+<use ./images/ECB_ARM7_Block.pdf>
+<./images/ECB_ARM7.jpg, id=200, 533.74406pt x 547.2947pt>
+File: ./images/ECB_ARM7.jpg Graphic file (type jpg)
+
+<use ./images/ECB_ARM7.jpg>
+<./images/xport_Block.pdf, id=201, 531.9875pt x 566.115pt>
+File: ./images/xport_Block.pdf Graphic file (type pdf)
+
+<use ./images/xport_Block.pdf>
+<./images/xport.jpg, id=203, 832.61063pt x 389.95688pt>
+File: ./images/xport.jpg Graphic file (type jpg)
+
+<use ./images/xport.jpg>
+Overfull \hbox (1.65204pt too wide) in paragraph at lines 401--402
+ [][] 
+ []
+
+
+LaTeX Warning: Reference `ap:platform' on page 26 undefined on input line 405.
+
+[26] [27 <./images/ECB_ARM7_Block.pdf> <./images/ECB_ARM7.jpg> <./images/xport_
+Block.pdf> <./images/xport.jpg>]
+<./images/ECB_AT91_V1.jpg, id=240, 937.25156pt x 365.86688pt>
+File: ./images/ECB_AT91_V1.jpg Graphic file (type jpg)
+
+<use ./images/ECB_AT91_V1.jpg>
+<./images/ECB_AT91_V2.jpg, id=241, 877.2775pt x 513.92pt>
+File: ./images/ECB_AT91_V2.jpg Graphic file (type jpg)
+
+<use ./images/ECB_AT91_V2.jpg>
+<./images/ECBOT_Block.png, id=242, 803.25093pt x 545.78906pt>
+File: ./images/ECBOT_Block.png Graphic file (type png)
+
+<use ./images/ECBOT_Block.png>
+<./images/ECBOT.png, id=244, 582.67688pt x 564.60938pt>
+File: ./images/ECBOT.png Graphic file (type png)
+
+<use ./images/ECBOT.png>
+Overfull \hbox (25.62575pt too wide) in paragraph at lines 431--432
+ [][] 
+ []
+
+<./images/ECB_BF532_Block.pdf, id=245, 509.905pt x 231.86626pt>
+File: ./images/ECB_BF532_Block.pdf Graphic file (type pdf)
+
+<use ./images/ECB_BF532_Block.pdf>
+<./images/ECB_BF532.png, id=247, 669.2503pt x 513.41812pt>
+File: ./images/ECB_BF532.png Graphic file (type png)
+
+<use ./images/ECB_BF532.png>
+Overfull \hbox (18.90816pt too wide) in paragraph at lines 442--443
+ [][] 
+ []
+
+<./images/SIE_block_diagram.png, id=248, 501.37312pt x 274.02374pt>
+File: ./images/SIE_block_diagram.png Graphic file (type png)
+
+<use ./images/SIE_block_diagram.png>
+<./images/SIE.jpg, id=249, 597.73312pt x 345.54094pt>
+File: ./images/SIE.jpg Graphic file (type jpg)
+ <use ./images/SIE.jpg>
+Overfull \hbox (40.60432pt too wide) in paragraph at lines 454--455
+ [][] 
+ []
+
+[28 <./images/ECB_AT91_V1.jpg>] [29 <./images/ECB_AT91_V2.jpg> <./images/ECBOT_
+Block.png> <./images/ECBOT.png (PNG copy)>]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 467.
+
+Overfull \hbox (13.99033pt too wide) in paragraph at lines 465--487
+ [][] 
+ []
+
+[30 <./images/ECB_BF532_Block.pdf> <./images/ECB_BF532.png> <./images/SIE_block
+_diagram.png> <./images/SIE.jpg>] [31]
+Overfull \hbox (14.82451pt too wide) in paragraph at lines 553--561
 []\OT1/ptm/m/n/10 Control de tornos in-dus-tri-ales. Platafor-ma rob[]otica did
 []acti-ca. Mon-i-toreo de Tem-per-atu-ra. Sis-tema de seguimien-
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [26]
+[32]
 File: ./images/SW_design_flow.png Graphic file (type png)
-
-<use ./images/SW_design_flow.png>) (./propuesta_tesis.bbl [27] [28
+ <use ./images/SW_design_flow.png>) (./propuesta_tesis.bbl [33] [34
 
 ]
 Overfull \hbox (76.89471pt too wide) in paragraph at lines 58--63
@@ -983,19 +1070,28 @@ Overfull \hbox (76.89471pt too wide) in paragraph at lines 58--63
 ssweek.com/magazine/content/10[]28/b4186048358596.htm,
  []
 
-) [29] (./propuesta_tesis.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--88
+[]\OT1/ptm/m/n/10 C. Ca-mar-go.  First Colom-bian Lin-ux SBC runs De-bian.  URL
+:
+ []
+
+[35]) [36] (./propuesta_tesis.aux)
+
+LaTeX Warning: There were undefined references.
+
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 15599 strings out of 495061
- 274940 string characters out of 1182620
- 370789 words of memory out of 3000000
- 18322 multiletter control sequences out of 15000+50000
- 41635 words of font info for 100 fonts, out of 3000000 for 9000
+ 15690 strings out of 495061
+ 276698 string characters out of 1182620
+ 371980 words of memory out of 3000000
+ 18400 multiletter control sequences out of 15000+50000
+ 43261 words of font info for 102 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 47i,11n,69p,2227b,303s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 47i,12n,69p,2227b,303s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
 ve/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/ty
 pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/
@@ -1004,9 +1100,9 @@ pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texm
 f-texlive/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-texlive/fonts/typ
 e1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.
 pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on propuesta_tesis.pdf (29 pages, 1455782 bytes).
+Output written on propuesta_tesis.pdf (36 pages, 4057493 bytes).
 PDF statistics:
- 240 PDF objects out of 1000 (max. 8388607)
+ 323 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 103 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 163 words of extra memory for PDF output out of 10000 (max. 10000000)
 

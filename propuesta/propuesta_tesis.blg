@@ -5,45 +5,46 @@ Database file #1: biblio.bib
 Warning--empty journal in IAI
 Warning--empty year in IAI
 Warning--can't use both author and editor fields in Sta99
-You've used 11 entries,
+Warning--empty year in CC
+You've used 30 entries,
             1791 wiz_defined-function locations,
-            511 strings with 5358 characters,
-and the built_in function-call counts, 1593 in all, are:
-= -- 128
-> -- 74
+            591 strings with 8129 characters,
+and the built_in function-call counts, 4205 in all, are:
+= -- 343
+> -- 176
 < -- 0
-+ -- 31
-- -- 20
-* -- 67
-:= -- 297
-add.period$ -- 32
-call.type$ -- 11
-change.case$ -- 9
++ -- 76
+- -- 46
+* -- 150
+:= -- 767
+add.period$ -- 89
+call.type$ -- 30
+change.case$ -- 26
 chr.to.int$ -- 0
-cite$ -- 14
-duplicate$ -- 79
-empty$ -- 162
-format.name$ -- 20
-if$ -- 339
+cite$ -- 34
+duplicate$ -- 232
+empty$ -- 442
+format.name$ -- 46
+if$ -- 911
 int.to.chr$ -- 0
-int.to.str$ -- 11
-missing$ -- 6
-newline$ -- 57
-num.names$ -- 11
-pop$ -- 38
+int.to.str$ -- 30
+missing$ -- 26
+newline$ -- 152
+num.names$ -- 30
+pop$ -- 107
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 30
+skip$ -- 88
 stack$ -- 0
 substring$ -- 6
-swap$ -- 9
+swap$ -- 28
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 3
-while$ -- 12
-width$ -- 13
-write$ -- 113
-(There were 3 warnings)
+warning$ -- 4
+while$ -- 31
+width$ -- 32
+write$ -- 302
+(There were 4 warnings)
