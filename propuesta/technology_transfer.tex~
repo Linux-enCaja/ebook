@@ -645,29 +645,56 @@ En la figura \ref{meth_flow} se muestran los 6 etapas que componen la metodologí
   \caption{Etapas de la metodología propuesta para la transferencia tecnológica y de conocimientos en el área de diseño de sistemas embebidos} \label{meth_flow}
 \end{figure}
 
-\subsubsection{Elección}
-Identificación del estado de la plataforma tecnológica existente para identificar facilidades y necesidades; identificación de niveles de complejidad de la tecnología; selección de una alternativa que pueda implementarse y de resultados a mediano y corto plazo con no muy altas inversiones de capital.
+Definir las necesidades del mercado.
+Búsqueda de una tecnología adecuada.
+Modificación de la tecnología para adaptarse a las condiciones locales (económica, social, política y cultural)
+Demostrar el valor de la tecnología en términos sociales y económicos.
+Implementar físicamente el proyecto.
+Difundir la tecnología a sectores relevantes de la sociedad incluyendo productores y consumidores.
 
+
+
+
+\subsubsection{Elección}
+Identificación del estado de la plataforma tecnológica existente para identificar facilidades y necesidades; identificación de niveles de complejidad de la tecnología; selección de una alternativa que pueda implementarse y de resultados a mediano y corto plazo con no muy altas inversiones de capital. definir objetivos 
+
+
+Adquisición + Adaptación =  Adopción.
 \subsubsection{Adquisición}
 Adquisición de plataformas adecuadas de desarrollo HW y SW; identificación de herramientas de desarrollo HW y SW y su origen (abierto/cerrado). 
 
-\subsubsection{Adopción}
+\subsubsection{Adaptación}
+La adaptación se presenta cuando la sociedad encuentra posible y deseable realizar cambios para involucrar usos particulares de la tecnología; es un proceso dinámico que esta formado por \cite{KAJS08}: una etapa inicial donde se proporcionan procedimientos adecuados para la transferencia física; seguida de una fase donde se proporciona conocimiento, habilidades, datos, y las herramientas necesarias para la evaluación; una etapa de planeación, diseño e implementación del sistema de transferencia, planes y estrategias.
+
+Para determinar si es posible y conveniente el uso de las nuevas tecnologías en la industria y la academia nacionales, se realizarán una serie de actividades encaminadas a adquirir conocimiento y habilidades que permitan operar y programar los dipositivos digitales adquiridos previamente. Para esto se diseñó una metodología que permite el estudio gradual de diferentes tópicos asociados a esta tecnología (arquitectura, programación básica, generación de aplicaciones); la primera etapa consiste en la adquisición de un dispositivo comercial que permita realizar el estudio deseado; a continuación, con el uso de ingeniería inversa se identificará su arquitectura, las herramientas y los métodos para cambiar su funcionamiento y se desarrollarán métodos para generación de aplicaciones similares a la original. El siguiente paso consiste en la creación o adaptación de técnicas de fabricación que pemitan el diseño y construcción local de plataformas que tengan la misma funcionalidad y permitan su estudio, fácil adaptación y desarrollo de aplicaciones; en este punto, cuando ya se cuenta con los conocimientos para desarrollar aplicaciones propias, se transmiten estos conocimientos a la academia y a la industria  para que hagan parte de sus procesos de enseñanza y de diseño respectivamente; finalmente se realizará la documentación del proceso de diseño de las plataformas de desarrollo, de las aplicaciones y del proceso de diseño, toda esta información será distribuida bajo el esquema de licencias \textit{Creative Commons} (CC) BY-SA: atribución (BY), se permite la distribución dando crédito al autor; compartir de la misma forma (SA) exige que todo trabajo derivado del uso de proyectos que con este esquema de licencias deben tener la misma licencia de los trabajos originales. La unión del siftware abierto utilizado para diseñar las placas de circuito impreso e implementar sus aplicaciones unida a este esquema de licencias define el novedoso concepto del \textit{hardware copyleft} (ver capítulo \ref{ch:common}) el cual se puede considerar como una extensión del proyecto de software libre aplicado al desarrollo hardware; con esto se pretende 
+
 Utilización de plataformas de desarrollo para estudio de metodologías de diseño; uso de ingeniería inversa para entender la arquitectura, funcionamiento y programación de productos comerciales; utilización de productos comerciales para adaptarlos a problemas locales (Integración); tomar conciencia de la importancia del uso de esta tecnología.
 
 
-\subsubsection{Absorción}
-Desarrollo o adaptación de metodologías de diseño y procesos de fabricación; desarrollo de productos tecnológicos propios; enseñanza de metodologías de diseño y procesos de fabricación en centros de educación consolidados.
+\subsubsection{Absorción y asimilación}
+
+1. Aceptación de la tecnología
+2. Motivación para hacerla exitosa.
+3. Habilidad para soportar la tecnología: Infraestructura técnica: hardware, sistemas operativos, redes, tecnologías de la comunicación, aplicaciones SW; Infraestructura humana: Habilidades y conocimientos necesarios para desarrollar, mantener, y manipular 	 
+Habilidad para adaptar tecnologías al entorno local y futuro desarrollo.
+
+Mecanismos de aprendizaje : Aprendizaje al operar y cambiar la nueva tecnología. El aprendizaje puede adquirirse pro entrenamiemto, seleccionando y contratando personal calificado o buscando posibles soluciones en recursos publicados  
+
+
+La asimilación garantiza la transferencia y es entendida como las rutinas y procesos de la organizacion que permitem analizar, procesar, interpretar y entender la tecnología. 
+
+Desarrollo o adaptación de metodologías de diseño y procesos de fabricación; desarrollo de productos tecnológicos propios; desarrollo de proyectos académicos utilizando esta tecnología.
 
 
 \subsubsection{Aplicación}
-Desarrollo de soluciones a problemas locales; uso de metodologías de diseño en la concepción, diseño e implementación de sistemas digitales utilizando la tecnología; utilización de procesos de fabricación adaptados al entorno local; desarrollo de proyectos académicos utilizando esta tecnología.
+(Uso del conocimiento)
+Desarrollo de soluciones a problemas locales; uso de metodologías de diseño en la concepción, diseño e implementación de sistemas digitales utilizando la tecnología; utilización de procesos de fabricación adaptados al entorno local; enseñanza de metodologías de diseño y procesos de fabricación en centros de educación consolidados.
 
 
 \subsubsection{Difusión y Desarrollo}
-Vinculación de la academia para incluir los conocimientos generados en los programas académicos de las carreras relacionadas; capacitación a la industria local sobre el uso de la tecnología, las metodologías de diseño y procesos de producción; creación de una comunidad que utilice, mejore y aumente el conocimiento generado; hacer que el conocimiento generado en los pasos anteriores este disponible a todos los interesados; dar a conocer los procesos, productos y conocimientos creados a los generadores de políticas de estado.
+Vinculación de la academia para incluir los conocimientos generados en los programas académicos de las carreras relacionadas con diseño digital; capacitación a la industria local sobre el uso de la tecnología, las metodologías de diseño y procesos de producción; creación de una comunidad que utilice, mejore y aumente el conocimiento generado; hacer que el conocimiento generado en los pasos anteriores este disponible a todos los interesados; dar a conocer los procesos, productos y conocimientos creados a los generadores de políticas de estado.
 
 Aumento de la demanda de productos, bienes y servicios relacionados; compra de maquinaria que permita la fabricación masiva de forma local; diseño de nuevos componentes (Circuitos Integrados, IPs, software CAD); creación de políticas gubernamentales que protejan la producción local; participación activa de la academia en la solución de problemas y en la formulación de políticas de gobierno relacionadas.
-
 
 En el capítulo \ref{embedded} se describiran las actividades realizadas en cadas una de estas etapas y los resultados obtenidos al aplicar esta metodología.
 

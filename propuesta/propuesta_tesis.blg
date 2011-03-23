@@ -6,36 +6,37 @@ Warning--empty journal in IAI
 Warning--empty year in IAI
 Warning--can't use both author and editor fields in Sta99
 Warning--empty year in CC
-You've used 30 entries,
+Warning--empty school in NR11
+You've used 31 entries,
             1791 wiz_defined-function locations,
-            591 strings with 8129 characters,
-and the built_in function-call counts, 4205 in all, are:
-= -- 343
-> -- 176
+            595 strings with 8310 characters,
+and the built_in function-call counts, 4325 in all, are:
+= -- 354
+> -- 180
 < -- 0
-+ -- 76
-- -- 46
-* -- 150
-:= -- 767
-add.period$ -- 89
-call.type$ -- 30
-change.case$ -- 26
++ -- 78
+- -- 47
+* -- 154
+:= -- 791
+add.period$ -- 92
+call.type$ -- 31
+change.case$ -- 27
 chr.to.int$ -- 0
-cite$ -- 34
-duplicate$ -- 232
-empty$ -- 442
-format.name$ -- 46
-if$ -- 911
+cite$ -- 36
+duplicate$ -- 238
+empty$ -- 453
+format.name$ -- 47
+if$ -- 935
 int.to.chr$ -- 0
-int.to.str$ -- 30
+int.to.str$ -- 31
 missing$ -- 26
-newline$ -- 152
-num.names$ -- 30
-pop$ -- 107
+newline$ -- 157
+num.names$ -- 31
+pop$ -- 110
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 88
+skip$ -- 90
 stack$ -- 0
 substring$ -- 6
 swap$ -- 28
@@ -43,8 +44,8 @@ text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 4
-while$ -- 31
-width$ -- 32
-write$ -- 302
-(There were 4 warnings)
+warning$ -- 5
+while$ -- 32
+width$ -- 33
+write$ -- 312
+(There were 5 warnings)

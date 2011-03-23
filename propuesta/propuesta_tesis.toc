@@ -27,6 +27,8 @@
 \contentsline {subsubsection}{Plataformas de Desarrollo }{26}
 \contentsline {subsubsection}{T\'ecnicas de Fabricaci\'on}{30}
 \contentsline {subsubsection}{Proceso de dise\~no y fabricaci\'on}{31}
-\contentsline {subsubsection}{Aplicaciones Acad\'emicas Realizadas}{31}
-\contentsline {subsubsection}{Aplicaci\'on}{33}
-\contentsline {subsubsection}{Difusi\'on y Desarrollo}{33}
+\contentsline {subsubsection}{Aplicaciones Acad\'emicas Realizadas}{32}
+\contentsline {subsubsection}{Metodolog\IeC {\'\i }a para la apropiaci\'on de conocimiento y generaci\'on de nuevos productos}{32}
+\contentsline {subsubsection}{Conclusi\'ones}{32}
+\contentsline {subsection}{\numberline {1.2.5}Aplicaci\'on}{33}
+\contentsline {subsection}{\numberline {1.2.6}Difusi\'on y Desarrollo}{34}

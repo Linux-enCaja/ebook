@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.11.20)  14 MAR 2011 15:57
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.11.20)  17 MAR 2011 14:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1060,15 +1060,19 @@ _diagram.png> <./images/SIE.jpg>]
 File: ./images/proceso_de_fabricacion_PCBs.pdf Graphic file (type pdf)
 
 <use ./images/proceso_de_fabricacion_PCBs.pdf> [31 <./images/proceso_de_fabrica
-cion_PCBs.pdf>]
-Overfull \hbox (14.82451pt too wide) in paragraph at lines 562--570
+cion_PCBs.pdf>] <./images/SoC_reverse.pdf, id=294, 374.39874pt x 475.7775pt>
+File: ./images/SoC_reverse.pdf Graphic file (type pdf)
+
+<use ./images/SoC_reverse.pdf> [32]
+Overfull \hbox (14.82451pt too wide) in paragraph at lines 542--550
 []\OT1/ptm/m/n/10 Control de tornos in-dus-tri-ales. Platafor-ma rob[]otica did
 []acti-ca. Mon-i-toreo de Tem-per-atu-ra. Sis-tema de seguimien-
  []
 
-[32]
+[33 <./images/SoC_reverse.pdf>]
 File: ./images/SW_design_flow.png Graphic file (type png)
- <use ./images/SW_design_flow.png>) (./propuesta_tesis.bbl [33] [34]
+ <use ./images/SW_design_flow.png>)
+(./propuesta_tesis.bbl [34]
 Overfull \hbox (76.89471pt too wide) in paragraph at lines 58--63
 []\OT1/ptm/m/n/10 A. Grove.  How Amer-i-ca Can Cre-ate Jobs.  http://www.busine
 ssweek.com/magazine/content/10[]28/b4186048358596.htm,
@@ -1091,13 +1095,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 15698 strings out of 495061
- 276992 string characters out of 1182620
- 372000 words of memory out of 3000000
- 18407 multiletter control sequences out of 15000+50000
+ 15705 strings out of 495061
+ 277146 string characters out of 1182620
+ 372017 words of memory out of 3000000
+ 18413 multiletter control sequences out of 15000+50000
  43261 words of font info for 102 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 47i,12n,69p,2227b,303s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 47i,12n,69p,2227b,340s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
 ve/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/ty
 pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/
@@ -1106,9 +1110,9 @@ pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texm
 f-texlive/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-texlive/fonts/typ
 e1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.
 pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on propuesta_tesis.pdf (36 pages, 4094027 bytes).
+Output written on propuesta_tesis.pdf (36 pages, 4114623 bytes).
 PDF statistics:
- 339 PDF objects out of 1000 (max. 8388607)
+ 350 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 168 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 173 words of extra memory for PDF output out of 10000 (max. 10000000)
 

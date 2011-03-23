@@ -91,6 +91,7 @@ de no cumplirse con las especificaciones iniciales.
 
 
 \subsection{Elección}
+El Plan Estratégico del Programa Nacional de Desarrollo Tecnológico Industrial y Calidad 2005 - 2015 \cite{Col05} identifica 5 \textit{tecnologías} con mucho potencial en el área de la electrónica, estas son: Microelectrónica, Diseño y construcción de circuitos integrados, Diseño digital con FPGAs. PCB multicapa, dispositivos de montaje superficial. Aunque todos ellos no representan líneas de estudio, todas hacen parte del mismo gran tema: Diseño y fabricación de sistemas embebidos, se nota cierto desconocimiento en el tema ya que separan el área de la microelectrónica y el diseño de circuitos integrados, en realidad la microelectrónica estudia el diseño y fabricación de ASICs; las otras tecnologías en realidad no lo son, el diseño de PCBs, uso de dispositivos de montaje superficial y uso de FPGAs, no representan líneas de investigación, sino herramientas útiles para la implementación de sistemas digitales; esto demuestra la desconexión que existe entre los entes generadores de políticas y la academia. 
 
 
 \subsubsection{Niveles de complejidad de la tecnología}
@@ -138,6 +139,11 @@ Para determinar el estado de la industria electrónica en Colombia, se creó la em
 La tendencia moderna en los programas académicos a la utilización de herramientas de alto nivel para la enseñanza en áreas afines al desarrollo de dispositivos digitales \cite{JH09}  ocasiona que los profesionales no adquieran las habilidades necesarias para completar la cadena concepción - diseño - implementación y operación, en la mayoría de los casos se generan habilidades para la concepción y el diseño a alto nivel y dejan los otros pasos en manos de herramientas especializadas y/o a empresas asiáticas. Esta situación resulta la más atractiva desde el punto de vista económico, ya que no es necesario adquirir maquinaria costosa ni contratar personal calificado para operarlas; sin embargo, limita la generación de empleo local a personas con un nivel de formación alto \cite{AG10} generando desempleo en las personas menos capacitadas. Según John Hall presidente y CEO de Linux International `` algunas facultades preparan a la gente en el uso de productos en vez de tecnologías de nivel básico'' \cite{JH09}. Esta situación unida al abandono de la implementación hace que la dependencia con las empresas manufactureras asiáticas aumente cada vez más.
 
 Por otro lado, en muchas instituciones educativas de poca consolidación se utilizan tecnologías y metodologías de diseño obsoletas (Familias 74XXX o 40XXX, lenguaje ensamblador, mapas de karnaugh), esto unido a programas académicos centrados en el análisis y no el diseño, donde el paso final es la simulación y el personal docente no tiene ninguna experiencia en el sector productivo; origina una deficiencia de habilidades necesarias para realizar el proceso completo para el diseño de dispositivos, lo que se traduce en profesionales que no disponen de las herramientas necesarias para resolver los problemas del país y al mismo tiempo competir con los productos asiáticos.  
+
+\subsubsection{Centros de Desarrollo Tecnológico}
+
+Según el XII encuentro Colombia compite (patrocinado por el Ministerio de Comercio Industria y Turismo - 2010) el sector electrónico cuenta con solo un centro de desarrollo el CIDEI (Centro de Investigación y Desarrollo de la Industria Electro Electrónica e Informática), el cual ha sido beneficiado con recursos cercanos a los mil millones de pesos para la ejecución de proyectos de desarrollo empresarial y con 1200 millones para proyectos de desarrollo tecnológico. Proporciona 2 servicios a la comunidad: Diseño, fabricación y montaje de PCBs y capacitación. Los conocimientos generados en estos proyectos no son difundidos a las universidades ni a la sociedad de forma gratuita, todo lo contrario, se proporcionan cursos de no muy buena calidad a precios altos, lo que limita la difusión de estos conocimientos a quien pueda pagar por ello, lo que no es muy justo, debido a que estos poryectos han sido financiados con dineros públicos; por otro lado, la Universidad Nacional proporcionó la capacitación de estos proyectos, lo que indica que este centro no genera conocimiento propio y los temas centro de sus proyectos ya han sido tratados por varias universidades del pais. En conclusión este centro de desarrollo no ha cumplido con su labor de creación de conocimiento y difusión del mismo; los servicios que presta este centro han sido cubiertos en el presente estudio utilizando una pequeña fracción de sus recursos. El caracter abierto de esta propuesta ha generado una mayor difusión de os conocimientos ya que está siendo integrada en las asignaturas del área de electrónica digital en las principales universidades del país.
+
 
 
 \subsubsection{Conclusión}
@@ -189,12 +195,15 @@ En la actualidad existe una gran oferta de este tipo de dispositivos a nivel mun
 \end{figure}
 
 
+\subsubsection{conclusiones}
+En la actualidad es posible adquirir dispositivos semiconductores y demás componentes necesarios para la fabricación de sistemas digitales, sin embargo, para poder competir en precios con productos del mercado asiático, es necesario entender la dinámica de su industra manufacturera, y establecer relaciones con los proveedores de bienes y servicios en esta región. El mercado asiático se ha especializado en el aprovechamiento de recursos y posee diferentes niveles de calidad de los componentes y productos, por esta razón, es posible encontrar teléfonos celulares desde USD \$10 hasta los más costosos de cientos de USDs; los bajos costos son posibles gracias al reciclaje de componentes, una gran cantidad de trabajadores desmontan circuitos integrados y componentes de dispositivos desechados, y son re-utilizados en nuevos productos, el nivel de reciclaje es tan alto que únicamente las placas de circuito impreso son descartadas; obviamente la confiabilidad de estos dispositivos es menor que la de los dispositivos nuevos, por lo cual es muy importante contar con fuentes de suministros confiables. Por otro lado, en el mercado asiático es posible conseguir dispositivos semiconductores que no se conocen en occidente, y normalmente son mas baratos que productos similares de compañías reconocidas mundialmente, sin embargo, muchos de estos dispositivos se encuentran disponibles únicamente para ciudadanos chinos, lo que hace impescindible el establecimiento de relaciones con facilitadores asiáticos.
 
 \subsection{Adopción}
 
 En esta etapa se utilizarán las plataformas comerciales mencionadas anteriormente y las herramientas de desarrollo abiertas para: explorar las diferentes alternativas de implementación; entender y aplicar la metodología de diseño adoptada internacionalmente; generación de conocimiento sobre el uso de las herramientas de desarrollo. 
 
 Los dispositivos comerciales con grandes niveles de producción son un buen punto de partida para el estudio de la arquitectura de sistemas digitales que utilizan SoCs, ya que están optimizadas (en número de componentes) para ser utilizadas en una aplicación específica, gracias a esto su costo es muy bajo (en comparación con plataformas de desarrollo). Por otro lado, es posible encontrar estos dispositivos en el mercado local; por lo anterior, este tipo de plataformas reduce de forma considerable la inversión necesaria para realizar las actividades de esta etapa.
+
 
 \subsubsection{Metodología}
 Se utilizará ingeniería inversa para determinar como están construidos, como funcionan y como son programados los productos adquiridos. Esta tarea no se ejecutará en un determinado instante de tiempo, ya que el estudio se realizó de forma gradual, cada vez que se trataba un nuevo tópico se repetía el proceso con un producto que permitiera su estudio. 
@@ -505,73 +514,50 @@ En esta etapa se adquirieron las siguientes habilidades:
    \subitem Técnicas de montaje manual.
    \subitem Metodología para el diseño e implementación de tarjetas electrónicas.
    \subitem Diseño de protocolo de pruebas.
-   \subitem 
  \item Adaptación del sistema operativo Linux a una nueva plataforma.
- \item 
- \item 
- \item 
 \end{itemize}
-
 
 \subsubsection{Aplicaciones Académicas Realizadas}
 Durante esta etapa (que se realiza de forma continua cada vez que se desea incluir un nuevo tema de estudio) se desarrollaron una serie de trabajos de grado a nivel de pregrado en las universidades Nacional de Colombia, de los Andes e Industrial de Santander y se diseñó un nuevo curso llamado Sistemas Embebidos y fué dictado en varias ocasiones como electiva en la Universidad de los Andes. Se ayudo a dos egresados de la carrera de Ingeniería Electrónica en la creación de la empresa \textit{EM Electrónica}, la cual, utilizando prototipo diseñados por el autor de este trabajo, suministraron las herramientas que fueron utilizadas en los cursos del área de electrónica digital en el departamento de ingeniería eléctrica y electrónica de la Universidad Nacional de Colombia. A continuación se resumen los trabajo realizados durante esta etapa:
 
 \begin{itemize}
- \item Tesis de pregrado 
-    \subitem UIS: \cite{SBME07}
-    \subitem UNAL:\cite{DODM04} 
-    \subitem ULA: 
- \item Tesis de Posgrado
-    \subitem 
-    \subitem 
-    \subitem 
- \item Artículos
-    \subitem \cite{CC05} \cite{CC09} \cite{CC06b} \cite{CCOS06} \cite{ICCC06} \cite{JEFS05} \cite{CC08}
-    \subitem \cite{CC11c} \cite{CC08c}    \cite{CC11}\cite{CC11b}\cite{CC11d}\cite{CC11e}\cite{CC07}
-    \subitem 
-    \subitem 
+ \item Tesis de pregrado: UIS: \cite{SBME07}, UNAL:\cite{DODM04} ULA: 
+ \item Tesis de Maestría: \cite{NR11}
+ \item Artículos \cite{CC05} \cite{CC09} \cite{CC06b} \cite{CCOS06} \cite{ICCC06} \cite{JEFS05} \cite{CC08} \cite{CC11c} \cite{CC08c} \cite{CC11}\cite{CC11b}\cite{CC11d}\cite{CC11e}\cite{CC07}
 \end{itemize}
 
 Todos los productos académicos mencionados tienen como característica el desarrollo de placas de circuito impreso y la utilización de los conocimientos adquiridos durante este estudio. Inicialmente, las placas de circuito impreso fueron diseñadas con herramientas comerciales debido a la falta de una herramienta abierta, en los últimos dos años el desarrollo de la herramienta \textit{Kicad} permitió la eliminación de estas herramientas propietarias; a partir de ese momento solo se utilizaron herramientas abiertas en todo el flujo de diseño.
 
+\subsubsection{Metodología para la apropiación de conocimiento y generación de nuevos productos}
+En la figura \ref{soc_reverse_flow} se resumen los pasos que se siguieron con las diferentes arquitecturas (CPUs) estudiadas; estas actividades conforman una metodología que minimiza el costo de inversión al utilizar software libre y productos de consumo masivo; adicionalmente, puede ser aplicada a cualquier dispositivo comercial y la curva de aprendizaje es tal que los pasos en las útimas CPUs estudiadas se realizaron en menos de un mes, mientras que la primera tomó cerca de 1 año. En el portal web \textit{linuxencaja} se encuentran aplicaciones que ahorran tiempo en la realización de estas tareas y se proporcionan los archivos de diseño que pueden modificarse para ser utilizado en la realización de nuevos productos.
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[scale=.55]{./images/SoC_reverse.pdf}
+  \caption{Flujo de actividades } \label{soc_reverse_flow}
+\end{figure}
+
+
 \subsubsection{Conclusiónes}
-La fabricación de placas de circuito impreso "a la medida" permite reducir el costo final de un dispositivo digital; en su proceso de diseño y fabricación intervienen diferentes personas con diversos niveles de formación, lo que la hace muy atractivo como actividad generadora de empleo. La situación actual de las empresas manufactureras del país (solo 2) no permite la producción a grandes escalas ya que en el país no se cuenta con empresas que suministren componentes electrónicos a precios competitivos (los impuestos locales producen un sobre-costo de cerca del 26\%). En el país se pueden construir prototipos de muy buena calidad, por lo que la mejor opción es la fabricación local del prototipo y la producción en masa en el exterior.
+La fabricación de placas de circuito impreso a la medida permite reducir el costo final de un dispositivo digital; en su proceso de diseño y fabricación intervienen diferentes personas con diversos niveles de formación, lo que la hace muy atractivo como actividad generadora de empleo. La situación actual de las empresas manufactureras del país (solo 2) no permite la producción a grandes escalas ya que en el país no se cuenta con empresas que suministren componentes electrónicos a precios competitivos (los impuestos locales producen un sobre-costo de cerca del 26\%). En el país se pueden construir prototipos de muy buena calidad, por lo que la mejor opción es la fabricación local del prototipo y la producción en masa en el exterior.
+
+\subsection{Aplicación}
+
+En esta etapa se aplican los conocimientos adquiridos previamente son incorporados a la academia 
+
+\subsubsection{En la Academia}
+
+Se diseñó un nuevo programa académico que sigue los lineamientos de la iniciativa CDIO (Concebir, Diseñar, Implementar y Operar) creada por el  Massachusetts Institute of Technology (MIT) con ayuda de industriales, ingenieros e industriales con el objeto de desarrollar una nueva visión de la educación en ingeniería; en el capítulo \ref{ch:education} se detalla las características de este programa, el cual fué implementado en el Departamento de ingeniería eléctrica y electrónica de la Universidad Nacional de Colombia en las asignaturas del área de electrónica digital con el fín de formar profesionales con las habilidades necesarias para desarrollar productos tecnológicos basados en esta tecnoogía, el proceso de aplicación duró dos años y actualmente es el programa oficial en dicha institución; los cambios generados debido a su aplicación son sorprendentes y se evidencian en la calidad de los trabajos de grado donde se pasó del uso de tabletas experimentales o protoboards, placas de prototipado o stripboards y micro-controladores de 8 bits al uso de placas de circuito impreso diseñadas específicamente para la aplicación y el uso de SoC de 32 bits y sistemas operativos.Estudiantes consultados sobre la pertinencia de esta nueva metodología de enseñanza manifiestan que concuerda con sus espectativas y les proporciona herramientas que pueden utilizar en el mundo real y que los motiva a crear nuevos productos que den solución a problemas reales ya sea como empleados en empresas ya constituidas o en nuevas empresas creadas por ellos. Esta visión contrasta fuertemente con la forma de pensar de egresados anteriores, los cuales, no veían a la electrónica digital como línea de trabajo.
+
+
+\subsubsection{En la Industria}
+
+En el campo comercial, se trabajó con la empresa emQbit (creada como parte de este estudio) con el objetivo de evaluar el impacto del uso de esta tecnología en la industria Colombiana; dicha compañía está formada por 2 ingenieros electrónicos, tres ingenieros de sistemas, y un contador. 
 
 
 
 
-Aplicaciones Realizadas
-
- Game Boy de Nintendo + Charmedlabs Xport
-Académicas
-Osciloscopio Digital utilizando FPAAs
-Automatización de un Puente grúa a escala.
-Control Adaptativo Embebido
-Control de un horno de reflujo para componentes de montaje superficial.
-Dispositivo de visualización de variables que suministra el computador de un automóvil.
-Comerciales
-Adquisición de datos para medición de calidad de energía.
-Plataforma robótica didáctica.
- Chumby
-Registro de aceleración de vehiculos para compañías de seguros.
-Sistema de seguimiento vehicular.
- Porta Retrato Digital
-Monitor de signos vitales.
-Diccionario basado en Wikipedia.
-Menú electrónico y consola de juegos.
-
-
-
-Actividades Realizadas
-
- Transferencia de conocimientos a la academia.
- Desarrollo de técnicas de fabricación de prototipos.
- Aplicación de metodologías de diseño en la solución de problemas.
- Consideraciones de diseño para cumplir normas internacionales. 
- Diseño de aplicaciones comerciales y académicas.
- Contacto con empresas manufactureras locales y asiáticas para fabricación de PCBs.
-
-
+Desarrollo de soluciones a problemas locales; uso de metodologías de diseño en la concepción, diseño e implementación de sistemas digitales utilizando la tecnología; utilización de procesos de fabricación adaptados al entorno local; enseñanza de metodologías de diseño y procesos de fabricación en centros de educación consolidados.
 
 Productos Comerciales
 
@@ -585,24 +571,12 @@ Productos Comerciales
  Switch de 4 canales de radio frecuencia (TESAMERICA).
 
 
-Productos Académicos
-
- Plataformas de desarrollo para:
-CPLD
-FPGAs
-Procesadores ARM
-Robótica
-Linux Embebido
-Codiseño HW/SW y Linux.
  Programa académico para la enseñanza de sistemas digitales utilizando tecnología de punta que crea las habilidades necesarias para concebir, diseñar, implementar y operar dispositivos digitales modernos.
  Definición del concepto hardware copyleft y su utilización como herramienta en la enseñanza de diseño de sistemas embebidos.
 
 
 
 
-
-\subsubsection{Aplicación}
-Desarrollo de soluciones a problemas locales; uso de metodologías de diseño en la concepción, diseño e implementación de sistemas digitales utilizando la tecnología; utilización de procesos de fabricación adaptados al entorno local; desarrollo de proyectos académicos utilizando esta tecnología.
 
 
 Uso de metodologías de diseño en la concepción, diseño
@@ -625,7 +599,11 @@ digitales.
 
 
 
-\subsubsection{Difusión y Desarrollo}
+\subsection{Difusión y Desarrollo}
+
+ que presta servicios a las carreras de Mecatrónica y sistemas. La Universidad Nacional es la centro de formación profesional más importante del país y es punto de referencia de la mayoría de centros educativos y de organismos gubernamentales que fijan políticas educativas; esta posición privilegiada permite 
+
+
 Vinculación de la academia para incluir los conocimientos generados en los programas académicos de las carreras relacionadas; capacitación a la industria local sobre el uso de la tecnología, las metodologías de diseño y procesos de producción; creación de una comunidad que utilice, mejore y aumente el conocimiento generado; hacer que el conocimiento generado en los pasos anteriores este disponible a todos los interesados; dar a conocer los procesos, productos y conocimientos creados a los generadores de políticas de estado.
 
 Aumento de la demanda de productos, bienes y servicios relacionados; compra de maquinaria que permita la fabricación masiva de forma local; diseño de nuevos componentes (Circuitos Integrados, IPs, software CAD); creación de políticas gubernamentales que protejan la producción local; participación activa de la academia en la solución de problemas y en la formulación de políticas de gobierno relacionadas.
