@@ -619,8 +619,6 @@ Los aportes del presente trabajo a la transferencia de este componente de la tec
 \end{itemize}
 
 
-
-
 \subsubsection{Orga-ware}
 Tareas de \textit{orga-ware} en la creación de dispositivos digitales
 
@@ -645,49 +643,40 @@ En la figura \ref{meth_flow} se muestran los 6 etapas que componen la metodologí
   \caption{Etapas de la metodología propuesta para la transferencia tecnológica y de conocimientos en el área de diseño de sistemas embebidos} \label{meth_flow}
 \end{figure}
 
-Definir las necesidades del mercado.
-Búsqueda de una tecnología adecuada.
-Modificación de la tecnología para adaptarse a las condiciones locales (económica, social, política y cultural)
-Demostrar el valor de la tecnología en términos sociales y económicos.
-Implementar físicamente el proyecto.
-Difundir la tecnología a sectores relevantes de la sociedad incluyendo productores y consumidores.
-
-
-
+A continuación se describirán brevemente las etapas de la metodología; en el capítulo \ref{ch:embedded} se realiza una descripción detallada de las actividades realizadas en cada una de ellas. Las primeras etapas elección, adquisición y adaptación están relacionadas con el contenido a ser transferido, mientras que la Absorción y asimilación, aplicación y difusión están relacionadas con la aplicación del conocimiento.
 
 \subsubsection{Elección}
-Identificación del estado de la plataforma tecnológica existente para identificar facilidades y necesidades; identificación de niveles de complejidad de la tecnología; selección de una alternativa que pueda implementarse y de resultados a mediano y corto plazo con no muy altas inversiones de capital. definir objetivos 
+En la primera etapa se evalúa el estado de la plataforma tecnológica existente para identificar facilidades y necesidades; con esta información se búsca una tecnología que pueda ser implementada con el estado actual de la plataforma tecnológica; se identificarán los niveles de complejidad de dicha tecnología para determninar una alternativa que pueda implementarse y de resultados a mediano y corto plazo con no muy altas inversiones de capital.
 
+% Modificación de la tecnología para adaptarse a las condiciones locales (económica, social, política y cultural)
+% Demostrar el valor de la tecnología en términos sociales y económicos.
+% Implementar físicamente el proyecto.
+% Difundir la tecnología a sectores relevantes de la sociedad incluyendo productores y consumidores.
 
-Adquisición + Adaptación =  Adopción.
 \subsubsection{Adquisición}
-Adquisición de plataformas adecuadas de desarrollo HW y SW; identificación de herramientas de desarrollo HW y SW y su origen (abierto/cerrado). 
+En esta etapa se adquieren equipos que utilicen la tecnología que se desea transferir; gracias a que el campo de aplicación de esta tecnología involucra una gran parte de las actividades humanas, es fácil obtener dispositivos comerciales que la utilizan, por lo que no es necesario realizar ningún tipo de acuerdo con proveedores extranjeros. Se realizará la adquisición de plataformas adecuadas de desarrollo HW y SW y se identificarán las herramientas de desarrollo HW y SW que permitan el estudio y desarrollo de nuevas aplicaciones.
 
 \subsubsection{Adaptación}
 La adaptación se presenta cuando la sociedad encuentra posible y deseable realizar cambios para involucrar usos particulares de la tecnología; es un proceso dinámico que esta formado por \cite{KAJS08}: una etapa inicial donde se proporcionan procedimientos adecuados para la transferencia física; seguida de una fase donde se proporciona conocimiento, habilidades, datos, y las herramientas necesarias para la evaluación; una etapa de planeación, diseño e implementación del sistema de transferencia, planes y estrategias.
 
-Para determinar si es posible y conveniente el uso de las nuevas tecnologías en la industria y la academia nacionales, se realizarán una serie de actividades encaminadas a adquirir conocimiento y habilidades que permitan operar y programar los dipositivos digitales adquiridos previamente. Para esto se diseñó una metodología que permite el estudio gradual de diferentes tópicos asociados a esta tecnología (arquitectura, programación básica, generación de aplicaciones); la primera etapa consiste en la adquisición de un dispositivo comercial que permita realizar el estudio deseado; a continuación, con el uso de ingeniería inversa se identificará su arquitectura, las herramientas y los métodos para cambiar su funcionamiento y se desarrollarán métodos para generación de aplicaciones similares a la original. El siguiente paso consiste en la creación o adaptación de técnicas de fabricación que pemitan el diseño y construcción local de plataformas que tengan la misma funcionalidad y permitan su estudio, fácil adaptación y desarrollo de aplicaciones; en este punto, cuando ya se cuenta con los conocimientos para desarrollar aplicaciones propias, se transmiten estos conocimientos a la academia y a la industria  para que hagan parte de sus procesos de enseñanza y de diseño respectivamente; finalmente se realizará la documentación del proceso de diseño de las plataformas de desarrollo, de las aplicaciones y del proceso de diseño, toda esta información será distribuida bajo el esquema de licencias \textit{Creative Commons} (CC) BY-SA: atribución (BY), se permite la distribución dando crédito al autor; compartir de la misma forma (SA) exige que todo trabajo derivado del uso de proyectos que con este esquema de licencias deben tener la misma licencia de los trabajos originales. La unión del siftware abierto utilizado para diseñar las placas de circuito impreso e implementar sus aplicaciones unida a este esquema de licencias crea un  
+Para determinar si es posible y conveniente el uso de las nuevas tecnologías en la industria y la academia nacionales, se realizarán una serie de actividades encaminadas a adquirir conocimiento y habilidades que permitan operar y programar los dipositivos digitales adquiridos previamente. Para esto se diseñó una metodología que permite el estudio gradual de diferentes tópicos asociados a esta tecnología (arquitectura, metodologías de diseño, programación básica, generación de aplicaciones, producción); la primera etapa consiste en la \textbf{adquisición} de un dispositivo comercial que permita realizar el estudio deseado; a continuación, con el uso de ingeniería inversa se identificará su arquitectura, las herramientas y vías para cambiar su funcionamiento, también se desarrollarán métodos para generación de aplicaciones similares a la original (\textbf{adaptación}). El siguiente paso consiste en la creación o adaptación de técnicas de fabricación que permitan el diseño y construcción local de plataformas que tengan la misma funcionalidad y permitan su estudio, fácil adaptación y desarrollo de aplicaciones; en este punto, cuando ya se cuenta con los conocimientos para desarrollar aplicaciones propias, se transmitirán estos conocimientos a la academia y a la industria para que hagan parte de sus procesos de enseñanza y de diseño y producción respectivamente; finalmente se realizará la documentación del proceso de diseño de las plataformas de desarrollo, de las aplicaciones y del proceso de diseño, toda esta información será distribuida bajo el esquema de licencias \textit{Creative Commons} (CC) BY-SA: atribución (BY), se permite la distribución dando crédito al autor; compartir de la misma forma (SA) exige que todo trabajo derivado del uso de proyectos que con este esquema de licencias deben tener la misma licencia de los trabajos originales. 
 
-Utilización de plataformas de desarrollo para estudio de metodologías de diseño; uso de ingeniería inversa para entender la arquitectura, funcionamiento y programación de productos comerciales; utilización de productos comerciales para adaptarlos a problemas locales (Integración); tomar conciencia de la importancia del uso de esta tecnología.
+La unión del software abierto utilizado para diseñar las placas de circuito impreso e implementar sus aplicaciones, unida al esquema de licencias \textbf{CC} define el novedoso concepto del \textit{hardware copyleft} (ver capítulo \ref{ch:common}) el cual se puede considerar como una extensión del proyecto de software libre aplicado al desarrollo hardware; con esto se pretende eliminar las barreras que existen en la difusión de conocimientos que han existido hasta el momento, en donde es necesario pagar por ellos y colocar a disposición de cualquier interesado herramientas que le permitan entender y aplicar esta tecnología, ahorrando tiempo y dinero en el proceso.
 
+La tarea más importante en la fase de difusión, es la creación de una comunidad que utilice los conocimientos generados en todo el proceso, proporcione nuevo conocimiento que haga parte de este bien común y depure las herramientas y el contenido del mismo; por esto, es importante vincular a personas con diferentes intereses y niveles de formación; la primera comunidad se formó con profesores y estudiantes de las universidades UNAL, UIS, USTA, ULA, UDFJC, y las empresas emQbit y CorreLibre, los cuales han realizado hasta el momento la documentación de proyectos realizados durante los cursos del área de digitales; la pubicación de todos los archivos necesarios para estudiar, entender, reproducir y programar 6 plataformas de desarrollo \textit{copyleft hardware}. Para ayudar a la comunicación entre usuarios del recurso y a la difusión de sus proyectos, se creó una lista de correo donde se pueden discutir temas relacionados y se dispone de una wiki en donde se documenta el proceso de diseño de los proyectos; se configuró un servidor que permite subir archivos, trabajo multi-usuario y control de revisiones, lo que facilita el trabajo en equipo para usuarios que se encuentran separados geográficamente. Estas facilidades se encuentran disponibles a quien esté interesado en el portal web público \textit{linuxencaja} (http://www.linuxencaja.net).
+
+En la primera etapa se utilizarán los dispositivos comerciales mencionandos anteriormente para el estudio y adaptación de metodologías de diseño; utilizando ingeniería inversa, se identificará su arquitectura, funcionamiento y formas de programación; finalmente, se realizarán ejercicios académicos para crear aplicaciones que den solucion a problemas locales; lo anterior con el fín de identificar las ventajas de esta tecnología y su importancia en el desarrollo tecnológico del país. En el capítulo \ref{ch:embedded}, se realiza una descripción detallada de las actividades realizadas en esta etapa.
 
 \subsubsection{Absorción y asimilación}
 
-1. Aceptación de la tecnología
-2. Motivación para hacerla exitosa.
-3. Habilidad para soportar la tecnología: Infraestructura técnica: hardware, sistemas operativos, redes, tecnologías de la comunicación, aplicaciones SW; Infraestructura humana: Habilidades y conocimientos necesarios para desarrollar, mantener, y manipular 	 
-Habilidad para adaptar tecnologías al entorno local y futuro desarrollo.
-
-Mecanismos de aprendizaje : Aprendizaje al operar y cambiar la nueva tecnología. El aprendizaje puede adquirirse pro entrenamiemto, seleccionando y contratando personal calificado o buscando posibles soluciones en recursos publicados  
-
-
-La asimilación garantiza la transferencia y es entendida como las rutinas y procesos de la organizacion que permitem analizar, procesar, interpretar y entender la tecnología. 
-
-Desarrollo o adaptación de metodologías de diseño y procesos de fabricación; desarrollo de productos tecnológicos propios; desarrollo de proyectos académicos utilizando esta tecnología.
-
+Los procesos de absorción y asimilación describen la capacidad del receptor para utilizar la tecnología y permiten identificar la efectividad y el éxito de la transferencia; la absorción es la capacidad del receptor de absorver tecnologia de un sector y la asimilación es la capacidad de asimilar (analizar, procesar, interpretar y entender) y utilizar la tecnología absorvida en otro sector \cite{KAJS08}. Es importante generar dos tipos de habilidades para soportar la tecnología: Técnicas: hardware, sistemas operativos, redes, tecnologías de la comunicación, aplicaciones SW; Humanas: Habilidades y conocimientos necesarios para desarrollar, mantener, y manipular; habilidad para adaptar tecnologías al entorno local y futuro desarrollo. Es crucial contar con mecanismos de aprendizaje que permitan adquirir los conocimientos necesarios para operar y cambiar la nueva tecnología; este aprendizaje puede adquirirse por entrenamiento, seleccionando y contratando personal calificado o buscando posibles soluciones en recursos publicados. En este estudio se creó un banco de proyectos que pueden ser utilizados como base de futuros desarrollos y se diseñaron cursos para la enseñanza de metodologías de diseño y procesos de fabricación de la nueva tecnología. Para la transferencia en diseño de sistemas embebidos se desarrollaron o adaptaron metodologías de diseño y procesos de fabricación que culminaron en el diseño e implementación de productos tecnológicos propios y en el desarrollo de proyectos académicos.
 
 \subsubsection{Aplicación}
-(Uso del conocimiento)
+En esta etapa se incorporará y aplicará el conocimiento adquirido y asimilado en las etapas anteriores a la industria y a la academia; se realizará una prueba piloto con la participación de la Universidad Nacional de Colombia y la empresa Colombiana radicada en Bogotá emQbit ltda. 
+
+La línea de electrónica digital del Departamento de Ingeniería Eléctrica y Electrónica de la Universidad Nacional de Colombia esta compuesta por cuatro asignaturas: Electrónica digital I, Electrónica Digital II, Sistemas Embebidos y Técnicas de integración; los cambios se hicieron de forma gradual iniciando con la asignatura electrónica digital I, el siguiente período académico con Electrónica digital II y así hasta llegar a técnicas de integración, tomando un período de 2 años en su implementación completa. En el capítulo \ref{ch:education} se explica detalladamente el contenido de estas asignaturas y como se aplicacó la iniciativa CDIO\footnote{\textbf{C}oncebir, \textbf{D}iseñar, \textbf{I}mplementar y \textbf{O}perar, iniciativa creada por el  Massachusetts Institute of Technology (MIT) con ayuda de industriales, ingenieros e industriales con el objeto de desarrollar una nueva visión de la educación en ingeniería, y ha sido adoptada por un creciente número de instituciones académicas a lo largo del mundo}
+
+ La incorporación de este conocimiento a la academia se realizará en un periodo de 2 años y durante períodos de seis meses se los programas académicos de las asignaturas relacionadas con el diseño digital, (Uso del conocimiento)
 Desarrollo de soluciones a problemas locales; uso de metodologías de diseño en la concepción, diseño e implementación de sistemas digitales utilizando la tecnología; utilización de procesos de fabricación adaptados al entorno local; enseñanza de metodologías de diseño y procesos de fabricación en centros de educación consolidados.
 
 

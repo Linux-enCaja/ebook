@@ -1,34 +1,38 @@
 \select@language {spanish}
-\contentsline {chapter}{\numberline {1}Sistemas Embebidos}{5}
-\contentsline {section}{\numberline {1.1}Introducci\'on}{5}
-\contentsline {subsection}{\numberline {1.1.1}Qu\'e es un sistema Embebido}{5}
-\contentsline {subsection}{\numberline {1.1.2}Arquitectura}{5}
-\contentsline {subsection}{\numberline {1.1.3}Aplicaciones}{7}
-\contentsline {subsection}{\numberline {1.1.4}Metodolog\IeC {\'\i }a de Dise\~no}{7}
-\contentsline {section}{\numberline {1.2}Implementaci\'on de la Metodolog\IeC {\'\i }a Propuesta Para la Transferencia Tecnol\'ogica en Dise\~no de Sistemas Embebidos}{9}
-\contentsline {subsection}{\numberline {1.2.1}Elecci\'on}{9}
-\contentsline {subsubsection}{Niveles de complejidad de la tecnolog\IeC {\'\i }a}{9}
-\contentsline {subsubsection}{Diagn\'ostico de la Industria Local}{12}
-\contentsline {subsubsection}{Diagn\'ostico de la Academia}{12}
-\contentsline {subsubsection}{Conclusi\'on}{13}
-\contentsline {subsection}{\numberline {1.2.2}Adquisici\'on}{14}
-\contentsline {subsubsection}{Herramientas de Desarrollo}{14}
-\contentsline {subsubsection}{Dispositivos Semiconductores}{15}
-\contentsline {subsubsection}{Dispositivos disponibles}{16}
-\contentsline {subsection}{\numberline {1.2.3}Adopci\'on}{17}
-\contentsline {subsubsection}{Metodolog\IeC {\'\i }a}{17}
-\contentsline {subsubsection}{Arquitectura: SoC, Memorias, perif\'ericos}{18}
-\contentsline {subsubsection}{Programaci\'on}{20}
-\contentsline {subsubsection}{Programaci\'on utilizando el puerto JTAG}{23}
-\contentsline {subsubsection}{Aplicaciones \textit {Standalone} vs Aplicaciones con sistema operativo}{23}
-\contentsline {subsubsection}{Conocimientos Adquiridos}{25}
-\contentsline {subsubsection}{conclusiones}{25}
-\contentsline {subsection}{\numberline {1.2.4}Absorci\'on}{26}
-\contentsline {subsubsection}{Plataformas de Desarrollo }{26}
+\contentsline {chapter}{\numberline {1}Sistemas Embebidos}{3}
+\contentsline {section}{\numberline {1.1}Introducci\'on}{3}
+\contentsline {subsection}{\numberline {1.1.1}Qu\'e es un sistema Embebido}{3}
+\contentsline {subsection}{\numberline {1.1.2}Arquitectura}{3}
+\contentsline {subsection}{\numberline {1.1.3}Aplicaciones}{5}
+\contentsline {subsection}{\numberline {1.1.4}Metodolog\IeC {\'\i }a de Dise\~no}{5}
+\contentsline {section}{\numberline {1.2}Implementaci\'on de la Metodolog\IeC {\'\i }a Propuesta Para la Transferencia Tecnol\'ogica en Dise\~no de Sistemas Embebidos}{7}
+\contentsline {subsection}{\numberline {1.2.1}Elecci\'on}{7}
+\contentsline {subsubsection}{Niveles de complejidad de la tecnolog\IeC {\'\i }a}{8}
+\contentsline {subsubsection}{Diagn\'ostico de la Industria Local}{10}
+\contentsline {subsubsection}{Diagn\'ostico de la Academia}{11}
+\contentsline {subsubsection}{Centros de Desarrollo Tecnol\'ogico}{11}
+\contentsline {subsubsection}{Conclusi\'on}{12}
+\contentsline {subsection}{\numberline {1.2.2}Adquisici\'on}{12}
+\contentsline {subsubsection}{Herramientas de Desarrollo}{12}
+\contentsline {subsubsection}{Dispositivos Semiconductores}{14}
+\contentsline {subsubsection}{Dispositivos disponibles}{14}
+\contentsline {subsubsection}{conclusiones}{15}
+\contentsline {subsection}{\numberline {1.2.3}Adaptaci\'on}{16}
+\contentsline {subsubsection}{Metodolog\IeC {\'\i }a}{16}
+\contentsline {subsubsection}{Arquitectura: SoC, Memorias, perif\'ericos}{17}
+\contentsline {subsubsection}{Programaci\'on}{19}
+\contentsline {subsubsection}{Programaci\'on utilizando el puerto JTAG}{22}
+\contentsline {subsubsection}{Aplicaciones \textit {Standalone} vs Aplicaciones con sistema operativo}{22}
+\contentsline {subsubsection}{Conocimientos Adquiridos}{24}
+\contentsline {subsubsection}{conclusiones}{24}
+\contentsline {subsection}{\numberline {1.2.4}Absorci\'on y Asimilaci\'on}{25}
+\contentsline {subsubsection}{Plataformas de Desarrollo }{25}
 \contentsline {subsubsection}{T\'ecnicas de Fabricaci\'on}{30}
-\contentsline {subsubsection}{Proceso de dise\~no y fabricaci\'on}{31}
-\contentsline {subsubsection}{Aplicaciones Acad\'emicas Realizadas}{32}
+\contentsline {subsubsection}{Proceso de dise\~no y fabricaci\'on}{30}
+\contentsline {subsubsection}{Aplicaciones Acad\'emicas Realizadas}{30}
 \contentsline {subsubsection}{Metodolog\IeC {\'\i }a para la apropiaci\'on de conocimiento y generaci\'on de nuevos productos}{32}
 \contentsline {subsubsection}{Conclusi\'ones}{32}
-\contentsline {subsection}{\numberline {1.2.5}Aplicaci\'on}{33}
-\contentsline {subsection}{\numberline {1.2.6}Difusi\'on y Desarrollo}{34}
+\contentsline {subsection}{\numberline {1.2.5}Aplicaci\'on}{32}
+\contentsline {subsubsection}{En la Academia}{33}
+\contentsline {subsubsection}{En la Industria}{34}
+\contentsline {subsection}{\numberline {1.2.6}Difusi\'on y Desarrollo}{35}

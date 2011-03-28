@@ -26,7 +26,7 @@ En la actualidad, cada vez con m\'as frecuencia, se notan signos de la invasi\'o
 
 La aparici\'on de los dispositivos digitales en nuestras vidas no es una revoluci\'on, por el contrario es una consecuencia l\'ogica de la evoluci\'on de las relaciones entre los usuarios y los sistemas digitales, los cuales se han caracterizado por una democratizaci\'on de acceso a los equipos y una descentralizaci\'on de la infraestructura subyacente. En el primer per\'{\i}odo (1950-1970) se compart\'{\i}an recursos a trav\'es de terminales, es decir, se contaba con un computador para muchos usuarios. En los 80s, la aparici\'on de los computadores personales impulsa la relaci\'on personal entre los computadores y usuarios. El los 90s la aparici\'on de Internet permiti\'o compartir recursos a trav\'es de un computador personal. Internet no es m\'as que un paso adelante hacia la llegada de los sistemas de computaci\'on ubicua. La misma filosof\'{\i}a de simplificaci\'on y descentralizaci\'on prevalece hasta hoy y nos conducir\'a a una situaci\'on donde miles de dispositivos computacionales estar\'an disponibles para realizar nuestras tareas y se compartir\'an recursos a trav\'es de redes m\'as intrincadas que Internet. En conclusi\'on se pasar\'a de un esquema en el que se ten\'{\i}a un computador para muchos usuarios a uno en el que se tienen muchos (tal vez miles o millares) elementos computacionales para servir a un usuario.
 
-\subsection{Porqué los Sistemas Embebidos?}
+\subsection{¿Por qué los Sistemas Embebidos?}
 
 \subsubsection{Mercado de los Sistemas Embebidos}
 

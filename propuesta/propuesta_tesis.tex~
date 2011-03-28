@@ -6,7 +6,7 @@
 \usepackage[usenames,dvipsnames]{color}
 
 \usepackage{tikz}
-\usetikzlibrary{shapes,arrows}identify candidate models
+\usetikzlibrary{shapes,arrows}
 
 \usepackage{colortbl}
 
@@ -55,15 +55,16 @@ basicstyle=\footnotesize}
 
 
 \parindent=1cm            
-     \input title
+%     \input title
 \tableofcontents
-%      \input intro
-%      \input technology_transfer
-%      \input description
-     \input embedded
+%     \input intro
+%     \input technology_transfer
+%     \input description
 %     \input commons
 %     \input education
+     \input embedded
 %     \input platform
+%     \input emqbit
 
 \bibliography{biblio}
 
@@ -96,6 +97,11 @@ Y despues decir que se hizo para resolver el problema.
 
 
 !!!30 minutos !!!!  15 diapositivas
+
+¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿
+
+
+¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡
 
 
 

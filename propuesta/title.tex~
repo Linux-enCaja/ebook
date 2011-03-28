@@ -1,5 +1,5 @@
 % Title Page
-\title{METODOLOGÍA PARA LA TRANSFERENCIA TECNOLÓGICA Y DE CONOCIMIENTOS EN EL ÁREA DE SISTEMAS EMBEBIDOS\\
+\title{METODOLOGÍA PARA LA TRANSFERENCIA TECNOLÓGICA Y DE CONOCIMIENTOS EN EL DISEÑO DE SISTEMAS EMBEBIDOS\\
         \bigskip \bigskip \bigskip
         \bigskip \bigskip \bigskip
        UNIVERSIDAD NACIONAL DE COLOMBIA\\
@@ -14,24 +14,19 @@
 \thispagestyle{empty}
 \parindent0pt
 METODOLOGÍA PARA LA TRANSFERENCIA TECNOLÓGICA Y DE CONOCIMIENTOS EN EL DISEÑO DE SISTEMAS EMBEBIDOS\\
-\textsc{Author:} C.~Camargo\\
+\textsc{Autor:} C.~Camargo\\
 \textsc{e-mail:} cicamargoba@unal.edu.co\\
 
 \vfill
 
-Copyright \copyright 2005\ Universidad Nacional de Colombia\\
+Universidad Nacional de Colombia\\
 \texttt{http://www.unal.edu.co}\\
 
-Permission is granted to copy, distribute and/or modify this document
-under the terms of the \textsc{gnu} Free Documentation License, version
-1.2, with no invariant sections, no front-cover texts, and no back-cover
-texts. A copy of the license is included in the end.\\
+Se garantiza el permiso para distribuir, y/o modificar este documento \\
+bajo los términos de la licencia Creative Commons CC BY-SA \\
 
-This document is distributed in the hope that it will be useful, but
-without any warranty; without even the implied warranty of merchantability
-or fitness for a particular purpose.\\
 
-Published by the Universidad Nacional de Colombia\\
+Publicado por la Universidad Nacional de Colombia\\
 
 
 \newpage
