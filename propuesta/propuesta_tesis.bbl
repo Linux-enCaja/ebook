@@ -1,21 +1,51 @@
 \begin{thebibliography}{10}
 
-\bibitem{Wik}
-Wikipedia.
-\newblock Wikipedia, the free encyclopedia.
-\newblock http://en.wikipedia.org/.
+\bibitem{WM91}
+{Mark Weiser}.
+\newblock The {C}omputer for the 21st {C}entury.
+\newblock {\em http://www.ubiq.com/hy\'ertext/weiser/SciAmDraft3.html}.
 
-\bibitem{Cor05}
-{Luis Alejandro Cort\'es}.
-\newblock {\em Verification and {S}cheduling {T}echniques for {R}eal-{T}ime
-  {E}mbedded {S}ystems}.
-\newblock PhD thesis, Link\"opings universitet Institute of Technology, 2005.
+\bibitem{MW93}
+{M. Weiser}.
+\newblock Some computer science issues in ubiquitous computing.
+\newblock {\em Commun. ACM}, 1993.
 
-\bibitem{Col05}
-Colciencias.
-\newblock Plan {E}strat\'egico del {P}rograma {N}acional de {D}esarrollo
-  {T}ecnol\'ogico {I}ndustrial y {C}alidad 2005 - 2015.
-\newblock Technical report, Colciencias, 2005.
+\bibitem{DS02}
+{D. Servant}.
+\newblock Combining amorphous computing and reactive agent-based systems: a
+  paradigm for pervasive intelligence?
+\newblock In {\em First international joint conference on {A}utonomous agents
+  and muktiagent systems: part 1}, 2002.
+
+\bibitem{Mok90}
+Joel Mokyr.
+\newblock {\em The {L}ever of {R}iches, {T}echnological {C}reativity and
+  {E}conomic {P}rogress.}
+\newblock Oxford University Press, 1990.
+
+\bibitem{Arr62}
+Kenneth Arrow.
+\newblock {\em Economic {W}elfare and the {A}llocation of {R}esources for
+  {I}nvention}.
+\newblock Princeton University Press, 1962.
+
+\bibitem{Mar04}
+H\'ector Mart\'{\i}nez.
+\newblock Apropiaci\'on de conocimiento en {C}olombia. {E}l caso de los
+  contratos de importaci\'on de tecnolog\'{\i}a.
+\newblock {\em Revista Cuadernos de Econom\'{\i}a}, 2004.
+
+\bibitem{ETPoSSI(09}
+{European Technology Platform on Smart Sistem Integration (EPoSS)}.
+\newblock European {T}echnology {P}latform on {S}mart {S}ystems {I}ntegration.
+  {S}trategic {R}esearch {A}genda 2009.
+\newblock 2009.
+
+\bibitem{MTRR07}
+{M. Tovar} and {R. Rodr\'{\i}guez}.
+\newblock P{ROSPECTIVA} {Y} {VIGILANCIA} {TECNOL}\'{O}{GICA} {DE} {LA}
+  {ELECTR}\'{O}{NICA} {EN} {COLOMBIA}.
+\newblock Master's thesis, Universidad Nacional de Colombia, 2007.
 
 \bibitem{MO90}
 {M. Odedra}.
@@ -42,158 +72,16 @@ Colciencias.
   {E}lectr\'onica en el {S}ector {A}gr\'{\i}cola.
 \newblock Technical report, COLCIENCIAS, 2007.
 
-\bibitem{MTRR07}
-{M. Tovar} and {R. Rodr\'{\i}guez}.
-\newblock P{ROSPECTIVA} {Y} {VIGILANCIA} {TECNOL}\'{O}{GICA} {DE} {LA}
-  {ELECTR}\'{O}{NICA} {EN} {COLOMBIA}.
-\newblock Master's thesis, Universidad Nacional de Colombia, 2007.
+\bibitem{Mo94}
+{M. odedra-straub}.
+\newblock The {M}yths and {I}llusions of {T}echnology {T}ransfer.
+\newblock {\em IFIP World Congress Proceedings}, August 1994.
 
-\bibitem{Mar04}
-H\'ector Mart\'{\i}nez.
-\newblock Apropiaci\'on de conocimiento en {C}olombia. {E}l caso de los
-  contratos de importaci\'on de tecnolog\'{\i}a.
-\newblock {\em Revista Cuadernos de Econom\'{\i}a}, 2004.
-
-\bibitem{JH09}
-{Jon Hall}.
-\newblock P{OR} {GRANDES} {QUE} {SEAN}...: {ASEGURE} {EL} {FUTURO} {DE} {SU}
-  {NEGOCIO}.
-\newblock {\em Linux magazine,}, ISSN 1576-4079(58):92, 2009.
-
-\bibitem{AG10}
-{A. Grove}.
-\newblock How {A}merica {C}an {C}reate {J}obs.
-\newblock
-  http://www.businessweek.com/magazine/content/10\_28/b4186048358596.htm, May
-  2010.
-
-\bibitem{Sta99}
-R.~M. Stallman.
-\newblock {\em The {GNU} {O}perating {S}ystem and the {F}ree {S}oftware
-  {M}ovement {V}oices from the {O}pen {S}ource {R}evolution}.
-\newblock O'Reilly and Associates, 1999.
-
-\bibitem{SBME07}
-{S. Banguero} and {M. Erazo}.
-\newblock {\em Plataforma de {D}esarrollo para {S}istemas {E}mbebidos {B}asada
-  en el {G}ame{B}oy {A}dvance}.
-\newblock Universidad Industrial de Santander, 2007.
-
-\bibitem{CC}
-{C. Camargo}.
-\newblock E{CB}\_{A}{T}91 y {ECBOT} {P}lataformas {A}biertas para el desarrollo
-  de {S}istemas {E}mbebidos.
-\newblock {\em URL: http://wiki.emqbit.com/free-ecb-at91}.
-
-\bibitem{CC06}
-{C. Camargo}.
-\newblock First {C}olombian {L}inux {SBC} runs {D}ebian.
-\newblock URL:
-  http://www.linuxfordevices.com/c/a/News/First-Colombian-Linux-SBC-runs-Debia%
-n/, 2006.
-
-\bibitem{CC08b}
-{C. Camargo}.
-\newblock E{CBOT}: {A}rquitectura {A}bierta para {R}obots {M}\'obiles.
-\newblock {\em VII conferencia Iberoamericana en Sistemas, Cibern\'etica e
-  Inform\'atica}, 2008.
-
-\bibitem{CC08}
-{C. Camargo}.
-\newblock E{CBOT} y {ECB}\_{A}{T}91 {P}lataformas {A}biertas para el {D}ise\~no
-  de {S}istemas {E}mbebidos y {C}o-{D}ise\~no {HW}/{SW}.
-\newblock {\em VIII Jornadas de Computaci\'on Reconfigurable y Aplicaciones,
-  Madrid Espa\~na}, September 2008.
-
-\bibitem{CC07}
-{C. Camargo}.
-\newblock E{CBOT}: {A}rquitectura {A}bierta para {R}obots {M}\'oviles.
-\newblock {\em IEEE Colombian Workshop on Circuits and Systems}, 2007.
-
-\bibitem{CC11c}
-{C. Camargo}.
-\newblock S{IE}: {P}lataforma {H}ardware copyleft para la {E}nse\~nanza de
-  {S}istemas {D}igitales.
-\newblock {\em XVII Workshop de Iberchip, Bogot\'a Colombia}, February 2011.
-
-\bibitem{DODM04}
-{D. Ovalle} and {D. Mendez}.
-\newblock {\em Dise\~no e {I}mplementaci\'on de equipo {B}\'asico de
-  {L}aboratorio {U}tilizando {S}istemas {E}mbebidos y {FPAA}s.}
-\newblock Universidad Nacional de Colombia, 2004.
-
-\bibitem{NR11}
-{N. Rosas}.
-\newblock Dise\~no e {I}mplementaci\'on de un {S}istema {E}mbebido para la
-  {A}dquisici\'on y {T}ransmisi\'on de {S}e\~nales {B}iom\'edicas a {T}rav\'es
-  de la {R}ed {C}elular.
-\newblock Master's thesis, 2011.
-
-\bibitem{CC05}
-{C. Camargo}.
-\newblock Implementaci\'on de {S}istemas {D}igitales {C}omplejos {U}tilizando
-  {S}istemas {E}mbebidos.
-\newblock {\em Memorias del XI Workshop de Iberchip ISBN 959-261-105-X}, 2005.
-
-\bibitem{CC09}
-{C. Camargo}.
-\newblock Control de {S}istemas {P}aralelos {I}nspirado en la {N}aturaleza.
-\newblock {\em Colombian Workshop on Circuits and Systems}, 2009.
-
-\bibitem{CC06b}
-{C. Camargo}.
-\newblock Linux como herramienta de {D}esarrollo de {S}istemas {E}mbebidos.
-\newblock {\em XII Workshop de Iberchip, San Jose}, 2006.
-
-\bibitem{CCOS06}
-{C. Camargo} and {O. Sanchez}.
-\newblock Linux embebido como herramienta para realizar reconfiguraci\'on
-  parcial.
-\newblock {\em XII Workshop Iberchip}, 2006.
-
-\bibitem{ICCC06}
-{I. Castillo}, {C. Camargo}, and {C. Perez}.
-\newblock Automatizaci\'on de un puente gr\'ua a escala, mediante una
-  plataforma embebida la cual soporta multiprogramaci\'on.
-\newblock {\em XII Workshop Iberchip}, 2006.
-
-\bibitem{JEFS05}
-{J. Espinosa}, {F. Segura}, and {C. Camargo}.
-\newblock Evoluci\'on de un {A}rreglo de {C}\'elulas {U}tilizando {A}lgoritmos
-  {G}en\'eticos.
-\newblock {\em Memorias del XI Workshop de Iberchip ISBN 959-261-105-X}, 2005.
-
-\bibitem{CC08c}
-{C. Camargo}.
-\newblock E{CBOT} y {ECB}\_{A}{T}91 {P}lataformas {A}biertas para el {D}ise\~no
-  de {S}istemas {E}mbebidos y {C}o-dise\~no {HW}-{SW}.
-\newblock {\em VIII Jornadas de Computaci\'on Reconfigurable y Aplicaciones},
-  2008.
-
-\bibitem{CC11}
-{C. Camargo}.
-\newblock Hardware copyleft como {H}erramienta para la {E}nse\~nanza de
-  {S}istemas {E}mbebidos.
-\newblock {\em Simposio Argentino de Sistemas Embebidos}, 2011.
-
-\bibitem{CC11b}
-{C. Camargo}.
-\newblock Hardware copyleft como {H}erramienta para la {E}nse\~nanza de
-  {S}istemas {E}mbebidos.
-\newblock {\em Congreso Argentino de Sistemas Embebidos CASE 2011, Buenos Aires
-  Argentina}, March 2011.
-
-\bibitem{CC11d}
-{C. Camargo}.
-\newblock Metodolog\'{\i}a {P}ara la {T}ransferencia {T}ecnol\'ogica en la
-  {I}ndustria {E}lectr\'onica {B}asada en {S}oftware {L}ibre y {H}ardware
-  {C}opyleft.
-\newblock {\em XVII Workshop de Iberchip, Bogot\'a Colombia}, February 2011.
-
-\bibitem{CC11e}
-{C. Camargo}.
-\newblock Low {C}ost {P}latform for {E}volvable-{B}ased {B}oolean {S}ynthesis.
-\newblock {\em IEEE Latin American Symposium on Circuits and Systems (LASCAS
-  2011), Bogot\'a Colombia}, February 2011.
+\bibitem{KAJS08}
+{K. Al-Mabrouk} and {J. Soar}.
+\newblock Building a {F}ramework for {U}nderstanding and {I}mproving
+  {I}nformation {T}echnology {T}ransfer {P}rocess in the {A}rab {C}ountries.
+\newblock {\em 9th IBIMA Conference: Information Management in Modern
+  Organisations - Trends \& Challenges}, 2008.
 
 \end{thebibliography}

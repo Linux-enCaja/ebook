@@ -558,56 +558,53 @@ En el desarrollo de sus actividades emQbit encontró las siguientes dificultades:
 \begin{itemize}
  \item Falta de personal con experiencia en desarrollo hardware y en creación de aplicaciones: Es notoria la carencia de habilidades relacionadas con el diseño y montaje de sistemas digitales en la mayoría de profesionales entrevistados por esta empresa para ser parte de su grupo de desarrolladores, en general desconocen el proceso de fabricación y las herramientas necesarias para diseñar una placa de circuito impreso, no son capaces de leer esquemáticos ni de buscar componentes adecuados para realizar una función determinada, lo que refleja la dependencia de la academia hacia las plataformas de desarrollo comerciales. Por otro lado, se detectan fallas de concepto o desconocimiento de partes del proceso de diseño, originado en algunos casos por el uso de herramientas propietarias que automatizan y ``esconden'' etapas de configuración de las plataformas. Por esta razón, emQbit contrata a egresados de la Universidad Nacional de Colombia en la modalidad de pasantes, algunos de ellos en la actualidad hacen parte de su junta directiva.
 
- \item Escaza oferta de productos, bienes y servicios relacionados con la manufactura de sistemas digitales: Como se mencionó anteriormente, en Colombia solo existen 2 empresas con la capacidad de proporcionar los servicios necesarios para la producción, montaje automático y pruebas de placas de circuito impreso utilizando componentes modernos; desafortunadamente, sus costos son muy elevados en comparación con los de las industrias manufactureras asiáticas, esto se debe a la baja demanda de la industria colombiana 
+ \item Escasa oferta de productos, bienes y servicios relacionados con la manufactura de sistemas digitales: Como se mencionó anteriormente, en Colombia solo existen 2 empresas con la capacidad de proporcionar los servicios necesarios para la producción, montaje automático y pruebas de placas de circuito impreso utilizando componentes modernos; desafortunadamente, sus costos son muy elevados en comparación con los de las industrias manufactureras asiáticas, esto se debe a la baja demanda de la industria colombiana y a los altos impuestos que deben pagar los dispositivos semiconductores y demás insumos del proceso (26 \% o más). A pesar de estos inconvenientes, la fabricación de prototipos a nivel local es una buena opción desde el punto de vista económico, ya que la diferencia en costos no es muy grande, y es posible resolver dudas o problemas de forma ágil, gracias a que se trabaja en la misma zona horaria y se utiliza el mismo idioma. 
 
- \item Desconfianza de la industria local por los productos producidos en el país: 
- \item Problemas relacionados con la financiación para desarrollo de nuevos productos.
- \item Altos impuestos a productos importados.
- \item Competencia en desigualdad de condiciones con productos importados.
+ \item Desconfianza de la industria local por los productos producidos en el país: Los problemas descritos anteriormente generan un clima de desconfianza hacia los productos nacionales; ya que una gran parte de los productos existentes utilizan tecnologías obsoletas con procesos de fabricación de mala calidad, no cumplen con normas internacionales y no fueron sometidos a rigurosos procesos de pruebas; al parecer, a una gran parte de los industriales nacionales que utilizan el mercado asiático para suplir sus necesidades es más importante el costo que la calidad\footnote{el mercado asiático es famoso por el suministro de productos con diferentes niveles de calidad, que pueden ir desde artículos como los celulares de gama alta de Nokia, Apple, etc, hasta los celulares de 10 USD que funcionan de forma deficiente con una vida útil de varias semanas}. Desde nuestro punto de vista, la desconfianza se presenta por la ausencia de productos locales, por el desconocimiento de los planes académicos de las universidades y por la falta de profesionales con la capacidad de diseñar y construir aplicaciones ``a la medida'' de las necesidades. 
+
+ \item Problemas relacionados con la financiación para desarrollo de nuevos productos: Es muy difícil encontrar entidades que financien el desarrollo de nuevos productos, la mayoría busca dispositivos terminados en fase de producción y no se encuentran interesados en invertir tiempo y dinero en nuevos desarrollos, esto es una consecuencia directa de la pérdida de capacidad de innovación en las empresas colombianas, donde no existen o fueron eliminados los departamentos de investigación y desarrollo (I+D); varias empresas consultadas cerraron sus departamentos de I+D debido a la existencia de productos asiáticos que se adaptaban a las necesidades del mercado, y a la ausencia de profesionales que mejoraran los productos existentes para que fueran competitivos con los productos extrajeros.
+
+ \item Competencia en desigualdad de condiciones con productos importados: Los impuestos a las importaciones de insumos para la fabricación de dispositivos digitales (más del 26 \%), la poca oferta de bienes y servicios relacionados con la manufactura y la falta de políticas gubernamentales que protejan la industria electrónica nacional han generado un clima ideal para que los productos tecnológicos de los países asiáticos desplacen la producción local. Es importante que se formulen políticas que protejan los productos nacionales, sin provocar un desabastecimiento de productos que aún no se generan localmente, para esto es muy importante indentificar los productos que son fabricados localmente y agrupar de forma adecuada a las empresas en la clasificación CIIU (Clasificación Industrial Internacional Uniforme). 
+
+%  \begin{itemize}
+%   \item División 30 Fabricación de maquinaria de oficina, contabilidad e informática.
+%     \subitem Clase 3000 Fabricación de maquinaria de oficina y contabilidad e informática.
+%   \item División 31 Fabricación de maquinaria y aparatos eléctricos ncp.
+%     \subitem Clase 3110 Fabricación de aparatos de distribución y control de la energía eléctrica.
+%     \subitem Clase 3120 Fabricación de aparatos de distribución y control de la energía eléctrica.
+%     \subitem Clase 3130 Fabricación de hilos y cables aislados.
+%     \subitem Clase 3140 Fabricación de acumuladores y de pilas eléctricas.
+%     \subitem Clase 3190 Fabricación de lámparas eléctricas y equipo de iluminación.
+%   \item División 32 Fabricación de equipo y aparatos de radio, televisión y comunicaciones.
+%     \subitem Clase 3210 Fabricación de tubos y válvulas electrónicas y de otros componentes electrónicos.
+%     \subitem Clase 3220 Fabricación de transmisores de radio y televisión y de aparatos para telefonía y telegrafía.
+%     \subitem Clase 3230 Fabricación de receptores de radio y televisión, de aparatos de grabación y de reproducción de sonido o de la imagen, y de productos conexos.
+%   \item División 33 Fabricación de instrumentos médicos, ópticos y de precisión y fabricación de relojes.
+%     \subitem Clase 3311 Fabricación de equipo médico y quirúrgico y de aparatos ortésicos y protésicos.
+%     \subitem Clase 3312 Fabricación de instrumentos y aparatos para medir, verificar, ensayar, navegar y otros fines, excepto equipo de control de procesos industriales.
+%     \subitem Clase 3313 Fabricación de equipo de control de procesos industriales.
+%     \subitem Clase 3320 Fabricación de instrumentos ópticos y de equipo fotográfico
+%     \subitem Clase 3330 Fabricación de relojes.
+%  \end{itemize}
+
+%   Esta clasificación no se encuentra actualizada ya que en el año 2007 el UNITED NATIONS DEPARTMENT OF ECONOMIC AND SOCIAL AFFAIRS STATISTICS DIVISION realizó las siguientes reformas :
+% 
+%   La división 30, seria desintegrada de la siguiente forma: Una parte pasaría a la estructura de una nueva división (fabricación de computadores y productos electrónicos y ópticos, en lo que respecta a la actividad de fabricación de computadores) y la otra pasaría a ser parte de la división 29 (en lo que respecta a la fabricación de equipos de oficina diferente a computadores).
+% 
+%   La división 31, presentaría la inclusión de nuevas clases, que relacionarían nuevas actividades como, por ejemplo: la fabricación de cables de fibra óptica y la fabricación de aparatos domésticos ( la cual contendría la mayoría de actividades comprendidas en la clase 2930 \textit{Fabricación de aparatos de uso doméstico} que desaparecería de la división 29).
+% 
+%   Estas dos nuevas clasificaciones incluirían los productos realizados por la empresa emQbit
+
 \end{itemize}
 
+\subsubsection{Conclusiones}
+La adaptación de esta metodología al entorno académico reveló la deficiencia de los programas académicos del área de electrónica digital en la Universidad Nacional de Colombia, vale la pena mencionar que esta universidad ha ocupado los primeros puestos en los exámenes de estado \textit{SABER PRO} (antes ECAES), por lo que es de esperarse que los programas académicos de otras universidades presenten problemas similares. La falla más notoria que se encontró en este proceso fué la ausencia de una metodología de diseño unificada durante la enseñanza de las asignaturas que componen el área; cada curso tenía su metodología y no existía una relación entre los contenidos de las asignaturas, lo que dejaba en los estudiantes la sensación de que se trataban de temas diferentes. Por otro lado, el uso de tecnologías obsoletas desviaba el enfoque del estudio a tediosas tareas manuales de minimización y de implementación, restando importancia a la concepción y validación del diseño. Errores conceptuales en el diseño de los cursos hicieron que un lenguaje de descripción de hardware como el Verilog o VHDL (los cuales son solo herramientas) fueran el centro de atención ignorando por completo temas relacionados con la arquitectura de computadores. Al final de estos dos cursos, los estudiantes no veían la utilidad práctica de los conocimientos adquiridos ya que nunca fueron enfrentados a la solución de problemas reales, esto unido a la falta de herramientas de desarrollo hicieron que muchos de ellos no consideraran la eectrónica digital como herramienta para solución de problemas. El último curso del área (micro-controladores) proporcionaba herramientas que permitían dar solución a problemas relaes, por este motivo, los estudiantes opinaban que era la única útil de la línea; sin embargo, la falta de bases en arquitectura de computadores hacía que se pensara en el micro-controlador como una caja negra sin entender completamente su arquitectura, esto unido al uso de versiones de evaluación de programas propietarios limitaba el entendimiento del proceso de diseño.
 
+Los cambios introducidos en estas asignaturas utilizan una única metodología de diseño, los problemas son atacados de la misma forma pero con herramientas cada vez más complejas pero más sencillas de utilizar. El uso de plataformas de desarrollo abiertas permite estudiar su arquitectura y entender completamente los flujos de diseño; adicionalmente, pueden ser utilizadas como punto de partida de desarrollos comerciales. Esto unido a la experiencia de diseño de circuitos impresos en 3 asignaturas, hizo cambiar completamente la mentalidad de los estudiantes sobre el uso de estas tecnologías, haciendo que realizaran búsquedas de problemas que puedan ser solucionados con estas herramientas, lo que constituye la base de la innovación. Todo esto representa una transferencia exitosa de esta investigación a la academia ya que fué posible que esta utilizara los conocimientos generados, modificando otras metodologías y los usuarios se dieran cuenta de la importancia del uso de esta tecnología. 
 
+Por otro lado, desde el punto de vista comercial, se comprobó que la universidad puede incentivar la creación de empresas en sus egresados, siempre y cuando se proporcionen herramientas para que puedan crear productos novedosos, y se brinde soporte técnico para la utilización de estas herramientas en la solución de problemas locales. La empresa emQbit, es la única empresa en Colombia que realiza el proceso de diseño completo desde la creación de la placa de circuito impreso hasta la programación de la aplicación final. Sin embargo, los problemas mencionados anteriormente dificultan su operación, lo que hace concluir que es necesario una alianza entre este tipo de empresas, las universidades, los generadores de políticas gubernamentales y los \textit{angeles inversores}\footnote{La empresa emQbit ha podido sostenerse durante este tiempo gracias a la inversión de capital de empresas privadas.} para financiar el desarrollo de productos comercializables. 
 
-Productos Comerciales
-
- Control de tornos industriales.
- Plataforma robótica didáctica.
- Monitoreo de Temperatura.
- Sistema de seguimiento vehicular.
- Sistema de medición de la calidad del suministro de energía eléctrica.
- Monitor de signos vitales (UNAL).
- Sistema de comunicación encriptada utilizando el canal GSM (MICROENSAMBLE).
- Switch de 4 canales de radio frecuencia (TESAMERICA).
-
-
- Programa académico para la enseñanza de sistemas digitales utilizando tecnología de punta que crea las habilidades necesarias para concebir, diseñar, implementar y operar dispositivos digitales modernos.
- Definición del concepto hardware copyleft y su utilización como herramienta en la enseñanza de diseño de sistemas embebidos.
-
-
-
-
-
-
-Uso de metodologías de diseño en la concepción, diseño
-e implementación de sistemas digitales utilizando la
-tecnología.
-Utilización de procesos de fabricación adaptados al
-entorno local.
-Desarrollo de soluciones a problemas locales.
-Control de tornos industriales; Plataforma robótica didáctica; Monitoreo de
-Temperatura; Sistema de seguimiento vehicular; Sistema de medición de
-la calidad del suministro de energía eléctrica; Monitor de signos vitales;
-sistema de comunicación encriptada utilizando el canal GSM; switch de 4
-canales de radio frecuencia.
-Desarrollo de proyectos académicos utilizando esta
-tecnología.
-Plataformas de desarrollo para: FPGAs, proc. ARM; Linux Embebido;
-codiseño HW/SW. Programa académico para la enseñanza de sistemas
-digitales.
-
-
-
+Desde el punto de vista de la transferencia tecnológica podemos decir que en este caso se realizó una transferencia exitosa de la universidad a la empresa, ya que los conocimientos fueron absorvidos y asimilados y fueron utilizados para dar solución a problemas locales. 
 
 \subsection{Difusión y Desarrollo}
 

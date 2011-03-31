@@ -4,221 +4,230 @@
 
 \chapter{Descripción de la Tesis}
 
-Con el presente trabajo se busca contribuir a mejorar la plataforma tecnológica del pais y proponer una metodología que permita realizar una transferencia tecnológica exitosa en el área de los sistemas embebidos, proporcionando herramientas que contribuyan al desarrollo de la industria electrónica nacional; actualicen los planes de estudio y las metodologías de diseño utilizadas en las asignaturas del área de la electrónica digital; y generen un conocimiento en la Concepción, Diseño, Implementación y Operación de sistemas embebidos. Basado en la creencia que el conocimiento es un bien común y su acceso debe ser garantizado a todos los interesados, se trabajará en la definición del concepto "hardware copyleft" o hardware libre (Inspirado en el movimiento de Software libre y Código abierto \cite{GGR02}) y su papel facilitador del proceso de transferencia tecnológica. Adicionalmente, se creará un \textit{recurso común} representado en el conocimiento necesario para diseñar aplicaciones comercializables utilizando herramientas hardware y software abiertas; y de esta forma, atraer a personas o instituciones interesadas en su uso académico o comercial y con disponibilidad en el trabajo colectivo, para formar una comunidad que trabaje en la difusión, mejoramiento, y crecimiento de este recurso. 
-
-
-Platform technology is a term for technology that enables the creation of products and processes that support present or future development. It establishes the long-term capabilities of research & development institutes
-
-
-	
-	Plataforma de Química Combinatoria
-Las Plataformas Tecnológicas son unidades de apoyo a la investigación equipadas con la última tecnología y dotadas de personal altamente especializado. La novedad del campo de aplicación hace que un enfoque de servicio clásico no sea el adecuado y comporta una participación activa de la Plataforma en proyectos de investigación, redes de Plataformas, proyectos de desarrollo tecnológico y convenios que van más allá en tiempos y complejidad del servicio puntual.
-
-Las Plataformas se caracterizan por su valor estratégico que justifica su disponibilidad para el colectivo de I+D tanto público como privado y conforman un centro tecnológico de referencia altamente competitivo para la industria farmacéutica y de química fina.
-
-Las principales actividades que se desarrollan dentro de las Plataformas Tecnológicas son de servicios científicos de apoyo a la investigación, desarrollo tecnológico (puesta a punto de nuevas metodologías) y de participación en proyectos de investigación.
-Por otro lado, en el contexto del GrupUB, se han creado Plataformas Biotecnológicas Mixtas participadas por los Servicios Científico-Técnicos (SCT-UB), Instituto de Investigaciones Biomédicas August Pi i Sunyer (IDIBAPS), y el mismo PCB (Plataforma de Proteómica y Plataforma de Transcriptómica)
-
-Las plataformas estan estructuradas para ofrecer:
-# Servicios puntuales concretos.
-# Asesoramiento en la aplicación de las técnicas.
-# Alquiler de los espacios y equipamientos para uso en autoservicio.
-# Desarrollo de técnicas en colaboración para aplicarlas a los problemas concretos de los usuarios.
-
-En general, las actividades que se desarrollan dentro de las plataformas se pueden dividir en tres áreas:
-# Servicios científicos de apoyo a la investigación.
-# Desarrollo tecnológico (puesta a punto de nuevas metodologías).
-# Participación en proyectos de investigación mixtos (con empresas o grupos de investigación).
-
-
-
-http://www.pcb.ub.es/homepcb/live/es/p247.asp
-
-
-¿Qué es una Plataforma Tecnológica? 	Imprimir
-Las Plataformas Tecnológicas son agrupaciones de entidades de un sector concreto lideradas por la industria que se unen para definir una Agenda Estratégica de Investigación (Strategic Research Agenda, SRA) con la que dar respuesta a los problemas sectoriales, mejorando la competitividad e impulsando la investigación e innovación. Iniciativas que cuentan con el respaldo del Gobierno español.
-
-
-Plataforma tecnológica española de seguridad industrial.
-
-
-¿Qué son?
-Las Plataformas Tecnológicas Europeas abordan problemas estratégicos en aquellos casos en que
-lograr el crecimiento, la competitividad y la sostenibilidad futuros de Europa depende de avances
-tecnológicos decisivos. En ellas se dan cita todas las partes interesadas, dirigidas por la industria, para
-defi nir los objetivos de investigación y de desarrollo tecnológico a medio y largo plazo, así como para
-establecer una serie de directrices para su consecución. Lograr estos objetivos mejorará de manera
-signifi cativa la vida cotidiana de los ciudadanos europeos en numerosas áreas.
-Las Plataformas Tecnológicas desempeñan una función primordial para alinear mejor las prioridades
-de investigación de la UE con las necesidades de la industria. Abarcan la cadena completa del valor
-económico, con lo que se garantiza que los conocimientos generados mediante la investigación se
-transformen en tecnologías y procesos y, en defi nitiva, en productos y servicios comercializables.
-
-
-¿Por qué son importantes?
-Para seguir siendo competitiva, la industria europea necesita especializarse más en áreas de alta
-tecnología. Es preciso aumentar la inversión en investigación, mejorar la coordinación en toda Europa
-y elevar el contenido tecnológico de la actividad industrial. Las Plataformas Tecnológicas abordan
-estos desafíos gracias a:
-? La visión compartida de las partes interesadas;
-? El efecto positivo sobre una amplia gama de políticas;
-? La reducción de la fragmentación en las actividades de investigación
-
-La movilización de las fuentes de fi nanciación públicas y privadas.
-
-
-?La creación de unas Plataformas Tecnológicas europeas efi cientes puede ayudar a que la inversión
-europea en I+D consiga, de forma rápida y efi caz:
-? Hacer llegar las ventajas conseguidas hasta el ciudadano europeo;
-? Crear competitividad para nuestras empresas; y
-? Terminar con esa situación en que una elevada inversión en I+D de la UE genera, con
-frecuencia, resultados inferiores a los esperados?.
-
-
-Comité Consultivo Europeo de Investigación (EURAB)
-
-
-
-
-Las Plataformas Tecnológicas europeas son una agrupación de entidades interesadas en un sector concreto, lideradas por la industria, con el objetivo de definir una Agenda Estratégica de Investigación (siglas en inglés: SRA) sobre temas estratégicamente importantes y con una gran relevancia social, en los cuales lograr los objetivos europeos de crecimiento, competitividad y sostenibilidad dependen de los avances tecnológicos y de investigación a medio y largo plazo. Las Plataformas Tecnológicas se basan en la definición de una Agenda Estratégica de Investigación y en la movilización de la masa crítica de investigación y de esfuerzo innovador necesarios.
-
-
-
-
-1.- Concepto de Plataforma Tecnológica:
-La Plataformas Tecnológicas son una agrupación de entidades interesadas en un sector concreto,
-lideradas por la industria, con el objetivo de definir una Agenda Estratégica de Investigación (siglas
-en inglés: SRA) sobre temas estratégicamente importantes y con una gran relevancia social, en los
-cuales lograr los objetivos europeos de crecimiento, competitividad y sostenibilidad dependen de los
-avances tecnológicos y de investigación a medio y largo plazo.
-Las Plataformas Tecnológicas se basan en la definición de una Agenda Estratégica de Investigación
-y en la movilización de la masa crítica de investigación y de esfuerzo innovador necesarios.
-1.1.- Factores para el éxito de las Plataformas Tecnológicas:
-?? Principal entregable: Agenda Estratégica de Investigación
-?? Lideradas por la Industria y con objetivos relacionados con el crecimiento y la
-competitividad.
-?? Flexibilidad: no ?un tamaño sirve para todos?.
-?? Apertura y transparencia: reglas claras de participación1.
-?? Amplia implicación de diferentes entidades (industria, autoridades públicas,
-investigadores, sociedad civil, usuarios y consumidores, etc.)
-?? Valor añadido comunitario- beneficios significativos para diversas políticas
-comunitarias (medio ambiente, transporte, energía, etc.)
-?? Implicación de las autoridades nacionales
-?? Enfoque operativo desde las fases iniciales
-?? La intensa investigación es una precursora de la comercialización futura.
-?? Mercado potencial identificado para las tecnologías implicadas, cubriendo la cadena
-completa desde la investigación y el desarrollo tecnológico hasta la penetración
-futura a gran escala en el mercado.
-?? Movilización de financiación pública y privada (nacional, regional y privada,
-Programas Marco, Fondos Estructurales, BEI, Eureka)
-?? Educación y formación; diseminación.
-1.2.- Objetivos políticos estratégicos para la competitividad futura europea:
-?? Nuevas tecnologías que lleven al cambio radical en un sector, si se desarrollan y
-emplean apropiadamente y a tiempo (ej. Hidrógeno, nanotecnologías)
-?? Reconciliación de diferentes objetivos políticos con vistas al desarrollo sostenible (ej.
-Suministro de agua y saneamiento, genómica de plantas y biotecnología).
-?? Bienes y servicios públicos basados en nuevas tecnologías con grandes barreras de
-entrada y beneficio inseguro, pero con alto potencial económico y social (ej.
-Comunicaciones móviles e inalámbricas, medicinas innovadoras para Europa).
-?? Asegurar los avances tecnológicos necesarios para mantener el liderazgo en
-sectores de alta tecnología que tienen una gran importancia estratégica y económica
-para Europa (Ej. Aeronáutica, sistemas embebidos)
-?? Renovación, reavivación o reestructuración de sectores industriales tradicionales (ej.
-Acero)
-2.- Creación e implementación:
-
-
-Fundación Para el conocimiento Madrid
+% Con el presente trabajo se busca contribuir a mejorar la plataforma tecnológica del pais y proponer una metodología que permita realizar una transferencia tecnológica exitosa en el área de los sistemas embebidos, proporcionando herramientas que contribuyan al desarrollo de la industria electrónica nacional; actualicen los planes de estudio y las metodologías de diseño utilizadas en las asignaturas del área de la electrónica digital; y generen un conocimiento en la Concepción, Diseño, Implementación y Operación de sistemas embebidos. Basado en la creencia que el conocimiento es un bien común y su acceso debe ser garantizado a todos los interesados, se trabajará en la definición del concepto "hardware copyleft" o hardware libre (Inspirado en el movimiento de Software libre y Código abierto \cite{GGR02}) y su papel facilitador del proceso de transferencia tecnológica. Adicionalmente, se creará un \textit{recurso común} representado en el conocimiento necesario para diseñar aplicaciones comercializables utilizando herramientas hardware y software abiertas; y de esta forma, atraer a personas o instituciones interesadas en su uso académico o comercial y con disponibilidad en el trabajo colectivo, para formar una comunidad que trabaje en la difusión, mejoramiento, y crecimiento de este recurso. 
+% 
+% 
+% Platform technology is a term for technology that enables the creation of products and processes that support present or future development. It establishes the long-term capabilities of research & development institutes
+% 
+% 
+% 	
+% 	Plataforma de Química Combinatoria
+% Las Plataformas Tecnológicas son unidades de apoyo a la investigación equipadas con la última tecnología y dotadas de personal altamente especializado. La novedad del campo de aplicación hace que un enfoque de servicio clásico no sea el adecuado y comporta una participación activa de la Plataforma en proyectos de investigación, redes de Plataformas, proyectos de desarrollo tecnológico y convenios que van más allá en tiempos y complejidad del servicio puntual.
+% 
+% Las Plataformas se caracterizan por su valor estratégico que justifica su disponibilidad para el colectivo de I+D tanto público como privado y conforman un centro tecnológico de referencia altamente competitivo para la industria farmacéutica y de química fina.
+% 
+% Las principales actividades que se desarrollan dentro de las Plataformas Tecnológicas son de servicios científicos de apoyo a la investigación, desarrollo tecnológico (puesta a punto de nuevas metodologías) y de participación en proyectos de investigación.
+% Por otro lado, en el contexto del GrupUB, se han creado Plataformas Biotecnológicas Mixtas participadas por los Servicios Científico-Técnicos (SCT-UB), Instituto de Investigaciones Biomédicas August Pi i Sunyer (IDIBAPS), y el mismo PCB (Plataforma de Proteómica y Plataforma de Transcriptómica)
+% 
+% Las plataformas estan estructuradas para ofrecer:
+% # Servicios puntuales concretos.
+% # Asesoramiento en la aplicación de las técnicas.
+% # Alquiler de los espacios y equipamientos para uso en autoservicio.
+% # Desarrollo de técnicas en colaboración para aplicarlas a los problemas concretos de los usuarios.
+% 
+% En general, las actividades que se desarrollan dentro de las plataformas se pueden dividir en tres áreas:
+% # Servicios científicos de apoyo a la investigación.
+% # Desarrollo tecnológico (puesta a punto de nuevas metodologías).
+% # Participación en proyectos de investigación mixtos (con empresas o grupos de investigación).
+% 
+% 
+% 
+% http://www.pcb.ub.es/homepcb/live/es/p247.asp
+% 
+% 
+% ¿Qué es una Plataforma Tecnológica? 	Imprimir
+% Las Plataformas Tecnológicas son agrupaciones de entidades de un sector concreto lideradas por la industria que se unen para definir una Agenda Estratégica de Investigación (Strategic Research Agenda, SRA) con la que dar respuesta a los problemas sectoriales, mejorando la competitividad e impulsando la investigación e innovación. Iniciativas que cuentan con el respaldo del Gobierno español.
+% 
+% 
+% Plataforma tecnológica española de seguridad industrial.
+% 
+% 
+% ¿Qué son?
+% Las Plataformas Tecnológicas Europeas abordan problemas estratégicos en aquellos casos en que
+% lograr el crecimiento, la competitividad y la sostenibilidad futuros de Europa depende de avances
+% tecnológicos decisivos. En ellas se dan cita todas las partes interesadas, dirigidas por la industria, para
+% defi nir los objetivos de investigación y de desarrollo tecnológico a medio y largo plazo, así como para
+% establecer una serie de directrices para su consecución. Lograr estos objetivos mejorará de manera
+% signifi cativa la vida cotidiana de los ciudadanos europeos en numerosas áreas.
+% Las Plataformas Tecnológicas desempeñan una función primordial para alinear mejor las prioridades
+% de investigación de la UE con las necesidades de la industria. Abarcan la cadena completa del valor
+% económico, con lo que se garantiza que los conocimientos generados mediante la investigación se
+% transformen en tecnologías y procesos y, en defi nitiva, en productos y servicios comercializables.
+% 
+% 
+% ¿Por qué son importantes?
+% Para seguir siendo competitiva, la industria europea necesita especializarse más en áreas de alta
+% tecnología. Es preciso aumentar la inversión en investigación, mejorar la coordinación en toda Europa
+% y elevar el contenido tecnológico de la actividad industrial. Las Plataformas Tecnológicas abordan
+% estos desafíos gracias a:
+% ? La visión compartida de las partes interesadas;
+% ? El efecto positivo sobre una amplia gama de políticas;
+% ? La reducción de la fragmentación en las actividades de investigación
+% 
+% La movilización de las fuentes de fi nanciación públicas y privadas.
+% 
+% 
+% ?La creación de unas Plataformas Tecnológicas europeas efi cientes puede ayudar a que la inversión
+% europea en I+D consiga, de forma rápida y efi caz:
+% ? Hacer llegar las ventajas conseguidas hasta el ciudadano europeo;
+% ? Crear competitividad para nuestras empresas; y
+% ? Terminar con esa situación en que una elevada inversión en I+D de la UE genera, con
+% frecuencia, resultados inferiores a los esperados?.
+% 
+% 
+% Comité Consultivo Europeo de Investigación (EURAB)
+% 
+% 
+% 
+% 
+% Las Plataformas Tecnológicas europeas son una agrupación de entidades interesadas en un sector concreto, lideradas por la industria, con el objetivo de definir una Agenda Estratégica de Investigación (siglas en inglés: SRA) sobre temas estratégicamente importantes y con una gran relevancia social, en los cuales lograr los objetivos europeos de crecimiento, competitividad y sostenibilidad dependen de los avances tecnológicos y de investigación a medio y largo plazo. Las Plataformas Tecnológicas se basan en la definición de una Agenda Estratégica de Investigación y en la movilización de la masa crítica de investigación y de esfuerzo innovador necesarios.
+% 
+% 
+% 
+% 
+% 1.- Concepto de Plataforma Tecnológica:
+% La Plataformas Tecnológicas son una agrupación de entidades interesadas en un sector concreto,
+% lideradas por la industria, con el objetivo de definir una Agenda Estratégica de Investigación (siglas
+% en inglés: SRA) sobre temas estratégicamente importantes y con una gran relevancia social, en los
+% cuales lograr los objetivos europeos de crecimiento, competitividad y sostenibilidad dependen de los
+% avances tecnológicos y de investigación a medio y largo plazo.
+% Las Plataformas Tecnológicas se basan en la definición de una Agenda Estratégica de Investigación
+% y en la movilización de la masa crítica de investigación y de esfuerzo innovador necesarios.
+% 1.1.- Factores para el éxito de las Plataformas Tecnológicas:
+% ?? Principal entregable: Agenda Estratégica de Investigación
+% ?? Lideradas por la Industria y con objetivos relacionados con el crecimiento y la
+% competitividad.
+% ?? Flexibilidad: no ?un tamaño sirve para todos?.
+% ?? Apertura y transparencia: reglas claras de participación1.
+% ?? Amplia implicación de diferentes entidades (industria, autoridades públicas,
+% investigadores, sociedad civil, usuarios y consumidores, etc.)
+% ?? Valor añadido comunitario- beneficios significativos para diversas políticas
+% comunitarias (medio ambiente, transporte, energía, etc.)
+% ?? Implicación de las autoridades nacionales
+% ?? Enfoque operativo desde las fases iniciales
+% ?? La intensa investigación es una precursora de la comercialización futura.
+% ?? Mercado potencial identificado para las tecnologías implicadas, cubriendo la cadena
+% completa desde la investigación y el desarrollo tecnológico hasta la penetración
+% futura a gran escala en el mercado.
+% ?? Movilización de financiación pública y privada (nacional, regional y privada,
+% Programas Marco, Fondos Estructurales, BEI, Eureka)
+% ?? Educación y formación; diseminación.
+% 1.2.- Objetivos políticos estratégicos para la competitividad futura europea:
+% ?? Nuevas tecnologías que lleven al cambio radical en un sector, si se desarrollan y
+% emplean apropiadamente y a tiempo (ej. Hidrógeno, nanotecnologías)
+% ?? Reconciliación de diferentes objetivos políticos con vistas al desarrollo sostenible (ej.
+% Suministro de agua y saneamiento, genómica de plantas y biotecnología).
+% ?? Bienes y servicios públicos basados en nuevas tecnologías con grandes barreras de
+% entrada y beneficio inseguro, pero con alto potencial económico y social (ej.
+% Comunicaciones móviles e inalámbricas, medicinas innovadoras para Europa).
+% ?? Asegurar los avances tecnológicos necesarios para mantener el liderazgo en
+% sectores de alta tecnología que tienen una gran importancia estratégica y económica
+% para Europa (Ej. Aeronáutica, sistemas embebidos)
+% ?? Renovación, reavivación o reestructuración de sectores industriales tradicionales (ej.
+% Acero)
+% 2.- Creación e implementación:
+% 
+% 
+% Fundación Para el conocimiento Madrid
 
 
 \section{Objetivos}
 
 \subsubsection{Ojetivo Principal}
 
-Desarrollar una metodología para la transferencia tecnológica y de conocimientos en el área de Sistemas Embebidos y de esta forma contribuir a dar solución al problema del atraso tecnológico en Colombia.
+Desarrollar una metodología para la transferencia tecnológica y de conocimientos en el diseño de Sistemas Embebidos y de esta forma contribuir a dar solución al problema del atraso tecnológico en Colombia.
 
 \subsubsection{Objetivos Específicos}
 
 \begin{itemize}
-  \item Formulación de una metodología para la transferencia tecnológica y de conocimientos en el área de Sistemas Embebidos en Colombia.
-  \item Formulación de una metodología de Diseño y producción para Sistemas Embebidos aplicable en el entorno local.
-  \item Desarrollo de Plataformas Hardware abiertas que utilicen tecnología de punta basado en el concepto de ``Hardware copyleft''.
-  \item Identificación de las habilidades requeridas para los profesionales y técnicos en la Industria Electrónica para estar acorde con la tendencia de la industria electrónica mundial y formulación de recomenadaciones para la industria y los organismos gubernamentales encaminadas a mejora la productividad de la industria electrónica del país.
+  \item Formulación de una metodología para la transferencia tecnológica y de conocimientos en el área de diseño y fabricación de Sistemas Embebidos en Colombia que permita generar cambios globales de forma gradual (nivel ciudad, departamento, país) a partir de interacciones locales \footnote{no a nivel nacional ya que esto requiere cambio de políticas de estado y esto se encuentra fuera del alcance de este trabajo} (por ejemplo Universidad Nacional - empresa de base tecnológica, Universidad Nacional - Universidad de los Andes, empresa A - empresa B).
+
+  \item Formulación de una metodología de diseño y producción para Sistemas Embebidos aplicable en el entorno local y su respectiva aplicación y validación en un programa académico de un centro de formación superior consolidado y en una empresa de base tecnológica.
+
+  \item Generación de un recurso público basado en el conocimiento necesario para diseñar implementar y producir sistemas digitales que den solución a problemas locales y puedan ser comercializados. Parte de este recurso serán los archivos necesarios para entender, usar, reproducir y modificar plataformas hardware que utilicen tecnología de punta y clasifiquen en la definición de ``Hardware copyleft''.
+
+  \item Identificación de las habilidades requeridas por los profesionales en ingeniería electrónica para estar acorde con la tendencia de la industria electrónica mundial, creación de un programa académico que ayude al refuerzo de estas habilidades en las asignaturas relacionadas con el diseño digital y formulación de recomendaciones para la industria y los organismos gubernamentales encaminadas a mejorar la productividad de la industria electrónica del país.
+
+  \item Creación de herramientas de difusión que permitan el acceso de este recurso a cualquier sector de la sociedad que esté interesado.
+
 \end{itemize}
 
 \subsubsection{Resultados Esperados e Impacto}
 
-Con la realización de este proyecto se busca generar la base de un recurso de bien común representado por el conocimiento necesario para concebir, diseñar, implementar y operar sistemas digitales; administrado por una comunidad formada por personas o instituciones con disponibilidad para trabajo colectivo y sus acciones están basadas en el beneficio común. Utilizando como modelo el movimiento de Software Libre y código Abierto (FOSS) se definirá un movimiento de hardware libre (\textit{copyleft hardware}) que permita entender, modificar y distribuir (incluso para aplicaciones comerciales) una serie de plataformas hardware abiertas que pueden ser utilizadas en la implementación de aplicaciones comercializables en un amplio rango de campos. 
+Con la realización de este proyecto se busca generar la base de un recurso de bien común representado por el conocimiento necesario para concebir, diseñar, implementar y operar sistemas digitales; administrado/usado/mantenido/depurado/aumentado por una comunidad formada por personas o instituciones con disponibilidad para trabajo colectivo cuyas acciones están basadas en el beneficio común; se pretende vincular a esta comunidad a docentes y estudiantes de centros de formación y a industrias de base tecnológica de diferentes regiones del país. Utilizando como modelo el movimiento de software libre y código abierto (FOSS), se creará un movimiento similar pero aplicado al desarrollo hardware: \textit{copyleft hardware}. El esquema de licencias de los proyectos \textit{hardware copyleft} permitiran su estudio, uso, modificación y reproducción (incluso para fines comerciales); con los requisitos de dar crédito al autor del trabajo original y que los trabajos derivados posean el mismo esquema de licencias, lo que permitirá el aumento de dicho recurso.
 
-La difusión de estos conocimientos permitirá la creación de una comunidad que se beneficia de ellos y contribuirá a su crecimiento y mejoramiento, esta transferencia de conocimientos permitirá la modernización de la industria electrónica del pais y los programas académicos de las asignaturas relacionadas. Se espera que estas actividades sean el punto de partida de una serie de proyectos de \textit{Hardware copyleft} que generen productos comercializables realizados por nuevas industrias locales y de esta forma aumentar la oferta de empleo a los profesionales del área, mejorando sus condiciones de vida y contribuyendo al desarrollo del país. 
+El éxito de esta iniciativa radica en el crecimiento de la comunidad que administra/usa/mantiene/depura/aumenta el bien común, a diferencia de los recursos tradicionales como los naturales o económicos, el conocimiento no se ve afectado por el aumento de usuarios; por esto, no deben existir restricciones para acceder a sus contenidos y se deben proporcionar mecanismos de difusión para que este conocimiento llegue a los sectores de la sociedad interesados en él. Se espera que los resultados de esta investigación proporcionen herramientas a centros de diferentes niveles de formación a lo largo del país, que les permitan actualizar sus programas académicos y compartir experiencias educativas con el fin de uniformizar los contenidos de las asignaturas relacionadas con el diseño digital, incorporando actividades que le permitan a los estudiantes adquirir habilidades en el diseño e implementación de dispositivos digitales que den solución a problemas locales reales y puedan ser comercializados. Adicionalmente, se desea crear una red de cooperación entre las universidades que hagan parte de esta comunidad, para realizar proyectos conjuntos encaminados a continuar el presente trabajo y a compartir los escasos recursos gubernamentales destinados a investigación y desarrollo.
+
+Se espera que el suministro de plataformas de referencia que pueden ser utilizadas como punto de partida para el desarrollo de nuevos productos ahorre años de desarrollo y dinero a empresas locales en la absorción de esta tecnología, permitiendo aumentar la oferta interna de diseño de sistemas digitales y a su vez la demanda interna de bienes y servicios relacionados con la manufactura de sistemas digitales, y de esta forma generar empleo para personas con diferentes niveles de formación. El cambio de las costumbres de empresas constituidas y que utilizan productos extranjeros es una utopía, por lo que este cambio se espera realizar en empresas recientemente consolidadas, por estudiantes que fueron formados con conocimientos generados por esta investigación.
 
 \section{Hipótesis}
 
-Esta propuesta se basa en la idea de que la generación local de productos tecnológicos es el motor que impulsará el desarrollo de la industria Colombiana, pero para lograrlo es necesario generar una serie de habilidades en las personas involucradas en el proceso; entender el funcionamiento de tecnologías modernas (conocimientos, metodologías de diseño, procesos de fabricación) para que puedan ser utilizadas en la creación de dispositivos que satisfagan necesidades locales; y adoptar estructuras organizacionales que permitan generar productos y servicios que cumplan con los estándares internacionales y establezcan relaciones con proveedores (nacionales y extranjeros) y posibles usarios.
+La función de la academia en países en vias de desarrollo como Colombia debe girar entorno a la solución de problemas nacionales, aunque este tipo de investigaciones no proporcionan el mismo prestigio que trabajos que buscan dar solución a problemas mundiales actuales, si reflejan un grado de compromiso con el entorno social en donde ella opera. La Universidad Nacional de colombia, es la entidad de educación superior pública más importante del país y tiene como misión contribuir a la elaboración y resignificación del proyecto de Nación, estudiando y enriqueciendo el patrimonio cultural, natural y ambiental del país; su posición privilegiada como referencia académica en los órdenes científico, tecnológico, cultural y artístico le permite introducir cambios que serán adoptados por otros centros de formación del país y por organismos encargados de generar políticas nacionales en diferentes áreas. Esta investigación esta financiada en su totalidad por la Universidad Nacional, y como una forma de retribución a la sociedad se trabajará en la solución de un problema local que puede ser mejorado con la aplicación de los resultados de este estudio. 
 
-Los sistemas embebidos permiten una visión completa del proceso de producción de dispositivos electrónicos: Concepción, Diseño, Implementación y Operación, adicionalmente es un mercado que mueve miles de millones de Dólares al año y su campo de acción abarca casi todas las actividades humanas (Educación, entrtenimiento, transporte, salud, productividad), existe una infinidad de herramientas Hardware (Procesadores, SoCs, FPGAs, diseños de referencia, herramientas CAD) y Software (Compiladores, depuradores, librerías, Sistemas Operativos, Aplicaciones) y una gran dinámica en la industria que proporciona servicios de manufactura (suministro de componentes, fabricación, pruebas, distribución). Lo que permite ingresar a este mercado con bajas inversiones de dinero, lo que es ideal para la situación actual del país (baja inversión en I+D). 
-
-Para que este trabajo tenga un mayor impacto se deben evitar temas en los que se requieran grandes inversiones en infra-estructuras como por ejemplo diseño y fabricación de Circuitos Integrados o aplicaciones en nanotecnología, ya que los laboratorios necesarios son muy costosos y en el país no existe aún la demanda suficiente que sostenga los costos de funcionamiento de este tipo de procesos. Teniendo en cuenta esto, existen varias alternativas en las que el país podría llegar a ser competitivo a corto plazo y generar productos que compitan con los ofrecidos por industrias de países desarrollados, estas son:
+Esta propuesta se basa en la creencia de que la generación local de productos tecnológicos impulsará el desarrollo de la industria electrónica colombiana generando fuentes de empleo para personas con diferentes niveles de formación, mejorando de esta forma la calidad de vida de la sociedad. Pero para que el país se convierta en un productor de dispositivos tecnológicos es necesario absorver, asimilar, aplicar y difundir los conocimientos asociados a dicha tecnología, los mecanismos de transferencia tradicionales:
 
 \begin{itemize}
-  \item Desarrollo de núcleos de Propiedad Intelectual (IPs)
-  \item Desarrollo de dispositivos dedicados a resolver problemas específicos utilizando dispositivos semiconductores ya existentes.
-    \begin{itemize}
-      \item Diseño de plataformas de Desarrollo Hardware robustas.
-      \item Creación de plataformas de desarrollo software estables.
-      \item Desarrollo de aplicaciones basadas en las plataformas de desarrollo ya creadas.
-    \end{itemize}
-  \item Desarrollo de aplicaciones HW/SW para que sean fabricadas en otros países con mayor oferta en servicios de manufactura.
+
+ \item Adquisición de IT: La adquisición de equipo ha sido uno de los mecanismos de transferencia más importantes para los países en desarrollo. Estos equipos se entregan con el software requerido para su funcionamiento con lo que no es necesario que los usuarios generen aplicaciones, adquierendo únicamente el conocimiento necesario para utilizarlas, y por lo tanto no saben como funcionan ni como están construidas. Otra forma de transferencia se presenta cuando una empresa vende una solución personalizada a las necesidades de los clientes; la transferencia se presenta en el proceso de personalización, esto, unido a otras habilidades en programación ayudan a elevar el mercado de software local; sin embargo, en muchas ocasiones no se realiza ningún tipo de transferencia de know-how en la adquisición de estas máquinas.
+
+ \item Educación y Entrenamiento: Educar a las personas a través de cursos y entrenamiento en el país y enviándolas al extranjero para otros estudios es una forma de adquirir know-how sobre nuevas tecnologías, o tecnologías que no se utilizan en el país de origen. Muchas instituciones ofrecen carreras en ingeniería electrónica, ciencias de la computación y afines, algunas de ellas utilizan modelos pedagógicos copiados de países desarrollados que no han sido adaptados plenamente a la infraestructura tecnológica local, y no es raro encontrar estudiantes que no están satisfechos con su profesión al finalizar los cursos\cite{Mo94}. La transferencia tecnológica no ocurre cuando estudiantes formados en el exterior no pueden aplicar sus conocimientos en su país de origen, por lo que es necesario crear políticas que definan que áreas de estudio son prioritarias para el país. 
+
+ Las multinacionales también ofrecen cursos de capacitación, sin embargo, se limitan al uso de sus productos, creando dependencia hacia sus herramientas. Adicionalmente, existen centros privados de capacitación que ofrecen cursos para el manejo de paquetes y lenguajes de programación, estos centros aprovechan la falta de centros de enseñanza tecnológica y personal calificado para cobrar altas sumas de dinero, lo cual limita el acceso. Programas académicos inapropiados, acceso limitado a libros y computadores, falta de facilidades para capacitación, reduce la efectividad de la educación y capacitación como canal para la transferencia tecnológica.
+
+ \item Asistencia Técnica: La ventaja de contratar consultores externos radica en el ahorro de tiempo y dinero, ya que, utilizar personal local implicaría un gran esfuerzo y posiblemente se tendrían que asumir errores costosos en el proceso; sin embargo, no es bueno confiar a consultores externos la responsabilidad de construir habilidades locales, ya que reduce el desarrollo de estas habilidades, especialmente, la del personal encargado de manejar proyectos. En algunas ocasiones los consultores no están familiarizados con las condiciones y requerimientos locales, con lo que diseñan soluciones que no se ajustan perfectamente a las necesidades, lo que significa que el sistema es sub-utilizado y la transferencia de tecnología es poca. La falta de personal calificado hace que los consultores se encarguen de todas las tareas del proyecto, lo que aumenta su carga de trabajo y disminuye la posibilidad de entrenamiento de personal local\cite{Mo94}. 
+
+ \item Licenciamiento:El licenciamiento es un canal que se utiliza para transferencia de know-how sobre productos o procesos, es aplicado de forma individual o en combinación con otros instrumentos como investigación extranjera, importación de maquinaria o de técnicos. Sin embargo, no es efectivo si no se acompaña de habilidades administrativas y de producción. Adicionalmente, es necesario contar con una infraestructura tecnológica adecuada, capacidades locales de fabricación de hardware y software y políticas de gobierno adecuadas \cite{Mo94}. 
+
+ \item Inversión Extranjera Directa:  La inversión directa de multinacionales es una forma de obtener tecnología externa. Esto asegura una rápida transferencia de información tecnológica, pero no necesariamente del entendimiento o know-how. Lo que hace que la tecnología transferida a través de este canal sea mínima. Las grandes multinacionales pueden tener cierto control político en los países en vía de desarrollo, hasta tal punto que son asesores de instituciones encargadas de fijar políticas para la transferencia tecnológica \cite{Mo94}.
+
 \end{itemize}
 
-La transferencia tecnológica es el mecanismo ideal para que un país en vía de desarrollo adquiera las habilidades, conocimientos y estructras organizacionales necesarias asociadas a una determinada tecnología, esta transferencia se considera exitosa cuando el pais receptor es capaz de crear soluciones a problemas locales utilizando esta tecnología, pero para esto, es necesario contar con una plataforma tecnológica que permita absorver los diferentes componentes de la nueva tecnología. 
+Estos canales no han sido eficientes en la transferencia tecnológica y de concimientos en el área de diseño digital ya que no se evidencia el aumento de la auto-suficiencia en el pais, todo lo contrario, cada vez se utilizan más y más productos provenientes del exterior reemplazando los producidos localmente; esto ocurre porque el país no cuenta con el suficiente personal calificado que pueda absorver, asimilar y aplicar la nueva tecnología, debido en parte a que el acceso a la información se encuentra restringido y al desconocimiento de la importancia del desarrollo de esta tecnología; la cobertura de las universidades públicas está limitada por los recursos casi congelados que entrega la nación; adicionalmente, el único centro de desarrollo tecnológico del sector electrónico (CIDEI) y que ha recibido cerca de 2200 millones de pesos (dinero público) para desarrollar proyectos que ayuden en el desarrollo tecnológico del país en esta área utiliza a las universidades como fuente de capacitación, y proporciona a la sociedad costosos servicios que no pueden ser pagados por cualquier interesado.
 
-El movimiento FOSS ha revolucionado la industria del software y puede ser considerado como una herramienta para la transferencia tecnológica ya que permite transferir los conocimientos de un programador experimentado a programadores en formación atraves del estudio del código fuente, su nueva forma de licenciamiento permite que se realicen modificaciones al código original para adaptarlo a necesidades locales. El software es un componente importante en el diseño de sistemas embebidos ya que es quien finalmente implementa las aplicaciones, pero en la actualidad aún no existe un movimiento similar en diseño hardware. Por esto, se propone la creación de un movimiento de hardware libre (\textit{hardware copyleft}) que facilite la transferencia tecnológica en el área de los sistemas embebidos, y realice una permanente actualización de la industria y la academia en áreas involucradas en el área de diseño digital. 
+Esta propuesta, centra sus esfuerzos en: la formación de personal que entienda la importancia de esta tecnología y la pueda utilizar para dar solución a problemas locales, adaptándose dinámicamente a futuros cambios en la tecnología; actividades que buscan crear conciencia en la sociedad de la importancia del uso de esta tecnología; la creencia que el conocimiento es un bien común y el acceso a este recurso debe garantizarse por parte de la sociedad. Para que este trabajo tenga un mayor impacto y difusión se deben evitar temas en los que se requieran grandes inversiones en infra-estructuras como diseño y fabricación de Circuitos Integrados o aplicaciones en nanotecnología \footnote{Esto no implica que se esté recomendando no investigar en estos temas}, ya que los laboratorios y las herramientas software necesarios son muy costosos y en el país no existe aún la demanda suficiente que sostenga los costos de funcionamiento de este tipo de procesos; tampoco en temas que requieran firmas de acuerdos de no divulgación (NDA) o la utilización de costosas herramientas comerciales. Estas restricciones están encaminadas a generar alternativas económicas que puedan ser implementadas en cualquier centro educativo o pequeña empresa. Teniendo en cuenta esto, se trabajará con: dispositivos semiconductores de fácil adquisición que estén siendo utilizados en la elaboración de productos actuales de consumo masivo; herramientas de diseño de circuitos impresos y de desarrollo abiertas; y sistemas operativos gratuitos. 
+
+Resumiendo, a nuestro modo de ver, en el país no se ha presentado una transferencia tecnológica exitosa en el área de diseño y fabricación de sistemas digitales debido a: la insuficiente cantidad de personal calificado para absorver, asimilar, aplicar y difundir el conocimiento asociado a esta; el desconocimiento de la importancia del uso de esta tecnología en el desarrollo tecnológico del país por un amplio sector de la sociedad; el alto grado de dependencia hacia los productos importados; y el acceso limitado a la información necesaria para realizar el proceso adopción - asimilación - aplicación de conocimientos. Por lo tanto, la metodología y conocimientos resultantes del presente estudio deben permitir: la transferencia de conocimiento que permita entender la nueva tecnología; la formación de personal que pueda modificarla y adaptarla al entorno social local; generar actividades para que de forma gradual los diferentes sectores de la sociedad entiendan la importancia de esta tecnología; que sea utilizada en el proceso de formación a diferentes niveles y sea parte de los procesos de diseño en las empresas cin actividades relacionadas; y que se creen mecanismos de difusión que permita el acceso al conocimiento por todos los sectores de la sociedad que estén interesados. 
 
 \section{Metodología}
 
-Este proyecto tiene varios frentes de trabajo, i) el estudio de metodologías de diseño y procesos de fabricación de sistemas embebidos, lo que proporcionará el conocimiento necesario para realizar la actualización de la industria electrónica local y la academia en el área de la electrónica digital; ii) se debe identificar las causas que generan el atraso en la industria electrónica nacional, lo que permitirá establecer actividades que contribuyan a la solución del problema, iii) difusión de los resultados obtenidos y el conocimiento generado, para esto se definirá el concepto de ``hardware copyleft'' y se crearán una serie de proyectos libres que utilicen tecnologías abiertas con la posibilidad de distribución y modificación, lo que permitirá la creación de nuevos productos y la formación de una comunidad que trabaja en beneficio del bien común actualizando, depurando y aumentando la información contenida en estos proyectos. Adicionalmente, se creará una empresa que utilizará los conocimientos generados en este estudio para crear productos que satisfagan necesidades locales, lo que nos permitirá conocer la dinámica de la industria nacional, la infraestructura de bienes y servicios con las que cuenta el pais y permitirá validar la metodología propuesta.
-
-\subsubsection{Estudio de Metodologías de Diseño y Procesos de Fabricación de Sistemas Embebidos}
-
-El diseño de sistemas embebidos involucran conceptos a nivel de integración de sistema que permiten la generación de un gran número de habilidades necesarias para la concepción, diseño e implementación de dispositivos digitales. Con el estudio de metodologías de diseño en este área se pretende adquirir los conocimientos requeridos para que sea posible una transferencia de tecnología exitosa, los pasos a seguir para este estudio son:
+A continuación se describirán brevemente las etapas de la metodología. Las primeras etapas elección, adquisición y adaptación están relacionadas con el contenido a ser transferido, mientras que la Absorción y asimilación, aplicación y difusión están relacionadas con la aplicación del conocimiento.
 
 \begin{itemize}
- \item \textit{Estudio de Metodologías de Diseño} Recopilación de información sobre metodología de diseño modernas para identificar cual es la más utilizada.
 
- \item \textit{Ingeniería Inversa} se trabajará con dispositivos comerciales como consolas de juego, Reproductores de MP4, y cualquier dispositivo que permita estudiar su arquitectura y modificar su función. Muchos países desarrollados comenzaron su desarrollo tecnológico haciendo copias de productos de otras economías más consolidadas, utilizar dispositivos comerciales reduce el tiempo requerido para iniciar el estudio y reduce los costos de forma considerable, la relación entre un producto comercial y una tarjeta de desarrollo puede ser de 1 a 10, un inconveniente que se debe considerar es la falta de documentación, por lo que se trabajará con dispositivos que tengan proyectos asociados. 
+\item Elección: En la primera etapa se evalúa el estado de la plataforma tecnológica existente para identificar facilidades y necesidades; con esta información se búsca una tecnología que pueda ser implementada con el estado actual de la plataforma tecnológica; se identificarán los niveles de complejidad de dicha tecnología para determinar una alternativa que pueda implementarse y de resultados a mediano y corto plazo con baja inversión de capital.
 
- \item \textit{Exploración de Herramientas de libre distribución} La utilización de herramientas de libre distribución reduce los costos de inversión iniciales y de operación, esto facilita la realización de productos, el dinero ahorrado puede ser utilizado para mejorar los salarios de los empleados o para compra de equipos. En la actualidad existe una gran variedad de proyectos de software libre, una parte de ellos centrados en el desarrollo de herramientas que permitan la creación y programación de dispositivos digitales, es necesario seleccionar de ellos los proyectos más maduros, que tengan un equipo que realice modificaciones permanentemente, esto para definir un grupo robusto de herramientas básicas que permitan desarrollar aplicaciones hardware y software.
+% Modificación de la tecnología para adaptarse a las condiciones locales (económica, social, política y cultural)
+% Demostrar el valor de la tecnología en términos sociales y económicos.
+% Implementar físicamente el proyecto.
+% Difundir la tecnología a sectores relevantes de la sociedad incluyendo productores y consumidores.
 
- \item \textit{Diseño, Fabricación y Programación de plataformas propias} Una vez identificada la arquitectura típica y el funcionamiento en dispositivos comerciales; seleccionadas las herramientas de desarrollo y genaradas algunas aplicaciones básicas se dispondrá del conocimiento necesario para diseñar, construir y programar plataformas de desarrollo propias. Esto, con el propósito de determinar los pasos del proceso de producción de prototipos y las habilidades requeridas para realizar este proceso.
+\item Adquisición: En esta etapa se adquieren equipos que utilizan la tecnología que se desea transferir; gracias a que el campo de aplicación de los sistemas embebidos cubre una gran parte de las actividades humanas no es necesario realizar ningún tipo de acuerdo con proveedores extranjeros o invertir fuertes sumas de dinero; adicionalmente, se identificarán las herramientas de desarrollo que permitan el estudio y creación de nuevas aplicaciones.
 
- \item \textit{Utilización de Linux como Herramienta de Desarrollo} Sobre las plataformas diseñadas y fabricadas se realizarán aplicaciones que utilicen Linux como sistema Operativo. Para esto es necesario estudiar los requerimientos hardware de Linux, su arquitectura, inicialización y el proceso adaptación al hardware; adicionalmente, se debe realizar una selección de la distribución de sistema de archivos y escribir programas básicos para el funcionamiento básico de la plataforma.
+\item Adaptación: La adaptación se presenta cuando la sociedad encuentra posible y deseable realizar cambios para involucrar usos particulares de la tecnología; es un proceso dinámico que esta formado por \cite{KAJS08}: una etapa inicial donde se proporcionan procedimientos adecuados para la transferencia física; seguida de una fase donde se proporciona conocimiento, habilidades, datos, y las herramientas necesarias para la evaluación; una etapa de planeación, diseño e implementación del sistema de transferencia, planes y estrategias. Para determinar si es posible y conveniente el uso de las nuevas tecnologías en la industria y la academia nacionales, se realizarán una serie de actividades encaminadas a adquirir conocimiento y habilidades que permitan operar y programar los dipositivos digitales adquiridos previamente. 
 
- \item \textit{Plataformas abiertas para el desarrollo de sistemas embebidos} Con el conocimiento adquirido en los pasos anteriores se diseñarán plataformas que permitan realizar el flujo de diseño completo, es decir, la implementación de tareas hardware y software. Los archivos de diseño y la documentación requerida para reproducirlas, entender su funcionamiento y programarlas, se colocará a disposición de todos los interesados en un servidor web público. El conocimiento contenido en esta información será la semilla para formar el recurso de bien común; con esta semilla se formará una comunidad que utilice el recurso y se encargue de mejorarlo, aumentarlo y difundirlo. 
+Se diseñará una metodología que permita el estudio gradual de diferentes tópicos asociados a esta tecnología (arquitectura, metodologías de diseño, programación básica, generación de aplicaciones, producción); la primera etapa consiste en la \textbf{adquisición} de un dispositivo comercial que permita realizar el estudio deseado; a continuación, con el uso de ingeniería inversa se identificará su arquitectura, las herramientas y vías para cambiar su funcionamiento, también se desarrollarán métodos para generación de aplicaciones similares a la original (\textbf{adaptación}). El siguiente paso consiste en la creación o adaptación de técnicas de fabricación que permitan el diseño y construcción local de plataformas que tengan la misma funcionalidad y permitan su estudio, fácil adaptación y desarrollo de aplicaciones; en este punto, cuando ya se cuenta con los conocimientos para desarrollar aplicaciones propias, se transmitirán estos conocimientos a la academia y a la industria para que hagan parte de sus procesos de enseñanza y de diseño y producción respectivamente; finalmente se realizará la documentación del proceso de diseño de las plataformas de desarrollo, de las aplicaciones y del proceso de diseño, toda esta información será distribuida bajo el esquema de licencias \textit{Creative Commons} (CC) BY-SA: atribución (BY), se permite la distribución dando crédito al autor; compartir de la misma forma (SA) exige que todo trabajo derivado debe tener la misma licencia de los trabajos originales. 
+
+La unión del software abierto utilizado para diseñar las placas de circuito impreso e implementar sus aplicaciones, unida al esquema de licencias \textbf{CC} define el novedoso concepto del \textit{hardware copyleft} el cual se puede considerar como una extensión del proyecto de software libre aplicado al desarrollo hardware.
+
+\item Absorción y asimilación: Los procesos de absorción y asimilación describen la capacidad del receptor para utilizar la tecnología y permiten identificar la efectividad y el éxito de la transferencia; la absorción es la capacidad del receptor de absorver tecnologia de un sector y la asimilación es la capacidad de asimilar (analizar, procesar, interpretar y entender) y utilizar la tecnología absorvida en otro sector \cite{KAJS08}. Es importante generar dos tipos de habilidades para soportar la tecnología: Técnicas: hardware, sistemas operativos, redes, tecnologías de la comunicación, aplicaciones SW; Humanas: Habilidades y conocimientos necesarios para desarrollar, mantener, y manipular; habilidad para adaptar tecnologías al entorno local y futuro desarrollo. Es crucial contar con mecanismos de aprendizaje que permitan adquirir los conocimientos necesarios para operar y cambiar la nueva tecnología; este aprendizaje puede adquirirse por entrenamiento, seleccionando y contratando personal calificado o buscando posibles soluciones en recursos publicados. En este estudio se creará un banco de proyectos que podrá ser utilizado como base de futuros desarrollos y se diseñarán cursos para la enseñanza de metodologías de diseño y procesos de fabricación de la nueva tecnología. Para la transferencia en diseño de sistemas embebidos se desarrollarán y/o adaptarán metodologías de diseño y procesos de fabricación que culminen en el diseño e implementación de productos tecnológicos propios y en el desarrollo de proyectos académicos.
+
+\item Aplicación: En esta etapa se incorporará y aplicará el conocimiento adquirido y asimilado en las etapas anteriores a la industria y a la academia; se realizará una prueba piloto con la participación de la Universidad Nacional de Colombia y una empresa colombiana radicada en Bogotá. 
+La línea de electrónica digital del Departamento de Ingeniería Eléctrica y Electrónica de la Universidad Nacional de Colombia esta compuesta por cuatro asignaturas: electrónica digital I, electrónica digital II, sistemas embebidos y técnicas de integración; durante un período de dos años se incorporarán metodologías de diseño y de fabricación en estas asignaturas, los cambios se realizarán de forma gradual iniciando con la asignatura electrónica digital I, continuando con electrónica digital II y así hasta llegar a técnicas de integración. Se realizará una explicación detallada del contenido de estas asignaturas y su adaptacion a la iniciativa CDIO\footnote{\textbf{C}oncebir, \textbf{D}iseñar, \textbf{I}mplementar y \textbf{O}perar, iniciativa creada por el  Massachusetts Institute of Technology (MIT) con ayuda de industriales, ingenieros y docentes, con el objeto de desarrollar una nueva visión de la educación en ingeniería, y ha sido adoptada por un creciente número de instituciones académicas a lo largo del mundo}. 
+
+En el campo comercial, se trabajará con una empresa de base tecnológica (cuya creación será motivada por este estudio) con los objetivos de evaluar el impacto del uso de esta tecnología en la industria colombiana y proporcionar información sobre el estado de la industria electrónica en el país ayudando a detectar los obstáculos que enfrentan nuevas empresas en su ejercicio de suministrar soluciones a problemas locales.
+
+\item Difusión y Desarrollo
+La tarea más importante de esta etapa, es la creación de una comunidad que utilice los conocimientos generados en el proceso (recurso, bien común), proporcione nuevo conocimiento que haga parte de este bien común y depure las herramientas y el contenido del mismo; por esto, es importante vincular a personas con diferentes intereses y niveles de formación. Para ayudar a la comunicación entre usuarios del recurso y a la difusión de sus proyectos, se creará una lista de correo donde se puedan discutir temas relacionados y se dispondrá de una wiki en donde se documentará el proceso de diseño de los proyectos; se configurará un servidor que permita subir archivos, trabajo multi-usuario y control de revisiones, lo que facilitará el trabajo en equipo para usuarios que se encuentran separados geográficamente. Estas facilidades se encontrarán disponibles a todo interesado en un portal público.
 
 \end{itemize}
 
-\subsubsection{Identificación de las causas que generan el atraso en la industria Electrónica Nacional y Generación de Actividades que Contribuyan a su Solución}
 
-Para identificar las causas del atraso de la industria electrónica colombiana se trabajará desde dos frentes el académico y el industrial, \footnote{también debería trabajarse con el gobierno, sin embargo, contactar a las instituciones que generan políticas de ciencia y tecnología no es fácil, y pensar que es posible influir en la toma de decisiones es una utopía} ya que son los actores principales en este proceso y entender su estado y forma de pensar ayuda a formar una visión global del problema.
-
-Para determinar el estado de la industria colombiana y la dinámica del medio industrial se formará una empresa de base tecnológica cuya actividad principal será el desarrollo de dispositivos digitales comercializables que satisfagan necesidades locales, para esto utilizará las plataformas abiertas desarrolladas anteriormente. Con esto se pretende identificar las dificultades que se presentan al competir con tecnología nacional, detectar las necesidades (bienes y servicios) de la industria local, determinar las habilidades de los profesionales en el área que requiere la industria.
-
-Una vez identificadas las necesidades del sector industrial, se realizará una evaluación del plan de estudios de las asignaturas relacionadas, especialmente en las asignaturas del área de la electrónica digital con el fín de determinar si cumplen con sus requerimientos; adicionalmente, se debe analizar su contenido programático para determinar si siguie los lineamientos de las metodologías de diseño modernas y si su metodología ayuda al fortalecimiento o creación de las habilidads requeridas para crear empresas de base tecnológica.
-
-De los estudios anteriores se identificarán las actividades necesarias para hacer que la industria y la academia sean capaces de impulsar el desarrollo de la industria electrónica nacional. 
-
-\subsubsection{Definición del Término \textit{Hardware Copyleft}}
-
-Como se mencionó anteriormente, el movimiento de Software libre y Código Abierto (FOSS), representa una herramienta poderosa para efectuar la transferencia tecnológica, ya que proporciona los medios para transferir conocimientos sobre la concepción, arquitectura y principio de funcionamiento de una gran variedad de aplicaciones software; permitiendo su modificación y la creación de nuevos productos que satisfacen necesidades personales o locales. El razgo más importante del proyecto FOSS es la comunidad que hace parte de este movimiento, miles de miembros trabajan en conjunto para generar recursos de bien común en forma de aplicaciones software.
-
-Mi experiencia académica y en la industria me indica que uno de los problemas en la industria colombiana es la incapacidad de creación de productos que cumplan normas interncionales de calidad, lo cual impide su exportación y no puedan competir con productos importados en el mercado local. Adicionalmente, algunos centros de formación superior consideran que no es necesario llegar a la implementación y que solo es necesario el desarrollo teórico y su validación utilizando modelos de simulación. Esto hace que los profesionales no posean las habilidades necesarias para desarollar proyectos de aplicación o que los que realicen no cumplan con las normas requeridas. Por este motivo, se trabajará en la definición del concepto de \textit{hardware copyleft} y en la creación de una comunidad que utilice los recursos hardware como bien común. El primer recurso con el que contará la comunidad será el conocimiento necesario para diseñar, construir, programar y modificar las plataformas de desarrollo hardware abiertas. Haste el momento en que se escribió esta propuesta no existe un proyecto similar ni en la academia ni en la industria colombiana. El reto en la definicón radica en lograr que los proyectos generados bajo este esquema sean \textit{modificables}, lo que implica un análisis de costos y determinar las facilidades con las que cuenta la industria actual.
-
-\subsubsection{Formulación de Una Metodología Para la Transferenica Tecnológica y de Conocimientos en el Área de Sistemas Embebidos}
-Una vez finalizadas las actividades Anteriores se formulará una metodología para realizar una transferencia tecnológica y de conocimientos a la industria y a la academia en el área de sistemas embebidos. 
+El objetivo final de todo este proceso es el aumento de la demanda de productos, bienes y servicios relacionados con esta tecnología; compra de maquinaria que permita la fabricación masiva de forma local; diseño de nuevos componentes (Circuitos Integrados, IPs, software CAD); creación de políticas gubernamentales que protejan la producción local; participación activa de la academia en la solución de problemas y en la formulación de políticas de gobierno relacionadas.
 
 
-\section{Actividades}
+\section{Actividades y Cronograma}
+
+\subsection{Actividades}
 
 En la Figura \ref{thesis_proposal_flow} se resumen las actividades a realizar durante este proyecto, se derivan de la metodología presentada en la sección anterior.
 
@@ -229,9 +238,11 @@ En la Figura \ref{thesis_proposal_flow} se resumen las actividades a realizar du
 
 \newpage
 
+
 \begin{landscape}
 
-\section{Cronograma}
+\subsection{Cronograma}
+En la tabla \ref{scheduler} se muestra el cronograma previsto para el desarrollo de las actividades
 
 
 \begin{table}[ht]
@@ -275,24 +286,20 @@ En la Figura \ref{thesis_proposal_flow} se resumen las actividades a realizar du
 
 \section{Recursos}
 
-Este estudio se realizará por completo en Colombia, utilizando los recursos suministrados por el programa de Doctorade en Ingeniería Eléctrica de la Universidad Nacional de Colombia. A continuación se listan los recursos disponibles para la realización de este proyecto:
+Este estudio se realizará por completo en Colombia, utilizando los siguientes recursos suministrados por el programa de doctorado en ingeniería eléctrica de la Universidad Nacional de Colombia:
 
 \begin{itemize}
- \item \textit{Recursos físicos} (oficina, equipo de laboratorio, etc), computacionales y bibliográficos serán los disponibles en la Universidad Nacional de Colombia. Los recursos económicos para la manutención los proporcionará la universidad Nacional en la modalidad de \textit{comisión de estudios} durante los 4 años que durará este estudio. 
+ \item \textit{Recursos físicos}
    \begin{itemize}
-    \item Oficina con equipo de Cómputo y conexión a Internet (UNAL)
-    \item Equipo básico de Laboratorio (UNAL)
-    \item Acceso a los artículos de la IEEE (UNAL)
+    \item Oficina con equipo de Cómputo y conexión a Internet (UNAL).
+    \item Equipo básico de Laboratorio (UNAL).
+    \item Acceso a los artículos de la IEEE (UNAL).
    \end{itemize}
- \item \textit{Recursos económicos} 
+ \item \textit{Recursos económicos.} 
    \begin{itemize}
-    \item Salario para manutención, en modaliad de \textit{comisión de estudios} (UNAL)
-    \item Dinero para desarrollo de prototipos y compra de tarjetas de desarrollo. Financiado por la Dirección de Investigación de la Sede Bogotá (UNAL) y recursos de la empresa emQbit.
+    \item Salario para manutención, en modalidad de \textit{comisión de estudios} (UNAL) durante 4 años.
+    \item Dinero para desarrollo de prototipos y compra de tarjetas de desarrollo. Financiado por la Dirección de Investigación de la Sede Bogotá (UNAL) y recursos propios.
    \end{itemize}
+
  \item \textit{Recursos de Personal} Este proyecto no se encuentra asociado a ningún grupo de investigación, por lo que no se dispondrá de estudiantes que ayuden en el proceso. 
 \end{itemize}
-
-
-
-
-

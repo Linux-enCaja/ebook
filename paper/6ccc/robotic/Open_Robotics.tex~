@@ -74,10 +74,10 @@ La columna vertebral del componente Software es el proyecto Player/Stage, el cua
 
 Uno de los requerimientos iniciales fué la capacidad de ejecutar de forma nativa el cliente/servidor Player; para esto, es necesario que ECBOT pueda correr aplicaciones Linux; por esta razón, se diseñó la plataforma abierta \textit{ECB\_AT91} \cite{CC06}, la cual fué la base del desarrollo de ECBOT.
 
-\begin{figure}[h]
-  \begin{center} \includegraphics[scale=.35]{./images/ECBOT_Block_2} \end{center}
-  \caption{Diagrama de Bloques del componente Hardware de ECBOT.}\label{ECBOT_Block}
-\end{figure}
+% \begin{figure}[h]
+%   \begin{center} \includegraphics[scale=.35]{./images/ECBOT_Block_2} \end{center}
+%   \caption{Diagrama de Bloques del componente Hardware de ECBOT.}\label{ECBOT_Block}
+% \end{figure}
 
 \subsection{Especificaciones de ECBOT}
 
@@ -109,11 +109,11 @@ gran popularidad dentro del grupo de desarrolladores de drivers para Linux, por 
 
 SIEBOT integra la plataforma de desarrollo para codiseño HW/SW SIE \cite{CC11c} con una interfaz que permite el control de sensores y actuadores. La Figura \ref{SIE_arch} muestra su diagrama de bloques, en ella podemos encontrar un procesador que posee periféricos para comunicación serial (UART), memorias micro-SD, un puerto I2C, un LCD a color de 3 pulgadas, 2 entradas y salidas de audio stereo, 2 entradas análogas; una FPGA que proporciona 25 señales de entrada/salida digitales de propósito general (GPIOs) y controla un conversor análogo digital de 8 canales. Existen dos canales de comunicación entre la FPGA y el procesador: uno para controlar el puerto JTAG, lo que permite la configuración de la FPGA desde el procesador (eliminando la necesidad de cables de programación); y otro que proporciona el bus de datos, dirección y control para comunicarse con las tareas HW o periféricos implementadas en la FPGA. El procesador utilizado es un Ingenic JZ4725 (XBURST - MIPS) corriendo a 400MHz, se dispone de una memoria NAND de 2GB para almacenamiento de datos y programas, así como de una memoria SDRAM de 32 MB, permitiendo la ejecución de una gran variedad de aplicaciones Linux.
 
- \begin{figure}[htpb]
-   \begin{center} \includegraphics[scale=.45]{./images/SIE_block_diagram.png}   \end{center}
-   \begin{center} \includegraphics[scale=.4]{./images/SIE.jpg}   \end{center}
-   \caption{Estructura de la plataforma de desarrollo SIE} \label{SIE_arch}
- \end{figure}
+%  \begin{figure}[htpb]
+%    \begin{center} \includegraphics[scale=.45]{./images/SIE_block_diagram.png}   \end{center}
+%    \begin{center} \includegraphics[scale=.4]{./images/SIE.jpg}   \end{center}
+%    \caption{Estructura de la plataforma de desarrollo SIE} \label{SIE_arch}
+%  \end{figure}
 
 \subsubsection{Arquitectura}
 Como ya se mencionó la FPGA de SIE utiliza los buses de datos, dirección y control para comunicarse con el procesador, por lo que es posible implementar un número indeterminado de perifericos en ella, los cuales pueden ser consultados en cualquier momento por el procesador con operaciones de lectura y escritura a un rango de memoria determinado por el diseñador. Esto permite la utilización de una gran cantidad de periféricos útiles en aplicaciones en robótica como sensores (que utilizan puerto serie o I2C), controladores de motores servo, generadores de señales PWM para control de motores, y otros actuadores, etc. 
@@ -134,17 +134,17 @@ SIE Blocks está basado en el proyecto openblocks \cite{Roq07} desarrollado en el
 
 En la Figura \ref{SIE_Blocks} se muestra una captura de pantalla de la ejecución de SIE Blocks, en ella podemos obervar un menú que contiene una serie de bloques constructores separados según su función: \textit{GPIOs, Functions, Movement, Loops, Data, Display y Math}, (es posible modificar estos bloques básicos ya que se suministra el código fuente de la aplicación \cite{Roq07}); en la zona central se pueden colocar los diferentes bloques constructores para formar un determinado algoritmo.
 
- \begin{figure}[htpb]
-   \begin{center} \includegraphics[scale=.45]{./images/SIEBlocks.png}   \end{center}
-   \caption{Interfaz gráfica de SIE Blocks} \label{SIE_Blocks}
- \end{figure}
+%  \begin{figure}[htpb]
+%    \begin{center} \includegraphics[scale=.45]{./images/SIEBlocks.png}   \end{center}
+%    \caption{Interfaz gráfica de SIE Blocks} \label{SIE_Blocks}
+%  \end{figure}
 
 En la parte superior, se encuentra un menú con las operaciones que puede realizar SIEBlocks. \textit{Load/save}: permite almacenar y cargar diferentes algoritmos en formato XML; \textit{connect with SIE}: establece una comunicación con la plataforma SIEBOT utilizando el protocolo \textit{ssh}; y \textit{Upload and compile}: Convierte el algoritmo a un formato XML para después ser convertido en un script que ejecutará un intérprete Lua que reside en SIEBOT. La figura \ref{SIEBLOCK_flow} resume el flujo de diseño al utilizar SIEBlocks.
 
- \begin{figure}[htpb]
-   \begin{center} \includegraphics[scale=.45]{./images/SIEBlocks_design_flow.png}   \end{center}
-   \caption{Flujo de diseño con SIEBlocks} \label{SIEBLOCK_flow}
- \end{figure}
+%  \begin{figure}[htpb]
+%    \begin{center} \includegraphics[scale=.45]{./images/SIEBlocks_design_flow.png}   \end{center}
+%    \caption{Flujo de diseño con SIEBlocks} \label{SIEBLOCK_flow}
+%  \end{figure}
 
 El intérprete de Lua se encuentra en SIEBOT y recibe como entradas un script donde se indican las instrucciones a ejecutarse; para realizar operaciones sobre los sensores y actuadores se proporciona una librería (\textit{gpio.so} en este ejemplo) escrita en C, que contiene las funciones necesarias para manejo de memoria (comunicación con periféricos \textit{jz47xx\_mmap.c}) y control de pines de entrada/salida de propósito general (\textit{jz47xx\_gpio.c}), así como un archivo que encapsula estas funciones y permite su uso por parte del intérprete de Lua (\textit{sram\_gpio\_wrap.c}) en este archivo se encuentran el nombre de las funciones que se utilizarán en el script de Lua (\textit{open\_port}, \textit{clear\_pin}, \textit{set\_pin}, y \textit{gpio\_as\_output}).
 
@@ -154,19 +154,19 @@ El intérprete de Lua se encuentra en SIEBOT y recibe como entradas un script don
 \textit{SIE Code Generator} es desarrollado en QT y está inspirado en el simulador \textit{qucs}; permite la creación de nuevos elementos y librerías en tiempo de ejecución; no utiliza ningún lenguaje intermedio tipo Lua o Python; genera código en C a partir de la entrada gráfica y lo compila para la arquitectura XBURST - MIPS; adicionalmente, proporciona una serie de utilidades para transferir los archivos de configuración de la FPGA y el ejecutable generado por el proceso de compilación a la plataforma SIEBOT. En la figura\ref{SIECG_SS} se puede ver una captura de pantalla y en la \ref{SIECG_flow} se muestra el flujo de diseño hasta obtener el ejecutable final.
 
 
-  \begin{figure}[htpb]
-    \begin{center}
-      \subfigure[Interfaz gráfica de SIE\_CG]{
-        \includegraphics[scale=.35]{./images/SIE_CG_screenshoot.png}
-        \label{SIECG_SS}
-      }
-      \\
-      \subfigure[Flujo de diseño con SIE\_CG]{
-        \includegraphics[scale=.49]{./images/SIE_CG_design_flow.png}
-        \label{SIECG_flow}
-      }
-    \end{center}
-  \end{figure}
+%   \begin{figure}[htpb]
+%     \begin{center}
+%       \subfigure[Interfaz gráfica de SIE\_CG]{
+%         \includegraphics[scale=.35]{./images/SIE_CG_screenshoot.png}
+%         \label{SIECG_SS}
+%       }
+%       \\
+%       \subfigure[Flujo de diseño con SIE\_CG]{
+%         \includegraphics[scale=.49]{./images/SIE_CG_design_flow.png}
+%         \label{SIECG_flow}
+%       }
+%     \end{center}
+%   \end{figure}
 
 
 \subsubsection{Principio de funcionamiento}
@@ -183,6 +183,7 @@ Se presentaron dos entornos de programación gráfico que facilitan el proceso de 
 
 En este momento ambas plataformas se encuentran en proceso de producción en masa, y se está trabajando en el contenido de los programas académicos que se utilizarán en educación básica y media. El primer piloto se implementará en el Instituto Técnico Central \footnote{http://www.itc.edu.co}, en donde, se presentan los tres ciclos de interés: enseñanza media, técnica y profesional.
 
+Este tipo de trabajos ayuda a difundir el conocimiento adquirido en años de investigación en procesos de fabricació y metodologías de diseño en sistemas digitales, proporcionando un ahorro de tiempo y dinero considerable a quien lo utilice.
 
 \section{Bibliografía}
 

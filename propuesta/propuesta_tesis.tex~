@@ -59,10 +59,10 @@ basicstyle=\footnotesize}
 \tableofcontents
 %     \input intro
 %     \input technology_transfer
-%     \input description
+     \input description
 %     \input commons
 %     \input education
-     \input embedded
+%      \input embedded
 %     \input platform
 %     \input emqbit
 
@@ -105,3 +105,6 @@ Y despues decir que se hizo para resolver el problema.
 
 
 
+`` ''
+`` ''
+`` ''

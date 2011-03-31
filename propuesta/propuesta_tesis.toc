@@ -1,38 +1,23 @@
 \select@language {spanish}
-\contentsline {chapter}{\numberline {1}Sistemas Embebidos}{3}
-\contentsline {section}{\numberline {1.1}Introducci\'on}{3}
-\contentsline {subsection}{\numberline {1.1.1}Qu\'e es un sistema Embebido}{3}
-\contentsline {subsection}{\numberline {1.1.2}Arquitectura}{3}
-\contentsline {subsection}{\numberline {1.1.3}Aplicaciones}{5}
-\contentsline {subsection}{\numberline {1.1.4}Metodolog\IeC {\'\i }a de Dise\~no}{5}
-\contentsline {section}{\numberline {1.2}Implementaci\'on de la Metodolog\IeC {\'\i }a Propuesta Para la Transferencia Tecnol\'ogica en Dise\~no de Sistemas Embebidos}{7}
-\contentsline {subsection}{\numberline {1.2.1}Elecci\'on}{7}
-\contentsline {subsubsection}{Niveles de complejidad de la tecnolog\IeC {\'\i }a}{8}
-\contentsline {subsubsection}{Diagn\'ostico de la Industria Local}{10}
-\contentsline {subsubsection}{Diagn\'ostico de la Academia}{11}
-\contentsline {subsubsection}{Centros de Desarrollo Tecnol\'ogico}{11}
-\contentsline {subsubsection}{Conclusi\'on}{12}
-\contentsline {subsection}{\numberline {1.2.2}Adquisici\'on}{12}
-\contentsline {subsubsection}{Herramientas de Desarrollo}{12}
-\contentsline {subsubsection}{Dispositivos Semiconductores}{14}
-\contentsline {subsubsection}{Dispositivos disponibles}{14}
-\contentsline {subsubsection}{conclusiones}{15}
-\contentsline {subsection}{\numberline {1.2.3}Adaptaci\'on}{16}
-\contentsline {subsubsection}{Metodolog\IeC {\'\i }a}{16}
-\contentsline {subsubsection}{Arquitectura: SoC, Memorias, perif\'ericos}{17}
-\contentsline {subsubsection}{Programaci\'on}{19}
-\contentsline {subsubsection}{Programaci\'on utilizando el puerto JTAG}{22}
-\contentsline {subsubsection}{Aplicaciones \textit {Standalone} vs Aplicaciones con sistema operativo}{22}
-\contentsline {subsubsection}{Conocimientos Adquiridos}{24}
-\contentsline {subsubsection}{conclusiones}{24}
-\contentsline {subsection}{\numberline {1.2.4}Absorci\'on y Asimilaci\'on}{25}
-\contentsline {subsubsection}{Plataformas de Desarrollo }{25}
-\contentsline {subsubsection}{T\'ecnicas de Fabricaci\'on}{30}
-\contentsline {subsubsection}{Proceso de dise\~no y fabricaci\'on}{30}
-\contentsline {subsubsection}{Aplicaciones Acad\'emicas Realizadas}{30}
-\contentsline {subsubsection}{Metodolog\IeC {\'\i }a para la apropiaci\'on de conocimiento y generaci\'on de nuevos productos}{32}
-\contentsline {subsubsection}{Conclusi\'ones}{32}
-\contentsline {subsection}{\numberline {1.2.5}Aplicaci\'on}{32}
-\contentsline {subsubsection}{En la Academia}{33}
-\contentsline {subsubsection}{En la Industria}{34}
-\contentsline {subsection}{\numberline {1.2.6}Difusi\'on y Desarrollo}{35}
+\contentsline {chapter}{\numberline {1}Introducci\'on}{5}
+\contentsline {subsection}{\numberline {1.0.1}Sistemas Embebidos.}{6}
+\contentsline {subsection}{\numberline {1.0.2}\IeC {\textquestiondown }Por qu\'e los Sistemas Embebidos?}{7}
+\contentsline {subsubsection}{Mercado de los Sistemas Embebidos}{7}
+\contentsline {subsubsection}{Penetraci\'on de los Sistemas Embebidos}{7}
+\contentsline {subsubsection}{Perspectivas de Empleo}{7}
+\contentsline {section}{\numberline {1.1}Estado de la Industria Electr\'onica en Colombia}{9}
+\contentsline {subsubsection}{Apropiaci\'on de Conocimiento y Transferencia Tecnol\'ogica}{10}
+\contentsline {subsubsection}{Situaci\'on de la Industria Electr\'onica en Colombia}{11}
+\contentsline {subsubsection}{Causas del Atraso Tecnol\'ogico en Colombia}{11}
+\contentsline {subsubsection}{El conocimiento Como Bien Com\'un}{12}
+\contentsline {chapter}{\numberline {2}Descripci\'on de la Tesis}{15}
+\contentsline {section}{\numberline {2.1}Objetivos}{15}
+\contentsline {subsubsection}{Ojetivo Principal}{15}
+\contentsline {subsubsection}{Objetivos Espec\IeC {\'\i }ficos}{15}
+\contentsline {subsubsection}{Resultados Esperados e Impacto}{16}
+\contentsline {section}{\numberline {2.2}Hip\'otesis}{16}
+\contentsline {section}{\numberline {2.3}Metodolog\IeC {\'\i }a}{19}
+\contentsline {section}{\numberline {2.4}Actividades y Cronograma}{21}
+\contentsline {subsection}{\numberline {2.4.1}Actividades}{21}
+\contentsline {subsection}{\numberline {2.4.2}Cronograma}{22}
+\contentsline {section}{\numberline {2.5}Recursos}{23}
