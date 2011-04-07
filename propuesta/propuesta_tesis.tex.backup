@@ -57,13 +57,15 @@ basicstyle=\footnotesize}
 \parindent=1cm            
      \input title
 \tableofcontents
-%      \input intro
-%      \input technology_transfer
-%      \input description
-     \input embedded
-%     \input commons
-%     \input education
-%     \input platform
+     \input intro
+     \input technology_transfer
+      \input description
+     \input commons
+     \input education
+      \input embedded
+     \input platform
+     \input emqbit
+     \input difusion_empresa
 
 \bibliography{biblio}
 
@@ -97,5 +99,13 @@ Y despues decir que se hizo para resolver el problema.
 
 !!!30 minutos !!!!  15 diapositivas
 
+¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿
 
 
+¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡
+
+
+
+`` ''
+`` ''
+`` ''

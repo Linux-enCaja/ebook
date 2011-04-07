@@ -1,87 +1,25 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{1}
 
-\bibitem{WM91}
-{Mark Weiser}.
-\newblock The {C}omputer for the 21st {C}entury.
-\newblock {\em http://www.ubiq.com/hy\'ertext/weiser/SciAmDraft3.html}.
+\bibitem{WCI}
+{Worldwide CDIO Initiative}.
+\newblock "{B}enefits of {CDIO}" {URL}:http://www.cdio.org/benefits-cdio on
+  {N}ovember, 2009.
 
-\bibitem{MW93}
-{M. Weiser}.
-\newblock Some computer science issues in ubiquitous computing.
-\newblock {\em Commun. ACM}, 1993.
+\bibitem{ECJM+09}
+{E. Crawley}, {J. Malmqvist}, {D. Brodeur}, and {B. Lucas}.
+\newblock C{DIO} {S}yllabus, {L}eadership and {E}ntrepreneurship.
+\newblock {\em 5th International CDIO conference}, 2009.
 
-\bibitem{DS02}
-{D. Servant}.
-\newblock Combining amorphous computing and reactive agent-based systems: a
-  paradigm for pervasive intelligence?
-\newblock In {\em First international joint conference on {A}utonomous agents
-  and muktiagent systems: part 1}, 2002.
+\bibitem{EFC01}
+{Edward F. Crawley}.
+\newblock The {CDIO} {S}yllabus {A} {S}tatement of {G}oals for {U}ndergraduate
+  {E}ngineering {E}ducation.
+\newblock {\em URL:http://www.cdio.org}, 2001.
 
-\bibitem{Mok90}
-Joel Mokyr.
-\newblock {\em The {L}ever of {R}iches, {T}echnological {C}reativity and
-  {E}conomic {P}rogress.}
-\newblock Oxford University Press, 1990.
-
-\bibitem{Arr62}
-Kenneth Arrow.
-\newblock {\em Economic {W}elfare and the {A}llocation of {R}esources for
-  {I}nvention}.
-\newblock Princeton University Press, 1962.
-
-\bibitem{Mar04}
-H\'ector Mart\'{\i}nez.
-\newblock Apropiaci\'on de conocimiento en {C}olombia. {E}l caso de los
-  contratos de importaci\'on de tecnolog\'{\i}a.
-\newblock {\em Revista Cuadernos de Econom\'{\i}a}, 2004.
-
-\bibitem{ETPoSSI(09}
-{European Technology Platform on Smart Sistem Integration (EPoSS)}.
-\newblock European {T}echnology {P}latform on {S}mart {S}ystems {I}ntegration.
-  {S}trategic {R}esearch {A}genda 2009.
-\newblock 2009.
-
-\bibitem{MTRR07}
-{M. Tovar} and {R. Rodr\'{\i}guez}.
-\newblock P{ROSPECTIVA} {Y} {VIGILANCIA} {TECNOL}\'{O}{GICA} {DE} {LA}
-  {ELECTR}\'{O}{NICA} {EN} {COLOMBIA}.
-\newblock Master's thesis, Universidad Nacional de Colombia, 2007.
-
-\bibitem{MO90}
-{M. Odedra}.
-\newblock {\em Information {T}echnology {T}ransfer to {D}eveloping {C}ountries:
-  {C}ase studies from {K}enya, {Z}ambia and {Z}imbabwe}.
-\newblock PhD thesis, London School of Economics, 1990.
-
-\bibitem{IAI}
-{Innovation Associates Inc.}
-\newblock Technology {T}ransfer and {C}ommercialization {P}artnerships
-  {E}xecutive {S}ummary.
-
-\bibitem{MDAG99}
-{M. Duque} and {A. Gauthier}.
-\newblock Formaci\'on de {I}negnieros para la {I}nnovaci\'on y el {D}esarrollo
-  {T}ecnol\'ogico en {C}olombia.
-\newblock {\em Revista de la Facultad de Minas - Universidad Nacional de
-  Colombia}, December 1999.
-
-\bibitem{DZSC+07}
-{D Zuluaga}, {S Campos}, {M Tovar}, {R Rodr\'{\i}guez}, {J S\'anchez}, {A
-  Aguilera}, {L Land\'{\i}nez}, and {J Medina}.
-\newblock Informe de {V}igilancia {T}ecnol\'ogica: {A}plicaciones de la
-  {E}lectr\'onica en el {S}ector {A}gr\'{\i}cola.
-\newblock Technical report, COLCIENCIAS, 2007.
-
-\bibitem{Mo94}
-{M. odedra-straub}.
-\newblock The {M}yths and {I}llusions of {T}echnology {T}ransfer.
-\newblock {\em IFIP World Congress Proceedings}, August 1994.
-
-\bibitem{KAJS08}
-{K. Al-Mabrouk} and {J. Soar}.
-\newblock Building a {F}ramework for {U}nderstanding and {I}mproving
-  {I}nformation {T}echnology {T}ransfer {P}rocess in the {A}rab {C}ountries.
-\newblock {\em 9th IBIMA Conference: Information Management in Modern
-  Organisations - Trends \& Challenges}, 2008.
+\bibitem{HMHK09}
+{H. Mitsui}, {H. Kambe}, and {H. Koizumi}.
+\newblock Use of {S}tudent {E}xperiments for {T}eaching {E}mbedded {S}oftware
+  {D}evelopment {I}ncluding {HW}/{SW} {C}o-{D}esign.
+\newblock {\em IEEE TRANSACTIONS ON EDUCATION,}, 52(3), August 2009.
 
 \end{thebibliography}

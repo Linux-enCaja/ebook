@@ -55,16 +55,17 @@ basicstyle=\footnotesize}
 
 
 \parindent=1cm            
-%     \input title
+     \input title
 \tableofcontents
-%     \input intro
+%      \input intro
 %     \input technology_transfer
-     \input description
+%     \input description
 %     \input commons
-%     \input education
-%      \input embedded
+     \input education
+%     \input embedded
 %     \input platform
 %     \input emqbit
+%     \input difusion_empresa
 
 \bibliography{biblio}
 
