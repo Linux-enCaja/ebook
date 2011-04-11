@@ -16,6 +16,10 @@
 \usepackage{times}
 \usepackage{colortbl}
 
+\usepackage{tocvsec2}
+
+
+
 % \usebackgroundtemplate{\includegraphics[width=\paperwidth, heigth=\paperheight]{../images/tux_ecb_at91.jpg}}
 
 \title[TT en Diseño de Sistemas Embebidos]{METODOLOGÍA PARA LA TRANSFERENCIA TECNOLÓGICA Y DE CONOCIMIENTOS EN EL DISEÑO DE SISTEMAS EMBEBIDOS}
@@ -38,7 +42,9 @@
 
 %----------------------------------------------------------------------INSERT TITLE-
 \frame[c]{\titlepage}
+\settocdepth{section}
 \frame[c]{\tableofcontents}
+
 
 %$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 %----------------------------------------------------------------------Introducción-
@@ -58,25 +64,15 @@
  
   \begin{alertblock}{}
    \only<1>
-     {Odedra \cite{Mo94}: El problema de transfencia de conocimiento sobre un número de aspectos sobre como funciona un determinado sistema, como operarlo y desarrollar sus aplicaciones, como mantenerlo y si es necesario, como producir sus componentes y montar un sistema similar. \textbf{La transferencia tecnológica se considera exitosa cuando los receptores de la tecnología asimilan estos conceptos para suplir sus necesidades locales}.}
+     {Odedra \cite{Mo94}: \textbf{La transferencia tecnológica se considera exitosa cuando los receptores de la tecnología asimilan estos conceptos para suplir sus necesidades locales}.}
     \only<2>
-      {Jolly \cite{Jol77}: La transferencia tecnológica incluye la difusión de conocimiento científico y la preocupación por la transformación del conocimiento en innovaciones útiles. El conocimiento es lo que queda al final de un proceso documentado y difundido de forma apropiada. \textbf{Para que la transferencia tecnológica sea exitosa es necesario transferir los componentes de la tecnología}.}
+      {Jolly \cite{Jol77}: \textbf{El conocimiento es lo que queda al final de un proceso documentado y difundido de forma apropiada. Para que la transferencia tecnológica sea exitosa es necesario transferir los componentes de la tecnología}.}
 
   \end{alertblock}
 
 \end{frame}
 
 
-\subsubsection{Transferencia Tecnológica Exitosa}
-\begin{frame}
-  \frametitle{Transferencia Tecnológica Exitosa}
-
-  \begin{alertblock}{}
-   \begin{center}
-     Está asociada a una transferencia de conocimiento, lo cual es vital para entender plenamente la tecnología, mejorando las habilidades de los profesionales del receptor, creando una demanda de bienes y servicios relacionados con el conocimiento transferido; lo que se traduce en generación de empleo y aumento del bienestar general.
-   \end{center}
-  \end{alertblock}
-\end{frame}
 
 \subsection{Canales de Transferenica}
 \begin{frame}
@@ -138,7 +134,6 @@
      \item  La falta de facilidades de educación y capacitación afecta la transferencia del know-how, obstaculizando el desarrollo de habilidades a través del proceso de aprendizaje
      \item  Si no existen personas disponibles y dispuestas a absorber el knowhow el proceso de transferencia se detendrá.
      \item  Falta de políticas claras en la Tecnología de la Información.
-
     \end{itemize}
 \end{frame}
 
@@ -147,70 +142,66 @@
 
 \subsubsection{A los generadores de políticas}
 \begin{frame}
-
   \frametitle{Recomendaciones para los generadores de políticas}
- \footnotesize
+  \small
  \begin{itemize}
 % 
-    \item{Promover la importancia de la TT como motor de desarrollo}
-    \begin{itemize}
-    \footnotesize
+    \item Promover la importancia de la TT como motor de desarrollo
+%     \begin{itemize}
+%     \footnotesize
 %       \item Proporcionar educación en transferencia tecnológica y comercialización a las instituciones académicas.
 %       \item Promover la formación de grupos de investigación locales, para superar el aislamiento de investigaciones individuales.
 %       \item Tomar conciencia que la innovación involucra el desarrollo científico y tecnológico a varios niveles, por diferentes medios y a través de un amplio rango de instituciones académicas.
-       \item Promover actividades que involucren transferencia de conocimiento, creación de nuevos productos y servicios.
+%        \item Promover actividades que involucren transferencia de conocimiento, creación de nuevos productos y servicios.
 %       \item\ Promoción de vínculos entre grupos de investigación locales y sus pares en el exterior.
-    \end{itemize}
+%     \end{itemize}
 % 
-    \item{Fomentar la Generación de Empresas Locales de Base Tecnológica}
+    \item Fomentar la Generación de Empresas Locales de Base Tecnológica
 %    \begin{itemize}
 %       \item Evaluar y abordar la transferencia de tecnología desde una perspectiva corporativa.
 %       \item Revisión de la política gubernamental de apoyo a las pequeñas empresas.
 %    \end{itemize}
 % 
-    \item{Promover el mejoramiento de la plataforma tecnológica}
+    \item Promover el mejoramiento de la plataforma tecnológica
 %    \begin{itemize}
 %       \item Desarrollar sistemas de medición para capturar de forma efectiva el valor de las actividades relacionadas con la innovación.
 %       \item Crear un centro de intercambio de información para transferencia tecnológica y difundir la información de forma activa.
 %    \end{itemize}
 % 
-    \item{Promover la Relación Universidad-Empresa}
-    \begin{itemize}  
-    \footnotesize
+    \item Promover la Relación Universidad-Empresa
+%     \begin{itemize}  
+%     \footnotesize
 %       \item Fomento a centros de investigación y productividad para fortalecer la relaciones universidad empresa.
 %       \item Fomentar la colaboración Universidad-Empresa en I+D, mediante la financiación de becas de cooperación, centros de investigación e incentivos fiscales.
-       \item Crear estrategias para mejorar la relación Universidad - empresa.
-       \item Educar a las instituciones académicas sobre los recursos empresariales locales.
+%        \item Crear estrategias para mejorar la relación Universidad - empresa.
+%        \item Educar a las instituciones académicas sobre los recursos empresariales locales.
 %       \item Trabajar con corporaciones y fundaciones para el fomento de patrocinios y participación en transferencia de tecnología, I+D y desarrollo empresarial.
-       \item Capturar y retener empresas creadas en las instituciones académicas.
+%        \item Capturar y retener empresas creadas en las instituciones académicas.
 %       \item Crear políticas que ayuden a vincular a científicos extranjeros y a impedir la migración de los nacionales.
-    \end{itemize}
+%     \end{itemize}
 % 
-    \item{Formular políticas Para Incentivar Actividades de Transferencia Tecnológica}
-    \begin{itemize}  
-    \footnotesize
+    \item Formular políticas Para Incentivar Actividades de Transferencia Tecnológica 
+%     \begin{itemize}  
+%     \footnotesize
 %       \item Fomentar en líderes universitarios el compromiso con el desarrollo económico.
-       \item Definir agendas de investigación acordes con las tendencias mundiales y desarrollar capacidades en el país.
+%        \item Definir agendas de investigación acordes con las tendencias mundiales y desarrollar capacidades en el país.
 %       \item Fomentar cooperación internacional e inversión extranjera con transferencia de tecnología. a nivel gubernamental, Apoyo del gobierno a personas que tienen un alto potencial de crear y desarrollar tecnología.
 %       \item Mejorar la plataforma Tecnológica.
-    \end{itemize}
+%     \end{itemize}
 % 
 % 
-    \item{Promover la Excelencia Académica y la Investigación}
-    \begin{itemize}  
-    \footnotesize
+    \item Promover la Excelencia Académica y la Investigación
+%     \begin{itemize}  
+%     \footnotesize
 %       \item Promoción de las instituciones académicas como bienes económicos
 %       \item Trabajar con las instituciones académicas para identificar sus competencias.
 %       \item Proporcionar fondos para temas específicos de investigación en instituciones académicas.
 %       \item Promover la Investigación y Desarrollo y la transferencia tecnológica
-       \item Promover la investigación, la colaboración, la transferencia tecnológica y el desarrollo empresarial.
-       \item Evaluar el impacto de la academia sobre la economía local.
-    \end{itemize}
+%        \item Promover la investigación, la colaboración, la transferencia tecnológica y el desarrollo empresarial.
+%        \item Evaluar el impacto de la academia sobre la economía local.
+%     \end{itemize}
 % 
-
  \end{itemize}
-
- 
 \end{frame}
 
 
@@ -219,59 +210,52 @@
 \subsubsection{Para la academia}
 \begin{frame}
 
-
-  \frametitle{Recomendaciones para la academia}
-  \footnotesize
-
+\frametitle{Recomendaciones para la academia}
 
 \begin{itemize}
-    \item{Actualización curricular}
-    \begin{itemize}
-      \footnotesize
+    \item Actualización curricular.
+     \begin{itemize}
+%       \footnotesize
 %       \item Innovación
 %       \item Crear planes de transferencia de tecnología flexibles
 %       \item hacer compromisos con el desarrollo económico.
-       \item Mejorar las competencias y habilidades generales de los ingenieros. 
+        \item \alert{Mejorar las competencias y habilidades generales de los ingenieros.}
 %        \item Innovación curricular, actualización continua de profesionales.
-       \item Maestrías y doctorados nacionales conectados con el sector productivo.
-       \item Difusión de habilidades entre todos los estratos de la población.
-    \end{itemize}
+%        \item Maestrías y doctorados nacionales conectados con el sector productivo.
+        \item \alert{Difusión de habilidades entre todos los estratos de la población.}
+     \end{itemize}
 % 
-    \item{Alianza con la industria}
-    \begin{itemize}
-      \footnotesize
-       \item Desarrollar habilidades y competencias que la empresa requiere.
+    \item Alianza con la industria
+     \begin{itemize}
+%       \footnotesize
+       \item \alert{Desarrollar habilidades y competencias que la empresa requiere.}
 %       \item Buscar alianzas industriales para lograr beneficios a largo-plazo.
-       \item Vinculación de miembros de la industria a centros de investigación.
-       \item Buscar fortalezas en áreas dominadas por las industrias locales
+%        \item Vinculación de miembros de la industria a centros de investigación.
+       \item \alert{Buscar fortalezas en áreas dominadas por las industrias locales.}
 %       \item Promover y soportar la Transferencia de Tecnología
 %       \item Fortalecer el espíritu empresarial para apoyar la comercialización
 %       \item Montar laboratorios de pruebas e incentivar a los productores nacionales para que logren una calidad que cumpla con los estándares internacionales.
-    \end{itemize}
+     \end{itemize}
 % 
-    \item{Promover y Soportar la Transferencia Tecnológica}
-    \begin{itemize}
-      \footnotesize
+    \item Promover y Soportar la Transferencia Tecnológica.
+     \begin{itemize}
+%       \footnotesize
 %       \item Elevar la transferencia tecnológica a un nivel superior y promover la excelencia.
 %       \item Concientizar a los creadores de políticas gubernamentales sobre la importancia de la transferencia tecnológica y las alianzas con la investigación industrial.
-       \item Investigación aplicada orientada a mejorar la productividad empresarial.
-       \item Impulsar la actualización tecnológica desarrollando proyectos con una posible transferencia de tecnología.
-    \end{itemize}
+       \item \alert{Investigación aplicada orientada a mejorar la productividad empresarial.}
+       \item \alert{Impulsar la actualización tecnológica desarrollando proyectos con una posible transferencia de tecnología.}
+     \end{itemize}
 % 
- 
-    \item{Búsqueda de Financiación para Investigación y Desarrollo}
-    \begin{itemize}  
-      \footnotesize
+    \item Búsqueda de financiación para investigación y desarrollo
+%     \begin{itemize}  
+%       \footnotesize
 %       \item Buscar de forma agresiva fondos para la investigación.
 %       \item Crear recursos empresariales en las instituciones académicas, y enlazarlos con actividades de transferencia tecnológica.
-       \item Alianzas con fuentes de inversión de capital para nuevas empresas.
-       \item Creación de empresas como parte del proceso de TT.
+%        \item Alianzas con fuentes de inversión de capital para nuevas empresas.
+%        \subitem Creación de empresas como parte del proceso de TT.
 %       \item Realizar seminarios y líneas de profundización de temas afines a la administración y la gerencia en empresas de base tecnológica.
-    \end{itemize}
-
+%     \end{itemize}
 \end{itemize}
-
-
 \end{frame}
 
 

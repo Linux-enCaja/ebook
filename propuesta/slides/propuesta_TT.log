@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.11.20)  8 MAR 2011 09:37
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.11.20)  10 APR 2011 21:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -688,36 +688,42 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \everycr=\toks41
 \minrowclearance=\skip57
 )
+(/usr/share/texmf-texlive/tex/latex/tocvsec2/tocvsec2.sty
+Package: tocvsec2 2009/09/04 v1.2a variable ToC section entries
+
+(/usr/share/texmf-texlive/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+))
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\\' on input line 24.
+(hyperref)                removing `\\' on input line 28.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\\' on input line 24.
+(hyperref)                removing `\\' on input line 28.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\\' on input line 26.
+(hyperref)                removing `\\' on input line 30.
 
 (./propuesta_TT.aux)
 \openout1 = `propuesta_TT.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Try loading font information for T1+phv on input line 37.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 41.
  (/usr/share/texmf-texlive/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
@@ -775,7 +781,7 @@ driver: pdftex
 
 (1in=72.27pt, 1cm=28.45pt)
 -----------------------
-Package hyperref Info: Link coloring OFF on input line 37.
+Package hyperref Info: Link coloring OFF on input line 41.
 (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 
@@ -784,93 +790,90 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
 \c@section@level=\count156
 )
-LaTeX Info: Redefining \ref on input line 37.
-LaTeX Info: Redefining \pageref on input line 37.
+LaTeX Info: Redefining \ref on input line 41.
+LaTeX Info: Redefining \pageref on input line 41.
  (./propuesta_TT.out) (./propuesta_TT.out)
 \@outlinefile=\write4
 \openout4 = `propuesta_TT.out'.
 
 \AtBeginShipoutBox=\box53
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 37.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 41.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 37.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 41.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/ptm/m/n on input line 37.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 37.
+(Font)                  OT1/cmss/m/n --> T1/ptm/m/n on input line 41.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 41.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> T1/phv/bx/n on input line 37.
+(Font)                  OT1/cmr/bx/n --> T1/phv/bx/n on input line 41.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> T1/phv/bx/n on input line 37.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 37.
+(Font)                  OT1/cmr/bx/n --> T1/phv/bx/n on input line 41.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 41.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/phv/m/n on input line 37.
+(Font)                  OT1/cmss/m/n --> T1/phv/m/n on input line 41.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/phv/m/n on input line 37.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 37.
+(Font)                  OT1/cmss/bx/n --> T1/phv/m/n on input line 41.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 41.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> T1/phv/m/it on input line 37.
+(Font)                  OT1/cmr/m/it --> T1/phv/m/it on input line 41.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> T1/phv/m/it on input line 37.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 37.
+(Font)                  OT1/cmr/bx/it --> T1/phv/m/it on input line 41.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 41.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/pcr/m/n on input line 37.
+(Font)                  OT1/cmtt/m/n --> T1/pcr/m/n on input line 41.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/pcr/m/n on input line 37.
+(Font)                  OT1/cmtt/m/n --> T1/pcr/m/n on input line 41.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/phv/m/n --> T1/phv/bx/n on input line 37.
+(Font)                  T1/phv/m/n --> T1/phv/bx/n on input line 41.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/phv/m/it --> T1/phv/bx/it on input line 37.
+(Font)                  T1/phv/m/it --> T1/phv/bx/it on input line 41.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/ptm/bx/n on input line 37.
+(Font)                  OT1/cmss/bx/n --> T1/ptm/bx/n on input line 41.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/phv/bx/n --> T1/phv/bx/n on input line 37.
+(Font)                  T1/phv/bx/n --> T1/phv/bx/n on input line 41.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/phv/m/n --> T1/phv/bx/n on input line 37.
+(Font)                  T1/phv/m/n --> T1/phv/bx/n on input line 41.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/phv/m/it --> T1/phv/bx/it on input line 37.
+(Font)                  T1/phv/m/it --> T1/phv/bx/it on input line 41.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/pcr/m/n --> T1/pcr/bx/n on input line 37.
+(Font)                  T1/pcr/m/n --> T1/pcr/bx/n on input line 41.
 
 (/usr/share/texmf-texlive/tex/latex/translator/translator-theorem-dictionary-En
 glish.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 ) (./propuesta_TT.nav)
-LaTeX Font Info:    Try loading font information for U+msa on input line 40.
+LaTeX Font Info:    Try loading font information for U+msa on input line 44.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 40.
+LaTeX Font Info:    Try loading font information for U+msb on input line 44.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 40.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 44.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <8> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 40.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 44.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <6> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 40.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 44.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <5> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 40.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 44.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <../images/logo_unal.jpg>] 
 (./propuesta_TT.toc)
-Overfull \vbox (48.30122pt too high) detected at line 41
- []
-
 [2
 
 ]
-<../images/technology_definition_slides.pdf, id=196, 786.94pt x 400.49625pt>
+<../images/technology_definition_slides.pdf, id=85, 786.94pt x 400.49625pt>
 File: ../images/technology_definition_slides.pdf Graphic file (type pdf)
 
 <use ../images/technology_definition_slides.pdf>
-Overfull \hbox (11.82442pt too wide) in paragraph at lines 53--53
+Overfull \hbox (11.82442pt too wide) in paragraph at lines 59--59
  [] 
  []
 
@@ -878,118 +881,116 @@ Overfull \hbox (11.82442pt too wide) in paragraph at lines 53--53
 
  <../images/technology_definition_slides.pdf>]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 67.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 73.
  [4
 
 ] [5
 
-] [6
-
 ]
-<../images/TT_canales.pdf, id=329, 408.52625pt x 219.82124pt>
+<../images/TT_canales.pdf, id=197, 408.52625pt x 219.82124pt>
 File: ../images/TT_canales.pdf Graphic file (type pdf)
 
-<use ../images/TT_canales.pdf> [7
+<use ../images/TT_canales.pdf> [6
 
- <../images/TT_canales.pdf>] [8
+ <../images/TT_canales.pdf>] [7
 
-] [9
+] [8
 
 ]
-<../images/Inversion_PIB_latam.jpg, id=442, 521.95pt x 346.29375pt>
+<../images/Inversion_PIB_latam.jpg, id=319, 521.95pt x 346.29375pt>
 File: ../images/Inversion_PIB_latam.jpg Graphic file (type jpg)
 
-<use ../images/Inversion_PIB_latam.jpg> [10
+<use ../images/Inversion_PIB_latam.jpg> [9
 
- <../images/Inversion_PIB_latam.jpg>] [11
+ <../images/Inversion_PIB_latam.jpg>] [10
+
+] [11
 
 ] [12
 
-] [13
-
 ]
-<../images/Embedded_systems_applications.pdf, id=549, 484.81125pt x 334.24875pt
+<../images/Embedded_systems_applications.pdf, id=428, 484.81125pt x 334.24875pt
 >
 File: ../images/Embedded_systems_applications.pdf Graphic file (type pdf)
- <use ../images/Embedded_systems_applications.pdf> [14
+ <use ../images/Embedded_systems_applications.pdf> [13
 
  <../images/Embedded_systems_applications.pdf>]
-<../images/glob-emb-software-rev-applicatio.png, id=596, 513.92pt x 356.33125pt
+<../images/glob-emb-software-rev-applicatio.png, id=479, 513.92pt x 356.33125pt
 >
 File: ../images/glob-emb-software-rev-applicatio.png Graphic file (type png)
- <use ../images/glob-emb-software-rev-applicatio.png> [15
+ <use ../images/glob-emb-software-rev-applicatio.png> [14
 
  <../images/glob-emb-software-rev-applicatio.png (PNG copy)>]
-<../images/thesis_proposal_flow_diagram.pdf, id=623, 793.96625pt x 442.65375pt>
+<../images/thesis_proposal_flow_diagram.pdf, id=507, 793.96625pt x 442.65375pt>
 File: ../images/thesis_proposal_flow_diagram.pdf Graphic file (type pdf)
-<use ../images/thesis_proposal_flow_diagram.pdf> [16
+<use ../images/thesis_proposal_flow_diagram.pdf> [15
 
  <../images/thesis_proposal_flow_diagram.pdf>]
-<../images/thesis_flow_diagram.pdf, id=697, 739.76375pt x 512.91624pt>
+<../images/thesis_flow_diagram.pdf, id=582, 739.76375pt x 512.91624pt>
 File: ../images/thesis_flow_diagram.pdf Graphic file (type pdf)
 
 <use ../images/thesis_flow_diagram.pdf>
-Overfull \vbox (23.20747pt too high) detected at line 311
+Overfull \vbox (23.20747pt too high) detected at line 295
+ []
+
+[16
+
+ <../images/thesis_flow_diagram.pdf>]
+<../images/TT_Methodology_phases.pdf, id=694, 424.58624pt x 430.60875pt>
+File: ../images/TT_Methodology_phases.pdf Graphic file (type pdf)
+
+<use ../images/TT_Methodology_phases.pdf>
+Overfull \vbox (7.70113pt too high) detected at line 303
  []
 
 [17
 
- <../images/thesis_flow_diagram.pdf>]
-<../images/TT_Methodology_phases.pdf, id=809, 424.58624pt x 430.60875pt>
-File: ../images/TT_Methodology_phases.pdf Graphic file (type pdf)
-
-<use ../images/TT_Methodology_phases.pdf>
-Overfull \vbox (7.70113pt too high) detected at line 319
- []
-
-[18
-
  <../images/TT_Methodology_phases.pdf>]
-<../images/GA_vs_ASIC_vs_FPGA.png, id=860, 383.26794pt x 258.10715pt>
+<../images/GA_vs_ASIC_vs_FPGA.png, id=747, 383.26794pt x 258.10715pt>
 File: ../images/GA_vs_ASIC_vs_FPGA.png Graphic file (type png)
 
-<use ../images/GA_vs_ASIC_vs_FPGA.png> [19
+<use ../images/GA_vs_ASIC_vs_FPGA.png> [18
 
  <../images/GA_vs_ASIC_vs_FPGA.png>]
-<../images/plataformas_adquiridas.png, id=887, 639.89063pt x 172.85196pt>
+<../images/plataformas_adquiridas.png, id=775, 639.89063pt x 172.85196pt>
 File: ../images/plataformas_adquiridas.png Graphic file (type png)
 
-<use ../images/plataformas_adquiridas.png> [20
+<use ../images/plataformas_adquiridas.png> [19
 
- <../images/plataformas_adquiridas.png>] [21
+ <../images/plataformas_adquiridas.png>] [20
 
-] [22
+] [21
 
 ]
-<../images/productos_realizados_absorcion.png, id=978, 410.2828pt x 317.68687pt
+<../images/productos_realizados_absorcion.png, id=873, 410.2828pt x 317.68687pt
 >
 File: ../images/productos_realizados_absorcion.png Graphic file (type png)
- <use ../images/productos_realizados_absorcion.png> [23
+ <use ../images/productos_realizados_absorcion.png> [22
 
- <../images/productos_realizados_absorcion.png (PNG copy)>] [24
+ <../images/productos_realizados_absorcion.png (PNG copy)>] [23
 
 ]
-<../images/productos_desarrollados.png, id=1032, 627.09282pt x 356.83313pt>
+<../images/productos_desarrollados.png, id=929, 627.09282pt x 356.83313pt>
 File: ../images/productos_desarrollados.png Graphic file (type png)
 
-<use ../images/productos_desarrollados.png> [25
+<use ../images/productos_desarrollados.png> [24
 
- <../images/productos_desarrollados.png>] <../images/difusion_TT.png, id=1059, 
-214.55156pt x 182.93344pt>
+ <../images/productos_desarrollados.png>] <../images/difusion_TT.png, id=955, 2
+14.55156pt x 182.93344pt>
 File: ../images/difusion_TT.png Graphic file (type png)
 
-<use ../images/difusion_TT.png> [26
+<use ../images/difusion_TT.png> [25
 
  <../images/difusion_TT.png>]
-<../images/gracias.jpg, id=1086, 794.97pt x 794.97pt>
+<../images/gracias.jpg, id=984, 794.97pt x 794.97pt>
 File: ../images/gracias.jpg Graphic file (type jpg)
 
-<use ../images/gracias.jpg> [27
+<use ../images/gracias.jpg> [26
 
  <../images/gracias.jpg>]
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 431.
- [28
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 415.
+ [27
 
  </usr/share/texmf/tex/latex/beamer/base/art/beamericonarticle.pdf>]
 \tf@nav=\write5
@@ -1004,19 +1005,19 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
  (./propuesta_TT.aux) ) 
 Here is how much of TeX's memory you used:
  13715 strings out of 495061
- 242614 string characters out of 1182620
- 325690 words of memory out of 3000000
- 16403 multiletter control sequences out of 15000+50000
+ 241913 string characters out of 1182620
+ 327488 words of memory out of 3000000
+ 16399 multiletter control sequences out of 15000+50000
  46955 words of font info for 62 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 45i,16n,72p,460b,1055s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 45i,16n,67p,342b,1055s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</
 usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-t
 exlive/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-texlive/fonts/type
 1/urw/helvetic/uhvro8a.pfb>
-Output written on propuesta_TT.pdf (28 pages, 1818357 bytes).
+Output written on propuesta_TT.pdf (27 pages, 1803098 bytes).
 PDF statistics:
- 1177 PDF objects out of 1200 (max. 8388607)
- 84 named destinations out of 1000 (max. 500000)
- 344 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1074 PDF objects out of 1200 (max. 8388607)
+ 81 named destinations out of 1000 (max. 500000)
+ 192 words of extra memory for PDF output out of 10000 (max. 10000000)
 
