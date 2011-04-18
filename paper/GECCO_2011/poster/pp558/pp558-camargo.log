@@ -1,15 +1,14 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.11.20)  15 APR 2011 08:52
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.11.20)  16 APR 2011 10:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**gecco.tex
-(./gecco.tex
+**pp558-camargo.tex
+(./pp558-camargo.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
 yphenation, loaded.
-(./sig-alternate.cls (/usr/share/texmf-texlive/tex/latex/graphics/epsfig.sty
+(./sig-alt-release2.cls (/usr/share/texmf-texlive/tex/latex/graphics/epsfig.sty
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
-
 (/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -107,15 +106,15 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
-Document Class 'sig-alternate' <22nd. April '09>. Modified by G.K.M. Tobin/Gerr
-y Murray
+Document Class 'sig-alt-release2' <22nd. April '09>. Modified by G.K.M. Tobin/G
+erry Murray
 Based in part upon document Style `acmconf' <22 May 89>. Hacked 4/91 by
 shivers@cs.cmu.edu, 4/93 by theobald@cs.mcgill.ca
 Excerpts were taken from (Journal Style) 'esub2acm.cls'.
 ****** Bugs/comments/suggestions/technicalities to Gerry Murray -- murray@hq.ac
 m.org ******
-Questions on the style, SIGS policies, etc. to Adrienne Griscti griscti@acm.org
-
+Questions on the style, SIGS policies, etc. to Gerry Murray at ACM murray@acm.o
+rg
 \footheight=\dimen115
 \@maxsep=\dimen116
 \@dblmaxsep=\dimen117
@@ -135,8 +134,8 @@ Questions on the style, SIGS policies, etc. to Adrienne Griscti griscti@acm.org
 \c@table=\count99
 \titleboxnotes=\toks23
 \titleboxnoteflag=\count100
-Document Class: sig-alternate 2009/04/22 - V2.4 - based on acmproc.cls V1.3 <No
-v. 30 '99>
+Document Class: sig-alt-release2 2009/04/22 - V1.6 - based on acmproc.cls V1.3 
+<Nov. 30 '99>
 (/usr/share/texmf-texlive/tex/latex/base/latexsym.sty
 Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 \symlasy=\mathgroup6
@@ -161,7 +160,7 @@ LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 \c@paragraph=\count107
 
 Using 'Abbrev' bibliography style
-LaTeX Info: Redefining \cite on input line 1211.
+LaTeX Info: Redefining \cite on input line 1212.
 \bibindent=\dimen122
 \colcntr=\count108
 \saveb@x=\box29
@@ -224,8 +223,8 @@ Package color Info: Driver file: pdftex.def on input line 130.
 \ULC@box=\box32
 Package: ulem 2000/05/26
 \ULdepth=\dimen126
-) (./gecco.aux)
-\openout1 = `gecco.aux'.
+) (./pp558-camargo.aux)
+\openout1 = `pp558-camargo.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
@@ -253,16 +252,16 @@ LaTeX Font Info:    ... okay on input line 29.
 \MPnumerator=\count118
 \everyMPtoPDFconversion=\toks38
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 61.
+LaTeX Font Info:    Try loading font information for U+msa on input line 65.
  (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 61.
+LaTeX Font Info:    Try loading font information for U+msb on input line 65.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 61.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 65.
 
 (/usr/share/texmf-texlive/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
@@ -270,106 +269,59 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 
 
 ]
-<./images/fitness.pdf, id=12, 215.18492pt x 178.35533pt>
-File: ./images/fitness.pdf Graphic file (type pdf)
-
-<use ./images/fitness.pdf>
-
-LaTeX Warning: Citation `CC11b' on page \thepage  undefined on input line 128.
-
-
-LaTeX Warning: Citation `CC11d' on page \thepage  undefined on input line 128.
-
-<./images/SIE_block_diagram.pdf, id=13, 500.9134pt x 273.26692pt>
-File: ./images/SIE_block_diagram.pdf Graphic file (type pdf)
-
-<use ./images/SIE_block_diagram.pdf>
-Overfull \hbox (1.91542pt too wide) in paragraph at lines 142--143
-\T1/aer/m/n/9 for im-ple-ment-ing evo-lu-tion-ary al-go-rithms; Va-sicek et al.
- [17],
- []
-
-[2 <./images/fitness.pdf>]
-<./images/communications.pdf, id=58, 194.06302pt x 211.79628pt>
-File: ./images/communications.pdf Graphic file (type pdf)
-
-<use ./images/communications.pdf>
-<./images/migration_scheme.pdf, id=59, 268.70587pt x 160.80476pt>
+<./images/migration_scheme.pdf, id=17, 268.70587pt x 160.80476pt>
 File: ./images/migration_scheme.pdf Graphic file (type pdf)
 
-<use ./images/migration_scheme.pdf> [3 <./images/SIE_block_diagram.pdf> <./imag
-es/communications.pdf>]
-<./images/hw_block_diagram.pdf, id=72, 571.31123pt x 172.04677pt>
-File: ./images/hw_block_diagram.pdf Graphic file (type pdf)
+<use ./images/migration_scheme.pdf>
+<./images/hw_block_diagram_vertical.pdf, id=18, 354.78528pt x 349.034pt>
+File: ./images/hw_block_diagram_vertical.pdf Graphic file (type pdf)
 
-<use ./images/hw_block_diagram.pdf>
-<./images/response_time_1024indiv.pdf, id=73, 361.35pt x 252.945pt>
+<use ./images/hw_block_diagram_vertical.pdf>
+<./images/response_time_1024indiv.pdf, id=19, 361.35pt x 252.945pt>
 File: ./images/response_time_1024indiv.pdf Graphic file (type pdf)
 
 <use ./images/response_time_1024indiv.pdf>
-<./images/response_time_12var.pdf, id=74, 361.35pt x 252.945pt>
+<./images/response_time_12var.pdf, id=20, 361.35pt x 252.945pt>
 File: ./images/response_time_12var.pdf Graphic file (type pdf)
 
-<use ./images/response_time_12var.pdf> [4 <./images/migration_scheme.pdf> <./im
-ages/hw_block_diagram.pdf> <./images/response_time_1024indiv.pdf> <./images/res
-ponse_time_12var.pdf>]
-<./images/response_time_threads_cuda_12var.pdf, id=122, 361.35pt x 252.945pt>
-File: ./images/response_time_threads_cuda_12var.pdf Graphic file (type pdf)
-
-<use ./images/response_time_threads_cuda_12var.pdf>
-Underfull \hbox (badness 1348) in paragraph at lines 244--244
-[]\T1/aer/bx/n/9 Figure 8: Re-sponse time of the al-go-rithm in
- []
-
-<./images/response_time_1024indiv_gpu.pdf, id=123, 361.35pt x 252.945pt>
+<use ./images/response_time_12var.pdf> [2 <./images/migration_scheme.pdf> <./im
+ages/hw_block_diagram_vertical.pdf> <./images/response_time_1024indiv.pdf> <./i
+mages/response_time_12var.pdf>]
+<./images/response_time_1024indiv_gpu.pdf, id=80, 361.35pt x 252.945pt>
 File: ./images/response_time_1024indiv_gpu.pdf Graphic file (type pdf)
 
-<use ./images/response_time_1024indiv_gpu.pdf>
-<./images/speedup_sie_vs_altamira.pdf, id=124, 361.35pt x 252.945pt>
-File: ./images/speedup_sie_vs_altamira.pdf Graphic file (type pdf)
-
-<use ./images/speedup_sie_vs_altamira.pdf>
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<./images/speedup_sie_vs_cuda.pdf, id=125, 361.35pt x 252.945pt>
-File: ./images/speedup_sie_vs_cuda.pdf Graphic file (type pdf)
-
-<use ./images/speedup_sie_vs_cuda.pdf> [5 <./images/response_time_threads_cuda_
-12var.pdf> <./images/response_time_1024indiv_gpu.pdf> <./images/speedup_sie_vs_
-altamira.pdf> <./images/speedup_sie_vs_cuda.pdf>] (./gecco.bbl) [6]
-(./gecco.aux) ) 
+<use ./images/response_time_1024indiv_gpu.pdf> (./pp558-camargo.bbl) [3 <./imag
+es/response_time_1024indiv_gpu.pdf>] (./pp558-camargo.aux) ) 
 Here is how much of TeX's memory you used:
- 2795 strings out of 495061
- 33097 string characters out of 1182620
- 93395 words of memory out of 3000000
- 5908 multiletter control sequences out of 15000+50000
- 49511 words of font info for 66 fonts, out of 3000000 for 9000
+ 2742 strings out of 495061
+ 31988 string characters out of 1182620
+ 91900 words of memory out of 3000000
+ 5862 multiletter control sequences out of 15000+50000
+ 48375 words of font info for 65 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 39i,11n,26p,1059b,261s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/shar
-e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-texl
-ive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts/t
-ype1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texmf-texlive/fonts/type1/pu
-blic/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfon
-ts/cm/cmmi5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi6.
-pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/sh
-are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-te
-xlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/
-type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/public
-/amsfonts/cm/cmr5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
-cmr6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></us
-r/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf
--texlive/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-texlive/font
-s/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-texlive/fonts/type1/publ
-ic/amsfonts/cm/cmti9.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhv
-b8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/sha
-re/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fon
-ts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/u
-tmri8a.pfb>
-Output written on gecco.pdf (6 pages, 372442 bytes).
+ 39i,11n,26p,1008b,268s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-t
+exlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive/fonts/type1/public
+/amsfonts/cm/cmbx9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
+extra/cmex9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10
+.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/s
+hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-t
+exlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts
+/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-texlive/fonts/type1/publi
+c/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/c
+m/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr5.pfb><
+/usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/te
+xmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/f
+onts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1/pu
+blic/amsfonts/cm/cmsy9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfont
+s/cm/cmti9.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvb8a.pfb></
+usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-t
+exlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/u
+rw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb
+>
+Output written on pp558-camargo.pdf (3 pages, 273280 bytes).
 PDF statistics:
- 201 PDF objects out of 1000 (max. 8388607)
+ 134 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

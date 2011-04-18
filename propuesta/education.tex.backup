@@ -822,7 +822,7 @@ A los estudiantes se les hace una descripción funcional de alto nivel del sistem
 
 El estudiante debe diseñar y construir placas de circuito impreso con los circuitos necesarios para su aplicación (35) siguiendo las normas de diseño establecidas por el fabricante (resolución, número de capas, costo) y las restricciones del circuito (Capacidad de corriente, niveles de ruido, compatibilidad electromagnética, etc). Vale la pena aclarar que durante el primer curso los estudiantes no poseen la experiencia necesaria para realizar (sin asistencia) labores como la división de tareas, generación de un cronograma de actividades y  fijar la estrategia de comunicación, razón por la cual el docente debe acompañar este proceso.
 
-\subsubsection{Participación en listas de discución 21}
+\subsubsection{Participación en listas de discusión 21}
 Con el objeto de aumentar las capacidades en la comunicación en idioma extranjero, se alentará a los estudiantes a que hagan parte de listas de discusión en diferentes temas técnicos, algunos problemas que encontrarán en la realización de las diferentes prácticas deben ser consultados en estas listas para encontrar una forma de solución
 
 \subsubsection{Hardware y Software Copy-Left}
@@ -904,7 +904,7 @@ Los objetivos de aprendizaje están formados por la superposición de los dominios
 
 
 \subsection{Dominio cognitivo}
-El dominio congnitivo involucra conocimiento y desarrollo de habilidades iintelectuales. Incluye el reconocimiento de hechos específicos, procedimientos, y conceptos que ayudan en el desarrollo de habilidades y capacidades intelectuales. Bloon identificó las siguientes seis categorías, las que están ordenadas desde el comportamiento más simple al más complejo. Las categorías pueden ser considerados como grados de dificultades. Es decir, se deben dominar las primeros antes para poder desarrollar las otras.
+El dominio congnitivo involucra conocimiento y desarrollo de habilidades iintelectuales. Incluye el reconocimiento de hechos específicos, procedimientos, y conceptos que ayudan en el desarrollo de habilidades y capacidades intelectuales. Bloom identificó las siguientes seis categorías, las que están ordenadas desde el comportamiento más simple al más complejo. Las categorías pueden ser considerados como grados de dificultades. Es decir, se deben dominar las primeros antes para poder desarrollar las otras.
 
 % defines; describes; enumerates;  identifies;  labels;  lists;  matches;  names;  reads;  records;  reproduces;  selects;  states;  views; 
 % writes;.
@@ -916,140 +916,119 @@ El dominio congnitivo involucra conocimiento y desarrollo de habilidades iintele
   \begin{itemize}
     \item Objetivos generales
       \begin{itemize}
-        \item \textit{Identifica} y \textit{reproduce} las diferentes etapas del proceso de diseño
+        \item \textit{Identifica} y \textit{reproduce} las diferentes etapas del proceso de diseño.
         \item \textit{Identifica} la estructura de un sistema digital.
         \item \textit{Selecciona} los componentes adecuados para cada problema (particionamiento hw/sw).
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
+        \item \textit{Define} las especificaciones de un sistema digital.
+        \item \textit{Lee} esquemáticos electrónicos y hojas de especificaciones de sus componentes.
+        \item \textit{Escribe} documentos que \textit{describen} el proceso de diseño de un sistema digital.
       \end{itemize}
 
     \item Electrónica digital 1
       \begin{itemize}
-        \item \textit{Identifica} la diferencia entre circuito lógico y secuencial.
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
+        \item \textit{Identifica} la arquitectura de un circuito lógico y secuencial.
+        \item \textit{Reproduce} los pasos para sintetizar una máquina de estados algorítmica.
+        \item \textit{Identifica} los componentes básicos de una máquina de estados algorítmica.
+        \item \textit{Identifica} los pasos del flujo de diseño hardware.
       \end{itemize}
 
     \item Electrónica digital 2
       \begin{itemize}
-        \item \textit{Identifica} 
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
+        \item \textit{Identifica} las tareas que deben ser ejecutadas en software y en hardware. 
+        \item \textit{Identifica} y \textit{describe} los componentes de un SoC.
+        \item \textit{Identifica} y \textit{describe} el funcionamiento de los componentes de una unidad de procesamiento central.
+        \item \textit{Identifica} los pasos del flujo de diseño software.
+        \item \textit{Describe} el comportamiento de tareas hardware y software.
+
       \end{itemize}
 
     \item Sistemas embebidos
       \begin{itemize}
-        \item \textit{Identifica} las diferentes etapas del proceso de diseño
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
+        \item \textit{Describe} la integración de software en hardware electrónico.
+        \item \textit{Identifica} los componentes de un sistema embebido.
       \end{itemize}
 
   \end{itemize}
-
-
 
 
  \item Comprensión: relacionado con los objetivos, comportamientos o respuestas que representan el entendimiento de un mensaje contenido en una comunicación, sin referirse a otro material. Para llegar a este entendimiento el estudiante puede cambiar la comunicación en su mente para reflejar una forma paralela más significativa para él.
 
+% classifies; cites; converts; describes; discusses; estimates; explains; generalizes; gives examples; illustrates; makes sense out of; paraphrases; restates (in own words); summarizes; traces; understands.
+% 
+% clasifica; cita; convierte, describe, analiza, calcula, explica, generaliza, da ejemplos, ilustra, hace sentido a, parafrasea, reitera (en sus propias palabras), resumen, los rastros; entiende.
+
 
   \begin{itemize}
     \item Objetivos generales
       \begin{itemize}
-        \item \textit{Identifica} las diferentes etapas del proceso de diseño
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
+        \item \textit{Entiende} las etapas de la metodología de diseño de sistemas digitales.
+        \item \textit{Entiende} la diferencia entre tareas hardware y sofware.
+        \item \textit{Analiza} las diferentes formas de implementar un sistema digital.
+        \item \textit{Describe} el comportamiento de un sistema digital.
       \end{itemize}
 
     \item Electrónica digital 1
       \begin{itemize}
-        \item \textit{Identifica} la diferencia entre circuito lógico y secuencial.
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
+        \item \textit{Entiende} la forma de implementar máquinas de estado algorítmicas en PLDs.
       \end{itemize}
 
     \item Electrónica digital 2
       \begin{itemize}
-        \item \textit{Identifica} 
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
+        \item \textit{Entiende} el funcionamiento de un SoC.
+        \item \textit{Entiende} los canales de comunicación entre un periférico y la unidad de procesamiento central.
+        \item \textit{Entiende} los pasos necesarios para crear aplicaciones utilizando lengiajes de alto nivel.
+        \item \textit{Entiende} el uso del set de instrucciones en la elaboración de aplicaciones.
       \end{itemize}
 
     \item Sistemas embebidos
       \begin{itemize}
-        \item \textit{Identifica} las diferentes etapas del proceso de diseño
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
+        \item \textit{Entiende} la diferencia entre procesadores softcore y hardcore.
+        \item \textit{Entiende} la diferencia entre aplicaciones que utilizan y las que no utilizan sistema operativo.
       \end{itemize}
   \end{itemize}
-
-classifies; cites; converts; describes; discusses; estimates; explains; generalizes; gives examples; illustrates; makes sense out of; paraphrases; restates (in own words); summarizes; traces; understands.
+ 
 
  \item Aplicación: habilidad de utilizar información aprendida previamente en nuevas situaciones para resolver problemas con una única o mejor solución.
 
 
-acts; administers; applies; articulates; assesses; charts; collects; computes; constructs; contributes; controls; demonstrates; determines; develops; discovers; establishes; extends; implements; includes; informs; instructs; operationalizes; participates; predicts; prepares; preserves; produces; projects; provides; relates; reports; shows; solves; teaches; transfers; uses; utilizes.
+% acts; administers; applies; articulates; assesses; charts; collects; computes; constructs; contributes; controls; demonstrates; determines; develops; discovers; establishes; extends; implements; includes; informs; instructs; operationalizes; participates; predicts; prepares; preserves; produces; projects; provides; relates; reports; shows; solves; teaches; transfers; uses; utilizes.
  
   \begin{itemize}
     \item Objetivos generales
       \begin{itemize}
-        \item \textit{Identifica} las diferentes etapas del proceso de diseño
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
+        \item \textit{utiliza y aplica} la metodología de diseño de sistemas embebidos en la solución de problemas.
+        \item \textit{Implementa} sistemas digitales que dan solución a una necesidad de la sociedad.
+        \item \textit{Implementa} placas de circuito impreso.
+        \item \textit{Utiliza} software como ayuda en el proceso de diseño.
+        \item \textit{Aplica} el concepto de re-utilización de código. 
+        \item \textit{Utiliza} niveles de jerarquía para el diseño de distemas digitales.
+        \item \textit{Construye} sistemas digitales.
+        \item \textit{Desarrolla y aplica} pruebas para comprobar el correcto duncionamiento de un sistema digital.
       \end{itemize}
 
     \item Electrónica digital 1
       \begin{itemize}
-        \item \textit{Identifica} la diferencia entre circuito lógico y secuencial.
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
+        \item \textit{Implementa} máquinas de estado algorítmicas.
+        \item \textit{Utiliza} lenguajes de descripción de hardware.
+        \item \textit{Utiliza} el flujo de diseño hardware.
       \end{itemize}
 
     \item Electrónica digital 2
       \begin{itemize}
-        \item \textit{Identifica} 
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
+        \item \textit{Implementa} tareas hardware como periféricos de un SoC. 
+        \item \textit{Utiliza} herramientas de compilación y el flujo de diseño software.
+        \item \textit{Implementa} tareas software utilizando una unidad de procesamiento central.
+        \item \textit{Desarrolla} aplicaciones que implementan tareas hardware y software.
+        \item \textit{Utiliza} canales de comunicación entre tareas hardware y software
       \end{itemize}
 
     \item Sistemas embebidos
       \begin{itemize}
-        \item \textit{Identifica} las diferentes etapas del proceso de diseño
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
+        \item \textit{Desarrolla} aplicaciones utilizando un sistema operativo.
+        \item \textit{Implementa} periféricos en un PLD.
+        \item \textit{Desarrolla} controladores del sistema operativo para periféricos implementados en PLDs.
+        \item \textit{Utiliza} librerías disponibles para el desarrollo de aplicaciones.
+        \item \textit{Desarrolla} interfaces gráficas para aplicaciones embebidas.
       \end{itemize}
   \end{itemize}
 
@@ -1057,150 +1036,202 @@ acts; administers; applies; articulates; assesses; charts; collects; computes; c
  \item Análisis: La separación de la información en sus partes componentes, examinando y entendiendo su estructura. Distinguiendo entre hechos e inferencias.
 
 
-analyzes; breaks down; categorizes; compares; contrasts; correlates; diagrams; differentiates; discriminates; distinguishes; focuses; illustrates; infers; limits; outlines; points out; prioritizes; recognizes; separates; subdivides.
+% analyzes; breaks down; categorizes; compares; contrasts; correlates; diagrams; differentiates; discriminates; distinguishes; focuses; illustrates; infers; limits; outlines; points out; prioritizes; recognizes; separates; subdivides.
 
   \begin{itemize}
     \item Objetivos generales
       \begin{itemize}
-        \item \textit{Identifica} las diferentes etapas del proceso de diseño
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
+        \item \textit{Distingue} las diferentes formas de implementación de sistemas digitales.
+        \item \textit{Subdivide} un problema en componentes funcionales.
+        \item \textit{Reconoce} los componentes de un sistema digital. 
+        \item \textit{Distingue} los dominios de descripción y los niveles de abstracción de los sistemas digitales.
+        \item \textit{Reconoce} los niveles jerárquicos en un proceso de diseño.
+        \item \textit{Diferencia} la implementación de tareas hardware y software.
       \end{itemize}
 
     \item Electrónica digital 1
       \begin{itemize}
-        \item \textit{Identifica} la diferencia entre circuito lógico y secuencial.
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
+        \item \textit{Distingue} los componentes de la lógica combinatoria y secuencial.
+        \item \textit{Reconoce} la arquitectura de las máquinas de estado algorítmicas.
+        \item \textit{Reconoce} sistemas implementados con lenguajes de descripción de hardware.
       \end{itemize}
 
     \item Electrónica digital 2
       \begin{itemize}
-        \item \textit{Identifica} 
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
+        \item \textit{Reconoce} la arquitectura de un SoC.
+        \item \textit{Distingue} los componentes de una unidad de procesamiento central.
+        \item \textit{Reconoce} funciones que deben ser implemantadas en hardware para cumplir con restricciones de diseño.
+        \item \textit{Distingue} la diferencia entre un lenguaje de alto nivel y el lenguaje ensamblador.
       \end{itemize}
 
     \item Sistemas embebidos
       \begin{itemize}
-        \item \textit{Identifica} las diferentes etapas del proceso de diseño
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
+        \item \textit{Distingue} los componentes de un sistema embebido.
+        \item \textit{Reconoce} la arquitectura de sistemas digitales comerciales. 
+        \item \textit{Diferencia} las aplicaciones standalone de las que usan sistemas operativos.
+        \item \textit{Reconoce} las funciones de un sistema operativo.
       \end{itemize}
   \end{itemize}
 
 
  \item Síntesis: definida como la acción de unir elementos y partes para conformar una estructura o patrón, enfatizando en la creación de un nuevo significado o estructura.
 
-adapts; anticipates; collaborates; combines; communicates; compiles; composes; creates; designs; develops; devises; expresses; facilitates; formulates; generates; hypothesizes; incorporates; individualizes; initiates; integrates; intervenes; invents; models; modifies; negotiates; plans; progresses; rearranges; reconstructs; reinforces; reorganizes; revises; structures; substitutes; validates.
   \begin{itemize}
     \item Objetivos generales
       \begin{itemize}
-        \item \textit{Identifica} las diferentes etapas del proceso de diseño
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
+        \item \textit{Diseña y genera} sistemas digitales que dan solución a problemas reales.
+        \item \textit{Colabora} en un grupo de trabajo para dar solución a un problema común.
+        \item \textit{Colabora} con la sociedad compartiendo el resultado de sus estudios.
+        \item \textit{Combina} dispositivos semiconductores para cumplir especificaciones de diseño.
+        \item \textit{Comunica} el resultado de sus investigaciones utilizando medios electrónicos.
+        \item \textit{Desarrolla} pruebas para determinar el correcto funcionamiento de un sistema.
+        \item \textit{Crea} soluciones a problemas reales utilizando dispositivos electrónicos.
+        \item \textit{Planea} actividades que darán como resultado soluciones a problemas reales.
+        \item \textit{Valida} el cumplimiento de restricciones de diseño.
       \end{itemize}
+% adapts; anticipates; collaborates; combines; communicates; compiles; composes; creates; designs; develops; devises; expresses; facilitates; formulates; generates; hypothesizes; incorporates; individualizes; initiates; integrates; intervenes; invents; models; modifies; negotiates; plans; progresses; rearranges; reconstructs; reinforces; reorganizes; revises; structures; substitutes; validates.
 
     \item Electrónica digital 1
       \begin{itemize}
-        \item \textit{Identifica} la diferencia entre circuito lógico y secuencial.
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
+        \item \textit{Diseña} máquinas de estado algorítmicas 
+        \item \textit{Modifica} diseños de referencia para ajustarlos a necesidades puntuales.
       \end{itemize}
 
     \item Electrónica digital 2
       \begin{itemize}
-        \item \textit{Identifica} 
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
+        \item \textit{Integra} tareas software en el diseño de soluciones.
+        \item \textit{Diseña} SoC dedicados.
+        \item \textit{Diseña y desarrolla} tareas hardware como periféricos de un SoC.
       \end{itemize}
 
     \item Sistemas embebidos
       \begin{itemize}
-        \item \textit{Identifica} las diferentes etapas del proceso de diseño
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
+        \item \textit{Diseña} sistemas digitales utilizando SoC comerciales que ejecutan un sistema operativo.
+        \item \textit{Integra} librerías y aplicaciones existentes en el diseño.
+        \item \textit{Diseña} periféricos y sus respectivos controladores para el sistema operativo utilizado.
       \end{itemize}
   \end{itemize}
 
  
  \item Evaluación: emitir juicios personales sobre el valor de las ideas o materiales.
 
-appraises; compares y contrasts; concludes; criticizes; critiques; decides; defends; interprets; judges; justifies; reframes; supports.
-
+% appraises; compares y contrasts; concludes; criticizes; critiques; decides; defends; interprets; judges; justifies; reframes; supports.
+% evalúa, compara y contrasta; concluye, critica, criticas, decide; defiende, interpreta, jueces, justifica; replanteamientos; apoya.
   \begin{itemize}
     \item Objetivos generales
       \begin{itemize}
-        \item \textit{Identifica} las diferentes etapas del proceso de diseño
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-      \end{itemize}
-
-    \item Electrónica digital 1
-      \begin{itemize}
-        \item \textit{Identifica} la diferencia entre circuito lógico y secuencial.
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
+        \item \textit{Compara} las ventajas y desventajas de las tareas hardware y software.
+        \item \textit{Decide} la arquitectura mas adecuada para un sistema digital.
+        \item \textit{Interpreta} los resultados de las simulaciones.
+        \item \textit{Justifica y replantea} sus criterios de diseño.
+        \item \textit{Critica} implementaciones y arquitecturas de sistemas digitales.
+        \item \textit{Evalúa} las diferentes alternativas de implementación de un sistema digital.
       \end{itemize}
 
     \item Electrónica digital 2
       \begin{itemize}
-        \item \textit{Identifica} 
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
+        \item \textit{Evalúa y compara} el desempeño de funciones implementadas en software y en hardware. 
+        \item \textit{Decide} el particionamiento hardware/software.
       \end{itemize}
 
     \item Sistemas embebidos
       \begin{itemize}
-        \item \textit{Identifica} las diferentes etapas del proceso de diseño
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
-        \item \textit{}
+        \item \textit{Evalúa} las ventajas y desventajas de utilizar un sistema operativo.
       \end{itemize}
   \end{itemize}
-
-
 
 \end{enumerate}
 
 
+\subsection{Dominio afectivo}
 
-\subsection{Conclusiones}
+
+\begin{itemize}
+ \item Recibir: disposición a recibir información:
+
+    \begin{itemize}
+     \item \textit{Identifica} malas costumbres en su método de estudio que le impiden el aprendizaje.
+     \item \textit{Utiliza} material disponible para aumentar su conocimiento.
+     \item \textit{Localiza} vacios conceptuales e identifica soluciones.
+    \end{itemize}
+
+
+ \item Responder: reacciona y participa activamente en su propio aprendizaje.
+    \begin{itemize}
+     \item \textit{Lee} material relacionado con el tema del curso con anterioridad. 
+     \item \textit{Responde} dudas formuladas en clase de temas que no han sido tratados previamente.
+     \item \textit{Asiste} a las clases con preguntas relacionadas con el proceso de concepción, diseño e implementación de sistemas digitales.
+     \item \textit{Presenta} los ejercicios propuestos en clase.
+     \item \textit{Ayuda} a sus compañeros en el proceso de aprendizaje.
+     \item \textit{Practica} para adquirir habilidad en temas relacionados con el curso.
+     \item \textit{Escribe} material que le ayude a entender los temas desarrollados en clase.
+    \end{itemize}
+ \item Valorar: coloca valores y expresa opiniones personales
+    \begin{itemize}
+     \item \textit{Muestra una creencia} en la importancia del auto-aprendizaje en el desarrollo de habilidades personales.
+     \item \textit{Muestra una creencia} en la importancia de la creación de nuevos productos en el desarrollo del país. 
+     \item \textit{Comparte} el resultado de su esfuerzo con futuras generaciones. 
+     \item \textit{Participa} y hace aportes en grupos de discusión.
+     \item \textit{Valora} el trabajo en equipo. 
+     \item \textit{Explica} sus criterios de diseño.  
+    \end{itemize}
+ \item Organizar valores: resuelve conflictos internos y desarrolla un sistema de valores.
+    \begin{itemize}
+     \item \textit{Combina} diferentes habilidades para lograr el objetivo. 
+     \item \textit{Compara} alternativas de solución y elige la más adecuada. 
+     \item \textit{Integra} resultados obtenidos en procesos anteriore a solución de nuevos problemas. 
+     \item \textit{Formula} estrategias para resover problemas de forma óptima. 
+    \end{itemize}
+ \item Interiorizar valores: actua de acuerdo a los valores que ha interiorizado, el comportamiento es pervasivo, consistente, predecible y característico de cada aprendiz.  
+    \begin{itemize}
+     \item \textit{Propone} soluciones a problemas 
+     \item \textit{} 
+     \item \textit{} 
+     \item \textit{} 
+     \item \textit{} 
+     \item \textit{} 
+    \end{itemize}
+
+\end{itemize}
+
+
+\subsection{Dominio psicomotor}
+
+
+\begin{itemize}
+ \item Imitación: repetir un acto que ha sido demostrado o explicado.
+   \begin{itemize}
+    \item \textit{Construir y ensamblar} placas de circuito impreso.
+    \item \textit{Sigue} guías para la elaboración de layouts.
+   \end{itemize}
+
+ \item Manipuación: practica de una habilidad específica hasta que la acción se realice con seguridad.
+   \begin{itemize}
+    \item \textit{Manejar} herramientas para montaje de placas de circuito impreso. 
+    \item \textit{Manejar} herramientas para diseño de layouts.
+   \end{itemize}
+
+ \item Precisión: se obtienen resultados de muy alta calidad en la ejecución de una tarea con poco esfuerzo. 
+   \begin{itemize}
+    \item \textit{Mostrar} capacidades elevadas en el montaje y rework de placas de circuito impreso. 
+    \item \textit{Mostrar} habilidades en la elaboración de layouts.
+   \end{itemize}
+
+ \item Articulación: las habilidades han sido desarrolladas de tal forma que pueden modificarse patrones para ajustarse a requerimientos especiales.
+   \begin{itemize}
+    \item \textit{Combinar} diferentes técnicas en la elaboración, montaje y adecuación de placas de circuito impreso. 
+    \item \textit{Adapta} diferentes técnicas de ruteo a necesidades específicas de la aplicación.
+   \end{itemize}
+
+ \item Naturalización: 
+   \begin{itemize}
+    \item \textit{Especifica} el método más adecuado para elaborar, montar, y modificar una placa de circuito impreso.
+   \end{itemize}
+
+\end{itemize}
+
+
+\section{Conclusiones}
 El método de evaluación propuesto ha demostrado su eficacia en lo relacionado con la eliminación de presiones y la generación de hábitos de continuo estudio de la asignatura; sin embargo, se ha observado que los estudiantes están acostumbrados a actuar por presión de una calificación; esto es, si no hay calificación no estudian o no realizan los ejercicios propuestos; por este motivo, se incorporó las tareas a las entregas parciales, siendo esta la única forma de hacer que la mayoría de los estudiantes leyeran con anticipación los temas que se tratarán en las clases; aunque esto no es lo recomendado, es la realidad y hasta que todas las asignaturas ayuden a que los estudiantes cambien sus habitos de estudio es necesario tomar este tipo de medidas. Este comportamiento muestra que los estudiantes no utilizan un método de estudio adecuado, y que la universidad no proporciona los medios para que se generen; en algunas universidades del país se acostumbra a hacer pequeños exámenes para forzar a los estudiantes a leer los temas con anterioridad, es una solución efectiva pero genera una sobrecarga de trabajo para el docente y la solución final es el resultado de una medida que castiga y no de un hábito del estudiante.
 
 Encuestas realizadas a los estudiantes durante los últimos dos años muestran que ellos perciben un grado de exigencia mucho mayor comparando con otras asignaturas; pero al mismo tiempo, que la experiencia en estos cursos es muy útil para su vida profesional y que es la única asignatura que los enfrenta a problemas reales de diseño e implementación de sistemas; entienden que es necesario dedicar tiempo por fuera de aula si se desea asimilar la información, son concientes de que la responsabilidad de adquirir este conocimiento es de ellos  y manifiestan la importancia del uso de esta tecnología en la solución de problemas locales.

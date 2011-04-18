@@ -2,47 +2,48 @@ This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: gecco.aux
 The style file: plain.bst
 Database file #1: ./biblio_EHW.bib.bib
-Warning--empty year in WSCC
+Warning--I didn't find a database entry for "CC11b"
+Warning--I didn't find a database entry for "CC11d"
 Warning--empty year in JJPR
 You've used 24 entries,
             2118 wiz_defined-function locations,
-            632 strings with 7370 characters,
-and the built_in function-call counts, 8058 in all, are:
-= -- 791
-> -- 383
-< -- 9
-+ -- 153
+            640 strings with 7547 characters,
+and the built_in function-call counts, 8480 in all, are:
+= -- 848
+> -- 384
+< -- 11
++ -- 154
 - -- 126
-* -- 494
-:= -- 1324
-add.period$ -- 72
+* -- 519
+:= -- 1366
+add.period$ -- 74
 call.type$ -- 24
 change.case$ -- 134
 chr.to.int$ -- 0
-cite$ -- 26
-duplicate$ -- 339
-empty$ -- 591
+cite$ -- 25
+duplicate$ -- 366
+empty$ -- 631
 format.name$ -- 126
-if$ -- 1716
+if$ -- 1832
 int.to.chr$ -- 0
 int.to.str$ -- 24
-missing$ -- 24
+missing$ -- 25
 newline$ -- 123
 num.names$ -- 48
-pop$ -- 154
+pop$ -- 148
 preamble$ -- 1
 purify$ -- 111
 quote$ -- 0
-skip$ -- 283
+skip$ -- 309
 stack$ -- 0
-substring$ -- 420
-swap$ -- 108
-text.length$ -- 9
+substring$ -- 477
+swap$ -- 126
+text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 94
-warning$ -- 2
-while$ -- 73
+warning$ -- 1
+while$ -- 79
 width$ -- 26
-write$ -- 250
-(There were 2 warnings)
+write$ -- 257
+(There were 3 warnings)

@@ -1,0 +1,82 @@
+<ipe version="60030" creator="Ipe 6.0 preview 30">
+<info created="D:20100317180449" modified="D:20100317193121" bbox="cropbox"/>
+<page gridsize="4">
+<layer name="alpha"/>
+<view layers="alpha" active="alpha"/>
+<path layer="alpha" stroke="black" pen="fat">
+183.3 776.259 m
+183.663 623.261 l
+</path>
+<path stroke="black" matrix="1 0 0 1 104.664 0" pen="fat">
+183.3 776.259 m
+183.663 603.636 l
+</path>
+<text stroke="black" matrix="1 0 0 1 115.203 -7.99519" pos="157.133 793.704" type="minipage" width="59.6005" height="5.216" depth="0.23" valign="top" size="footnote">Maestro</text>
+<text stroke="black" matrix="1 0 0 1 9.44838 -8.72203" pos="157.133 793.704" type="minipage" width="59.6005" height="5.265" depth="0.27" valign="top" size="footnote">Esclavo</text>
+<path stroke="black" pen="heavier" arrow="small">
+287.6 760.269 m
+183.663 752.274 l
+</path>
+<path stroke="black" matrix="1 0 0 1 32.3442 24.349" pen="normal">
+183.3 776.259 m
+183.663 603.636 l
+</path>
+<path stroke="black" dash="dashed" pen="normal" arrow="small">
+287.237 760.996 m
+216.007 768.628 l
+</path>
+<path stroke="black" pen="normal" arrow="small">
+183.663 727.925 m
+215.644 735.92 l
+</path>
+<path stroke="black" dash="dashed" pen="normal" arrow="small">
+215.28 730.832 m
+184.026 718.113 l
+</path>
+<path stroke="black" pen="heavier" arrow="small">
+183.3 695.944 m
+287.237 688.312 l
+</path>
+<path stroke="black" dash="dashed" pen="normal" arrow="small">
+215.644 704.303 m
+286.51 690.129 l
+</path>
+<path stroke="black" pen="heavier" arrow="small">
+287.6 665.054 m
+184.026 655.605 l
+</path>
+<path stroke="black" dash="dashed" pen="normal" arrow="small">
+287.6 665.417 m
+216.007 668.688 l
+</path>
+<text stroke="black" matrix="1 0 0 1 42.156 15.627" pos="157.133 793.704" type="minipage" width="59.6005" height="5.265" depth="0.27" valign="top" size="footnote">Esclavo</text>
+<text stroke="black" matrix="1 0 0 1 -1.09025 -6.54152" pos="292.688 759.906" type="minipage" width="42.8833" height="7.695" depth="2.71" valign="top" size="tiny">Evolucionar subpoblaci\'on</text>
+<text stroke="black" matrix="1 0 0 1 -151.545 -10.9025" pos="292.688 759.906" type="minipage" width="42.8833" height="7.695" depth="2.71" valign="top" size="tiny">Evolucionar subpoblaci\'on</text>
+<text stroke="black" matrix="1 0 0 1 -151.909 -41.7931" pos="292.688 759.906" type="minipage" width="42.8833" height="7.695" depth="2.71" valign="top" size="tiny">Evolucionar subpoblaci\'on</text>
+<text stroke="black" matrix="1 0 0 1 -152.272 -66.8689" pos="292.688 759.906" type="minipage" width="42.8833" height="4.705" depth="0" valign="top" size="tiny">Modo espera</text>
+<text stroke="black" matrix="1 0 0 1 -1.09021 -61.781" pos="292.688 759.906" type="minipage" width="42.8833" height="4.705" depth="0" valign="top" size="tiny">Modo espera</text>
+<text stroke="black" matrix="0.968812 0.247796 -0.247796 0.968812 89.5803 -74.565" pos="292.688 759.906" type="minipage" width="42.8833" height="4.705" depth="0" valign="top" transformable="yes" size="tiny">Migraci\'on</text>
+<text stroke="black" matrix="0.997202 0.074756 -0.074756 0.997202 -16.6358 -19.0825" pos="292.688 759.906" type="minipage" width="49.9173" height="4.705" depth="0" valign="top" transformable="yes" size="tiny">Funci\'on objetivo</text>
+<text stroke="black" matrix="0.995115 -0.0987229 0.0987229 0.995115 -147.027 -27.4319" pos="292.688 759.906" type="minipage" width="42.8833" height="4.705" depth="0" valign="top" transformable="yes" size="tiny">Migraci\'on</text>
+<text stroke="black" matrix="1 0 0 1 -151.909 5.08785" pos="292.688 759.906" type="minipage" width="42.8833" height="4.705" depth="0" valign="top" size="tiny">Modo espera</text>
+<text stroke="black" matrix="0.9962 0.0870959 -0.0870959 0.9962 -9.50748 -118.242" pos="292.688 759.906" type="minipage" width="42.8833" height="4.705" depth="0" valign="top" transformable="yes" size="tiny">Migraci\'on</text>
+<text stroke="black" matrix="1 0 0 1 -7.63173 -157.36" pos="292.688 759.906" type="minipage" width="42.8833" height="4.22" depth="0" valign="top" size="tiny">fin</text>
+<path stroke="black" matrix="1 0 0 1 -1.45367 3.27076" dash="dotted" pen="fat">
+237.812 651.244 m
+237.812 637.797 l
+</path>
+<path stroke="black" matrix="1 0 0 1 0.363418 -65.0518" pen="heavier" arrow="small">
+183.3 695.944 m
+287.237 688.312 l
+</path>
+<path stroke="black" matrix="1 0 0 1 0.363418 -65.0518" dash="dashed" pen="normal" arrow="small">
+215.644 704.303 m
+286.51 690.129 l
+</path>
+<text stroke="black" matrix="0.995115 -0.0987229 0.0987229 0.995115 -146.664 -92.4837" pos="292.688 759.906" type="minipage" width="42.8833" height="4.705" depth="0" valign="top" transformable="yes" size="tiny">Migraci\'on</text>
+<text stroke="black" matrix="1 0 0 1 -1.09025 -137.009" pos="292.688 759.906" type="minipage" width="42.8833" height="10.194" depth="5.22" valign="top" size="tiny">Seleccionar mejores individuos</text>
+<text stroke="black" matrix="1 0 0 1 -153.363 -110.116" pos="292.688 759.906" type="minipage" width="42.8833" height="7.695" depth="2.71" valign="top" size="tiny">Evolucionar subpoblaci\'on</text>
+<text stroke="black" matrix="1 0 0 1 -1.09063 -101.03" pos="292.688 759.906" type="minipage" width="42.8833" height="7.695" depth="2.71" valign="top" size="tiny">Evolucionar subpoblaci\'on</text>
+<text stroke="black" matrix="1 0 0 1 -1.09025 -75.2279" pos="292.688 759.906" type="minipage" width="42.8833" height="10.194" depth="5.22" valign="top" size="tiny">Seleccionar mejores individuos</text>
+</page>
+</ipe>
