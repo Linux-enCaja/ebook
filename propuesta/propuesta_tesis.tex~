@@ -55,17 +55,20 @@ basicstyle=\footnotesize}
 
 
 \parindent=1cm            
-     \input title
+%      \input title
 \tableofcontents
-      \input intro
-     \input technology_transfer
-     \input description
-     \input commons
-     \input education
-     \input embedded
-     \input platform
-     \input emqbit
-     \input difusion_empresa
+%     \input intro                  %  Introducción planteamiento del problema
+%     \input description            %  Propuesta de tesis
+%     \input technology_transfer    %  Marco teórico, recomendaciones, formulación de la metodología
+%     \input embedded               %  Aplicación de la metodología, resultados obtenidos
+%     \input education              %  Difusión en la academia 
+     \input commons                %  Difusión como movimiento
+% *******************
+%              Anexos
+% *******************
+%     \input platform
+%     \input emqbit
+%     \input difusion_empresa
 
 \bibliography{biblio}
 

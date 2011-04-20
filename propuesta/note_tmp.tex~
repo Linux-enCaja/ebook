@@ -451,18 +451,3 @@ interes propio en estandarización, disminución de costos, estrategias para debil
 Atributos físicos:
 
 
-\begin{enumerate}
- \item La utilidad del software: Como vimos anteriormente, para que una persona participe en una actividad relacionada con el bien público, el costo por no hacerlo debe ser mayor que el beneficio por participar, es decir, el software debe representar una utilidad grande para que valga la pena participar en el proyecto.
- \item El diseño o la estructura del software. Un código limpio (optimizado, documentado y óptimo) y modularizado permite el trabajo en paralelo, lo que reduce el tiempo de depuración y el requerido para implementar nuevas características. 
- \item La infraestructura que hace posible coordinar y administrar la colaboración y la producción: El uso de Internet para soportar herramientas de control de versiones (como \textit{svn}, \textit{cvs} y \textit{git}) y la comunicación vía listas de discusión hace posible coordinar de forma eficiente los esfuerzos de cooperación. Permitiendo:
-   \begin{itemize}
-    \item Almacenar versiones de software.
-    \item La descarga de módulos.
-    \item La adición de Nuevas contribuciones y la protección del código existente.
-    \item Generar un historial donde se  documentan los cambios realizados a lo largo del tiempo.
-    \item Analizar funciones para identificar diferencias entre versiones.
-    \item Informar a los miembros del equipo cambios en los módulos del proyecto.
-   \end{itemize}
-\end{enumerate}
-
-

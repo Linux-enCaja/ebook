@@ -208,20 +208,40 @@ Se pueden elegir diferentes permisos dependiendo de los deseos del autor, para d
  \item ¿Es necesario atribuir el trabajo al autor original?
 \end{enumerate}
 
-Estas preguntas son la base para definir un esquema de licencias modular. Existen cuatro bloques constructivos para las licencias Creative Commons estos son: 
+Estas preguntas son la base para definir un esquema de licencias modular. Existen cuatro bloques constructivos para las licencias Creative Commons estos son: \textit{Atribución} (\textbf{BY}) Se permite la distribución pero se debe dar crédito al autor. \textit{No comercial} (\textbf{NC}) Se permite la distribución del trabajo sin fines comerciales, si se desea utilizar este trabajo para obtener dinero es necesaria una autorización del autor; \textit{No a trabajos derivados} (\textbf{ND}) Permite la copia y la distribución del trabajo original sin modificaciones. \textit{Compartir de la misma forma} (\textbf{SA}) Exige que todo trabajo derivado del uso de proyectos que con este esquema de licencias deben tener la misma licencia de los trabajos originales.
 
-\begin{enumerate}
- \item \textit{Atribución} (\textbf{BY}) Se permite la distribución pero se debe dar crédito al autor.
- \item \textit{No comercial} (\textbf{NC}) Se permite la distribución del trabajo sin fines comerciales, si se desea utilizar este trabajo para obtener dinero es necesaria una autorización del autor.
- \item \textit{No a trabajos derivados} (\textbf{ND}) Permite la copia y la distribución del trabajo original sin modificaciones.
- \item \textit{Compartir de la misma forma} (\textbf{SA}) Exige que todo trabajo derivado del uso de proyectos con este esquema de licencias deben tener la misma licencia de los trabajos originales.
-\end{enumerate}
 
-\subsubsection{Licencia CC - BY - SA}
 
-La licencia \textit{creative commons} \textbf{CC BY-SA} permite compartir, copiar, distribuir, ejecutar, comunicar públicamente la obra y hacer obras derivadas, con la condición de reconocer los créditos de la obra original de la forma indicada por el autor sin que esto implique que se cuenta con su apoyo o que apoya el uso que hace de su obra; si altera o transforma esta obra, o genera una obra derivada, debe distribuir la obra generada bajo la misma licencia. Este esquema de licencias ha sido elegida para licenciar las obras realizadas en este estudio.
+% 
+%                                                       Authors who choose
+% to make their works available for free may still retain their copyrights.
+% In this instance, instead of having negative effects, open access of infor-
+% mation provides a universal public good: the more quality information,
+% the greater the public good.
+% 
+%    Second, the knowledge commons is not synonymous with open access,
+% although the content and the community network of the open-access
+% movement, as Suber and Ghosh discuss in their chapters, are types of
+% commons. Forgive us for repeating that a commons is a shared resource
+% that is vulnerable to social dilemmas. Outcomes of the interactions
+% of people and resources can be positive or negative or somewhere in
+% between. Frequently, within the intellectual arena, the concept of the
+% commons is a battle cry for free speech, universal open access, and self-
+% governance, as a 2004 conference session illustrated:
+% 
+% 
+% 
+% With the Internet nurturing the sharing spirit inherent in man, commons has
+% taken on a new meaning. Free software proved spectacularly that the commons
+% is a viable alternative to commodification. The term Digital Commons is widely
+% used but only loosely defined, ranging from jointly owned intellectual property
+% to public property and the public domain. Still, it has an obvious evocative
+% power, and the potential to reconceptualize our knowledge environment and
+% to unite those fighting for its freedom. (Program abstract for ?The Future of
+% the Digital Commons,? at the 2004 WOS3 Conference, http://wizards-of-os
+% .org/index.php?id=1551)
+% 
 
-Al elegir hacer el resultado de este trabajo disponible libremente conservando los derechos de autor; se proporciona un bien público que puede ser utilizado por cualquier sector de la sociedad para suplir necesidades propias; su naturaleza viral asegura que se agragarán nuevos proyectos a este bien, la labor de la comunidad será definir que proyectos reúnen con las requerimientos 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -229,8 +249,10 @@ Al elegir hacer el resultado de este trabajo disponible libremente conservando l
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Hardware Copyleft}
 
+\subsection{ECB\_AT91, ECBOT, ECB\_BFIN} Plataformas realizadas para adquirir experiencia en el diseño de sistemas embebidos
+detectar las habilidades que se necesitan para realizar el proceso
 
-\subsection{Proyecto linuxencaja}
+\subsection{Proyecto Qi-Hardware}
 
 
 

@@ -2,47 +2,48 @@ This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: propuesta_tesis.aux
 The style file: unsrt.bst
 Database file #1: biblio.bib
-Warning--empty note in WCI
-Warning--empty year in BBS
-You've used 6 entries,
+Warning--empty school in NR11
+Warning--can't use both author and editor fields in Sta99
+Warning--can't use both author and editor fields in CMS06
+You've used 22 entries,
             1791 wiz_defined-function locations,
-            478 strings with 4418 characters,
-and the built_in function-call counts, 865 in all, are:
-= -- 65
-> -- 42
-< -- 0
-+ -- 17
-- -- 11
-* -- 43
-:= -- 163
-add.period$ -- 17
-call.type$ -- 6
-change.case$ -- 5
+            566 strings with 7205 characters,
+and the built_in function-call counts, 3177 in all, are:
+= -- 251
+> -- 135
+< -- 1
++ -- 57
+- -- 35
+* -- 94
+:= -- 542
+add.period$ -- 66
+call.type$ -- 22
+change.case$ -- 16
 chr.to.int$ -- 0
-cite$ -- 8
-duplicate$ -- 47
-empty$ -- 85
-format.name$ -- 11
-if$ -- 180
+cite$ -- 25
+duplicate$ -- 168
+empty$ -- 368
+format.name$ -- 35
+if$ -- 717
 int.to.chr$ -- 0
-int.to.str$ -- 6
-missing$ -- 5
-newline$ -- 32
-num.names$ -- 7
-pop$ -- 19
+int.to.str$ -- 22
+missing$ -- 19
+newline$ -- 113
+num.names$ -- 23
+pop$ -- 103
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 16
+skip$ -- 72
 stack$ -- 0
 substring$ -- 0
-swap$ -- 5
-text.length$ -- 0
+swap$ -- 24
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 2
-while$ -- 6
-width$ -- 7
-write$ -- 59
-(There were 2 warnings)
+warning$ -- 3
+while$ -- 22
+width$ -- 24
+write$ -- 218
+(There were 3 warnings)

@@ -844,7 +844,7 @@ La naturaleza de esta metodología hace poco eficiente el método tradicional de e
 
 La aplicación de la forma de evaluación tradicional a asignaturas en las que se busca crear en el estudiante habilidades que le permitan realizar el flujo de diseño completo de un sistema digital, contemplaba una marcada división entre el componente práctico y el componente teórico, antes de aplicar este programa académico, las prácticas de laboratorio y el tema que se trataba en clase no estaban sincronizados y las metodologías utilizadas eran diferentes, lo que originaba confusión en los estudiantes; existía un proyecto final que debía ser elaborado junto con las prácticas de laboratorio, lo que creaba una sobrecarga de trabajo que se traducía en proyectos de muy baja calidad. Por otro lado, no se puede medir la capacidad de diseño de un estudiante en un exámen convencional como los que se utilizan en otras asignaturas, primero porque el tiempo requerido para entender y asimilar el problema varía dependiendo de cada persona, y limitar este tiempo favorecería a los más rápidos pero no necesariamente a las mejores soluciones. El diseño es un proceso de creación personal y las soluciones dadas a un problema muestran rasgos de la personalidad que no pueden y no deben ser estandarizadas; lo que si se debe hacer es señalar como se pueden optimizar las soluciones.
 
-Como se mencionó anteriormente, durante todo el semestre se realizará un proyecto que busca dar solución a un determinado problema; se realizarán tres avances para determinar su estado, las fechas y contenido de estos avances están sincronizadas con un cronograma que permite a los estudiantes aplicar los conocimienos adquiridos.  De esta forma, los estudiantes estarán realizando actividades durante todo el semestre, lo que los obliga a estar revisando y aplicando constantemente la información obtenida en el componente teórico; durante las horas de práctica los estudiantes trabajarán en el mismo proyecto y darán solución a problemas de implementacion con ayuda del profesor auxiliar. Esta forma de evaluación elimina la costumbre de estudiar una semana o un día antes de a prueba, buscar evaluaciones de semestres anteriores y memorizar la forma de solucionarlos. Asimismo, se proporciona al estudiante el tiempo suficiente para realizar el proceso de diseño completo lo que hace que esta experiencia se aproxime mucho a una situación que va a encontrar en el ejercicio de su profesion; adicionalmente, se pretende reducir la presión y el estrés que generan las pruebas escritas en los estudiantes, repartiendola en un equipo de trabajo que colabora para la realización de una meta común.
+Como se mencionó anteriormente, durante todo el semestre se realizará un proyecto que busca dar solución a un determinado problema; se realizarán tres avances para determinar su estado, las fechas y contenido de estos avances están sincronizadas con un cronograma que permite a los estudiantes aplicar los conocimientos adquiridos.  De esta forma, los estudiantes estarán realizando actividades durante todo el semestre, lo que los obliga a estar revisando y aplicando constantemente la información obtenida en el componente teórico; durante las horas de práctica los estudiantes trabajarán en el mismo proyecto y darán solución a problemas de implementacion con ayuda del profesor auxiliar. Esta forma de evaluación elimina la costumbre de estudiar una semana o un día antes de a prueba, buscar evaluaciones de semestres anteriores y memorizar la forma de solucionarlos. Asimismo, se proporciona al estudiante el tiempo suficiente para realizar el proceso de diseño completo lo que hace que esta experiencia se aproxime mucho a una situación que va a encontrar en el ejercicio de su profesion; adicionalmente, se pretende reducir la presión y el estrés que generan las pruebas escritas en los estudiantes, repartiendola en un equipo de trabajo que colabora para la realización de una meta común.
 
 \subsubsection{Contenido de las entregas}
 
@@ -1184,12 +1184,8 @@ El dominio congnitivo involucra conocimiento y desarrollo de habilidades iintele
     \end{itemize}
  \item Interiorizar valores: actua de acuerdo a los valores que ha interiorizado, el comportamiento es pervasivo, consistente, predecible y característico de cada aprendiz.  
     \begin{itemize}
-     \item \textit{Propone} soluciones a problemas 
-     \item \textit{} 
-     \item \textit{} 
-     \item \textit{} 
-     \item \textit{} 
-     \item \textit{} 
+     \item \textit{Propone} métodos para crear nuevos sistemas.
+     \item \textit{Soluciona} problemas de la sociedad aplicando conocimiento adquirido previa y constantemente.
     \end{itemize}
 
 \end{itemize}
@@ -1230,96 +1226,6 @@ El dominio congnitivo involucra conocimiento y desarrollo de habilidades iintele
 
 \end{itemize}
 
-
-\section{Conclusiones}
-El método de evaluación propuesto ha demostrado su eficacia en lo relacionado con la eliminación de presiones y la generación de hábitos de continuo estudio de la asignatura; sin embargo, se ha observado que los estudiantes están acostumbrados a actuar por presión de una calificación; esto es, si no hay calificación no estudian o no realizan los ejercicios propuestos; por este motivo, se incorporó las tareas a las entregas parciales, siendo esta la única forma de hacer que la mayoría de los estudiantes leyeran con anticipación los temas que se tratarán en las clases; aunque esto no es lo recomendado, es la realidad y hasta que todas las asignaturas ayuden a que los estudiantes cambien sus habitos de estudio es necesario tomar este tipo de medidas. Este comportamiento muestra que los estudiantes no utilizan un método de estudio adecuado, y que la universidad no proporciona los medios para que se generen; en algunas universidades del país se acostumbra a hacer pequeños exámenes para forzar a los estudiantes a leer los temas con anterioridad, es una solución efectiva pero genera una sobrecarga de trabajo para el docente y la solución final es el resultado de una medida que castiga y no de un hábito del estudiante.
-
-Encuestas realizadas a los estudiantes durante los últimos dos años muestran que ellos perciben un grado de exigencia mucho mayor comparando con otras asignaturas; pero al mismo tiempo, que la experiencia en estos cursos es muy útil para su vida profesional y que es la única asignatura que los enfrenta a problemas reales de diseño e implementación de sistemas; entienden que es necesario dedicar tiempo por fuera de aula si se desea asimilar la información, son concientes de que la responsabilidad de adquirir este conocimiento es de ellos  y manifiestan la importancia del uso de esta tecnología en la solución de problemas locales.
-
-
-% Verb examples that represent intellectual activity on this level include: assess, defend, evaluate.
-%          Examples from the Syllabus:
-%              Assess one?s skills, interests, strengths and weaknesses
-%              Evaluate supporting evidence
-% A way in which to view the structure of the Bloom verbs is shown in Table B1, which gives the six
-% levels, and identifies three to five key verbs within each level. Some common synonyms for those key
-% verbs are also listed. Verbs in Italics of Table B1 are commonly used Bloom verbs, and those in regular
-% font were added to better fit with technically oriented topics of the Syllabus. The verbs in the column
-% to the far right of Table B1 are commonly used Bloom verbs that we recommend not be used with the
-% Syllabus. This is because the verbs either appear at two levels, and therefore are ambiguous, or
-% because they have a technical connotation apart from their common meaning, which causes them to be
-% misplaced in terms of level. Entries in bold will be used in the Bloom verb patterns discussed below.
-%                                                       B-3
-% B.2 The Affective Domain
-% The affective domain relates to the emotional component of learning. It emphasizes a feeling, tone, an
-% emotion, or a degree of acceptance or rejection. Affect encompasses a range from simple attention to
-% organization and characterization of complex, but internally consistent, qualities of character and
-% conscience. Krathwohl, Bloom and Masia (1964) developed five levels in the affective domain.
-% 1. Receiving (attending): Receiving speaks to an awareness that a learner is conscious of something,
-% that he/she take into account a situation, phenomenon or state of affairs. It also addresses the
-% learner's willingness to receive information. In other words the climate must be set so that students
-% attention is grabbed and directed in a particular manner.
-% Verb examples which represent intellectual activity on this level include: a s k , accept, hold.
-%         Examples from the Syllabus:
-%              Accepts the need for a commitment to service
-%              Accepts the goals and roles of the engineering profession
-% 2. Responding: At the responding level, students are sufficiently motivated that they are not just
-% willing to attend, but are actively attending. It involves a continuum from acquiescence in responding,
-% to willingness to respond, to satisfaction in response. In other words, it is active participation by the
-% students in their own learning.
-% Verb examples that represent intellectual activity on this level include: answer, assist, discuss.
-%         Examples from the Syllabus:
-%              Discuss the motivation for continued self-education
-%              Discuss the importance of both a depth and breadth of knowledge
-% 3. Valuing: Simply put, something has value or worth. At this level, behavior is sufficiently
-% consistent and stable as to be characterized as a belief or attitude. The student is perceived as holding
-% a value. This level ranges from acceptance of a value, to preference, to commitment to a value.
-% Verb examples that represent intellectual activity on this level include: demonstrate a belief in,
-% embrace, follow, join, share, value.
-%         Examples from the Syllabus:
-%              Embrace one?s responsibility for self improvement
-%              Value a willingness to work independently
-% 4. Organization refers to the process learners go through after they internalize values and are faced
-% with situations for which more than one value is relevant. This necessitates the organization of values
-% into a system, determining the relationship among them, and establishing dominant and pervasive
-% values. The emphasis is on comparing, relating, and synthesizing values.
-% Verb examples that represent intellectual activity on this level include: alter, combine, complete,
-% integrate, order, organize, relate, synthesize .
-%                                                     B-4
-%         Example from the Syllabus:
-%              Integrate the potential benefits and risks of an action
-% 5. Characterization by a value or value complex: At this level the individual acts consistently in
-% accordance with the values he/she has internalized. A behavior is pervasive, consistent, predictable,
-% and characteristic of the student. Student beliefs, ideas, and attitudes are integrated into a total
-% philosophy or view of the world.
-% Verb examples that represent intellectual activity on this level include: discriminate, display,
-% influence, presuppose, qualify, resolve, solve, verify.
-%         Example from the Syllabus:
-%              Resolves conflicting issues in the balance between personal and professional life
-% B.3 The Psychomotor Domain
-% The psychomotor domain emphasizes physical skills. It involves muscular or motor skill, some
-% manipulation of materials and objects, or some act which requires a neuromuscular coordination. It
-% captures the complexity of grace, strength, and speed that is often involved in physical activity or
-% skill acquisition.
-% While there are a few examples in the CDIO Syllabus that touch on the psychomotor domain, these
-% topics all have an important cognitive component as well. Therefore the cognitive verbs are
-% consistently used for these topics, and the psychomotor categories are not used in the Syllabus.
-% For completeness, it is worth outlining the breakdown of this domain by Simpson (1972) into seven
-% levels.
-% 1.   Perception is defined as the ability to use sensory cues to guide motor activity.
-% 2. Set refers to the readiness to take a particular course of action.         This includes physical and
-% emotional set as well as mental.
-% 3. Guided Response: refers to imitation and trial and error in which the adequacy of the performance
-% is judged by the instructor or by a defined set of criteria.
-%  4. Mechanism: describe learned responses that have become habitual, movements can be performed
-% with some confidence and proficiency.
-%  5. Complex Overt Responses: is the skillful performance of motor acts that involve complex movement
-%  patterns. Proficiency is indicated by a quick, accurate, and highly coordinated performance, requiring
-%  a minimum of energy. In this category, responses are automatic.
-% 6. Adaptation: is the level at which skills are so well developed that the individual can modify
-% movement patterns to fit special requirements or to meet a problem situation.
-%  7. Origination is the creation of new movement patterns to fit a particular situation or specific
-% problem. Outcomes at this level emphasize creativity based upon highly developed skills.
 
 
 
@@ -1441,5 +1347,16 @@ Las aplicaciones mencionadas en esta sección han sido probadas por estudiantes d
 
 Aunque este grupo de herramientas pueden ejecutarse en los sistemas operativos mas populares (Linux, Mac OS y Windows) se prefiere el uso de Linux ya que es un sistema operativo gratuito y no es necesario pagar ningún tipo de licencia, lo que reduce aún más la inversión en software.
 
-Encuestas realizadas a los estudiantes indican que: con este grupo de herramientas se pueden realizar todas las actividades propuestas en este programa academico; que son más difíciles de manejar que las herramientas comerciales; pero que se prefiere el uso de alternativas abiertas al de sofware ilegal; en el pasado no les importaba utilizar métodos ilegales para licenciar aplicaciones software, pero que ahora van a buscar primero las alternativas libres antes de recurrir al uso de software ilegal; el uso de Linux hace que se sientan identificados con él, llegando al punto de realizar un cambio total de sistema operativo. Lo anterior demuestra que los estudiantes se adaptan fácilmente a nuevas herramientas y que ellos prefieren el uso de software abierto a software ilegal, por lo que el constante uso de herramientas comerciales se puede atribuir a los docentes que no están interesados en buscar alternativas abiertas, ya sea porque cuentan con licencias o porque no les interesa que se utilice software iegal.
+Encuestas realizadas a los estudiantes indican que: con este grupo de herramientas se pueden realizar todas las actividades propuestas en este programa academico; que son más difíciles de manejar que las herramientas comerciales; pero que se prefiere el uso de alternativas abiertas al de sofware ilegal; en el pasado no les importaba utilizar métodos ilegales para licenciar aplicaciones software, pero que ahora van a buscar primero las alternativas libres antes de recurrir al uso de software ilegal; el uso de Linux hace que se sientan identificados con él, llegando al punto de realizar un cambio total de sistema operativo. Lo anterior demuestra que los estudiantes se adaptan fácilmente a nuevas herramientas y que ellos prefieren el uso de software abierto a software ilegal, por lo que el constante uso de herramientas comerciales se puede atribuir a los docentes que no están interesados en buscar alternativas abiertas, ya sea porque cuentan con licencias, porque no les interesa que se utilice software iegal o porque no quieren aprender a manejar nuevas herramientas.
 
+\section{Conclusiones}
+El método de evaluación propuesto ha demostrado durante su aplicación su eficacia en la generación de hábitos de continuo estudio y auto-aprendizaje; sin embargo, uno de los grandes inconvenientes para su aplicación son los malos métodos de estudio que poseen los estudiantes; por este motivo, es necesario crear actividades que obliguen a los estudiantes a realizar las lecturas y actividades programadas en el curso; aunque esto no es lo recomendado, es la realidad que vivimos en todas las universidades del país. Esta situación es el resultado de la aplicación de una desafortunada política gubernamental en la educación media; esta política obligaba a los centros educativos de todo el país a promover de forma automática a todos los estudiantes, fijando un máximo del 5\% de estudiantes no promovidos, sin importar si los estudiantes promovidos poseen o no los conocimientos necesarios para la promoción. Cuando estos estudiantes, así formados, ingresan a las universidades se genera un choque fuerte ya que no están acostumbrados a afrontar retos, no son conscientes de sus deficiencias y en muchos casos su nivel de conocimientos no son los esperados. Por otro lado, la universidad no proporciona medios para generar métodos de estudio adecuados, en algunas asignaturas se repiten semestre tras semestre las evaluaciones y contenidos, lo que ha formado un banco de evaluaciones con sus respectivas soluciones, lo que hace que estas pruebas no sean un indicador efectivo del nivel de aprendizaje.
+
+Lo anterior, ha generado que un porcentaje considerable de estudiantes no adquieran los conocimientos y habilidades necesarias para concebir, diseñar, e implementar dispositivos que den solución a problemas locales, lo que agravará el problema de la industria electrónica nacional y la desconfianza de los industriales hacia los productos nacionales. La falta de cursos que enfrenten al estudiante con problemas reales es una consecuencia de la falta de conexión entre la empresa y la academia y el desconocimiento de los procesos industriales por parte de los docentes; un porcentaje considerable de la planta docente de las universidades mas prestigiosas del país siempre se han desempeñado en entornos académicos y no entienden las necesidades de la industria, lo que impide, por un lado la creación de habilidades requeridas por la industria y por otro lado dificuta la creación de empresa desde la universidad y la creación de vínculos con empresas constituidas.
+
+
+Las asignaturas del área de electrónica digital son de vital importancia en el proceso de formación de los ingenieros electrónicos en la Universidad Nacional de Colombia, porque su campo de aplicación cubre todas las actividades de los profesionales en electrónica (control, automatización, comunicaciones, procesamiento de señales y de imágenes, etc) y  porque es la única asignatura en el programa que enfrenta a los estudiantes al proceso de implementación de sistemas. Encuestas realizadas a los estudiantes durante los últimos dos años muestran que ellos perciben un grado de exigencia mucho mayor comparando con otras asignaturas (lo que origina un nivel alto de deserción); pero al mismo tiempo, que la experiencia en estos cursos es muy útil para su vida profesional y que es la única asignatura que los enfrenta a problemas reales de diseño e implementación de sistemas y trabajo en equipo; entienden que es necesario dedicar tiempo por fuera de aula si se desea asimilar la información, son conscientes de que la responsabilidad de adquirir este conocimiento es de ellos; manifiestan la importancia del uso de esta tecnología en la solución de problemas locales y entienden el estado de la industria digital en el país y su papel para dar solución a sus problemas.
+
+Con la aplicación de este plan de estudios a las asignaturas del área de electrónica digital: se elevó el nivel de los trabajos realizados en estos cursos y en trabajos de grado; la aplicación de la metodología de diseño propuesta genera hábitos que permiten re-utilizar trabajos previos, documentar de forma adecuada el proceso de diseño, y generar dispositivos que se ajustan a las especificaciones; se eliminó el uso de placas de pruebas (protoboards) y placas universales (perfboard), siendo reemplazados por circuitos impresos; se eliminó el uso de productos con tecnologías obsoletas (familias 74xx y 40xx) para dar paso a dispositivos semiconductores modernos; se creó un banco de proyectos que documenta de forma detallada el proceso de concepción, diseño e implementación de un sistema digital de función específica; se concienció sobre la importancia de la creación de nuevos productos para el desarrollo tecnológico del país.
+
+Tanto los temas como la metodología del presente plan de estudio representan una forma novedosa de enseñanza enfocada a 
