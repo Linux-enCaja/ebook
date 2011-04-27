@@ -1,17 +1,23 @@
 \select@language {spanish}
-\contentsline {chapter}{\numberline {1}Copyleft HW/SW Como Herramienta de Transferencia y Difusi\'on}{3}
-\contentsline {section}{\numberline {1.1}Introducci\'on}{3}
-\contentsline {section}{\numberline {1.2}El Conocimiento Como Bien P\'ublico}{4}
-\contentsline {subsection}{\numberline {1.2.1}Auto-Gobierno}{5}
-\contentsline {subsubsection}{Ecuaci\'on Costo Beneficio de Ostrom}{6}
-\contentsline {subsubsection}{Principios de Dise\~no}{7}
-\contentsline {subsubsection}{Movimiento FOSS}{8}
-\contentsline {section}{\numberline {1.3}FOSS}{9}
-\contentsline {subsubsection}{Reglas En Uso}{10}
-\contentsline {subsubsection}{Atributos de la Comunidad}{11}
-\contentsline {subsubsection}{Atributos F\IeC {\'\i }sicos}{12}
-\contentsline {section}{\numberline {1.4}Propiedad Intelectual y Licencias}{13}
-\contentsline {subsection}{\numberline {1.4.1}Licencias Creative Commons}{13}
-\contentsline {section}{\numberline {1.5}Hardware Copyleft}{13}
-\contentsline {subsection}{\numberline {1.5.1}ECB\_AT91, ECBOT, ECB\_BFIN}{13}
-\contentsline {subsection}{\numberline {1.5.2}Proyecto Qi-Hardware}{13}
+\contentsline {chapter}{\numberline {1}Introducci\'on}{5}
+\contentsline {subsection}{\numberline {1.0.1}Sistemas Embebidos.}{6}
+\contentsline {subsection}{\numberline {1.0.2}\IeC {\textquestiondown }Por qu\'e los Sistemas Embebidos?}{7}
+\contentsline {subsubsection}{Mercado de los Sistemas Embebidos}{7}
+\contentsline {subsubsection}{Penetraci\'on de los Sistemas Embebidos}{7}
+\contentsline {subsubsection}{Perspectivas de Empleo}{7}
+\contentsline {section}{\numberline {1.1}Estado de la Industria Electr\'onica en Colombia}{9}
+\contentsline {subsubsection}{Apropiaci\'on de Conocimiento y Transferencia Tecnol\'ogica}{10}
+\contentsline {subsubsection}{Situaci\'on de la Industria Electr\'onica en Colombia}{11}
+\contentsline {subsubsection}{Causas del Atraso Tecnol\'ogico en Colombia}{11}
+\contentsline {subsubsection}{El conocimiento Como Bien Com\'un}{12}
+\contentsline {chapter}{\numberline {2}Descripci\'on de la Tesis}{15}
+\contentsline {section}{\numberline {2.1}Objetivos}{15}
+\contentsline {subsubsection}{Ojetivo Principal}{15}
+\contentsline {subsubsection}{Objetivos Espec\IeC {\'\i }ficos}{15}
+\contentsline {subsubsection}{Resultados Esperados e Impacto}{16}
+\contentsline {section}{\numberline {2.2}Hip\'otesis}{16}
+\contentsline {section}{\numberline {2.3}Metodolog\IeC {\'\i }a}{19}
+\contentsline {section}{\numberline {2.4}Actividades y Cronograma}{21}
+\contentsline {subsection}{\numberline {2.4.1}Actividades}{21}
+\contentsline {subsection}{\numberline {2.4.2}Cronograma}{22}
+\contentsline {section}{\numberline {2.5}Recursos}{23}

@@ -76,14 +76,7 @@ En la actualidad obervamos que grandes multinacionales como Nokia, Motorola o Go
 
 De las experiencias obtenidas en la aplicación de la metodología de transferencia de conocimientos a la academia y el caso de estudio de transferencia a la empresa de base tecnológica emQbit, se estima que el tiempo necesario para que una empresa adquiera la experiencia necesaria para diseñar y construir sus propias placas de circuito impreso es de alrededor de 18 meses, el tiempo necesario para ajustar las herramientas de desarrollo y generar aplicaciones con la ayuda del sistema operativo Linux en plataformas propias requiere 12 meses. Adicionalmente, son necesarios otros 12 meses de experimentación para desarrollar habilidades y conocimientos en producción masiva. \footnote{Estas cifras fueron obtenidas de procesos reales donde un ingeniero con conocimientos básicos de manejo de herramientas CAD para fabricación de circuitos impresos y buen manejo de lenguajes de programación trabajó tiempo completo en estas tareas.} Poporcionar diseños de referencia de placas de circuito impreso ayuda a reducir este tiempo de forma considerable, sin embargo, es necesario contar con habilidades que permitan entender el diseño, realizar los cambios necesarios y reproducir los pasos necesarios para construir la plataforma y escribir la aplicación. 
 
-Aunque muchos fabricantes de SoC comerciales proporcionan diseños de referencia incluyendo los archivos necesarios para realizar las modificaciones, es necesario contar con fuertes sumas de dinero para adquirir las licencias de las herramientas CAD utilizadas en su diseño y la complejidad de estas es tal (placas de circuito impreso de 6 o más capas, caminos de 0.1 mm y vías de 0.1 mm) que el prototipo de un diseño modificado costaría decenas de veces más que el valor comercial de la placa de referencia.
-% OJO  OJO % OJO  OJO % OJO  OJO % OJO  OJO % OJO  OJO 
-% OJO  OJO CONCLUSION ?????  DONDE QUEDA MEJOR UBICADO ESTE TEXTO    ?????
-% OJO  OJO % OJO  OJO % OJO  OJO % OJO  OJO % OJO  OJO 
-% OJO  OJO % OJO  OJO % OJO  OJO % OJO  OJO 
-% OJO  OJO % OJO  OJO % OJO  OJO % OJO  OJO 
-
-Para determinar si es posible utilizar las plataformas de referencia creadas en este estudio en el desarrollo de nuevos dispositivos se utilizó la plataforma \textit{ECB\_AT91} \cite{CC08c} como punto de partida para la construcción de un monitor de signos vitales \cite{NR11}  y para la creación de un sistema de medición de la calidad del servicio eléctrico \cite{ERAC+09}. En el primer caso, un estudiante de posgrado agregó un módulo de comunicaciones para comunicarse con las tarjetas de adquisición de señales médicas y suministró puertos USB host para conectar módulos de comunicación WiFi, Bluetooth y 3G/GSM; demorando 6 meses en fabricar la nueva plataforma y en escribir la aplicación. En el segundo caso, la empresa emQbit, agregó una etapa de adquisición de señales análoga, un sistema de comunicación y un sistema de referencia geográfica basada en un GPS, empleando 6 meses en ello. Una reducción drástica frente al tiempo que demoró el desarrollo de la placa utilizada como referencia; esto es posible gracias a la posibilidad de utilizar los archivos de diseño de la plataforma, (los cuales, han pasado por un proceso de depuración y optimización) y el código fuente de las aplicaciones necesarias para la ejecución de aplicaciones Linux (Board Support Package BSP).
+Aunque muchos fabricantes de SoC comerciales proporcionan diseños de referencia incluyendo los archivos necesarios para realizar las modificaciones, es necesario contar con fuertes sumas de dinero para adquirir las licencias de las herramientas CAD utilizadas en su diseño y la complejidad de estas es tal (placas de circuito impreso de 6 o más capas, caminos de 0.1 mm y vías de 0.1 mm) que el prototipo de un diseño modificado costaría decenas de veces más que el valor comercial de la placa de referencia. 
 
 \subsubsection{Principios de Diseño}
 
@@ -138,7 +131,7 @@ Los miembros del movimiento FOSS usualmente son programadores (y usuarios finale
   \caption{Marco para analizar el conocimiento como bien común aplicado al movimiento FOSS: Modificación de: \cite{CHEO06} pág 46} \label{framework_foss}
 \end{figure}
 
-\subsubsection{Reglas En Uso}
+\subsubsection{Reglas}
 
 Stallman \cite{Sta99} sostiene que las propiedades digitales del software hacen posible considerarlo como un bien público, proporcionando a sus usuarios \textit{la libertad} de utilizarlo, distribuirlo y modificarlo. Esta filosfía se basa en cuatro libertades que encarnan el principio \textit{copyleft}:
 
@@ -192,11 +185,16 @@ Existen tres categorías \cite{CMS06} en FOSS que pueden ser consideradas como at
 Esta infraestructura trabaja junto con las reglas-en-uso establecidas para proporcionar procesos que direccionen nuevos trabajos, un sistema para recibir y revisar contribuciones de nuevos módulos que pueden ser incluidos en futuras versiones. En conclusión, los proyectos FOSS evolucionan en el tiempo como resultado de la configuración de sus reglas-en-uso, atributos de la comunidad y atributos físicos relacionados con la estructura del software para hacer fácil la colaboración y herramientas efectivas para coordinación de equipos y manejo de contenido.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%                     Copy Left                                        %%%%%%
+%%%                   COPY LEFT HW                                       %%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Propiedad Intelectual y Licencias}
+\section{Hardware Copyleft}
+El concepto del \textit{hardware copyleft} nació de un trabajo conjunto realizado con el proyecto \textit{qi-hardware}\footnote{http://en.qi-hardware.com/wiki/Qi:About} cuyo objetivo era crear un movimiento similar al FOSS pero aplicado al diseño hardware; en la actualidad, no existe un movimiento aceptado mundialmente que defina las propiedades que debe tener un proyecto hardware para ser considerado \textit{abierto}; existen una serie de proyectos dispersos con diferentes características y grados de libertad \footnote{http://en.wikipedia.org/wiki/List\_of\_open\_source\_hardware\_projects} y cada uno de ellos interpreta a su manera lo que es un proyecto hardware abierto.
 
-\subsection{Licencias Creative Commons}
+La iniciativa \textit{Open Source Hardware} (OSH), es el  busca aplicar principios generales de los ideales del hardware de código abierto con el fin de crear un estándar con el cual evaluar las licencias para diseños hardware. Esta iniciativa es apoyada por proyectos de hardware abiertos en su mayoría usuarios de la plataforma \textit{Arduino} y por sitios encargados a hackear (aplicar ingeniería inversa) dispositivos comerciales, pero no existen muchos desarrolladores hardware que respalden esta iniciativa.
+
+Nuestra propuesta presenta una visión diferente al proyecto iniciado con Qi-hardware, al incluir a la academia (considerada inútil por Qi-hardware) y buscar un grupo donde existan desarrolladores hardware y software (Qi-hardware solo tiene desarrolladores software) que contribuyan a la creación de plataformas físicas con su respectivo software de aplicación.
+
+\subsection{Licencias}
 
 Para manejar las licencias se trabajará con Creative Commons \footnote{http://creativecommons.org/} organización no gubernamental sin ánimo de lucro que ha desarrollado una serie de licencias basadas en principios similares a los del movimiento de software libre y que pueden ser aplicadas a trabajos realizados en música, arte, video, texto y notas de clase. Para reproducir una plataforma hardware, es necesario suministrar los archivos de las herramientas CAD de diseño y fabricación (PCB, Lista de materiales), por lo que esta iniciativa resulta adecuada para distribuir este tipo de proyectos. Estas licencias permiten que el autor de un trabajo conserve la propiedad intelectual (los derechos asociados a esta) pero posibilitando su copia y distribución, con la única condición de dar créditos al autor del trabajo original y que el trabajo derivado posea la misma licencia. 
 
@@ -208,113 +206,115 @@ Se pueden elegir diferentes permisos dependiendo de los deseos del autor, para d
  \item ¿Es necesario atribuir el trabajo al autor original?
 \end{enumerate}
 
-Estas preguntas son la base para definir un esquema de licencias modular. Existen cuatro bloques constructivos para las licencias Creative Commons estos son: \textit{Atribución} (\textbf{BY}) Se permite la distribución pero se debe dar crédito al autor. \textit{No comercial} (\textbf{NC}) Se permite la distribución del trabajo sin fines comerciales, si se desea utilizar este trabajo para obtener dinero es necesaria una autorización del autor; \textit{No a trabajos derivados} (\textbf{ND}) Permite la copia y la distribución del trabajo original sin modificaciones. \textit{Compartir de la misma forma} (\textbf{SA}) Exige que todo trabajo derivado del uso de proyectos que con este esquema de licencias deben tener la misma licencia de los trabajos originales.
+Estas preguntas son la base para definir un esquema de licencias modular. Existen cuatro bloques constructivos para las licencias Creative Commons estos son: 
+
+\begin{enumerate}
+ \item \textit{Atribución} (\textbf{BY}) Se permite la distribución pero se debe dar crédito al autor.
+ \item \textit{No comercial} (\textbf{NC}) Se permite la distribución del trabajo sin fines comerciales, si se desea utilizar este trabajo para obtener dinero es necesaria una autorización del autor.
+ \item \textit{No a trabajos derivados} (\textbf{ND}) Permite la copia y la distribución del trabajo original sin modificaciones.
+ \item \textit{Compartir de la misma forma} (\textbf{SA}) Exige que todo trabajo derivado del uso de proyectos con este esquema de licencias deben tener la misma licencia de los trabajos originales.
+\end{enumerate}
+
+\subsubsection{Licencia CC - BY - SA}
+
+La licencia \textit{creative commons} \textbf{CC BY-SA} permite compartir, copiar, distribuir, ejecutar, comunicar públicamente la obra y hacer obras derivadas, con la condición de reconocer los créditos de la obra original de la forma indicada por el autor sin que esto implique que se cuenta con su apoyo o que apoya el uso que hace de su obra; si altera o transforma esta obra, o genera una obra derivada, debe distribuir la obra generada bajo la misma licencia. Este esquema de licencias ha sido elegida para licenciar las obras realizadas en este estudio.
+
+Al elegir hacer el resultado de acceso libre, conservando los derechos de autor; se proporciona un bien público que puede ser utilizado por cualquier sector de la sociedad para suplir necesidades propias; su naturaleza viral asegura que se agragarán nuevos proyectos a este bien, la labor de la comunidad será definir que proyectos reúnen con los requerimientos de calidad para ser incluidos en los repositorios públicos.
+
+\subsubsection{Licencia GPL}
+Debido a que los proyectos hardware requieren la ejecución de un software que implemente la funcionalidad requerida; es necesario diferenciar los componentes de dichos sistemas, casi la totalidad de las aplicaciones software tomadas como referencia para adaptar las plataformas desarrolladas poseen la licencia GPL, por esta razón se conservarán las libertades de este tipo de licencias para el componente software.
+
+\begin{itemize}
+ \item Libertad de ejecutar el software para cualquier propósito.
+ \item Libertad de estudiar como funciona el programa, y cambiarlo para hacer lo que se desee.
+ \item Libertad para re-distribuir copias.
+ \item Libertad para distribuir copias de versiones modificadas; permitiendo que la comunidad se beneficie de estos cambios.
+\end{itemize}
+
+\subsection{Características}
+Para que un proyecto sea considerado \textit{hardware copyleft} es necesario proporcionar los archivos necesarios para cumplir con las libertades de las licencias GPL y CC-BY-SA. A nuestro modo de ver, la clave para garantizar dichas libertades está en suministrar la información necesaria para modificar los proyectos; para lo que es necesario poseer los conocimientos necesarios y tener acceso a los archivos de diseño.
+
+Es posible reproducir un diseño realizado en cualquier herramienta CAD; sin embargo, existen dos factores que lo dificultan: el uso de herramientas propietarias y la complejidad del proyecto original. El uso de herramientas propietarias implica el pago de fuertes sumas de dinero para adquirir licencias y la complejidad del diseño puede incrementar de forma considerable el costo del prototipo. Debido al estado de la industria electrónica colombiana, es necesario reducir al máximo los costos para hacer atractiva la fabricación de productos propios\footnote{Esto no implica que solo los proyectos más baratos hagan parte de la definición de un proyecto}. Por lo tanto, es recomendable utilizar herramientas abiertas en el desarrollo de los proyectos \textit{hardware copyleft}, en el capítulo \ref{ch:education} se presentó una metodología de diseño que solo emplea software abierto y será utilizada como referencia para el desarrollo de nuevos productos. Para reducir la complejidad del diseño se debe evitar el uso de componentes de dificil adquisición y utilizar 2 o 4 capas en la placa de circuito impreso. Los diseños de referencia que ya hacen parte del recurso utilizan otra restricción: no utilizar componentes con encapsulados BGA y QFN, ya que son difíciles de montar manualmente (esta restricción tiene sentido cuando se monta un prototipo o un número pequeño de unidades de forma manual) y es necesario utilizar técnicas de inspección con rayos X para verificar su correcto montaje.
+
+\subsubsection{Archivos necesarios para modificar un proyecto existente}
+Para modificar o reproducir un proyecto existente es necesario suministrar:
+
+\begin{itemize}
+ \item Componente hardware
+   \begin{itemize}
+    \item \textit{Esquemáticos:} Diagramas eléctricos que representen el diseño completo.
+    \item \textit{Netlist:} Archivo generado a partir del esquemático, contiene los elementos del circuito (señales y componentes), sus interconexiones, y asociaciones con representaciones físicas (dimensiones de líneas, footprints).
+    \item \textit{Layout:} Representación física de la placa de circuito impreso, utiliza el netlist como entrada, 
+    \item \textit{Archivos de fabricación:} Archivos que son utilizados para la fabricación de las placas de circuito impreso, son útiles para os usuarios que solo quieran reproducir el proyecto.
+    \item \textit{Archivos CAD} utilizados en la creación de formas especiales en las placas de circuito impreso, fabricación de la carcasa.
+    \item \textit{Lista de componentes} Listado de los componentes utilizados en la placa de circuito impreso.
+   \end{itemize}
+ \item Componente software, código fuente de:
+   \begin{itemize}
+    \item \textit{Aplicación para grabar las memorias no volátiles}
+    \item \textit{Bootloader}
+    \item \textit{Kernel}
+    \item \textit{Sistema de archivos}
+    \item \textit{Aplicaciones}
+   \end{itemize}
+ \item Archivos para dispositivos lógicos programables
+   \begin{itemize}
+    \item \textit{Aplicaciones}
+   \end{itemize}
+\end{itemize}
+
+
+\subsection{Flujo de diseño utilizando \textit{hardware copyleft}}
+
+Para determinar si es posible utilizar las plataformas de referencia creadas en este estudio en el desarrollo de nuevos dispositivos se utilizó la plataforma \textit{ECB\_AT91} \cite{CC08c} como punto de partida para la construcción de un monitor de signos vitales \cite{NR11}  y para la creación de un sistema de medición de la calidad del servicio eléctrico \cite{ERAC+09}. En el primer caso, un estudiante de posgrado agregó un módulo de comunicaciones para comunicarse con las tarjetas de adquisición de señales médicas y suministró puertos USB host para conectar módulos de comunicación WiFi, Bluetooth y 3G/GSM; demorando 6 meses en fabricar la nueva plataforma y en escribir la aplicación. En el segundo caso, la empresa emQbit, agregó una etapa de adquisición de señales análoga, un sistema de comunicación y un sistema de referencia geográfica basada en un GPS, empleando 6 meses en ello. Una reducción drástica frente al tiempo que demoró el desarrollo de la placa utilizada como referencia; esto es posible gracias a la posibilidad de utilizar los archivos de diseño de la plataforma, (los cuales, han pasado por un proceso de depuración y optimización) y el código fuente de las aplicaciones necesarias para la ejecución de aplicaciones Linux (Board Support Package BSP).
 
 
 
-% 
-%                                                       Authors who choose
-% to make their works available for free may still retain their copyrights.
-% In this instance, instead of having negative effects, open access of infor-
-% mation provides a universal public good: the more quality information,
-% the greater the public good.
-% 
-%    Second, the knowledge commons is not synonymous with open access,
-% although the content and the community network of the open-access
-% movement, as Suber and Ghosh discuss in their chapters, are types of
-% commons. Forgive us for repeating that a commons is a shared resource
-% that is vulnerable to social dilemmas. Outcomes of the interactions
-% of people and resources can be positive or negative or somewhere in
-% between. Frequently, within the intellectual arena, the concept of the
-% commons is a battle cry for free speech, universal open access, and self-
-% governance, as a 2004 conference session illustrated:
-% 
-% 
-% 
-% With the Internet nurturing the sharing spirit inherent in man, commons has
-% taken on a new meaning. Free software proved spectacularly that the commons
-% is a viable alternative to commodification. The term Digital Commons is widely
-% used but only loosely defined, ranging from jointly owned intellectual property
-% to public property and the public domain. Still, it has an obvious evocative
-% power, and the potential to reconceptualize our knowledge environment and
-% to unite those fighting for its freedom. (Program abstract for ?The Future of
-% the Digital Commons,? at the 2004 WOS3 Conference, http://wizards-of-os
-% .org/index.php?id=1551)
-% 
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%                   COPY LEFT HW                                       %%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Hardware Copyleft}
-
-\subsection{ECB\_AT91, ECBOT, ECB\_BFIN} Plataformas realizadas para adquirir experiencia en el diseño de sistemas embebidos
-detectar las habilidades que se necesitan para realizar el proceso
-
-\subsection{Proyecto Qi-Hardware}
-
-
-
-
-
-% 
-%    INTERNET    INTERNET   
-%    Clearly, the Internet, as a technological advance, is as important a
-% ?structural change? to the way scientific advances are communicated and
-% collaborated on as was the printing press. Digital storage has become so
-% cheap that many treat the saving of a file on a hard disk as nearly cost-
-% less. Advances like the web and e-mail software have greatly reduced the
-% costs or skills required to access information on the Internet. Over the
-% last five to ten years, the Internet has moved from a domain utilized pri-
-% marily by high-skilled computer scientists, engineers, or others in the
-% high-tech industries, to a system utilized by scientists and scholars in all
-% disciplines. We are now in a shake-up period where traditional organi-
-% zations chartered with the management of scientific information (e.g.,
-% libraries, publishers) are developing new organizational models and mis-
-% sions built around computer database and connectivity issues (see, for
-% example, chapters 4 and 11 in this book). This environment, where
-% digital files can be copied and transferred globally in an instant and at
-% very little cost, makes it much easier to treat information or knowledge
-% as a global public good. But as other contributors to this book describe,
-% these advances in technology are directly at odds with other societal
-% trends and developments in intellectual copyright law that are pushing
-% to treat information and other digital products as private goods for mon-
-% etary gain (see chapters 5 and 7).
-%    Computer scientists and engineers invented Internet technologies and
-% have been actively using them since the 1960s. It is only natural, then,
-% that this class of Internet users would continue to innovate using this
-% tool and develop new approaches for global collaboration to promote
-% open-science principles, broadly defined. While we do not always con-
-% sider computer programming a scientific endeavor, indeed, the develop-
-% ment of software is one form of science, and software, as a product, is
-% a form of intellectual property. The innovation I am referring to is the
-% emergence over the last twenty years of FOSS as a form of ?software
-% commons.? One popular FOSS website, Sourceforge.net, hosts over
-% 200,000 such projects (Sourceforge.net 2006). While there are or will be
-% many failures in this collaborative domain, there are some major success
-% stories (measured in terms of growth in software use or ?market share?),
-% with prominent ones being the Linux operating system, Apache Web
-% Server, Php (an open-source scripting language), MySQL (a FOSS rela-
-% tional database), Firefox (web browser), OpenOffice (office software),
-% and others.
-%    To promote the argument made in the opening paragraph of this
-% chapter?that the collaborative ideals and principles applied in FOSS
-% projects are potentially applicable to any collaboration built around
-% intellectual property?I first provide an overview and summary of the
-% FOSS software ?movement? and describe some critical project compo-
-% nents. I use the Institutional Analysis and Development Framework
-% described in chapter 3 to help guide the description of these projects.
-% Next, I provide more detail on the argument that the FOSS collabora-
-% tive principles and approaches can extend more broadly to scientific
-% research in general. At this juncture, I introduce the more recent inno-
-% vation of ?open-content? licensing. Using a short example in the scien-
-% tific field of land-use change modeling, I then provide a discussion of
-% some critical issues that will need to be addressed in order to transfer
-% the collaborative principles of FOSS software commons to scientific-
-% commons endeavors.
+\section{Comunidad linuxencaja}
+Uno de los objetivos del presente trabajo es crear una comunidad que utilice los frutos del presente trabajo, para adquirir conocimientos relacionados con el diseño de sistemas embebidos y crear nuevos productos que den solución a necesidades locales. Se creó el portal público \textit{linuxencaja}\footnote{http://www.linuxencaja.com} para reunir la documentación existente, proporcionar facilidades para la creación de nuevos proyectos, intercambiar opiniones con otros usuarios, almacenar los archivos generados por nuevos proyectos y mantenimiento de repositorios de código fuente y archivos de diseño de proyectos existentes. Este portal será el principal medio de comunicación y difusión, y el acceso a él no tiene restricciones de ningún tipo. A continuación se realiza una descripción de los recursos con los que cuenta la comnunidad \textit{linuxencaja}, lo que representa un ahorro de tiempo considerable ya que poner a punto esta plataforma 
 
 
 
 
+\subsection{Recursos}
+
+\subsubsection{Herramientas}
+
+\begin{itemize}
+ \item Lista de discusión en donde participan desarrolladores hardware/software, estudiantes y miembros de la comunidad para coordinar el desarrollo de nuevos proyectos y resolver dudas sobre conceptos relacionados con el diseño de sistemas embebidos.
+ \item Base de datos de solución de problemas asociadas a las listas de discusión.
+ \item Sistema de control de versiones \textit{git} que permite el trabajo multi-usuario y la creación de repositorios para los proyectos.
+ \item wiki que permite la elaboración de tutoriales, documentación sobre temas relacionados con el diseño de sistemas digitales o reportes del proceso de diseño de nuevos proyectos.
+\end{itemize}
+
+\subsubsection{Diseños de referencia}
+Se cuenta con 7 tarjetas de desarrollo (ver descripción en el capítulo \ref{ch:embedded}) que cumplen con los requerimientos de los dispositivos \textit{hardware copyleft} y se proporcionan los archivos necesarios para modificarlas; estos diseños de referencia ya han sido construidos y probados en diferentes aplicaciones por lo que su funcionalidad es garantizada; todos ellos utilizan componentes que son fáciles de conseguir y no requieren grandes costos para su reproducción. En los repositorios del portal \textit{linuxencaja} se encuentran las siguientes aplicaciones que pueden ser utilizadas para estudiar el funcionamiento de cada una de las plataformas:
+
+\begin{itemize}
+ \item \textit{loader y blink:} Aplicación que permite cargar binarios en la memoria interna del SoC (loader) y una aplicación que despliega un mensaje por el puerto serial de la plataforma y realiza un blink en un LED.
+ \item \textit{Drivers de dispositivos:} Ejemplos para aprender a escribir controladores sencillos para el sistema operativo linux.
+ \item \textit{Aplicaciones en espacio de usuario:} Ejemplos que permiten controlar los drivers desde espacio de usuario, y ejemplos de aplicaciones sencillas utilizando las facilidades del sistema operativo Linux.
+ \item \textit{Aplicaciones para configuración:} Algunas plataformas de desarrollo poseen micro-controladores de 8 bits o FPGAs que pueden ser programados o configurados desde la misma plataforma. Se suministra el código fuente de estas aplicaciones.
+\end{itemize}
+
+
+\subsubsection{Banco de proyectos académicos}
+
+Cada semestre se realizan proyectos que utilizan alguna de las plataformas \textit{hardware copyleft}, cada uno de ellos realiza la documentación completa del proceso de diseño y suministra los archivos necesarios para reproducir o continuar el proyecto. Este banco de proyectos representa un recurso donde se pueden encontrar soluciones a problemas comúnes de diseño y su realización ayuda a la formación de habilidades en diseño, escritura de informes técnicos.
+
+\subsubsection{Miembros}
+
+\textit{Linuxencaja} cuenta en la actualidad con diferentes tipos de usuarios: desarrolladores software, desarrolladores hardware, aficionados, estudiantes, industriales y administradores.
+
+Los desarrolladores hardware y software se encargan de generar las plataformas de desarrollo y las aplicaciones software que las controlan e implementan su funcionalidad; el número actual de desarrolladores es pequeño, pero va en aumento gracias a los aportes de los estudiantes. Los aficionados, son personas a las que les gusta el diseño de sistemas embebidos, el desarrollo software, les gusta conocer el estado de la tecnologia, su papel es muy importante ya que por lo general, ellos se encargan de labores de mantenimiento, depuración y mejoramiento del material existente.
+
+Los estudiantes, son miembros temporales que pueden o no continuar siendo parte de la comunidad después de cursar las asignaturas, sus aportes deben ser revisados con cuidado para verificar la calidad de su trabajo (muchos proyectos no se finalizan) y solo los mejores proyectos serán parte de los repositorios de la comunidad. A pesar de esto, durante los dos períodods académicos en los que se han vinculado estudiantes a la comunidad como parte de su proyecto de curso, se desarrollaron 5 aplicaciones de muy buena calidad y se reclutaron miembros activos, lo que muestra que esta política resulta muy beneficiosa para la comunidad.
+
+Los industriales miembros de la comunidad se pueden dividir en dos grupos: los que hacen pequeños aportes en las listas de discusión, y no han creado proyectos nuevos, y los que participan activamente y aportan su trabajo a la comunidad. El primer grupo está conformado por empresas consolidades desde hace varios años (a excepción de la empresa emQbit) y su comportamiento es entendible debido a su naturaleza privada. El segundo grupo esta conformado por micro-empresas que han sido creadas por estudiantes que generaron nuevos productos con los recursos suminstrados por la comunidad y utilizan los resultados de los proyectos académicos.
+
+Los administradores (2 personas) son personas que cuentan con conocimientos necesarios para configurar servidores y realizar mantenimiento a los servicios suministrados por el portal.
+
+
+
+\section{Conclusiones}
 
