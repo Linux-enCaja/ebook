@@ -1,70 +1,91 @@
 \begin{thebibliography}{10}
 
-\bibitem{WM91}
-{Mark Weiser}.
-\newblock The {C}omputer for the 21st {C}entury.
-\newblock {\em http://www.ubiq.com/hy\'ertext/weiser/SciAmDraft3.html}.
+\bibitem{EO90}
+{Elinor Ostrom}.
+\newblock {\em Governing the {C}ommons: {T}he {E}volution of {I}nstitutions for
+  {C}ollective {A}ction ({P}olitical {E}conomy of {I}nstitutions and
+  {D}ecisions) ({P}aperback)}.
+\newblock Cambridge University Press, November 1990.
 
-\bibitem{MW93}
-{M. Weiser}.
-\newblock Some computer science issues in ubiquitous computing.
-\newblock {\em Commun. ACM}, 1993.
+\bibitem{Ost00}
+Elinor Ostrom.
+\newblock Reformulating the {C}ommons.
+\newblock {\em Swiss Political Science Review, Volume 6, Number 1}, 2000.
 
-\bibitem{DS02}
-{D. Servant}.
-\newblock Combining amorphous computing and reactive agent-based systems: a
-  paradigm for pervasive intelligence?
-\newblock In {\em First international joint conference on {A}utonomous agents
-  and muktiagent systems: part 1}, 2002.
+\bibitem{ST92}
+{Sandler Todd}.
+\newblock Collective {A}ction: {T}heory and {A}pplications.
+\newblock {\em Ann Arbor: University of Michigan Press}, 1992.
 
-\bibitem{Mar04}
-H\'ector Mart\'{\i}nez.
-\newblock Apropiaci\'on de conocimiento en {C}olombia. {E}l caso de los
-  contratos de importaci\'on de tecnolog\'{\i}a.
-\newblock {\em Revista Cuadernos de Econom\'{\i}a}, 2004.
+\bibitem{MMDG04}
+Ruth Meinzen-Dick, {Monica Di Gregorio}, and {Nancy McCarthy}.
+\newblock Methods for {S}tudying {C}ollective {A}ction in {R}ural
+  {D}evelopment.
+\newblock {\em CAPRi Working Paper, no. 33. International Food Policy Research
+  Institute, 2033 K Street, N.W., Washington, DC 20006.
+  http://www.capri.cgiar.org/pdf/capriwp33.pd}, 2004.
 
-\bibitem{Arr62}
-Kenneth Arrow.
-\newblock {\em Economic {W}elfare and the {A}llocation of {R}esources for
-  {I}nvention}.
-\newblock Princeton University Press, 1962.
+\bibitem{EO92}
+{E. OSTROM}.
+\newblock The {R}udments of a theory of the {O}rigins, {S}urvival, and
+  {P}erformance of {C}ommon-{P}roperty {I}nstitutions.
+\newblock {\em BROMLEY, D.W. et al. (eds.) Making the Commons Work: Theory,
+  Practice, and Policy. San Francisco, CA: ICS Press}, 1992.
 
-\bibitem{ETPoSSI(09}
-{European Technology Platform on Smart Sistem Integration (EPoSS)}.
-\newblock European {T}echnology {P}latform on {S}mart {S}ystems {I}ntegration.
-  {S}trategic {R}esearch {A}genda 2009.
-\newblock 2009.
+\bibitem{J.B96}
+{J .M. BALAND} and {J.P. PLATTEAU}.
+\newblock Halting {D}egradation of {N}atural {R}esources. {I}s {T}here a {R}ole
+  for {R}ural {C}ommunities?
+\newblock {\em Oxford: Clarendon Press}, 1996.
 
-\bibitem{MTRR07}
-{M. Tovar} and {R. Rodr\'{\i}guez}.
-\newblock P{ROSPECTIVA} {Y} {VIGILANCIA} {TECNOL}\'{O}{GICA} {DE} {LA}
-  {ELECTR}\'{O}{NICA} {EN} {COLOMBIA}.
-\newblock Master's thesis, Universidad Nacional de Colombia, 2007.
+\bibitem{Mot}
+Motorola.
+\newblock M{OTODEV} {P}roject.
+\newblock URL: http://developer.motorola.com/platforms/mobile-linux/.
 
-\bibitem{MDAG99}
-{M. Duque} and {A. Gauthier}.
-\newblock Formaci\'on de {I}ngenieros para la {I}nnovaci\'on y el {D}esarrollo
-  {T}ecnol\'ogico en {C}olombia.
-\newblock {\em Revista de la Facultad de Minas - Universidad Nacional de
-  Colombia}, December 1999.
+\bibitem{And}
+Google.
+\newblock Android {P}roject.
+\newblock URL: http://www.android.com/.
 
-\bibitem{DZSC+07}
-{D Zuluaga}, {S Campos}, {M Tovar}, {R Rodr\'{\i}guez}, {J S\'anchez}, {A
-  Aguilera}, {L Land\'{\i}nez}, and {J Medina}.
-\newblock Informe de {V}igilancia {T}ecnol\'ogica: {A}plicaciones de la
-  {E}lectr\'onica en el {S}ector {A}gr\'{\i}cola.
-\newblock Technical report, COLCIENCIAS, 2007.
+\bibitem{Mae}
+Nokia.
+\newblock Maemo {P}roject.
+\newblock URL: http://www.maemo.org/.
 
-\bibitem{MO90}
-{M. Odedra}.
-\newblock {\em Information {T}echnology {T}ransfer to {D}eveloping {C}ountries:
-  {C}ase studies from {K}enya, {Z}ambia and {Z}imbabwe}.
-\newblock PhD thesis, London School of Economics, 1990.
+\bibitem{FSF}
+{Free Software Foundation}.
+\newblock G{NU} {G}eneral {P}ublic {L}icense.
+\newblock URL: http://www.gnu.org/copyleft/gpl.html.
 
-\bibitem{IAI}
-{Innovation Associates Inc.}
-\newblock Technology {T}ransfer and {C}ommercialization {P}artnerships
-  {E}xecutive {S}ummary.
+\bibitem{AC09}
+{A. Cortesi}.
+\newblock Elinor {O}strom, the commons problem and {O}pen {S}ource.
+\newblock {\em URL: http://corte.si/posts/opensource/ostrom/index.html}, 2009.
+
+\bibitem{Wikb}
+Wikipedia.
+\newblock Richard {S}tallman.
+\newblock URL: http://es.wikipedia.org/wiki/Richard\_Stallman.
+
+\bibitem{SAS03}
+C.~M Schweik and {A. Semenov}.
+\newblock The {I}nstitutional {D}esign of '{O}pen {S}ource' {P}rogramming:
+  {I}mplications for {A}ddressing {C}omplex {P}ublic {P}olicy and {M}anagement
+  {P}roblems.
+\newblock URL: http://www.firstmonday.org/issues/issue8\_1/schweik/, 2003.
+
+\bibitem{CHEO06}
+{Charlotte Hess} and {Elinor Ostrom}, editors.
+\newblock {\em Understanding {K}nowledge as a {C}ommons: {F}rom {T}heory to
+  {P}ractice}.
+\newblock The MIT Press, December 2006.
+
+\bibitem{Sta99}
+R.~M. Stallman.
+\newblock {\em The {GNU} {O}perating {S}ystem and the {F}ree {S}oftware
+  {M}ovement {V}oices from the {O}pen {S}ource {R}evolution}.
+\newblock O'Reilly and Associates, 1999.
 
 \bibitem{CMS06}
 {Charles M. Schweik}.
@@ -73,16 +94,44 @@ Kenneth Arrow.
   Establishing Commons in Science.
 \newblock The MIT Press, 2006.
 
-\bibitem{Mo94}
-{M. odedra-straub}.
-\newblock The {M}yths and {I}llusions of {T}echnology {T}ransfer.
-\newblock {\em IFIP World Congress Proceedings}, August 1994.
+\bibitem{Web04}
+S.~Weber.
+\newblock {\em The {S}uccess of {O}pen {S}ource}.
+\newblock Harvard University Press, 2004.
 
-\bibitem{KAJS08}
-{K. Al-Mabrouk} and {J. Soar}.
-\newblock Building a {F}ramework for {U}nderstanding and {I}mproving
-  {I}nformation {T}echnology {T}ransfer {P}rocess in the {A}rab {C}ountries.
-\newblock {\em 9th IBIMA Conference: Information Management in Modern
-  Organisations - Trends \& Challenges}, 2008.
+\bibitem{VWJ+03}
+{Van Wendel}, R.~Joode, {J. A. de Bruijn}, and {M. J. G. van Eeten}.
+\newblock {\em Protecting the {V}irtual {C}ommons: {S}elf-{O}rganizing {O}pen
+  {S}ource and {F}ree {S}oftware {C}ommunities and {I}nnovative {I}ntellectual
+  {P}roperty {R}egimes.}
+\newblock Asser Press, 2003.
+
+\bibitem{GGR02}
+R.~A. Ghosh, {G. Robles}, and {R. Glott.}
+\newblock Free/{L}ibre and {O}pen {S}ource {S}oftware: {S}urvey and {S}tudy.
+  {T}echnical report {U}niversity of {M}aastricht, {T}he {N}etherlands:
+  {I}nternational {I}nstitute of {I}nfonomics.
+\newblock URL: http://www.infonomics.nl/FLOSS/report/index.htm, 2002.
+
+\bibitem{CC08c}
+{C. Camargo}.
+\newblock E{CBOT} y {ECB}\_{A}{T}91 {P}lataformas {A}biertas para el {D}ise\~no
+  de {S}istemas {E}mbebidos y {C}o-dise\~no {HW}-{SW}.
+\newblock {\em VIII Jornadas de Computaci\'on Reconfigurable y Aplicaciones},
+  2008.
+
+\bibitem{NR11}
+{N. Rosas}.
+\newblock Dise\~no e {I}mplementaci\'on de un {S}istema {E}mbebido para la
+  {A}dquisici\'on y {T}ransmisi\'on de {S}e\~nales {B}iom\'edicas a {T}rav\'es
+  de la {R}ed {C}elular.
+\newblock Master's thesis, 2011.
+
+\bibitem{ERAC+09}
+{E. Rodriguez}, {A. Calder\'on}, {D. Mendez}, and {C. Camargo}.
+\newblock Sistema {I}ntegrado de {M}edici\'on de {E}nerg\'{\i}a, {C}alidad del
+  {S}ervicio y {O}peraci\'on {R}emota.
+\newblock {\em MEMORIAS : VI Jornada de Distribuci\'on de Energia El\'ectrica -
+  ASOCODIS}, 2009.
 
 \end{thebibliography}

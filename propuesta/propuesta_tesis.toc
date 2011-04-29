@@ -1,23 +1,27 @@
 \select@language {spanish}
-\contentsline {chapter}{\numberline {1}Introducci\'on}{5}
-\contentsline {subsection}{\numberline {1.0.1}Sistemas Embebidos.}{6}
-\contentsline {subsection}{\numberline {1.0.2}\IeC {\textquestiondown }Por qu\'e los Sistemas Embebidos?}{7}
-\contentsline {subsubsection}{Mercado de los Sistemas Embebidos}{7}
-\contentsline {subsubsection}{Penetraci\'on de los Sistemas Embebidos}{7}
-\contentsline {subsubsection}{Perspectivas de Empleo}{7}
-\contentsline {section}{\numberline {1.1}Estado de la Industria Electr\'onica en Colombia}{9}
-\contentsline {subsubsection}{Apropiaci\'on de Conocimiento y Transferencia Tecnol\'ogica}{10}
-\contentsline {subsubsection}{Situaci\'on de la Industria Electr\'onica en Colombia}{11}
-\contentsline {subsubsection}{Causas del Atraso Tecnol\'ogico en Colombia}{11}
-\contentsline {subsubsection}{El conocimiento Como Bien Com\'un}{12}
-\contentsline {chapter}{\numberline {2}Descripci\'on de la Tesis}{15}
-\contentsline {section}{\numberline {2.1}Objetivos}{15}
-\contentsline {subsubsection}{Ojetivo Principal}{15}
-\contentsline {subsubsection}{Objetivos Espec\IeC {\'\i }ficos}{15}
-\contentsline {subsubsection}{Resultados Esperados e Impacto}{16}
-\contentsline {section}{\numberline {2.2}Hip\'otesis}{16}
-\contentsline {section}{\numberline {2.3}Metodolog\IeC {\'\i }a}{19}
-\contentsline {section}{\numberline {2.4}Actividades y Cronograma}{21}
-\contentsline {subsection}{\numberline {2.4.1}Actividades}{21}
-\contentsline {subsection}{\numberline {2.4.2}Cronograma}{22}
-\contentsline {section}{\numberline {2.5}Recursos}{23}
+\contentsline {chapter}{\numberline {1}Copyleft HW/SW Como Herramienta de Transferencia y Difusi\'on}{3}
+\contentsline {section}{\numberline {1.1}Introducci\'on}{3}
+\contentsline {section}{\numberline {1.2}El Conocimiento Como Bien P\'ublico}{4}
+\contentsline {subsection}{\numberline {1.2.1}Auto-Gobierno}{5}
+\contentsline {subsubsection}{Ecuaci\'on Costo Beneficio de Ostrom}{6}
+\contentsline {subsubsection}{Principios de Dise\~no}{7}
+\contentsline {subsubsection}{Movimiento FOSS}{8}
+\contentsline {section}{\numberline {1.3}FOSS}{9}
+\contentsline {subsubsection}{Reglas}{10}
+\contentsline {subsubsection}{Atributos de la Comunidad}{11}
+\contentsline {subsubsection}{Atributos F\IeC {\'\i }sicos}{11}
+\contentsline {section}{\numberline {1.4}Hardware Copyleft}{12}
+\contentsline {subsection}{\numberline {1.4.1}Licencias}{12}
+\contentsline {subsubsection}{Licencia CC - BY - SA}{13}
+\contentsline {subsubsection}{Licencia GPL}{13}
+\contentsline {subsection}{\numberline {1.4.2}Caracter\IeC {\'\i }sticas}{14}
+\contentsline {subsubsection}{Archivos necesarios para modificar un proyecto existente}{14}
+\contentsline {section}{\numberline {1.5}Flujo de dise\~no utilizando \textit {hardware copyleft}}{15}
+\contentsline {section}{\numberline {1.6}Comunidad linuxencaja}{17}
+\contentsline {subsection}{\numberline {1.6.1}Recursos}{17}
+\contentsline {subsubsection}{Herramientas}{17}
+\contentsline {subsubsection}{Dise\~nos de referencia}{17}
+\contentsline {subsubsection}{Banco de proyectos acad\'emicos}{18}
+\contentsline {subsubsection}{Documentaci\'on}{18}
+\contentsline {subsubsection}{Miembros}{19}
+\contentsline {section}{\numberline {1.7}Conclusiones}{19}
