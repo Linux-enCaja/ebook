@@ -1,49 +1,47 @@
 This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: propuesta_tesis.aux
 The style file: unsrt.bst
+I found no \citation commands---while reading file propuesta_tesis.aux
 Database file #1: biblio.bib
-Warning--can't use both author and editor fields in Sta99
-Warning--can't use both author and editor fields in CMS06
-Warning--empty school in NR11
-You've used 22 entries,
+You've used 0 entries,
             1791 wiz_defined-function locations,
-            566 strings with 7205 characters,
-and the built_in function-call counts, 3177 in all, are:
-= -- 251
-> -- 135
-< -- 1
-+ -- 57
-- -- 35
-* -- 94
-:= -- 542
-add.period$ -- 66
-call.type$ -- 22
-change.case$ -- 16
+            445 strings with 3534 characters,
+and the built_in function-call counts, 18 in all, are:
+= -- 0
+> -- 0
+< -- 0
++ -- 0
+- -- 0
+* -- 2
+:= -- 7
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 25
-duplicate$ -- 168
-empty$ -- 368
-format.name$ -- 35
-if$ -- 717
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 1
+format.name$ -- 0
+if$ -- 1
 int.to.chr$ -- 0
-int.to.str$ -- 22
-missing$ -- 19
-newline$ -- 113
-num.names$ -- 23
-pop$ -- 103
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 3
+num.names$ -- 0
+pop$ -- 0
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 72
+skip$ -- 1
 stack$ -- 0
 substring$ -- 0
-swap$ -- 24
-text.length$ -- 1
+swap$ -- 0
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 3
-while$ -- 22
-width$ -- 24
-write$ -- 218
-(There were 3 warnings)
+warning$ -- 0
+while$ -- 0
+width$ -- 0
+write$ -- 2
+(There was 1 error message)

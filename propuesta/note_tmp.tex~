@@ -2,6 +2,137 @@ Es necesario transferir todos los componentes de la tecnología para una efectiva
 
 
 
+
+
+% Con el presente trabajo se busca contribuir a mejorar la plataforma tecnológica del pais y proponer una metodología que permita realizar una transferencia tecnológica exitosa en el área de los sistemas embebidos, proporcionando herramientas que contribuyan al desarrollo de la industria electrónica nacional; actualicen los planes de estudio y las metodologías de diseño utilizadas en las asignaturas del área de la electrónica digital; y generen un conocimiento en la Concepción, Diseño, Implementación y Operación de sistemas embebidos. Basado en la creencia que el conocimiento es un bien común y su acceso debe ser garantizado a todos los interesados, se trabajará en la definición del concepto "hardware copyleft" o hardware libre (Inspirado en el movimiento de Software libre y Código abierto \cite{GGR02}) y su papel facilitador del proceso de transferencia tecnológica. Adicionalmente, se creará un \textit{recurso común} representado en el conocimiento necesario para diseñar aplicaciones comercializables utilizando herramientas hardware y software abiertas; y de esta forma, atraer a personas o instituciones interesadas en su uso académico o comercial y con disponibilidad en el trabajo colectivo, para formar una comunidad que trabaje en la difusión, mejoramiento, y crecimiento de este recurso. 
+% 
+% 
+% Platform technology is a term for technology that enables the creation of products and processes that support present or future development. It establishes the long-term capabilities of research & development institutes
+% 
+% 
+% 	
+% 	Plataforma de Química Combinatoria
+% Las Plataformas Tecnológicas son unidades de apoyo a la investigación equipadas con la última tecnología y dotadas de personal altamente especializado. La novedad del campo de aplicación hace que un enfoque de servicio clásico no sea el adecuado y comporta una participación activa de la Plataforma en proyectos de investigación, redes de Plataformas, proyectos de desarrollo tecnológico y convenios que van más allá en tiempos y complejidad del servicio puntual.
+% 
+% Las Plataformas se caracterizan por su valor estratégico que justifica su disponibilidad para el colectivo de I+D tanto público como privado y conforman un centro tecnológico de referencia altamente competitivo para la industria farmacéutica y de química fina.
+% 
+% Las principales actividades que se desarrollan dentro de las Plataformas Tecnológicas son de servicios científicos de apoyo a la investigación, desarrollo tecnológico (puesta a punto de nuevas metodologías) y de participación en proyectos de investigación.
+% Por otro lado, en el contexto del GrupUB, se han creado Plataformas Biotecnológicas Mixtas participadas por los Servicios Científico-Técnicos (SCT-UB), Instituto de Investigaciones Biomédicas August Pi i Sunyer (IDIBAPS), y el mismo PCB (Plataforma de Proteómica y Plataforma de Transcriptómica)
+% 
+% Las plataformas estan estructuradas para ofrecer:
+% # Servicios puntuales concretos.
+% # Asesoramiento en la aplicación de las técnicas.
+% # Alquiler de los espacios y equipamientos para uso en autoservicio.
+% # Desarrollo de técnicas en colaboración para aplicarlas a los problemas concretos de los usuarios.
+% 
+% En general, las actividades que se desarrollan dentro de las plataformas se pueden dividir en tres áreas:
+% # Servicios científicos de apoyo a la investigación.
+% # Desarrollo tecnológico (puesta a punto de nuevas metodologías).
+% # Participación en proyectos de investigación mixtos (con empresas o grupos de investigación).
+% 
+% 
+% 
+% http://www.pcb.ub.es/homepcb/live/es/p247.asp
+% 
+% 
+% ¿Qué es una Plataforma Tecnológica? 	Imprimir
+% Las Plataformas Tecnológicas son agrupaciones de entidades de un sector concreto lideradas por la industria que se unen para definir una Agenda Estratégica de Investigación (Strategic Research Agenda, SRA) con la que dar respuesta a los problemas sectoriales, mejorando la competitividad e impulsando la investigación e innovación. Iniciativas que cuentan con el respaldo del Gobierno español.
+% 
+% 
+% Plataforma tecnológica española de seguridad industrial.
+% 
+% 
+% ¿Qué son?
+% Las Plataformas Tecnológicas Europeas abordan problemas estratégicos en aquellos casos en que
+% lograr el crecimiento, la competitividad y la sostenibilidad futuros de Europa depende de avances
+% tecnológicos decisivos. En ellas se dan cita todas las partes interesadas, dirigidas por la industria, para
+% defi nir los objetivos de investigación y de desarrollo tecnológico a medio y largo plazo, así como para
+% establecer una serie de directrices para su consecución. Lograr estos objetivos mejorará de manera
+% signifi cativa la vida cotidiana de los ciudadanos europeos en numerosas áreas.
+% Las Plataformas Tecnológicas desempeñan una función primordial para alinear mejor las prioridades
+% de investigación de la UE con las necesidades de la industria. Abarcan la cadena completa del valor
+% económico, con lo que se garantiza que los conocimientos generados mediante la investigación se
+% transformen en tecnologías y procesos y, en defi nitiva, en productos y servicios comercializables.
+% 
+% 
+% ¿Por qué son importantes?
+% Para seguir siendo competitiva, la industria europea necesita especializarse más en áreas de alta
+% tecnología. Es preciso aumentar la inversión en investigación, mejorar la coordinación en toda Europa
+% y elevar el contenido tecnológico de la actividad industrial. Las Plataformas Tecnológicas abordan
+% estos desafíos gracias a:
+% ? La visión compartida de las partes interesadas;
+% ? El efecto positivo sobre una amplia gama de políticas;
+% ? La reducción de la fragmentación en las actividades de investigación
+% 
+% La movilización de las fuentes de fi nanciación públicas y privadas.
+% 
+% 
+% ?La creación de unas Plataformas Tecnológicas europeas efi cientes puede ayudar a que la inversión
+% europea en I+D consiga, de forma rápida y efi caz:
+% ? Hacer llegar las ventajas conseguidas hasta el ciudadano europeo;
+% ? Crear competitividad para nuestras empresas; y
+% ? Terminar con esa situación en que una elevada inversión en I+D de la UE genera, con
+% frecuencia, resultados inferiores a los esperados?.
+% 
+% 
+% Comité Consultivo Europeo de Investigación (EURAB)
+% 
+% 
+% 
+% 
+% Las Plataformas Tecnológicas europeas son una agrupación de entidades interesadas en un sector concreto, lideradas por la industria, con el objetivo de definir una Agenda Estratégica de Investigación (siglas en inglés: SRA) sobre temas estratégicamente importantes y con una gran relevancia social, en los cuales lograr los objetivos europeos de crecimiento, competitividad y sostenibilidad dependen de los avances tecnológicos y de investigación a medio y largo plazo. Las Plataformas Tecnológicas se basan en la definición de una Agenda Estratégica de Investigación y en la movilización de la masa crítica de investigación y de esfuerzo innovador necesarios.
+% 
+% 
+% 
+% 
+% 1.- Concepto de Plataforma Tecnológica:
+% La Plataformas Tecnológicas son una agrupación de entidades interesadas en un sector concreto,
+% lideradas por la industria, con el objetivo de definir una Agenda Estratégica de Investigación (siglas
+% en inglés: SRA) sobre temas estratégicamente importantes y con una gran relevancia social, en los
+% cuales lograr los objetivos europeos de crecimiento, competitividad y sostenibilidad dependen de los
+% avances tecnológicos y de investigación a medio y largo plazo.
+% Las Plataformas Tecnológicas se basan en la definición de una Agenda Estratégica de Investigación
+% y en la movilización de la masa crítica de investigación y de esfuerzo innovador necesarios.
+% 1.1.- Factores para el éxito de las Plataformas Tecnológicas:
+% ?? Principal entregable: Agenda Estratégica de Investigación
+% ?? Lideradas por la Industria y con objetivos relacionados con el crecimiento y la
+% competitividad.
+% ?? Flexibilidad: no ?un tamaño sirve para todos?.
+% ?? Apertura y transparencia: reglas claras de participación1.
+% ?? Amplia implicación de diferentes entidades (industria, autoridades públicas,
+% investigadores, sociedad civil, usuarios y consumidores, etc.)
+% ?? Valor añadido comunitario- beneficios significativos para diversas políticas
+% comunitarias (medio ambiente, transporte, energía, etc.)
+% ?? Implicación de las autoridades nacionales
+% ?? Enfoque operativo desde las fases iniciales
+% ?? La intensa investigación es una precursora de la comercialización futura.
+% ?? Mercado potencial identificado para las tecnologías implicadas, cubriendo la cadena
+% completa desde la investigación y el desarrollo tecnológico hasta la penetración
+% futura a gran escala en el mercado.
+% ?? Movilización de financiación pública y privada (nacional, regional y privada,
+% Programas Marco, Fondos Estructurales, BEI, Eureka)
+% ?? Educación y formación; diseminación.
+% 1.2.- Objetivos políticos estratégicos para la competitividad futura europea:
+% ?? Nuevas tecnologías que lleven al cambio radical en un sector, si se desarrollan y
+% emplean apropiadamente y a tiempo (ej. Hidrógeno, nanotecnologías)
+% ?? Reconciliación de diferentes objetivos políticos con vistas al desarrollo sostenible (ej.
+% Suministro de agua y saneamiento, genómica de plantas y biotecnología).
+% ?? Bienes y servicios públicos basados en nuevas tecnologías con grandes barreras de
+% entrada y beneficio inseguro, pero con alto potencial económico y social (ej.
+% Comunicaciones móviles e inalámbricas, medicinas innovadoras para Europa).
+% ?? Asegurar los avances tecnológicos necesarios para mantener el liderazgo en
+% sectores de alta tecnología que tienen una gran importancia estratégica y económica
+% para Europa (Ej. Aeronáutica, sistemas embebidos)
+% ?? Renovación, reavivación o reestructuración de sectores industriales tradicionales (ej.
+% Acero)
+% 2.- Creación e implementación:
+% 
+% 
+% Fundación Para el conocimiento Madrid
+
+
+
+
 En conclusión con la venta de equipos se transmite únicamente el conocimiento para operar, programar o mantener, sin embargo, 
 este conocimiento sobre el sistema puede  ayudar a concientizarse sobre la tecnología e impulsar la formación de capital humano.
 La transferencia tecnológica incluye la difusión de conocimiento científico y la preocupación por la transformación del conocimiento en 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.11.20)  28 APR 2011 18:44
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.11.20)  2 MAY 2011 14:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -794,7 +794,7 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
 \tf@toc=\write4
 \openout4 = `propuesta_tesis.toc'.
 
- (./commons.tex [1
+ (./conclusions.tex [1
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
@@ -808,115 +808,53 @@ Cap\'{\i }tulo 1.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20.74> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 7.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [3]
-[4]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 28.
- [5]
-LaTeX Font Info:    Try loading font information for OML+ptm on input line 57.
- (/usr/share/texmf-texlive/tex/latex/psnfss/omlptm.fd
-File: omlptm.fd 
-)
-LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <8> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 57.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 63.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 11.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 63.
- [6] [7] [8]
-<./images/framework_foss.png, id=38, 604.50844pt x 341.77687pt>
-File: ./images/framework_foss.png Graphic file (type png)
-
-<use ./images/framework_foss.png>
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 11.
+[3]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [9 <./images/framework_foss.png>] [10] [11]
-Overfull \hbox (5.78778pt too wide) in paragraph at lines 191--192
-[]\OT1/ptm/m/n/10 El con-cep-to del \OT1/ptm/m/it/10 hard-ware copy-left \OT1/p
-tm/m/n/10 naci[]o de un tra-ba-jo con-jun-to re-al-iza-do con el proyec-to \OT1
-/ptm/m/it/10 qi-hardware[]
- []
+ [4]
+[5]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[12] [13]
+ [6]
 
-LaTeX Warning: Reference `ch:education' on page 14 undefined on input line 237.
+LaTeX Warning: Reference `modelo_TT_emqbit' on page 7 undefined on input line 4
+3.
 
 
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 245.
-
-(/usr/share/texmf-texlive/tex/latex/psnfss/omsptm.fd
-File: omsptm.fd 
-)
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 245.
- [14]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 267.
-
-<./images/design_flow_copyleft_hw.pdf, id=59, 603.25375pt x 329.23pt>
-File: ./images/design_flow_copyleft_hw.pdf Graphic file (type pdf)
-
-<use ./images/design_flow_copyleft_hw.pdf>
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 288.
- [15] [16 <./images/design_flow_copyleft_hw.pdf>]
-
-LaTeX Warning: Reference `ch:embedded' on page 17 undefined on input line 341.
-
-[17] [18] [19]
-<./images/modelo_transferencia_tecnologica.pdf, id=124, 536.0025pt x 295.1025pt
->
+<./images/modelo_transferencia_tecnologica.pdf, id=27, 536.0025pt x 303.1325pt>
 File: ./images/modelo_transferencia_tecnologica.pdf Graphic file (type pdf)
- <use ./images/modelo_transferencia_tecnologica.pdf>) (./propuesta_tesis.bbl
-[20] [21 <./images/modelo_transferencia_tecnologica.pdf>] [22
+<use ./images/modelo_transferencia_tecnologica.pdf>
+Underfull \vbox (badness 5374) has occurred while \output is active []
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 57--60
-[]\OT1/ptm/m/n/10 Free Soft-ware Foun-da-tion.  GNU Gen-er-al Pub-lic Li-cense.
-  URL:
- []
+ [7 <./images/modelo_transferencia_tecnologica.pdf>] [8] [9] [10]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 62--65
-[]\OT1/ptm/m/n/10 A. Corte-si.  Eli-nor Os-trom, the com-mons prob-lem and Open
- Source.  \OT1/ptm/m/it/10 URL:
- []
-
-
-Underfull \hbox (badness 2717) in paragraph at lines 72--77
-[]\OT1/ptm/m/n/10 C. M Schweik and A. Se-men-ov.  The In-sti-tu-tion-al De-sign
- of 'Open Source' Pro-gram-
- []
-
-[23]) [24] (./propuesta_tesis.aux)
+ [11])
+[12] (./propuesta_tesis.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 15829 strings out of 495061
- 274823 string characters out of 1182620
- 375642 words of memory out of 3000000
- 18577 multiletter control sequences out of 15000+50000
- 36760 words of font info for 85 fonts, out of 3000000 for 9000
+ 15390 strings out of 495061
+ 270727 string characters out of 1182620
+ 371508 words of memory out of 3000000
+ 18154 multiletter control sequences out of 15000+50000
+ 31372 words of font info for 78 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 47i,11n,69p,1954b,1339s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 47i,8n,69p,2108b,294s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
-ve/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/ty
-pe1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/public/a
-msfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
-msy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></
-usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texl
-ive/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-texlive/fonts/type1/urw
-/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></
-usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on propuesta_tesis.pdf (24 pages, 303567 bytes).
+ve/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/t
+imes/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></us
+r/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
+Output written on propuesta_tesis.pdf (12 pages, 137505 bytes).
 PDF statistics:
- 193 PDF objects out of 1000 (max. 8388607)
+ 82 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 28 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 18 words of extra memory for PDF output out of 10000 (max. 10000000)
 
