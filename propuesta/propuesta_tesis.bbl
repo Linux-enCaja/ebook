@@ -1,3 +1,118 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{10}
+
+\bibitem{DODM04}
+{D. Ovalle} and {D. Mendez}.
+\newblock {\em Dise\~no e {I}mplementaci\'on de equipo {B}\'asico de
+  {L}aboratorio {U}tilizando {S}istemas {E}mbebidos y {FPAA}s.}
+\newblock Universidad Nacional de Colombia, 2004.
+
+\bibitem{CC11c}
+{C. Camargo}.
+\newblock S{IE}: {P}lataforma {H}ardware copyleft para la {E}nse\~nanza de
+  {S}istemas {D}igitales.
+\newblock {\em XVII Workshop de Iberchip, Bogot\'a Colombia}, February 2011.
+
+\bibitem{CC11d}
+{C. Camargo}.
+\newblock Metodolog\'{\i}a {P}ara la {T}ransferencia {T}ecnol\'ogica en la
+  {I}ndustria {E}lectr\'onica {B}asada en {S}oftware {L}ibre y {H}ardware
+  {C}opyleft.
+\newblock {\em XVII Workshop de Iberchip, Bogot\'a Colombia}, February 2011.
+
+\bibitem{CC11e}
+{C. Camargo}.
+\newblock Low {C}ost {P}latform for {E}volvable-{B}ased {B}oolean {S}ynthesis.
+\newblock {\em IEEE Latin American Symposium on Circuits and Systems (LASCAS
+  2011), Bogot\'a Colombia}, February 2011.
+
+\bibitem{CC11}
+{C. Camargo}.
+\newblock Hardware copyleft como {H}erramienta para la {E}nse\~nanza de
+  {S}istemas {E}mbebidos.
+\newblock {\em Simposio Argentino de Sistemas Embebidos}, 2011.
+
+\bibitem{CC11f}
+{C. Camargo}.
+\newblock P{LATAFORMAS} {ABIERTAS} {HARDWARE}/{SOFTWARE} {PARA} {APLICACIONES}
+  {EN} {ROBOTICA}.
+\newblock {\em V Congreso Internacional de Ingenier\'{\i}a Mec\'anica y III de
+  Ingenier\'{\i}a Mecatr\'onica (por publicar)}, 2011.
+
+\bibitem{CCCP+11}
+{C. Camargo}, {C. Pedraza}, {L. Ni\~no}, and {J. Martinez}.
+\newblock Intrinsic {E}volvable {H}ardware for {C}ombinatorial {S}ynthesis
+  {B}ased on {S}o{C}+{FPGA} and {GPU} {P}latforms.
+\newblock {\em Genetic Evolutionary Computation Conference}, 2011.
+
+\bibitem{CC09}
+{C. Camargo}.
+\newblock Control de {S}istemas {P}aralelos {I}nspirado en la {N}aturaleza.
+\newblock {\em Colombian Workshop on Circuits and Systems}, 2009.
+
+\bibitem{ERAC+09}
+{E. Rodriguez}, {A. Calder\'on}, {D. Mendez}, and {C. Camargo}.
+\newblock Sistema {I}ntegrado de {M}edici\'on de {E}nerg\'{\i}a, {C}alidad del
+  {S}ervicio y {O}peraci\'on {R}emota.
+\newblock {\em MEMORIAS : VI Jornada de Distribuci\'on de Energia El\'ectrica -
+  ASOCODIS}, 2009.
+
+\bibitem{CC08c}
+{C. Camargo}.
+\newblock E{CBOT} y {ECB}\_{A}{T}91 {P}lataformas {A}biertas para el {D}ise\~no
+  de {S}istemas {E}mbebidos y {C}o-dise\~no {HW}-{SW}.
+\newblock {\em VIII Jornadas de Computaci\'on Reconfigurable y Aplicaciones},
+  2008.
+
+\bibitem{CC08b}
+{C. Camargo}.
+\newblock E{CBOT}: {A}rquitectura {A}bierta para {R}obots {M}\'obiles.
+\newblock {\em VII conferencia Iberoamericana en Sistemas, Cibern\'etica e
+  Inform\'atica}, 2008.
+
+\bibitem{CC07}
+{C. Camargo}.
+\newblock E{CBOT}: {A}rquitectura {A}bierta para {R}obots {M}\'oviles.
+\newblock {\em IEEE Colombian Workshop on Circuits and Systems}, 2007.
+
+\bibitem{SBME07}
+{S. Banguero} and {M. Erazo}.
+\newblock {\em Plataforma de {D}esarrollo para {S}istemas {E}mbebidos {B}asada
+  en el {G}ame{B}oy {A}dvance}.
+\newblock Universidad Industrial de Santander, 2007.
+
+\bibitem{CC06b}
+{C. Camargo}.
+\newblock Linux como herramienta de {D}esarrollo de {S}istemas {E}mbebidos.
+\newblock {\em XII Workshop de Iberchip, San Jose}, 2006.
+
+\bibitem{CC06}
+{C. Camargo}.
+\newblock First {C}olombian {L}inux {SBC} runs {D}ebian.
+\newblock URL:
+  http://www.linuxfordevices.com/c/a/News/First-Colombian-Linux-SBC-runs-Debia%
+n/, 2006.
+
+\bibitem{ICCC06}
+{I. Castillo}, {C. Camargo}, and {C. Perez}.
+\newblock Automatizaci\'on de un puente gr\'ua a escala, mediante una
+  plataforma embebida la cual soporta multiprogramaci\'on.
+\newblock {\em XII Workshop Iberchip}, 2006.
+
+\bibitem{CCOS06}
+{C. Camargo} and {O. Sanchez}.
+\newblock Linux embebido como herramienta para realizar reconfiguraci\'on
+  parcial.
+\newblock {\em XII Workshop Iberchip}, 2006.
+
+\bibitem{CC05}
+{C. Camargo}.
+\newblock Implementaci\'on de {S}istemas {D}igitales {C}omplejos {U}tilizando
+  {S}istemas {E}mbebidos.
+\newblock {\em Memorias del XI Workshop de Iberchip ISBN 959-261-105-X}, 2005.
+
+\bibitem{FPFS+05}
+{F. Pedraza}, {F. Segura}, {C. Camargo}, and {A. Gauthier}.
+\newblock Control {A}daptativo {E}mbebido.
+\newblock {\em Memorias del XI workshop de Iberchip ISBN 959-261-105-X}, 2005.
 
 \end{thebibliography}

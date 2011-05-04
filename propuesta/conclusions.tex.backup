@@ -100,21 +100,29 @@ Al permitir la utilización de los resultados de esta investigación por quien est
  \item Toda obra derivada de este trabajo debe distribuirse con el mismo esquema de licencias (esquema de licencia viral).
 \end{itemize}
 
-Este esquema de licencias unido a los servicios suministrados para permitir estas actividades (repositorio con los archivos necesarios para reproducir y modificar los proyectos derivados de esta investigación, lista de correo, herramientas de creación de wikis, tutoriales en línea y un servicio de control de versiones git)  
-
-El ingreso de estudiantes a esta comunidad ha permitido el aumento del recurso, suministrando una nueva plataforma \textit{hardware copyleft} y de proyectos de referencia que están en proceso de convertirse en productos comerciales.
-
-La creación de este tipo de comunidades ayuda a difundir el conocimiento generado en la academia permitiendo el acceso a quienes estén interesados, lo que contrasta fuertemente con el modelo actual de capacitación que requiere el pago de elevadas sumas de dinero para obtener este tipo de conocimientos. La incorporación de centros de formación e industriales a esta comunidad posibilita identificar necesidades de la industria y ofertas de la academia permitiendo la creación de un vínculo entre ambos sectores.
-
-La creación de vínculos entre Universidad y empresa son muy difíciles de crear en nuestro país, en conversaciones realizadas con el prestigioso economista Clemente Forero ex-director de COLCIENCIAS, nos comentó de los programas que se realizaron en esat entidad para hacer que los industriales fueran a las universidades a buscar y como estos programas fracasaron debido a que las empresas y universidades nunca se pusieron de acuerdo, esto debido a que según Forero hablan idiomas diferentes. Durante la realización de este trabajo se pudieron establecer relaciones fuertes con 4 empresas tres de ellas creadas por egresados de la Universidad Nacional (emQbit, Santronics, Importex, em-electronics) y con dos empresas externas (SAR S.A y Microensamble S.A.), de estas relaciones se han generado pasantías, prestación de servicios a bajo costo y apoyo financiero para adquisición de equipo y manufactura de sistemas de desarrollo digitales; se intentó establecer vínculos con grandes empresas como CODENSA y TES AMERICA, pero este tipo de empresas no están interesadas en el desarrollo de productos sino en productos finales, este conocimiento es valioso ya que para poder establecer contacto con estas compañías es necesario tener desarrollos en una etapa que permita su producción masiva. De lo anterior podemos concluir que la mejor forma de crear vínculos entre la universidad y la empresa es haciendo que los estudiantes sean los actores principales de procesos de investigación e innovación orientados a la construcción de nuevas ideas de empresa (Spin Off Universitarias); sin embargo, el objetivo final no debe ser únicamente la creación de la empresa, sino brindar soporte para que esta pueda generar utilidades que puedan suministrar regalías a las universidades o la posibilidad de proporcionar bienes y servicios útiles en el ejercicio académico.
-
-Nuestra experiencia con la empresa \textit{emQbit} nos muestra que es posible inculcar en nuestros estudiantes la idea de generación de empresa, generar en ellos las habilidades necesarias para la producción de productos novedosos, y que con un acompañamiento adecuado por parte de la universidad (en el caso de emQbit como asesor externo)  es posible que la empresa se mantenga actualizada y sobreviva en el tiempo, emQbit ha ayudado en el desarrollo de varios proyectos de investigación proporcionando materiales y equipos a costos reducidos (normalmente la empresas duplican sus precios cuando suministran productos a la Universidad Nacional), financiando parcialmente el desarrollo de plataformas \textit{hardware copyleft}; adicionalmente ha vinculado a varios estudiantes de las universidades nacional y de los Andes en la modalidad de pasantía lo que les ha ayuda a formar personal para la propia empresa. Aunque este es el único caso que podemos presentar y no es posible generalizarlo, proporciona una referencia en este tipo de relaciones.
+Este esquema de licencias unido a los servicios suministrados para facilitar la descarga y mejoramiento de proyectos existentes y a creación y documentación de nuevos proyectos (repositorio con los archivos necesarios para reproducir y modificar los proyectos derivados de esta investigación, lista de correo, herramientas de creación de wikis, tutoriales en línea y un servicio de control de versiones git) constituyen los recursos de un recurso que sigue la filosofía del proyecto de software libre, pero aplicado al desarrollo hardware y recibe el nombre de \textit{hardware copyleft}.
 
 
+Para ayudar al proceso de difusión, y siguiendo la metodología de los proyectos de software libre se creó una comunidad conformada por: estudiantes y profesores de las universidades Nacional, Andes, Javeriana, Santo Tomás, Distrital, Escuela Colombiana, UIS, Nacional del Comahue (Argentina); empleados de las empresas emQbit, Santronics, ingeniería inversa (argentina); profesionales y aficionados de diferentes ciudades y países. El ingreso de estudiantes a esta comunidad ha permitido el aumento del recurso, suministrando una nueva plataforma \textit{hardware copyleft} y la creación de proyectos de referencia que están en proceso de convertirse en productos comerciales. La incorporación de centros de formación e industriales a esta comunidad posibilita identificar necesidades de la industria y ofertas de la academia permitiendo la creación de un vínculo entre ambos sectores. Los aficionados, realizan labores fundamentales de vigilancia tecnológica y de mantenimiento y depuración del contenido.
+
+Para coordinar los esfuerzos de este grupo de personas y permitir el acceso a la información generada por la comunidad, se creó el portal web público \textit{linuxencaja} con los siguientes servicios:
+
+\begin{itemize}
+ \item Sistema distribuido de control de versiones \footnote{http://projects.linuxencaja.net/}: Sistema que permita seguir el avance de un proyecto y los cambios que han sido realizados por otros miembros del equipo, los cuales pueden estar en cualquier lugar del mundo, en este portal utilizaremos \textit{git} ya que permite el seguimiento total del proyecto indicando el autor y un comentario descriptivo con el aporte.
+
+ \item Wiki \footnote{http://wiki.linuxencaja.net/}: Las wikis son sitios web con facilidades de edición de páginas web utilizando un lenguaje propio (wikitexto). \textit{Linuxencaja} utiliza \textit{Mediawiki} que permite la creación instantánea de páginas web sin la necesidad de permisos especiales por parte del administrador de la máquina; Mediawiki (y demás aplicaciones similares) almacena en una base de datos el contenido de las páginas en texto plano, (este formato se suministra al usuario en el momento de la edición) y genera en tiempo real el código HTML a partir de este texto plano cada vez que se solicita una página; una característica especial es que las páginas pueden ser editadas por múltiples voluntarios, se dispone de un historial de cambios que le permite al administrador restaurar el contenido en un eventual daño voluntario o involuntario.
+
+ \item Lista de correo \footnote{http://groups.google.com/group/linuxencaja}: Canal de comunicación directo entre los diseñadores y usuarios con más experiencia, permite resolver dudas en corto tiempo, estas respuestas constituyen una fuente de documentación muy importante y debe ser almacenadas para crear un banco de preguntas/respuestas que ayuden a usuarios con las mismas inquietudes. Por esta razón, se creó una cuenta de correo que permite este intercambio de información y puede ser utilizado por los miembros de un determinado proyecto para discutir temas propios del desarrollo del mismo. La metodología utilizada por un determinado grupo quedará registrada en esta lista y puede ser utilizada como referencia de ese y otros proyectos; adicionalmente, estas listas de correo permiten realizar contactos académicos y laborales entre sus miembros.
+\end{itemize}
 
 
+\section{Relación universidad- empresa}
+La creación de vínculos entre Universidad y empresa son muy difíciles de crear en nuestro país, en conversaciones realizadas con el prestigioso economista Clemente Forero ex-director de COLCIENCIAS, nos comentó de los programas que se realizaron en esta entidad para hacer que los industriales fueran a las universidades a buscar y como estos programas fracasaron debido a que las empresas y universidades nunca se pusieron de acuerdo, esto debido a que según Forero hablan idiomas diferentes. Durante la realización de este trabajo se pudieron establecer relaciones fuertes con 4 empresas tres de ellas creadas por egresados de la Universidad Nacional (emQbit, Santronics, Importex, em-electronics) y con dos empresas externas (SAR S.A y Microensamble S.A.), de estas relaciones se han generado pasantías, prestación de servicios a bajo costo y apoyo financiero para adquisición de equipo y manufactura de sistemas de desarrollo digitales; se intentó establecer vínculos con grandes empresas como CODENSA y TES AMERICA, pero este tipo de empresas no están interesadas en el desarrollo de productos sino en productos finales, este conocimiento es valioso ya que para poder establecer contacto con estas compañías es necesario contar con desarrollos en una etapa que permita su producción masiva. De lo anterior podemos concluir que la mejor forma de crear vínculos entre la universidad y la empresa es haciendo que los estudiantes sean los actores principales de procesos de investigación e innovación orientados a la construcción de nuevas ideas de empresa (Spin Off Universitarias); sin embargo, el objetivo final no debe ser únicamente la creación de la empresa, sino brindar soporte para que esta pueda generar utilidades que puedan suministrar regalías a las universidades o la posibilidad de proporcionar bienes y servicios útiles en el ejercicio académico.
 
-En resumen se presentó una metodología para la adquisición/adaptación/absorción/asimilación/aplicación/difusión de la tecnología y el conocimiento asociado al diseño de sistemas digitales modernos ejecutada inicialmente por los realizadores de este trabajo, y posteriormente por los integrantes de una comunidad formada por estudiantes, académicos e industriales; transfiere conocimientos necesarios para realizar productos novedosos (que satisfagan necesidades de la sociedad) hacia: la empresa, proporcionando metodologías de diseño basadas en herramientas software abiertas y plataformas \textit{hardware copyleft}, procesos de fabricación y contactos con empresas manufactureras locales y asiáticas;  y a la academia, actualizando los contenidos de los programas académicos para generar las habilidades requeridas por la industria para cumplir con los requerimientos de la sociedad, utilizando metodologías de diseño y procesos de fabricación resultado del proceso de transferencia. La universidad y la academia interactúan en un intercambio de necesidades y soluciones, la empresa requiere personal calificado para cumplir con sus actividades, y la academia responde ajustando sus programas académicos para formar dicho personal y suministrando soporte técnico y capacitación; a cambio de esto, la empresa proporciona servicios a la academia para facilitar su actividad académica aportando dinero producto de regalías o de proyectos conjuntos. Tanto la academia como le empresa aportan a la comunidad personal y conocimientos para que puedan adaptarse a las nuevas necesidades de la sociedad.
+Nuestra experiencia con la empresa \textit{emQbit} nos muestra que es posible inculcar en nuestros estudiantes la idea de generación de empresa, generar en ellos las habilidades necesarias para la producción de productos novedosos, y que con un acompañamiento adecuado por parte de la universidad (en el caso de emQbit como asesor externo)  es posible que la empresa se mantenga actualizada y sobreviva en el tiempo, emQbit ha ayudado en el desarrollo de varios proyectos de investigación proporcionando materiales y equipos a costos reducidos (normalmente la empresas duplican sus precios cuando suministran productos a la Universidad Nacional), financiando parcialmente el desarrollo de plataformas \textit{hardware copyleft}; adicionalmente, ha vinculado a varios estudiantes de las universidades nacional y de los Andes en la modalidad de pasantía lo que les ha ayuda a formar personal para la propia empresa. Aunque este es el único caso que podemos presentar y no es posible generalizarlo, proporciona una referencia en este tipo de relaciones.
+
+
+Este trabajo presentó una metodología para la adquisición/adaptación/absorción/asimilación/aplicación/difusión de la tecnología y el conocimiento asociado al diseño de sistemas digitales modernos ejecutada inicialmente por los realizadores de este trabajo, y posteriormente por los integrantes de una comunidad formada por estudiantes, académicos e industriales; transfiere conocimientos necesarios para realizar productos novedosos (que satisfagan necesidades de la sociedad) hacia: la empresa, proporcionando metodologías de diseño basadas en herramientas software abiertas y plataformas \textit{hardware copyleft}, procesos de fabricación y contactos con empresas manufactureras locales y asiáticas;  y a la academia, actualizando los contenidos de los programas académicos para generar las habilidades requeridas por la industria para cumplir con los requerimientos de la sociedad, utilizando metodologías de diseño y procesos de fabricación resultado del proceso de transferencia. La universidad y la academia interactúan en un intercambio de necesidades y soluciones, la empresa requiere personal calificado para cumplir con sus actividades, y la academia responde ajustando sus programas académicos para formar dicho personal y suministrando soporte técnico y capacitación; a cambio de esto, la empresa proporciona servicios a la academia para facilitar su actividad académica aportando dinero producto de regalías o de proyectos conjuntos. Tanto la academia como le empresa aportan a la comunidad personal y conocimientos para que puedan adaptarse a las nuevas necesidades de la sociedad.
 
 
 
@@ -123,7 +131,118 @@ En resumen se presentó una metodología para la adquisición/adaptación/absorción/
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&*************************************************************#####################@@@@@@@@@
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&*************************************************************#####################@@@@@@@@@
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&*************************************************************#####################@@@@@@@@@
-%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&*************************************************************#####################@@@@@@@@@
+% &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&*************************************************************#####################@@@@@@@@@
+
+\section{Estimación del costo del presente trabajo}
+En esta sección trataremos de cuantificar el valor del presente trabajo, primero compararemos los resultados obtenidos en esta investigación con los resultados obtenidos por el único centro de desarrollo tecnológico de la industria electrónica (CIDEI). Por último, se estudiará una oferta de transferencia tecnológica real que está haciendo un centro de desarrollo tecnológico Coreano a la nación y se realizará un análisis del dinero que puede ahorrar la nación gracias a los conocimientos adquiridos en el presente trabajo.
+
+
+\subsection{Comparación con con un centro de desarrollo tecnológico}
+
+\begin{table}[htpb]
+  \caption{Comparación de los resultados del presente trabajo con el realizado por el CIDEI}
+  \centering
+    \footnotesize
+    \begin{tabular}{|p{2.5cm}|p{5cm}|p{7.5cm}|}
+      \hline
+      \textbf{Plataforma}       & \textbf{CIDEI}
+                                & \textbf{Este trabajo}
+      \\ \hline
+       Naturaleza          &Privado  & Público 
+      \\ \hline 
+       Líneas de I+D       &\begin{itemize}
+                             \item Reconversión, modernización y/o actualización tecnológica de productos y servicios 
+                             \item Informatización de la producción.
+                             \item Mejoramiento continuo.
+                             \item Automatización Industrial de Bajo Costo.
+                            \end{itemize}
+
+                                              & \begin{itemize}
+                                                  \item Estudio de metodologías de diseño.
+                                                  \item Técnicas de fabricación de sistemas digitales
+                                                  \item Arquitectura de computadores y sistemas operativos.
+                                                  \item Desarrollo de aplicaciones embebidas.
+                                                \end{itemize}
+
+      \\ \hline 
+       Documentación en línea  & Ninguna  & \begin{itemize}
+                                             \item Plataformas copyleft hardware.
+                                             \item Diseños de referencia.
+                                             \item Tutoriales.
+                                             \item Cursos en línea (en construcción)
+                                             \item Base de datos de preguntas y respuestas.
+                                            \end{itemize}
+  
+      \\ \hline 
+       Servicios gratuitos     & Ninguno  & \begin{itemize}
+                                             \item Soporte a través de listas de correo.
+                                             \item Servidores con aplicaciones para almacenar proyectos.
+                                             \item Servidores con aplicaciones para crear, administrar y desarrollar nuevos proyectos.
+                                             \item Contactos con empresas manufactureras asiáticas.
+                                            \end{itemize}
+   
+      \\ \hline 
+       Capacitación en diseño de PCBs    & \begin{itemize}
+                                            \item Uso de software con valor de 5000 USD
+                                            \item Costo del curso 350 USD
+                                           \end{itemize}
+
+                                        & \begin{itemize}
+                                           \item Uso de software abierto (\textit{kicad}).
+                                           \item Auto-aprendizaje utilizando como referencia diseños existentes.
+                                           \item Solución de dudas a través de las listas de discusión de Kicad y linuxencaja.
+                                           \item gratuito.
+                                          \end{itemize}
+  
+      \\ \hline 
+       Capacitación en lenguajes de
+       descripción de hardware          & \begin{itemize}
+                                           \item Costo del curso 350 USD.
+                                           \item Metodología de diseño.
+                                           \item Lenguaje VHDL.
+                                           \item Diseño lógico y secuencial.
+                                          \end{itemize}
+
+
+                                                & \begin{itemize}
+                                                   \item Metodología de diseño.
+                                                   \item Lenguajes de descripción de hardware.
+                                                   \item Implementación de tareas hardware utilizando máquinas de estado algorítmicas.
+                                                   \item Arquitectura de sistemas sobre silicio (SoCs)
+                                                   \item Implementación de tareas hardware como periféricos de un SoC.
+                                                   \item Comunicación HW/SW
+                                                   \item Gratuito (próximamente disponible en linuxencaja)
+                                                  \end{itemize}
+
+      \\ \hline 
+       Capacitción procesadores         &\begin{itemize}
+                                          \item Desde el 2010 Costo: 430 USD.
+                                          \item Procesadores ARM.
+                                          \item Programación en C.
+                                          \item Herramientas de desarrollo.
+                                          \item Manejo de interrupciones.
+                                          \item Dispositivos Entrada/salida
+                                          \item Control de periféricos.
+                                         \end{itemize}
+                                                            &  \begin{itemize}
+                                                                \item Trabajos realizados desde el 2004 \cite{DODM04} \cite{CC11c} \cite{CC11d} \cite{CC11e} \cite{CC11} \cite{CC11f} \cite{CCCP+11} \cite{CC09} \cite{ERAC+09} \cite{CC08c} \cite{CC08b} \cite{CC07} \cite{SBME07} \cite{CC06b} \cite{CC06} \cite{ICCC06} \cite{CCOS06} \cite{CC05} \cite{FPFS+05}
+                                                                \item Procesadores MIPS, Blackfin, ARM, 
+                                                                \item Softcores: Lm32, plasma.
+                                                                \item Arquitectura de un SoC, set de instrucciones, manejo de interrupciones 
+                                                                \item Flujo de diseño software.
+                                                                \item Sistemas operativos, inicialización de SoC, kernel de Linux, sistemas de archivos, aplicaciones usando Linux.
+                                                               \end{itemize}
+
+      \\ \hline 
+    \end{tabular}
+  \label{cidei_vs_linuxencaja}
+\end{table}
+
+Podemos observar en la tabla \ref{cidei_vs_linuxencaja} que el CIDEI a pesar de recibir dineros del estado para realizar su labor de vigilancia tecnológica y generación de conocimientos que sean útiles para los sectores de la sociedad interesados en la electrónica, no ha cumplido su labor, ya que los servicios que proporciona a la sociedad no son gratuitos y no proporciona mecanismos que difundan los conocimientos generados en sus proyectos a todos los interesados; los cursos de capacitación ofrecidos por ellos no tienen temas de actualidad, y ya han sido tratados ampliamente en las principales universidades del país desde mucho antes que se ofrecieran por parte de este centro; uno de estos cursos es el resultado de una capacitación realizada por el autor de este trabajo a los miembros del CIDEI, en el desarrollo de un proyecto financiado por Colciencias; por lo que este centro no aporta conocimientos nuevos a los centros de formación superior. Adicionalmente, los servicios ofrecidos en fabricación de circuitos impresos son de menor especificación frente a los ofrecidos por las empresas Microcircuitos y Micro-ensamble; ya que el CIDEI puede fabricar tarjetas de 2 capas, con líneas de 0.254 mm y orificios de 0.7mm, mientras las otras dos compañías ofrecen 10 capas con orificios de 0.2mm y líneas de 0.1mm.
+
+Adicionalmente, los resultados de vigilancia tecnológica \cite{JQYP08}, \cite{JQJG08}, \cite{DA08} no reflejan la realidad del país, hacen estudios de tecnologías que su utilizan en Colombia desde mediados de los 90s (CPLDs, FPGAs, procesaadores de 8 bits) y son de uso común en la mayoría de las facultades de las universidades más reconocidas del país; lo que refleja una desconexión entre este centro y las universidades del país. Debido a esto, se crean proyectos de investigación financiados por el estado donde se pretende utilizar dispositivos lógicos programables para dar solución a todas las necesidades de la industria\footnote{Esta información fue obtenida directamente del CIDEI cuando el autor de esta investigación les diseñaba un curso de capacitación en diseño digital utilizando lenguajes de descripción de hardware}; lo que no es necesariamente la opción más económica y eficiente ya que como se indicó en el capítulo \ref{ch:embedded} las primeras etapas de un proceso de diseño no debe tener dependencias de tipo tecnológico, y solo después de tener el modelo del sistema y de las funciones que implementan su funcionalidad se debe decidir el particionamiento final; lo que propone el CIDEI es saltarse estas etapas e implementar todas las funciones en hardware; lo que demuestra falta de claridad en varios conceptos.
+
+En conclusión, el presente trabajo 
 
 CIDEI VS TESIS
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.11.20)  2 MAY 2011 14:03
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.11.20)  3 MAY 2011 14:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -810,51 +810,90 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20.74> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 11.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 14.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 11.
-[3]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 14.
+[3] [4] [5]
 
- [4]
-[5]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6]
-
-LaTeX Warning: Reference `modelo_TT_emqbit' on page 7 undefined on input line 4
+LaTeX Warning: Reference `modelo_TT_emqbit' on page 6 undefined on input line 4
 3.
 
 
-<./images/modelo_transferencia_tecnologica.pdf, id=27, 536.0025pt x 303.1325pt>
+<./images/modelo_transferencia_tecnologica.pdf, id=24, 536.0025pt x 303.1325pt>
 File: ./images/modelo_transferencia_tecnologica.pdf Graphic file (type pdf)
-<use ./images/modelo_transferencia_tecnologica.pdf>
-Underfull \vbox (badness 5374) has occurred while \output is active []
-
- [7 <./images/modelo_transferencia_tecnologica.pdf>] [8] [9] [10]
+<use ./images/modelo_transferencia_tecnologica.pdf> [6]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11])
-[12] (./propuesta_tesis.aux)
+ [7 <./images/modelo_transferencia_tecnologica.pdf>] [8]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9]
+[10] [11] [12]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 140.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 148.
+
+Underfull \hbox (badness 7099) in paragraph at lines 154--155
+[]\OT1/ptm/m/n/8 Reconversi[]on, mod-ern-izaci[]on y/o
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 168--168
+[]|\OT1/ptm/m/n/8 Documentaci[]on en
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--185
+[]|\OT1/ptm/m/n/8 Capacitaci[]on en
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 198--199
+[]|\OT1/ptm/m/n/8 Capacitaci[]on en
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 218--218
+[]|\OT1/ptm/m/n/8 Capacitci[]on proce-
+ []
+
+
+Overfull \hbox (37.59996pt too wide) in paragraph at lines 146--239
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 51.50217pt on input line 239.
+
+) (./propuesta_tesis.bbl [13] [14]
+Underfull \hbox (badness 10000) in paragraph at lines 89--94
+[]\OT1/ptm/m/n/10 C. Ca-mar-go.  First Colom-bian Lin-ux SBC runs De-bian.  URL
+:
+ []
+
+[15
+
+]) [16] (./propuesta_tesis.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 15390 strings out of 495061
- 270727 string characters out of 1182620
- 371508 words of memory out of 3000000
- 18154 multiletter control sequences out of 15000+50000
- 31372 words of font info for 78 fonts, out of 3000000 for 9000
+ 15425 strings out of 495061
+ 271061 string characters out of 1182620
+ 381605 words of memory out of 3000000
+ 18183 multiletter control sequences out of 15000+50000
+ 36815 words of font info for 85 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 47i,8n,69p,2108b,294s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 47i,13n,69p,1947b,340s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
 ve/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/t
 imes/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></us
 r/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on propuesta_tesis.pdf (12 pages, 137505 bytes).
+Output written on propuesta_tesis.pdf (16 pages, 157694 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
+ 95 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

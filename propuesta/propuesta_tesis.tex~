@@ -71,7 +71,7 @@ basicstyle=\footnotesize}
 %     \input emqbit
 %     \input difusion_empresa
 
-\bibliography{biblio}
+% \bibliography{biblio}
 
 \end{document} 
 

@@ -1,47 +1,45 @@
 This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: propuesta_tesis.aux
 The style file: unsrt.bst
-I found no \citation commands---while reading file propuesta_tesis.aux
 Database file #1: biblio.bib
-You've used 0 entries,
+You've used 19 entries,
             1791 wiz_defined-function locations,
-            445 strings with 3534 characters,
-and the built_in function-call counts, 18 in all, are:
-= -- 0
-> -- 0
+            534 strings with 6636 characters,
+and the built_in function-call counts, 2730 in all, are:
+= -- 218
+> -- 125
 < -- 0
-+ -- 0
-- -- 0
-* -- 2
-:= -- 7
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
++ -- 52
+- -- 33
+* -- 95
+:= -- 503
+add.period$ -- 57
+call.type$ -- 19
+change.case$ -- 17
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
+cite$ -- 19
+duplicate$ -- 153
+empty$ -- 281
+format.name$ -- 33
+if$ -- 592
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 3
-num.names$ -- 0
-pop$ -- 0
+int.to.str$ -- 19
+missing$ -- 20
+newline$ -- 98
+num.names$ -- 19
+pop$ -- 68
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1
+skip$ -- 57
 stack$ -- 0
 substring$ -- 0
-swap$ -- 0
+swap$ -- 19
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 2
-(There was 1 error message)
+while$ -- 19
+width$ -- 21
+write$ -- 192
