@@ -1,16 +1,283 @@
 \select@language {spanish}
-\contentsline {chapter}{\numberline {1}Conclusiones}{3}
-\contentsline {section}{\numberline {1.1}situaci\'on de la industria electr\'onica nacional y de la academia}{3}
-\contentsline {subsubsection}{Situaci\'on de la industria }{3}
-\contentsline {subsubsection}{Situaci\'on de la academia}{3}
-\contentsline {section}{\numberline {1.2}Requisitos para una transferencia tecnol\'ogica exitosa}{4}
-\contentsline {section}{\numberline {1.3}Metodolog\IeC {\'\i }a para la transferencia tecnol\'ogica y de conocimientos}{6}
-\contentsline {subsubsection}{Elecci\'on de la tecnolog\IeC {\'\i }a y vigilancia tecnol\'ogica }{6}
-\contentsline {subsubsection}{Adquisici\'on}{8}
-\contentsline {subsubsection}{Adaptaci\'on}{8}
-\contentsline {subsubsection}{Absorci\'on y asimilaci\'on}{8}
-\contentsline {subsubsection}{Aplicaci\'on}{8}
-\contentsline {subsubsection}{Difusi\'on}{10}
-\contentsline {section}{\numberline {1.4}Relaci\'on universidad- empresa}{12}
-\contentsline {section}{\numberline {1.5}Estimaci\'on del costo del presente trabajo}{13}
-\contentsline {subsection}{\numberline {1.5.1}Comparaci\'on con con un centro de desarrollo tecnol\'ogico}{13}
+\contentsline {chapter}{\numberline {1}Introducci\'on}{7}
+\contentsline {subsection}{\numberline {1.0.1}Sistemas Embebidos.}{8}
+\contentsline {subsection}{\numberline {1.0.2}\IeC {\textquestiondown }Por qu\'e los Sistemas Embebidos?}{9}
+\contentsline {subsubsection}{Mercado de los Sistemas Embebidos}{9}
+\contentsline {subsubsection}{Penetraci\'on de los Sistemas Embebidos}{9}
+\contentsline {subsubsection}{Perspectivas de Empleo}{9}
+\contentsline {section}{\numberline {1.1}Estado de la Industria Electr\'onica en Colombia}{11}
+\contentsline {subsubsection}{Apropiaci\'on de Conocimiento y Transferencia Tecnol\'ogica}{12}
+\contentsline {subsubsection}{Situaci\'on de la Industria Electr\'onica en Colombia}{13}
+\contentsline {subsubsection}{Causas del Atraso Tecnol\'ogico en Colombia}{13}
+\contentsline {subsubsection}{El conocimiento Como Bien Com\'un}{15}
+\contentsline {chapter}{\numberline {2}TRANSFERENCIA TECNOL\'OGICA}{17}
+\contentsline {section}{\numberline {2.1}Tecnolog\IeC {\'\i }a}{17}
+\contentsline {section}{\numberline {2.2}Definici\'on}{19}
+\contentsline {subsection}{\numberline {2.2.1}Tipos de Transferencia Tecnol\'ogica}{19}
+\contentsline {subsection}{\numberline {2.2.2}Canales Para la Transferencia de tecnolog\IeC {\'\i }a}{20}
+\contentsline {subsubsection}{Adquisici\'on de IT}{21}
+\contentsline {subsubsection}{Educaci\'on y Entrenamiento}{21}
+\contentsline {subsubsection}{Asistencia T\'ecnica}{22}
+\contentsline {subsubsection}{Licenciamiento}{22}
+\contentsline {subsubsection}{Inversi\'on Extranjera Directa}{22}
+\contentsline {subsection}{\numberline {2.2.3}Conclusi\'on}{23}
+\contentsline {section}{\numberline {2.3}Modelo}{24}
+\contentsline {subsection}{\numberline {2.3.1}Los factores formales}{24}
+\contentsline {subsubsection}{Documentaci\'on}{24}
+\contentsline {subsubsection}{Distribuci\'on}{24}
+\contentsline {subsubsection}{Organizaci\'on}{24}
+\contentsline {subsubsection}{Selecci\'on de Proyectos}{24}
+\contentsline {subsection}{\numberline {2.3.2}Factores Informales}{25}
+\contentsline {subsubsection}{Capacidad}{25}
+\contentsline {subsubsection}{Enlace (contacto)}{25}
+\contentsline {subsubsection}{Credibilidad}{25}
+\contentsline {subsubsection}{Recompensa}{26}
+\contentsline {subsubsection}{Disposici\'on}{26}
+\contentsline {section}{\numberline {2.4}Transferenica Tecnol\'ogica en Latinoam\'erica \cite {UNE}}{26}
+\contentsline {subsection}{\numberline {2.4.1}Trasfondo hist\'orico}{26}
+\contentsline {subsection}{\numberline {2.4.2}Financiaci\'on}{27}
+\contentsline {section}{\numberline {2.5}Obst\'aculos para una Transferencia Exitosa}{28}
+\contentsline {section}{\numberline {2.6}Recomendaciones Para una Transferencia Tecnol\'ogica Exitosa}{29}
+\contentsline {subsection}{\numberline {2.6.1}Recomendaciones para los generadores de pol\IeC {\'\i }ticas}{29}
+\contentsline {subsection}{\numberline {2.6.2}Recomendaciones para la academia}{30}
+\contentsline {subsection}{\numberline {2.6.3}Recomendaciones para el Gobierno}{31}
+\contentsline {section}{\numberline {2.7}Actividades Prioritarias Para Obtener Una Transferencia de Tecnolog\IeC {\'\i }a Exitosa}{32}
+\contentsline {section}{\numberline {2.8}Actividades}{34}
+\contentsline {section}{\numberline {2.9}Metodolog\IeC {\'\i }a para la Transferencia Tecnol\'ogica y de Conocimientos en el Dise\~no de Sistemas Embebidos}{37}
+\contentsline {subsection}{\numberline {2.9.1}Componentes de la Tecnolog\IeC {\'\i }a}{37}
+\contentsline {subsubsection}{Techno-ware}{37}
+\contentsline {subsubsection}{Human-ware}{40}
+\contentsline {subsubsection}{Info-ware}{41}
+\contentsline {subsubsection}{Orga-ware}{42}
+\contentsline {subsection}{\numberline {2.9.2}Etapas de la Metodolog\IeC {\'\i }a}{42}
+\contentsline {subsubsection}{Elecci\'on}{42}
+\contentsline {subsubsection}{Adquisici\'on}{42}
+\contentsline {subsubsection}{Adaptaci\'on}{44}
+\contentsline {subsubsection}{Absorci\'on y asimilaci\'on}{45}
+\contentsline {subsubsection}{Aplicaci\'on}{45}
+\contentsline {subsubsection}{Difusi\'on y Desarrollo}{45}
+\contentsline {chapter}{\numberline {3}Sistemas Embebidos}{47}
+\contentsline {section}{\numberline {3.1}Introducci\'on}{47}
+\contentsline {subsection}{\numberline {3.1.1}Qu\'e es un sistema Embebido}{47}
+\contentsline {subsection}{\numberline {3.1.2}Arquitectura}{47}
+\contentsline {subsection}{\numberline {3.1.3}Aplicaciones}{49}
+\contentsline {subsection}{\numberline {3.1.4}Metodolog\IeC {\'\i }a de Dise\~no}{49}
+\contentsline {section}{\numberline {3.2}Implementaci\'on de la Metodolog\IeC {\'\i }a Propuesta Para la Transferencia Tecnol\'ogica en Dise\~no de Sistemas Embebidos}{51}
+\contentsline {subsection}{\numberline {3.2.1}Elecci\'on}{51}
+\contentsline {subsubsection}{Niveles de complejidad de la tecnolog\IeC {\'\i }a}{52}
+\contentsline {subsubsection}{Diagn\'ostico de la Industria Local}{54}
+\contentsline {subsubsection}{Diagn\'ostico de la Academia}{55}
+\contentsline {subsubsection}{Centros de Desarrollo Tecnol\'ogico}{55}
+\contentsline {subsubsection}{Conclusi\'on}{56}
+\contentsline {subsection}{\numberline {3.2.2}Adquisici\'on}{56}
+\contentsline {subsubsection}{Herramientas de Desarrollo}{56}
+\contentsline {subsubsection}{Dispositivos Semiconductores}{58}
+\contentsline {subsubsection}{Dispositivos disponibles}{58}
+\contentsline {subsubsection}{conclusiones}{59}
+\contentsline {subsection}{\numberline {3.2.3}Adaptaci\'on}{60}
+\contentsline {subsubsection}{Metodolog\IeC {\'\i }a}{61}
+\contentsline {subsubsection}{Arquitectura: SoC, Memorias, perif\'ericos}{61}
+\contentsline {subsubsection}{Programaci\'on}{63}
+\contentsline {subsubsection}{Programaci\'on utilizando el puerto JTAG}{66}
+\contentsline {subsubsection}{Aplicaciones \textit {Standalone} vs Aplicaciones con sistema operativo}{66}
+\contentsline {subsubsection}{Conocimientos Adquiridos}{68}
+\contentsline {subsubsection}{conclusiones}{68}
+\contentsline {subsection}{\numberline {3.2.4}Absorci\'on y Asimilaci\'on}{68}
+\contentsline {subsubsection}{Plataformas de Desarrollo }{69}
+\contentsline {subsubsection}{T\'ecnicas de Fabricaci\'on}{72}
+\contentsline {subsubsection}{Proceso de dise\~no y fabricaci\'on}{74}
+\contentsline {subsubsection}{Aplicaciones Acad\'emicas Realizadas}{75}
+\contentsline {subsubsection}{Metodolog\IeC {\'\i }a para la apropiaci\'on de conocimiento y generaci\'on de nuevos productos}{75}
+\contentsline {subsubsection}{Conclusi\'ones}{75}
+\contentsline {subsection}{\numberline {3.2.5}Aplicaci\'on}{75}
+\contentsline {subsubsection}{En la Academia}{76}
+\contentsline {subsubsection}{En la Industria}{77}
+\contentsline {subsubsection}{Conclusiones}{78}
+\contentsline {subsection}{\numberline {3.2.6}Difusi\'on y Desarrollo}{79}
+\contentsline {subsubsection}{Herramientas para el manejo, almacenamiento, depuraci\'on y aumento del recurso}{79}
+\contentsline {subsubsection}{Estrategia de difusi\'on}{82}
+\contentsline {subsubsection}{}{83}
+\contentsline {chapter}{\numberline {4}Metodolog\IeC {\'\i }a Para la Ense\~nanza de Sistemas Embebidos}{85}
+\contentsline {section}{\numberline {4.1}Introducci\'on}{85}
+\contentsline {subsection}{\numberline {4.1.1}Objetivos de la iniciativa CDIO}{86}
+\contentsline {subsubsection}{Emprendimiento y liderazgo}{87}
+\contentsline {subsection}{\numberline {4.1.2}Estructura del plan de estudios CDIO}{87}
+\contentsline {subsubsection}{Nivel 1: Razonamiento y conocimiento t\'ecnico}{88}
+\contentsline {subsubsection}{Habilidades personales, profesionales e interpersonales}{88}
+\contentsline {subsubsection}{Habiidades CDIO}{89}
+\contentsline {subsection}{\numberline {4.1.3}Implementaci\'on del Plan de Estudios CDIO}{89}
+\contentsline {section}{\numberline {4.2}Definici\'on e Identificaci\'on de las Habilidades CDIO}{90}
+\contentsline {subsection}{\numberline {4.2.1}Introducir, Ense\~nar y Usar}{90}
+\contentsline {subsection}{\numberline {4.2.2}Habilidades CDIO}{91}
+\contentsline {subsection}{\numberline {4.2.3}Competencias de las Habilidades CDIO 2 y 3}{94}
+\contentsline {subsection}{\numberline {4.2.4}Competencias de las Habilidades C.D.I.O. Sistemas en el contexto Empresarial, Social y Ambiental - Innovaci\'on}{96}
+\contentsline {section}{\numberline {4.3}Integraci\'on de las Habilidades CDIO al Plan de Estudios}{97}
+\contentsline {subsection}{\numberline {4.3.1}Metodolog\IeC {\'\i }a de dise\~no}{97}
+\contentsline {subsection}{\numberline {4.3.2}Objetivo General}{100}
+\contentsline {subsubsection}{Electr\'onica Digital 1}{100}
+\contentsline {subsubsection}{Electr\'onica Digital 2}{101}
+\contentsline {subsubsection}{Sistemas Embebidos}{101}
+\contentsline {subsection}{\numberline {4.3.3}Objetivos Espec\IeC {\'\i }ficos}{101}
+\contentsline {subsection}{\numberline {4.3.4}Ojbetivos com\'unes}{101}
+\contentsline {subsubsection}{Electr\'onica Digital 1}{101}
+\contentsline {subsubsection}{Electr\'onica Digital 2}{102}
+\contentsline {subsubsection}{Sistemas Embebidos}{102}
+\contentsline {subsection}{\numberline {4.3.5}Metodolog\IeC {\'\i }a}{102}
+\contentsline {subsubsection}{SIE: Plataforma abierta para el desarrollo de sistemas embebidos}{103}
+\contentsline {subsection}{\numberline {4.3.6}Integraci\'on de SIE con los cursos de la l\IeC {\'\i }nea de electr\'onica digital}{104}
+\contentsline {subsubsection}{Electr\'onica digital 1}{104}
+\contentsline {subsubsection}{Electr\'onica digital 2}{106}
+\contentsline {subsection}{\numberline {4.3.7}Sistemas Embebidos}{108}
+\contentsline {subsection}{\numberline {4.3.8}Comunidad hardware copyleft}{109}
+\contentsline {subsection}{\numberline {4.3.9}Actividades}{110}
+\contentsline {subsubsection}{Lectura de material del curso 10, 11}{110}
+\contentsline {subsubsection}{Lectura de material t\'ecnico en ingl\'es 10, 11, 6, 30, 33, 21}{110}
+\contentsline {subsubsection}{Utilizaci\'on de metodolog\IeC {\'\i }as de dise\~no 1, 2, 3, 6, 7, 9, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38}{110}
+\contentsline {subsubsection}{Implementaci\'on de sistemas digitales sencillos 3, 14, 29, 30, 35, 36, 17, 18, 19}{111}
+\contentsline {subsubsection}{Proyecto del curso 1,2,3, 14, 15, 30, 31, 32, 33, 34, 35, 22, 23, 24, 25, 27}{111}
+\contentsline {subsubsection}{Participaci\'on en listas de discusi\'on 21}{111}
+\contentsline {subsubsection}{Hardware y Software Copy-Left}{112}
+\contentsline {section}{\numberline {4.4}Desarrollo de m\'etodos de Evaluaci\'on}{112}
+\contentsline {subsubsection}{Contenido de las entregas}{113}
+\contentsline {subsubsection}{Sustentaci\'on individual}{113}
+\contentsline {section}{\numberline {4.5}Objetivos de aprendizaje}{113}
+\contentsline {subsection}{\numberline {4.5.1}Dominio cognitivo}{113}
+\contentsline {subsection}{\numberline {4.5.2}Dominio afectivo}{117}
+\contentsline {subsection}{\numberline {4.5.3}Dominio psicomotor}{118}
+\contentsline {section}{\numberline {4.6}Software}{118}
+\contentsline {subsection}{\numberline {4.6.1}An\'alisis y simulaci\'on de circuitos}{119}
+\contentsline {subsection}{\numberline {4.6.2}S\IeC {\'\i }ntesis, simulaci\'on y verificaci\'on digital}{119}
+\contentsline {subsection}{\numberline {4.6.3}Herramientas para la configuraci\'on de PLDs}{120}
+\contentsline {subsection}{\numberline {4.6.4}Dise\~no de placas de circuito impreso}{121}
+\contentsline {subsection}{\numberline {4.6.5}Herramientas de desarrollo para sistemas embebidos}{122}
+\contentsline {subsubsection}{GNU binutils}{122}
+\contentsline {subsubsection}{Compilador}{122}
+\contentsline {subsubsection}{GNU Debugger}{123}
+\contentsline {subsubsection}{Librer\IeC {\'\i }as C}{123}
+\contentsline {subsubsection}{Sistema operativo Linux}{123}
+\contentsline {subsubsection}{Librer\IeC {\'\i }a Qt}{123}
+\contentsline {subsubsection}{Sistema de archivos}{124}
+\contentsline {subsection}{\numberline {4.6.6}Herramientas CAD}{125}
+\contentsline {subsection}{\numberline {4.6.7}Conclusiones}{125}
+\contentsline {section}{\numberline {4.7}Conclusiones}{125}
+\contentsline {chapter}{\numberline {5}Copyleft HW/SW Como Herramienta de Transferencia y Difusi\'on}{129}
+\contentsline {section}{\numberline {5.1}Introducci\'on}{129}
+\contentsline {section}{\numberline {5.2}El Conocimiento Como Bien P\'ublico}{130}
+\contentsline {subsection}{\numberline {5.2.1}Auto-Gobierno}{131}
+\contentsline {subsubsection}{Ecuaci\'on Costo Beneficio de Ostrom}{132}
+\contentsline {subsubsection}{Principios de Dise\~no}{133}
+\contentsline {subsubsection}{Movimiento FOSS}{134}
+\contentsline {section}{\numberline {5.3}FOSS}{135}
+\contentsline {subsubsection}{Reglas}{136}
+\contentsline {subsubsection}{Atributos de la Comunidad}{137}
+\contentsline {subsubsection}{Atributos F\IeC {\'\i }sicos}{137}
+\contentsline {section}{\numberline {5.4}Hardware Copyleft}{138}
+\contentsline {subsection}{\numberline {5.4.1}Licencias}{138}
+\contentsline {subsubsection}{Licencia CC - BY - SA}{139}
+\contentsline {subsubsection}{Licencia GPL}{139}
+\contentsline {subsection}{\numberline {5.4.2}Caracter\IeC {\'\i }sticas}{140}
+\contentsline {subsubsection}{Archivos necesarios para modificar un proyecto existente}{140}
+\contentsline {section}{\numberline {5.5}Flujo de dise\~no utilizando \textit {hardware copyleft}}{141}
+\contentsline {section}{\numberline {5.6}Comunidad linuxencaja}{143}
+\contentsline {subsection}{\numberline {5.6.1}Recursos}{143}
+\contentsline {subsubsection}{Herramientas}{143}
+\contentsline {subsubsection}{Dise\~nos de referencia}{143}
+\contentsline {subsubsection}{Banco de proyectos acad\'emicos}{144}
+\contentsline {subsubsection}{Documentaci\'on}{144}
+\contentsline {subsubsection}{Miembros}{145}
+\contentsline {section}{\numberline {5.7}Conclusiones}{145}
+\contentsline {chapter}{\numberline {6}Conclusiones}{149}
+\contentsline {section}{\numberline {6.1}situaci\'on de la industria electr\'onica nacional y de la academia}{149}
+\contentsline {subsubsection}{Situaci\'on de la industria }{149}
+\contentsline {subsubsection}{Situaci\'on de la academia}{149}
+\contentsline {section}{\numberline {6.2}Requisitos para una transferencia tecnol\'ogica exitosa}{150}
+\contentsline {section}{\numberline {6.3}Metodolog\IeC {\'\i }a para la transferencia tecnol\'ogica y de conocimientos}{152}
+\contentsline {subsubsection}{Elecci\'on de la tecnolog\IeC {\'\i }a y vigilancia tecnol\'ogica }{152}
+\contentsline {subsubsection}{Adquisici\'on}{154}
+\contentsline {subsubsection}{Adaptaci\'on}{154}
+\contentsline {subsubsection}{Absorci\'on y asimilaci\'on}{154}
+\contentsline {subsubsection}{Aplicaci\'on}{154}
+\contentsline {subsubsection}{Difusi\'on}{156}
+\contentsline {section}{\numberline {6.4}Relaci\'on universidad- empresa}{158}
+\contentsline {section}{\numberline {6.5}Estimaci\'on del costo del presente trabajo}{159}
+\contentsline {subsection}{\numberline {6.5.1}Comparaci\'on con con un centro de desarrollo tecnol\'ogico}{159}
+\contentsline {subsection}{\numberline {6.5.2}Transferencia Tecnol\'ogica desde Corea}{161}
+\contentsline {section}{\numberline {6.6}Trabajo Futuro}{163}
+\contentsline {subsection}{\numberline {6.6.1}Difusi\'on}{163}
+\contentsline {chapter}{\numberline {A}PLATAFORMA DE DESARROLLO ECBOT}{167}
+\contentsline {section}{\numberline {A.1}Introducci\'on}{167}
+\contentsline {subsection}{\numberline {A.1.1}Contribuciones al desarrollo tecnol\'ogico en Colombia}{167}
+\contentsline {subsubsection}{Contribuciones a Nivel Tecnol\'ogico y Acad\'emico}{169}
+\contentsline {subsubsection}{M\'etodos de arranque}{169}
+\contentsline {subsection}{\numberline {A.1.2}Interfaz JTAG}{170}
+\contentsline {subsubsection}{Arquitectura BOUNDARY SCAN}{170}
+\contentsline {subsubsection}{Instrucciones JTAG}{171}
+\contentsline {section}{\numberline {A.2}Herramientas Software de libre distribuci\'on \textit {GNU toolchain}}{172}
+\contentsline {subsubsection}{GNU binutils\cite {A1}}{172}
+\contentsline {subsubsection}{GNU Compiler Collection}{174}
+\contentsline {subsubsection}{GNU Debugger}{174}
+\contentsline {subsubsection}{Librer\IeC {\'\i }as C}{174}
+\contentsline {subsection}{\numberline {A.2.1}Flujo de dise\~no software}{175}
+\contentsline {subsubsection}{Make}{176}
+\contentsline {subsubsection}{El formato \textbf {ELF}}{178}
+\contentsline {subsubsection}{Linker Script}{181}
+\contentsline {section}{\numberline {A.3}Herramientas hardware}{182}
+\contentsline {subsubsection}{SoC}{182}
+\contentsline {subsubsection}{Memorias Vol\'atiles}{183}
+\contentsline {subsubsection}{Memorias No Vol\'atiles}{184}
+\contentsline {subsubsection}{Depuraci\'on del core ARM \cite {DR05}}{186}
+\contentsline {subsubsection}{Programaci\'on de memorias Flash}{187}
+\contentsline {section}{\numberline {A.4}El sistema Operativo Linux}{187}
+\contentsline {subsubsection}{Porqu\'e Linux}{188}
+\contentsline {subsection}{\numberline {A.4.1}Arquitectura de Linux \cite {IBSS98} \cite {IB98}}{189}
+\contentsline {subsubsection}{Drivers de Dispositivos}{193}
+\contentsline {subsubsection}{Sistema de Archivos l\'ogico}{193}
+\contentsline {subsubsection}{M\'odulos}{194}
+\contentsline {section}{\numberline {A.5}Portando Linux a la plataforma ECBOT y ECB\_AT91}{194}
+\contentsline {subsection}{\numberline {A.5.1}El Kernel de Linux}{194}
+\contentsline {subsubsection}{Archivo de configuraci\'on de la plataforma ECB\_AT91 }{196}
+\contentsline {subsubsection}{Archivo de Configuraci\'on del kernel}{200}
+\contentsline {subsection}{\numberline {A.5.2}Imagen del kernel}{200}
+\contentsline {subsubsection}{Compilaci\'on de la Im\'agen del kernel}{200}
+\contentsline {subsubsection}{Componentes de la Im\'agen del kernel}{202}
+\contentsline {section}{\numberline {A.6}Inicializaci\'on del kernel}{205}
+\contentsline {subsection}{\numberline {A.6.1}Darrel's Loader}{205}
+\contentsline {subsubsection}{crt0.S (startup.S)}{207}
+\contentsline {subsubsection}{serial.c, xmpdem.c, dataflash.c, div0.c, interrupts.c}{208}
+\contentsline {subsubsection}{board.c}{208}
+\contentsline {subsection}{\numberline {A.6.2}U-boot}{209}
+\contentsline {subsection}{\numberline {A.6.3}Portando U-boot a la familia de plataformas ECB\_AT91}{210}
+\contentsline {subsubsection}{Makefile}{211}
+\contentsline {subsubsection}{MAKEALL}{211}
+\contentsline {subsubsection}{board/ecb\_at91/Makefile}{211}
+\contentsline {subsubsection}{board/ecb\_at91/board.c}{212}
+\contentsline {subsubsection}{include/configs/ecb\_at91.h}{213}
+\contentsline {subsubsection}{Compilaci\'on de U-boot en la familia de plataformas ECB\_AT91}{214}
+\contentsline {subsection}{\numberline {A.6.4}Almacenamiento de la im\'agen del kernel}{216}
+\contentsline {subsubsection}{Almacenamiento en la memoria DataFlash}{216}
+\contentsline {subsubsection}{Almacenamiento en la memoria RAM}{217}
+\contentsline {subsection}{\numberline {A.6.5}Inicializaci\'on del Kernel}{218}
+\contentsline {subsubsection}{Llamado a la Im\'agen del kernel}{219}
+\contentsline {subsubsection}{Punto de Entrada del Kernel \textit {head.o}}{220}
+\contentsline {section}{\numberline {A.7}Inicializaci\'on del Sistema}{222}
+\contentsline {subsection}{\numberline {A.7.1}Sistema de Archivos}{222}
+\contentsline {subsubsection}{Estructura del Sistema de Archivos}{223}
+\contentsline {subsection}{\numberline {A.7.2}Primer Programa en Espacio de Usuario \textit {init}}{224}
+\contentsline {subsubsection}{Modos de operaci\'on}{224}
+\contentsline {subsubsection}{Niveles de ejecuci\'on}{224}
+\contentsline {subsubsection}{El Archivo \textit {/etc/inittab}}{225}
+\contentsline {subsection}{\numberline {A.7.3}Distribuciones Linux}{227}
+\contentsline {subsubsection}{Busybox}{227}
+\contentsline {subsubsection}{Buildroot}{227}
+\contentsline {subsubsection}{Openembedded}{227}
+\contentsline {section}{\numberline {A.8}M\'odulos del kernel}{228}
+\contentsline {subsection}{\numberline {A.8.1}Ejemplo de un driver tipo caracter}{228}
+\contentsline {subsubsection}{Implementaci\'on del driver de un LED}{229}
+\contentsline {section}{\numberline {A.9}Interfaz con Perif\'ericos dedicados}{231}
+\contentsline {subsection}{\numberline {A.9.1}Comunicaci\'on Procesador - Perif\'erico}{232}
+\contentsline {subsubsection}{Implementaci\'on de Perif\'ericos en una FPGA}{233}
+\contentsline {subsubsection}{Programa en Espacio de Usuario para la comunicaci\'on}{233}
+\contentsline {subsection}{\numberline {A.9.2}Comunicaci\'on Perif\'erico - Procesador}{235}
+\contentsline {subsubsection}{Manejo de Interrupciones}{236}
+\contentsline {chapter}{\numberline {A}Empresa emqbit LTDA.}{239}
+\contentsline {chapter}{\numberline {A}PLATAFORMA DE DESARROLLO ECBOT}{251}

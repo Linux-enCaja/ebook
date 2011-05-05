@@ -2,44 +2,60 @@ This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: propuesta_tesis.aux
 The style file: unsrt.bst
 Database file #1: biblio.bib
-You've used 19 entries,
+Warning--I didn't find a database entry for "NC11"
+Warning--I didn't find a database entry for "Mo05"
+Warning--I didn't find a database entry for "OPPS05"
+Warning--empty year in UNE
+Warning--empty year in WM91
+Warning--empty journal in ETPoSSI(09
+Warning--empty journal in IAI
+Warning--empty year in IAI
+Warning--can't use both author and editor fields in CMS06
+Warning--empty note in WCI
+Warning--can't use both author and editor fields in Sta99
+Warning--empty year in CC
+Warning--empty school in NR11
+Warning--empty year in BBS
+Warning--empty year in JF
+You've used 93 entries,
             1791 wiz_defined-function locations,
-            534 strings with 6636 characters,
-and the built_in function-call counts, 2730 in all, are:
-= -- 218
-> -- 125
-< -- 0
-+ -- 52
-- -- 33
-* -- 95
-:= -- 503
-add.period$ -- 57
-call.type$ -- 19
-change.case$ -- 17
+            919 strings with 17870 characters,
+and the built_in function-call counts, 13180 in all, are:
+= -- 1057
+> -- 571
+< -- 1
++ -- 242
+- -- 149
+* -- 438
+:= -- 2323
+add.period$ -- 277
+call.type$ -- 93
+change.case$ -- 76
 chr.to.int$ -- 0
-cite$ -- 19
-duplicate$ -- 153
-empty$ -- 281
-format.name$ -- 33
-if$ -- 592
+cite$ -- 105
+duplicate$ -- 722
+empty$ -- 1443
+format.name$ -- 149
+if$ -- 2913
 int.to.chr$ -- 0
-int.to.str$ -- 19
-missing$ -- 20
-newline$ -- 98
-num.names$ -- 19
-pop$ -- 68
+int.to.str$ -- 93
+missing$ -- 83
+newline$ -- 466
+num.names$ -- 95
+pop$ -- 381
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 57
+skip$ -- 284
 stack$ -- 0
-substring$ -- 0
-swap$ -- 19
-text.length$ -- 0
+substring$ -- 6
+swap$ -- 90
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 19
-width$ -- 21
-write$ -- 192
+warning$ -- 12
+while$ -- 94
+width$ -- 95
+write$ -- 920
+(There were 15 warnings)

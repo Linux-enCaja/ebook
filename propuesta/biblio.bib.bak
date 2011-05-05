@@ -20,10 +20,13 @@
   year           = 2004
 }
 
-@Misc{Mae,
-  Author         = {Nokia},
-  Title          = {Maemo {P}roject},
-  HowPublished   = {URL: http://www.maemo.org/}
+@InProceedings{DS02,
+  Author         = {{D. Servant}},
+  Title          = {Combining amorphous computing and reactive agent-based
+                   systems: a paradigm for pervasive intelligence?},
+  BookTitle      = {First international joint conference on {A}utonomous
+                   agents and muktiagent systems: part 1},
+  year           = 2002
 }
 
 @Article{JSCC04,
@@ -79,14 +82,6 @@
   year           = 2003
 }
 
-@Article{CFK97b,
-  Author         = {Cao, Y. and Fukunaga, A. and Kahng, A.},
-  Title          = {Cooperative {M}obile {R}obotics: {A}ntecedents and
-                   {D}irections},
-  Journal        = {Autonomous Robots 4},
-  year           = 1997
-}
-
 @MastersThesis{YW04,
   Author         = {{Y. Wang}},
   Title          = {Rules of {B}lob {D}isplacement},
@@ -94,6 +89,16 @@
                    Paris ud-XI},
   month          = jun,
   year           = 2004
+}
+
+@Article{HYKL06,
+  Author         = {{Henry Y. K. Lau} and {Vicky W. K. Wong}},
+  Title          = {An {I}mmunity {B}ased {D}istributed
+                   {M}ultiagent-{C}ontrol {F}ramework},
+  Journal        = {Systems, Man and Cybernetics, Part A, IEEE
+                   Transactions on},
+  month          = jan,
+  year           = 2006
 }
 
 @Article{JSCC04b,
@@ -123,22 +128,21 @@
   year           = 1996
 }
 
-@Article{Bro86,
-  Author         = {Brooks, R.},
-  Title          = {A {R}obust {L}ayered {C}ontrol {S}ystem for a {M}obile
-                   {R}obot.},
-  Journal        = {IEEE Journal of Robotics and Automation},
-  year           = 1986
+@Book{BBS,
+  Editor         = {{Bloom B S}},
+  Title          = {Taxonomy of {E}ducational {O}bjetives, the
+                   classification of educational goals},
+  Publisher      = {Mckay}
 }
 
-@Article{CCCP+11,
-  Author         = {{C. Camargo} and {C. Pedraza} and {L. Ni\~no} and {J.
-                   Martinez}},
-  Title          = {Intrinsic {E}volvable {H}ardware for {C}ombinatorial
-                   {S}ynthesis {B}ased on {S}o{C}+{FPGA} and {GPU}
-                   {P}latforms},
-  Journal        = {Genetic Evolutionary Computation Conference},
-  year           = 2011
+@Article{RK95,
+  Author         = {Rosenchein, S. and Kaelbling, L.},
+  Title          = {A {S}ituated {V}iew of {R}epresentation and {C}ontrol.
+                   {S}pecial {I}ssue on {C}omputational {R}esearch on
+                   {I}nteraction and {A}gency},
+  Journal        = {Special Issue on Computational Research on Interaction
+                   and Agency, Elsevier Science},
+  year           = 1995
 }
 
 @Article{ERAC+09,
@@ -151,10 +155,13 @@
   year           = 2009
 }
 
-@Article{CCJC02,
-  Author         = {{C. Camargo} and {J. Cortes} and {A. Jim\'enez}},
-  Title          = {Control {E}xperimental de un {C}ircuito {C}a\'otico},
-  year           = 2002
+@Article{CC11f,
+  Author         = {{C. Camargo}},
+  Title          = {P{LATAFORMAS} {ABIERTAS} {HARDWARE}/{SOFTWARE} {PARA}
+                   {APLICACIONES} {EN} {ROBOTICA}},
+  Journal        = {V Congreso Internacional de Ingenier\'{\i}a Mec\'anica
+                   y III de Ingenier\'{\i}a Mecatr\'onica (por publicar)},
+  year           = 2011
 }
 
 @Article{YTGT+04,
@@ -167,13 +174,14 @@
   year           = 2004
 }
 
-@Article{FPFS+05,
-  Author         = {{F. Pedraza} and {F. Segura} and {C. Camargo} and {A.
-                   Gauthier}},
-  Title          = {Control {A}daptativo {E}mbebido},
-  Journal        = {Memorias del XI workshop de Iberchip ISBN
-                   959-261-105-X},
-  year           = 2005
+@Article{CC11e,
+  Author         = {{C. Camargo}},
+  Title          = {Low {C}ost {P}latform for {E}volvable-{B}ased
+                   {B}oolean {S}ynthesis},
+  Journal        = {IEEE Latin American Symposium on Circuits and Systems
+                   (LASCAS 2011), Bogot\'a Colombia},
+  month          = feb,
+  year           = 2011
 }
 
 @PhdThesis{MO90,
@@ -183,13 +191,6 @@
                    {Z}imbabwe},
   School         = {London School of Economics},
   year           = 1990
-}
-
-@InBook{PRGJ,
-  Author         = {{P. Raven} and {G. Johnson}},
-  Title          = {Biology},
-  Chapter        = {50 The Immune System},
-  Publisher      = {Mc Graw Hill}
 }
 
 @InProceedings{GT04,
@@ -212,14 +213,24 @@
   year           = 2005
 }
 
-@Article{CMCfMR04,
-  Author         = {{R. LeGrand}},
-  Title          = {Closed-{L}oop {M}otion {C}ontrol for {M}obile
-                   {R}obotics},
-  Journal        = {Embedded Programming - Circuit Cellar},
-  Volume         = {169},
-  month          = aug,
-  year           = 2004
+@Article{CC08,
+  Author         = {{C. Camargo}},
+  Title          = {E{CBOT} y {ECB}\_{A}{T}91 {P}lataformas {A}biertas
+                   para el {D}ise\~no de {S}istemas {E}mbebidos y
+                   {C}o-{D}ise\~no {HW}/{SW}},
+  Journal        = {VIII Jornadas de Computaci\'on Reconfigurable y
+                   Aplicaciones, Madrid Espa\~na},
+  month          = sep,
+  year           = 2008
+}
+
+@Book{CH06,
+  Author         = {{C. Hallinan}},
+  Title          = {Embedded {L}inux {P}remiere {A} {P}ractical
+                   {R}eal-{W}orld {A}pproach},
+  Publisher      = {Prentice Hall},
+  month          = {18 } # sep,
+  year           = 2006
 }
 
 @InProceedings{JTMA02,
@@ -244,19 +255,22 @@
   year           = 2002
 }
 
+@Article{DA08,
+  Author         = {{D. Aponte}},
+  Title          = {Estudio de {V}igilancia {T}ecnol\'ogica en
+                   {D}ispositivos {L}\'ogicos {P}rogramables {C}omplejos
+                   {CPLD}.},
+  Journal        = {I Congreso Internacional de Gesti\'on Tecnol\'ogica e
+                   Innovaci\'on.},
+  year           = 2008
+}
+
 @Misc{RN98,
   Author         = {R. Nagpal, D. Coore},
   Title          = {An {A}lgorithm for group {F}ormation in an {A}morphous
                    {C}omputer},
   HowPublished   = {http://www.swiss.ai.mit.edu/projects/amorphous/},
   year           = 1998
-}
-
-@Article{Pir00,
-  Author         = {Pirjanian, P.},
-  Title          = {Multiple {O}bjective {B}ehavior-based {C}ontrol.},
-  Journal        = {Robotics and Autonomous Systems 31},
-  year           = 2000
 }
 
 @Book{SBME07,
@@ -277,19 +291,11 @@
   year           = 2002
 }
 
-@PhdThesis{MJM94,
-  Author         = {{Maja J Mataric}},
-  Title          = {Interaction and {I}ntelligent {B}ehavior},
-  School         = {MASSACHUSETTS INSTITUTE OF TECHNOLOGY},
-  month          = may,
-  year           = 1994
-}
-
-@Article{MWMJ95,
-  Author         = {{M. Wooldridge} and {M. Jennings}},
-  Title          = {Intelligent {A}gents: {T}heory and {P}ractice},
-  Journal        = {The Knowledge Engineering Review},
-  year           = 1995
+@Book{Ark88,
+  Author         = {Arkin, R.},
+  Title          = {Behavior-{B}ased {R}obotics},
+  Publisher      = {Cambridge, MA: MIT Press.},
+  year           = 1988
 }
 
 @Article{CCOS06,
@@ -319,15 +325,6 @@
   year           = 1994
 }
 
-@Article{DCRN97,
-  Author         = {{D. Coore} and {R. Nagpal} and {R. Weiss}},
-  Title          = {Paradigm for {S}tructure in an {A}morphous {C}omputer},
-  Journal        = {AI Memo No. 1614,
-                   http://www.swiss.ai.nit.edu/projects/amorphous},
-  month          = oct,
-  year           = 1997
-}
-
 @Article{ST92,
   Author         = {{Sandler Todd}},
   Title          = {Collective {A}ction: {T}heory and {A}pplications},
@@ -335,47 +332,34 @@
   year           = 1992
 }
 
+@PhdThesis{DR05,
+  Author         = {{Dominic Rath}},
+  Title          = {Open {O}n-{C}hip {D}ebugger},
+  School         = {University of Applied Sciences Augsburg},
+  year           = 2005
+}
+
+@Article{CMCfMR04,
+  Author         = {{R. LeGrand}},
+  Title          = {Closed-{L}oop {M}otion {C}ontrol for {M}obile
+                   {R}obotics},
+  Journal        = {Embedded Programming - Circuit Cellar},
+  Volume         = {169},
+  month          = aug,
+  year           = 2004
+}
+
+@Article{Pir00,
+  Author         = {Pirjanian, P.},
+  Title          = {Multiple {O}bjective {B}ehavior-based {C}ontrol.},
+  Journal        = {Robotics and Autonomous Systems 31},
+  year           = 2000
+}
+
 @Article{TUTF,
   Author         = {{Tsuyoshi UEYAMA} and {Toshio FUKUDA}},
   Title          = {Self-organization of {C}ellular {R}obots using
                    {R}andom {W}alk with {S}imple {R}ules}
-}
-
-@Article{MMDG04,
-  Author         = {Meinzen-Dick, Ruth and {Monica Di Gregorio} and {Nancy
-                   McCarthy}},
-  Title          = {Methods for {S}tudying {C}ollective {A}ction in
-                   {R}ural {D}evelopment},
-  Journal        = {CAPRi Working Paper, no. 33. International Food Policy
-                   Research Institute, 2033 K Street, N.W., Washington, DC
-                   20006. http://www.capri.cgiar.org/pdf/capriwp33.pd},
-  year           = 2004
-}
-
-@Article{CC08,
-  Author         = {{C. Camargo}},
-  Title          = {E{CBOT} y {ECB}\_{A}{T}91 {P}lataformas {A}biertas
-                   para el {D}ise\~no de {S}istemas {E}mbebidos y
-                   {C}o-{D}ise\~no {HW}/{SW}},
-  Journal        = {VIII Jornadas de Computaci\'on Reconfigurable y
-                   Aplicaciones, Madrid Espa\~na},
-  month          = sep,
-  year           = 2008
-}
-
-@Article{FW00,
-  Author         = {Forbes, Naushad and Wield, David},
-  Title          = {Managing {R}\&{D} in technology-followers},
-  Journal        = {Research Policy},
-  month          = sep,
-  year           = 2000
-}
-
-@PhdThesis{EP04,
-  Author         = {{E. Petraglio}},
-  Title          = {Fault {T}olerant {S}elf-{R}eplication {S}ystems},
-  School         = {\'Ecole Polytechnique F\'ed\'erale de Lausanne},
-  year           = 2004
 }
 
 @InBook{MHLS99,
@@ -405,12 +389,16 @@
   year           = 2005
 }
 
-@MastersThesis{MTRR07,
-  Author         = {{M. Tovar} and {R. Rodr\'{\i}guez}},
-  Title          = {P{ROSPECTIVA} {Y} {VIGILANCIA} {TECNOL}\'{O}{GICA}
-                   {DE} {LA} {ELECTR}\'{O}{NICA} {EN} {COLOMBIA}.},
-  School         = {Universidad Nacional de Colombia},
-  year           = 2007
+@Article{TKYI+05,
+  Author         = {{Tanaka K} and {Yo Ishigaki} and {Inoue H} and {Itoh
+                   M}},
+  Title          = {Safety monitoring system by autonomous mobile sensors
+                   utilizing pheromone communication},
+  Journal        = {Proceedings of the International Conference on
+                   Computational Intelligence for Modelling, Control and
+                   Automation; International Conference on Intelligent
+                   Agents, Web Technologies and Internet Commerce},
+  year           = 2005
 }
 
 @Misc{CL84,
@@ -460,12 +448,13 @@
   year           = 1997
 }
 
-@Article{JSCC04c,
-  Author         = {{J. Sep\'ulveda} and {C. Camargo} and {S. Bolivar}},
-  Title          = {Metodolog\'{\i}a de {I}mplementaci\'on de
-                   {A}ut\'omatas {C}elulares en {FPGA}},
-  Journal        = {Memorias del X Workshop de Iberchip ISBN 959-261-105-X},
-  year           = 2004
+@Misc{MSES+96,
+  Author         = {{M. Sipper} and {E. Sanchez} and {D. Mange} and {M.
+                   Tomassini} and {A. P\'erez-Uribe} and {A. Stauffer}},
+  Title          = {The {POE} {M}odel of {B}io-{I}nspired {H}ardware
+                   {S}ystems},
+  HowPublished   = {http://www.cs.bgu.ac.il/~sipper/poe.html},
+  year           = 1996
 }
 
 @Article{GT95,
@@ -485,22 +474,20 @@
   year           = 2004
 }
 
-@Article{CC08b,
-  Author         = {{C. Camargo}},
-  Title          = {E{CBOT}: {A}rquitectura {A}bierta para {R}obots
-                   {M}\'obiles},
-  Journal        = {VII conferencia Iberoamericana en Sistemas,
-                   Cibern\'etica e Inform\'atica},
-  year           = 2008
+@Article{UNE,
+  Author         = {UNESCO-Uruguay},
+  Title          = {Rasgos {P}rincipales de la {I}nstitucionalizaci\'on de
+                   la {C}iencia, la {T}ecnolog\'{\i}a y la {I}nnovaci\'on
+                   en {A}m\'erica {L}atina y el {C}aribe y {T}endencias de
+                   la {C}ooperaci\'on {I}nternacional},
+  Journal        = {http://www.unesco.org.uy/}
 }
 
-@Article{RLKR99,
-  Author         = {S. H. Russ, A. Lambert, R. King},
-  Title          = {An {A}rtificial {I}mmune {S}ystem {M}odel for {T}ask
-                   {A}llocation},
-  Journal        = {Submitted to IPPS/SPDP
-                   http://citeseer.ist.psu.edu/115327.html},
-  year           = 1999
+@InBook{PRGJ,
+  Author         = {{P. Raven} and {G. Johnson}},
+  Title          = {Biology},
+  Chapter        = {50 The Immune System},
+  Publisher      = {Mc Graw Hill}
 }
 
 @Misc{DC97,
@@ -511,11 +498,11 @@
   year           = 1997
 }
 
-@Article{Ost00,
-  Author         = {Ostrom, Elinor},
-  Title          = {Reformulating the {C}ommons},
-  Journal        = {Swiss Political Science Review, Volume 6, Number 1},
-  year           = 2000
+@Article{JLXJ,
+  Author         = {{Jiming Liu} and {Xiaolong Jin} and {Kwok Ching Tsui}},
+  Title          = {Autonomy-{O}riented {C}omputing ({AOC}):{F}ormulating
+                   {C}omputational {S}ystems {W}ith {A}utonomous
+                   {C}omponents}
 }
 
 @Article{KLAM04,
@@ -528,12 +515,14 @@
   year           = 2004
 }
 
-@Book{Mok90,
-  Author         = {Mokyr, Joel},
-  Title          = {The {L}ever of {R}iches, {T}echnological {C}reativity
-                   and {E}conomic {P}rogress.},
-  Publisher      = {Oxford University Press},
-  year           = 1990
+@Misc{SAS03,
+  Author         = {Schweik, C. M and {A. Semenov}},
+  Title          = {The {I}nstitutional {D}esign of '{O}pen {S}ource'
+                   {P}rogramming: {I}mplications for {A}ddressing
+                   {C}omplex {P}ublic {P}olicy and {M}anagement {P}roblems},
+  HowPublished   = {URL:
+                   http://www.firstmonday.org/issues/issue8\_1/schweik/},
+  year           = 2003
 }
 
 @InBook{APaET03,
@@ -554,19 +543,22 @@
   year           = 2004
 }
 
-@Book{Ark88,
-  Author         = {Arkin, R.},
-  Title          = {Behavior-{B}ased {R}obotics},
-  Publisher      = {Cambridge, MA: MIT Press.},
-  year           = 1988
-}
-
 @Book{JVN66,
   Author         = {{J. Von Neumann}},
   Title          = {Theory of {S}elf-{R}eproducing {A}utomata.},
   Publisher      = {University of Illinois Press. Edited and completed by
                    A. W. Burks},
   year           = 1966
+}
+
+@Article{CC08c,
+  Author         = {{C. Camargo}},
+  Title          = {E{CBOT} y {ECB}\_{A}{T}91 {P}lataformas {A}biertas
+                   para el {D}ise\~no de {S}istemas {E}mbebidos y
+                   {C}o-dise\~no {HW}-{SW}},
+  Journal        = {VIII Jornadas de Computaci\'on Reconfigurable y
+                   Aplicaciones},
+  year           = 2008
 }
 
 @Article{MW93,
@@ -576,22 +568,22 @@
   year           = 1993
 }
 
-@Book{CH06,
-  Author         = {{C. Hallinan}},
-  Title          = {Embedded {L}inux {P}remiere {A} {P}ractical
-                   {R}eal-{W}orld {A}pproach},
-  Publisher      = {Prentice Hall},
-  month          = {18 } # sep,
-  year           = 2006
+@Book{EO90,
+  Author         = {{Elinor Ostrom}},
+  Title          = {Governing the {C}ommons: {T}he {E}volution of
+                   {I}nstitutions for {C}ollective {A}ction ({P}olitical
+                   {E}conomy of {I}nstitutions and {D}ecisions)
+                   ({P}aperback)},
+  Publisher      = {Cambridge University Press},
+  month          = nov,
+  year           = 1990
 }
 
-@TechReport{RN98b,
-  Author         = {R. Nagpal, D. Coore},
-  Title          = {An {A}lgorithm for group {F}ormation and {M}aximal
-                   {I}ndependent {S}et in an {A}morphous {C}omputer},
-  Institution    = {AI Memo 1626, MIT Artificial Intelligence Laboratory},
-  month          = {16 } # feb,
-  year           = 1998
+@Book{Holl90,
+  Author         = {{B. Holldobler} and {E. Wilson}},
+  Title          = {The Ants},
+  Publisher      = {Springer-Verlag},
+  year           = 1990
 }
 
 @MastersThesis{JL02,
@@ -630,6 +622,14 @@
   year           = 2009
 }
 
+@Article{CC09,
+  Author         = {{C. Camargo}},
+  Title          = {Control de {S}istemas {P}aralelos {I}nspirado en la
+                   {N}aturaleza},
+  Journal        = {Colombian Workshop on Circuits and Systems},
+  year           = 2009
+}
+
 @Article{KLAG03,
   Author         = {{Kristina Lerman} and {Aram Galstyan}},
   Title          = {Agent {M}emory and {A}daptation in {M}ulti-{A}gent
@@ -640,19 +640,22 @@
   year           = 2003
 }
 
-@Book{Arr62,
-  Author         = {Arrow, Kenneth},
-  Title          = {Economic {W}elfare and the {A}llocation of {R}esources
-                   for {I}nvention},
-  Publisher      = {Princeton University Press},
-  year           = 1962
+@Article{JQYP08,
+  Author         = {{J. Quiza} and {Y. Parra}},
+  Title          = {An\'alisis de {P}atentes y {A}rt\'{\i}culos en
+                   {A}plicaciones de {M}icrocontroladores en {C}ontrol e
+                   {I}nstrumentaci\'on.},
+  Journal        = {I Congreso Internacional de Gesti\'on Tecnol\'ogica e
+                   Innovaci\'on.},
+  year           = 2008
 }
 
-@Article{MMZF05,
-  Author         = {{Mamei M} and {Zambonelli F}},
-  Title          = {Physical deployment of digital pheromones through
-                   {RFID} technology},
-  Journal        = {Swarm Intelligence Symposium},
+@Article{JEFS05,
+  Author         = {{J. Espinosa} and {F. Segura} and {C. Camargo}},
+  Title          = {Evoluci\'on de un {A}rreglo de {C}\'elulas
+                   {U}tilizando {A}lgoritmos {G}en\'eticos},
+  Journal        = {Memorias del XI Workshop de Iberchip ISBN
+                   959-261-105-X},
   year           = 2005
 }
 
@@ -691,15 +694,6 @@
   Journal        = {In Proceedings of SPIE's Cambridge Symposium on
                    Optical and Optoelectronic Engineering. Cambridge, MA},
   year           = 1986
-}
-
-@InBook{BAH88,
-  Author         = {{Bernardo A. Huberman} and {Tad Hogg. In}, editor},
-  Editor         = {{B. A. Huberman}},
-  Title          = {The {E}cology of {C}omputation},
-  Chapter        = {The behavior of computational ecologies.},
-  Publisher      = {Amsterdam, Elsevier (North-Holland).},
-  year           = 1988
 }
 
 @Misc{HLSIM,
@@ -761,13 +755,10 @@
                    {M}ulti-{R}obot {S}ystems}
 }
 
-@Article{CC11f,
-  Author         = {{C. Camargo}},
-  Title          = {P{LATAFORMAS} {ABIERTAS} {HARDWARE}/{SOFTWARE} {PARA}
-                   {APLICACIONES} {EN} {ROBOTICA}},
-  Journal        = {V Congreso Internacional de Ingenier\'{\i}a Mec\'anica
-                   y III de Ingenier\'{\i}a Mecatr\'onica (por publicar)},
-  year           = 2011
+@Article{CCJC02,
+  Author         = {{C. Camargo} and {J. Cortes} and {A. Jim\'enez}},
+  Title          = {Control {E}xperimental de un {C}ircuito {C}a\'otico},
+  year           = 2002
 }
 
 @Article{MFA92,
@@ -778,22 +769,13 @@
   year           = 1992
 }
 
-@Book{BBS,
-  Editor         = {{Bloom B S}},
-  Title          = {Taxonomy of {E}ducational {O}bjetives, the
-                   classification of educational goals},
-  Publisher      = {Mckay}
-}
-
-@Book{EO90,
-  Author         = {{Elinor Ostrom}},
-  Title          = {Governing the {C}ommons: {T}he {E}volution of
-                   {I}nstitutions for {C}ollective {A}ction ({P}olitical
-                   {E}conomy of {I}nstitutions and {D}ecisions)
-                   ({P}aperback)},
-  Publisher      = {Cambridge University Press},
-  month          = nov,
-  year           = 1990
+@Article{MR96,
+  Author         = {{M. Resnick}},
+  Title          = {Starlogo: {A}n {E}nvironment for {D}ecentralized
+                   {M}odeling and {D}ecentralized {T}hinking.},
+  Journal        = {Conference Companion on Human Factors in Computing
+                   Systems. New York, NY, USA: ACM Press.},
+  year           = 1996
 }
 
 @InBook{DGMJM02,
@@ -807,13 +789,12 @@
   year           = 2002
 }
 
-@Misc{MSES+96,
-  Author         = {{M. Sipper} and {E. Sanchez} and {D. Mange} and {M.
-                   Tomassini} and {A. P\'erez-Uribe} and {A. Stauffer}},
-  Title          = {The {POE} {M}odel of {B}io-{I}nspired {H}ardware
-                   {S}ystems},
-  HowPublished   = {http://www.cs.bgu.ac.il/~sipper/poe.html},
-  year           = 1996
+@Article{JSCC04c,
+  Author         = {{J. Sep\'ulveda} and {C. Camargo} and {S. Bolivar}},
+  Title          = {Metodolog\'{\i}a de {I}mplementaci\'on de
+                   {A}ut\'omatas {C}elulares en {FPGA}},
+  Journal        = {Memorias del X Workshop de Iberchip ISBN 959-261-105-X},
+  year           = 2004
 }
 
 @TechReport{AAJL01,
@@ -830,14 +811,12 @@
                    http://developer.motorola.com/platforms/mobile-linux/}
 }
 
-@Misc{SAS03,
-  Author         = {Schweik, C. M and {A. Semenov}},
-  Title          = {The {I}nstitutional {D}esign of '{O}pen {S}ource'
-                   {P}rogramming: {I}mplications for {A}ddressing
-                   {C}omplex {P}ublic {P}olicy and {M}anagement {P}roblems},
-  HowPublished   = {URL:
-                   http://www.firstmonday.org/issues/issue8\_1/schweik/},
-  year           = 2003
+@Book{Mok90,
+  Author         = {Mokyr, Joel},
+  Title          = {The {L}ever of {R}iches, {T}echnological {C}reativity
+                   and {E}conomic {P}rogress.},
+  Publisher      = {Oxford University Press},
+  year           = 1990
 }
 
 @PhdThesis{AM99,
@@ -849,21 +828,27 @@
   year           = 1999
 }
 
-@Article{JEFS05,
-  Author         = {{J. Espinosa} and {F. Segura} and {C. Camargo}},
-  Title          = {Evoluci\'on de un {A}rreglo de {C}\'elulas
-                   {U}tilizando {A}lgoritmos {G}en\'eticos},
-  Journal        = {Memorias del XI Workshop de Iberchip ISBN
-                   959-261-105-X},
+@Misc{Wik,
+  Author         = {Wikipedia},
+  Title          = {Wikipedia, the free encyclopedia},
+  HowPublished   = {http://en.wikipedia.org/}
+}
+
+@Article{MMZF05,
+  Author         = {{Mamei M} and {Zambonelli F}},
+  Title          = {Physical deployment of digital pheromones through
+                   {RFID} technology},
+  Journal        = {Swarm Intelligence Symposium},
   year           = 2005
 }
 
-@Article{Mo94,
-  Author         = {{M. odedra-straub}},
-  Title          = {The {M}yths and {I}llusions of {T}echnology {T}ransfer},
-  Journal        = {IFIP World Congress Proceedings},
-  month          = aug,
-  year           = 1994
+@InBook{BAH88,
+  Author         = {{Bernardo A. Huberman} and {Tad Hogg. In}, editor},
+  Editor         = {{B. A. Huberman}},
+  Title          = {The {E}cology of {C}omputation},
+  Chapter        = {The behavior of computational ecologies.},
+  Publisher      = {Amsterdam, Elsevier (North-Holland).},
+  year           = 1988
 }
 
 @InProceedings{WBaVB,
@@ -904,14 +889,6 @@
   year           = 2001
 }
 
-@Book{FB97,
-  Author         = {F. Balarin, M. Chiodo, P. Gisto},
-  Title          = {Hardware-{S}oftawre {C}o-{D}esign of {E}mbedded
-                   {S}ystems},
-  Publisher      = {Klewer Academic Publishers},
-  year           = 1997
-}
-
 @Article{Mat95,
   Author         = {Mataric, M.},
   Title          = {Designing and {U}nderstanding {A}daptive {G}roup
@@ -920,12 +897,13 @@
   year           = 1995
 }
 
-@Article{RMRT03,
-  Author         = {{R. Menezes} and {R. Tolksdorf}},
-  Title          = {A {N}ew {A}pproach to {S}calable {L}inda-systems
-                   {B}ased on {S}warms},
-  Journal        = {ACM SAC},
-  year           = 2003
+@Article{CC08b,
+  Author         = {{C. Camargo}},
+  Title          = {E{CBOT}: {A}rquitectura {A}bierta para {R}obots
+                   {M}\'obiles},
+  Journal        = {VII conferencia Iberoamericana en Sistemas,
+                   Cibern\'etica e Inform\'atica},
+  year           = 2008
 }
 
 @Article{ST02,
@@ -953,25 +931,19 @@
   HowPublished   = {http://www.e-puck.org/}
 }
 
-@Article{MO91,
-  Author         = {{M. Odedra}},
-  Title          = {Information {T}echnology {T}ransfer to {D}eveloping
-                   {C}ountries {I}s it really taking place?},
-  Journal        = {The 4th IFIF.TC9 International Conference on Human
-                   Choice and Computers, North Holland, Amsterdam,
-                   Netherlands, HCC 4 held jointly with the CEC FAST
-                   Programme.},
-  year           = 1991
+@Article{LD06,
+  Author         = {{Linux Devices}},
+  Title          = {First {C}olombian {L}inux {SBC} runs {D}ebian},
+  Journal        = {http://www.linuxfordevices.com/c/a/News/First-Colombian-Linux-SBC-runs-Debian/},
+  month          = {24 } # apr,
+  year           = 2006
 }
 
-@Article{HYKL06,
-  Author         = {{Henry Y. K. Lau} and {Vicky W. K. Wong}},
-  Title          = {An {I}mmunity {B}ased {D}istributed
-                   {M}ultiagent-{C}ontrol {F}ramework},
-  Journal        = {Systems, Man and Cybernetics, Part A, IEEE
-                   Transactions on},
-  month          = jan,
-  year           = 2006
+@Book{ARC98,
+  Author         = {{Arkin R. C.}},
+  Title          = {Behavior-{B}ased {R}obotics},
+  Publisher      = {The MIT press, Cambridge, MA},
+  year           = 1998
 }
 
 @Misc{GGR02,
@@ -984,22 +956,22 @@
   year           = 2002
 }
 
-@PhdThesis{CO00,
-  Author         = {{C. Ortega-Sanchez}},
-  Title          = {Embryonics: a {B}io-{I}nspired {F}ault-{T}olerant
-                   {M}ulticellular {S}ystem},
-  School         = {The University of York},
-  month          = may,
-  year           = 2000
+@Article{MO91,
+  Author         = {{M. Odedra}},
+  Title          = {Information {T}echnology {T}ransfer to {D}eveloping
+                   {C}ountries {I}s it really taking place?},
+  Journal        = {The 4th IFIF.TC9 International Conference on Human
+                   Choice and Computers, North Holland, Amsterdam,
+                   Netherlands, HCC 4 held jointly with the CEC FAST
+                   Programme.},
+  year           = 1991
 }
 
-@Article{Par98,
-  Author         = {Parker, L.},
-  Title          = {Toward the {A}utomated {S}ynthesis of {C}ooperative
-                   {M}obile {R}obot {T}eams},
-  Journal        = {Proceedings of SPIE Mobile Robots XIII volume 3525.
-                   Boston, MA},
-  year           = 1998
+@InProceedings{KAK01,
+  Author         = {{K. A. Kahng}},
+  Title          = {Design {T}echnology {P}roductivity in the {DSM} {E}ra.},
+  BookTitle      = {A{SP}-{DAC}},
+  year           = 2001
 }
 
 @Article{ETPoSSI(09,
@@ -1010,11 +982,14 @@
   year           = 2009
 }
 
-@Article{JLXJ,
-  Author         = {{Jiming Liu} and {Xiaolong Jin} and {Kwok Ching Tsui}},
-  Title          = {Autonomy-{O}riented {C}omputing ({AOC}):{F}ormulating
-                   {C}omputational {S}ystems {W}ith {A}utonomous
-                   {C}omponents}
+@Article{DA08b,
+  Author         = {{D. Aponte}},
+  Title          = {Estudio de {V}igilancia {T}ecnol\'ogica en
+                   {D}ispositivos {L}\'ogicos {P}rogramables {C}omplejos
+                   {CPLD}},
+  Journal        = {I Congreso Internacional de Gesti\'on Tecnol\'ogica e
+                   Innovaci\'on},
+  year           = 2008
 }
 
 @Article{Mat95b,
@@ -1039,14 +1014,12 @@
   Journal        = {http://www.ubiq.com/hy\'ertext/weiser/SciAmDraft3.html}
 }
 
-@InBook{JaMJM05,
-  Author         = {{Jones and Maja J Mataric}},
-  Editor         = {{Sam S. Ge} and {Frank L. Lewis}},
-  Title          = {Autonomous {M}obile {R}obots: {S}ensing, {C}ontrol,
-                   {D}ecision-{M}aking, and {A}pplications},
-  Chapter        = {Behavior-Based Coordination in Multi-Robot Systems},
-  Publisher      = {Marcel Dekker, Inc},
-  year           = 2005
+@PhdThesis{WB02,
+  Author         = {{W. Butera}},
+  Title          = {Programming a {P}aintable {C}omputing},
+  School         = {Massachusetts Institute of Technology},
+  month          = feb,
+  year           = 2002
 }
 
 @PhdThesis{Cor05,
@@ -1121,24 +1094,23 @@
   year           = 2002
 }
 
-@Article{SS06,
-  Author         = {{S. Shah}},
-  Title          = {Motivation, {G}overnance, and the {V}iality of
-                   {H}ybrid {F}orms in {O}pen {S}ource {S}oftware
-                   {D}evelopment},
-  Journal        = {Management Science},
-  month          = jul,
-  year           = 2006
+@Article{DCRN97,
+  Author         = {{D. Coore} and {R. Nagpal} and {R. Weiss}},
+  Title          = {Paradigm for {S}tructure in an {A}morphous {C}omputer},
+  Journal        = {AI Memo No. 1614,
+                   http://www.swiss.ai.nit.edu/projects/amorphous},
+  month          = oct,
+  year           = 1997
 }
 
-@Article{RK95,
-  Author         = {Rosenchein, S. and Kaelbling, L.},
-  Title          = {A {S}ituated {V}iew of {R}epresentation and {C}ontrol.
-                   {S}pecial {I}ssue on {C}omputational {R}esearch on
-                   {I}nteraction and {A}gency},
-  Journal        = {Special Issue on Computational Research on Interaction
-                   and Agency, Elsevier Science},
-  year           = 1995
+@Article{CCCP+11,
+  Author         = {{C. Camargo} and {C. Pedraza} and {L. Ni\~no} and {J.
+                   Martinez}},
+  Title          = {Intrinsic {E}volvable {H}ardware for {C}ombinatorial
+                   {S}ynthesis {B}ased on {S}o{C}+{FPGA} and {GPU}
+                   {P}latforms},
+  Journal        = {Genetic Evolutionary Computation Conference},
+  year           = 2011
 }
 
 @Article{GM(.I.W01,
@@ -1169,6 +1141,14 @@
   year           = 2005
 }
 
+@MastersThesis{AW04,
+  Author         = {{A. Warner}},
+  Title          = {A {S}elf {T}riggered {R}eadout for a {T}ime
+                   {P}rojection {C}hamber},
+  School         = {MIT Physics Department},
+  year           = 2004
+}
+
 @TechReport{WH93,
   Author         = {W. Heimerdinger, C. Weinstock},
   Title          = {A {C}onceptual {F}ramework for {S}ystem {F}ault
@@ -1194,11 +1174,12 @@
   year           = 1992
 }
 
-@Book{ARC98,
-  Author         = {{Arkin R. C.}},
-  Title          = {Behavior-{B}ased {R}obotics},
-  Publisher      = {The MIT press, Cambridge, MA},
-  year           = 1998
+@Article{CFK97b,
+  Author         = {Cao, Y. and Fukunaga, A. and Kahng, A.},
+  Title          = {Cooperative {M}obile {R}obotics: {A}ntecedents and
+                   {D}irections},
+  Journal        = {Autonomous Robots 4},
+  year           = 1997
 }
 
 @Article{CVJ03,
@@ -1210,14 +1191,12 @@
   year           = 2003
 }
 
-@InBook{DJR95,
-  Author         = {Donald, B. and Jennings, J. and Rus, D.},
-  Editor         = {Goldberg, K. and Halperin, D. and Latombe, J.-C. and
-                   Wilson, R.},
-  Title          = {International {W}orkshop on the {A}lgorithmic
-                   {F}oundations of {R}obotics},
-  Chapter        = {Information Invariants for Distributed Manipulation},
-  year           = 1995
+@PhdThesis{MJM94,
+  Author         = {{Maja J Mataric}},
+  Title          = {Interaction and {I}ntelligent {B}ehavior},
+  School         = {MASSACHUSETTS INSTITUTE OF TECHNOLOGY},
+  month          = may,
+  year           = 1994
 }
 
 @TechReport{Col05,
@@ -1227,17 +1206,6 @@
                    2005 - 2015},
   Institution    = {Colciencias},
   year           = 2005
-}
-
-@Article{Mat97,
-  Author         = {Mataric, M.},
-  Title          = {Behavior-{B}ased {C}ontrol: {E}xamples from
-                   {N}avigation, {L}earning, and {G}roup {B}ehavior},
-  Journal        = {Journal of Experimental and Theoretical Artificial
-                   Intelligence, special issue on Software Architectures
-                   for Physical Agents Hexmoor, H., Horswill, I., and
-                   Kortenkamp, D., eds},
-  year           = 1997
 }
 
 @InProceedings{FGPM02,
@@ -1256,20 +1224,19 @@
   year           = 2002
 }
 
-@Article{Par98b,
-  Author         = {Parker, L.},
-  Title          = {A{LLIANCE}: {A}n {A}rchitecture for {F}ault-tolerant
-                   {M}ulti-robot {C}ooperation. |},
-  Journal        = {Transactions on Robotics and Automation 14(2)},
-  year           = 1998
-}
-
 @Book{KYJM+08,
   Author         = {{Karim Yaghmour} and {Jon Masters} and {Gilad
                    Ben-Yossef} and {Philippe Gerum}},
   Title          = {Building {E}mbedded {L}inux {S}ystems},
   Publisher      = {O'REILLY},
   year           = 2008
+}
+
+@PhdThesis{EP04,
+  Author         = {{E. Petraglio}},
+  Title          = {Fault {T}olerant {S}elf-{R}eplication {S}ystems},
+  School         = {\'Ecole Polytechnique F\'ed\'erale de Lausanne},
+  year           = 2004
 }
 
 @Misc{IB98,
@@ -1310,12 +1277,6 @@
   year           = 1994
 }
 
-@Article{AD,
-  Author         = {{Ancona D.}},
-  Title          = {Leadership in the {A}ge of {U}ncertainty},
-  Journal        = {http://mitleadership.mit.edu/pdf/LeaderShipinanAgeofUncertainty-researchbrief.pdf}
-}
-
 @InProceedings{FGPM02b,
   Author         = {{F. Gruau.} and {P. Malbos.}},
   Title          = {The Blob: A Basic Topological Concept for
@@ -1332,11 +1293,13 @@
   year           = 2002
 }
 
-@Article{EBMD99,
-  Author         = {{E. Bonabeau} and {M. Dorigo} and {G. Theraulaz}},
-  Title          = {Swarm {I}ntelligence},
-  Journal        = {Oxford University Press},
-  year           = 1999
+@PhdThesis{CO00,
+  Author         = {{C. Ortega-Sanchez}},
+  Title          = {Embryonics: a {B}io-{I}nspired {F}ault-{T}olerant
+                   {M}ulticellular {S}ystem},
+  School         = {The University of York},
+  month          = may,
+  year           = 2000
 }
 
 @InProceedings{GTDR+02,
@@ -1351,22 +1314,22 @@
   year           = 2002
 }
 
-@Article{CC09,
-  Author         = {{C. Camargo}},
-  Title          = {Control de {S}istemas {P}aralelos {I}nspirado en la
-                   {N}aturaleza},
-  Journal        = {Colombian Workshop on Circuits and Systems},
-  year           = 2009
+@Article{RLKR99,
+  Author         = {S. H. Russ, A. Lambert, R. King},
+  Title          = {An {A}rtificial {I}mmune {S}ystem {M}odel for {T}ask
+                   {A}llocation},
+  Journal        = {Submitted to IPPS/SPDP
+                   http://citeseer.ist.psu.edu/115327.html},
+  year           = 1999
 }
 
-@Article{CC11e,
-  Author         = {{C. Camargo}},
-  Title          = {Low {C}ost {P}latform for {E}volvable-{B}ased
-                   {B}oolean {S}ynthesis},
-  Journal        = {IEEE Latin American Symposium on Circuits and Systems
-                   (LASCAS 2011), Bogot\'a Colombia},
-  month          = feb,
-  year           = 2011
+@Article{FPFS+05,
+  Author         = {{F. Pedraza} and {F. Segura} and {C. Camargo} and {A.
+                   Gauthier}},
+  Title          = {Control {A}daptativo {E}mbebido},
+  Journal        = {Memorias del XI workshop de Iberchip ISBN
+                   959-261-105-X},
+  year           = 2005
 }
 
 @Article{CC11d,
@@ -1429,12 +1392,11 @@
   year           = 2000
 }
 
-@Article{JLea02,
-  Author         = {{J. Lifton} and {et al}},
-  Title          = {Pushpin computing system overview: {A} platform for
-                   distributed, embedded ubiquitous sensor networks},
-  Journal        = {International Conference on Pervasive Computing},
-  year           = 2002
+@Article{AA97,
+  Author         = {{A. Avizienis}},
+  Title          = {Toward systematic design of fault tolerant systems},
+  Journal        = {Computer},
+  year           = 1997
 }
 
 @Article{EL94,
@@ -1507,21 +1469,45 @@
   year           = 1992
 }
 
-@Article{KLCJ+0,
-  Author         = {{Kristina Lerman} and {Chris Jones} and {Aram
-                   Galstyan} and {Maja J Matar\'{\i}c}},
-  Title          = {Analysis of {D}ynamic {T}ask {A}llocation in
-                   {M}ulti-{R}obot {S}ystems},
-  Journal        = {International Journal of Robotics Research},
-  month          = mar,
-  year           = 200
+@MastersThesis{MTRR07,
+  Author         = {{M. Tovar} and {R. Rodr\'{\i}guez}},
+  Title          = {P{ROSPECTIVA} {Y} {VIGILANCIA} {TECNOL}\'{O}{GICA}
+                   {DE} {LA} {ELECTR}\'{O}{NICA} {EN} {COLOMBIA}.},
+  School         = {Universidad Nacional de Colombia},
+  year           = 2007
 }
 
-@Book{Holl90,
-  Author         = {{B. Holldobler} and {E. Wilson}},
-  Title          = {The Ants},
-  Publisher      = {Springer-Verlag},
-  year           = 1990
+@Article{AGH+00,
+  Author         = {Alur, R. and Grosu, R. and Hur, Y. and Kumar, V. and
+                   Lee, I.},
+  Title          = {Modular {S}pecification of {H}ybrid {S}ystems in
+                   {CHARON}},
+  Journal        = {Proceedings of the 3rd International Workshop on
+                   Hybrid Systems: Computation and Control. Pittsburgh, PA},
+  year           = 2000
+}
+
+@Article{GLRBR+,
+  Author         = {{G. Lazea} and {R. B. Rusu} and {R. Robotin} and {R.
+                   Sime}},
+  Title          = {The {Z}ee{RO} {M}obile {R}obot - {A} {M}odular
+                   {A}rchitecture}
+}
+
+@Article{JQYP08b,
+  Author         = {{J. Quiza} and {Y. Parra}},
+  Title          = {An\'alisis de {P}atentes y {A}rt\'{\i}culos en
+                   {A}plicaciones de {M}icrocontroladores en {C}ontrol e
+                   {I}nstrumentaci\'on},
+  Journal        = {I Congreso Internacional de Gesti\'on Tecnol\'ogica e
+                   Innovaci\'on},
+  year           = 2008
+}
+
+@Misc{Wikb,
+  Author         = {Wikipedia},
+  Title          = {Richard {S}tallman},
+  HowPublished   = {URL: http://es.wikipedia.org/wiki/Richard\_Stallman}
 }
 
 @Article{NLBP92,
@@ -1531,25 +1517,12 @@
   year           = 1992
 }
 
-@Misc{Wikb,
-  Author         = {Wikipedia},
-  Title          = {Richard {S}tallman},
-  HowPublished   = {URL: http://es.wikipedia.org/wiki/Richard\_Stallman}
-}
-
-@Book{Web04,
-  Author         = {Weber, S.},
-  Title          = {The {S}uccess of {O}pen {S}ource},
-  Publisher      = {Harvard University Press},
-  year           = 2004
-}
-
-@Article{CC11,
-  Author         = {{C. Camargo}},
-  Title          = {Hardware copyleft como {H}erramienta para la
-                   {E}nse\~nanza de {S}istemas {E}mbebidos},
-  Journal        = {Simposio Argentino de Sistemas Embebidos},
-  year           = 2011
+@Article{JLea02,
+  Author         = {{J. Lifton} and {et al}},
+  Title          = {Pushpin computing system overview: {A} platform for
+                   distributed, embedded ubiquitous sensor networks},
+  Journal        = {International Conference on Pervasive Computing},
+  year           = 2002
 }
 
 @Article{KPJZ,
@@ -1609,6 +1582,15 @@
   year           = 2002
 }
 
+@TechReport{RN98b,
+  Author         = {R. Nagpal, D. Coore},
+  Title          = {An {A}lgorithm for group {F}ormation and {M}aximal
+                   {I}ndependent {S}et in an {A}morphous {C}omputer},
+  Institution    = {AI Memo 1626, MIT Artificial Intelligence Laboratory},
+  month          = {16 } # feb,
+  year           = 1998
+}
+
 @Misc{AG10,
   Author         = {{A. Grove}},
   Title          = {How {A}merica {C}an {C}reate {J}obs},
@@ -1642,12 +1624,6 @@
                    Computing (UbiComp 2003)},
   month          = oct,
   year           = 2003
-}
-
-@Misc{emQ,
-  Author         = {emQbit},
-  Title          = {{e}m{Q}bit {L}inux {P}owered {D}evices {C}ompany},
-  HowPublished   = {URL: http://www.emqbit.com/}
 }
 
 @PhdThesis{RN01,
@@ -1695,15 +1671,10 @@
   year           = 1998
 }
 
-@Article{HSL+04,
-  Author         = {Hearn, Gregory N. and Simpson, Lynette E. and Lennie,
-                   June and Kimber, Megan P.},
-  Title          = {I{CT}s and regional sustainability: {A} critique and a
-                   way forward},
-  Journal        = {Community Informatics Research Network Conference and
-                   Colloquium 2004: Sustainability and community
-                   technology},
-  year           = 2004
+@Misc{Mae,
+  Author         = {Nokia},
+  Title          = {Maemo {P}roject},
+  HowPublished   = {URL: http://www.maemo.org/}
 }
 
 @Article{KGSB95,
@@ -1734,12 +1705,14 @@
   year           = 2001
 }
 
-@PhdThesis{WB02,
-  Author         = {{W. Butera}},
-  Title          = {Programming a {P}aintable {C}omputing},
-  School         = {Massachusetts Institute of Technology},
-  month          = feb,
-  year           = 2002
+@InBook{JaMJM05,
+  Author         = {{Jones and Maja J Mataric}},
+  Editor         = {{Sam S. Ge} and {Frank L. Lewis}},
+  Title          = {Autonomous {M}obile {R}obots: {S}ensing, {C}ontrol,
+                   {D}ecision-{M}aking, and {A}pplications},
+  Chapter        = {Behavior-Based Coordination in Multi-Robot Systems},
+  Publisher      = {Marcel Dekker, Inc},
+  year           = 2005
 }
 
 @Book{May08,
@@ -1769,22 +1742,48 @@
   year           = 1987
 }
 
-@InBook{CMS06,
-  Author         = {{Charles M. Schweik}},
-  Editor         = {{Charlotte Hess} and {Elinor Ostrom}},
-  Title          = {Understanding {K}nowledge as a {C}ommons: {F}rom
-                   {T}heory to {P}ractice},
-  Chapter        = {Free/Open-Source Software as a Framework for
-                   Establishing Commons in Science},
-  Publisher      = {The MIT Press},
-  year           = 2006
+@Book{FB97,
+  Author         = {F. Balarin, M. Chiodo, P. Gisto},
+  Title          = {Hardware-{S}oftawre {C}o-{D}esign of {E}mbedded
+                   {S}ystems},
+  Publisher      = {Klewer Academic Publishers},
+  year           = 1997
 }
 
-@InProceedings{KAK01,
-  Author         = {{K. A. Kahng}},
-  Title          = {Design {T}echnology {P}roductivity in the {DSM} {E}ra.},
-  BookTitle      = {A{SP}-{DAC}},
-  year           = 2001
+@Article{Mat97,
+  Author         = {Mataric, M.},
+  Title          = {Behavior-{B}ased {C}ontrol: {E}xamples from
+                   {N}avigation, {L}earning, and {G}roup {B}ehavior},
+  Journal        = {Journal of Experimental and Theoretical Artificial
+                   Intelligence, special issue on Software Architectures
+                   for Physical Agents Hexmoor, H., Horswill, I., and
+                   Kortenkamp, D., eds},
+  year           = 1997
+}
+
+@Article{CC11,
+  Author         = {{C. Camargo}},
+  Title          = {Hardware copyleft como {H}erramienta para la
+                   {E}nse\~nanza de {S}istemas {E}mbebidos},
+  Journal        = {Simposio Argentino de Sistemas Embebidos},
+  year           = 2011
+}
+
+@Article{Ost00,
+  Author         = {Ostrom, Elinor},
+  Title          = {Reformulating the {C}ommons},
+  Journal        = {Swiss Political Science Review, Volume 6, Number 1},
+  year           = 2000
+}
+
+@Article{JQJG08b,
+  Author         = {{J. Quiza} and {J. Gonz\'alez} and {G. Hern\'andez}},
+  Title          = {Estudio de {F}abricantes y {F}amilias de
+                   {M}icrocontroladores y {M}icroprocesadores {A}plicados
+                   a {S}istemas de {C}ontrol e {I}nstrumentaci\'on},
+  Journal        = {I Congreso Internacional de Gesti\'on Tecnol\'ogica e
+                   Innovaci\'on},
+  year           = 2008
 }
 
 @Article{MIM99,
@@ -1796,12 +1795,14 @@
   year           = 1999
 }
 
-@Misc{XZ01,
-  Author         = {{X. Zhang}},
-  Title          = {Bio-{I}nspired {F}ault-{T}olerant {H}ardware {S}ystem},
-  HowPublished   = {http://www.cems.uwe.ac.uk/~xzhang/},
-  month          = dec,
-  year           = 2001
+@InBook{DJR95,
+  Author         = {Donald, B. and Jennings, J. and Rus, D.},
+  Editor         = {Goldberg, K. and Halperin, D. and Latombe, J.-C. and
+                   Wilson, R.},
+  Title          = {International {W}orkshop on the {A}lgorithmic
+                   {F}oundations of {R}obotics},
+  Chapter        = {Information Invariants for Distributed Manipulation},
+  year           = 1995
 }
 
 @Article{KLRR99,
@@ -1820,15 +1821,11 @@
   year           = 1996
 }
 
-@TechReport{DZSC+07,
-  Author         = {{D Zuluaga} and {S Campos} and {M Tovar} and {R
-                   Rodr\'{\i}guez} and {J S\'anchez} and {A Aguilera} and
-                   {L Land\'{\i}nez} and {J Medina}},
-  Title          = {Informe de {V}igilancia {T}ecnol\'ogica:
-                   {A}plicaciones de la {E}lectr\'onica en el {S}ector
-                   {A}gr\'{\i}cola},
-  Institution    = {COLCIENCIAS},
-  year           = 2007
+@Article{EBMD99,
+  Author         = {{E. Bonabeau} and {M. Dorigo} and {G. Theraulaz}},
+  Title          = {Swarm {I}ntelligence},
+  Journal        = {Oxford University Press},
+  year           = 1999
 }
 
 @MastersThesis{NR11,
@@ -1857,6 +1854,14 @@
   year           = 2001
 }
 
+@Article{RMRT03,
+  Author         = {{R. Menezes} and {R. Tolksdorf}},
+  Title          = {A {N}ew {A}pproach to {S}calable {L}inda-systems
+                   {B}ased on {S}warms},
+  Journal        = {ACM SAC},
+  year           = 2003
+}
+
 @InBook{ME02,
   Author         = {Martinoli, A. and Easton, K.},
   Editor         = {Siciliano, B. Dario, P.},
@@ -1874,19 +1879,21 @@
   year           = 1997
 }
 
-@Misc{IBSS98,
-  Author         = {{I. Bowman} and {S. Siddiqi} and {M. Tanuan}},
-  Title          = {Concrete {A}rchitecture of the {L}inux {K}ernel},
-  HowPublished   = {http://docs.huihoo.com/linux/kernel/a2/index.html},
-  month          = {12 } # feb,
+@Article{Par98b,
+  Author         = {Parker, L.},
+  Title          = {A{LLIANCE}: {A}n {A}rchitecture for {F}ault-tolerant
+                   {M}ulti-robot {C}ooperation. |},
+  Journal        = {Transactions on Robotics and Automation 14(2)},
   year           = 1998
 }
 
-@Article{GLRBR+,
-  Author         = {{G. Lazea} and {R. B. Rusu} and {R. Robotin} and {R.
-                   Sime}},
-  Title          = {The {Z}ee{RO} {M}obile {R}obot - {A} {M}odular
-                   {A}rchitecture}
+@Book{DACK09,
+  Author         = {{D. Alimisis} and {C. Kynigos}},
+  Title          = {Teacher {E}ducation on {R}obotics-{E}nhanced
+                   {C}onstructivist {P}edagogical {M}ethod},
+  Publisher      = {School of Pedagogical and Technological Education
+                   (ASPETE)},
+  year           = 2009
 }
 
 @Book{JCAR05,
@@ -1896,13 +1903,26 @@
   year           = 2005
 }
 
-@Article{UNE,
-  Author         = {UNESCO-Uruguay},
-  Title          = {Rasgos {P}rincipales de la {I}nstitucionalizaci\'on de
-                   la {C}iencia, la {T}ecnolog\'{\i}a y la {I}nnovaci\'on
-                   en {A}m\'erica {L}atina y el {C}aribe y {T}endencias de
-                   la {C}ooperaci\'on {I}nternacional},
-  Journal        = {http://www.unesco.org.uy/}
+@InBook{CMS06,
+  Author         = {{Charles M. Schweik}},
+  Editor         = {{Charlotte Hess} and {Elinor Ostrom}},
+  Title          = {Understanding {K}nowledge as a {C}ommons: {F}rom
+                   {T}heory to {P}ractice},
+  Chapter        = {Free/Open-Source Software as a Framework for
+                   Establishing Commons in Science},
+  Publisher      = {The MIT Press},
+  year           = 2006
+}
+
+@TechReport{DZSC+07,
+  Author         = {{D Zuluaga} and {S Campos} and {M Tovar} and {R
+                   Rodr\'{\i}guez} and {J S\'anchez} and {A Aguilera} and
+                   {L Land\'{\i}nez} and {J Medina}},
+  Title          = {Informe de {V}igilancia {T}ecnol\'ogica:
+                   {A}plicaciones de la {E}lectr\'onica en el {S}ector
+                   {A}gr\'{\i}cola},
+  Institution    = {COLCIENCIAS},
+  year           = 2007
 }
 
 @Misc{FSF,
@@ -1919,25 +1939,36 @@
   year           = 2004
 }
 
-@Article{LG02,
-  Author         = {Lerman, K. and Galstyan, A.},
-  Title          = {Mathematical {M}odel of {F}oraging in a {G}roup of
-                   {R}obots: {E}ffects of {I}nterference},
-  Journal        = {Autonomous Robots 13},
-  year           = 2002
+@Article{Par98,
+  Author         = {Parker, L.},
+  Title          = {Toward the {A}utomated {S}ynthesis of {C}ooperative
+                   {M}obile {R}obot {T}eams},
+  Journal        = {Proceedings of SPIE Mobile Robots XIII volume 3525.
+                   Boston, MA},
+  year           = 1998
 }
 
-@InBook{AMAJI99,
-  Author         = {{A. Martinoli} and {A. J. Ijspeert} and {L. M.
-                   Gambardella}},
-  Editor         = {{Dario Floreano} and {Jean-Daniel Nicoud} and
-                   {Francesco Mondada}},
-  Title          = {Proceedings of the 5th {E}uropean {C}onference on
-                   {A}dvances in {A}rtificial {L}ife},
-  Chapter        = {A probabilistic model for understanding and comparing
-                   collective aggregation mechanisms.},
-  Publisher      = {Springer},
-  year           = 1999
+@Misc{XZ01,
+  Author         = {{X. Zhang}},
+  Title          = {Bio-{I}nspired {F}ault-{T}olerant {H}ardware {S}ystem},
+  HowPublished   = {http://www.cems.uwe.ac.uk/~xzhang/},
+  month          = dec,
+  year           = 2001
+}
+
+@Misc{QH,
+  Author         = {{Qi Hardware}},
+  Title          = {Qi {H}ardware {C}opyleft {H}ardware {P}roject},
+  HowPublished   = {URL: http://en.qi-hardware.com/}
+}
+
+@Article{SKKT04,
+  Author         = {{Sugawara K} and {Kazama T} and {Watanabe T}},
+  Title          = {Foraging behavior of interacting robots with virtual
+                   pheromone},
+  Journal        = {Proceedings of the IEEE/RSJ International Conference
+                   on Intelligent Robots and Systems},
+  year           = 2004
 }
 
 @InBook{PMPN+66,
@@ -1951,15 +1982,11 @@
   year           = 1966
 }
 
-@InBook{Par97,
-  Author         = {Parker, L.},
-  Editor         = {Bolles, R., Bunke},
-  Title          = {Intelligent robots: {S}ensing, modeling, and planning},
-  Chapter        = {Behavior-Based Cooperative Robotics Applied to
-                   Multi-Target Observation},
-  Publisher      = {R. Bolles, H. Bunke, and H. Noltemeier. World
-                   Scientific},
-  year           = 1997
+@Book{Web04,
+  Author         = {Weber, S.},
+  Title          = {The {S}uccess of {O}pen {S}ource},
+  Publisher      = {Harvard University Press},
+  year           = 2004
 }
 
 @Article{KSMS97,
@@ -1970,13 +1997,23 @@
   year           = 1997
 }
 
-@InProceedings{DS02,
-  Author         = {{D. Servant}},
-  Title          = {Combining amorphous computing and reactive agent-based
-                   systems: a paradigm for pervasive intelligence?},
-  BookTitle      = {First international joint conference on {A}utonomous
-                   agents and muktiagent systems: part 1},
-  year           = 2002
+@Misc{IBSS98,
+  Author         = {{I. Bowman} and {S. Siddiqi} and {M. Tanuan}},
+  Title          = {Concrete {A}rchitecture of the {L}inux {K}ernel},
+  HowPublished   = {http://docs.huihoo.com/linux/kernel/a2/index.html},
+  month          = {12 } # feb,
+  year           = 1998
+}
+
+@Article{HSL+04,
+  Author         = {Hearn, Gregory N. and Simpson, Lynette E. and Lennie,
+                   June and Kimber, Megan P.},
+  Title          = {I{CT}s and regional sustainability: {A} critique and a
+                   way forward},
+  Journal        = {Community Informatics Research Network Conference and
+                   Colloquium 2004: Sustainability and community
+                   technology},
+  year           = 2004
 }
 
 @Article{Tee81,
@@ -2008,17 +2045,29 @@
   year           = 2003
 }
 
+@Article{FW00,
+  Author         = {Forbes, Naushad and Wield, David},
+  Title          = {Managing {R}\&{D} in technology-followers},
+  Journal        = {Research Policy},
+  month          = sep,
+  year           = 2000
+}
+
 @Article{IAI,
   Author         = {{Innovation Associates Inc.}},
   Title          = {Technology {T}ransfer and {C}ommercialization
                    {P}artnerships {E}xecutive {S}ummary}
 }
 
-@PhdThesis{DR05,
-  Author         = {{Dominic Rath}},
-  Title          = {Open {O}n-{C}hip {D}ebugger},
-  School         = {University of Applied Sciences Augsburg},
-  year           = 2005
+@Article{MMDG04,
+  Author         = {Meinzen-Dick, Ruth and {Monica Di Gregorio} and {Nancy
+                   McCarthy}},
+  Title          = {Methods for {S}tudying {C}ollective {A}ction in
+                   {R}ural {D}evelopment},
+  Journal        = {CAPRi Working Paper, no. 33. International Food Policy
+                   Research Institute, 2033 K Street, N.W., Washington, DC
+                   20006. http://www.capri.cgiar.org/pdf/capriwp33.pd},
+  year           = 2004
 }
 
 @Article{CC,
@@ -2049,14 +2098,12 @@
   HowPublished   = {URL: http://www.android.com/}
 }
 
-@Article{CC08c,
-  Author         = {{C. Camargo}},
-  Title          = {E{CBOT} y {ECB}\_{A}{T}91 {P}lataformas {A}biertas
-                   para el {D}ise\~no de {S}istemas {E}mbebidos y
-                   {C}o-dise\~no {HW}-{SW}},
-  Journal        = {VIII Jornadas de Computaci\'on Reconfigurable y
-                   Aplicaciones},
-  year           = 2008
+@Article{LG02,
+  Author         = {Lerman, K. and Galstyan, A.},
+  Title          = {Mathematical {M}odel of {F}oraging in a {G}roup of
+                   {R}obots: {E}ffects of {I}nterference},
+  Journal        = {Autonomous Robots 13},
+  year           = 2002
 }
 
 @Misc{Oxygen,
@@ -2075,10 +2122,10 @@
   year           = 2004
 }
 
-@Misc{Wik,
-  Author         = {Wikipedia},
-  Title          = {Wikipedia, the free encyclopedia},
-  HowPublished   = {http://en.wikipedia.org/}
+@Misc{emQ,
+  Author         = {emQbit},
+  Title          = {{e}m{Q}bit {L}inux {P}owered {D}evices {C}ompany},
+  HowPublished   = {URL: http://www.emqbit.com/}
 }
 
 @Book{NRC01,
@@ -2118,6 +2165,24 @@
                    {M}athematica},
   Publisher      = {Morgan Kaufmann},
   year           = 1997
+}
+
+@Article{Mo94,
+  Author         = {{M. odedra-straub}},
+  Title          = {The {M}yths and {I}llusions of {T}echnology {T}ransfer},
+  Journal        = {IFIP World Congress Proceedings},
+  month          = aug,
+  year           = 1994
+}
+
+@Article{SS06,
+  Author         = {{S. Shah}},
+  Title          = {Motivation, {G}overnance, and the {V}iality of
+                   {H}ybrid {F}orms in {O}pen {S}ource {S}oftware
+                   {D}evelopment},
+  Journal        = {Management Science},
+  month          = jul,
+  year           = 2006
 }
 
 @Article{HMHK09,
@@ -2171,42 +2236,29 @@
   year           = 1999
 }
 
-@Article{LD06,
-  Author         = {{Linux Devices}},
-  Title          = {First {C}olombian {L}inux {SBC} runs {D}ebian},
-  Journal        = {http://www.linuxfordevices.com/c/a/News/First-Colombian-Linux-SBC-runs-Debian/},
-  month          = {24 } # apr,
-  year           = 2006
+@Article{Bro86,
+  Author         = {Brooks, R.},
+  Title          = {A {R}obust {L}ayered {C}ontrol {S}ystem for a {M}obile
+                   {R}obot.},
+  Journal        = {IEEE Journal of Robotics and Automation},
+  year           = 1986
 }
 
-@Article{AGH+00,
-  Author         = {Alur, R. and Grosu, R. and Hur, Y. and Kumar, V. and
-                   Lee, I.},
-  Title          = {Modular {S}pecification of {H}ybrid {S}ystems in
-                   {CHARON}},
-  Journal        = {Proceedings of the 3rd International Workshop on
-                   Hybrid Systems: Computation and Control. Pittsburgh, PA},
-  year           = 2000
+@Article{KLCJ+0,
+  Author         = {{Kristina Lerman} and {Chris Jones} and {Aram
+                   Galstyan} and {Maja J Matar\'{\i}c}},
+  Title          = {Analysis of {D}ynamic {T}ask {A}llocation in
+                   {M}ulti-{R}obot {S}ystems},
+  Journal        = {International Journal of Robotics Research},
+  month          = mar,
+  year           = 200
 }
 
-@MastersThesis{AW04,
-  Author         = {{A. Warner}},
-  Title          = {A {S}elf {T}riggered {R}eadout for a {T}ime
-                   {P}rojection {C}hamber},
-  School         = {MIT Physics Department},
-  year           = 2004
-}
-
-@Article{TKYI+05,
-  Author         = {{Tanaka K} and {Yo Ishigaki} and {Inoue H} and {Itoh
-                   M}},
-  Title          = {Safety monitoring system by autonomous mobile sensors
-                   utilizing pheromone communication},
-  Journal        = {Proceedings of the International Conference on
-                   Computational Intelligence for Modelling, Control and
-                   Automation; International Conference on Intelligent
-                   Agents, Web Technologies and Internet Commerce},
-  year           = 2005
+@Article{MWMJ95,
+  Author         = {{M. Wooldridge} and {M. Jennings}},
+  Title          = {Intelligent {A}gents: {T}heory and {P}ractice},
+  Journal        = {The Knowledge Engineering Review},
+  year           = 1995
 }
 
 @Article{FGJT00,
@@ -2232,10 +2284,10 @@
   year           = 2007
 }
 
-@Misc{QH,
-  Author         = {{Qi Hardware}},
-  Title          = {Qi {H}ardware {C}opyleft {H}ardware {P}roject},
-  HowPublished   = {URL: http://en.qi-hardware.com/}
+@Article{AD,
+  Author         = {{Ancona D.}},
+  Title          = {Leadership in the {A}ge of {U}ncertainty},
+  Journal        = {http://mitleadership.mit.edu/pdf/LeaderShipinanAgeofUncertainty-researchbrief.pdf}
 }
 
 @Article{htt,
@@ -2249,13 +2301,17 @@
   Journal        = {The Linux Expertise Center, Hewlett-Packard Company}
 }
 
-@Article{SKKT04,
-  Author         = {{Sugawara K} and {Kazama T} and {Watanabe T}},
-  Title          = {Foraging behavior of interacting robots with virtual
-                   pheromone},
-  Journal        = {Proceedings of the IEEE/RSJ International Conference
-                   on Intelligent Robots and Systems},
-  year           = 2004
+@InBook{AMAJI99,
+  Author         = {{A. Martinoli} and {A. J. Ijspeert} and {L. M.
+                   Gambardella}},
+  Editor         = {{Dario Floreano} and {Jean-Daniel Nicoud} and
+                   {Francesco Mondada}},
+  Title          = {Proceedings of the 5th {E}uropean {C}onference on
+                   {A}dvances in {A}rtificial {L}ife},
+  Chapter        = {A probabilistic model for understanding and comparing
+                   collective aggregation mechanisms.},
+  Publisher      = {Springer},
+  year           = 1999
 }
 
 @InBook{TB99,
@@ -2280,6 +2336,14 @@
   year           = 2008
 }
 
+@Book{Arr62,
+  Author         = {Arrow, Kenneth},
+  Title          = {Economic {W}elfare and the {A}llocation of {R}esources
+                   for {I}nvention},
+  Publisher      = {Princeton University Press},
+  year           = 1962
+}
+
 @Article{DBCO00,
   Author         = {{D. Bradley} and {C. Ortega-Sanchez} and {A. Tyrrell}},
   Title          = {Embryonic +{I}mmunotronics: abio-{I}nspired {A}pproach
@@ -2288,10 +2352,14 @@
   year           = 2000
 }
 
-@Article{AA97,
-  Author         = {{A. Avizienis}},
-  Title          = {Toward systematic design of fault tolerant systems},
-  Journal        = {Computer},
+@InBook{Par97,
+  Author         = {Parker, L.},
+  Editor         = {Bolles, R., Bunke},
+  Title          = {Intelligent robots: {S}ensing, modeling, and planning},
+  Chapter        = {Behavior-Based Cooperative Robotics Applied to
+                   Multi-Target Observation},
+  Publisher      = {R. Bolles, H. Bunke, and H. Noltemeier. World
+                   Scientific},
   year           = 1997
 }
 
@@ -2311,5 +2379,16 @@
                    de Colombia},
   month          = dec,
   year           = 1999
+}
+
+@Article{JQJG08,
+  Author         = {{J. Quiza} and {J. Gonz\'alez} and {G. Hernandez}},
+  Title          = {Estudio de {F}abricantes y {F}amilias de
+                   {M}icrocontroladores y {M}icorprocesadores
+                   {A}plicacados a {S}istemas de {C}ontrol e
+                   {I}nstrumentaci\'on},
+  Journal        = {I Congreso Internacional de Gesti\'on Tecnol\'ogica e
+                   Innovaci\'on.},
+  year           = 2008
 }
 
