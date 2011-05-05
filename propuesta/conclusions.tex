@@ -242,9 +242,141 @@ Podemos observar en la tabla \ref{cidei_vs_linuxencaja} que el CIDEI a pesar de 
 
 Adicionalmente, los resultados de vigilancia tecnológica \cite{JQYP08}, \cite{JQJG08}, \cite{DA08} no reflejan la realidad del país, hacen estudios de tecnologías que su utilizan en Colombia desde mediados de los 90s (CPLDs, FPGAs, procesaadores de 8 bits) y son de uso común en la mayoría de las facultades de las universidades más reconocidas del país; lo que refleja una desconexión entre este centro y las universidades del país. Debido a esto, se crean proyectos de investigación financiados por el estado donde se pretende utilizar dispositivos lógicos programables para dar solución a todas las necesidades de la industria\footnote{Esta información fue obtenida directamente del CIDEI cuando el autor de esta investigación les diseñaba un curso de capacitación en diseño digital utilizando lenguajes de descripción de hardware}; lo que no es necesariamente la opción más económica y eficiente ya que como se indicó en el capítulo \ref{ch:embedded} las primeras etapas de un proceso de diseño no debe tener dependencias de tipo tecnológico, y solo después de tener el modelo del sistema y de las funciones que implementan su funcionalidad se debe decidir el particionamiento final; lo que propone el CIDEI es saltarse estas etapas e implementar todas las funciones en hardware; lo que demuestra falta de claridad en varios conceptos.
 
-En conclusión, el presente trabajo ha aportado más a la sociedad en el poco tiempo que lleva su etapa de difusión y los conocimientos generados por él han sido utilizados en varias de las universidades más importantes del país. Es necesario resaltar el esquema de los proyectos realizados por el CIDEI con las empresas, en el que se proporciona capacitación y soporte para el desarrollo de proyectos conjuntos; sin embargo, la falta de claridad en la metodología de diseño y el desconocimiento del estado de las universidades en Colombia, y la falta de personal calificado hacen que este esquema no produzca los resultados esperados.
+En conclusión, el presente trabajo ha aportado más a la sociedad en el poco tiempo que lleva su etapa de difusión y los conocimientos generados por él han sido utilizados en varias de las universidades más importantes del país. Es necesario resaltar el esquema de los proyectos realizados por el CIDEI con las empresas, en el que se proporciona capacitación y soporte para el desarrollo de proyectos conjuntos; sin embargo, la falta de claridad en la metodología de diseño y el desconocimiento del estado de las universidades en Colombia, y la falta de personal calificado hacen que este esquema no produzca los resultados esperados. Las diferencias entre este trabajo y los proyectos realizados por el CIDEI, son:
+
+\begin{itemize}
+ \item Contacto con la academia (universidades, SENA, Escuela tecnológica Técnico Central), 
+ \item Conocimiento del estado de la industria electrónica del país y de las empresas manufactureras en el exterior.  
+ \item Generación de conocimiento.
+ \item El conocimiento es un bien público y el acceso a él es garantizado.
+ \item Mecanismos de difusión públicos.
+ \item Se proporciona una alternativa económica basada en software y hardware libre.
+ \item Contactos con las empresas manufactureras asiáticas
+\end{itemize}
 
 
 \subsection{Transferencia Tecnológica desde Corea}
 
-En la actualidad se está evaluando la posibilidad de realizar una transferencia tecnológica entre el estado Colombiano y dos centros de desarrollo coreanos Electronics and Telecommunications Research Institute (ETRI) y Korea Electronics Technology Institute (KETI) en el área de aplicación de televisión digital. Como parte de la transferencia se contempla transferir conocimientos necesarios para realizar la fabricación de la plataforma de desarrollo 
+En la actualidad se está evaluando la posibilidad de realizar una transferencia tecnológica entre el estado Colombiano y dos centros de desarrollo coreanos Electronics and Telecommunications Research Institute (ETRI) y Korea Electronics Technology Institute (KETI) en el área de aplicación de televisión digital. Como parte de la transferencia se contempla transferir conocimientos necesarios para realizar la fabricación de una plataforma de desarrollo que pueda ser utilizada en este tipo de aplicaciones. La tabla \ref{KETI_vs_linuxencaja} muestra los costos de esta transferencia (en miles de dólares) y el ahorro que se puede realizar gracias a los resultados de este trabajo.
+
+
+\begin{table}[htpb]
+  \caption{Comparación de precios entre la transferencia ofrecida por Corea y el costo utilizando los conocimientos generados en este trabajo}
+  \centering
+    \footnotesize
+    \begin{tabular}{|p{6.7cm}|p{2cm}|p{5,5cm}|}
+      \hline
+      \textbf{Item}       & \textbf{KETI-ETRI}  & \textbf{Este trabajo}
+      \\ \hline 
+      Equipos de cómputo (25) con licencias de:
+      \begin{itemize}
+       \item Windows, VMWARE, \footnote{KETI/ETRU utilizan Microsoft Windows y un software comercial para emular Linux (VMWARE)}
+       \item Android SDK, Apache
+      \end{itemize}
+                             & 115.000                    & 50.000\footnote{Se eliminan las licencias de windows y VMWARE al utilizar Linux, Android SDK y Apache son gratuitos}
+      \\ \hline 
+      Plataforma de desarrollo (15)
+      \begin{itemize}
+       \item Procesador ARM, 512MB DDR, MicroSD
+       \item LCD 800 x 480, touch screen
+       \item USB 2.0, WiFi, Camera.
+       \item Bluetooth. Android OS.  
+      \end{itemize}
+                          & 60.000                    & 4.500 \footnote{Existen dispositivos comerciales con estas características que pueden ser utilizados en el desarrollo utilizando ingeniería inversa, como se hizo en este trabajo} 
+      \\ \hline 
+      Software para simulación:
+      \begin{itemize}
+       \item Qemu con soporte para OpenMoko 
+      \end{itemize}
+                          & 132.000                   & 0 \footnote{Qemu es gratuito, el proyecto del celular abierto OpenMoko distribuye de forma gratuita su simulador}
+      \\ \hline 
+      Depuración hardware:
+      \begin{itemize}
+       \item Trace 32 de Laterbach (15)
+      \end{itemize}
+                         & 180.000                   & 2.000 \footnote{El proyecto OpenOCD permite realizar este tipo de pruebas utilizando una interfaz con el puerto JTAG de los procesadores, en este trabajo se cuenta con esta interfaz y con la forma de realizar la depuración utilizando el protocolo JTAG.}
+
+      \\ \hline 
+      Herramientas CAD:
+      \begin{itemize}
+       \item PADS de Cadence (15)
+      \end{itemize}
+                         & 180.000                   & 0 \footnote{Este trabajo proporciona una metodología para utilizar herramientas abiertas en todo el proceso de fabricación de PCBs}
+      \\ \hline 
+      Plataforma hardware (15):
+      \begin{itemize}
+       \item Especificaciones de la plataforma de desarrollo
+       \item Archivos para reproducir el hardware:
+         \begin{itemize}
+          \item Esquemáticos.
+          \item Archivos Gerber.
+         \end{itemize}
+       \item Código fuente:
+         \begin{itemize}
+          \item bootloader: u-boot.
+          \item Kernel de Linux.
+          \item Android OS.
+         \end{itemize}
+       \item documentación
+         \begin{itemize}
+          \item Guía de usuario.
+          \item Port de Android.
+         \end{itemize}
+      \end{itemize}
+                         & 120.000                   & 50.000 
+                                                       \begin{itemize}
+                                                        \item Archivos para \textbf{Modificar} la plataforma \footnote{Plataforma \textit{hardware copyleft}}
+
+                                                        \item Código fuente:
+                                                          \begin{itemize}
+                                                           \item u-boot
+                                                           \item Kernel de Linux.
+                                                           \item Android OS.
+                                                          \end{itemize}
+                                                        \item Documentación:
+                                                           \begin{itemize}
+                                                            \item Tutoriales.
+                                                            \item Proceso completo de diseño.
+                                                            \item Cursos en línea.
+                                                            \item Listas de discusión.
+                                                           \end{itemize}
+                                                       \end{itemize}
+
+      \\ \hline 
+
+    \end{tabular}
+  \label{KETI_vs_linuxencaja}
+\end{table}
+
+\newpage
+
+Como podemos observar en la tabla \ref{KETI_vs_linuxencaja}, los costos de esta parte de la transferencia\footnote{El costo total de la transferencia cuesta 2 millones de USD} son muy elevados (787.000 USD), frente al costo que tendría realizar las mismas actividades con los conocimientos adquiridos en este trabajo (106.500). Adicionalmente, la transferencia que ofrece Corea no tiene en cuenta la capacitación necesaria para que el país pueda absorber y asimilar estos conocimientos de tal forma que pueda generar sus propios productos lo que constituye el éxito de la transferencia.
+
+El uso de herramientas comerciales en la etapa de diseño hace que los costos de este tipo de productos aumente de forma considerable, en este ejemplo las herramientas de diseño de circuitos impresos, el sistema operativo y un emulador de Linux cuestan 245.000 USD, y son reemplazadas sin costo alguno por las herramientas utilizadas en este trabajo.
+
+\section{Trabajo Futuro}
+
+\subsection{Difusión}
+Es necesario hacer que los diferentes sectores de la sociedad sean conscientes de la importancia de esta tecnología y la capacidad que tiene el país para desarrollar dispositivos comerciales con ella. Es muy importante que la sociedad prefiera y proteja los productos realizados internamente. Para esto se debe difundir los resultados de este trabajo en los siguientes sectores:
+
+\begin{itemize}
+ \item \textbf{En los centros de formación profesional:} El proceso de difusión realizado hasta el momento se ha realizado con algunas de las universidades bogotanas más reconocidas y con la Universidad Industrial de Santander. Es necesario hacer llegar este conocimiento a todas los centros de formación con programas relacionados con la electrónica digital. 
+
+ \item \textbf{En los centros de enseñanza básica y media} Utilizar herramientas tecnológicas para la enseñanza en centros de educación básica y media hace que desde niños los estudiantes se familiaricen con estas tecnologías y entiendan su importancia. Para ello se escogió la robótica ya que su utilización en la educación básica y media ha venido en aumento, y su uso adecuado permite el desarrollo de habilidades asociadas al constructivismo (aprender  haciendo), y al aprendizaje significativo (aprendizaje relacionado con necesidades, intereses propios) haciendo que el estudiante aprenda el valor de la nueva tecnología y como esta puede ser  utilizada para dar solución a problemas comunes. Existen dos formas de utilizar la robótica en la educación [10]: La robótica como objeto de aprendizaje: enfocado a aspectos relacionados con el robot como construcción, programación e inteligencia artificial y la robótica como herramienta de aprendizaje: visto como proyecto interdisciplinario que involucra ciencias, matemáticas, tecnologías de la información y comunicaciones. Linuxencaja cuenta con 2 plataformas robóticas { cita } que van a ser utilizadas para alcanzar estos objetivos y se está trabajando en los siguientes proyectos:
+
+
+[10] D. Alimisis and C. Kynigos. Teacher Education on Robotics-Enhanced  Constructivist Pedagogical Methods. School of Pedagogical and Technological Education (ASPETE), 2009.
+
+
+
+    \begin{itemize}
+     \item Davinci: 
+     \item Maloka: 
+    \end{itemize}
+
+
+\end{itemize}
+
+
+\subsection{Creación de cursos en línea}
+
