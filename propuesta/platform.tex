@@ -1,4 +1,3 @@
-\appendix
 \chapter{PLATAFORMA DE DESARROLLO ECBOT}
 \label{ap:platform}
 
@@ -6,34 +5,8 @@
 \section{Introducción}
 En esta sección se realizará una explicación detallada del proceso de adaptación de Linux a la familia de plataformas ECB\_AT91, este proceso es aplicable a otros dispositivos que trabajen con procesadores soportados por la distribución de Linux. Adicionalmente, se explicará de forma detallada el funcionamiento de este sistema operativo, el proceso de arranque y su puesta en marcha, así como las principales distribuciones, aplicaciones y librerías disponibles para el desarrollo de aplicaciones. Esta y otra información recolectada durante más de tres años permite que la industria y la academia desarrollen aplicaciones comerciales utilizando herramientas de diseño modernas.
 
-\subsection{Contribuciones al desarrollo tecnológico en Colombia}
 
-Durante la realización de esta investigación se llevaron a cabo varias actividades, cuyo objetivo principal es contribuir al desarrollo tecnológico en Colombia, como se expuso anteriormente el país presenta serias dificultades en este campo y es deber de la comunidad académica nacional atacar los problemas locales. Por esta razón unoa de las matas del presente trabajo fué la creación de una plataforma hardware que permita implementar las diferentes modelos bio-inspirados. En la mayoría de estudios similares no se contempla la creación de estas plataformas ya que en los países donde se desarrollan la investigación existe una industria electrónica competitiva y que esta al tanto de los desarrollos tecnológicos a nivel mundial. Como se mencionó anteriormente este no es el caso de nuestro pais, en la mayoría de las industrias nacionales y en las facultades relacionadas con la electrónica se trabaja con tecnologías de hace 30 años (Familias 74 TTL y 40 CMOS) y se utilizan herramientas de programación de bajo nivel como el lenguaje ensamblador.
-
- A continuación se mestran una lista del trabajo realizado sobre algunas de las recomendaciones dadas por los estudios acerca del desarrollo tecnológico en Colombia; vale la pena anotar que no todas están dentro del alcance de este trabajo, se eligieron en las que se podía hacer un aporte significativo.
-
-\begin{enumerate}
-
-  \item Realización de proyectos de aplicación: La primera decisión que se tomó en cuanto a la naturaleza de esta investigación fué la de generar una aplicación física real que validara los modelos propuestos, este trabajo no se limitará a realizar simulaciones, sino que se construirá una plataforma que sea tecnológicamente ``moderna'' y que esté al nivel de las plataformas utilizadas en estudios similares. Para esto se diseñó la primer \textit{Computadora en una sola placa} (SBC \footnote{Single Board Computer}) que utiliza un procesador de 32 Bits y utiliza Linux como sistema operativo. Adicionalmente, se crearon plataformas de desa
-  
-  \item Infraestructura institucional que impulse la actualización tecnológica en el sector mediante desarrollo de proyectos de tecnología de punta con una posible transferencia de tecnología: En las condiciones actuales no es posible que la industria electrónica del país se modernice por sí sola, es necesario que las Universidades doten al sistema productivo con profesionales que tengan habilidades especiales, siendo la más importante la capacidad de diseñar y construir dispositivos que puedan ser explotados comercialmente. En la actualidad, nuestros estudiantes se limitan a analizar y a simular la mayoría de los procesos, lo que es necesario pero no suficiente, el nivel de las implementaciones físicas que realizan en los últimos semestres de sus carreras es muy baja y un mínimo porcentaje llegan a un diseño de circuito Impreso. En la Sección \ref{academic} mostraremos los cambios introducidos en las asignaturas de la línea de Electrónica Digital y como estos generan las habilidades mencionadas anteriormente.       
-
-  \item El contacto con las empresas no debe ser encargada únicamente a los estudiantes, la Universidad debe desarrollar las competencias que la empresa requiere: Se realizó una investigación del estado actual de las empresas involucradas en el proceso de manufactura de dispositivos relacionados con la electrónica digital, se identificaron las empresas proveedoras de servicios con el fín de determinar que procesos se pueden realizar en el país, así mismo se identificaron algunas de las necesidades del sector productivo. En la sección \ref{industry} se muestra un ejemplo de creación de empresa con soporte de la Universidad, específicamente del presente trabajo.
-  
-  \item Interacción entre Universidades, Conviene que buena parte de los trabajos realizados en doctorado sean de investigación aplicada, orientadas a mejorar la productividad del sector empresarial: Es importante el dialogo continuo entre todas las Universidades del país y la divulgación de sus investigaciones, en muchas ocasiones los escasos recursos económicos son utilizados para repetir temas de investigación, o sus resultados no son dados a conocer. Adicionalmente, los programas académicos de programas curriculares equivalentes presentan diferentes enfoques y diferentes niveles de excelencia, lo que impide el conocimiento de los trabajos realizados.
-  
-  \item Innovación curricular, actualización continua de profesionales: Durante el último año se introdujeron cambios en los contenidos de las asignaturas del área de sistemas digitales, estos cambios tienen como objetivo crear una metodología de diseño unificada que pueda ser utilizada en los tres cursos, del mismo modo se realizó una actualización tecnológica en cuanto al software y al hardware utilizado en estos cursos, se eliminó el uso de tecnologías viejas y se abrió el paso a tecnologías y metodología de diseño que se utilizan en cursos similares en Universidades de países desarrollados.
-  
-  
-  \item Necesidad de mejorar las competencias y habilidades generales de los ingenieros, (continuo aprendizaje) habilidad para innovar, investigar, desarrollar nueva tecnología: Se crearon alianzas con diferentes profesiones con el fín de crear condiciones de trabajo cercanas a las que se puedan encontrar en la industria, es importante para la situación del país que nuestros egresados sean capáces de crear nuevos productos que puedan satisfacer las necesidades de la industria local. Por esta razón durante este trabajo se dió un especial énfasis en el proceso de fabricación de dispositivos electrónicos.
-  
-\end{enumerate}
-
-
-\subsubsection{Contribuciones a Nivel Tecnológico y Académico}
-
-
-\subsubsection{Métodos de arranque}
+\subsection{Métodos de arranque}
 
 Como es obvio todo SoC debe ser programado para que pueda ejecutar una determinada tarea; este programa debe estar almacenado en una memoria no volátil y debe estar en el formato requerido por el procesador. Normalmente los SoCs proporcionan varios caminos (habilitando diferentes periféricos) para hacer esto. Un programa de inicialización \textit{(boot program)} contenido en una pequeña ROM del SoC se encarga de configurar, y revisar ciertos periféricos en búsqueda de un ejecutable, una vez lo encuentra, lo copia a la memoria RAM interna y lo ejecuta desde allí. No sobra mencionar que este ejecutable debe estar enlazado de tal forma que todas las secciones se encuentren en el espacio de la memoria RAM interna (0x0 después del REMAP \footnote{Los procesadores ARM pueden intercambiar el sitio de la memoria RAM interna y la memoria no volátil}). El AT91RM9200 posee una memoria interna SRAM de 16 kbytes. Después del reset esta memoria esta disponible en la posición 0x200000, después del remap esta memoria se puede acceder en la posición 0x0. Algunos fabricantes, en la etapa de producción graban en las memorias no volátiles las apliacaciones definitivas, y soldan en la placa de circuito impreso los dispoditivos programados, esto es muy conveniente cuando se trabaja con grandes cantidades ya que ahorra tiempo en el montaje de los dispositivos.
 
@@ -57,7 +30,7 @@ El programa descargado a la memoria SRAM interna debe ser capaz de programar una
 \subsection{Interfaz JTAG}
 A mediados de los 1970s, la estructura de pruebas para tarjetas de circuito impreso (PCB, Printed Circuit Boards) se basaba en el uso de la técnica ``bed-of-nails''. Este método hacia uso de un dispositivo que contenía una serie de puntos de prueba, que permitían el acceso a dispositivos en la tarjeta a través de puntos de prueba colocados en la capa de cobre, o en otros puntos de contacto convenientes. Las pruebas se realizaban en dos fases: La prueba del circuito apagado y la prueba del circuito funcionando. Con la aparición de los dispositivos de montaje superficial se empezó a colocar dispositivos en las dos caras de la tarjeta, debido a que las dimensiones de los dispositivos de montaje superficial son muy pequeñas, se disminuyó la distancia física entre las interconexiones, dificultando el proceso de pruebas.
 
-A mediados de los 1980s un grupo de ingenieros de pruebas miembros de compañías electrónicas Europeas se reunieron para examinar el problema y buscar posibles soluciones. Este grupo se autodenominó JETAG (Joint European Test Action Group). El método de solución propuesto por ellos estaba basado en el concepto de un registro de corrimiento serial colocado alrededor de la frontera dispositivo, de aquí el nombre ?Boundary Scan?. Después el grupo se asoció a compañías norteamericanas y la ``E'' de ``European'' desapareció del nombre de la organización convirtiéndose en JTAG (Join Test Action Group).
+A mediados de los 1980s un grupo de ingenieros de pruebas miembros de compañías electrónicas Europeas se reunieron para examinar el problema y buscar posibles soluciones. Este grupo se autodenominó JETAG (Joint European Test Action Group). El método de solución propuesto por ellos estaba basado en el concepto de un registro de corrimiento serial colocado alrededor de la frontera dispositivo, de aquí el nombre ``Boundary Scan''. Después el grupo se asoció a compañías norteamericanas y la ``E'' de ``European'' desapareció del nombre de la organización convirtiéndose en JTAG (Join Test Action Group).
 
 \subsubsection{Arquitectura BOUNDARY SCAN} 
 A cada señal de entrada o salida se le adiciona un elemento de memoria multi-propósito llamado ``Boundary Scan Cell'' (BSC). Las celdas conectadas a los pines de entrada reciben el nombre de ``Celdas de entrada'', y las que están conectadas a los pines de salida ``Celdas de salida''. En la Figura \ref{jtag_basics} se muestra esta arquitectura.
@@ -2269,7 +2242,7 @@ Existen tres tipos de dispositivos en Linux \cite{JCAR05}:
 
 \begin{figure}[h]
   \begin{center} \includegraphics[scale=.5]{./images/kernel_module} \end{center}
-  \caption{ Interacción entre el área de usuario y el driver del dispositivo. Fuente: \cite{Mo05}}\label{kernel_module}
+  \caption{ Interacción entre el área de usuario y el driver del dispositivo.}\label{kernel_module}
 \end{figure}
 
 
@@ -2288,17 +2261,18 @@ crw-rw----  1 root uucp     4,  65 Nov 27 ttyS1
 
 Los archivos tipo caracter están identificados por una \textit{``c''} en la primera columna, mientras que los dispositivos tipo bloque por una \textit{``b''}. Podemos observar que existen dos números (5ta y 6ta columna) que identifican al driver, el número de la 5ta columna recibe el nombre de \textit{major number} y el de la sexta \textit{minor number}; estos números son utilizados por el sistema operativo para determinar el dispositivo y el driver que deben ser accesados ante una solicitud a nivel de usuario.
 
-El \textit{major number} identifica la clase o grupo del dispositivo, mientras que el \textit{minor number} se utiliza para identificar sub-dispositivos (Ver Figura \ref{major}).
+El \textit{major number} identifica la clase o grupo del dispositivo, mientras que el \textit{minor number} se utiliza para identificar sub-dispositivos (Ver Figura \ref{kernel_module}).
 
 \begin{figure}[h]
-  \begin{center} \includegraphics[scale=.5]{./images/major} \end{center}
-  \caption{ \textit{major} y \textit{minor} footnote{http://uw713doc.sco.com/en/HDK\_concepts/ddT\_majmin.html} }\label{kernel_module}
+  \begin{center} \includegraphics[scale=.7]{./images/major} \end{center}
+   \caption{Números \textit{major} y \textit{minor} de un driver} 
+  \label{kernel_module}
 \end{figure}
 
-El kernel de linux permite que los drivers compartan el número mayor, como el caso del disco duro, hda posee dos particiones hda1 y hda2, las cuales son manejadas por el mismo driver, pero se asigna un número menor único a cada una; lo mismo sucede con el puerto serie.
+El kernel de Linux permite que los drivers compartan el número mayor, como el caso del disco duro, hda posee dos particiones hda1 y hda2, las cuales son manejadas por el mismo driver, pero se asigna un número menor único a cada una; lo mismo sucede con el puerto serie.
 
 \subsubsection{Implementación del driver de un LED}
-A continuación se realizará la descripción de un driver tipo caracter para un dispositivo muy sencillo, un LED \cite{OPPS05}. Este ejemplo fue implementado en un procesador PXA255 de Intel y realiza las siguientes operaciones:
+A continuación se realizará la descripción de un driver tipo caracter para un dispositivo muy sencillo, un LED. Este ejemplo fue implementado en un procesador PXA255 de Intel y realiza las siguientes operaciones:
 
 \begin{itemize}
 \item \textit{init}: Se ejecuta cuando se carga el módulo, el LED se apagará.

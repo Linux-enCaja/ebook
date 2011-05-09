@@ -2,9 +2,6 @@ This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: propuesta_tesis.aux
 The style file: unsrt.bst
 Database file #1: biblio.bib
-Warning--I didn't find a database entry for "NC11"
-Warning--I didn't find a database entry for "Mo05"
-Warning--I didn't find a database entry for "OPPS05"
 Warning--empty year in UNE
 Warning--empty year in WM91
 Warning--empty journal in ETPoSSI(09
@@ -19,7 +16,7 @@ Warning--empty year in BBS
 Warning--empty year in JF
 You've used 93 entries,
             1791 wiz_defined-function locations,
-            919 strings with 17870 characters,
+            913 strings with 17842 characters,
 and the built_in function-call counts, 13180 in all, are:
 = -- 1057
 > -- 571
@@ -58,4 +55,4 @@ warning$ -- 12
 while$ -- 94
 width$ -- 95
 write$ -- 920
-(There were 15 warnings)
+(There were 12 warnings)

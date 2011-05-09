@@ -27,49 +27,47 @@
 % \noindent\keywordname\enspace\ignorespaces#1}
 
 \begin{document}
-
-\conferenceinfo{GECCO 2011}{2011 Genetic and Evolutionary Computation Conference}
-
-
-% \mainmatter  % start of an individual contribution
-
-% first the title is needed
+\conferenceinfo{GECCO'11,} {July 12--16, 2011, Dublin, Ireland.} 
+\CopyrightYear{2011} 
+\crdata{978-1-4503-0690-4/11/07} 
+\clubpenalty=10000 
+\widowpenalty = 10000
 \title{Intrinsic Evolvable Hardware for Combinatorial Synthesis Based on SoC+FPGA and GPU Platforms}
-
-\numberofauthors{2}
-
+\numberofauthors{4}
 \author{
-\alignauthor Artificial Life, Robotics, Evolvable Hardware
-% \alignauthor Carlos Camargo Bare\~{n}o\\
-%        \affaddr{Universidad Nacional de Colombia}\\
-%        \email{cicamargoba@unal.edu.co}
-% \alignauthor C\'esar Pedraza\\
-%        \affaddr{Universidad Santo Tomï¿½s de Aquino}\\
-%        \email{cesarpedraza@usantotomas.edu.co}
+\alignauthor
+Carlos Camargo Bareño\\
+       \affaddr{Universidad Nacional}\\
+%        \affaddr{Bogotá, Colombia}\\
+       \email{cicamargoba@unal.edu.co}
+\alignauthor
+Cesar Pedraza Bonilla\\
+       \affaddr{Universidad Santo Tomás}\\
+%        \affaddr{Bogotá, Colombia}\\
+       \email{cesarpedraza@usantotomas.edu.co}
+\and
+\alignauthor
+Luis Fernando Niño \\
+       \affaddr{Universidad Nacional}\\
+%        \affaddr{Bogotá, Colombia}\\
+       \email{lfninov@unal.edu.co }
+\alignauthor
+Jose Martinez Torre\\
+       \affaddr{Universidad Rey Juan Carlos}\\
+%        \affaddr{Madrid, España}\\
+       \email{joseignacio.martinez@urjc.es}
 }
-
-%\authorrunning{Short form of author list} % if too long for running head
-
-
-% the affiliations are given next; don't give your e-mail address
-% unless you accept that it will be published
-% \institute{Universidad Nacional de Colombia. \\  Facultad de Ingenier\'ia, Bogot\'a Colombia \\
-% Universidad Santo Tom\'as \\  Facultad de Ingenier\'a de Telecomunicaciones, Bogot\'a Colombia \\
-% \mailsa, \mailsb\\
-% }
-
 \maketitle
-
 \begin{abstract}
-Evolutionary algorithms are another option for combinatorial synthesis because they allow for the generation of hardware structures that cannot be obtained with other techniques. This paper presents a novel a parallel genetic programming (PGP) boolean synthesis implementation on a low cost cluster of an embedded platform called SIE, based on a 32-bit processor and a Spartan-3 FPGA. Some tasks of the PGP have been accelerated through a hardware coprocessor called FCU, that allows to evaluate individuals onchip as intrinsic evolution. Results have been compared with GPU and HPC implementations, resulting in speedup values up to approximately 2 and 180 respectively.  
-
-TRACK: Genetic Programming.
+This paper presents a novel a parallel genetic programming (PGP) boolean synthesis implementation on a low cost cluster of an embedded open platform called SIE. Some tasks of the PGP have been accelerated through a hardware coprocessor called FCU, that allows to evaluate individuals onchip as intrinsic evolution. Results have been compared with GPU and HPC implementations, resulting in speedup values up to approximately 2 and 180 respectively. 
 \end{abstract}
 
+% A category with the (minimum) three required fields
+\category{B.5.2}{Hardware}{R-T-L implementation}[optimization]
 
-\begin{keywords}
-Embedded systems, Evolutionary algorithms, boolean synthesis, cluster.
-\end{keywords}
+\terms{Design, Performance}
+
+\keywords{Hardware copyleft, Evolutionary, boolean synthesis}
 \section{Introduction.}
 
 One of the main goals in combinatorial synthesis consists of finding compact boolean expressions in the sum of products (SOP) form with the smallest possible number of variables and terms. Boolean algebra offers a way to find compact expressions, but this process depends on the designer's experience, resulting in non-optimal or inadequate expressions. There are other techniques available for combinatorial synthesis such as the Karnaugh maps, the Quine-McCluskey algorithm, the Reed-Muller algorithm. In general terms, these algorithms have disadvantages such as exponential complexity, lack of restrictions management, and multiple solutions. 

@@ -1,0 +1,322 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introducción}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+A medida que se extiende el campo de aplicación de los sistemas digitales, lo hacen las exigencias de funcionamiento a ellos impuestas, nuevos retos en el diseño se presentan a medida que los sistemas embebidos se integran a nuestra vida diaria. Estos dispositivos disponen de grandes capacidades de c\'alculo y de comunicaci\'on, pero a la vez, poseen un grado de integraci\'on tal que ser\'an invisibles; para aclarar como se puede lograr esta invisibilidad, imagínese que existen sistemas embebidos construidos con t\'ecnicas de microfabricación y que son capaces de tomar su energ\'{\i}a de fuentes alternas como la temperatura, la radiaci\'on solar, o a partir de fen\'omenos qu\'{\i}micos, debido a su reducido tamaño, estos sistemas pueden integrarse a objetos o pintarse sobre ellos, de tal forma que no sean visibles ante los ojos humanos. Esta desaparici\'on no solo ser\'a una consecuencia de la tecnolog\'{\i}a, sino de la sicolog\'{\i}a humana; cuando las personas asimilan perfectamente algo y se convierte en parte de la vida diaria no se es consciente de su utilizaci\'on.
+
+Esta situación ha dado origen a una industria gigantesca que proporciona dispositivos que satisfacen las nuevas necesidades humanas, el volumen de producción de este tipo de aplicaciones es tal, que el número de procesadores utilizados en ellas ha sobrepasado ampliamente a los procesadores utilizados en aplicaciones tradicionales como estaciones de trabajo y computadores personales. En muchas áreas, los procesadores para aplicaciones específicas han desplazado por completo a los computadores personales, esto, unido a la saturación en el mercado tradicional de software ha originado una migración de muchas compañías y profesionales al diseño de aplicaciones específicas, donde el sistema está diseñado para cumplir una función determinada.
+
+Gracias a esta enorme y creciente demanda, la industria semiconductora presenta una gran dinámica en la creación de nuevos productos que facilitan el desarrollo de nuevas aplicaciones, a diario nos encontramos con dispositivos de consumo masivo como reproductores MP4, cámaras de video, teléfonos celulares que se superan en capacidad y funcionalidad al paso de cortos períodos de tiempo. Esto ha originado una disminución dramática en el costo de los dispositivos semiconductores necesarios para construir estos productos, y a su vez, un aumento en la funcionalidad de los mismos, lo que se refleja en la necesidad de un número cada vez menor de componentes para implementar este tipo de aplicaciones. Por otro lado, se generó un cambio en la forma de suministrar información por parte de los fabricantes sobre la programación y funcionamiento de sus dispositivos, pasando de un esquema de confidencialidad a una totalmente abierto donde se suministra todo lo necesario para entender y utilizar sus productos. Esta dinámica también se presenta en las herramientas de desarrollo necesarias para crear la funcionalidad deseada; los sistemas propietarios se utilizan cada vez menos gracias a la oferta de entornos de desarrollo abiertos creados y mantenidos por una comunidad de desarrolladores que suministran sus conocimientos para el beneficio colectivo, fruto de esta tendencia se han creado aplicaciones tan importantes como el movimiento de software libre y de código abierto (FOSS por sus siglas en inglés), el sistema operativo Linux, y recientemente la plataforma para dispositivos móviles Android.
+
+Todo lo anterior ha generado un clima perfecto para la creación de empresas que utilicen estas facilidades en el desarrollo de productos que puedan ser comercializados local o globalmente, y de esta forma contribuir a mejorar la calidad de vida de la sociedad. Un ejemplo de esto lo podemos observar en algunos países asiáticos, donde se fortaleció la industria manufacturera de dispositivos electrónicos hasta el punto de dar empleo a una gran cantidad de personas con diferentes niveles de formación y desplazar casi por completo la manufactura de este tipo de productos en el resto del mundo. Desafortunadamente, la situación en países en vía de desarrollo como Colombia es totalmente diferente; el uso de tecnologías, metodologías de diseño y técnicas de fabricación obsoletas; falta de políticas gubernamentales que estimulen la transferencia real de tecnologías y del conocimiento asociado a ellas; la desconexión entre la academia con los problemas sociales del país y las necesidades de las empresas, han sumido a su industria electrónica en un atraso tal que dependen por completo de productos manufacturados en el exterior, y la mayoría se convierten en representantes de firmas extranjeras sin capacidad de creación local.
+
+Las canales de transferencia tradicionales que se limitan a la compra de equipo y a la capacitación para usarlo y mantenerlo en operación no suministra los conocimientos necesarios para que en el país se generen productos similares adaptados al entorno social, político y económico local. Por lo que es necesario crear metodologías de transferencia que permitan la transferencia de estos conocimientos y puedan ser aplicados por diferentes sectores de la sociedad para mejorar su calidad de vida.
+
+El trabajo que se presenta aquí propone una metodología para la transferencia tecnológica y de conocimientos que busca a partir de interacciones locales generar una absorción y asimilación global de los conocimientos necesarios para el diseño, construcción y comercialización de sistemas digitales que utilicen los últimos avances en la industria de los semiconductores. Esta metodología se aplicará inicialmente en una universidad y en una empresa de base tecnológica (creada por iniciativa de la academia), para formar una comunidad que se encargue de crear herramientas para la difusión de los conocimientos adquiridos durante el proceso de transferencia (recurso). El carácter de la comunidad y del recurso (conocimiento) que ella utiliza/genera/mantiene/depura es totalmente abierto, y cualquiera que esté interesado puede utilizar/generar/mantener/depurar dicho recurso y ser miembro de esta comunidad; es decir, el conocimiento es considerado como un bien común y el acceso a él es un derecho que debe ser garantizado, esto va en contra vía con las políticas actuales de los centros de desarrollo tecnológicos existentes en el país, donde se debe pagar por el acceso a este conocimiento, a pesar de ser financiados con dineros públicos.
+
+
+\subsection{Flujo de diseño de sistemas embebidos}
+
+Los Sistemas Embebidos son sistemas heterogéneos que contienen componentes Software (microcontroladore, microprocesadores y DSPs) y Hardware (funciones implementadas en Dispositivos lógicos programables PLDs); por este motivo, es necesario adquirir habilidades en la utilización de lenguajes de programación como C o C++ para implementar las funciones software y Verilog o VHDL para la implementación de las tareas hardware; adicionalmente, deben conocer las diferentes formas de comunicación entre estos dos tipos de funciones. Aunque en el mercado existen herramientas que permiten la entrada de diseño utilizando lenguajes de alto nivel como \textit{SystemC} o \textit{SpecC} y proporcionan el código para implementar las tareas software, hardware y su interfaz de comunicación; no es recomendable utilizarlas en el ciclo de formación básico ya que impide que se conozca el flujo de diseño completo, suministrando un nivel de abstracción en el cual no es necesario conocer la arquitectura de la plataforma utilizada para la implementación.
+
+ \begin{figure}[htpb]
+   \begin{center} \includegraphics[scale=.6]{./images/ES_CDIO_flow.png}   \end{center}
+    \caption{Educación de sistemas embebidos. Tomada de:\cite{HMHK09} y modificada} \label{ES_education}
+ \end{figure}
+
+En la figura \ref{ES_education} se muestran los conceptos que deben dominar los diseñadores de sistemas embebidos, y las tareas que deben realizarse para la concepción, diseño e implementación de un sistema embebido. En gran parte de los programas académicos se estudian únicamente los temas relacionados con la concepción y diseño centrándose en las especificaciones funcionales del sistema, utilizando herramientas comerciales o COTS (Commercial off-the-shelf) para su implementación. Esta combinación genera dependencia e impide la generación de habilidades necesarias para implementar un sistema digital teniendo en cuenta restricciones económicas, físicas, eléctricas, ergonómicas, comerciales, etc. Nuestra propuesta se basa en la utilización de herramientas abiertas tanto hardware como software que permiten recorrer todo el proceso de concepción, diseño e implementación y obtener un entendimiento integral del proceso sin generar dependencia a productos comerciales.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Métodología para la transferencia tecnológica y de Conocimientos}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Este trabajo proporciona una metodología novedosa para la transferencia de los resultados de la investigación a la academia y a la industria; la cual ha sido aplicada con éxito en el área de electrónica digital del departamento de ingeniería Eléctrica y Electrónica de la Universidad Nacional; actualizando sus contenidos, metodologías de evaluación y tecnologías utilizadas. Con su aplicación a nivel nacional se pretende contribuir a la situación de la industria electrónica nacional. La figura \ref{modelo_TT_intro} ilustra los pasos de esta metodología.
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[scale=.5]{./images/modelo_transferencia_tecnologica.pdf}
+  \caption{Modelo de transferencia tecnológica.} \label{modelo_TT_intro}
+\end{figure}
+
+La metodología de la figura\ref{modelo_TT_intro} se puede dividir en tres fases: una etapa relacionada con la tecnología y conocimientos a adquirir, una etapa de adquisición y asimilación de conocimientos y una etapa de difusión. Durante las dos primeras etapas, se adquieren los conocimientos necesarios para poder generar productos locales que utilicen la tecnología a transferir, asegurando con esto que esta ha sido completamente asimilada. En la etapa de difusión se hacen llegar estos conocimientos a los diferentes sectores de la sociedad interesados en él con el fin de garantizar la formación de personal con las habilidades necesarias para adaptarse a cambios en la tecnología y que proporcione soluciones a problemas locales utilizando los conocimientos asociados a ella. En este estudio se transfirieron conocimientos a: la academia (Universidad Nacional) y a la industria (empresa creada con dicho fin); en la academia estos conocimientos se utilizaron para actualizar los programas académicos de las asignaturas relacionadas con el diseño digital y en la industria para generar nuevos productos comercializables. Esta metodología muestra como los resultados de la investigación a nivel de doctorado pueden ser utilizadas de forma inmediata por la academia y por la industria, creando lazos entre ellas que se traducen en beneficios y alianzas.
+
+\subsubsection{Elección de la tecnología y vigilancia tecnológica }
+Los primeros pasos están relacionados con la tecnología y el conocimiento a adquirir; la \textit{vigilancia tecnológica} y la \textit{elección de la tecnología}, permiten conocer los últimos avances en el área previniendo estudiar tecnologías obsoletas o poco utilizadas, así mismo, se evalúa el estado de la plataforma tecnológica existente para identificar facilidades y necesidades; con esta información se buscó una tecnología que puedo ser implementada con el estado actual de la plataforma tecnológica; se identificaron los niveles de complejidad de dicha tecnología para determinar una alternativa que pudo implementarse y dio resultados a mediano y corto plazo con bajas inversiones de capital. Se determinó que la mejor opción a mediano y corto plazo es el desarrollo de sistemas embebidos que utilicen SoCs comerciales, herramientas de desarrollo abiertas (GNU toolchain, Linux, Qt, Android, etc) y (mientras se genera la suficiente oferta local de servicios) los servicios de manufactura de la industria asiática. 
+
+\subsubsection{Adquisición}
+Esta elección (uso de system on Chip - SoC) facilitó la \textit{adquisición} de productos tecnológicos que los utilizan, ya que no es necesario firmas acuerdos de confidencialidad o similares. En la actualidad es posible adquirir dispositivos semiconductores y demás componentes necesarios para la fabricación de sistemas digitales, sin embargo, para poder competir en precios con productos del mercado asiático, es necesario entender la dinámica de su industria manufacturera, y establecer relaciones con los proveedores de bienes y servicios en esta región; este trabajo realizó este estudio y formó lazos con industrias manufactureras de Taiwan, las cuales han proporcionado servicios de manufactura a precios que permiten competir con los productos provenientes del exterior.
+
+\subsubsection{Adaptación}
+Haciendo uso de la ingeniería inversas sobre plataformas comerciales se obtuvieron conocimientos sobre: como están construidos; como funcionan y como se programan los dispositivos comerciales adquiridos en la etapa anterior; su utilización facilita el aprendizaje del funcionamiento de la tecnología, permitiendo el estudio de metodologías de diseño y la evaluación de herramientas de desarrollo; reduciendo el tiempo y el costo de desarrollo de plataformas propias diseñadas para dicho fin. En este trabajo se realizó un estudio gradual de las características de un sistemas digital, comenzando con su arquitectura, siguiendo con su programación y finalizando con las técnicas de fabricación y producción masiva (se fabricaron cerca de 300 unidades).
+
+\subsubsection{Absorción y asimilación}
+En la fase de \textit{absorción y asimilación} se realizaron actividades que integraron nuevo conocimiento para el país pero que no es nuevo para el mundo y fueron dirigidas al desarrollo o adaptación de metodologías de diseño y procesos de fabricación, desarrollo de productos tecnológicos propios, enseñanza de metodologías de diseño y procesos de fabricación. En esta etapa se diseñaron, construyeron y programaron una serie de plataformas de desarrollo que ayudaron a entender el proceso completo concepción - diseñó - implementación - producción; adicionalmente, se ayudó a la empresa Bogotana \textit{Microensamble} a ajustar sus equipos de fabricación de PCBs y montaje automático de placas de circuito impreso; lo que ha resultado muy benéfico ya que es la única empresa Bogotana que presta este servicio.
+
+\subsubsection{Aplicación}
+En la etapa de aplicación se evaluó la eficacia de la transferencia de conocimientos a la industria y a la academia. En la academia, se creó un programa académico que actualizó el contenido y la metodología de las asignaturas del área de electrónica digital de la Universidad Nacional de Colombia utilizando la iniciativa CDIO creada por el Massachusetts Institute of Technology (MIT) y los conocimientos adquiridos en las etapas previas. Encuestas realizadas a los estudiantes durante 2 años de aplicación del programa académico demuestran que es adecuado para crear en ellos habilidades de auto-aprendizaje, trabajo en equipo, al tiempo que les proporciona los conocimientos necesarios para crear productos que ayuden a satisfacer problemas de la sociedad; fomentando en ellos el espíritu empresarial e innovador; adicionalmente, el nivel y calidad de los trabajos de grado relacionados con el diseño de sistemas digitales ha aumentado de forma considerable. 
+
+En el campo industrial, se creó una empresa de base tecnológica (emQbit LTda.)\footnote{Esta empresa está formada por egresados de la Universidad Nacional de Colombia y ha ayudado en la identificación del estado de la industria electrónica nacional y en la detección de obstáculos para el crecimiento de este tipo de empresas.} a la que se le transfirieron los conocimientos adquiridos en las etapas previas junto con plataformas \textit{hardware copyleft}, con esto, emQbit se ha convertido en la única empresa en Colombia que concibe, crea, diseña, fabrica y programa sus propias aplicaciones, ha podido mantenerse durante 4 años y ha realizado proyectos con importantes empresas de Colombia y en el exterior. Lo que demuestra que es posible y necesario tener más empresas de base tecnológica con este tipo de conocimientos y actividades gestadas al interior de universidades como parte de una estrategia para crear vínculos fuertes entre la empresa y la universidad; sin embargo, la sola creación no es importante, lo que realmente importa es que esta empresa pueda mantenerse a lo largo del tiempo y que reciba de forma constante de la academia conocimiento que la ayuden a ser competitiva, este conocimiento puede transferirse ya sea en forma de personal calificado (con conocimientos y habilidades específicas) o a través de capacitación.
+
+Este trabajo proporciona una metodología de diseño basada en el uso de herramientas abiertas que pueden ser utilizadas sin tener que pagar por su licencia; dichas herramientas han sido probadas por estudiantes de las universidades: UNAL, ULA, UIS y por la empresa emQbit, por esto podemos afirmar que ellas soportan todo el proceso de diseño e implementación de un sistema embebido; su naturaleza abierta y gratuita permite ahorrar mucho dinero si se compara con el requerido para comprar herramientas propietarias; el único inconveniente de las herramientas abiertas es que en algunos casos su interfaz no es tan amigable y no cuentan con las funcionalidades de su contraparte comercial. Una ventaja adicional es la no utilización de software ilegal, práctica que ha sido tolerada por la academia durante muchos años; adicionalmente, se le enseña al estudiante una alternativa que le permite ahorrar costos de inversión en el software necesario para comenzar una nueva empresa; con lo que este dinero se puede destinar a compra de equipo necesario para el desarrollo de la actividad empresarial. Aunque este grupo de herramientas pueden ejecutarse en los sistemas operativos mas populares (Linux, Mac OS y Windows) se prefiere el uso de Linux ya que es un sistema operativo gratuito y no es necesario pagar ningún tipo de licencia, lo que reduce aún más la inversión en software.
+
+\subsubsection{Difusión}
+
+La última etapa \textit{difusión}, es una de las más importantes ya que permite que el conocimiento adquirido llegue a todos los sectores de la sociedad interesados en él y ayuda a que los diferentes sectores de la sociedad sean conscientes de su importancia. Utilizando los contactos existentes entre la Universidad Nacional y las  universidades Distrital, Industrial de Santander, de los Andes, Santo Tomás, Escuela Colombiana de Ingeniería, Escuela Naval Almirante Padilla; se logró que se utilizaran productos derivados de esta investigación en las asignaturas relacionadas con el diseño digital. Se formularon proyectos dirigidos a Colciencias y al SENA para capacitar a empresas de base tecnológica en el diseño, implementación y producción de sistemas digitales, pero hasta el momento no se ha podido realizar este proceso y debido a que los recursos con que contamos no son suficientes no se ha podido realizar esta actividad.
+
+Para ayudar en el proceso de difusión se creó una comunidad que utiliza los frutos del presente trabajo, para adquirir conocimientos relacionados con el diseño de sistemas embebidos y crear nuevos productos que den solución a necesidades locales. Se creó el portal público \textit{linuxencaja}\footnote{http://www.linuxencaja.com} para reunir la documentación existente, proporcionar facilidades para la creación de nuevos proyectos, intercambiar opiniones con otros usuarios, almacenar los archivos generados por nuevos proyectos y mantenimiento de repositorios de código fuente y archivos de diseño de proyectos existentes. Este portal será el principal medio de comunicación y difusión, y el acceso a él no tiene restricciones de ningún tipo. 
+
+Esta comunidad está conformada por: estudiantes y profesores de las universidades Nacional, Andes, Javeriana, Santo Tomás, Distrital, Escuela Colombiana, UIS, Nacional del Comahue (Argentina); empleados de las empresas emQbit, Santronics, ingeniería inversa (argentina); profesionales y aficionados de diferentes ciudades y países. El ingreso de estudiantes a esta comunidad ha permitido el aumento del recurso, suministrando una nueva plataforma \textit{hardware copyleft} y la creación de proyectos de referencia que están en proceso de convertirse en productos comerciales. La incorporación de centros de formación e industriales a esta comunidad posibilita identificar necesidades de la industria y ofertas de la academia permitiendo la creación de un vínculo entre ambos sectores. Los aficionados, realizan labores fundamentales de vigilancia tecnológica y de mantenimiento y depuración del contenido. A continuación se realiza una descripción de los recursos con los que cuenta la comunidad \textit{linuxencaja}. Este portal cuenta con las siguientes herramientas:
+
+\begin{itemize}
+ \item Lista de discusión en donde participan desarrolladores hardware/software, estudiantes y miembros de la comunidad para coordinar el desarrollo de nuevos proyectos y resolver dudas sobre conceptos relacionados con el diseño de sistemas embebidos.
+ \item Base de datos de solución de problemas asociadas a las listas de discusión.
+ \item Sistema de control de versiones \textit{git} que permite el trabajo multi-usuario y la creación de repositorios para los proyectos.
+ \item wiki que permite la elaboración de tutoriales, documentación sobre temas relacionados con el diseño de sistemas digitales o reportes del proceso de diseño de nuevos proyectos.
+\end{itemize}
+
+Adicionalmente, tomando como inspiración el proyecto de software libre, se desarrolló un nuevo concepto que utiliza las mismas libertades pero aplicado al hardware, los dispositivos \textit{hardware copyleft} pueden ser modificados incluso para fines comerciales y se debe proporcionar todos los archivos necesarios para ello; utilizando preferiblemente herramientas abiertas. El uso de plataformas \textit{hardware copyleft} permite ahorrar tiempo y dinero en el desarrollo de aplicaciones proporcionando diseños de referencia modificables que pueden ser utilizados como base para futuros desarrollos comercializables o como herramientas de enseñanza en centros de educación. La diferencia importante, entre el uso de plataformas \textit{hardware copyleft} y el uso de plataformas de desarrollo disponibles comercialmente es la posibilidad de modificación, lo que permite optimizar los componentes a una aplicación determinada eliminando el costo de los componentes necesarios en la adaptación de estas plataformas genéricas; adicionalmente, se aumenta la oferta de productos generados localmente, lo que puede generar un aumento de la oferta de bienes y servicios en la manufactura de sistemas digitales, como ya ha ocurrido en otros países de la región. Las plataformas suministradas como parte de este trabajo cubren un amplio rango de aplicaciones y pueden ser utilizadas por cualquiera que este interesado para aumentar los conocimientos en el diseño e implementación de sistemas digitales, o para crear productos novedosos que satisfagan necesidades específicas de la sociedad. 
+
+
+Se cuenta con 7 tarjetas de desarrollo \cite{CC11c} \cite{CC11} \cite{CC08c} \cite{CC07} \cite{CC08b} que cumplen con los requerimientos de los dispositivos \textit{hardware copyleft} y se proporcionan los archivos necesarios para modificarlas; estos diseños de referencia ya han sido construidos y probados en diferentes aplicaciones por lo que su funcionalidad es garantizada; todos ellos utilizan componentes que son fáciles de conseguir y no requieren grandes costos para su reproducción. En los repositorios del portal \textit{linuxencaja} se encuentran las siguientes aplicaciones que pueden ser utilizadas para estudiar el funcionamiento de cada una de las plataformas:
+
+\begin{itemize}
+ \item \textit{loader y blink:} Aplicación que permite cargar binarios en la memoria interna del SoC (loader) y una aplicación que despliega un mensaje por el puerto serial de la plataforma y realiza un blink en un LED.
+ \item \textit{Drivers de dispositivos:} Ejemplos para aprender a escribir controladores sencillos para el sistema operativo linux.
+ \item \textit{Aplicaciones en espacio de usuario:} Ejemplos que permiten controlar los drivers desde espacio de usuario, y ejemplos de aplicaciones sencillas utilizando las facilidades del sistema operativo Linux.
+ \item \textit{Aplicaciones para configuración:} Algunas plataformas de desarrollo poseen micro-controladores de 8 bits o FPGAs que pueden ser programados o configurados desde la misma plataforma. Se suministra el código fuente de estas aplicaciones.
+\end{itemize}
+
+
+Al permitir la utilización de los resultados de esta investigación por quien este interesado y considerar este conocimiento como un bien público, (un recurso con bajos niveles de rivalidad y de exclusión) se aumentan las posibilidades de difusión; lo que va en contravía con las prácticas de los centros de desarrollo tecnológico y de las universidades que proporcionan conocimientos especializados únicamente a quienes pueden pagar por él. Para proteger la propiedad intelectual de los creadores de este recurso y para asegurar el crecimiento del mismo se trabajó con el esquema de licencias \textit{Creative Commons} CC-BY-SA, el cual permite la distribución, replica y modificación (incluso para fines comerciales) de los productos generados de esta investigación sujeto a las condiciones: 
+
+\begin{itemize}
+ \item Dar crédito al autor del trabajo original.
+ \item Toda obra derivada de este trabajo debe distribuirse con el mismo esquema de licencias (esquema de licencia viral).
+\end{itemize}
+
+\subsubsection{Relación universidad - empresa}
+
+Nuestra experiencia con la empresa \textit{emQbit} nos muestra que es posible inculcar en nuestros estudiantes la idea de generación de empresa, generar en ellos las habilidades necesarias para la producción de productos novedosos, y que con un acompañamiento adecuado por parte de la universidad (en el caso de emQbit como asesor externo)  es posible que la empresa se mantenga actualizada y sobreviva en el tiempo, emQbit ha ayudado en el desarrollo de varios proyectos de investigación proporcionando materiales y equipos a costos reducidos (normalmente la empresas duplican sus precios cuando suministran productos a la Universidad Nacional), financiando parcialmente el desarrollo de plataformas \textit{hardware copyleft}; adicionalmente, ha vinculado a varios estudiantes de las universidades nacional y de los Andes en la modalidad de pasantía lo que les ha ayuda a formar personal para la propia empresa. Aunque este es el único caso que podemos presentar y no es posible generalizarlo, proporciona una referencia en este tipo de relaciones.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Resultados Obtenidos}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+En la tabla \ref{cidei_vs_linuxencaja} se hace una comparación entre los resultados obtenidos en este trabajo y los obtenidos por el único centro de desarrollo tecnológico de la industria electrónica CIDEI. El CIDEI a pesar de recibir dineros del estado (cerca a 1 millón de dólares) para realizar su labor de vigilancia tecnológica y generación de conocimientos que sean útiles para los sectores de la sociedad interesados en la electrónica, no ha cumplido su labor, ya que los servicios que proporciona a la sociedad no son gratuitos y no proporciona mecanismos que difundan los conocimientos generados en sus proyectos a todos los interesados; los cursos de capacitación ofrecidos por ellos no tienen temas de actualidad, y ya han sido tratados ampliamente en las principales universidades del país desde mucho antes que se ofrecieran por parte de este centro; uno de estos cursos es el resultado de una capacitación realizada por el autor de este trabajo a los miembros del CIDEI, en el desarrollo de un proyecto financiado por Colciencias; por lo que este centro no aporta conocimientos nuevos a los centros de formación superior.
+
+Adicionalmente, los resultados de vigilancia tecnológica (\cite{JQYP08}, \cite{JQJG08}, \cite{DA08}) realizados por el CIDEI, no reflejan la realidad del país, hacen estudios de tecnologías que su utilizan en Colombia desde mediados de los 90s (CPLDs, FPGAs, procesaadores de 8 bits) y son de uso común en la mayoría de las facultades de las universidades más reconocidas del país; lo que refleja una desconexión entre este centro y las universidades del país. Debido a esto, se crean proyectos de investigación financiados por el estado donde se pretende utilizar dispositivos lógicos programables para dar solución a todas las necesidades de la industria\footnote{Esta información fue obtenida directamente del CIDEI cuando el autor de esta investigación les diseñaba un curso de capacitación en diseño digital utilizando lenguajes de descripción de hardware}; lo que no es necesariamente la opción más económica y eficiente ya que las primeras etapas de un proceso de diseño no debe tener dependencias de tipo tecnológico, y solo después de tener el modelo del sistema y de las funciones que implementan su funcionalidad se debe decidir el particionamiento final; lo que propone el CIDEI es saltarse estas etapas e implementar todas las funciones en hardware; lo que demuestra falta de claridad en varios conceptos.
+
+
+\begin{table}[htpb]
+  \caption{Comparación de los resultados del presente trabajo con el realizado por el CIDEI}
+  \centering
+    \footnotesize
+   \scalebox{0.7}{
+    \begin{tabular}{|p{2.5cm}|p{4cm}|p{5cm}|}
+      \hline
+      \textbf{Plataforma}       & \textbf{CIDEI}
+                                & \textbf{Este trabajo}
+      \\ \hline
+       Naturaleza          &Privado  & Público 
+      \\ \hline 
+       Líneas de I+D       &\begin{itemize}
+                             \item Reconversión, modernización y/o actualización tecnológica. 
+                             \item Informatización de la producción.
+                             \item Mejoramiento continuo.
+                             \item Automatización Industrial de Bajo Costo.
+                            \end{itemize}
+
+                                              & \begin{itemize}
+                                                  \item Estudio de metodologías de diseño.
+                                                  \item Técnicas de fabricación de sistemas digitales
+                                                  \item Arquitectura de computadores y sistemas operativos.
+                                                  \item Desarrollo de aplicaciones embebidas.
+                                                \end{itemize}
+
+      \\ \hline 
+       Documentación en línea  & Ninguna  & \begin{itemize}
+                                             \item Plataformas copyleft hardware.
+                                             \item Diseños de referencia.
+                                             \item Tutoriales.
+                                             \item Cursos en línea (en construcción)
+                                             \item Base de datos de preguntas y respuestas.
+                                            \end{itemize}
+  
+      \\ \hline 
+       Servicios gratuitos     & Ninguno  & \begin{itemize}
+                                             \item Soporte a través de listas de correo.
+                                             \item Servidores con aplicaciones para almacenar proyectos.
+                                             \item Servidores con aplicaciones para crear, administrar y desarrollar nuevos proyectos.
+                                             \item Contactos con empresas manufactureras asiáticas.
+                                            \end{itemize}
+   
+      \\ \hline 
+       Capacitación en diseño de PCBs    & \begin{itemize}
+                                            \item Uso de software con valor de 5000 USD
+                                            \item Costo del curso 350 USD
+                                           \end{itemize}
+
+                                        & \begin{itemize}
+                                           \item Uso de software abierto (\textit{kicad}).
+                                           \item Auto-aprendizaje utilizando como referencia diseños existentes.
+                                           \item Solución de dudas a través de las listas de discusión de Kicad y linuxencaja.
+                                           \item gratuito.
+                                          \end{itemize}
+  
+      \\ \hline 
+       Capacitación en lenguajes de
+       descripción de hardware          & \begin{itemize}
+                                           \item Costo del curso 350 USD.
+                                           \item Metodología de diseño.
+                                           \item Lenguaje VHDL.
+                                           \item Diseño lógico y secuencial.
+                                          \end{itemize}
+
+
+                                                & \begin{itemize}
+                                                   \item Metodología de diseño.
+                                                   \item Lenguajes de descripción de hardware.
+                                                   \item Implementación de tareas hardware utilizando máquinas de estado algorítmicas.
+                                                   \item Arquitectura de sistemas sobre silicio (SoCs)
+                                                   \item Implementación de tareas hardware como periféricos de un SoC.
+                                                   \item Comunicación HW/SW
+                                                   \item Gratuito (próximamente disponible en linuxencaja)
+                                                  \end{itemize}
+
+      \\ \hline 
+       Capacitción procesadores         &\begin{itemize}
+                                          \item Desde el 2010 Costo: 430 USD.
+                                          \item Procesadores ARM.
+                                          \item Programación en C.
+                                          \item Herramientas de desarrollo.
+                                          \item Manejo de interrupciones.
+                                          \item Dispositivos Entrada/salida
+                                          \item Control de periféricos.
+                                         \end{itemize}
+                                                            &  \begin{itemize}
+                                                                \item Trabajos realizados desde el 2004 \cite{DODM04} \cite{CC11c} \cite{CC11d} \cite{CC11e} \cite{CC11} \cite{CC11f} \cite{CCCP+11} \cite{CC09} \cite{ERAC+09} \cite{CC08c} \cite{CC08b} \cite{CC07} \cite{SBME07} \cite{CC06b} \cite{CC06} \cite{ICCC06} \cite{CCOS06} \cite{CC05} \cite{FPFS+05}
+                                                                \item Procesadores MIPS, Blackfin, ARM, 
+                                                                \item Softcores: Lm32, plasma.
+                                                                \item Arquitectura de un SoC, set de instrucciones, manejo de interrupciones 
+                                                                \item Flujo de diseño software.
+                                                                \item Sistemas operativos, inicialización de SoC, kernel de Linux, sistemas de archivos, aplicaciones usando Linux.
+                                                               \end{itemize}
+
+      \\ \hline 
+    \end{tabular}
+   }
+  \label{cidei_vs_linuxencaja}
+\end{table}
+
+\subsubsection{Ahorro de tiempo y dinero en el proceso de transferencia}
+En la actualidad se está evaluando la posibilidad de realizar una transferencia tecnológica entre el estado Colombiano y dos centros de desarrollo coreanos Electronics and Telecommunications Research Institute (ETRI) y Korea Electronics Technology Institute (KETI) en el área de aplicación de televisión digital. Como parte de la transferencia se contempla transferir conocimientos necesarios para realizar la fabricación de una plataforma de desarrollo que pueda ser utilizada en este tipo de aplicaciones. La tabla \ref{KETI_vs_linuxencaja} muestra los costos de esta transferencia (en miles de dólares) y el ahorro que se puede realizar gracias a los resultados de este trabajo. 
+
+
+\begin{table}[htpb]
+  \caption{Comparación de precios entre la transferencia ofrecida por Corea y el costo utilizando los conocimientos generados en este trabajo}
+  \centering
+    \footnotesize
+   \scalebox{0.7}{
+    \begin{tabular}{|p{4.5cm}|p{2cm}|p{4cm}|}
+      \hline
+      \textbf{Item}       & \textbf{KETI-ETRI}  & \textbf{Este trabajo}
+      \\ \hline 
+      Equipos de cómputo (25) con licencias de:
+      \begin{itemize}
+       \item Windows, VMWARE, \footnote{KETI/ETRU utilizan Microsoft Windows y un software comercial para emular Linux (VMWARE)}
+       \item Android SDK, Apache
+      \end{itemize}
+                             & 115.000                    & 50.000
+      \\ \hline 
+      Plataforma de desarrollo (15)
+      \begin{itemize}
+       \item Procesador ARM, 512MB DDR, MicroSD
+       \item LCD 800 x 480, touch screen
+       \item USB 2.0, WiFi, Camera.
+       \item Bluetooth. Android OS.  
+      \end{itemize}
+                          & 60.000                    & 4.500 
+      \\ \hline 
+      Software para simulación:
+      \begin{itemize}
+       \item Qemu con soporte para OpenMoko 
+      \end{itemize}
+                          & 132.000                   & 0 
+      \\ \hline 
+      Depuración hardware:
+      \begin{itemize}
+       \item Trace 32 de Laterbach (15)
+      \end{itemize}
+                         & 180.000                   & 2.000 
+
+      \\ \hline 
+      Herramientas CAD:
+      \begin{itemize}
+       \item PADS de Cadence (15)
+      \end{itemize}
+                         & 180.000                   & 0 
+      \\ \hline 
+      Plataforma hardware (15):
+      \begin{itemize}
+       \item Especificaciones de la plataforma de desarrollo
+       \item Archivos para reproducir el hardware:
+         \begin{itemize}
+          \item Esquemáticos.
+          \item Archivos Gerber.
+         \end{itemize}
+       \item Código fuente:
+         \begin{itemize}
+          \item bootloader: u-boot.
+          \item Kernel de Linux.
+          \item Android OS.
+         \end{itemize}
+       \item documentación
+         \begin{itemize}
+          \item Guía de usuario.
+          \item Port de Android.
+         \end{itemize}
+      \end{itemize}
+                         & 120.000                   & 50.000 
+                                                       \begin{itemize}
+                                                        \item Archivos para \textbf{Modificar} la plataforma 
+
+                                                        \item Código fuente:
+                                                          \begin{itemize}
+                                                           \item u-boot
+                                                           \item Kernel de Linux.
+                                                           \item Android OS.
+                                                          \end{itemize}
+                                                        \item Documentación:
+                                                           \begin{itemize}
+                                                            \item Tutoriales.
+                                                            \item Proceso completo de diseño.
+                                                            \item Cursos en línea.
+                                                            \item Listas de discusión.
+                                                           \end{itemize}
+                                                       \end{itemize}
+
+      \\ \hline 
+    \end{tabular}
+   }
+  \label{KETI_vs_linuxencaja}
+\end{table}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusiones}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Este trabajo ha aportado más a la sociedad en el poco tiempo que lleva su etapa de difusión que el único centro de desarrollo tecnológico del sector electrónico (CIDEI); los conocimientos aquí generados han sido utilizados en varias de las universidades más importantes del país. Es necesario resaltar el esquema de los proyectos realizados por el CIDEI con las empresas, en el que se proporciona capacitación y soporte para el desarrollo de proyectos conjuntos; sin embargo, la falta de claridad en la metodología de diseño y el desconocimiento del estado de las universidades en Colombia, y la falta de personal calificado hacen que este esquema no produzca los resultados esperados
+
+Los costos de la transferencia tecnológica y de conocimientos necesarios para adquirir la capacidad de concebir, diseñar y operar sistemas digitales modernos son muy elevados (787.000 USD); los conocimientos adquiridos en este trabajo permiten reducir esta cifra de forma considerable (106.500). Adicionalmente, la transferencia que ofrece Corea no tiene en cuenta la capacitación necesaria para que el país pueda absorber y asimilar estos conocimientos y la formación continua de personal calificado para que el país pueda generar sus propios productos lo que constituye el éxito de la transferencia.
+
+El uso de herramientas comerciales en la etapa de diseño hace que los costos de este tipo de productos aumente de forma considerable, en este ejemplo las herramientas de diseño de circuitos impresos, el sistema operativo y un emulador de Linux cuestan 245.000 USD, y son reemplazadas sin costo alguno por las herramientas utilizadas en este trabajo.

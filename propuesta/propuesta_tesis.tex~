@@ -63,10 +63,11 @@ basicstyle=\footnotesize}
      \input embedded               %  Aplicación de la metodología, resultados obtenidos
      \input education              %  Difusión en la academia 
      \input commons                %  Difusión como movimiento
-    \input conclusions             %  Conclusiones
+     \input conclusions             %  Conclusiones
 % *******************
 %              Anexos
 % *******************
+     \input papers
      \input platform
      \input emqbit
 
