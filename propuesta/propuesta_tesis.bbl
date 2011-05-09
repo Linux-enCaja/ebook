@@ -34,6 +34,13 @@ UNESCO-Uruguay.
 \newblock In {\em First international joint conference on {A}utonomous agents
   and muktiagent systems: part 1}, 2002.
 
+\bibitem{LV98}
+{L. Vaccarezza}.
+\newblock Ciencia, {T}ecnolog\'{\i}a y {S}ociedad: el estado de la cuesti\'on
+  en {A}m\'erica {L}atina.
+\newblock {\em Revista Iberoamericana de Educaci\'on, No 18 - Ciencia,
+  Tecnolog\'{\i}a y Sociedad ante la Educaci\'on}, 1998.
+
 \bibitem{Mar04}
 H\'ector Mart\'{\i}nez.
 \newblock Apropiaci\'on de conocimiento en {C}olombia. {E}l caso de los
@@ -90,6 +97,11 @@ Kenneth Arrow.
   Establishing Commons in Science.
 \newblock The MIT Press, 2006.
 
+\bibitem{VG78}
+{V. Gigch}, editor.
+\newblock {\em Applied {G}eneral {S}ystem {T}heory}.
+\newblock Harper \& Row, 1978.
+
 \bibitem{FBFP07}
 {F. Bar}, {F. Pisani}, and {M. Weber}.
 \newblock Mobile technology appropriation in a distant mirror: baroque
@@ -121,12 +133,19 @@ James~A. Jolly.
   {M}ethodology.
 \newblock {\em The Journal of Technology Transfer. Springer}, 1977.
 
-\bibitem{LV98}
-{L. Vaccarezza}.
-\newblock Ciencia, {T}ecnolog\'{\i}a y {S}ociedad: el estado de la cuesti\'on
-  en {A}m\'erica {L}atina.
-\newblock {\em Revista Iberoamericana de Educaci\'on, No 18 - Ciencia,
-  Tecnolog\'{\i}a y Sociedad ante la Educaci\'on}, 1998.
+\bibitem{EM75}
+{E. Mansfield}.
+\newblock International technological transfer: {F}orms, {R}esource
+  {R}equirements, and {P}olicies.
+\newblock {\em American Economic Review, Paper and Proceedings}, 1975.
+
+\bibitem{MO91}
+{M. Odedra}.
+\newblock Information {T}echnology {T}ransfer to {D}eveloping {C}ountries {I}s
+  it really taking place?
+\newblock {\em The 4th IFIF.TC9 International Conference on Human Choice and
+  Computers, North Holland, Amsterdam, Netherlands, HCC 4 held jointly with the
+  CEC FAST Programme.}, 1991.
 
 \bibitem{CFHJ02}
 {C. Forero} and {H. Jaramillo}.
@@ -158,11 +177,6 @@ Elinor Ostrom.
 {A. Cortesi}.
 \newblock Elinor {O}strom, the commons problem and {O}pen {S}ource.
 \newblock {\em URL: http://corte.si/posts/opensource/ostrom/index.html}, 2009.
-
-\bibitem{WCI}
-{Worldwide CDIO Initiative}.
-\newblock "{B}enefits of {CDIO}" {URL}:http://www.cdio.org/benefits-cdio on
-  {N}ovember, 2009.
 
 \bibitem{CC06}
 {C. Camargo}.
@@ -341,6 +355,11 @@ R.~M. Stallman.
   {EN} {ROBOTICA}.
 \newblock {\em V Congreso Internacional de Ingenier\'{\i}a Mec\'anica y III de
   Ingenier\'{\i}a Mecatr\'onica (por publicar)}, 2011.
+
+\bibitem{WCI}
+{Worldwide CDIO Initiative}.
+\newblock "{B}enefits of {CDIO}" {URL}:http://www.cdio.org/benefits-cdio on
+  {N}ovember, 2009.
 
 \bibitem{ECJM+09}
 {E. Crawley}, {J. Malmqvist}, {D. Brodeur}, and {B. Lucas}.

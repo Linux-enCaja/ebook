@@ -693,6 +693,14 @@
   HowPublished   = {http://swiss.ai.mit.edu/prouects/amorphous}
 }
 
+@Article{EM75,
+  Author         = {{E. Mansfield}},
+  Title          = {International technological transfer: {F}orms,
+                   {R}esource {R}equirements, and {P}olicies},
+  Journal        = {American Economic Review, Paper and Proceedings},
+  year           = 1975
+}
+
 @Article{MMQR06,
   Author         = {{Mamei M} and {Quaglieri R} and {Zambonelli F.}},
   Title          = {Making tuple space physical with {RFID} tags},

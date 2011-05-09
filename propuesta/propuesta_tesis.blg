@@ -8,51 +8,51 @@ Warning--empty journal in ETPoSSI(09
 Warning--empty journal in IAI
 Warning--empty year in IAI
 Warning--can't use both author and editor fields in CMS06
-Warning--empty note in WCI
 Warning--can't use both author and editor fields in Sta99
 Warning--empty year in CC
 Warning--empty school in NR11
+Warning--empty note in WCI
 Warning--empty year in BBS
 Warning--empty year in JF
-You've used 93 entries,
+You've used 96 entries,
             1791 wiz_defined-function locations,
-            913 strings with 17842 characters,
-and the built_in function-call counts, 13180 in all, are:
-= -- 1057
-> -- 571
+            930 strings with 18336 characters,
+and the built_in function-call counts, 13587 in all, are:
+= -- 1091
+> -- 584
 < -- 1
-+ -- 242
-- -- 149
-* -- 438
-:= -- 2323
-add.period$ -- 277
-call.type$ -- 93
-change.case$ -- 76
++ -- 248
+- -- 152
+* -- 448
+:= -- 2395
+add.period$ -- 286
+call.type$ -- 96
+change.case$ -- 78
 chr.to.int$ -- 0
-cite$ -- 105
-duplicate$ -- 722
-empty$ -- 1443
-format.name$ -- 149
-if$ -- 2913
+cite$ -- 108
+duplicate$ -- 749
+empty$ -- 1490
+format.name$ -- 152
+if$ -- 3004
 int.to.chr$ -- 0
-int.to.str$ -- 93
-missing$ -- 83
-newline$ -- 466
-num.names$ -- 95
-pop$ -- 381
+int.to.str$ -- 96
+missing$ -- 86
+newline$ -- 481
+num.names$ -- 99
+pop$ -- 393
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 284
+skip$ -- 292
 stack$ -- 0
 substring$ -- 6
-swap$ -- 90
+swap$ -- 93
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 12
-while$ -- 94
-width$ -- 95
-write$ -- 920
+while$ -- 97
+width$ -- 98
+write$ -- 950
 (There were 12 warnings)
