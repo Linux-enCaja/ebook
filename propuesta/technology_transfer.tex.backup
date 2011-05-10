@@ -477,7 +477,37 @@ Tareas de \textit{orga-ware} en la creación de dispositivos digitales
 
 \subsection{Etapas de la Metodología}
 
-En la figura \ref{meth_flow} se muestran las etapas que componen la metodología propuesta; en las cinco primeras se realizan acciones encaminadas a entender, asimilar, aplicar y desarrollar la tecnología y en la última se realizan actividades de difusión que permitan el acceso de los conocimientos generados a quien esté interesado.
+
+La metodología utilizada en este trabajo se basa en la formulada por Cohen \cite{GC04}, la cual ha sido utilizada en trabajos recientes en diferentes partes del mundo \cite{KAJS08} \cite{DWAW09} \cite{KAJS09} \cite{RJ10}. En la figura \ref{meth_flow} se muestran las etapas que componen esta metodología; en las cinco primeras se realizan acciones encaminadas a entender, asimilar, aplicar y desarrollar la tecnología y en la última se realizan actividades de difusión que permitan el acceso de los conocimientos generados a quien esté interesado.  }
+
+
+%  Cohen goes
+% on to define a series of steps that a recipient country passes thro ugh during technology transfer.
+% These stages are technology ?assessment and selection, acquisition, adaptation, absorption and
+% assimilation, diffusion, and development?. These concepts bring together several of the other
+% sections of this discussion. The assessment and selection stages relate to technology choice
+% questions. The adaptation, absorption, and assimilation stages related to the sections below on
+% National Innovation Systems and Absorptive Capacity.
+% 
+% \cite{DWAW09}\cite{GC04}Cohen?s work explained what technology transfer is and how it can happen. Grieve?s
+% work, above, introduced the concept of leap- frogging, or using technology transfer to jump to a
+% more advanced technology without going through the conventional, historical progression of
+% learning and invention. But does leap- frogging really work? Gallagher, in her study on the
+% potential for leap- frogging in the Chinese automobile industry, explains both the benefits and
+% complications of leap- frogging through technology transfer. While the idea ?captured the
+% imaginations of innumerable scholars, students, and even some in the private sector,? leap-
+% frogging does not work automatically. Gallagher found that the effectiveness of leap- frogging is
+% limited by three key areas: ?1) un-strategic and inconsistent policies, 2) weak domestic
+% technological capabilities, and 3) an apparent unwillingness of more advanced ...firms to
+% transfer ...more efficient technologies beyond those simply required by the standards.? cxxii In
+% other words, even if advanced technology is available, the developing co untry may not benefit
+% from it without specific ingredients. These ingredients will be discussed more in the section on
+% absorptive capacity and National Innovation Systems below. These topics help address the
+% apparent paradox that a developing country that wants to build technological capability must
+% have technological capability. The sections below explain how a country can put itself in a good
+% position to build technological capability through strong institutions and research.
+
+
 
 \begin{figure}[htpb]
   \begin{center} \includegraphics[scale=.7]{./images/TT_Methodology_phases.pdf} \end{center}
@@ -505,9 +535,7 @@ Para determinar si es posible y conveniente el uso de esta tecnología en la indu
 La unión del software abierto utilizado para diseñar las placas de circuito impreso e implementar sus aplicaciones, unida al esquema de licencias \textbf{CC} define el novedoso concepto del \textit{hardware copyleft} (ver capítulo \ref{ch:common}) el cual es una extensión del proyecto de software libre aplicado al desarrollo hardware; con esto se pretende eliminar las barreras que existen en la difusión de conocimientos que han existido hasta el momento, en donde es necesario pagar por ellos y colocar a disposición de cualquier interesado herramientas que le permitan entender y aplicar esta tecnología, ahorrando tiempo y dinero en el proceso.
 
 
-% En la primera etapa se utilizarán los dispositivos comerciales mencionandos anteriormente para el estudio y adaptación de metodologías de diseño; utilizando ingeniería inversa, se identificará su arquitectura, funcionamiento y formas de programación; finalmente, se realizarán ejercicios académicos para crear aplicaciones que den solucion a problemas locales; lo anterior con el fín de identificar las ventajas de esta tecnología y su importancia en el desarrollo tecnológico del país. En el capítulo \ref{ch:embedded}, se realiza una descripción detallada de las actividades realizadas en esta etapa.
-
-\subsubsection{Absorción y asimilación}
+s\subsubsection{Absorción y asimilación}
 
 Los procesos de absorción y asimilación describen la capacidad del receptor para utilizar la tecnología y permiten identificar la efectividad y el éxito de la transferencia; la absorción es la capacidad del receptor de absorber tecnología de un sector y la asimilación es la capacidad de asimilar (analizar, procesar, interpretar y entender) y utilizar la tecnología absorbida en otro sector \cite{KAJS08}. Es importante generar dos tipos de habilidades para soportar la tecnología: Técnicas: hardware, sistemas operativos, redes, tecnologías de la comunicación, aplicaciones SW; Humanas: Habilidades y conocimientos necesarios para desarrollar, mantener, y manipular; habilidad para adaptar tecnologías al entorno local y futuro desarrollo. Es crucial contar con mecanismos de aprendizaje que permitan adquirir los conocimientos necesarios para operar y cambiar la nueva tecnología; este aprendizaje puede adquirirse por entrenamiento, seleccionando y contratando personal calificado o buscando posibles soluciones en recursos publicados. En este estudio se creó un banco de proyectos que pueden ser utilizados como base de futuros desarrollos y se diseñaron cursos para la enseñanza de metodologías de diseño y procesos de fabricación que usan la tecnología en estudio. Para la transferencia en diseño de sistemas embebidos se desarrollaron o adaptaron metodologías de diseño y procesos de fabricación que culminaron en el diseño e implementación de productos tecnológicos propios y en el desarrollo de proyectos académicos.
 
@@ -528,8 +556,13 @@ El objetivo final de este proceso es el aumento de la demanda de productos, bien
 \subsection{Factores formales e informales}
  Un programa de transferencia tecnológica bebe incluir mecanismos que unan de forma eficiente la fuente del conocimiento con la utilización del mismo. Estos canales de comunicación son mecanismos de recursos humanos que pueden ser incorporados tanto en la fuente como en el destino, el proceso de la transferencia tecnológica propuesta en este estudio comienza con potenciales usuarios en lugar de fuentes \cite{Jol77}.
 
+ \begin{figure}[htpb]
+   \begin{center} \includegraphics[scale=.6]{./images/transfer_model.png} \end{center}
+   \caption{Canales formales e informales del proceso de transferencia tecnológica} \label{tech_trans_model} 
+ \end{figure}
+
 \subsubsection{Factores formales}
-Están formados por procedimientos para difusión, clasificación, almacenamiento y recuperación de conocimientos. En la metodología que proponemos estos factores son:
+Están formados por procedimientos para difusión, clasificación, almacenamiento y recuperación de conocimientos. En la metodología que proponemos estos factores son (ver figura \ref{tech_trans_model}):
 
 \begin{itemize}
  \item \textbf{Documentación} Es el formato, organización, o presentación de la tecnología que será transferida. El formato y el lenguaje se relacionan directamente con el entendimiento del material por parte del receptor. En nuestro caso se utilizan dos tipos de formatos para la documentación:
@@ -550,37 +583,26 @@ Están formados por procedimientos para difusión, clasificación, almacenamiento y
 
  \item \textbf{Organización} El carácter público de este proceso de transferencia hace que los recursos se encuentren disponibles para todo el que esté interesado permitiendo el acceso a la información de forma fácil; evitando crear barreras para su difusión y crecimiento.
 
- \item \textbf{Selección de Proyectos} Proceso de selección para proyectos de investigación y desarrollo realizado por el proveedor con ayuda del receptor. Aunque esta iniciativa es pública y se proporcionan herramientas públicas para la creación de nuevos proyectos, la comunidad decidirá su calidad y decidirá cuales pueden ser considerados útiles y cuales no. Adicionalmente, 
+ \item \textbf{Selección de Proyectos} Proceso de selección para proyectos de investigación y desarrollo realizado por el proveedor con ayuda del receptor. Aunque esta iniciativa es pública y se proporcionan herramientas públicas para la creación de nuevos proyectos, la comunidad decidirá su calidad y decidirá cuales pueden ser considerados útiles y cuales no. Acá el papel del proveedor de la tecnología es asumido inicialmente por este proyecto, pero con el paso del tiempo esta función será asumida por los miembros de la comunidad; cualquier persona puede iniciar un  nuevo proyecto; los miembros de la comunidad deciden contribuir o no a su desarrollo. Es importante que nuevos proyectos o investigaciones en nuevos tópicos comiencen como respuesta a una necesidad de la sociedad.
 
-Es importante que la investigación comience como respuesta a una necesidad de la sociedad.
 \end{itemize}
 
-% \begin{figure}[htpb]
-%   \begin{center} \includegraphics[scale=.6]{./images/transfer_model.png} \end{center}
-%   \caption{Modelo del proceso de Transferencia de Tecnología Indicando La Composición de Los Canales Formales e Informales} \label{tech_trans_model}
-% \end{figure}
-% 
-% 
-% \subsection{Factores Informales}
-% Los factores informales son de naturaleza sociológica y/o comportamental, y contribuyen fuertemente al éxito de la utilización del conocimiento por una determinada organización. En esta categoría se encuentran la comunicación, creencias y sentimientos sobre la fuente del conocimiento, percepción sobre la organización, supervisores y pares.
-% 
-% \subsubsection{Capacidad}
-% La capacidad del usuario para utilizar nuevas ideas que cubren un amplio espectro de rasgos que incluyen riesgo, riqueza, poder, educación, experiencia, edad, confianza en sí mismos. Atributos como: Atrevimiento, status profesional y educativo, domino, sociabilidad, no son considerados tan importantes frente a la autosuficiencia que es el más valorado.
-% 
-% 
-% \subsubsection{Enlace (contacto)}
-% 
-% Presencia y efectos de enlaces informales en la organización receptora. El enlace opera dentro de la organización receptora y exhibe características similares al supervisor, líder de opinión, innovador y previo conocedor de la innovación.
-% 
-% 
-% \subsubsection{Credibilidad}
-% 
-% La credibilidad es una evaluación por parte del usuario, de la confiabilidad de la información. Es evaluada analizando la fuente y el canal del mensaje. La opinión cambia dependiendo de la fuente de la información, es decir, la credibilidad es influenciada por su fuente.
-% 
-% \subsubsection{Recompensa}
-% 
-% Reconocimiento del sistema social del cual hace parte un individuo ante un comportamiento innovador. 
-% 
-% \subsubsection{Disposición}
-% 
-% La habilidad y/o deseo del individuo para aceptar un cambio en la organización de la cual es miembro. Así mismo es importante la capacidad de adopción de nuevas ideas, Gallup 1955 señaló que aunque una idea halla sido aceptada intelectualmente, toma un período de tiempo antes de ser incorporada en la forma de pensar. Ser consciente de la importancia de de una nueva idea no es suficiente para asegurar su uso; debe existir una disposición, un interés, una motivación personal para utilizar un mejor método, proceso o concepto.
+
+\subsubsection{Factores informales}
+Los factores informales son de naturaleza sociológica y/o comportamental, y contribuyen fuertemente al éxito de la utilización del conocimiento por una determinada organización. En esta categoría se encuentran la comunicación, creencias y sentimientos sobre la fuente del conocimiento, percepción sobre la organización, supervisores y pares.
+
+\begin{itemize}
+ \item \textbf{Capacidad} La capacidad del usuario para utilizar nuevas ideas que cubren un amplio espectro de rasgos que incluyen riesgo, riqueza, poder, educación, experiencia, edad, confianza en sí mismos. La autosuficiencia es quizá el rasgo más valorado en un receptor de un proceso de transferencia de conocimientos, el programa académico presentado en el capítulo \ref{ch:education} busca crear esta habilidad en los profesionales para que puedan liderar procesos de continuo auto-aprendizaje.
+
+ \item \textbf{Credibilidad} La credibilidad es una evaluación por parte del usuario, de la confiabilidad de la información. Es evaluada analizando la fuente y el canal del mensaje. La opinión cambia dependiendo de la fuente de la información, es decir, la credibilidad es influenciada por su fuente. Por esta razón, es importante controlar la calidad del material que se suministra como parte del recurso, si este proceso no es muy exigente, usuarios inconformes pueden generar un clima de incertidumbre sobre la utilidad de los conocimientos que se pretenden transferir. Un ejemplo de un como afecta la credibilidad a una organización lo podemos encontramos en el portal \textit{opencores}, dedicado a distribuir núcleos lógicos que pueden ser utilizados para implementar funciones en FPGAs o en ASICs; una gran cantidad de proyectos suministrados por ellos no funcionan o no pueden ser implementados fácilmente, lo que ha generado un clima de desconfianza hacia sus proyectos, opacando los grandes aportes que se encuentran en esta portal.
+
+ \item \textbf{Recompensa} Reconocimiento del sistema social del cual hace parte un individuo ante un comportamiento innovador. Ser parte de una comunidad formada por diferentes sectores de la sociedad permite crear vínculos entre sus miembros. Los diferentes aportes que se realizan por parte de los miembros ayudan a definir su perfil y la forma en que la comunidad los define; de aquí pueden nacer vínculos laborales o académicos.
+
+ \item \textbf{Disposición} La habilidad y/o deseo del individuo para aceptar un cambio en la organización de la cual es miembro; así como  la capacidad de adopción de nuevas ideas. Aunque una idea halla sido aceptada intelectualmente, toma un período de tiempo antes de ser incorporada en la forma de pensar. Ser consciente de la importancia de de una nueva idea no es suficiente para asegurar su uso; debe existir una disposición, un interés, una motivación personal para utilizar un mejor método, proceso o concepto.
+
+ Nuestra aproximación a la solución del problema del atraso tecnológico en la industria colombiana, implica que un gran esfuerzo personal en la concepción, diseño, construcción y programación de un dispositivo digital sea suministrado a la sociedad de forma gratuita; permitiendo que cualquier persona pueda ganar dinero con nuestro trabajo y a cambio ``solo'' se recibe el crédito por el trabajo realizado. Esta suena absurdo al comienzo ya que el modelo tradicional nos ha formado con la idea de trabajar para beneficio propio y estamos acostumbrados a recibir algún tipo de remuneración económica con nuestro trabajo. Sin embargo; el permitir que nuestro trabajo sea utilizado por otras personas y estas personas sepan que nosotros somos sus creadores, nuestro trabajo se convierte en una referencia y dependiendo de la difusión que tenga podemos obtener beneficios económicos ya que no todo el mundo tiene la posibilidad o la necesidad de hacer cambios, ajustes o nuevas versiones por ellos mismos y por lo tanto buscarán al autor original para ello. Podemos encontrar varios ejemplos de esto: la plataforma \textit{Arduino} y el dispositivo \textit{chumby} son ampliamente utilizadas hoy en día y han generado beneficios económicos a sus creadores; el dispositivo \textit{chumby} fué el punto de partida de una nueva línea de porta-retratos digitales de Samsung.
+
+ Adicionalmente, el estado de la industria electrónica del país nos obliga a realizar este tipo de proyectos para hacer que los conocimientos necesarios para diseñar, construir y producir comercialmente dispositivos digitales que den solución a problemas locales, estén al alcance de todos los sectores de la sociedad interesados en él.
+
+\end{itemize}
+
