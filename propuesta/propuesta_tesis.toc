@@ -1,42 +1,64 @@
 \select@language {spanish}
-\contentsline {chapter}{\numberline {1}Sistemas Embebidos}{3}
+\contentsline {chapter}{\numberline {1}Metodolog\IeC {\'\i }a Para la Ense\~nanza de Sistemas Embebidos}{3}
 \contentsline {section}{\numberline {1.1}Introducci\'on}{3}
-\contentsline {subsection}{\numberline {1.1.1}Qu\'e es un sistema Embebido}{3}
-\contentsline {subsection}{\numberline {1.1.2}Arquitectura}{3}
-\contentsline {subsection}{\numberline {1.1.3}Aplicaciones}{5}
-\contentsline {subsection}{\numberline {1.1.4}Metodolog\IeC {\'\i }a de Dise\~no}{5}
-\contentsline {section}{\numberline {1.2}Implementaci\'on de la Metodolog\IeC {\'\i }a Propuesta Para la Transferencia Tecnol\'ogica en Dise\~no de Sistemas Embebidos}{7}
-\contentsline {subsection}{\numberline {1.2.1}Elecci\'on}{7}
-\contentsline {subsubsection}{Niveles de complejidad de la tecnolog\IeC {\'\i }a}{8}
-\contentsline {subsubsection}{Diagn\'ostico de la Industria Local}{10}
-\contentsline {subsubsection}{Diagn\'ostico de la Academia}{11}
-\contentsline {subsubsection}{Centros de Desarrollo Tecnol\'ogico}{11}
-\contentsline {subsubsection}{Conclusi\'on}{12}
-\contentsline {subsection}{\numberline {1.2.2}Adquisici\'on}{12}
-\contentsline {subsubsection}{Herramientas de Desarrollo}{12}
-\contentsline {subsubsection}{Dispositivos Semiconductores}{14}
-\contentsline {subsubsection}{Dispositivos disponibles}{14}
-\contentsline {subsubsection}{conclusiones}{15}
-\contentsline {subsection}{\numberline {1.2.3}Adaptaci\'on}{16}
-\contentsline {subsubsection}{Metodolog\IeC {\'\i }a}{17}
-\contentsline {subsubsection}{Arquitectura: SoC, Memorias, perif\'ericos}{17}
-\contentsline {subsubsection}{Programaci\'on}{19}
-\contentsline {subsubsection}{Programaci\'on utilizando el puerto JTAG}{22}
-\contentsline {subsubsection}{Aplicaciones \textit {Standalone} vs Aplicaciones con sistema operativo}{22}
-\contentsline {subsubsection}{Conocimientos Adquiridos}{24}
-\contentsline {subsubsection}{conclusiones}{24}
-\contentsline {subsection}{\numberline {1.2.4}Absorci\'on y Asimilaci\'on}{24}
-\contentsline {subsubsection}{Plataformas de Desarrollo }{25}
-\contentsline {subsubsection}{T\'ecnicas de Fabricaci\'on}{28}
-\contentsline {subsubsection}{Proceso de dise\~no y fabricaci\'on}{30}
-\contentsline {subsubsection}{Aplicaciones Acad\'emicas Realizadas}{31}
-\contentsline {subsubsection}{Metodolog\IeC {\'\i }a para la apropiaci\'on de conocimiento y generaci\'on de nuevos productos}{31}
-\contentsline {subsubsection}{Conclusi\'ones}{31}
-\contentsline {subsection}{\numberline {1.2.5}Aplicaci\'on}{31}
-\contentsline {subsubsection}{En la Academia}{32}
-\contentsline {subsubsection}{En la Industria}{33}
-\contentsline {subsubsection}{Conclusiones}{34}
-\contentsline {subsection}{\numberline {1.2.6}Difusi\'on y Desarrollo}{35}
-\contentsline {subsubsection}{Herramientas para el manejo, almacenamiento, depuraci\'on y aumento del recurso}{35}
-\contentsline {subsubsection}{Estrategia de difusi\'on}{38}
-\contentsline {subsubsection}{}{39}
+\contentsline {subsection}{\numberline {1.1.1}La iniciativa CDIO}{4}
+\contentsline {subsubsection}{Emprendimiento y liderazgo}{5}
+\contentsline {subsection}{\numberline {1.1.2}Estructura del plan de estudios CDIO}{5}
+\contentsline {subsubsection}{Nivel 1: Razonamiento y conocimiento t\'ecnico}{6}
+\contentsline {subsubsection}{Habilidades personales, profesionales e interpersonales}{6}
+\contentsline {subsubsection}{Habilidades CDIO}{7}
+\contentsline {subsection}{\numberline {1.1.3}Implementaci\'on del Plan de Estudios CDIO}{7}
+\contentsline {section}{\numberline {1.2}Definici\'on e Identificaci\'on de las Habilidades CDIO}{8}
+\contentsline {subsection}{\numberline {1.2.1}Introducir, Ense\~nar y Usar}{8}
+\contentsline {subsection}{\numberline {1.2.2}Habilidades CDIO}{9}
+\contentsline {subsection}{\numberline {1.2.3}Competencias de las Habilidades CDIO 2 y 3}{12}
+\contentsline {subsection}{\numberline {1.2.4}Competencias de las Habilidades C.D.I.O. Sistemas en el contexto Empresarial, Social y Ambiental - Innovaci\'on}{14}
+\contentsline {section}{\numberline {1.3}Integraci\'on de las Habilidades CDIO al Plan de Estudios}{15}
+\contentsline {subsection}{\numberline {1.3.1}Metodolog\IeC {\'\i }a de dise\~no}{15}
+\contentsline {subsection}{\numberline {1.3.2}Objetivo General}{18}
+\contentsline {subsubsection}{Electr\'onica Digital 1}{18}
+\contentsline {subsubsection}{Electr\'onica Digital 2}{19}
+\contentsline {subsubsection}{Sistemas Embebidos}{19}
+\contentsline {subsection}{\numberline {1.3.3}Objetivos Espec\IeC {\'\i }ficos}{19}
+\contentsline {subsection}{\numberline {1.3.4}Ojbetivos com\'unes}{19}
+\contentsline {subsubsection}{Electr\'onica Digital 1}{19}
+\contentsline {subsubsection}{Electr\'onica Digital 2}{20}
+\contentsline {subsubsection}{Sistemas Embebidos}{20}
+\contentsline {subsection}{\numberline {1.3.5}Metodolog\IeC {\'\i }a}{20}
+\contentsline {subsubsection}{SIE: Plataforma abierta para el desarrollo de sistemas embebidos}{21}
+\contentsline {subsection}{\numberline {1.3.6}Integraci\'on de SIE con los cursos de la l\IeC {\'\i }nea de electr\'onica digital}{22}
+\contentsline {subsubsection}{Electr\'onica digital 1}{23}
+\contentsline {subsubsection}{Electr\'onica digital 2}{24}
+\contentsline {subsection}{\numberline {1.3.7}Sistemas Embebidos}{26}
+\contentsline {subsection}{\numberline {1.3.8}Comunidad hardware copyleft}{27}
+\contentsline {subsection}{\numberline {1.3.9}Actividades}{28}
+\contentsline {subsubsection}{Lectura de material del curso 10, 11}{28}
+\contentsline {subsubsection}{Lectura de material t\'ecnico en ingl\'es 10, 11, 6, 30, 33, 21}{28}
+\contentsline {subsubsection}{Utilizaci\'on de metodolog\IeC {\'\i }as de dise\~no 1, 2, 3, 6, 7, 9, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38}{29}
+\contentsline {subsubsection}{Implementaci\'on de sistemas digitales sencillos 3, 14, 29, 30, 35, 36, 17, 18, 19}{29}
+\contentsline {subsubsection}{Proyecto del curso 1,2,3, 14, 15, 30, 31, 32, 33, 34, 35, 22, 23, 24, 25, 27}{29}
+\contentsline {subsubsection}{Participaci\'on en listas de discusi\'on 21}{30}
+\contentsline {subsubsection}{Hardware y Software Copy-Left}{30}
+\contentsline {section}{\numberline {1.4}Desarrollo de m\'etodos de Evaluaci\'on}{30}
+\contentsline {subsubsection}{Contenido de las entregas}{31}
+\contentsline {subsubsection}{Sustentaci\'on individual}{31}
+\contentsline {section}{\numberline {1.5}Objetivos de aprendizaje}{31}
+\contentsline {subsection}{\numberline {1.5.1}Dominio cognitivo}{32}
+\contentsline {subsection}{\numberline {1.5.2}Dominio afectivo}{35}
+\contentsline {subsection}{\numberline {1.5.3}Dominio psicomotor}{36}
+\contentsline {section}{\numberline {1.6}Software}{37}
+\contentsline {subsection}{\numberline {1.6.1}An\'alisis y simulaci\'on de circuitos}{37}
+\contentsline {subsection}{\numberline {1.6.2}S\IeC {\'\i }ntesis, simulaci\'on y verificaci\'on digital}{37}
+\contentsline {subsection}{\numberline {1.6.3}Herramientas para la configuraci\'on de PLDs}{38}
+\contentsline {subsection}{\numberline {1.6.4}Dise\~no de placas de circuito impreso}{39}
+\contentsline {subsection}{\numberline {1.6.5}Herramientas de desarrollo para sistemas embebidos}{39}
+\contentsline {subsubsection}{GNU binutils}{39}
+\contentsline {subsubsection}{Compilador}{40}
+\contentsline {subsubsection}{GNU Debugger}{41}
+\contentsline {subsubsection}{Librer\IeC {\'\i }as C}{41}
+\contentsline {subsubsection}{Sistema operativo Linux}{41}
+\contentsline {subsubsection}{Librer\IeC {\'\i }a Qt}{42}
+\contentsline {subsubsection}{Sistema de archivos}{42}
+\contentsline {subsection}{\numberline {1.6.6}Herramientas CAD}{43}
+\contentsline {subsection}{\numberline {1.6.7}Conclusiones}{43}
+\contentsline {section}{\numberline {1.7}Conclusiones}{44}

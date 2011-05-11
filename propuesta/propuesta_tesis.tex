@@ -2,7 +2,9 @@
 
 \usepackage{fontenc}
 \usepackage[latin1]{inputenc}
-\usepackage[spanish]{babel}
+\usepackage[spanish,es-noshorthands]{babel}
+
+
 \usepackage[usenames,dvipsnames]{color}
 
 \usepackage{tikz}
@@ -49,6 +51,10 @@ basicstyle=\footnotesize}
 \textwidth 15cm
 \textheight 21cm
 
+% Hace que evite cortar las palabras al final del párrafo
+\pretolerance=2000
+\tolerance=3000
+% texlive-lang-spanish da soporte al español !!! importante !!!
 
 \begin{document}
 \bibliographystyle{unsrt}
@@ -60,8 +66,8 @@ basicstyle=\footnotesize}
 %      \input intro                  %  Introducción planteamiento del problema
 %      \input description            %  Propuesta de tesis
 %      \input technology_transfer    %  Marco teórico, recomendaciones, formulación de la metodología
-     \input embedded               %  Aplicación de la metodología, resultados obtenidos
-%      \input education              %  Difusión en la academia 
+%      \input embedded               %  Aplicación de la metodología, resultados obtenidos
+     \input education              %  Difusión en la academia 
 %      \input commons                %  Difusión como movimiento
 %      \input conclusions             %  Conclusiones
 % *******************
@@ -113,3 +119,6 @@ Y despues decir que se hizo para resolver el problema.
 `` ''
 `` ''
 `` ''
+
+
+TODO:  

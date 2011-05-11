@@ -1,206 +1,37 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{1}
 
-\bibitem{Wik}
-Wikipedia.
-\newblock Wikipedia, the free encyclopedia.
-\newblock http://en.wikipedia.org/.
+\bibitem{WCI}
+{Worldwide CDIO Initiative}.
+\newblock "{B}enefits of {CDIO}" {URL}:http://www.cdio.org/benefits-cdio on
+  {N}ovember, 2009.
 
-\bibitem{Cor05}
-{Luis Alejandro Cort\'es}.
-\newblock {\em Verification and {S}cheduling {T}echniques for {R}eal-{T}ime
-  {E}mbedded {S}ystems}.
-\newblock PhD thesis, Link\"opings universitet Institute of Technology, 2005.
+\bibitem{ECJM+09}
+{E. Crawley}, {J. Malmqvist}, {D. Brodeur}, and {B. Lucas}.
+\newblock C{DIO} {S}yllabus, {L}eadership and {E}ntrepreneurship.
+\newblock {\em 5th International CDIO conference}, 2009.
 
-\bibitem{Col05}
-Colciencias.
-\newblock Plan {E}strat\'egico del {P}rograma {N}acional de {D}esarrollo
-  {T}ecnol\'ogico {I}ndustrial y {C}alidad 2005 - 2015.
-\newblock Technical report, Colciencias, 2005.
+\bibitem{EFC01}
+{Edward F. Crawley}.
+\newblock The {CDIO} {S}yllabus {A} {S}tatement of {G}oals for {U}ndergraduate
+  {E}ngineering {E}ducation.
+\newblock {\em URL:http://www.cdio.org}, 2001.
 
-\bibitem{MO90}
-{M. Odedra}.
-\newblock {\em Information {T}echnology {T}ransfer to {D}eveloping {C}ountries:
-  {C}ase studies from {K}enya, {Z}ambia and {Z}imbabwe}.
-\newblock PhD thesis, London School of Economics, 1990.
+\bibitem{HMHK09}
+{H. Mitsui}, {H. Kambe}, and {H. Koizumi}.
+\newblock Use of {S}tudent {E}xperiments for {T}eaching {E}mbedded {S}oftware
+  {D}evelopment {I}ncluding {HW}/{SW} {C}o-{D}esign.
+\newblock {\em IEEE TRANSACTIONS ON EDUCATION,}, 52(3), August 2009.
 
-\bibitem{IAI}
-{Innovation Associates Inc.}
-\newblock Technology {T}ransfer and {C}ommercialization {P}artnerships
-  {E}xecutive {S}ummary.
+\bibitem{SS06}
+{S. Shah}.
+\newblock Motivation, {G}overnance, and the {V}iality of {H}ybrid {F}orms in
+  {O}pen {S}ource {S}oftware {D}evelopment.
+\newblock {\em Management Science}, July 2006.
 
-\bibitem{MDAG99}
-{M. Duque} and {A. Gauthier}.
-\newblock Formaci\'on de {I}ngenieros para la {I}nnovaci\'on y el {D}esarrollo
-  {T}ecnol\'ogico en {C}olombia.
-\newblock {\em Revista de la Facultad de Minas - Universidad Nacional de
-  Colombia}, December 1999.
-
-\bibitem{DZSC+07}
-{D Zuluaga}, {S Campos}, {M Tovar}, {R Rodr\'{\i}guez}, {J S\'anchez}, {A
-  Aguilera}, {L Land\'{\i}nez}, and {J Medina}.
-\newblock Informe de {V}igilancia {T}ecnol\'ogica: {A}plicaciones de la
-  {E}lectr\'onica en el {S}ector {A}gr\'{\i}cola.
-\newblock Technical report, COLCIENCIAS, 2007.
-
-\bibitem{MTRR07}
-{M. Tovar} and {R. Rodr\'{\i}guez}.
-\newblock P{ROSPECTIVA} {Y} {VIGILANCIA} {TECNOL}\'{O}{GICA} {DE} {LA}
-  {ELECTR}\'{O}{NICA} {EN} {COLOMBIA}.
-\newblock Master's thesis, Universidad Nacional de Colombia, 2007.
-
-\bibitem{Mar04}
-H\'ector Mart\'{\i}nez.
-\newblock Apropiaci\'on de conocimiento en {C}olombia. {E}l caso de los
-  contratos de importaci\'on de tecnolog\'{\i}a.
-\newblock {\em Revista Cuadernos de Econom\'{\i}a}, 2004.
-
-\bibitem{JH09}
-{Jon Hall}.
-\newblock P{OR} {GRANDES} {QUE} {SEAN}...: {ASEGURE} {EL} {FUTURO} {DE} {SU}
-  {NEGOCIO}.
-\newblock {\em Linux magazine,}, ISSN 1576-4079(58):92, 2009.
-
-\bibitem{AG10}
-{A. Grove}.
-\newblock How {A}merica {C}an {C}reate {J}obs.
-\newblock
-  http://www.businessweek.com/magazine/content/10\_28/b4186048358596.htm, May
-  2010.
-
-\bibitem{Sta99}
-R.~M. Stallman.
-\newblock {\em The {GNU} {O}perating {S}ystem and the {F}ree {S}oftware
-  {M}ovement {V}oices from the {O}pen {S}ource {R}evolution}.
-\newblock O'Reilly and Associates, 1999.
-
-\bibitem{SBME07}
-{S. Banguero} and {M. Erazo}.
-\newblock {\em Plataforma de {D}esarrollo para {S}istemas {E}mbebidos {B}asada
-  en el {G}ame{B}oy {A}dvance}.
-\newblock Universidad Industrial de Santander, 2007.
-
-\bibitem{CC}
-{C. Camargo}.
-\newblock E{CB}\_{A}{T}91 y {ECBOT} {P}lataformas {A}biertas para el desarrollo
-  de {S}istemas {E}mbebidos.
-\newblock {\em URL: http://wiki.emqbit.com/free-ecb-at91}.
-
-\bibitem{CC06}
-{C. Camargo}.
-\newblock First {C}olombian {L}inux {SBC} runs {D}ebian.
-\newblock URL:
-  http://www.linuxfordevices.com/c/a/News/First-Colombian-Linux-SBC-runs-Debia%
-n/, 2006.
-
-\bibitem{CC08b}
-{C. Camargo}.
-\newblock E{CBOT}: {A}rquitectura {A}bierta para {R}obots {M}\'obiles.
-\newblock {\em VII conferencia Iberoamericana en Sistemas, Cibern\'etica e
-  Inform\'atica}, 2008.
-
-\bibitem{CC08}
-{C. Camargo}.
-\newblock E{CBOT} y {ECB}\_{A}{T}91 {P}lataformas {A}biertas para el {D}ise\~no
-  de {S}istemas {E}mbebidos y {C}o-{D}ise\~no {HW}/{SW}.
-\newblock {\em VIII Jornadas de Computaci\'on Reconfigurable y Aplicaciones,
-  Madrid Espa\~na}, September 2008.
-
-\bibitem{CC07}
-{C. Camargo}.
-\newblock E{CBOT}: {A}rquitectura {A}bierta para {R}obots {M}\'oviles.
-\newblock {\em IEEE Colombian Workshop on Circuits and Systems}, 2007.
-
-\bibitem{CC11c}
-{C. Camargo}.
-\newblock S{IE}: {P}lataforma {H}ardware copyleft para la {E}nse\~nanza de
-  {S}istemas {D}igitales.
-\newblock {\em XVII Workshop de Iberchip, Bogot\'a Colombia}, February 2011.
-
-\bibitem{DODM04}
-{D. Ovalle} and {D. Mendez}.
-\newblock {\em Dise\~no e {I}mplementaci\'on de equipo {B}\'asico de
-  {L}aboratorio {U}tilizando {S}istemas {E}mbebidos y {FPAA}s.}
-\newblock Universidad Nacional de Colombia, 2004.
-
-\bibitem{NR11}
-{N. Rosas}.
-\newblock Dise\~no e {I}mplementaci\'on de un {S}istema {E}mbebido para la
-  {A}dquisici\'on y {T}ransmisi\'on de {S}e\~nales {B}iom\'edicas a {T}rav\'es
-  de la {R}ed {C}elular.
-\newblock Master's thesis, 2011.
-
-\bibitem{CC05}
-{C. Camargo}.
-\newblock Implementaci\'on de {S}istemas {D}igitales {C}omplejos {U}tilizando
-  {S}istemas {E}mbebidos.
-\newblock {\em Memorias del XI Workshop de Iberchip ISBN 959-261-105-X}, 2005.
-
-\bibitem{CC09}
-{C. Camargo}.
-\newblock Control de {S}istemas {P}aralelos {I}nspirado en la {N}aturaleza.
-\newblock {\em Colombian Workshop on Circuits and Systems}, 2009.
-
-\bibitem{CC06b}
-{C. Camargo}.
-\newblock Linux como herramienta de {D}esarrollo de {S}istemas {E}mbebidos.
-\newblock {\em XII Workshop de Iberchip, San Jose}, 2006.
-
-\bibitem{CCOS06}
-{C. Camargo} and {O. Sanchez}.
-\newblock Linux embebido como herramienta para realizar reconfiguraci\'on
-  parcial.
-\newblock {\em XII Workshop Iberchip}, 2006.
-
-\bibitem{ICCC06}
-{I. Castillo}, {C. Camargo}, and {C. Perez}.
-\newblock Automatizaci\'on de un puente gr\'ua a escala, mediante una
-  plataforma embebida la cual soporta multiprogramaci\'on.
-\newblock {\em XII Workshop Iberchip}, 2006.
-
-\bibitem{JEFS05}
-{J. Espinosa}, {F. Segura}, and {C. Camargo}.
-\newblock Evoluci\'on de un {A}rreglo de {C}\'elulas {U}tilizando {A}lgoritmos
-  {G}en\'eticos.
-\newblock {\em Memorias del XI Workshop de Iberchip ISBN 959-261-105-X}, 2005.
-
-\bibitem{CC08c}
-{C. Camargo}.
-\newblock E{CBOT} y {ECB}\_{A}{T}91 {P}lataformas {A}biertas para el {D}ise\~no
-  de {S}istemas {E}mbebidos y {C}o-dise\~no {HW}-{SW}.
-\newblock {\em VIII Jornadas de Computaci\'on Reconfigurable y Aplicaciones},
-  2008.
-
-\bibitem{CC11}
-{C. Camargo}.
-\newblock Hardware copyleft como {H}erramienta para la {E}nse\~nanza de
-  {S}istemas {E}mbebidos.
-\newblock {\em Simposio Argentino de Sistemas Embebidos}, 2011.
-
-\bibitem{CC11b}
-{C. Camargo}.
-\newblock Hardware copyleft como {H}erramienta para la {E}nse\~nanza de
-  {S}istemas {E}mbebidos.
-\newblock {\em Congreso Argentino de Sistemas Embebidos CASE 2011, Buenos Aires
-  Argentina}, March 2011.
-
-\bibitem{CC11d}
-{C. Camargo}.
-\newblock Metodolog\'{\i}a {P}ara la {T}ransferencia {T}ecnol\'ogica en la
-  {I}ndustria {E}lectr\'onica {B}asada en {S}oftware {L}ibre y {H}ardware
-  {C}opyleft.
-\newblock {\em XVII Workshop de Iberchip, Bogot\'a Colombia}, February 2011.
-
-\bibitem{CC11e}
-{C. Camargo}.
-\newblock Low {C}ost {P}latform for {E}volvable-{B}ased {B}oolean {S}ynthesis.
-\newblock {\em IEEE Latin American Symposium on Circuits and Systems (LASCAS
-  2011), Bogot\'a Colombia}, February 2011.
-
-\bibitem{CC11f}
-{C. Camargo}.
-\newblock P{LATAFORMAS} {ABIERTAS} {HARDWARE}/{SOFTWARE} {PARA} {APLICACIONES}
-  {EN} {ROBOTICA}.
-\newblock {\em V Congreso Internacional de Ingenier\'{\i}a Mec\'anica y III de
-  Ingenier\'{\i}a Mecatr\'onica (por publicar)}, 2011.
+\bibitem{BBS}
+{Bloom B S}, editor.
+\newblock {\em Taxonomy of {E}ducational {O}bjetives, the classification of
+  educational goals}.
+\newblock Mckay.
 
 \end{thebibliography}

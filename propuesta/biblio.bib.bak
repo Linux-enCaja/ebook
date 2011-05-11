@@ -1075,6 +1075,14 @@
   year           = 1998
 }
 
+@MastersThesis{RJ10,
+  Author         = {{R. Janssen}},
+  Title          = {Exploring the impact of culture {T}echnology transfer
+                   to five {A}frican countries},
+  School         = {University of Twente, the Netherlands},
+  year           = 2010
+}
+
 @PhdThesis{AMPt99,
   Author         = {{A. Martinoli} and PhD thesis, PhD Thesis No 2069,
                    EPFL},

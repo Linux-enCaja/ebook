@@ -2,50 +2,47 @@ This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: propuesta_tesis.aux
 The style file: unsrt.bst
 Database file #1: biblio.bib
-Warning--empty journal in IAI
-Warning--empty year in IAI
-Warning--can't use both author and editor fields in Sta99
-Warning--empty year in CC
-Warning--empty school in NR11
-You've used 33 entries,
+Warning--empty note in WCI
+Warning--empty year in BBS
+You've used 6 entries,
             1791 wiz_defined-function locations,
-            603 strings with 8648 characters,
-and the built_in function-call counts, 4575 in all, are:
-= -- 377
-> -- 188
+            478 strings with 4418 characters,
+and the built_in function-call counts, 865 in all, are:
+= -- 65
+> -- 42
 < -- 0
-+ -- 82
-- -- 49
-* -- 159
-:= -- 840
-add.period$ -- 98
-call.type$ -- 33
-change.case$ -- 30
++ -- 17
+- -- 11
+* -- 43
+:= -- 163
+add.period$ -- 17
+call.type$ -- 6
+change.case$ -- 5
 chr.to.int$ -- 0
-cite$ -- 38
-duplicate$ -- 252
-empty$ -- 479
-format.name$ -- 49
-if$ -- 989
+cite$ -- 8
+duplicate$ -- 47
+empty$ -- 85
+format.name$ -- 11
+if$ -- 180
 int.to.chr$ -- 0
-int.to.str$ -- 33
-missing$ -- 27
-newline$ -- 167
-num.names$ -- 33
-pop$ -- 115
+int.to.str$ -- 6
+missing$ -- 5
+newline$ -- 32
+num.names$ -- 7
+pop$ -- 19
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 94
+skip$ -- 16
 stack$ -- 0
-substring$ -- 6
-swap$ -- 29
+substring$ -- 0
+swap$ -- 5
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 5
-while$ -- 34
-width$ -- 35
-write$ -- 333
-(There were 5 warnings)
+warning$ -- 2
+while$ -- 6
+width$ -- 7
+write$ -- 59
+(There were 2 warnings)
