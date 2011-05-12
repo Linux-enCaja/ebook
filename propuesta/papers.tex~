@@ -5,7 +5,7 @@
 \subsection{En Hardware Evolutivo}
 Las plataformas desarrolladas en este trabajo fueron utilizadas como una forma novedosa y económica de implementar algoritmos de hardware evolutivo, la posibilidad de tener una FPGA y un procesador en la misma placa permitió la implementación de algoritmos genéticos de forma intrínseca, es decir, verificando el nivel de ajuste de cada individuo a la solución requerida dentro del mismo dispositivo. En esta área se generaron dos artículos:
 
-\textbf{Intrinsic Evolvable Hardware for Combinatorial Synthesis Based on SoC+FPGA and GPU Platforms} Será publicado en la conferencia \textit{Genetic and Evolutionary Computation Conference} GECCO 2011; clasificada entre las mejores conferencias en inteligencia artificial (AI conference ranking) y es pubicado por ACM (Association for Computing Machinery \footnote{ACM, es la sociedad educativa y científica  informática más grande del mundo.}) 
+\textbf{Intrinsic Evolvable Hardware for Combinatorial Synthesis Based on SoC+FPGA and GPU Platforms} Será publicado en la conferencia \textit{Genetic and Evolutionary Computation Conference} GECCO 2011; clasificada 7ma entre 711 conferencias en inteligencia artificial (AI conference ranking) y es pubicado por ACM (Association for Computing Machinery \footnote{ACM, es la sociedad educativa y científica  informática más grande del mundo.}) 
 
 
 \includepdf[pages=-]{papers/gecco.pdf} 

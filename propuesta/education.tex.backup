@@ -6,21 +6,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introducción}
 
-La disponibilidad de personal calificado que absorba, asimile y aplique los conocimientos asociados a una tecnología es, a nuestro modo de ver, el punto más importante en el proceso de transferencia tecnológica; como observamos anteriormente, los canales tradicionales de transferencia han demostrado ser poco efectivos en el área bajo estudio; podemos concluir sin temor a equivocarnos que la causa principal del atraso de la industria electrónica (relacionada con el diseño digital) es la poca oferta de personal calificado que permita generar un cambio y pasar de importadores a generadores de soluciones.
+La disponibilidad de personal calificado que absorba, asimile y aplique los conocimientos asociados a una tecnología es, a nuestro modo de ver, el punto más importante en el proceso de transferencia tecnológica; como observamos anteriormente, los canales tradicionales de transferencia han demostrado ser poco efectivos para difundir estos conocimientos en el área bajo estudio; podemos concluir sin temor a equivocarnos que la causa principal del atraso de la industria electrónica (relacionada con el diseño digital) es la poca oferta de personal calificado que permita generar un cambio que permita pasar de importadores a generadores de soluciones que utilizan los últimos avances tecnológicos en la industria electrónica mundial.
 
-Analizando el caso del Departamento de Ingeniería Eléctrica y Electrónica (DIEE) de la Universidad Nacional de Colombia, obervamos que los estudiantes son muy hábiles para analizar y para aplicar sus conocimientos en la solución a problemas académicos; sin embargo, la mayoría presenta una gran dificultad al momento de implementar físicamente estas soluciones; esto, porque en la mayoría de las asignaturas no se llega a este punto ya que el proceso termina en la simulación. La falta de contacto de muchos docentes con la industria hace que los programas de estas asignaturas no incluyan como parte de la metodología la experimentación práctica; algunos docentes argumentan que la implementación práctica no es labor de un ingeniero y por esta razón ignoran este proceso; aunque esta opinión es respetable, a nuestro modo de ver, en un país como Colombia donde no existe una oferta considerable de bienes y servicios relacionados con el diseño de sistemas electrónicos (comparado con países de la región) se le deben proporcionar al estudiante las herramientas necesarias para innovar y crear nuevos productos que den solución precisa a problemas locales. La falta de contacto por parte de los estudiantes a la solución de problemas reales origina una desconfianza por parte de la industria hacia los poductos generados localmente.
+Analizando el caso del Departamento de Ingeniería Eléctrica y Electrónica (DIEE) de la Universidad Nacional de Colombia, observamos que los estudiantes son muy hábiles para analizar y para aplicar sus conocimientos en la solución a problemas académicos; sin embargo, la mayoría presenta una gran dificultad al momento de implementar físicamente estas soluciones; esto, porque en la mayoría de las asignaturas no se llega a este punto, ya que el proceso termina en la simulación. La falta de contacto de muchos docentes con la industria hace que los programas de estas asignaturas no incluyan como parte de la metodología la experimentación práctica; algunos docentes argumentan que la implementación práctica no es labor de un ingeniero y por esta razón ignoran este proceso; aunque esta opinión es respetable, a nuestro modo de ver, en un país como Colombia donde no existe una oferta considerable de bienes y servicios relacionados con el diseño de sistemas electrónicos (comparado con países de la región) se le deben proporcionar al estudiante las herramientas necesarias para innovar y crear nuevos productos que den solución precisa a problemas locales. La falta de contacto por parte de los estudiantes a la solución de problemas reales origina una desconfianza por parte de la industria hacia los productos generados localmente.
 
-Es importante que los estudiantes utilicen herramientas adecuadas cuando se enfrentan a la implementación física. Hasta hace poco en el DIEE se encontraban trabajos de grado que utilizaban placas de prototipos; se proporcionaban soluciones basadas en herramientas comerciales las cuales eran conseguidas de forma ilegal o se utilizaban demos. Este tipo de soluciones están muy lejos de una solución comercial real, primero por que no proporciona una plataforma física robusta y segundo porque es encesario adquirir software muy costoso. Adicionalmente, no es ético utilizar herramientas comerciales en la enseñanza si no se cuentan con las licencias necesarias; es muy común ignorar este tipo de violaciones a los derechos de autor cuando se trabaja en aplicaciones académicas, aunque el fin del uso sea muy loable no deja de ser ilegal; por esta razón, una de las premisas de nuestra metodología de enseñanza será el uso de herramientas abiertas que produzcan resultados comparables con las herramientas comerciales.
+Es importante que los estudiantes utilicen herramientas adecuadas cuando se enfrentan a la implementación física. Hasta hace poco en el DIEE se encontraban trabajos de grado que utilizaban placas de prototipos; se proporcionaban soluciones basadas en herramientas comerciales las cuales eran conseguidas de forma ilegal o se utilizaban demos. Este tipo de soluciones están muy lejos de una solución comercial real, primero por que no proporciona una plataforma física robusta y segundo porque es necesario adquirir software muy costoso. Adicionalmente, no es ético utilizar herramientas comerciales en la enseñanza si no se cuentan con las licencias necesarias; es muy común ignorar este tipo de violaciones a los derechos de autor cuando se trabaja en aplicaciones académicas, aunque el fin de su utilización sea muy loable no deja de ser ilegal; por esta razón, una de las premisas de nuestra metodología de enseñanza fue el uso de herramientas abiertas que producen resultados comparables con las herramientas comerciales.
 
-La metodología que proponemos adopta los conocimientos generados en el proceso de transferencia descrito en el capítulo \ref{ch:embedded} y se constituye en su aplicación a la academia, con esto esperamos que los estudiantes tomen conciencia de la importancia del uso de esta tecnología y utilicen esta información para crear productos novedosos que den solución a problemas locales. El contenido del curso y metodología se ajustará a la iniciativa CDIO. El Departamento de Ingeniería Eléctrica y Electrónica de la Universidad Nacional de Colombia está realizando el proceso de adaptar la Iniciativa CDIO a su programa académico, y en la mayoría de las asignaturas no se contemplan acitividades que ayuden a mejorar las habilidades en la implementación de sistemas, lo que confirma una vez más que la falta de docentes con experiencia en la industria afecta la generación de habilidades necesarias para crear nuevos productos. 
+La metodología que proponemos adopta los conocimientos generados en el proceso de transferencia descrito en el capítulo \ref{ch:embedded} y se constituye en su aplicación y en una herramienta de difusión a la academia, con esto esperamos que los estudiantes tomen conciencia de la importancia del uso de esta tecnología y utilicen esta información para crear productos novedosos que den solución a problemas locales. El contenido del curso y metodología se ajustará a la iniciativa CDIO. El Departamento de Ingeniería Eléctrica y Electrónica de la Universidad Nacional de Colombia está realizando el proceso de adaptar la Iniciativa CDIO a su programa académico, y en la mayoría de las asignaturas no se contemplan actividades que ayuden a mejorar las habilidades en la implementación de sistemas, lo que confirma una vez más que la falta de docentes con experiencia en la industria afecta la generación de habilidades necesarias para crear nuevos productos y la importancia de incluirlos como parte de la presente metodología.
 
+\subsection{La iniciativa CDIO}
 
+La iniciativa CDIO \footnote{http://www.cdio.org} ha sido desarrollada por el MIT con ayuda de académicos, industriales, ingenieros y estudiantes \cite {WCI} como respuesta a los diferentes caminos que están tomando la educación de la ingeniería y las demandas del mundo real \footnote{lo que se aplica perfectamente al estado de la industria electrónica en Colombia, donde la enseñanza en ingeniería se queda a medio camino y no se hace implementación física}. Esta iniciativa ha sido adoptada por un creciente número de instituciones académicas a lo largo del mundo; hacer parte de este esfuerzo mundial nos ayuda a mantener nuestros planes académicos actualizados con los cambios que se realizan en países más industrializados. En este capítulo mostraremos como esta iniciativa se adapta perfectamente a la metodología propuesta en este trabajo ya que adiciona dos componentes importantísimos para la aplicación de la tecnología en la creación de nuevos productos: la implementación y la operación. 
 
-\subsection{Objetivos de la iniciativa CDIO}
-
-La iniciativa CDIO \footnote{http://www.cdio.org} ha sido desarrollada por el MIT con ayuda de academicos, industriales, ingenieros y estudiantes\cite {WCI} como respuesta a los caminos diferentes que están tomando la educación de la ingeniería y las demandas del mundo real \footnote{lo que se aplica perfectamemente al estado de la industria electrónica (y a otras industrias) en Colombia, donde la enseñanza en ingeniería se queda a medio camino y no se hace implementantación física.} Esta iniciativa ha sido adoptada por un creciente número de instituciones académicas a lo largo del mundo. Hacer parte de este esfuerzo mundial nos ayuda a mantener nuestros planes académicos actualizados con los cambios que se realizan en países más industrializados. En este capítulo mostraremos como esta iniciativa se adapta perfectamemente a la metodología propuesta en este trabajo ya que adiciona dos componentes importantísimos para la aplicación de la tecnología en la creación de nuevos productos: la implementación y la operación. 
-
-La iniciativa CDIO se basa en la suposición de que los egresados de los centros de formación en ingeniería deben ser capaces de: \textbf{C}oncebir, \textbf{D}iseñar, \textbf{I}mplementar y \textbf{O}perar sistemas funcionales en el mundo real. Como mencionamos anteriormente, en Colombia, la mayoría de los centros de formación solo tienen en cuenta la concepción y el diseño, descuidando por completo la implementación y la operación, esto, impide que se generen las habilidades necesarias tenga una estrecha relación con la industria, la cual, requiere productos que pueda comercializar o soluciones a sus necesidades. La frase \textit{en el mundo real} resalta la importancia de trabajar en la solución de problemas que pueden encontrarse en el ejercicio profesional, lo que es muy difícil de determinar cuando los docentes no han tenido contacto con el mundo real. La iniciativa CDIO se enfoca en preparar a los estudiantes con los conocimientos habilidades y aptitudes para ser ingenieros líder; y sus principales objetivos son: \cite {WCI}:
+La iniciativa CDIO se basa en la suposición de que los egresados de los centros de formación en ingeniería deben ser capaces de: \textbf{C}oncebir, \textbf{D}iseñar, \textbf{I}mplementar y \textbf{O}perar sistemas funcionales en el mundo real. Como mencionamos anteriormente, en Colombia, la mayoría de los centros de formación solo tienen en cuenta la concepción y el diseño, descuidando por completo la implementación y la operación, esto, impide que se generen las habilidades necesarias para establecer una estrecha relación con la industria, la cual, requiere productos que pueda comercializar o den soluciones a sus necesidades. La frase \textit{en el mundo real} resalta la importancia de trabajar en la solución de problemas que pueden encontrarse en el ejercicio profesional, lo que es muy difícil de determinar cuando los docentes no han tenido contacto con el mundo real. La iniciativa CDIO se enfoca en preparar a los estudiantes con los conocimientos habilidades y aptitudes para ser ingenieros líder; y sus principales objetivos son: \cite {WCI}:
 
 \begin{itemize}
  \item Educar a los estudiantes para dominar un conocimiento más profundo de los fundamentos técnicos.
@@ -38,24 +36,24 @@ Estos objetivos se adaptan a los requerimientos que se exige a la plataforma tec
 
 \subsubsection{Emprendimiento y liderazgo}
 
-La situación actual por la que atraviesa la Industria electrónica nacional, requiere que los profesionales en el área tengan las capacidades de emprendimiento y liderazgo necesarias para la creación de nuevas empresas o para la creación de nuevos productos, la Figura \ref{cdio_emp_lid} muestra la relación entre emprendimiento \footnote{El concepto clásico de emprendimiento involucra el re-direccionamiento y movilización de capital y recursos humanos para crear una nueva actividad económica; actualmente, el emprendimiento esta asociado a la creación de una nueva empresa con una nueva línea de negocios.}, liderazgo y las habilidades CDIO. 
+La situación actual por la que atraviesa la industria electrónica nacional, requiere que los profesionales en el área tengan las capacidades de emprendimiento y liderazgo necesarias para la creación de nuevas empresas o para la creación de nuevos productos, la Figura \ref{cdio_emp_lid} muestra la relación entre emprendimiento \footnote{El concepto clásico de emprendimiento involucra el re-direccionamiento y movilización de capital y recursos humanos para crear una nueva actividad económica; actualmente, el emprendimiento esta asociado a la creación de una nueva empresa con una nueva línea de negocios.}, liderazgo y las habilidades CDIO. 
 
 \begin{figure}[H]
-  \begin{center} \includegraphics[scale=.6]{./images/CDIO_emp_lid.png} \end{center}
-  \caption{} fuente:\cite{ECJM+09} \label{cdio_emp_lid}
+  \begin{center} \includegraphics[scale=.35]{./images/CDIO_emp_lid.pdf} \end{center}
+  \caption{Relación entre emprendimiento, liderazgo y las habilidades CDIO} fuente:\cite{ECJM+09} \label{cdio_emp_lid}
 \end{figure}
 
 \subsection{Estructura del plan de estudios CDIO}
-La figura \ref{cdio_blocks} muestra los bloques constructores del plan de estudios CDIO, en el primer nivel podemos observar que todo individuo interesado en obtener habilidades técnicas posee \textit{habilidades personales y profesionales}, las cuales son fundamentales para la práctica. Para se capaces de desarrollar sistemas complejos en ingeniería, los estudiantes deben dominar los fundamentos del \textit{razonamiento y conocimiento técnico}; para trabajar en un entorno moderno basado en grupos de trabajo los estudiantes deben desarrollar \textit{habilidades interpersonales} de comunicación y trabajo en equipo; finalmente para ser capaz de crear y operar productos y sistemas un estudiante debe entender el concepto de \textit{concebir, diseñar, implementar y operar sistemas en el Contexto social y empresarial}\cite{EFC01}
+La figura \ref{cdio_blocks} muestra los bloques constructores del plan de estudios CDIO, en el primer nivel podemos observar que todo individuo interesado en obtener habilidades técnicas posee \textit{habilidades personales y profesionales}, las cuales son fundamentales para la práctica. Para se capaces de desarrollar sistemas complejos en ingeniería, los estudiantes deben dominar los fundamentos del \textit{razonamiento y conocimiento técnico}; para trabajar en un entorno moderno basado en grupos de trabajo, los estudiantes deben desarrollar \textit{habilidades interpersonales} de comunicación y trabajo en equipo; finalmente, para ser capaz de crear y operar productos y sistemas, un estudiante debe entender el concepto de \textit{concebir, diseñar, implementar y operar sistemas en el Contexto social y empresarial}\cite{EFC01}
 
 \begin{figure}[H]
-  \begin{center} \includegraphics[scale=.8]{./images/CDIO.png} \end{center}
+  \begin{center} \includegraphics[scale=.8]{./images/CDIO.pdf} \end{center}
   \caption{Bloques constructores de conocimiento, habilidades y actitudes necesarias para concebir, diseñar, implementar y operar sistemas en el contexto social y empresarial} fuente:\cite{EFC01} \label{cdio_blocks}
 \end{figure}
 
 
 \subsubsection{Nivel 1: Razonamiento y conocimiento técnico}
-Los componentes del primer nivel \textit{razonamiento y conocimiento técnico} son comúnes a los planes de estudio de las ingenierías modernas y son:
+Los componentes del primer nivel \textit{razonamiento y conocimiento técnico} son comunes a los planes de estudio de las ingenierías modernas y son:
 
 \begin{enumerate}
  \item Fundamentos avanzados de ingeniería.
@@ -67,7 +65,7 @@ La razón de colocar este bloque constructor en el primer nivel es solo para reco
 
 \subsubsection{Habilidades personales, profesionales e interpersonales}
 
-Los niveles 2 y 3 se centran en las habilidades personales que debe poseer un individo para que pueda cumplir con el objetivo de la iniciativa CDIO. El nivel 2 esta compuesto por: 
+Los niveles 2 y 3 se centran en las habilidades personales que debe poseer un individuo para que pueda cumplir con el objetivo de la iniciativa CDIO. El nivel 2 esta compuesto por: 
 
 \begin{enumerate}
  \item Las habilidades profesionales que representan las tres formas de pensar más practicadas por los ingenieros: resolución de problemas; descubrimiento de conocimiento y pensamiento sistémico.
@@ -79,19 +77,19 @@ Las habilidades que no hacen parte del contexto profesional ni del inter-persona
 Las habilidades inter-personales, son un subconjunto de las habilidades personales y se dividen en dos grupos (que se traslapan) llamados: equipo de trabajo y comunicaciones. El equipo de trabajo hace referencia a las habilidades necesarias para formar, operar, fortalecer y liderar un equipo con habilidades específicas de un equipo de trabajo técnico. La comunicación se compone de habilidades para idear estrategias de comunicación y aquellas que utilizan los medios orales, escritos, electrónicos y gráficos y en el caso colombiano el uso del idioma Inglés. La Figura \ref{cdio_2_3} muestra  la relación entre las habilidades de nivel 2 (personales y profesionales) y nivel 3 (interpersonales). 
 
 \begin{figure}
-  \begin{center} \includegraphics[scale=.8]{./images/CDIO_2_3.png} \end{center}
+  \begin{center} \includegraphics[scale=.8]{./images/CDIO_2_3.pdf} \end{center}
   \caption{Relación entre las habilidades personales, profesionales e interpersonales} fuente:\cite{EFC01} \label{cdio_2_3}
 \end{figure}
 
 
-\subsubsection{Habiidades CDIO}
-Habilidades necesarias parea concebir, diseñar, implementar y operar sistemas en el contexto social y empresarial; estos cuatro componentes son necesarios para que los egresados de las carreras de ingeniería eléctrica y electrónica sean capaces de absorber los conocimientos que las nuevas tecnologías proporcionan, adaptarlos a la situación tecnológica y al contexto social del país para generar productos que resuelvan necesidades locales. Para satisfacer una necesidad de la sociedad es necesario conocer la dinámica empresarial, los principios que la rigen y como se debe actuar en una empresa de cualquier tipo y tamaño.
+\subsubsection{Habilidades CDIO}
+Habilidades necesarias parea concebir, diseñar, implementar y operar sistemas en el contexto social y empresarial; estos cuatro componentes son necesarios para que los egresados de las carreras relacionadas con la ingeniería electrónica sean capaces de absorber los conocimientos que las nuevas tecnologías proporcionan, adaptarlos a la situación tecnológica y al contexto social del país para generar productos que resuelvan necesidades locales. Para satisfacer una necesidad de la sociedad es necesario conocer la dinámica empresarial, los principios que la rigen y como se debe actuar en una empresa de cualquier tipo y tamaño.
 
 \subsection{Implementación del Plan de Estudios CDIO}
 La Figura \ref{impl_CDIO} muestra los componentes que deben ser especificados para implementar el plan de estudios CDIO al currículo de las asignaturas del área de electrónica digital; en primer lugar se encuentran los resultados esperados del proceso de aprendizaje, esto es, ¿Qué deben saber y qué deben ser capaces de hacer los estudiantes al final del curso? Para contestar a esta pregunta es necesario definir las \textbf{habilidades} que serán reforzadas o desarrolladas y los \textit{objetivos} de cada asignatura. 
 
 \begin{figure}[H]
-  \begin{center} \includegraphics[scale=.6]{./images/CDIO_metodologia.png} \end{center}
+  \begin{center} \includegraphics[scale=.35]{./images/CDIO_metodologia.pdf} \end{center}
   \caption{Objetivos, actividades, y evaluación: } \label{impl_CDIO}
 \end{figure}
 
@@ -103,10 +101,10 @@ Para alcanzar los objetivos definidos en el primer paso, es necesario generar un
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Definición e Identificación de las Habilidades CDIO}
 
-El primer paso en la implementación del plan de estudios CDIO es definir e identificar las habilidades requeridas en una determinada área del plan de estudios, en este caso en las asignaturas del área de electrónica digital. En el DIEE de la UNAL el área de electrónica digital esta compuesta por tres asignaturas para la carrera de ingeniería electrónica: Electrónica Digital 1, Electrónica Digital 2 y Sistemas Embebidos; para la carrera de ingeniería eléctrica está compuesta por Electrónica Digital 1 (la misma en las dos carreras) únicamente.
+El primer paso en la implementación del plan de estudios CDIO es definir e identificar las habilidades requeridas en una determinada área del plan de estudios, en este caso en las asignaturas del área de electrónica digital. En el DIEE de la Universida Nacional de Colombia, el área de electrónica digital esta compuesta por tres asignaturas para la carrera de ingeniería electrónica: Electrónica Digital 1, Electrónica Digital 2 y Sistemas Embebidos.
 
 \subsection{Introducir, Enseñar y Usar}
-Para transladar esta lista de habilidades a objetivos de aprendizaje es necesario determinar el grado de competencia que se espera que el profesional adquiera en cada una de las asignaturas; por supuesto, algunas de estas habilidades no pueden obtenerse solo en una asignatura y es necesario que todo el plan académico contribuya a generarla, lo que requiere un consenso del personal académico. Los niveles de competencia seleccionados para indicar el grado en que debe ser apropiada una determinada habilidad son:
+Para trasladar esta lista de habilidades a objetivos de aprendizaje es necesario determinar el grado de competencia que se espera que el profesional adquiera en cada una de las asignaturas; por supuesto, algunas de estas habilidades no pueden obtenerse solo en una asignatura y es necesario que todo el plan académico contribuya a generarla, lo que requiere un consenso del personal académico. Los niveles de competencia seleccionados para indicar el grado en que debe ser apropiada una determinada habilidad son:
 
 \begin{enumerate}
  \item Introducir: Introduce pero no evalúa.
@@ -150,7 +148,7 @@ A continuación se listan las habilidades CDIO que deben desarrollarse o reforzar
         \begin{enumerate}
          \item  Pensamiento creativo.
          \item  Pensamiento crítico.
-         \item  Toma de conciencia de conocimientos propios y metaconocimiento.
+         \item  Toma de conciencia de conocimientos propios (metaconocimiento).
          \item  Aprendizaje permanente y educar a otros.
         \end{enumerate}
       \item Ética, responsabilidad profesional, equidad y otros valores personales. 
@@ -161,15 +159,19 @@ A continuación se listan las habilidades CDIO que deben desarrollarse o reforzar
         \end{enumerate}
     \end{enumerate}
 
-Las aptitudes personales y profesionales que se desean resaltar en esta metdología son: 
+Las aptitudes personales y profesionales que se desean resaltar en esta metodología son: 
 \begin{itemize}
- \item Pensamiento sistemático: Los conocimientos adquiridos en esta asignatura son utilizados para contribuir a una solucion a un problema de la sociedad. Esta contribución está representada en un sistema digital que utiliza tecnología de punta y para su elaboración se aplicó una metodología de diseño que optimiza recursos económicos proporcionando la funcionalidad requerida. 
+
+ \item Pensamiento sistemático: Los conocimientos adquiridos en esta asignatura son utilizados para contribuir a una solución de un problema de la sociedad. Esta contribución está representada en un sistema digital que utiliza tecnología de punta y para su elaboración se aplicó una metodología de diseño que optimiza recursos económicos proporcionando la funcionalidad requerida.
+ 
  \item Toma de conciencia de conocimientos propios: El estudiante es el responsable de adquirir el conocimiento con la guía del profesor; por lo tanto, debe ser capaz de identificar temas que no ha asimilado completamente y debe realizar actividades que ayuden en la asimilación de nuevos conocimientos.
+
  \item Aprendizaje permanente y educar a otros: El aprendizaje debe ser visto por el estudiante como un proceso continuo que no termina al momento de presentar las evaluaciones, o al finalizar los ciclos de formación; la metodología en estos cursos debe forzar al estudiante a buscar fuentes de información para mejorar la asimilación de conocimientos. El trabajo en equipo ayuda a que esta búsqueda sea compartida, de tal forma que el aprendizaje sea colectivo.
 \end{itemize}
 
- Estas habilidads le permitirán al futuro profesional asimilar cambios en las tecnologías, aplicando técnicas de auto-aprendizaje, lo que hace innecesario que un profesional se vea obligado a tomar cursos de extensión para entender un cambio o una nueva característica de la tecnología que utiliza. A nuestro modo de ver los ingenieros deben estar en la capacidad de adaptarse a estos cambios por si mismos.
+ Estas habilidades le permitirán al futuro profesional asimilar cambios en las tecnologías, aplicando técnicas de auto-aprendizaje, lo que hace innecesario que un profesional se vea obligado a tomar cursos de extensión para entender un cambio o una nueva característica de la tecnología que utiliza. A nuestro modo de ver los ingenieros deben estar en la capacidad de adaptarse a estos cambios por si mismos.
 
+A continuación se listan las habilidades interpersonales que serán creadas y/o mejoradas con la presente metodología.
 %  CDIO NIVEL 3
   \item \textbf{Habilidades interpersonales, trabajo en equipo y comunicación}
 
@@ -200,12 +202,13 @@ Las aptitudes personales y profesionales que se desean resaltar en esta metdolog
         \end{enumerate}    
   \end{enumerate}
 
-Con las habilidades interpersonales se busca formar profesionales que puedan formar grupos de trabajo eficientes, identificando su papel dentro del mismo, facilitando el desarrollo de las actividades de los demás miembros y buscar soluciones conjuntas al problema a resolver y a problemas que surjan del desarrollo del proyecto. Esto es muy importante para el desarrollo de dispositivos digitales, ya que para su elaboración intervienen profesionales de diferentes áreas: diseñadores industriales, programadores, desarrolladores de hardware, personal de mercadeo, ventas y soporte. Por esto, es de suma importancia aprender a utilizar las diferentes formas de comunicación identificando cual es la más eficiente en un determinado caso; el uso de plataformas que permita a miembros de un equipo que se encuentran en diferentes puntos geográficos intercambiar información y discutir temas propios del diseño simplifica el trabajo y ahorra tiempo y dinero.
+Con las habilidades interpersonales se busca formar profesionales que puedan formar grupos de trabajo eficientes, identificando su papel dentro del mismo; facilitando el desarrollo de las actividades de los demás miembros y buscando soluciones conjuntas al problema a resolver y a problemas que surjan del desarrollo del proyecto. Esto es muy importante para el diseño de dispositivos digitales, ya que para su elaboración, intervienen profesionales de diferentes áreas: diseñadores industriales, programadores, desarrolladores de hardware, personal de mercadeo, ventas y soporte. Por esto, es de suma importancia aprender a utilizar las diferentes formas de comunicación identificando cual es la más eficiente en un determinado caso; el uso de plataformas que permita a miembros de un equipo que se encuentran en diferentes puntos geográficos intercambiar información y discutir temas propios del diseño simplifica el trabajo y ahorra tiempo y dinero.
 
-Por otro lado, es importante que el estudiante adquiera habilidades que le permitan documentar de forma adecuada los procesos de diseño y que el material que desarrolle pueda ser utilizado por otros miembros del equipo de forma rápida; pora esto, es importante utilizar herramientas que faciliten la generación de documentos que permitan el acceso a múltiples usuarios.
+Por otro lado, es importante que el estudiante adquiera habilidades que le permitan documentar de forma adecuada los procesos de diseño y que el material que desarrolle pueda ser utilizado por otros miembros del equipo de forma rápida; por esto, es importante utilizar herramientas que faciliten la generación de documentos que permitan el acceso a múltiples usuarios.
 
 Las comunicaciones informales son la mayor fuente de información en los proyectos abiertos, usuarios con un determinado problema escriben a una lista de correo o a canales \textit{irc} (internet relay chat)\footnote{protocolo de comunicaciones en tiempo real basado en texto, permite conversaciones entre un grupo de personas; todos los usuarios que se encuentran en un canal pueden comunicarse entre sí} que tiene como miembros a usuarios más avanzados que pueden contestar todo tipo de preguntas, y al mismo tiempo proporcionan una base de datos con todas las comunicaciones anteriores permitiendo la búsqueda de conversaciones relacionadas con un problema determinado. Estas listas de correo y canales irc también pueden ser utilizados para establecer relaciones profesionales que pueden terminar en nuevos proyectos, ofertas de empleo o colaboración.
 
+A continuación se listan las habilidades que serán el objetivo de este estudio para concebir, diseñar, implementar y operar sistemas. digitales 
 
 %  CDIO NIVEL 4
   \item \textbf{Concebir, diseñar, implementar y operar sistemas en el contexto social y empresarial}
@@ -231,8 +234,8 @@ Las comunicaciones informales son la mayor fuente de información en los proyecto
         \end{enumerate}
      \item Diseño
         \begin{enumerate}
-          \item Proceso de Diseño.
-          \item Fases del proceso de Diseño y enfoques.
+          \item Proceso de diseño.
+          \item Fases del proceso de diseño y enfoques.
           \item Utilización de conocimiento científico en el diseño.
           \item Diseño específico.
           \item Diseño multi-disciplinario.
@@ -240,13 +243,13 @@ Las comunicaciones informales son la mayor fuente de información en los proyecto
      \item Implementación
         \begin{enumerate}
           \item Proceso de fabricación hardware.
-          \item Proceso de Implementación de software.
+          \item Proceso de implementación de software.
           \item Integración software - hardware.
           \item Pruebas, verificación, validación y certificación.
         \end{enumerate}
      \item Liderar esfuerzos en ingeniería 
         \begin{enumerate}
-          \item Pensar creativamente e imaginar posibilidades.
+          \item Pensar de forma creativa e imaginar posibilidades.
           \item Definir la solución.
           \item Crear nuevas formas de solución.
           \item Construir y liderar una organización y una organización extendida.
@@ -260,7 +263,7 @@ Las comunicaciones informales son la mayor fuente de información en los proyecto
           \item Desarrollo del plan de negocios.
           \item Finanzas y capitalización.
           \item Mercadeo de productos innovadores.
-          \item Cencepción de productos y servicios alrededor de nuevas tecnologías.
+          \item Concepción de productos y servicios alrededor de nuevas tecnologías.
           \item Sistema de innovación, redes, infraestructura y servicios. 
           \item Construyendo el equipo e iniciando el proceso de ingeniería.
           \item Manejo de la propiedad intelectual.
@@ -283,22 +286,22 @@ Este grupo de habilidades son las que marcan diferencia con las otras asignatura
 %  \item Participar en empresas, corporaciones mixtas u otras formas organizativas, en orden al mejor cumplimiento de los objetivos y funciones de la universidad.
 \end{itemize}
 
-Como establecimos en el primer capítulo de este trabajo, el problema actual de la industria electrónica (relacionada con el diseño digital) en Colombia es el atraso y desactualización de las metodologías de diseño y fabricación, originado por la falta de personal caificado en el manejo de nuevas tecnologías y metodologías. Por esta razón, es importante que los estudiantes conozcan la realidad de este sector y sean concientes de su responsabilidad en la solución de sus problemas.
+Como establecimos en el primer capítulo de este trabajo, el problema actual de la industria electrónica (relacionada con el diseño digital) en Colombia es el atraso y desactualización de las metodologías de diseño y fabricación, originado por la falta de personal calificado en el manejo de nuevas tecnologías y metodologías. Por esta razón, es importante que los estudiantes conozcan la realidad de este sector y sean conscientes de su responsabilidad en la solución de sus problemas.
 
-Como estudiantes pueden contribuir a difundir los resultados de su actividad académica proporcionando información que pueda ser utilizada por quien este interesado en adquirir conocimientos relacionados con el diseño digital; por esto, una de las actividades que se desarrollan en estas asignaturas es la documentación del proceso de diseño de un problema específico que deben resolver grupos de trabajo, esta metodología y esta información se almacena en el portal público \textit{linuxencaja} y puede ser utilizada por quien esté interesado.
+Como estudiantes pueden contribuir a difundir los resultados de su actividad académica, proporcionando información que pueda ser utilizada por quien este interesado en adquirir conocimientos relacionados con el diseño digital; por esto, una de las actividades que se desarrollan en estas asignaturas es la documentación del proceso de diseño de un problema específico que deben resolver grupos de trabajo, esta metodología y esta información se almacena en el portal público \textit{linuxencaja} y puede ser utilizada por quien esté interesado.
 
-Una parte vital en el proceso de enseñanza es el uso de metodologías de diseño para la creación de soluciones a problemas específicos, por esta razón se trabaja con la misma metodología en los tres cursos y se explican los beneficios de usar todas sus etapas; esto con el objetivo de crear buenos habitos de diseño en elos estudiantes. A diferencia de otras asignaturas en esta línea es necesario implementar físicamente las soluciones propuestas, se resalta que la simualción es un paso importante del proceso de diseño pero no es punto final. El uso de plataformas con recursos limitados para la implementación física hace que los estudiantes optimicen la arquitectura de sus diseños y aprendan a buscar alternativas más económicas pero que cumplan con los requerimientos del sistema. El problema a solucionar es formulado por el equipo de trabajo y ellos deben proporcionar las especificaciones del sistema que resolverá este problema, los estudiantes poseen libertad total en la funcionalidad del mismo, lo que ayuda a la creación de habilidades en la definición de funciones y arquitecturas. 
+Una parte vital en el proceso de enseñanza es el uso de metodologías de diseño para la creación de soluciones a problemas específicos; por esta razón, se trabaja con la misma metodología en los tres cursos y se explican los beneficios de usar todas sus etapas; esto con el objetivo de crear buenos hábitos de diseño en los estudiantes. A diferencia de otras asignaturas en esta línea es necesario implementar físicamente las soluciones propuestas, se resalta que la simulación es un paso importante del proceso de diseño pero no es punto final. El uso de plataformas con recursos limitados para la implementación física hace que los estudiantes optimicen la arquitectura de sus diseños y aprendan a buscar alternativas más económicas pero que cumplan con los requerimientos del sistema. En cada una de estas asignaturas, los estudiantes forman equipos de trabajo y deben formular un problema a solucionar, este problema esta asociado con gustos personales de los miembros del equipo (audio, video, juegos, procesamiento de imágenes, etc); Este grupo debe proporcionar las especificaciones del sistema que resolverá este problema, los estudiantes poseen libertad total en la definición de la funcionalidad del mismo, lo que ayuda a la creación de habilidades en la definición de funciones y arquitecturas. 
 
-Con esto se espera que el estudiante sea conciente de la situación del país y que sienta la necesidad de crear nuevos productos que ayuden a solucionar un problema específico y de paso ayudar a la creación de empleo creando y comercializando nuevos productos diseñados localmente.
+Con esto se espera que el estudiante sea consciente de la situación del país y que sienta la necesidad de crear nuevos productos que ayuden a solucionar un problema específico y de paso ayudar a la creación de empleo creando y comercializando nuevos productos diseñados localmente.
 
 \subsection{Competencias de las Habilidades CDIO 2 y 3}
-La tabla \ref{compet_2_3} muestra las competencias IEU para las \textit{aptitudes personales y profesionales} de las tres asignaturas del área de electrónica digital.
+La tabla \ref{compet_2_3} muestra las competencias IEU para las \textit{aptitudes personales y profesionales} de las tres asignaturas del área de electrónica digital. En ella podemos observar que existen habilidades comunes a las tres asignaturas en lo relacionado con el planteamiento y resolución de problemas, experimentación y descubrimiento de conocimiento y habilidades y actitudes personales; todas ellas buscan que el estudiante sea capaz de identificar un problema y con base en los conocimientos adquiridos formule hipótesis y modelos que permitan dar solución. Las habilidades interpersonales son tratadas de forma gradual, en el primer curso, se guía en la formación de estas habilidades utilizando ejemplos que ellos utilizarán en los cursos posteriores. 
 
 \begin{center}
   \begin{table}[H]
     \begin{tabular}{|l|c|c|c|} \hline
       \multicolumn{4}{|c|}{\textbf{Competencias de las habilidades CDIO nivel 2 y 3}}                 \\ \hline 
-      \multirow{2}{*}{\textbf{APTITUDES PERSONALES Y PROFESIONALES}} & \multicolumn{3}{c|} {Nivel 1}          \\
+      \multirow{2}{*}{\textbf{APTITUDES PERSONALES Y PROFESIONALES}} & \multicolumn{3}{c|} {Nivel 1}          \\ \cline{2-4}
                                                        & E. Dig1 & E. Dig2 & Sist. Emb. \\ \hline 
       \textbf{\textit{Planteamiento y resolución de problemas de ingeniería}} & \multicolumn{3}{c|} {EU}       \\ \hline
 	1 Identificación y formulación del problema    & \multicolumn{3}{c|} {EU}       \\ \hline
@@ -319,7 +322,7 @@ La tabla \ref{compet_2_3} muestra las competencias IEU para las \textit{aptitude
         12 Ética profesional, integridad, responsabilidad & \multicolumn{3}{c|} {U}     \\ \hline
         13 Comportamiento profesional                  & \multicolumn{3}{c|} {U}        \\ \hline
         39 Confianza y lealtad                         & \multicolumn{3}{c|} {IEU}       \\ \hline
-      \multirow{2}{*}{\textbf{HABILIDADES INTERPERSONALES}} & \multicolumn{3}{c|} {Nivel 1}          \\
+      \multirow{2}{*}{\textbf{HABILIDADES INTERPERSONALES}} & \multicolumn{3}{c|} {Nivel 1}          \\ \cline{2-4}
                                                        & E. Digital1 & E. Digital1 & Sist. Emb. \\ \hline 
       \textbf{\textit{Equipo de trabajo}}              & \multicolumn{3}{c|} {EU}       \\ \hline
         14 Formar grupos efectivos                     & EU & U & U                     \\ \hline
@@ -343,13 +346,20 @@ La tabla \ref{compet_2_3} muestra las competencias IEU para las \textit{aptitude
 \end{center}
 
 \subsection{Competencias de las Habilidades C.D.I.O. Sistemas en el contexto Empresarial, Social y Ambiental - Innovación}
-La tabla \ref{compet_4} muestra las competencias IEU para las \textit{C.D.I.O. Sistemas en el contexto Empresarial, Social y Ambiental - Innovación} de las tres asignaturas del área de electrónica digital.
+La tabla \ref{compet_4} muestra las competencias IEU para las \textit{C.D.I.O. Sistemas en el contexto Empresarial, Social y Ambiental - Innovación} de las tres asignaturas del área de electrónica digital. Estas habilidades a nuestro modo de ver ayudarán a la formación de personales capaces de absorber y asimilar los conocimientos necesarios para adaptarse a los cambios en la industria electrónica digital, al tiempo que los aplican en la solución de problemas locales.
 
+Es muy importante contar con el mismo proceso de diseño en este tipo de líneas ya que permiten crear buenos hábitos de diseño desde los primeros cursos, de tal forma que cuando lleguen a los cursos superiores esta forma de pensar y de proceder ya es parte de sus costumbres. 
+
+Algo único en estas tres asignaturas es la implementación, ninguna asignatura de la carrera de ingeniería electrónica tiene como parte de sus actividades la implementación de dispositivos físicos; por lo tanto es muy importante que los estudiantes adquieran estas habilidades en estos tres cursos. El proceso de fabricación hardware se explica desde el primer curso, pero desde el segundo y tercer se realizan implementaciones por parte de los estudiantes, las plataformas \textit{hardware copyleft} son utilizadas como diseños de referencia y los estudiantes las utilizan para copiar sus normas y reglas de diseño. 
+
+Como se explicará más adelante, en el primer semestre se enseñará como se pueden implementar tareas hardware utilizando lenguajes de descripción de hardware y dispositivos lógicos programables; en el segundo curso se utilizarán estos conocimientos para entender al arquitectura de un procesador y para realizar periféricos, en este curso se estudiará el proceso de implementación de tareas software y la integración software - hardware; en el último curso se utilizarán estos conocimientos para desarrollar productos comercializables que utilizan dispositivos modernos.
+
+Es muy importante que los estudiantes sean conscientes de la realidad del país, y de la importancia que tiene en la solución del problema actual de la industria electrónica la creación local de productos novedosos. Por esto, se alentará a los estudiantes a que busquen soluciones a problemas que puedan generar un producto comercializable; por esto, es importante que conozcan el proceso de producción a pequeña y a gran escala y conozcan los sitios donde pueden adquirir los bienes y servicios necesarios para ello.
 
 \begin{center}
   \begin{table}[H]
     \begin{tabular}{|l|c|c|c|} \hline
-      \multirow{2}{*}{\textbf{HABILIDADES CDIO}}              & \multicolumn{3}{c|} {Nivel 1}          \\
+      \multirow{2}{*}{\textbf{HABILIDADES CDIO}}              & \multicolumn{3}{c|} {Nivel 1}          \\ \cline{2-4}
                                                               & E. Digital1 & E. Digital1 & Sist. Emb. \\ \hline 
       \textbf{\textit{Contexto Externo, Social, Económico y Ambiental}} & \multicolumn{3}{c|} {IEU}        \\ \hline
         22 Rol y responsabilidad de los Ingenieros               & \multicolumn{3}{c|} {IEU}     \\ \hline
@@ -371,7 +381,7 @@ La tabla \ref{compet_4} muestra las competencias IEU para las \textit{C.D.I.O. S
         33 Diseño específico                                     & IEU & EU & U                  \\ \hline   
         34 Diseño multi-disciplinario                            & I   & E  & U                  \\ \hline
       \textbf{\textit{Implementación}}                           & \multicolumn{3}{c|} {EU}         \\ \hline
-        35 Proceso de fabricación Hardware                       & IE  & EU & U                  \\ \hline   
+        35 Proceso de fabricación Hardware                       & IEU & EU & U                  \\ \hline   
         36 Proceso de Implementación de Software                 & I   & EU & U                  \\ \hline  
         37 Integración Software - Hardware                       & I   & EU & U                  \\ \hline  
         38 Pruebas, verificación, validación y certificación     & IE  & EU & U                  \\ \hline  
@@ -381,59 +391,17 @@ La tabla \ref{compet_4} muestra las competencias IEU para las \textit{C.D.I.O. S
 \end{center}
 
 
-Como puede verse en la tabla \ref{compet_4} el componente distintivo del plan de estudios propuesto es el nivel de competencias de las habilidades relacionadas con diseño e implementación; en casi todas ellas se utilizan estas habilidades, lo que significa que se realizarán actividades que impliquen diseño e implementación de sistemas digitales utilizando tecnología de punta y técnicas de diseño y fabricación modernas; lo que es imprescindible si se espera que nuestros profesionales lideren esfuerzos que deriven en la creación de empresas y de nuevos productos bienes y servicios.
-
-
 \section{Integración de las Habilidades CDIO al Plan de Estudios}
 
 \subsection{Metodología de diseño}
 
-El proceso de diseño de un Sistema Embebido comienza con la {\textit{especificaci\'on del sistema}} (ver figura \ref{design_method}), en este punto se describe la funcionalidad y se definen las restricciones f\'{\i}sicas, el\'ectricas y econ\'omicas. Esta especificaci\'on debe ser muy general y no deben existir dependencias (tecnol\'ogicas, metodol\'ogicas) de ning\'un tipo, se suele utilizar lenguajes de alto nivel, como UML, C++ para realizar la descripción. La especificaci\'on puede ser verificada a trav\'es de una serie de pasos de an\'alisis cuyo objetivo es determinar la validez de los algor\'{\i}tmos seleccionados, por ejemplo, determinar si el algoritmo siempre termina, los resultados satisfacen las especificaciones. Desde el punto de vista de la re-utilizaci\'on, algunas partes del funcionamiento global deben tomarse de
-una librer\'{\i}a de algor\'{\i}tmos existentes.
+La metodología de diseño utilizada en la creación de este programa académico se describió en la sección \ref{design_metodology} del capítulo \ref{ch:embedded}. En la figura \ref{design_method} se muestra como será abordada esta metodología en los diferentes cursos que componen la línea de electrónica digital.
+ 
 
-\begin{figure}[H]
-  \begin{center} \includegraphics[scale=.8]{./images/habilidades_digitales.png} \end{center}
-  \caption{Metodología de Diseño para el área de Sistemas Digitales} \label{design_method}
-\end{figure}
-
-Una vez definidas las especificaciones del sistema se debe realizar un modelamiento que permita extraer de estas la funcionalidad. El modelamiento es crucial en el diseño ya que de \'el depende el paso existoso de la especificaci\'on a la implementaci\'on. Es importante definir que modelo matem\'atico debe soportar el entorno de diseño. Los modelos m\'as utilizados son: m\'aquinas de estados finitos, diagramas de flujos de datos, sistemas de eventos discretos y redes de petri. Cada modelo posee propiedades matem\'aticas que pueden explotarse de forma eficiente para responder preguntas sobre la funcionalidad del sistema sin llevar a cabo dispendiosas tareas de verificaci\'on. \ Todo modelo obtenido debe ser verificado para comprobar que cumple con las restricciones del sistema. 
-
-Una vez se ha obtenido el modelo del sistema se procede a determinar su {\textit{arquitectura}}, esto es, el n\'umero y tipo de componentes y su inter-conexi\'on. Este paso no es m\'as que una exploraci\'on del espacio de diseño en b\'usqueda de soluciones que permitan la implementaci\'on de una funcionalidad dada, y puede realizarse con varios criterios en mente: costos, confiabilidad, viabilidad comercial. Las opciones de implementacion que se estudiarán son:
-
-\begin{itemize}
-\item Componente HW y SW integrado en un dispositivo semiconductor (SoC): En la actualidad existen muchas compañías que fabrican procesadores de 32 bits integrados a una gran variedad de periféricos, lo cual simplifica el diseño y reduce costos. Este tipo de implementación es muy popular en los dispositivos de consumo masivo (reproductores de MP3, consolas de juego, etc), debido a los grandes niveles de producción resulta más económico contar con un dispositivo que integre el mayor número de funcionalidades, esto disminuye el costo de componentes, el área de circuito impreso.
-
-\item Componente SW en un SoC y componente HW en un dispositivo lógico programable (PLD): Cuando no existen en el mercado un SoC con la cantidad de periféricos requerida para una determinada aplicación, o con una funcionalidad específica, es necesario recurrir a la utilización de dispositivos comerciales que implementen dicha operación; en algunas ocaciones el periférico puede realizar funciones poco comúnes y no se proporciona comercialmente, por lo que es necesario implementar esta funcionalidades en una FPGA y conectarla al SoC de tal forma que este la vea como uno más de sus periféricos.
-
-\item Componente SW y HW en una FPGA: Esta es tal vez la opción más flexible, pero la de menor desempeño, ya que al utilizar los recursos lógicos de la FPGA para la implementación del procesador (softcore) la longitud de los caminos de interconexión entre los bloques lógicos aumentan el retardo de las señales, lo cual disminuye la máxima velocidad de funcionamiento. Los procesadores \textit{softcore} más populares en la actualidad son:
-
-  \begin{itemize}
-  \item Microblaze y Picoblaze de Xilinx.
-  \item NIOS de Altera.
-  \item Leon de Gaisler Research.
-  \item LatticeMico32 (LM32) de Lattice Semiconductors.
-  \item OpenRisc de opencores.
-  \end{itemize}
-
-De los anteriores procesadores el Leon, el LM32 y el Openrisc proporcionan el código fuente en un lenguaje de descripción de hardware, los de las empresas Xilinx y Altera entregan un código a nivel de compuertas que no permite su estudio y modificación; por esats razones y debido a que no se necesita una FPGA con mucha capacidad lógica en estos cursos se trabajará con el LM32 de Lattice.
-
-\end{itemize}
-
-Utilizando como base la arquitectura obtenida en el paso anterior las tareas del modelo del sistemas son mapeadas dentro de los componentes. Esto es, asignaci\'on de funciones a los componentes de la arquitectura. Existen dos opciones a la hora de implementar las tareas o procesos: 
-\begin{enumerate}
-  \item Implementaci\'on software: La tarea se va a ejecutar en un procesador ya sea el del SoC o el softcore LM32.
-  \item Implementaci\'on hardware: La tarea se va a ejecutar en un sistema digital dedicado implementado en un PLD.
-\end{enumerate}
-
-Para cumplir las especificaciones del sistema algunas tareas deben ser implementadas en hardware, esto con el f\'{\i}n de no ocupar al procesador en tareas c\'{\i}clicas, un ejemplo t\'{\i}pico de estas tareas es la generaci\'on de bases de tiempos. La decisi\'on de que tareas se implementan en SW y que tareas se implementan en HW recibe el nombre de {\textit{particionamiento}}, esta selecci\'on es fuertemente dependiente de restricciones econ\'omicas y temporales.
-
-Las tareas software deben compartir los recursos que existan en el sistema (procesador y memoria), por lo tanto se deben hacer decisiones sobre el orden de ejecuci\'on y la prioridad de estas. Este proceso recibe el nombre de {\textit{planificaci\'on}}. En este punto del diseño el modelo debe incluir informaci\'on sobre el mapeo, el particionamiento y la planificaci\'on del sistema.
-
-Las siguientes fases corresponden a la implementaci\'on del modelo, para esto las tareas hardware deben ser llevadas al dispositivo elegido (ASIC o FPGA) y se debe obtener el $''$ejecutable$''$ de las tareas software, este proceso recibe el nombre de {\textit{s\'{\i}ntesis}} HW y SW respectivamente, as\'{\i} mismo se deben sintetizar los mecanismos de comunicaci\'on.
-
-El proceso de prototipado consiste en la realizaci\'on f\'{\i}sica del sistema, esto es, la fabricación de la placa de circuito impreso, el montaje de los componentes y la fabricación de la caja. Finalmente, el sistema f\'{\i}sico debe someterse a pruebas para verificar que se cumplen con las especificaciones iniciales y con las normas propias de su aplicación. Como puede verse en el flujo de diseño existen realimentaciones que permiten depurar el resultado de pasos anteriores en el caso de no cumplirse con las especificaciones iniciales.
-
-Esta metodología de diseño se utilizará en todos los cursos de la línea, pero se utilizarán diferentes opciones de implementación en los diferentes cursos, como se puede apreciar en la figura \ref{design_method}; en electrónica digital 1 solo se implementarán tareas hardware en una FPGA, esto con el fín de enseñar al estudiante los conceptos básicos de la electrónica digital, y el uso de máquinas de estado algorítmicas para la implementación de tareas hardware; en electrónica digital 2 se estudiará la arquitectura de los SoC (utilizando el LM32 de lattice) se utilizarán las herramientas de compilación GNU para escribir las tareas software y se crearán periféricos que implementen tareas hardware y finalmente se estudiarán las diferentes formas de comunicación entre las tareas hardware y software; finalmente en el curso sistemas embebidos, se utilizará un SoC comercial junto con la cadena de herramientas GNU y el sistema operativo Linux para estudiar la arquitectura y programación de los sistemas embebidos modernos.
+ \begin{figure}[H]
+  \begin{center} \includegraphics[scale=.8]{./images/habilidades_digitales.pdf} \end{center}
+  \caption{Metodología de diseño para el área de Sistemas Digitales} \label{design_method}
+ \end{figure}
 
 
 \subsection{Objetivo General}
@@ -452,7 +420,7 @@ Concebir, diseñar, e implementar un sistema digital complejo utilizando la metod
 
 \subsection {Ojbetivos comúnes}
 \begin{itemize}
- \item Identificar las especificaciones funcionales del sistema, su arquitectura de alto nivel y definir su descomposición en elementos
+ \item Identificar las especificaciones funcionales del sistema, su arquitectura de alto nivel y definir su descomposición en elementos.
  \item Explicar las actividades en las etapas del proceso de diseño, 
  \item Desarrollar el pensamiento sistémico.
  \item Modelar funcionalmente sistemas digitales.
@@ -475,10 +443,10 @@ Concebir, diseñar, e implementar un sistema digital complejo utilizando la metod
 
 \subsubsection{Electrónica Digital 2}
 \begin{itemize}
- \item Estudiar los requisitos para un particionamiento Hardware / Software óptimo.
+ \item Estudiar los requisitos para un particionamiento hardware/software óptimo.
  \item Estudiar la arquitectura de un procesador, micro-arquitectura, set de instrucciones, interrupciones, direccionamiento, memorias.
  \item Estudiar el proceso de implementación de tareas software.
- \item Estudiar la integración Software-Hardware.
+ \item Estudiar la integración software-hardware.
  \item Diseñar pruebas para comprobar el correcto funcionamiento de los sistemas implementados.
 \end{itemize}
 
@@ -488,7 +456,7 @@ Concebir, diseñar, e implementar un sistema digital complejo utilizando la metod
  \item Estudiar y realizar el proceso de fabricación hardware.
  \item Estudiar el principio básico de los sistemas operativos.
  \item Describir la integración de software en hardware electrónico
- \item Entender diagramas de circuitos electrónicos de sistemas digitales, identifcar sus componentes y su función.
+ \item Entender diagramas de circuitos electrónicos de sistemas digitales, identificar sus componentes y su función.
  \item Estudiar diseños software y hardware existentes para entender su funcionamiento, arquitectura y adquirir experiencia en el diseño.
  \item Hacer parte de listas de discusión de temas técnicos que usen el inglés como lenguaje.
  \item Utilizar medios electrónicos para documentar procesos de diseño.
@@ -497,7 +465,7 @@ Concebir, diseñar, e implementar un sistema digital complejo utilizando la metod
 Con estos objetivos se busca que al cursar todas las asignaturas del área el estudiante adquiera los conocimientos que se resumen en la figura \ref{ES_education}.
 
 \begin{figure}[htpb]
-   \begin{center} \includegraphics[scale=.51]{./images/ES_CDIO_flow.png}   \end{center}
+   \begin{center} \includegraphics[scale=.6]{./images/ES_CDIO_flow.png}   \end{center}
     \caption{Educación de sistemas embebidos. Tomada de:\cite{HMHK09} y modificada} \label{ES_education}
  \end{figure}
 
@@ -694,18 +662,20 @@ Con estos objetivos se busca que al cursar todas las asignaturas del área el est
 % \end{itemize}
 
 \subsection{Metodología}
-Todas las actividades que se realizarán en estos cursos están encamindas a generar habilidades necesarias para concebir, diseñar, e implementar sistemas digitales complejos, y están articuladas alrededor de una única metodología de diseño. Los tres cursos tienen un carácter teórico-práctico, el componente teórico tratará los diferentes temas de forma general, con el fín de no crear dependencia con las herramientas utilizadas (lo que permitirá realizar actualizaciónes de forma fácil). En el componente práctico se tratarán temas específicos de manejo de las herramientas (lenguajes de descripción de hardware, lenguajes de programación, manejo de plataformas de desarrollo) y como estas se relacionan con la metodología de diseño utilizada.
+Todas las actividades que se realizarán en estos cursos están encaminadas a generar habilidades necesarias para concebir, diseñar, e implementar sistemas digitales complejos, y están articuladas alrededor de una única metodología de diseño. Los tres cursos tienen un carácter teórico-práctico, el componente teórico tratará los diferentes temas de forma general, con el fin de no crear dependencia con las herramientas utilizadas (lo que permitirá realizar actualizaciones de forma fácil). En el componente práctico, se tratarán temas específicos de manejo de las herramientas (lenguajes de descripción de hardware, lenguajes de programación, manejo de plataformas de desarrollo) y como estas se relacionan con la metodología de diseño utilizada.
 
 El estudiante debe estudiar, profundizar y comprobar algunos temas tratados en clase y debe leer previamente la documentación que se encuentra disponible en el sitio web de los cursos. Adicionalmente, debe formar grupos de trabajo para realizar actividades a lo largo del semestre.
 
-Durante el semestre se trabajará para definir las especificaciones, diseñar e implementar un dispositivo que resuelva una determinada necesidad (con la complejidad adecuada para cada curso), en la sesión teórica se tratarán aspectos relacionados con la concepción, diseño, identificación y definición de las funciones de los componentes del sistema, mientras que en el laboratorio se tratarán temas relacionados con la implementación de dichos componentes sobre PLDs o SoC. Se deben realizar presentaciones del avance, indicando las razones que se tuvieron en cuenta en cada decisión y somo se resolvieron los problemas encontrados, todo este proceso debe documentarse en la wiki del portal \textit{linuxencaja}, esto último para formar un banco de proyectos que pueda ser utilizado como referencia por quien este interesado.
+Durante el semestre se trabajará para definir las especificaciones, diseñar e implementar un dispositivo que resuelva una determinada necesidad (con la complejidad adecuada para cada curso), en la sesión teórica se tratarán aspectos relacionados con la concepción, diseño, identificación y definición de las funciones de los componentes del sistema, mientras que en el laboratorio se tratarán temas relacionados con la implementación de dichos componentes sobre PLDs o SoC. Se deben realizar presentaciones del avance, indicando las razones que se tuvieron en cuenta en cada decisión y como se resolvieron los problemas encontrados, todo este proceso debe documentarse en la wiki del portal \textit{linuxencaja}, esto último para formar un banco de proyectos que pueda ser utilizado como referencia por quien este interesado.
 
 \subsubsection{SIE: Plataforma abierta para el desarrollo de sistemas embebidos}
 En el mercado existe una gran variedad de plataformas que pueden ser utilizadas en el estudio de sistemas embebidos, sin embargo, no todas son adecuadas para la implementación del método que proponemos ya que la plataforma que se utilice debe proporcionar toda la información necesaria para poder entenderla, programarla, replicarla y modificarla; esto con el fin de proporcionar al estudiante una herramienta que pueda ser utilizada en el desarrollo de nuevos productos comerciales, para que se cumplan estas condiciones se requiere: acceso a los esquemáticos y a los archivos de fabricación del PCB con posibilidad de modificación; acceso a la documentación completa del proceso de fabricación; acceso a la cadena de producción; utilización de herramientas abiertas para su programación; un PLD para la implementación de tareas HW; un procesador para la implementación de tareas SW; un canal de comunicación entre el procesador y el PLD; y una comunidad que desarrolle aplicaciones para dicha plataforma y que proporcione medios para el intercambio de información a través de listas de correo y wikis.
 
-Después de una búsqueda minuciosa no se encontraron plataformas que cumplieran con estas condiciones, en especial con las relacionadas con el proceso de diseño y de producción, esto es normal, ya que la mayoría de las empresas no quieren que se fabriquen sus plataformas y los proyectos individuales no poseen la infraestructura necesaria para la producción masiva. Por este motivo, se decidió crear una plataforma que cumpliera con los requerimientos (plataforma \textit{SIE}), pudiera ser utilizada en los tres cursos del área y e convirtiera en una herramienta más para la difusión de los conocimientos adquiridos en este estudio a quien se encuentre interesado.
+Después de una búsqueda minuciosa no se encontraron plataformas que cumplieran con estas condiciones, en especial con las relacionadas con el proceso de diseño y de producción, esto es normal, ya que la mayoría de las empresas no quieren que se fabriquen sus plataformas y los proyectos individuales no poseen la infraestructura necesaria para la producción masiva. Por este motivo, se decidió crear una plataforma que cumpliera con los requerimientos (plataforma \textit{SIE}), pudiera ser utilizada en los tres cursos del área y se convirtiera en una herramienta más para la difusión de los conocimientos adquiridos en este estudio.
 
 La Figura \ref{SIE_arch} muestra el diagrama de bloques de la plataforma SIE, en ella podemos encontrar un procesador que posee periféricos para comunicación serial (UART), memorias micro-SD, un puerto I2C, un LCD a color de 3 pulgadas, 2 entradas y salidas de audio stereo, 2 entradas análogas; una FPGA que proporciona 25 señales de entrada/salida digitales de propósito general (GPIOs) y controla un conversor análogo digital de 8 canales. Existen dos canales de comunicación entre la FPGA y el procesador: uno para controlar el puerto JTAG, lo que permite la configuración de la FPGA desde el procesador (lo que elimina la necesidad de cables de programación); y otro que proporciona el bus de datos, dirección y control para comunicarse con las tareas HW o periféricos implementadas en la FPGA. El procesador utilizado es un Ingenic JZ4725 (MIPS) corriendo a 400MHz, se dispone de una memoria NAND de 2GB para almacenamiento de datos y programas, así como de una memoria SDRAM de 32 MB, lo que permite la ejecución de una gran variedad de aplicaciones Linux.
+
+De forma intencional SIE no cuenta con memorias, display de 7 segmentos o conectores unidos a pines de la FPGA; experiencias con el manejo de las plataformas de desarrollo que poseen una gran cantidad de periféricos indican que los estudiantes no adquieren habilidades necesarias para la lectura de esquemáticos ni de hojas de especificaciones de componentes al utilizarlas, ya que normalmente se suministran ejemplos funcionales que son utilizados por los estudiantes; la falta de este tipo de recursos en SIE obliga a los estudiantes a investigar sobre la adecuada conexión de estos componentes y a la construcción de una tarjeta hija que implemente la funcionalidad deseada.
 
  \begin{figure}[htpb]
    \begin{center} \includegraphics[scale=.45]{./images/SIE_block_diagram.png}   \end{center}
@@ -723,30 +693,33 @@ En la actualidad SIE está siendo utilizada en los cursos de arquitectura de comp
 En el primer curso del área de diseño digital en la UNAL se realiza el estudio, diseño e implementación de máquinas de estado algorítmicas utilizando la metodología de diseño presentada anteriormente y la herramienta gratuita de Xilinx \textit{Webpack}, los estudiantes implementarán sus diseños utilizando lenguajes de descripción de hardware (VHDL, verilog), como resultado de este proceso se obtendrán 3 archivos uno con extensión \textbf{.bit} que se utiliza para configurar a la FPGA con la funcionalidad deseada; un archivo con extensión \textbf{pad.csv} que indica la función asignada por el diseñador a todos los pines de la FPGA; y un archivo con extensión \textbf{.vcd} que contiene los resultados de la simulación del sistema \footnote{Este archivo lo generan las herramientas de simulación abiertas \textit{icarus} y \textit{ghdl} }. SIE proporciona un canal de comunicación entre el procesador y el puerto JTAG de la FPGA que puede ser utilizado para: 
 
 \begin{itemize}
- \item Configuración: Carga del archivo con extensión \textbf{.bit} con la funcionalidad deseada a la FPGA; este archivo puede ser transferido a la FPGA utilizando el cable usb y el protocolo de comunicaciones ssh, cuando este archivo de configiración se encuentre en el sistema de archivos de SIE se puede utilizar la aplicación \textit{xc3sprog} para configurar la FPGA.
+ \item Configuración: Carga del archivo con extensión \textbf{.bit} con la funcionalidad deseada a la FPGA; este archivo puede ser transferido a la FPGA utilizando el cable \textit{USB} y el protocolo de comunicaciones \textit{ssh}, cuando este archivo de configuración se encuentre en el sistema de archivos de SIE se puede utilizar la aplicación \textit{xc3sprog} para configurar la FPGA.
 
  \item Prueba a baja frecuencia: Como mencionamos anteriormente, el protocolo JTAG permite la aplicación de vectores de prueba a un dispositivo semiconductor y la recolección de la respuesta a estos estímulos utilizando 4 señales (TDI, TDO, TMS, TCK). 
 \end{itemize}
 
-Una aplicación (propia y abierta) que tiene como entrada los archivos que contienen la información de los pines (pad.csv) y los resultados de la simulación (ver figura \ref{hw_design_flow}) extrae la información necesaria para aplicar los vectores de prueba al circuito implementado en la FPGA y capturar su respuesta a estos estímulos \footnote{para el control del puerto JTAG se modificó la herramienta \textit{urjtag}}, utilizando la instrucción INTEST del protocolo JTAG. Los resultados de esta prueba son graficados en el LCD de SIE y pueden ser exportados a un archivo tipo imágen; esta herramienta puede verse como una combinación de un analizador lógico y un generador de vectores de prueba de bajo costo. Con esto, se proporcionan las herramientas necesarias para realizar todas las etapas del flujo de diseño con solo una plataforma.
+Una aplicación (propia y abierta) que tiene como entrada los archivos que contienen la información de los pines (pad.csv) y los resultados de la simulación (ver figura \ref{hw_design_flow}) extrae la información necesaria para aplicar los vectores de prueba al circuito implementado en la FPGA y capturar su respuesta a estos estímulos \footnote{para el control del puerto JTAG se modificó la herramienta \textit{urjtag}}, utilizando la instrucción INTEST del protocolo JTAG. Los resultados de esta prueba son graficados en el LCD de la plataforma y pueden ser exportados a un archivo tipo imagen; esta herramienta puede verse como una combinación de un analizador lógico y un generador de vectores de prueba de bajo costo. Con esto, se proporcionan las herramientas necesarias para realizar todas las etapas del flujo de diseño con solo una plataforma.
 
  \begin{figure}[htpb]
-   \begin{center} \includegraphics[scale=.75]{./images/HW_design_flow.pdf}   \end{center}
+   \begin{center} \includegraphics[scale=.6]{./images/HW_design_flow.pdf}   \end{center}
     \caption{Flujo de diseño hardware} \label{hw_design_flow}
  \end{figure}
 
-De forma intensional SIE no cuenta con memorias, displays de 7 segmentoso conectores conectados a la FPGA; experiencias con el manejo de las plataformas de desarrollo que poseen una gran cantidad de periféricos indican que los estudiantes no adquieren habilidades necesarias para la lectura de esquemáticos ni de hojas de especificaciones de componentes al utilizarlas, ya que normalmente se suministran ejemplos funcionales que son utilizados por los estudiantes; la falta de este tipo de recursos en SIE obliga a los estudiantes a investigar sobre la adecuada conexión de estos componentes y a la construcción de una tarjeta hija que implemente la funcionalidad deseada.
 
 \subsubsection{Electrónica digital 2}
 
-Como se mencionó anteriormente, en este curso se busca que el estudiante entienda la diferencia entre tareas hardware y software, y los canales de comunicación entre ellas; para esto se implementarán las tareas software en el procesador \textit{softcore} LM32 de Lattice (o cualquiera con el código fuente disponible); para esto, es necesario estudiar la arquitectura de la unidad de procesamiento, su set de instrucciones, manejo de interrupciones, comunicación con las memorias de datos y de instrucciones y su forma de programación. El código fuente facilita el estudio de las operaciones internas del procesador al permitir el seguimiento de señales específicas, a manera de ejemplo en la figura \ref{char_write} se muestra el acceso a una memoria externa para tipos de datos \textit{unsigned char}
+Como se mencionó anteriormente, en este curso se busca que el estudiante entienda la diferencia entre tareas hardware y software, y los canales de comunicación entre ellas; para esto se implementarán las tareas software en el procesador \textit{softcore} LM32 de Lattice (o cualquiera con el código fuente disponible); para esto, es necesario estudiar la arquitectura de la unidad de procesamiento, su conjunto de instrucciones, manejo de interrupciones, comunicación con las memorias de datos y de instrucciones y su programación. El código fuente facilita el estudio de las operaciones internas del procesador al permitir el seguimiento de señales específicas; a manera de ejemplo en la figura \ref{char_write} se muestra el acceso a una memoria externa para tipos de datos \textit{unsigned char}
 
  \begin{figure}[htpb]
    \begin{center} \includegraphics[scale=.75]{./images/char_write.png}   \end{center}
-    \caption{Simualción del acceso de datos a memaria externa en un procesador mips} \label{char_write}
+    \caption{Simulación del acceso de datos a memoria externa en un procesador mips} \label{char_write}
  \end{figure}
 
-Este tipo de simualciones permiten entender perfectamente conceptos relacionados con el funcionamiento del sistema (diferencia de tipos de datos en este ejemplo) lo que no es posible realizar si se utilizan dispositivos comerciales en el aprendizaje de la arquitectura de computadores ya que los simuladores existentes se enfocan en el contenido del banco de registros y en la memoria y no pueden mostrar (hasta el momento) las señales internas. Pero, ¿Porqué no implementar un procesador propio para la realización de este estudio? esta metodologia se utilizó en el pasado en muchos cursos de arquitectura de computadores y es utilizada en la actualidad, su principal desventaja radica en la falta de herramientas para realizar la programación de estas nuevas arquitecturas, por lo que es necesario programarlas en lenguaje de máquina lo que resulta ser muy tedioso aún para aplicaciones sencillas. 
+Este tipo de simulaciones permiten entender perfectamente conceptos relacionados con el funcionamiento del sistema (diferencia de tipos de datos en este ejemplo) lo que no es posible realizar si se utilizan dispositivos comerciales, ya que los simuladores existentes se enfocan en los contenidos del banco de registros y de la memoria y no pueden mostrar (hasta el momento) las señales internas. Pero, ¿Porqué no implementar un procesador propio para la realización de este estudio?. Al diseñar un procesador propio se puede diseñar su arquitectura y conjunto de instrucciones, permitiendo que el estudiante adquiera estos conocimientos; sin embargo, la falta de herramientas para realizar la programación de estas nuevas arquitecturas, obliga a programarlas en lenguaje de máquina\footnote{A menos que se diseñe una arquitectura ya existente o compatible con una ya existente que tenga herramientas de desarrollo}, lo que resulta ser muy tedioso aún para aplicaciones sencillas. Lo que obligaría a la creación de otro curso donde se enseñen las herramientas de programación que se utilizan en los dispositivos comerciales. 
+
+Nuestra propuesta busca suministrar los conocimientos y habilidades necesarias para que el estudiante pueda utilizar las herramientas creadas por el movimiento GNU en cualquier dispositivo soportado por ellas\footnote{Alpha, ARM, Atmel AVR, Blackfin, H8/300, System/370, System/390, IA-32 (x86) and x86-64, IA-64 i.e. the "Itanium", Motorola 68000, Motorola 88000, MIPS, PA-RISC, PDP-11, PowerPC, SuperH, SPARC, VAX, Renesas R8C/M16C/M32C,  MorphoSys}. La experiencia en diversos concursos para seleccionar personal docente en diferentes universidades del país nos indica que los profesionales no conocen la estructura interna de un dispositivo micro-controlador o micro-procesador; estos dispositivos son vistos como cajas negras y no tienen claros conceptos como buses de datos, dirección, control, mapa de memoria. 
+
+Al estudiar la estructura interna de un procesador que permita observar el cambio de sus señales internas, es posible entender completamente los procesos internos; entender perfectamente los mecanismos de comunicación entre el procesador y los periféricos permite entender la diferencia conceptual entre tareas hardware y tareas software (aún cuando ambas se implementan en el mismo dispositivo). La creación de periféricos, su conexión con el procesador y el soporte que se debe dar en la aplicación software para su control, proporcionan los conocimientos de la estructura de un sistema sobre silicio (SoC) moderno; los que pueden ser utilizados para trabajar con SoCs comerciales,  
 
 
  \begin{figure}[htpb]
@@ -1314,10 +1287,10 @@ Es necesario contar con las librerías standard de C: stdio, stdlib, math, etc; l
 
 \subsubsection{Sistema operativo Linux}
 
-El sistema operativo Linux es utilizado en este curso en el sistemas emebebido y en el computador personal, su carácter abierto y de código libre permte al estudiante estudiar su funcionamiento y autilizarlo en el desarrollo de aplicaciones haciendo uso de la gran variedad de aplicaciones y librerías para diversos campos de aplicación; adicionalmente, Linux soporta una gran variedad de protocoos de comunicación, sistemas de archivos y da soporte a una extensa variedad de periféricos que utilizan diferentes protocolos (USB, SPI, I2C, SD, SATA, PCI, PCI-e, etc) lo que facilita el desarrollo de aplicaciones tanto en los computadores personales como en los sistemas embebidos.
+El sistema operativo Linux es utilizado en este curso en el sistemas embebido y en el computador personal, su carácter abierto y de código libre permite al estudiante estudiar su funcionamiento y utilizarlo en el desarrollo de aplicaciones haciendo uso de la gran variedad de aplicaciones y librerías para diversos campos de aplicación; adicionalmente, Linux soporta una gran variedad de protocolos de comunicación, sistemas de archivos y da soporte a una extensa variedad de periféricos que utilizan diferentes protocolos (USB, SPI, I2C, SD, SATA, PCI, PCI-e, etc) lo que facilita el desarrollo de aplicaciones tanto en los computadores personales como en los sistemas embebidos.
 
 \subsubsection{Librería Qt}
-Qt es un marco de trabajo portable que es utilizado para el desarrollo de aplicaciones software con interfaz de usuario gráfica (GUI); este proyecto proporciona los entornos de desarrollo \textit{QT - designer} y \textit{Qt - creator} los cuales, proporiconan una interfaz de programación amigable con una gran variedad de objetos gráficos que pueden ser integrados fácilmente; acelerando el tiempo de desarrollo de la interfaz y suministrando un entorno agradable al usuario final, en la figura \ref{qt} se puede observar un ejemplo de una interfaz gráfica creada con Qt.
+Qt es un marco de trabajo portable que es utilizado para el desarrollo de aplicaciones software con interfaz de usuario gráfica (GUI); este proyecto proporciona los entornos de desarrollo \textit{QT - designer} y \textit{Qt - creator} los cuales, proporcionan una interfaz de programación amigable con una gran variedad de objetos gráficos que pueden ser integrados fácilmente; acelerando el tiempo de desarrollo de la interfaz y suministrando un entorno agradable al usuario final, en la figura \ref{qt} se puede observar un ejemplo de una interfaz gráfica creada con Qt.
 
   \begin{figure}[htpb]
     \begin{center} \includegraphics[scale=.7]{./images/Qt.png}   \end{center}
@@ -1357,8 +1330,13 @@ Lo anterior, ha generado que un porcentaje considerable de estudiantes no adquie
 
 Las asignaturas del área de electrónica digital son de vital importancia en el proceso de formación de los ingenieros electrónicos en la Universidad Nacional de Colombia, porque su campo de aplicación cubre todas las actividades de los profesionales en electrónica (control, automatización, comunicaciones, procesamiento de señales y de imágenes, etc) y  porque es la única asignatura en el programa que enfrenta a los estudiantes al proceso de implementación de sistemas. Encuestas realizadas a los estudiantes durante los últimos dos años muestran que ellos perciben un grado de exigencia mucho mayor comparando con otras asignaturas (lo que origina un nivel alto de deserción); pero al mismo tiempo, que la experiencia en estos cursos es muy útil para su vida profesional y que es la única asignatura que los enfrenta a problemas reales de diseño e implementación de sistemas y trabajo en equipo; entienden que es necesario dedicar tiempo por fuera de aula si se desea asimilar la información, son conscientes de que la responsabilidad de adquirir este conocimiento es de ellos; manifiestan la importancia del uso de esta tecnología en la solución de problemas locales y entienden el estado de la industria digital en el país y su papel para dar solución a sus problemas.
 
-Con la aplicación de este plan de estudios a las asignaturas del área de electrónica digital: se elevó el nivel de los trabajos realizados en estos cursos y en trabajos de grado; la aplicación de la metodología de diseño propuesta genera hábitos que permiten re-utilizar trabajos previos, documentar de forma adecuada el proceso de diseño, y generar dispositivos que se ajustan a las especificaciones; se eliminó el uso de placas de pruebas (protoboards) y placas univevar es crear productos que hagan la vida rsales (perfboard), siendo reemplazados por circuitos impresos; se eliminó el uso de productos con tecnologías obsoletas (familias 74xx y 40xx) para dar paso a dispositivos semiconductores modernos; se creó un banco de proyectos que documenta de forma detallada el proceso de concepción, diseño e implementación de un sistema digital de función específica; se concienció sobre la importancia de la creación de nuevos productos para el desarrollo tecnológico del país.
+Con la aplicación de este plan de estudios a las asignaturas del área de electrónica digital: se elevó el nivel de los trabajos realizados en estos cursos y en trabajos de grado; la aplicación de la metodología de diseño propuesta genera hábitos que permiten re-utilizar trabajos previos, documentar de forma adecuada el proceso de diseño, y generar dispositivos que se ajustan a las especificaciones; se eliminó el uso de placas de pruebas (protoboards) y placas universales (perfboard), siendo reemplazados por circuitos impresos; se eliminó el uso de productos con tecnologías obsoletas (familias 74xx y 40xx) para dar paso a dispositivos semiconductores modernos; se creó un banco de proyectos que documenta de forma detallada el proceso de concepción, diseño e implementación de un sistema digital de función específica; se concienció sobre la importancia de la creación de nuevos productos para el desarrollo tecnológico del país.
+
+ 
 
 Tanto los temas como la metodología del presente plan de estudio representan una forma novedosa de enseñanza enfocada a generar en los estudiantes habilidades necesarias para crear productos novedosos, proporcionando conocimientos actualizados y metodologías de diseño modernas basadas en herramientas abiertas que permiten conocer el flujo de diseño completo, trabajar en equipo y compartir los resultados con quien esté interesado. Se espera que estas habilidades sean utilizadas por la industria para crear una oferta local de bienes y servicios reacionados con el diseño digital y que se genere el interés necesario en algunos estudiantes para crear empresas de diseño digital.
 
-De la experiencia obtenida al dictar cursos de capacitación en diferentes centros de formación a lo largo del país (Universidad Distrital Francisco José de Caldas, Universidad Industrial de Santander, Universidad de los Andes, Escuela Naval Almirante Padilla, Universidad Santo Tomás) y en dos empresas (SAR S.A., Microensamble S.A.) podemos afirmar para que los conocimientos 
+De la experiencia obtenida al dictar cursos de capacitación en diferentes centros de formación a lo largo del país (Universidad Distrital Francisco José de Caldas, Universidad Industrial de Santander, Universidad de los Andes, Escuela Naval Almirante Padilla, Universidad Santo Tomás, Escuela Colombiana de Ingeniería) y en dos empresas (SAR S.A., Microensamble S.A.) podemos afirmar que no se cuenta con los conocimientos necesarios para absorber y aplicar los conocimientos necesarios para el diseño e implementación de sistemas embebidos debido en parte al uso de metodologías de diseño obsoletas y al abandono de la implementación física por parte de los centros de formación; en las empresas, los profesionales no cuentan con la formación necesaria que les permita realizar un proceso de auto-aprendizaje y muestran deficiencias conceptuales en el diseño de sistemas digitales. Por lo que se puede concluir que al aplicar el programa académico propuesto se pueden generar en los estudiantes las habilidades necesarias para que puedan realizar procesos de auto-aprendizaje, diseño e implementación de sistemas digitales, los que pueden ser utilizados en las empresas para desarrollar sus propios productos.
+
+
+
