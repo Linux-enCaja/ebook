@@ -767,71 +767,24 @@ La experiencia del proyecto FOSS indica que muchos miembros de estas comunidades
 
 Crear estos hábitos ayuda a que los jóvenes sean conscientes de su papel dentro de la comunidad y piensen que sus acciones pueden ayudarla o perjudicarla, los proyectos realizados por ellos podrán ser parte de los recursos de la comunidad (si la calidad del trabajo lo amerita) y pueden ser la continuación de un esfuerzo prolongado o el punto de partida de un nuevo conocimiento; la licencia CC-BY-SA garantiza que todos los trabajos derivados de este recurso serán parte del mismo, lo que garantiza su crecimiento; la labor de los estudiantes es vital para el uso del recurso común y pueden surgir miembros que en un futuro formularán políticas y reglas de uso del recurso. Por otro lado, participar en este tipo de proyectos permite crear reputación, la cual puede ser útil para establecer relaciones profesionales, de negocios o personales. El entorno académico es ideal para atraer nuevos miembros a la comunidad hardware copyleft, ya que se trabaja con jóvenes con deseos de ser parte de un grupo y de adquirir conocimientos. Desde el punto de vista comercial, este recurso es muy atractivo ya que permite ahorrar mucho tiempo, esfuerzo y dinero para la creación de nuevos productos. Por otro lado, el concepto de hardware copyleft es una herramienta poderosa para transferir conocimientos a los países en vía de desarrollo donde la plataforma tecnológica no se ha desarrollado lo suficiente para asimilar estos conocimientos. En el capítulo \ref{ch:common} se explicará la filosofía, reglas y recursos de esta comunidad.
 
-\subsection{Actividades}
-A continuación se enumerarán las actividades que se desarrollarán durante las tres asignaturas, indicando las habilidades (ver tablas \ref{compet_2_3} y \ref{compet_4}) que se quieren reforzar o desarrollar.
-
-\subsubsection{Lectura de material del curso 10, 11}
-Con la lectura previa de los temas, el estudiante adquiere la capacidad de absorber conocimiento (11), identificar sus preferencias, deficiencias y buscar ayuda para suplirlas (10), lo cual ayuda al mejoramiento de las habilidades para el auto-aprendizaje, uno de los problemas detectados en los estudiantes es la necesidad de una autoridad que le proporcione la información que necesita para resolver un problema o tomar una decisión, lo que crea una dependencia impidiendo que busquen la información por ellos mismos.
-
-\subsubsection{Lectura de material técnico en inglés 10, 11, 6, 30, 33, 21}
-La mayor parte de la documentación de los componentes electrónicos y literatura relacionada con los avances de la industria electrónica esta escrita en inglés técnico; por esta razón, es necesario que el estudiante aprenda a entender este tipo de escritura y se familiarice con su estructura. Esto le permite identificar el funcionamiento de un componente del sistema (6,30), determinar que componente se adapta mejor a sus necesidades (33) y mejorar sus habilidades para comunicarse en inglés (21).
-
-\subsubsection{Utilización de metodologías de diseño 1, 2, 3, 6, 7, 9, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38}
-
-La metodología de diseño (30,31) de sistemas embebidos requiere identificar un problema (1, 28), plantear una solución (3,29,32) lógica (9) de alto nivel (9), modelarla (2) a nivel de sistema(6), verificar el cumplimiento de los requerimientos(33,38); proporciona métodos para determinar su arquitectura óptima (particionamiento HW/SW) y definir la función e interacción (37,7) de sus componentes software (36) y hardware (35).
-
-\subsubsection{Implementación de sistemas digitales sencillos 3, 14, 29, 30, 35, 36, 17, 18, 19}
-
-La realización de prácticas de laboratorio en las que grupos de trabajo (14) implementan diseños de baja o media complejidad le permite al estudiante: Formular recomendaciones (3) para que no se repitan errores en experiencias futuras. Utilizar sistemas de desarrollo (30) para la implementación de tareas HW y SW a bajo nivel (36). Con el fin de mejorar la capacidad de comunicación escrita (18, 19) se deben presentar informes que refuercen las habilidades generadas en la utilización de la metodología de diseño, por lo que se deben tener la siguiente estructura (17): 
-\begin{itemize}
- \item Un diagrama de caja negra que indique las entradas y salidas del sistema.
- \item Una descripción de alto nivel del algoritmo que implementa la solución (29).
- \item Un diagrama de bloques que indique el particionamiento y la interconexión entre sus componentes (30).
- \item Descripciones de alto nivel de cada uno de los componentes (31).
- \item La implementación y simulación de cada componente y del sistema completo (35), donde se muestre que el sistema cumple con las especificaciones funcionales (38).
-\end{itemize}
-
-\subsubsection{Proyecto del curso 1,2,3, 14, 15, 30, 31, 32, 33, 34, 35, 22, 23, 24, 25, 27}
-Durante el semestre se trabajará para definir las especificaciones (1,2,3), diseñar (30,31,32,33,34) e implementar un dispositivo que resuelva una necesidad (con la complejidad adecuada para cada curso) de la sociedad (22), en la sesión teórica se tratarán aspectos relacionados con la concepción, diseño, identificación y definición de las funciones de los componentes del sistema, mientras que en el componente práctico, los relacionados con la implementación de dichos componentes sobre PLDs o SoC.
-
-A los estudiantes se les hace una descripción funcional de alto nivel del sistema, ellos deben organizarse en grupos de trabajo (14,15), definir la función de cada uno de sus integrantes (27,14,31), establecer estrategias de comunicación (16,31), realizar y/o cumplir un cronograma de actividades (25,31) que permita resolver la necesidad en el tiempo especificado (22). Una de las estrategias de comunicación es la realización de presentaciones orales (20), en las que cada equipo de trabajo expondrá el estado de su sub-proyecto, indicando las razones que se tuvieron en cuenta en cada decisión y como se resolvieron los problemas encontrados (24). Adicionalmente, todo este proceso debe documentarse en el sitio web del curso (wiki del portal \textit{linuxencaja}) con el objetivo de crear una base de proyectos que permitan a futuros estudiantes utilizar la experiencia obtenida (23) y en un determinado caso dar continuidad al proyecto.
-
-El estudiante debe diseñar y construir placas de circuito impreso con los circuitos necesarios para su aplicación (35) siguiendo las normas de diseño establecidas por el fabricante (resolución, número de capas, costo) y las restricciones del circuito (Capacidad de corriente, niveles de ruido, compatibilidad electromagnética, etc). Vale la pena aclarar que durante el primer curso los estudiantes no poseen la experiencia necesaria para realizar (sin asistencia) labores como la división de tareas, generación de un cronograma de actividades y  fijar la estrategia de comunicación, razón por la cual el docente debe acompañar este proceso.
-
-\subsubsection{Participación en listas de discusión 21}
-Con el objeto de aumentar las capacidades en la comunicación en idioma extranjero, se alentará a los estudiantes a que hagan parte de listas de discusión en diferentes temas técnicos, algunos problemas que encontrarán en la realización de las diferentes prácticas deben ser consultados en estas listas para encontrar una forma de solución
-
-\subsubsection{Hardware y Software Copy-Left}
-El conocimiento debe ser considerado un bien común y se debe garantizar el acceso a todo el mundo. Por esta razón SAKC proporciona la documentación necesaria para:
-
-\begin{itemize}
- \item Estudiar. entender, y reproducir o modificar su Arquitectura.
- \item Conocer su proceso de fabricación.
- \item Entender su funcionamiento global y la interacción de sus componentes.
- \item Estudiar tutoriales que explican su programación.
- \item Descargar, estudiar y modificar el código fuente de todas las aplicaciones existentes actualmente.
- \item Realizar consultas con los creadores de las aplicaciones y de las plataforma de desarrollo.
- \item Contribuir a mejorar la calidad de la documentación y crear nueva información.
-\end{itemize}
-
 \section{Desarrollo de métodos de Evaluación}
 
-La naturaleza de esta metodología hace poco eficiente el método tradicional de evaluación ya que el proceso de diseño no se puede limitar a las 2 o 4 horas que puede durar una prueba escrita, tampoco se puede aislar al estudiante de las fuentes de información, ni de la consulta con otros estudiantes. La forma de evaluación debe simular un entorno laboral, donde se trabaja en equipo y cada miembro del equipo es responsable de una tarea, en la evaluación se tendrá en cuenta el resultado final, pero cada miembro del equipo debe sustentar de forma individual su aporte y sus conocimientos; esto con el fin de asegurar que todos los miembros del equipo trabajen y todos estén al corriente de las actividades que realizan sus compañeros.
+La naturaleza de esta metodología hace poco eficiente el método tradicional de evaluación, ya que el proceso de diseño no se puede limitar a las 2 o 4 horas que puede durar una prueba escrita, tampoco se puede aislar al estudiante de las fuentes de información, ni de la consulta con otros estudiantes. La forma de evaluación debe simular un entorno laboral, donde se trabaja en equipo y cada miembro del equipo es responsable de una tarea, en la evaluación se tendrá en cuenta el resultado final, pero cada miembro del equipo debe sustentar de forma individual su aporte y sus conocimientos; esto con el fin de asegurar que todos los miembros del equipo trabajen y todos estén al corriente de las actividades que realizan sus compañeros.
 
-La aplicación de la forma de evaluación tradicional a asignaturas en las que se busca crear en el estudiante habilidades que le permitan realizar el flujo de diseño completo de un sistema digital, contemplaba una marcada división entre el componente práctico y el componente teórico, antes de aplicar este programa académico, las prácticas de laboratorio y el tema que se trataba en clase no estaban sincronizados y las metodologías utilizadas eran diferentes, lo que originaba confusión en los estudiantes; existía un proyecto final que debía ser elaborado junto con las prácticas de laboratorio, lo que creaba una sobrecarga de trabajo que se traducía en proyectos de muy baja calidad. Por otro lado, no se puede medir la capacidad de diseño de un estudiante en un exámen convencional como los que se utilizan en otras asignaturas, primero porque el tiempo requerido para entender y asimilar el problema varía dependiendo de cada persona, y limitar este tiempo favorecería a los más rápidos pero no necesariamente a las mejores soluciones. El diseño es un proceso de creación personal y las soluciones dadas a un problema muestran rasgos de la personalidad que no pueden y no deben ser estandarizadas; lo que si se debe hacer es señalar como se pueden optimizar las soluciones.
+La aplicación de la forma de evaluación tradicional a asignaturas en las que se busca crear en el estudiante habilidades que le permitan realizar el flujo de diseño completo de un sistema digital, contemplaba una marcada división entre el componente práctico y el componente teórico, antes de aplicar este programa académico, las prácticas de laboratorio y el tema que se trataba en clase no estaban sincronizados y las metodologías utilizadas eran diferentes, lo que originaba confusión en los estudiantes; existía un proyecto final que debía ser elaborado junto con las prácticas de laboratorio, lo que creaba una sobrecarga de trabajo que se traducía en proyectos de muy baja calidad. Por otro lado, no se puede medir la capacidad de diseño de un estudiante en un examen convencional como los que se utilizan en otras asignaturas, primero porque el tiempo requerido para entender y asimilar el problema varía dependiendo de cada persona, y limitar este tiempo favorecería a los más rápidos pero no necesariamente a las mejores soluciones. El diseño es un proceso de creación personal y las soluciones dadas a un problema muestran rasgos de la personalidad que no pueden y no deben ser estandarizadas; lo que si se debe hacer es señalar como se pueden optimizar las soluciones.
 
-Como se mencionó anteriormente, durante todo el semestre se realizará un proyecto que busca dar solución a un determinado problema; se realizarán tres avances para determinar su estado, las fechas y contenido de estos avances están sincronizadas con un cronograma que permite a los estudiantes aplicar los conocimientos adquiridos.  De esta forma, los estudiantes estarán realizando actividades durante todo el semestre, lo que los obliga a estar revisando y aplicando constantemente la información obtenida en el componente teórico; durante las horas de práctica los estudiantes trabajarán en el mismo proyecto y darán solución a problemas de implementacion con ayuda del profesor auxiliar. Esta forma de evaluación elimina la costumbre de estudiar una semana o un día antes de a prueba, buscar evaluaciones de semestres anteriores y memorizar la forma de solucionarlos. Asimismo, se proporciona al estudiante el tiempo suficiente para realizar el proceso de diseño completo lo que hace que esta experiencia se aproxime mucho a una situación que va a encontrar en el ejercicio de su profesion; adicionalmente, se pretende reducir la presión y el estrés que generan las pruebas escritas en los estudiantes, repartiendola en un equipo de trabajo que colabora para la realización de una meta común.
+Como se mencionó anteriormente, durante todo el semestre se realizará un proyecto que busca dar solución a un determinado problema; se realizarán tres avances para determinar su estado, las fechas y contenido de estos avances están sincronizadas con un cronograma que permite a los estudiantes aplicar los conocimientos adquiridos. De esta forma, los estudiantes estarán realizando actividades durante todo el semestre, lo que los obliga a estar revisando y aplicando constantemente la información obtenida en el componente teórico; durante las horas de práctica los estudiantes trabajarán en el mismo proyecto y darán solución a problemas de implementación con ayuda del profesor auxiliar. Esta forma de evaluación elimina la costumbre de estudiar una semana o un día antes de a prueba, buscar evaluaciones de semestres anteriores y memorizar la forma de solucionarlos. Asimismo, se proporciona al estudiante el tiempo suficiente para realizar el proceso de diseño completo lo que hace que esta experiencia se aproxime mucho a una situación que va a encontrar en el ejercicio de su profesión; adicionalmente, se pretende reducir la presión y el estrés que generan las pruebas escritas en los estudiantes, repartiéndola en un equipo de trabajo que colabora para la realización de una meta común.
 
 \subsubsection{Contenido de las entregas}
 
-En cada entrega el equipo de trabajo debe realizar una serie de actividades que le ayuden a crear o mejorar habilidades en: la generación de documentos técnicos; presentación oral y escrita de proyectos en ingeniería; aplicación de metodologías de diseño; uso de la tecnología para resover problemas locales; trabajo en equipo y mejoramiento de técnicas de auto-aprendizaje. Por esta razón, se evaluará el contendio del informe, su presentación oral y el avance de la solución. Para la elaboración de los informes se suministran las herramientas web (\textit{wiki}) que permiten la edición de documentos por múltiples usuarios, llevar un historial de cambios que les permita conocer los últimos aportes y pubicar de forma fácil imagenes y videos; lo que facilita la realización del documento, permitiendo que sea al mismo tiempo editado desde diferentes lugares al tiempo que lo coloca a disposición de quien esté interesado. La calificación obtenida en cada entrega será asignada a todos los miembros del equipo
+En cada entrega el equipo de trabajo debe realizar una serie de actividades que le ayuden a crear o mejorar habilidades en: la generación de documentos técnicos; presentación oral y escrita de proyectos en ingeniería; aplicación de metodologías de diseño; uso de la tecnología para resolver problemas locales; trabajo en equipo y mejoramiento de técnicas de auto-aprendizaje. Por esta razón, se evaluará el contenido del informe, su presentación oral y el avance de la solución. Para la elaboración de los informes se suministran las herramientas web (\textit{wiki}) que permiten la edición de documentos por múltiples usuarios, llevar un historial de cambios que les permita conocer los últimos aportes y publicar de forma fácil imágenes y videos; lo que facilita la realización del documento, permitiendo que sea editado desde diferentes lugares; al tiempo que lo coloca a disposición de quien esté interesado. La calificación obtenida en cada entrega será asignada a todos los miembros del equipo
 
 \subsubsection{Sustentación individual}
-Con las entregas parciales se obtiene una calificación que refleja el trabajo realizado por el grupo de trabajo; sinembargo, es necesario determinar la contribución de cada miembro del equipo y evaluar la asimilación de conocimiento de forma individual; adicionalmente, se pretende evitar que existan miembros del equipo que no realicen aportes. Para detrminar este nivel de asimilación, se aplica una prueba oral a cada uno de los integrantes, con el fin de determinar si existen o no vacios conceptuales y si se conoce el trabajo realizado en la elaboración del proyecto; de esta prueba se obtendrá un coeficiente entre \textbf{0} y \textbf{1}, el cual será aplicado a la calificación obtenida por el grupo y de esta forma obtener la calificación indicidual.
+Con las entregas parciales se obtiene una calificación que refleja el trabajo realizado por el grupo de trabajo; sin embargo, es necesario determinar la contribución de cada miembro del equipo y evaluar la asimilación de conocimiento de forma individual; adicionalmente, se pretende evitar que miembros del equipo no realicen aportes. Para determinar este nivel de asimilación, se aplica una prueba oral a cada uno de los integrantes, con el fin de determinar si existen o no vacíos conceptuales y si se conoce el trabajo realizado en la elaboración del proyecto; de esta prueba se obtendrá un coeficiente entre \textbf{0} y \textbf{1}, el cual será aplicado a la calificación obtenida por el grupo y de esta forma obtener la calificación individual.
 
 
 \section{Objetivos de aprendizaje}
-Los objetivos de aprendizaje están formados por la superposición de los dominios congnitivo, afectivo y psicomotor \cite{BBS}
+Los objetivos de aprendizaje están formados por la superposición de los dominios cognitivo, afectivo y psicomotor \cite{BBS}
 
 
 % \subsection {Ojbetivos comúnes}
@@ -880,21 +833,20 @@ Los objetivos de aprendizaje están formados por la superposición de los dominios
 
 
 \subsection{Dominio cognitivo}
-El dominio congnitivo involucra conocimiento y desarrollo de habilidades iintelectuales. Incluye el reconocimiento de hechos específicos, procedimientos, y conceptos que ayudan en el desarrollo de habilidades y capacidades intelectuales. Bloom identificó las siguientes seis categorías, las que están ordenadas desde el comportamiento más simple al más complejo. Las categorías pueden ser considerados como grados de dificultades. Es decir, se deben dominar las primeros antes para poder desarrollar las otras.
+El dominio cognitivo involucra conocimiento y desarrollo de habilidades intelectuales. Incluye el reconocimiento de hechos específicos, procedimientos, y conceptos que ayudan en el desarrollo de habilidades y capacidades intelectuales. Bloom \cite{BBS} identificó las siguientes seis categorías, las que están ordenadas desde el comportamiento más simple al más complejo. Las categorías pueden considerarse como grados de dificultad. Es decir, se deben dominar las primeros antes para poder desarrollar las otras.
 
 % defines; describes; enumerates;  identifies;  labels;  lists;  matches;  names;  reads;  records;  reproduces;  selects;  states;  views; 
 % writes;.
 
-
 \begin{enumerate}
- \item Conocimiento: definido aquí como la acción de recordar información aprendida anteriormente. 
+ \item Conocimiento: definido como la acción de recordar información aprendida anteriormente. 
 
   \begin{itemize}
     \item Objetivos generales
       \begin{itemize}
         \item \textit{Identifica} y \textit{reproduce} las diferentes etapas del proceso de diseño.
         \item \textit{Identifica} la estructura de un sistema digital.
-        \item \textit{Selecciona} los componentes adecuados para cada problema (particionamiento hw/sw).
+        \item \textit{Selecciona} los componentes adecuados para cada problema (particionamiento hardware/software).
         \item \textit{Define} las especificaciones de un sistema digital.
         \item \textit{Lee} esquemáticos electrónicos y hojas de especificaciones de sus componentes.
         \item \textit{Escribe} documentos que \textit{describen} el proceso de diseño de un sistema digital.
@@ -915,7 +867,6 @@ El dominio congnitivo involucra conocimiento y desarrollo de habilidades iintele
         \item \textit{Identifica} y \textit{describe} el funcionamiento de los componentes de una unidad de procesamiento central.
         \item \textit{Identifica} los pasos del flujo de diseño software.
         \item \textit{Describe} el comportamiento de tareas hardware y software.
-
       \end{itemize}
 
     \item Sistemas embebidos
@@ -938,22 +889,22 @@ El dominio congnitivo involucra conocimiento y desarrollo de habilidades iintele
     \item Objetivos generales
       \begin{itemize}
         \item \textit{Entiende} las etapas de la metodología de diseño de sistemas digitales.
-        \item \textit{Entiende} la diferencia entre tareas hardware y sofware.
+        \item \textit{Entiende} la diferencia entre tareas hardware y software.
         \item \textit{Analiza} las diferentes formas de implementar un sistema digital.
         \item \textit{Describe} el comportamiento de un sistema digital.
       \end{itemize}
 
     \item Electrónica digital 1
       \begin{itemize}
-        \item \textit{Entiende} la forma de implementar máquinas de estado algorítmicas en PLDs.
+        \item \textit{Entiende} la forma de implementar máquinas de estado algorítmicas en PLDs utilizando lenguajes de descripción de hardware.
       \end{itemize}
 
     \item Electrónica digital 2
       \begin{itemize}
         \item \textit{Entiende} el funcionamiento de un SoC.
         \item \textit{Entiende} los canales de comunicación entre un periférico y la unidad de procesamiento central.
-        \item \textit{Entiende} los pasos necesarios para crear aplicaciones utilizando lengiajes de alto nivel.
-        \item \textit{Entiende} el uso del set de instrucciones en la elaboración de aplicaciones.
+        \item \textit{Entiende} los pasos necesarios para crear aplicaciones utilizando lenguajes de alto nivel.
+        \item \textit{Entiende} el uso del conjunto de instrucciones en la elaboración de aplicaciones.
       \end{itemize}
 
     \item Sistemas embebidos
@@ -977,9 +928,9 @@ El dominio congnitivo involucra conocimiento y desarrollo de habilidades iintele
         \item \textit{Implementa} placas de circuito impreso.
         \item \textit{Utiliza} software como ayuda en el proceso de diseño.
         \item \textit{Aplica} el concepto de re-utilización de código. 
-        \item \textit{Utiliza} niveles de jerarquía para el diseño de distemas digitales.
+        \item \textit{Utiliza} niveles de jerarquía para el diseño de sistemas digitales.
         \item \textit{Construye} sistemas digitales.
-        \item \textit{Desarrolla y aplica} pruebas para comprobar el correcto duncionamiento de un sistema digital.
+        \item \textit{Desarrolla y aplica} pruebas para comprobar el correcto funcionamiento de un sistema digital.
       \end{itemize}
 
     \item Electrónica digital 1
@@ -991,7 +942,7 @@ El dominio congnitivo involucra conocimiento y desarrollo de habilidades iintele
 
     \item Electrónica digital 2
       \begin{itemize}
-        \item \textit{Implementa} tareas hardware como periféricos de un SoC. 
+        \item \textit{Implementa} tareas hardware como periféricos de un SoC.
         \item \textit{Utiliza} herramientas de compilación y el flujo de diseño software.
         \item \textit{Implementa} tareas software utilizando una unidad de procesamiento central.
         \item \textit{Desarrolla} aplicaciones que implementan tareas hardware y software.
@@ -1036,7 +987,7 @@ El dominio congnitivo involucra conocimiento y desarrollo de habilidades iintele
       \begin{itemize}
         \item \textit{Reconoce} la arquitectura de un SoC.
         \item \textit{Distingue} los componentes de una unidad de procesamiento central.
-        \item \textit{Reconoce} funciones que deben ser implemantadas en hardware para cumplir con restricciones de diseño.
+        \item \textit{Reconoce} funciones que deben ser implementadas en hardware para cumplir con restricciones de diseño.
         \item \textit{Distingue} la diferencia entre un lenguaje de alto nivel y el lenguaje ensamblador.
       \end{itemize}
 
@@ -1044,7 +995,7 @@ El dominio congnitivo involucra conocimiento y desarrollo de habilidades iintele
       \begin{itemize}
         \item \textit{Distingue} los componentes de un sistema embebido.
         \item \textit{Reconoce} la arquitectura de sistemas digitales comerciales. 
-        \item \textit{Diferencia} las aplicaciones standalone de las que usan sistemas operativos.
+        \item \textit{Diferencia} las aplicaciones independientes(standalone) de las que usan sistemas operativos.
         \item \textit{Reconoce} las funciones de un sistema operativo.
       \end{itemize}
   \end{itemize}
@@ -1128,7 +1079,7 @@ El dominio congnitivo involucra conocimiento y desarrollo de habilidades iintele
     \begin{itemize}
      \item \textit{Identifica} malas costumbres en su método de estudio que le impiden el aprendizaje.
      \item \textit{Utiliza} material disponible para aumentar su conocimiento.
-     \item \textit{Localiza} vacios conceptuales e identifica soluciones.
+     \item \textit{Localiza} vacíos conceptuales e identifica soluciones.
     \end{itemize}
 
 
@@ -1155,10 +1106,10 @@ El dominio congnitivo involucra conocimiento y desarrollo de habilidades iintele
     \begin{itemize}
      \item \textit{Combina} diferentes habilidades para lograr el objetivo. 
      \item \textit{Compara} alternativas de solución y elige la más adecuada. 
-     \item \textit{Integra} resultados obtenidos en procesos anteriore a solución de nuevos problemas. 
-     \item \textit{Formula} estrategias para resover problemas de forma óptima. 
+     \item \textit{Integra} resultados obtenidos en procesos anteriores a solución de nuevos problemas. 
+     \item \textit{Formula} estrategias para resolver problemas de forma óptima. 
     \end{itemize}
- \item Interiorizar valores: actua de acuerdo a los valores que ha interiorizado, el comportamiento es pervasivo, consistente, predecible y característico de cada aprendiz.  
+ \item Interiorizar valores: actúa de acuerdo a los valores que ha interiorizado, el comportamiento es pervasivo, consistente, predecible y característico de cada aprendiz.  
     \begin{itemize}
      \item \textit{Propone} métodos para crear nuevos sistemas.
      \item \textit{Soluciona} problemas de la sociedad aplicando conocimiento adquirido previa y constantemente.
@@ -1177,7 +1128,7 @@ El dominio congnitivo involucra conocimiento y desarrollo de habilidades iintele
     \item \textit{Sigue} guías para la elaboración de layouts.
    \end{itemize}
 
- \item Manipuación: practica de una habilidad específica hasta que la acción se realice con seguridad.
+ \item Manipulación: práctica de una habilidad específica hasta que la acción se realice con seguridad.
    \begin{itemize}
     \item \textit{Manejar} herramientas para montaje de placas de circuito impreso. 
     \item \textit{Manejar} herramientas para diseño de layouts.
@@ -1204,14 +1155,60 @@ El dominio congnitivo involucra conocimiento y desarrollo de habilidades iintele
 
 
 
+\section{Actividades}
+A continuación se enumerarán las actividades que se desarrollarán durante las tres asignaturas, indicando las habilidades (ver tablas \ref{compet_2_3} y \ref{compet_4}) que se quieren reforzar o desarrollar.
 
-\section{Software}
+\subsubsection{Lectura de material del curso 10, 11}
+Con la lectura previa de los temas, el estudiante adquiere la capacidad de absorber conocimiento (11), identificar sus preferencias, deficiencias y buscar ayuda para suplirlas (10), lo cual ayuda al mejoramiento de las habilidades para el auto-aprendizaje, uno de los problemas detectados en los estudiantes es la necesidad de una autoridad que le proporcione la información que necesita para resolver un problema o tomar una decisión, lo que crea una dependencia impidiendo que busquen la información por ellos mismos.
 
-Para la realización de las actividades descritas anteriormente se utilizará software abierto que pueda ser descargado libremente sin restricción alguna, esto con el fin de proporcionar al estudiante herramientas software legales que le permitan adquirir las habilidades descritas anteriormente; y puedan ser utilizadas en su ejercicio profesional en el desarrollo de nuevos productos. Debemos tener presente que además de proporcionar a los estudiantes los conocimientos necesarios en su profesión, también debemos hacer que ellos respeten los derechos de autor y la propiedad intelectual de las herramientas software comerciales, en muchas universidades se acostumbra a ignorar el uso de software ilegal por parte de los estudiantes ya que es necesario para el desarrollo del curso y el establecimiento no cuenta con recursos para adquir las licencias suficientes; aunque el uso de este software conseguido de forma ilegal es muy loable no deja de ser una violación a las leyes que protegen los derechos de los creadores de aplicaciones software; adicionalmente, formar a estudiantes con herramientas costosas los vuelve dependientes de ellas, lo que requerirá de grandes inversiones en software cuando ellos formen sus propias empresas, lo que puede desalentar este tipo de iniciativas. Por lo anterior se hizo una revisión y prueba de las herramientas abiertas disponibles que pueden ser utilizadas en los cursos de diseño digital y que proporcionan la funcionalidad requerida en esta propuesta académica.
+\subsubsection{Lectura de material técnico en inglés 10, 11, 6, 30, 33, 21}
+La mayor parte de la documentación de los componentes electrónicos y literatura relacionada con los avances de la industria electrónica esta escrita en inglés técnico; por esta razón, es necesario que el estudiante aprenda a entender este tipo de escritura y se familiarice con su estructura. Esto le permite identificar el funcionamiento de un componente del sistema (6,30), determinar que componente se adapta mejor a sus necesidades (33) y mejorar sus habilidades para comunicarse en inglés (21).
+
+\subsubsection{Utilización de metodologías de diseño 1, 2, 3, 6, 7, 9, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38}
+
+La metodología de diseño (30,31) de sistemas embebidos requiere identificar un problema (1, 28), plantear una solución (3,29,32) lógica (9) de alto nivel (9), modelarla (2) a nivel de sistema(6), verificar el cumplimiento de los requerimientos(33,38); proporciona métodos para determinar su arquitectura óptima (particionamiento HW/SW) y definir la función e interacción (37,7) de sus componentes software (36) y hardware (35).
+
+\subsubsection{Implementación de sistemas digitales sencillos 3, 14, 29, 30, 35, 36, 17, 18, 19}
+
+La realización de prácticas de laboratorio en las que grupos de trabajo (14) implementan diseños de baja o media complejidad le permite al estudiante: Formular recomendaciones (3) para que no se repitan errores en experiencias futuras. Utilizar sistemas de desarrollo (30) para la implementación de tareas HW y SW a bajo nivel (36). Con el fin de mejorar la capacidad de comunicación escrita (18, 19) se deben presentar informes que refuercen las habilidades generadas en la utilización de la metodología de diseño, por lo que se deben tener la siguiente estructura (17): 
+\begin{itemize}
+ \item Un diagrama de caja negra que indique las entradas y salidas del sistema.
+ \item Una descripción de alto nivel del algoritmo que implementa la solución (29).
+ \item Un diagrama de bloques que indique el particionamiento y la interconexión entre sus componentes (30).
+ \item Descripciones de alto nivel de cada uno de los componentes (31).
+ \item La implementación y simulación de cada componente y del sistema completo (35), donde se muestre que el sistema cumple con las especificaciones funcionales (38).
+\end{itemize}
+
+\subsubsection{Proyecto del curso 1,2,3, 14, 15, 30, 31, 32, 33, 34, 35, 22, 23, 24, 25, 27}
+Durante el semestre se trabajará para definir las especificaciones (1,2,3), diseñar (30,31,32,33,34) e implementar un dispositivo que resuelva una necesidad (con la complejidad adecuada para cada curso) de la sociedad (22), en la sesión teórica se tratarán aspectos relacionados con la concepción, diseño, identificación y definición de las funciones de los componentes del sistema, mientras que en el componente práctico, los relacionados con la implementación de dichos componentes sobre PLDs o SoC.
+
+Los estudiantes hacen una descripción funcional de alto nivel del sistema, se organizan en grupos de trabajo (14,15), definir la función de cada uno de sus integrantes (27,14,31), establecen estrategias de comunicación (16,31), realizan y cumplen un cronograma de actividades (25,31) que permite resolver la necesidad en el tiempo especificado (22). Una de las estrategias de comunicación es la realización de presentaciones orales (20), en las que cada equipo de trabajo expondrá el estado de su proyecto, indicando las razones que se tuvieron en cuenta en cada decisión y como se resolvieron los problemas encontrados (24). Adicionalmente, todo este proceso debe documentarse en el sitio web del curso (wiki del portal \textit{linuxencaja}) con el objetivo de crear una base de proyectos que permitan a futuros estudiantes utilizar la experiencia obtenida (23) y en un determinado caso dar continuidad al proyecto.
+
+El estudiante debe diseñar y construir placas de circuito impreso con los circuitos necesarios para su aplicación (35) siguiendo las normas de diseño establecidas por el fabricante (resolución, número de capas, costo) y las restricciones del circuito (Capacidad de corriente, niveles de ruido, compatibilidad electromagnética, etc). Vale la pena aclarar que durante el primer curso los estudiantes no poseen la experiencia necesaria para realizar (sin asistencia) labores como la división de tareas, generación de un cronograma de actividades y fijar la estrategia de comunicación, razón por la cual el docente debe acompañarlos en este proceso.
+
+\subsubsection{Participación en listas de discusión 21}
+Con el objeto de aumentar las capacidades en la comunicación en idioma extranjero, se alentará a los estudiantes a que hagan parte de listas de discusión en diferentes temas técnicos, algunos problemas que encontrarán en la realización de las diferentes prácticas deben ser consultados en estas listas para encontrar una forma de solución
+
+\subsubsection{Hardware y Software Copy-Left}
+El conocimiento debe ser considerado un bien público y se debe garantizar el acceso a todo sector de la sociedad. Por esta razón, el proyecto SIE proporciona la documentación necesaria para:
+
+\begin{itemize}
+ \item Estudiar. entender, y reproducir o modificar su Arquitectura.
+ \item Conocer su proceso de fabricación.
+ \item Entender su funcionamiento global y la interacción de sus componentes.
+ \item Estudiar tutoriales que explican su programación.
+ \item Descargar, estudiar y modificar el código fuente de todas las aplicaciones existentes actualmente.
+ \item Realizar consultas con los creadores de las aplicaciones y de las plataforma de desarrollo.
+ \item Contribuir a mejorar la calidad de la documentación y crear nueva información.
+\end{itemize}
+
+\section{Software de ayuda al diseño}
+
+Para la realización de las actividades descritas anteriormente se utilizará software abierto, que pueda ser descargado libremente sin restricción alguna; esto, con el fin de proporcionar al estudiante herramientas software legales que le permitan adquirir las habilidades descritas anteriormente y puedan ser utilizadas en su ejercicio profesional. Debemos tener presente que además de proporcionar a los estudiantes los conocimientos necesarios en su profesión, también debemos hacer que ellos respeten los derechos de autor y la propiedad intelectual de las herramientas software comerciales; en muchas universidades se acostumbra a ignorar el uso de software ilegal por parte de los estudiantes, debido a que es necesario para el desarrollo del curso y el establecimiento no cuenta con recursos para adquirir las licencias suficientes. Aunque el uso de este software conseguido de forma ilegal es muy loable, no deja de ser una violación a las leyes que protegen los derechos de sus creadores; adicionalmente, formar a estudiantes con herramientas costosas los vuelve dependientes de ellas, lo que requerirá de grandes inversiones en software cuando ellos formen sus propias empresas, lo que puede desalentar este tipo de iniciativas. Por lo anterior, se hizo una revisión y prueba de las herramientas abiertas disponibles que pueden ser utilizadas en los cursos de diseño digital y que proporcionan la funcionalidad requerida en esta propuesta académica.
 
 
 \subsection{Análisis y simulación de circuitos}
-En la mayoría de centros de formación se utilizan herramientas que utilizan el simulador SPICE (Simulation Program with Integrated Circuits Emphasis) el cual ha demostrado ser una herramienta muy útil en diferentes áreas (electrónica análoga, electrónica digital, diseño VLSI, electrónica de potencia, entre otras) ya que proporciona diferentes formas y niveles de simulación, permitiendo el uso de modelos para representar de la mejor forma posible un dispositivo real. SPICE fué desarrollado por el departamento de ingeniería eléctrica y ciencias de la computación de la universidad de Berkeley \footnote{http://http://bwrc.eecs.berkeley.edu/Classes/IcBook/SPICE/} y su código fuente es distribuido bajo la licencia BSD (Berkeley Software Distribution), la última versión disponible es la \textit{3f5}, gracias a esto se han desarrollado una serie de herramientas que utilizan este potente simualador y proporcionan una interfaz amigable para el usuario.
+En la mayoría de centros de formación se utilizan herramientas que utilizan el simulador SPICE (Simulation Program with Integrated Circuits Emphasis) el cual ha demostrado ser una herramienta muy útil en diferentes áreas (electrónica análoga, electrónica digital, diseño VLSI, electrónica de potencia, entre otras) ya que proporciona diferentes formas y niveles de simulación; permitiendo el uso de modelos para representar de la mejor forma posible un dispositivo real. SPICE fué desarrollado por el departamento de ingeniería eléctrica y ciencias de la computación de la universidad de Berkeley \footnote{http://http://bwrc.eecs.berkeley.edu/Classes/IcBook/SPICE/} y su código fuente es distribuido bajo la licencia BSD (Berkeley Software Distribution), la última versión disponible es la \textit{3f5}, gracias a esto se han desarrollado una serie de herramientas que utilizan este potente simulador y proporcionan una interfaz amigable para el usuario.
 
 En nuestros cursos se utiliza \textit{QUCS} (Quite Universal Circuit Simulator) desarrollado en QT y permite ser ejecutado en cual sistema operativo. QUCS permite realizar análisis AC, DC, transitorio, de balance armónico y soporta dispositivos lineales, no lineales, micro-cintas, coplanares, líneas de transmisión y representados por modelos SPICE. En la figura \ref{qucs} se muestra la captura de esta aplicación.
 
@@ -1225,7 +1222,7 @@ En nuestros cursos se utiliza \textit{QUCS} (Quite Universal Circuit Simulator) 
 
 \subsection{Síntesis, simulación y verificación digital}
 
-Para la síntesis digital a partir de lenguajes de descripción de hardware se utilizan las herramientas gratuitas suministradas por los fabricantes de FPGAs, \textit{webpack} de Xilinx y \textit{Quartus} de Altera; debido a que la estructura interna de las FPGAs solo las conocen ellos\footnote{Es posible obtener información valiosa de sus patentes por ejemplo: http://www.freepatentsonline.com/6301693.pdf}, es obligatorio utilizar sus herramientas para obtener el archivo de configuración \footnote{En la actualidad existen proyectos que buscan proporcionar herramientas abiertas que realicen estas funciones, pero no han logrado obtener una herramienta que las pueda reemplazar}.
+Para la síntesis digital a partir de lenguajes de descripción de hardware se utilizan las herramientas gratuitas suministradas por los fabricantes de FPGAs, \textit{webpack} de Xilinx y \textit{Quartus} de Altera; debido a que la estructura interna de las FPGAs solo la conocen los fabricantes\footnote{Es posible obtener información valiosa de sus patentes por ejemplo: http://www.freepatentsonline.com/6301693.pdf, con este tipo de información varios proyectos buscan generar herramientas abiertas de síntesis}, es obligatorio utilizar sus herramientas para obtener el archivo de configuración.
 
 Para la simulación de sistemas digitales que utilizan como entrada de diseño lenguajes de descripción de hardware existen los simuladores \textit{ICARUS} para verilog y \textit{GHDL} para vhdl; los dos pueden ser utilizados para realizar simulaciones funcionales, post síntesis o post place \& route (trabajando en conjunto con las herramientas de los fabricantes) y ambos soportan el formato de salida VCD (definido junto con el lenguaje de descripción de hardware verilog por el estándar IEEE 1364-2001). Adicionalmente, estas herramientas pueden ser utilizadas en los sistemas operativos más utilizados.
 
@@ -1236,14 +1233,14 @@ Como herramienta de simulación se utilizará \textit{GTKWAVE}, la cual acepta com
      \caption{Visualizador de formas de onda \textit{GTKWAVE}} \label{gtkwave}
   \end{figure}
 
-Una vez configurada la FPGA se utiliza la herramienta \textit{URJTAG} para verificar el correcto funcionamiento del sistema implementado en la FPGA, \textit{URJTAG} proporciona una capa de abstracción de hardware que permite el manejo del puerto JTAG de cualquier dispositivo, proporcionando funciones de alto nivel para la aplicación de las funciones JTAG (IDCODE, INTEST, EXTEST, BYPASS, SAMPLE/PRELOAD) permitiendo la aplicación de vectores de prueba al núcleo lógico de la FPGA y la captura de la respuesta a estos estímulos; estas pruebas se realizan a baja frecuencia. \textit{URJTAG} soporta varias interfaces físicas para control de las señales del puerto JTAG (TDI, TDO, TMS y TCK) las cuales pueden ser conectadas a diferentes puertos de un computador, o como en nuestro caso a un puerto virtual creado en el procesador MIPS.  
+Una vez configurada la FPGA, se utiliza la herramienta \textit{URJTAG} para verificar el correcto funcionamiento del sistema implementado en la FPGA, \textit{URJTAG} proporciona una capa de abstracción de hardware que permite el manejo del puerto JTAG de cualquier dispositivo, proporcionando funciones de alto nivel para la aplicación de las funciones JTAG (IDCODE, INTEST, EXTEST, BYPASS, SAMPLE/PRELOAD) permitiendo la aplicación de vectores de prueba al núcleo lógico de la FPGA y la captura de la respuesta a estos estímulos; estas pruebas se realizan a baja frecuencia. \textit{URJTAG} soporta varias interfaces físicas para control de las señales del puerto JTAG (TDI, TDO, TMS y TCK) las cuales pueden ser conectadas a diferentes puertos de un computador, o como en nuestro caso a un puerto virtual creado en el procesador MIPS.  
 
 
 \subsection{Herramientas para la configuración de PLDs}
 Aunque con la plataforma de desarrollo SIE no es necesario utilizar herramientas ni unidades de programación adicionales para configurar su FPGA; el procesador de SIE ejecuta dos aplicaciones que son utilizadas para realizar esta función y pueden ser ejecutadas en computadores personales: \textit{URJTAG} y \textit{XC3SPROG}, las dos funcionan de forma similar, utilizan dispositivos conectados al puerto paralelo (conexión directa) o USB (basados en el protocolo MPSSE del chip FT2232) del computador; para ejecutar las instrucciones extendidas de la FPGA CFG\_OUT, CFG\_IN, JSTART y JPROGRAM (hasta el momento solo han sido probadas con las FPGAs de Xilinx).
 
 \subsection{Diseño de placas de circuito impreso}
-Este tipo de herramientas han sido las más difíciles de conseguir ya que al comienzo de este estudio no existía una herramienta que permitiera realizar de forma fácil la elaboración del esquemático, asignación de \textit{footprints}, distribución y localización de componentes en el layout, ruteo de las señales, y verificación de reglas de diseño tanto en el esquemático como en el layout. En la actualidad el proyecto \textit{KICAD} ha alcanzado un nivel adecuado para ser utilizado en el desarrollo de aplicaciones comercializables y fué utilizado en todos los proyectos académicos durante la aplicación del presente plan de estudios; está formado por 5 aplicaciones: el editor de esquemáticos \textit{Eeschema}; el editor de circuitos impresos \textit{Pcbnew}; el visor de archivos gerber \textit{Gerbview}; la utilidad para asignar footprints \textit{Cvpcb} y el manejador de proyectos \textit{Kicad}.
+Este tipo de herramientas han sido las más difíciles de conseguir ya que al comienzo de este estudio no existía una herramienta que permitiera realizar de forma fácil la elaboración del esquemático, asignación de \textit{footprints}, distribución y localización de componentes en el layout, ruteo de las señales, y verificación de reglas de diseño tanto en el esquemático como en el layout. En la actualidad, el proyecto \textit{KICAD} ha alcanzado un nivel adecuado para ser utilizado en el desarrollo de aplicaciones comercializables y fue utilizado en todos los proyectos académicos durante la aplicación del presente plan de estudios; está formado por 5 aplicaciones: el editor de esquemáticos \textit{Eeschema}; el editor de circuitos impresos \textit{Pcbnew}; el visor de archivos gerber \textit{Gerbview}; la utilidad para asignar footprints \textit{Cvpcb} y el manejador de proyectos \textit{Kicad}.
 
   \begin{figure}[htpb]
     \begin{center} \includegraphics[scale=.8]{./images/kicad.pdf}   \end{center}
@@ -1253,22 +1250,22 @@ Este tipo de herramientas han sido las más difíciles de conseguir ya que al comi
 \subsection{Herramientas de desarrollo para sistemas embebidos}
 
 \subsubsection{GNU binutils}
-Colección de utilidades para archivos binarios y estan compuestas por:
+Colección de utilidades para archivos binarios y están compuestas por:
 
 \begin{itemize}
- \item  \textbf{addr2line} Convierte direcciones de un programa en nombres de archivos y números de línea. Dada una dirección y un ejecutable, usa la información de depuración en el ejecutabe para determinar que nombre de archivo y número de línea está asociado con la dirección dada.
+ \item  \textbf{addr2line} Convierte direcciones de un programa en nombres de archivos y números de línea. Dada una dirección y un ejecutable, usa la información de depuración en el ejecutable para determinar que nombre de archivo y número de línea está asociado con la dirección dada.
  \item  \textbf{ar} Esta utilidad crea, modifica y extrae desde ficheros; un fichero es una colección de otros archivos en una estructura que hace posible obtener los archivos individuales. 
  \item  \textbf{as} Utilidad que compila la salida del compilador de C (GCC).
- \item  \textbf{c++filt} Este program realiza un mapeo inverso: Decodifica nombres de bajo-nivel en nombres a nivel de usuario, de tal forma que el \textit{linker} pueda mantener estas funciones sobrecargadas (overloaded) ``from clashing''. 
+ \item  \textbf{c++filt} Este programa realiza un mapeo inverso: Decodifica nombres de bajo-nivel en nombres a nivel de usuario, de tal forma que el \textit{linker} pueda mantener estas funciones sobrecargadas (overloaded) ``from clashing''. 
  \item  \textbf{gasp} GNU Assembler Macro Preprocessor
  \item  \textbf{ld} El \textit{linker} GNU combina un número de objetos y ficheros, re-localiza sus datos y los relaciona con referencias. Normalmente el último paso en la construcción de un nuevo programa es el llamado a ld.
  \item  \textbf{nm} Realiza un listado de símbolos de archivos tipo objeto.
- \item  \textbf{objcopy} Copia los contenidos de un archivo tipo objeto a otro. \textit{objcopy} utiliza la librería GNU BFD para leer y escribir el archivo tipo objeto. Permite escribibr el archivo destino en un formato diferente al del archivo fuente. 
+ \item  \textbf{objcopy} Copia los contenidos de un archivo tipo objeto a otro. \textit{objcopy} utiliza la librería GNU BFD para leer y escribir el archivo tipo objeto. Permite escribir el archivo destino en un formato diferente al del archivo fuente. 
  \item  \textbf{objdump} Despliega información sobre archivos tipo objeto. 
  \item  \textbf{ranlib} Genera un índice de contenidos de un fichero, y lo almacena en él.
  \item  \textbf{readelf} Interpreta encabezados de un archivo ELF.
  \item  \textbf{size} Lista el tamaño de las secciones y el tamaño total de un archivo tipo objeto.
- \item  \textbf{strings} Imprime las secuencias de caracteres imprimibles de almenos 4 caracteres de longitud. 
+ \item  \textbf{strings} Imprime las secuencias de caracteres imprimibles de al menos 4 caracteres de longitud. 
  \item  \textbf{strip} Elimina todos los símbolos de un archivo tipo objeto.
 \end{itemize}
 
@@ -1285,12 +1282,12 @@ Es necesario contar con las librerías standard de C: stdio, stdlib, math, etc; l
  \item \textbf{glibc} Es la librería C oficial del proyecto GNU; el principal inconveniente al trabajar con esta librería en sistemas embebidos es que genera ejecutables de mayor tamaño que los generados a partir de otras librerías, lo cual no la hace muy atractiva para este tipo de aplicaciones. 
  \item \textbf{uClibc} Es una librería diseñada especialmente para sistemas embebidos, es mucho más pequeña que \textbf{glibc}.
  \item \textbf{newlib} Al igual que \textbf{uClibc}, está diseñada para sistemas embebidos. El típico ``Hello, world!'' ocupa menos de 30k en un entorno basado en newlib, mientras que en uno basado en glibc, puede ocupar 380k. 
- \item \textbf{diet libc} Es una versión de \textit{libc} optimizada en tamaño, puede ser utilizada para crear ejecutables estáticamente enlazados para linux en plataformas alpha, arm, hppa, ia64, i386, mips, s390, sparc, sparc64, ppc y x86\_64.
+ \item \textbf{diet libc} Es una versión de \textit{libc} optimizada en tamaño, puede ser utilizada para crear ejecutables estáticamente enlazados para Linux en plataformas alpha, arm, hppa, ia64, i386, mips, s390, sparc, sparc64, ppc y x86\_64.
 \end{itemize}
 
 \subsubsection{Sistema operativo Linux}
 
-El sistema operativo Linux es utilizado en este curso en el sistemas embebido y en el computador personal, su carácter abierto y de código libre permite al estudiante estudiar su funcionamiento y utilizarlo en el desarrollo de aplicaciones haciendo uso de la gran variedad de aplicaciones y librerías para diversos campos de aplicación; adicionalmente, Linux soporta una gran variedad de protocolos de comunicación, sistemas de archivos y da soporte a una extensa variedad de periféricos que utilizan diferentes protocolos (USB, SPI, I2C, SD, SATA, PCI, PCI-e, etc) lo que facilita el desarrollo de aplicaciones tanto en los computadores personales como en los sistemas embebidos.
+El sistema operativo Linux es utilizado en el sistemas embebido y en el computador personal, su carácter abierto y de código libre permite al estudiante estudiar su funcionamiento y utilizarlo en el desarrollo de aplicaciones haciendo uso de la gran variedad de aplicaciones y librerías para diversos campos de aplicación; adicionalmente, Linux soporta una gran variedad de protocolos de comunicación, sistemas de archivos y da soporte a una extensa variedad de periféricos que utilizan diferentes protocolos (USB, SPI, I2C, SD, SATA, PCI, PCI-e, etc) lo que facilita el desarrollo de aplicaciones tanto en los computadores personales como en los sistemas embebidos.
 
 \subsubsection{Librería Qt}
 Qt es un marco de trabajo portable que es utilizado para el desarrollo de aplicaciones software con interfaz de usuario gráfica (GUI); este proyecto proporciona los entornos de desarrollo \textit{QT - designer} y \textit{Qt - creator} los cuales, proporcionan una interfaz de programación amigable con una gran variedad de objetos gráficos que pueden ser integrados fácilmente; acelerando el tiempo de desarrollo de la interfaz y suministrando un entorno agradable al usuario final, en la figura \ref{qt} se puede observar un ejemplo de una interfaz gráfica creada con Qt.
@@ -1301,16 +1298,16 @@ Qt es un marco de trabajo portable que es utilizado para el desarrollo de aplica
   \end{figure}
 
 \subsubsection{Sistema de archivos}
-El sistema de archivos proporciona las herramientas necesarias por el sistema operativo para implementar una determinada funcionalidad; comunicándose con el kernel para controlar el flujo de datos desde y hacia los periféricos. Aunque es  posible construir un sistema de archivos desde cero, no es nada práctico ya que es una tarea tediosa que requiere cierto nivel de experiencia; por esto, en la actualidad, existen varias distribuciones que proporcionan herramientas de configuración que permiten generar de forma automática una gran variedad de aplicaciones, dentro de las más utilizadas se encuentran:
+El sistema de archivos proporciona las herramientas necesarias por el sistema operativo para implementar una determinada funcionalidad; comunicándose con el kernel para controlar el flujo de datos desde y hacia los periféricos. Aunque es  posible construir un sistema de archivos desde cero, no es práctico, ya que es una tarea tediosa que requiere cierto nivel de experiencia; por esto, en la actualidad, existen varias distribuciones que proporcionan herramientas de configuración que permiten generar de forma automática una gran variedad de aplicaciones, dentro de las más utilizadas se encuentran:
 
 \begin{itemize}
  \item Busybox: Diseñado para optimizar el tamaño y rendimiento de aplicaciones embebidas, BusyBox \footnote{http://www.busybox.net/} combina en un solo ejecutable más de 70 utilidades estándares UNIX, en sus versiones ligeras. BusyBox es considerada la navaja suiza de los sistema embebidos, dado que permite sustituir la gran mayoría de utilidades que se suelen localizar en los paquetes GNU fileutils, shellutils, findutils, textutils, modutils, grep, gzip, tar, etc. Busybox hace parte de la mayoría de distribuciones de Linux para sistemas embebidos.
 
  \item Buildroot: conformado por un grupo de \textit{scripts} y \textit{parches} que facilita la generación de la cadena de herramientas y el sistema de archivos para un sistema embebido que usa Linux. Posee una interfaz que permite realizar de forma fácil la configuración; utiliza busybox para generar la utilidades básicas de Linux y permite adaptar software adicional de forma fácil \footnote{http://buildroot.uclibc.org/buildroot.html\#add\_software}.
 
- \item OpenEmbedded: Al igual que Buildroot, el proyecto openembedded proporciona un entorno que permite generar la cadena de herramientas y el sistema de atchivos para un sistema embebido, utiliza busybox y permite la creación de archivos que permiten compilar software que no se incluya en la distribución original. Adicionalmente openembedded crea archivos de instalación con un formato derivado del proyecto \textit{handhelds} \textit{ipk}, lo que permite la instalación de paquetes de forma similar a la distribución debian.
+ \item OpenEmbedded: Al igual que Buildroot, el proyecto openembedded proporciona un entorno que permite generar la cadena de herramientas y el sistema de archivos para un sistema embebido, utiliza busybox y permite la creación de archivos que permiten compilar software que no se incluya en la distribución original. Adicionalmente openembedded crea archivos de instalación con un formato derivado del proyecto \textit{handhelds} \textit{ipk}, lo que permite la instalación de paquetes de forma similar a la distribución debian.
 
- \item Openwrt: Distribución que fué utilizada inicialmente para routers domésticos, es utilizada en la actualidad en otras plataformas;  proporciona los mismos servicios que OpenEmbedded, ocupando menos espacio en el computador donde se realiza la compilación, el proceso de compilación es más rápido.
+ \item Openwrt: Distribución que fue utilizada inicialmente para routers domésticos, es utilizada en la actualidad en otras plataformas;  proporciona los mismos servicios que OpenEmbedded, ocupando menos espacio en el computador donde se realiza la compilación, el proceso de compilación es más rápido.
 
 \end{itemize}
 
@@ -1319,11 +1316,11 @@ El sistema de archivos proporciona las herramientas necesarias por el sistema op
 Para la elaboración de las cajas que contendrán las tarjetas electrónicas y servirán de soporte físico a los dispositivos electrónicos, se utilizará la herramienta \textit{QCAD} disponible para los sistemas operativos más utilizados; con esta aplicación se puede generar la forma de la placa de circuito impreso con los orificios necesarios para ajustarse a la caja y a la aplicación; este archivo puede ser exportado a la herramienta \textit{KICAD} lo que facilita la colocación de componentes.
 
 \subsection{Conclusiones}
-Las aplicaciones mencionadas en esta sección han sido probadas por estudiantes de las universidades: UNAL, ULA, UIS y por la empresa emQbit, por esto podemos decir que este grupo de herramientas soporta todo el proceso de diseño de un sistema embebido; su caracter abierto y gratuito permite ahorrar mucho dinero si se compara con el requerido para comprar herramientas propietarias; el único inconveniente de las herramientas abiertas es que en algunos casos su interfaz no es tan amigable y no cuentan con las funcionalidades de su contraparte comercial. Una ventaja adicional es la no utilización de software ilegal, práctica que ha sido tolerada por la academia durante muchos años; adicionamente, se le enseña al estudiante una alternativa que le permite ahorrar costos de inversión en el software necesario para comenzar una nueva empresa; con lo que este dinero se puede destinar a compra de equipo necesario para el desarrollo de la actividad.
+Las aplicaciones mencionadas en esta sección han sido probadas por estudiantes de las universidades: UNAL, ULA, UIS y por la empresa emQbit, por esto podemos afirmar que este grupo de herramientas soporta todo el proceso de diseño de un sistema embebido; su carácter abierto y gratuito permite ahorrar mucho dinero si se compara con el requerido para comprar herramientas propietarias; el único inconveniente de las herramientas abiertas es que en algunos casos su interfaz no es tan amigable y no cuentan con las funcionalidades de su contraparte comercial. Una ventaja adicional es la no utilización de software ilegal, práctica que ha sido tolerada por la academia durante muchos años; adicionalmente, se le enseña al estudiante una alternativa que le permite ahorrar costos de inversión en el software necesario para comenzar una nueva empresa; con lo que este dinero se puede destinar a compra de equipo necesario para el desarrollo de la actividad.
 
 Aunque este grupo de herramientas pueden ejecutarse en los sistemas operativos mas populares (Linux, Mac OS y Windows) se prefiere el uso de Linux ya que es un sistema operativo gratuito y no es necesario pagar ningún tipo de licencia, lo que reduce aún más la inversión en software.
 
-Encuestas realizadas a los estudiantes indican que: con este grupo de herramientas se pueden realizar todas las actividades propuestas en este programa academico; que son más difíciles de manejar que las herramientas comerciales; pero que se prefiere el uso de alternativas abiertas al de sofware ilegal; en el pasado no les importaba utilizar métodos ilegales para licenciar aplicaciones software, pero que ahora van a buscar primero las alternativas libres antes de recurrir al uso de software ilegal; el uso de Linux hace que se sientan identificados con él, llegando al punto de realizar un cambio total de sistema operativo. Lo anterior demuestra que los estudiantes se adaptan fácilmente a nuevas herramientas y que ellos prefieren el uso de software abierto a software ilegal, por lo que el constante uso de herramientas comerciales se puede atribuir a los docentes que no están interesados en buscar alternativas abiertas, ya sea porque cuentan con licencias, porque no les interesa que se utilice software iegal o porque no quieren aprender a manejar nuevas herramientas.
+Encuestas realizadas a los estudiantes indican que: con este grupo de herramientas se pueden realizar todas las actividades propuestas en este programa académico; que son más difíciles de manejar que las herramientas comerciales; pero que se prefiere el uso de alternativas abiertas al de sofware ilegal; en el pasado no les importaba utilizar métodos ilegales para licenciar aplicaciones software, pero que ahora van a buscar primero las alternativas libres antes de recurrir al uso de software ilegal; el uso de Linux hace que se sientan identificados con él, llegando al punto de realizar un cambio total de sistema operativo. Lo anterior demuestra que los estudiantes se adaptan fácilmente a nuevas herramientas y que ellos prefieren el uso de software abierto a software ilegal, por lo que el constante uso de herramientas comerciales se puede atribuir a los docentes que no están interesados en buscar alternativas abiertas, ya sea porque cuentan con licencias, porque no les interesa que se utilice software iegal o porque no quieren aprender a manejar nuevas herramientas.
 
 \section{Conclusiones}
 El método de evaluación propuesto ha demostrado durante su aplicación su eficacia en la generación de hábitos de continuo estudio y auto-aprendizaje; sin embargo, uno de los grandes inconvenientes para su aplicación son los malos métodos de estudio que poseen los estudiantes; por este motivo, es necesario crear actividades que obliguen a los estudiantes a realizar las lecturas y actividades programadas en el curso; aunque esto no es lo recomendado, es la realidad que vivimos en todas las universidades del país. Esta situación es el resultado de la aplicación de una desafortunada política gubernamental en la educación media; esta política obligaba a los centros educativos de todo el país a promover de forma automática a todos los estudiantes, fijando un máximo del 5\% de estudiantes no promovidos, sin importar si los estudiantes promovidos poseen o no los conocimientos necesarios para la promoción. Cuando estos estudiantes, así formados, ingresan a las universidades se genera un choque fuerte ya que no están acostumbrados a afrontar retos, no son conscientes de sus deficiencias y en muchos casos su nivel de conocimientos no son los esperados. Por otro lado, la universidad no proporciona medios para generar métodos de estudio adecuados, en algunas asignaturas se repiten semestre tras semestre las evaluaciones y contenidos, lo que ha formado un banco de evaluaciones con sus respectivas soluciones, lo que hace que estas pruebas no sean un indicador efectivo del nivel de aprendizaje.
