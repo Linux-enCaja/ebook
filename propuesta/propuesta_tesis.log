@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.5.10)  12 MAY 2011 09:53
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.5.10)  16 MAY 2011 12:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -781,21 +781,20 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 3.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 3.
-
-Underfull \vbox (badness 1558) has occurred while \output is active []
-
- [1
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+)
 \tf@toc=\write4
 \openout4 = `propuesta_tesis.toc'.
 
+ (./commons.tex [1
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
 
-(./education.tex [2]
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+[2
+
+]
 Cap\'{\i }tulo 1.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20.74> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
@@ -804,206 +803,135 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [3
-
-]
-
-LaTeX Warning: Reference `ch:embedded' on page 4 undefined on input line 15.
-
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 17.
-LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 19.
-LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 19.
+ [3]
 [4]
-Underfull \hbox (badness 1117) in paragraph at lines 39--40
-[]\OT1/ptm/m/n/10 La situaci[]on actual por la que atraviesa la industria elect
-r[]onica nacional, requiere que los
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 38.
+
+Underfull \hbox (badness 1342) in paragraph at lines 53--54
+[]\OT1/ptm/m/n/10 Entendimiento com[]un: Conocimiento sobre el funcionamiento d
+el sistema y como acciones
  []
 
-<./images/CDIO_emp_lid.pdf, id=21, 511.9125pt x 239.89626pt>
-File: ./images/CDIO_emp_lid.pdf Graphic file (type pdf)
+[5]
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 67.
+ (/usr/share/texmf-texlive/tex/latex/psnfss/omlptm.fd
+File: omlptm.fd 
+)
+LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <8> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 67.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 73.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 73.
+ [6] [7]
+Underfull \hbox (badness 1389) in paragraph at lines 121--122
+[]\OT1/ptm/m/n/10 Herramientas de programaci[]on, depuraci[]on y librer[]^^Pas 
+que facilitan el desarrollo de nuevas
+ []
 
-<use ./images/CDIO_emp_lid.pdf>
-<./images/CDIO.pdf, id=23, 310.15875pt x 129.48375pt>
-File: ./images/CDIO.pdf Graphic file (type pdf)
- <use ./images/CDIO.pdf>
-[5 <./images/CDIO_emp_lid.pdf>] [6 <./images/CDIO.pdf>]
-<./images/CDIO_2_3.pdf, id=60, 266.9975pt x 177.66376pt>
-File: ./images/CDIO_2_3.pdf Graphic file (type pdf)
+[8] <./images/framework_foss.pdf, id=38, 605.26125pt x 341.275pt>
+File: ./images/framework_foss.pdf Graphic file (type pdf)
 
-<use ./images/CDIO_2_3.pdf>
-<./images/CDIO_metodologia.pdf, id=62, 957.5775pt x 451.6875pt>
-File: ./images/CDIO_metodologia.pdf Graphic file (type pdf)
-
-<use ./images/CDIO_metodologia.pdf>
+<use ./images/framework_foss.pdf>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7 <./images/CDIO_2_3.pdf>] [8 <./images/CDIO_metodologia.pdf>] [9] [10] [11] 
-[12]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 306.
+ [9 <./images/framework_foss.pdf>] [10] [11] [12]
+<./images/framework_hwcl.pdf, id=66, 619.31375pt x 344.28625pt>
+File: ./images/framework_hwcl.pdf Graphic file (type pdf)
 
-Overfull \hbox (69.07356pt too wide) in paragraph at lines 302--344
-[][] 
+<use ./images/framework_hwcl.pdf> [13 <./images/framework_hwcl.pdf>]
+Underfull \hbox (badness 1681) in paragraph at lines 236--237
+[]\OT1/ptm/m/it/10 No a trabajos derivados \OT1/ptm/m/n/10 (\OT1/ptm/b/n/10 ND\
+OT1/ptm/m/n/10 ) Permite la copia y la distribuci[]on del trabajo original sin
  []
 
+[14]
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [13]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [14]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [15]
-
-LaTeX Warning: Reference `design_metodology' on page 16 undefined on input line
- 398.
+LaTeX Warning: Reference `ch:education' on page 15 undefined on input line 259.
 
 
-LaTeX Warning: Reference `ch:embedded' on page 16 undefined on input line 398.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 267.
 
-<./images/habilidades_digitales.pdf, id=114, 494.84875pt x 595.22375pt>
-File: ./images/habilidades_digitales.pdf Graphic file (type pdf)
-
-<use ./images/habilidades_digitales.pdf>
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [16]
-Underfull \hbox (badness 1122) in paragraph at lines 411--412
-[]\OT1/ptm/m/n/10 Concebir y definir las especificaciones y requerimientos de u
-n sistema digital, modelar su
- []
-
-[17 <./images/habilidades_digitales.pdf>]
-Underfull \hbox (badness 1521) in paragraph at lines 429--430
-[]\OT1/ptm/m/n/10 Implementar un sistemas embebido (hardware o hardware/softwar
-e) para cumplir una tarea
- []
-
-
-Underfull \hbox (badness 1308) in paragraph at lines 429--430
-\OT1/ptm/m/n/10 determinada que cumpla con una necesidad real (Obtener e interp
-retar las necesidades del
- []
-
-[18] <./images/ES_CDIO_flow.png, id=167, 399.74344pt x 349.305pt>
-File: ./images/ES_CDIO_flow.png Graphic file (type png)
-
-<use ./images/ES_CDIO_flow.png> [19] [20 <./images/ES_CDIO_flow.png>]
-<./images/SIE_block_diagram.png, id=175, 501.37312pt x 274.02374pt>
-File: ./images/SIE_block_diagram.png Graphic file (type png)
-
-<use ./images/SIE_block_diagram.png> [21 <./images/SIE_block_diagram.png>]
-<./images/HW_design_flow.pdf, id=179, 702.625pt x 308.15125pt>
-File: ./images/HW_design_flow.pdf Graphic file (type pdf)
-
-<use ./images/HW_design_flow.pdf> [22]
-<./images/char_write.png, id=184, 587.19376pt x 222.8325pt>
-File: ./images/char_write.png Graphic file (type png)
-
-<use ./images/char_write.png>
-Overfull \hbox (13.6029pt too wide) in paragraph at lines 713--713
- [] 
- []
-
-
-Underfull \hbox (badness 1902) in paragraph at lines 717--718
-[]\OT1/ptm/m/n/10 Este tipo de simualciones permiten entender perfectamente con
-ceptos relacionados con el
- []
-
-<./images/soft_SoC_design_flow.pdf, id=185, 717.68124pt x 528.97626pt>
-File: ./images/soft_SoC_design_flow.pdf Graphic file (type pdf)
-
-<use ./images/soft_SoC_design_flow.pdf> [23 <./images/HW_design_flow.pdf>]
-[24 <./images/char_write.png (PNG copy)> <./images/soft_SoC_design_flow.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [25]
-<./images/Sw_hw_fpga_arch.png, id=242, 569.12625pt x 386.94562pt>
-File: ./images/Sw_hw_fpga_arch.png Graphic file (type png)
-
-<use ./images/Sw_hw_fpga_arch.png> [26] [27 <./images/Sw_hw_fpga_arch.png>]
-[28] [29] [30]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 887.
-
- (/usr/share/texmf-texlive/tex/latex/psnfss/omsptm.fd
+(/usr/share/texmf-texlive/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 887.
- [31]
-[32]
-Underfull \hbox (badness 1688) in paragraph at lines 1031--1032
-[]\OT1/ptm/m/it/10 Reconoce \OT1/ptm/m/n/10 funciones que deben ser implemantad
-as en hardware para cumplir con
- []
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 267.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 289.
+ [15]
+<./images/monitor_signos_vitales.pdf, id=93, 656.37022pt x 350.76645pt>
+File: ./images/monitor_signos_vitales.pdf Graphic file (type pdf)
 
-[33] [34] [35] [36] <./images/qucs.png, id=278, 992.70876pt x 688.5725pt>
-File: ./images/qucs.png Graphic file (type png)
+<use ./images/monitor_signos_vitales.pdf>
+<./images/design_flow_copyleft_hw.pdf, id=94, 604.2575pt x 329.23pt>
+File: ./images/design_flow_copyleft_hw.pdf Graphic file (type pdf)
 
-<use ./images/qucs.png> [37 <./images/qucs.png (PNG copy)>]
-<./images/gtkwave.png, id=283, 539.76656pt x 316.18124pt>
-File: ./images/gtkwave.png Graphic file (type png)
-
-<use ./images/gtkwave.png>
-Underfull \hbox (badness 1147) in paragraph at lines 1231--1232
-\OT1/ptm/m/n/10 de alto nivel para la aplicaci[]on de las funciones JTAG (IDCOD
-E, INTEST, EXTEST, BYPASS,
- []
-
-
-Underfull \vbox (badness 4779) has occurred while \output is active []
-
- [38 <./images/gtkwave.png (PNG copy)>]
-<./images/kicad.pdf, id=287, 549.05125pt x 144.54pt>
-File: ./images/kicad.pdf Graphic file (type pdf)
- <use ./images/kicad.pdf>
-Overfull \hbox (12.45026pt too wide) in paragraph at lines 1241--1241
- [] 
- []
-
-[39 <./images/kicad.pdf>] [40] <./images/Qt.png, id=301, 240.9pt x 321.2pt>
-File: ./images/Qt.png Graphic file (type png)
-
-<use ./images/Qt.png> [41] [42 <./images/Qt.png (PNG copy)>] [43]
-Underfull \hbox (badness 1701) in paragraph at lines 1323--1324
-[]\OT1/ptm/m/n/10 Lo anterior, ha generado que un porcentaje considerable de es
-tudiantes no adquieran los
- []
-
-
+<use ./images/design_flow_copyleft_hw.pdf>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [44])
-(./propuesta_tesis.bbl [45] [46
+ [16 <./images/monitor_signos_vitales.pdf>]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 323.
+ [17 <./images/design_flow_copyleft_hw.pdf>]
+[18]
 
-]) [47] (./propuesta_tesis.aux)
+LaTeX Warning: Reference `ch:embedded' on page 19 undefined on input line 376.
+
+[19] [20]
+<./images/modelo_transferencia_tecnologica.pdf, id=165, 536.0025pt x 303.1325pt
+>
+File: ./images/modelo_transferencia_tecnologica.pdf Graphic file (type pdf)
+ <use ./images/modelo_transferencia_tecnologica.pdf>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21])
+(./propuesta_tesis.bbl [22 <./images/modelo_transferencia_tecnologica.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 57--60
+[]\OT1/ptm/m/n/10 Free Soft-wa-re Foun-da-tion.  GNU Ge-ne-ral Pu-blic Li-cen-s
+e.  URL:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--65
+[]\OT1/ptm/m/n/10 A. Cor-te-si.  Eli-nor Os-trom, the com-mons pro-blem and Ope
+n Sour-ce.  \OT1/ptm/m/it/10 URL:
+ []
+
+
+Underfull \hbox (badness 2717) in paragraph at lines 72--77
+[]\OT1/ptm/m/n/10 C. M Sch-weik and A. Se-me-nov.  The Ins-ti-tu-tio-nal De-sig
+n of 'Open Sour-ce' Pro-gram-
+ []
+
+[23
+
+]) [24] (./propuesta_tesis.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 15418 strings out of 494999
- 271689 string characters out of 1180816
- 371281 words of memory out of 3000000
- 18165 multiletter control sequences out of 15000+50000
- 36818 words of font info for 85 fonts, out of 3000000 for 9000
+ 15738 strings out of 494999
+ 273685 string characters out of 1180816
+ 369239 words of memory out of 3000000
+ 18493 multiletter control sequences out of 15000+50000
+ 36760 words of font info for 85 fonts, out of 3000000 for 9000
  54 hyphenation exceptions out of 8191
- 47i,11n,69p,1604b,474s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 47i,11n,69p,1953b,1341s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
-ve/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/ty
-pe1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmbi8
-a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/te
-xmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/ty
-pe1/urw/times/utmri8a.pfb>
-Output written on propuesta_tesis.pdf (47 pages, 1143213 bytes).
+ve/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/ty
+pe1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/public/a
+msfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
+msy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></
+usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texl
+ive/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-texlive/fonts/type1/urw
+/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></
+usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
+Output written on propuesta_tesis.pdf (24 pages, 979778 bytes).
 PDF statistics:
- 347 PDF objects out of 1000 (max. 8388607)
+ 231 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 88 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 38 words of extra memory for PDF output out of 10000 (max. 10000000)
 
