@@ -18,6 +18,13 @@ La Universidad Nacional de Colombia, como el centro educativo más importante de 
 
 En este capítulo estudiaremos las licencias \textit{Creative Commons}, una forma de licenciamiento que permite asignar diferentes ``permisos'' de utilización a un determinado trabajo y pueden ser utilizadas en productos software y hardware. Exploraremos el movimiento de software libre y código abierto (FOSS) para identificar como contribuye a la transferencia tecnológica y como millones de usuarios a lo largo y ancho del mundo trabajan de forma conjunta para difundir, actualizar, mejorar, y aumentar las aplicaciones disponibles. Adicionalmente, se presenta una propuesta a la creación de un movimiento que funcione con políticas similares pero centrado en el desarrollo hardware.
 
+%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+% El Conocimiento Como Bien Público
+%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+
 \section{El Conocimiento Como Bien Público}
 
 El análisis del conocimiento como bien público tiene sus bases en el estudio de recursos naturales compartidos (agua, bosques, fauna, flora). El recurso puede ser pequeño y ser utilizado por un grupo reducido (el televisor familiar), puede ser de nivel comunitario (campos de juego, bibliotecas, parques etc.) o pueden tener naturaleza internacional y mundial (océanos, atmósfera, internet, conocimiento científico, etc.), pueden ser delimitados (la librería comunitaria), transfronterizos (el río Amazonas, Internet, vida salvaje migratoria, etc.) o sin límites claros (el conocimiento, la capa de ozono, etc.). El conocimiento posee características que lo diferencian de los recursos naturales, mientras muchos bienes públicos ven comprometido su sostenimiento a medida que aumenta el número de usuarios, el objetivo del conocimiento es lograr su máxima difusión \cite{EO90}. 
@@ -253,7 +260,7 @@ Debido a que los proyectos hardware requieren la ejecución de un software que im
  \item Libertad para distribuir copias de versiones modificadas.
 \end{itemize}
 
-\subsection{Características}
+\subsubsection{Características}
 Para que un proyecto sea considerado \textit{hardware copyleft} es necesario proporcionar los archivos necesarios para cumplir con las libertades de las licencias GPL y CC-BY-SA. A nuestro modo de ver, la clave para garantizar dichas libertades está en suministrar la información necesaria para modificar los proyectos; para lo que es necesario poseer los conocimientos necesarios y tener acceso a los archivos de diseño.
 
 Es posible reproducir un diseño realizado en cualquier herramienta CAD; sin embargo, existen dos factores que lo dificultan: el uso de herramientas propietarias y la complejidad del proyecto original. El uso de herramientas propietarias implica el pago de fuertes sumas de dinero para adquirir licencias y la complejidad del diseño puede incrementar de forma considerable el costo del prototipo. Debido al estado de la industria electrónica colombiana, es necesario reducir al máximo los costos para hacer atractiva la fabricación de productos propios\footnote{Esto no implica que solo los proyectos más baratos hagan parte de la definición de un proyecto}. Por lo tanto, es recomendable utilizar herramientas abiertas en el desarrollo de los proyectos \textit{hardware copyleft}, en el capítulo \ref{ch:education} se presentó una metodología de diseño que utiliza software abierto únicamente y será utilizada como referencia para el desarrollo de nuevos productos. Para reducir la complejidad del diseño se debe evitar el uso de componentes de difícil adquisición y utilizar 2 o 4 capas en la placa de circuito impreso. Los diseños de referencia que ya hacen parte del recurso utilizan otra restricción: no utilizar componentes con encapsulados BGA y QFN, ya que son difíciles de montar manualmente (esta restricción tiene sentido cuando se monta un prototipo o un número pequeño de unidades de forma manual) y es necesario utilizar técnicas de inspección con rayos X para verificar su correcto montaje.
@@ -284,7 +291,72 @@ Para modificar o reproducir un proyecto existente es necesario suministrar:
     \item \textit{Aplicaciones}
    \end{itemize}
 \end{itemize}
+%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+%       COMNUNIDAD LINUXENCAJA
+%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
+
+\subsection{Recursos}
+Uno de los objetivos del presente trabajo es crear una comunidad que utilice los frutos del presente trabajo, para adquirir conocimientos relacionados con el diseño de sistemas embebidos y crear nuevos productos que den solución a necesidades locales. Para facilitar las tareas de \textit{reclutamiento} de usuarios, comunicación entre usuarios, administración y depuración del recurso, se creó el portal público \textit{linuxencaja}\footnote{http://www.linuxencaja.com}; adicionalmente se proporcionan facilidades para: reunir la documentación existente; proporcionar facilidades para la creación de nuevos proyectos; almacenar los archivos generados por nuevos proyectos y mantenimiento de repositorios de código fuente y archivos de diseño de proyectos existentes. El acceso a la información generada en el desarrollo de los proyectos existentes y a los servicios de este porta no tiene restricciones de ningún tipo. A continuación se realiza una descripción de los recursos con los que cuenta la comunidad \textit{linuxencaja}. 
+
+\subsubsection{Herramientas}
+
+\begin{itemize}
+ \item Lista de discusión en donde participan desarrolladores hardware/software, estudiantes y miembros de la comunidad para coordinar el desarrollo de nuevos proyectos y resolver dudas sobre conceptos relacionados con el diseño de sistemas embebidos.
+ \item Base de datos de solución de problemas asociadas a las listas de discusión.
+ \item Sistema de control de versiones \textit{git} que permite el trabajo multi-usuario y la creación de repositorios para los proyectos.
+ \item wiki que permite la elaboración de tutoriales, documentación sobre temas relacionados con el diseño de sistemas digitales o reportes del proceso de diseño de nuevos proyectos.
+\end{itemize}
+
+\subsubsection{Diseños de referencia}
+Se cuenta con 7 tarjetas de desarrollo (ver descripción en el capítulo \ref{ch:embedded}) que cumplen con los requerimientos de los dispositivos \textit{hardware copyleft}; estos diseños de referencia ya han sido construidos y probados en diferentes aplicaciones por lo que su funcionalidad es garantizada; todos ellos utilizan componentes que son fáciles de conseguir y no requieren grandes costos para su reproducción. En los repositorios del portal \textit{linuxencaja} se encuentran los archivos necesarios para reproducir entender y modificar estas plataformas; así como el código fuente de las siguientes aplicaciones (que pueden ser utilizadas para estudiar su funcionamiento):
+
+\begin{itemize}
+ \item \textit{loader y blink:} Aplicación que permite cargar binarios en la memoria interna del SoC (loader) y una aplicación que despliega un mensaje por el puerto serial de la plataforma y realiza un blink en un LED.
+ \item \textit{Drivers de dispositivos:} Ejemplos para aprender a escribir controladores sencillos para el sistema operativo Linux.
+ \item \textit{Aplicaciones en espacio de usuario:} Ejemplos que permiten comunicarse con los drivers desde espacio de usuario, y ejemplos de aplicaciones sencillas utilizando las facilidades del sistema operativo Linux.
+ \item \textit{Aplicaciones para configuración:} Algunas plataformas de desarrollo poseen micro-controladores de 8 bits o FPGAs que pueden ser programados o configurados desde la misma plataforma. Se suministra el código fuente de estas aplicaciones.
+\end{itemize}
+
+\subsubsection{Banco de proyectos académicos}
+
+Cada semestre se realizan proyectos que utilizan alguna de las plataformas \textit{hardware copyleft}, cada uno de ellos realiza la documentación completa del proceso de diseño y suministra los archivos necesarios para reproducir o continuar el proyecto. Este banco de proyectos representa un recurso donde se pueden encontrar soluciones a problemas comunes de diseño y su realización ayuda a la formación de habilidades en diseño y escritura de informes técnicos.
+
+\subsubsection{Documentación}
+
+\textit{Linuxencaja} proporciona documentación y tutoriales para:
+
+\begin{itemize}
+ \item Artículos sobre la metodología de diseño y el programa académico generados por este trabajo.
+ \item Proceso para proporcionar soporte a una plataforma embebida en el kernel de Linux.
+ \item Comunicación entre tareas hardware (implementadas en PLDs) y software (implementadas en un SoC)
+ \item Inicialización de SoCs.
+ \item Proceso de fabricación y montaje (manual y automático) de placas de circuito impreso.
+ \item Proceso de diseño que utiliza la metodología de diseño y el programa académico propuestos en este trabajo.
+ \item Material para los cursos basados en la metodología propuesta (en construcción).
+ \item Tutoriales sobre temas de interés sobre diseño software y hardware de sistemas digitales.
+\end{itemize}
+
+
+\subsubsection{Miembros}
+
+\textit{Linuxencaja} cuenta en la actualidad con diferentes tipos de usuarios: desarrolladores software, desarrolladores hardware, aficionados, estudiantes, industriales y administradores.
+
+Los desarrolladores hardware y software se encargan de generar las plataformas de desarrollo y las aplicaciones software que las controlan e implementan su funcionalidad; el número actual de desarrolladores es pequeño, pero va en aumento gracias a los aportes de los estudiantes. Los aficionados, son personas a las que les gusta el diseño de sistemas embebidos, el desarrollo software, les gusta conocer el estado de la tecnología; su papel es muy importante ya que por lo general, ellos se encargan de labores de mantenimiento, depuración y mejoramiento del material existente.
+
+Los estudiantes, son miembros temporales que pueden o no continuar siendo parte de la comunidad después de cursar las asignaturas, sus aportes deben ser revisados con cuidado para verificar la calidad de su trabajo (muchos proyectos no se finalizan) y solo los mejores proyectos serán parte de los repositorios de la comunidad\footnote{Durante los dos períodos académicos en los que se han vinculado estudiantes a la comunidad como parte de su proyecto de curso, se han desarrollado 5 nuevas aplicaciones aplicaciones}. Gracias a la vinculación de los estudiantes a la comunidad como parte de la metodología para la enseñanza de sistemas digitales presentada en el capítulo \ref{ch:education} se han creado 2 nuevos proyectos que entran a ser parte de los recursos; lo que muestra el éxito de esta modalidad de ``reclutamiento''.
+
+Los industriales miembros de la comunidad se pueden dividir en dos grupos: los que hacen pequeños aportes en las listas de discusión, y no han creado proyectos nuevos, y los que participan activamente y aportan su trabajo a la comunidad. El primer grupo está conformado por empresas consolidadas desde hace varios años (a excepción de la empresa emQbit) y su comportamiento es entendible debido a su naturaleza privada. El segundo grupo esta conformado por micro-empresas que han sido creadas por estudiantes que generaron nuevos productos con los recursos suministrados por la comunidad y utilizan los resultados de los proyectos académicos.
+
+Los administradores (2 personas), son personas que cuentan con los conocimientos necesarios para configurar servidores y realizar mantenimiento a los servicios suministrados por el portal.
+
+%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+% Flujo de diseño utilizando hardware copyleft
+%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
 \section{Flujo de diseño utilizando \textit{hardware copyleft}}
 
@@ -298,20 +370,19 @@ Para comprobar la utilidad de las plataformas de referencia \textit{hardware cop
 
 En el segundo caso, la empresa emQbit, agregó una etapa de adquisición de señales análoga, un sistema de comunicación y un sistema de referencia geográfica basada en un GPS, para crear un sistema que permite medir la calidad del servicio de energía eléctrica \cite{ERAC+09}; empleando 6 meses en ello. 
 
-
 Los casos anteriores muestran una disminución drástica del tiempo necesario para la producción de nuevos productos comparados con el tiempo que demoró el desarrollo de la placa utilizada como referencia. Esto es posible, gracias a la posibilidad de utilizar los archivos de diseño de la plataforma, (los cuales, han pasado por un proceso de depuración y optimización) y el código fuente de las aplicaciones necesarias para la ejecución de aplicaciones Linux (Board Support Package BSP). lo que representa un ahorro de tiempo considerable ya que el proceso de concepción, diseño, puesta en funcionamiento y generación de aplicaciones para esta plataforma duró 18 meses. 
 
 La figura \ref{design_flow_copyleft_hw} muestra una comparación del flujo de diseño cuando se utilizan o no plataformas \textit{hardware copyeft}
 
-\begin{figure}[H]
+\begin{figure}[htpb]
   \centering
   \includegraphics[scale=.65]{./images/design_flow_copyleft_hw.pdf}
   \caption{Flujo de diseño al utilizar hardware copyleft} \label{design_flow_copyleft_hw}
 \end{figure}
 
-Como puede apreciarse en la figura \ref{design_flow_copyleft_hw} la utilización de plataformas \textit{hardware copyleft} afecta únicamente la etapa de implementación en el proceso de diseño (esto debido a que las primeras etapas no deben tener ninguna restricción tecnológica). Cuando se utilizan las plataformas \textit{hardware copyleft} suministradas por este trabajo es posible reducir de forma considerable las tareas necesarias (cuadro azul de las actividades a realizar en el prototipado) para la fabricación de un prototipo funcional; ya que al proporcionar los archivos necesarios para la modificación de las plataformas, se reduce de forma considerable el tiempo requerido para diseñar, construir, probar la placa de circuito impreso e implementar las funciones básicas software y hardware. Por otro lado, 
+Como puede apreciarse en la figura \ref{design_flow_copyleft_hw} la utilización de plataformas \textit{hardware copyleft} afecta únicamente la etapa de implementación en el proceso de diseño (esto debido a que las primeras etapas no deben tener ninguna restricción tecnológica). Cuando se utilizan las plataformas \textit{hardware copyleft} suministradas por este trabajo es posible reducir de forma considerable las tareas necesarias (cuadro azul de las actividades a realizar en el prototipado) para la fabricación de un prototipo funcional; ya que al proporcionar los archivos necesarios para la modificación de las plataformas, se reduce de forma considerable el tiempo requerido para diseñar, construir, probar la placa de circuito impreso e implementar las funciones básicas software y hardware. Por otro lado, se suministra la información de los componentes utilizados, lo que facilita la producción, al utilizar dispositivos que no requieren firmas de contratos a la compra de un número muy grande de unidades. La ventaja de esta alternativa frente al uso de plataformas de desarrollo comerciales, es la posibilidad de ajustarse a las necesidades, lo que permite optimizar el número de componentes y reducir el costo final.
 
-El proceso de selección de la arquitectura se limita a elegir dentro de la gama de procesadores utilizados en este trabajo \footnote{Es necesario aclarar que los procesadores utilizados en este trabajo son solo una muestra de la gran cantidad de referencias disponibles, por lo que es posible encontrar otros procesadores más económicos que implementen la funcionalidad deseada, las plataformas suministradas por este trabajo permiten ahorrar tiempo y dinero en la elaboración del prototipo y no necesariamente en el costo de fabricación en grandes volúmenes} el más indicado (económica y funcionalmente) para la aplicación, la tabla \ref{plat_specs} resume las características de cada plataforma, indicando el costo de los componentes (costo de 50 unidades, a mayor cantidad menor el costo).
+El proceso de selección de la arquitectura se limita a elegir dentro de la gama de procesadores disponibles \footnote{Es necesario aclarar que los procesadores utilizados en este trabajo son solo una muestra de la gran cantidad de referencias disponibles, por lo que es posible encontrar otros procesadores más económicos que implementen la funcionalidad deseada, las plataformas suministradas por este trabajo permiten ahorrar tiempo y dinero en la elaboración del prototipo y no necesariamente en el costo de fabricación en grandes volúmenes} el más indicado (económica y funcionalmente) para la aplicación. En la tabla \ref{plat_specs} se resumen las características de cada plataforma, indicando el costo de los componentes (costo de 50 unidades).
 
 
 \begin{table}[htpb]
@@ -331,7 +402,7 @@ El proceso de selección de la arquitectura se limita a elegir dentro de la gama 
                                 & \begin{sideways} \textbf{FPGA \$USD} \end{sideways}
                                 & \begin{sideways} \textbf{Mínima config. \$USD} \end{sideways}
                                 & \begin{sideways} \textbf{Sistema Operativo} \end{sideways}
-      \\ \hline              4.5
+      \\ \hline
        ECB\_ARM7          &33  & 3.5       &   & X &    & X & 0 - 6.5 & 0  & NA & 7.5 - 14.5 & RT - eCos
       \\ \hline 
        ECB\_AT91\_V1      &180 & 18        & X & X &    & X & 6       & 9  & NA & 33         & RT - Linux
@@ -350,72 +421,13 @@ El proceso de selección de la arquitectura se limita a elegir dentro de la gama 
   \label{plat_specs}
 \end{table}
 
-La opción más económica (según la tabla \ref{plat_specs} es el uso de una plataforma basada en los SoC SAM7, los cuales incluyen en el mismo sustrato las memorias volátiles y no volátiles; la cantidad de memoria disponible es de máximo 256 kBytes para la memoria no volátil y 64 kBytes de memoria RAM, lo que puede ser suficiente para muchas aplicaciones; sin embargo, las aplicaciones actuales que requieren capacidades multimedia, conexión a diferentes redes y manejo de sistemas de archivos no pueden implementarse en esta arquitectura.
+La opción más económica (según la tabla \ref{plat_specs} es el uso de una plataforma basada en los SoC SAM7, los cuales incluyen en el mismo sustrato las memorias volátiles y no volátiles; la cantidad de memoria disponible es de máximo 256 kBytes para la memoria no volátil y 64 kBytes de memoria RAM, lo que puede ser suficiente para muchas aplicaciones; sin embargo, las aplicaciones actuales que requieren capacidades multimedia, conexión a diferentes redes y manejo de sistemas de archivos no pueden implementarse en esta arquitectura. El puerto de comunicaciones \textit{USB host} permite la conexión de una gran variedad de periféricos (audio, comunicaciones, medios de almacenamiento) disponibles a bajos precios; reduciendo de forma considerable los costos finales. Las FPGAs son muy costosas y elevan de forma considerable el consumo de potencia del dispositivo, por lo que deben ser utilizadas en aplicaciones donde sea estrictamente necesario, ya sea para cumplir con restricciones temporales o para cumplir con funcionalidades especiales.
 
-El puerto de comunicaciones USB host permite la conexión de una gran variedad de periféricos (audio, comunicaciones, medios de almacenamiento) disponibles a bajos precios; reduciendo de forma considerable los costos finales. A manera de ejemplo, si una determinada aplicación necesita conexión inalámbrica a internet, una plataforma que no posea puerto USB-host necesita un controlador USB externo  (cuyo costo puede ser de 10 USD) lo que aumenta la complejidad de la placa de circuito impreso y el costo de componentes.
-
-Las FPGAs son muy costosas y elevan de forma considerable el consumo de potencia del dispositivo, por lo que deben ser utilizadas en aplicaciones donde sea estrictamente necesario, ya sea pora cumplir con restricciones temporales o para cumplir con funcionalidades especiales. 
-
-
-\section{Comunidad linuxencaja}
-Uno de los objetivos del presente trabajo es crear una comunidad que utilice los frutos del presente trabajo, para adquirir conocimientos relacionados con el diseño de sistemas embebidos y crear nuevos productos que den solución a necesidades locales. Se creó el portal público \textit{linuxencaja}\footnote{http://www.linuxencaja.com} para reunir la documentación existente, proporcionar facilidades para la creación de nuevos proyectos, intercambiar opiniones con otros usuarios, almacenar los archivos generados por nuevos proyectos y mantenimiento de repositorios de código fuente y archivos de diseño de proyectos existentes. Este portal será el principal medio de comunicación y difusión, y el acceso a él no tiene restricciones de ningún tipo. A continuación se realiza una descripción de los recursos con los que cuenta la comunidad \textit{linuxencaja}. 
-
-
-\subsection{Recursos}
-
-\subsubsection{Herramientas}
-
-\begin{itemize}
- \item Lista de discusión en donde participan desarrolladores hardware/software, estudiantes y miembros de la comunidad para coordinar el desarrollo de nuevos proyectos y resolver dudas sobre conceptos relacionados con el diseño de sistemas embebidos.
- \item Base de datos de solución de problemas asociadas a las listas de discusión.
- \item Sistema de control de versiones \textit{git} que permite el trabajo multi-usuario y la creación de repositorios para los proyectos.
- \item wiki que permite la elaboración de tutoriales, documentación sobre temas relacionados con el diseño de sistemas digitales o reportes del proceso de diseño de nuevos proyectos.
-\end{itemize}
-
-\subsubsection{Diseños de referencia}
-Se cuenta con 7 tarjetas de desarrollo (ver descripción en el capítulo \ref{ch:embedded}) que cumplen con los requerimientos de los dispositivos \textit{hardware copyleft} y se proporcionan los archivos necesarios para modificarlas; estos diseños de referencia ya han sido construidos y probados en diferentes aplicaciones por lo que su funcionalidad es garantizada; todos ellos utilizan componentes que son fáciles de conseguir y no requieren grandes costos para su reproducción. En los repositorios del portal \textit{linuxencaja} se encuentran las siguientes aplicaciones que pueden ser utilizadas para estudiar el funcionamiento de cada una de las plataformas:
-
-\begin{itemize}
- \item \textit{loader y blink:} Aplicación que permite cargar binarios en la memoria interna del SoC (loader) y una aplicación que despliega un mensaje por el puerto serial de la plataforma y realiza un blink en un LED.
- \item \textit{Drivers de dispositivos:} Ejemplos para aprender a escribir controladores sencillos para el sistema operativo linux.
- \item \textit{Aplicaciones en espacio de usuario:} Ejemplos que permiten controlar los drivers desde espacio de usuario, y ejemplos de aplicaciones sencillas utilizando las facilidades del sistema operativo Linux.
- \item \textit{Aplicaciones para configuración:} Algunas plataformas de desarrollo poseen micro-controladores de 8 bits o FPGAs que pueden ser programados o configurados desde la misma plataforma. Se suministra el código fuente de estas aplicaciones.
-\end{itemize}
-
-
-\subsubsection{Banco de proyectos académicos}
-
-Cada semestre se realizan proyectos que utilizan alguna de las plataformas \textit{hardware copyleft}, cada uno de ellos realiza la documentación completa del proceso de diseño y suministra los archivos necesarios para reproducir o continuar el proyecto. Este banco de proyectos representa un recurso donde se pueden encontrar soluciones a problemas comúnes de diseño y su realización ayuda a la formación de habilidades en diseño, escritura de informes técnicos.
-
-\subsubsection{Documentación}
-
-\textit{Linuxencaja} proporciona documentación y tutoriales para:
-
-\begin{itemize}
- \item Artículos sobre la metodología de diseño y el programa académico  generados por este trabajo.
- \item Proceso para proporcionar soporte a una plataforma embebida en el kernel de Linux.
- \item Comunicación entre tareas hardware (implementadas en PLDs) y software (implementadas en un SoC)
- \item Inicialización de SoCs.
- \item Proceso de fabricación y montaje (manual y automático) de placas de circuito impreso.
- \item Proceso de diseño que utiliza la metodología de diseño y el programa académico propuestos en este trabajo.
- \item Material para los cursos basados en la metodología propuesta (en construcción).
- \item Tutoriales sobre temas de interés sobre diseño software y hardware de sistemas digitales.
-\end{itemize}
-
-
-\subsubsection{Miembros}
-
-\textit{Linuxencaja} cuenta en la actualidad con diferentes tipos de usuarios: desarrolladores software, desarrolladores hardware, aficionados, estudiantes, industriales y administradores.
-
-Los desarrolladores hardware y software se encargan de generar las plataformas de desarrollo y las aplicaciones software que las controlan e implementan su funcionalidad; el número actual de desarrolladores es pequeño, pero va en aumento gracias a los aportes de los estudiantes. Los aficionados, son personas a las que les gusta el diseño de sistemas embebidos, el desarrollo software, les gusta conocer el estado de la tecnologia, su papel es muy importante ya que por lo general, ellos se encargan de labores de mantenimiento, depuración y mejoramiento del material existente.
-
-Los estudiantes, son miembros temporales que pueden o no continuar siendo parte de la comunidad después de cursar las asignaturas, sus aportes deben ser revisados con cuidado para verificar la calidad de su trabajo (muchos proyectos no se finalizan) y solo los mejores proyectos serán parte de los repositorios de la comunidad. A pesar de esto, durante los dos períodods académicos en los que se han vinculado estudiantes a la comunidad como parte de su proyecto de curso, se desarrollaron 5 aplicaciones de muy buena calidad y se reclutaron miembros activos, lo que muestra que esta política resulta muy beneficiosa para la comunidad.
-
-Los industriales miembros de la comunidad se pueden dividir en dos grupos: los que hacen pequeños aportes en las listas de discusión, y no han creado proyectos nuevos, y los que participan activamente y aportan su trabajo a la comunidad. El primer grupo está conformado por empresas consolidades desde hace varios años (a excepción de la empresa emQbit) y su comportamiento es entendible debido a su naturaleza privada. El segundo grupo esta conformado por micro-empresas que han sido creadas por estudiantes que generaron nuevos productos con los recursos suminstrados por la comunidad y utilizan los resultados de los proyectos académicos.
-
-Los administradores (2 personas) son personas que cuentan con conocimientos necesarios para configurar servidores y realizar mantenimiento a los servicios suministrados por el portal.
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Conclusiones
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Conclusiones}
 
@@ -423,13 +435,15 @@ El uso de plataformas \textit{hardware copyleft} permite ahorrar tiempo y dinero
 
 La diferencia importante, entre el uso de plataformas \textit{hardware copyleft} y el uso de plataformas de desarrollo disponibles comercialmente es la posibilidad de modificación, lo que permite optimizar los componentes a una aplicación determinada eliminando el costo de los componentes necesarios en la adaptación de estas plataformas genéricas; adicionalmente, se aumenta la oferta de productos generados localmente, lo que puede generar un aumento de la oferta de bienes y servicios en la manufactura de sistemas digitales, como ya ha ocurrido en otros países de la región. 
 
-Las plataformas suministradas como parte del recurso de la comunidad \textit{linuxencaja} cubren un amplio rango de posibles aplicaciones y pueden ser utilizadas por cualquiera que este interesado para aumentar los conocimientos en el diseño e implementación de sistemas digitales, o para crear productos novedosos que satisfagan necesidades específicas de la sociedad. El ingreso de estudiantes a esta comunidad ha permitido el aumento del recurso, suministrando una nueva plataforma \textit{hardware copyleft} y de proyectos de referencia que están en proceso de convertirse en productos comerciales.
+Las plataformas suministradas como parte del recurso de la comunidad \textit{linuxencaja} cubren un amplio rango de posibles aplicaciones y pueden ser utilizadas por cualquiera que este interesado ya sea para aumentar los conocimientos en el diseño e implementación de sistemas digitales, o para crear productos novedosos que satisfagan necesidades específicas de la sociedad. El ingreso de estudiantes a esta comunidad ha permitido el aumento del recurso, suministrando una nueva plataforma \textit{hardware copyleft} y de proyectos de referencia que están en proceso de convertirse en productos comerciales.
 
 La creación de este tipo de comunidades ayuda a difundir el conocimiento generado en la academia permitiendo el acceso a quienes estén interesados, lo que contrasta fuertemente con el modelo actual de capacitación que requiere el pago de elevadas sumas de dinero para obtener este tipo de conocimientos. La incorporación de centros de formación e industriales a esta comunidad posibilita identificar necesidades de la industria y ofertas de la academia permitiendo la creación de un vínculo entre ambos sectores.
 
-La creación de vínculos entre Universidad y empresa son muy difíciles de crear en nuestro país, en conversaciones realizadas con el prestigioso economista Clemente Forero ex-director de COLCIENCIAS, nos comentó de los programas que se realizaron en esat entidad para hacer que los industriales fueran a las universidades a buscar y como estos programas fracasaron debido a que las empresas y universidades nunca se pusieron de acuerdo, esto debido a que según Forero hablan idiomas diferentes. Durante la realización de este trabajo se pudieron establecer relaciones fuertes con 4 empresas tres de ellas creadas por egresados de la Universidad Nacional (emQbit, Santronics, Importex, em-electronics) y con dos empresas externas (SAR S.A y Microensamble S.A.), de estas relaciones se han generado pasantías, prestación de servicios a bajo costo y apoyo financiero para adquisición de equipo y manufactura de sistemas de desarrollo digitales; se intentó establecer vínculos con grandes empresas como CODENSA y TES AMERICA, pero este tipo de empresas no están interesadas en el desarrollo de productos sino en productos finales, este conocimiento es valioso ya que para poder establecer contacto con estas compañías es necesario tener desarrollos en una etapa que permita su producción masiva. De lo anterior podemos concluir que la mejor forma de crear vínculos entre la universidad y la empresa es haciendo que los estudiantes sean los actores principales de procesos de investigación e innovación orientados a la construcción de nuevas ideas de empresa (Spin Off Universitarias); sin embargo, el objetivo final no debe ser únicamente la creación de la empresa, sino brindar soporte para que esta pueda generar utilidades que puedan suministrar regalías a las universidades o la posibilidad de proporcionar bienes y servicios útiles en el ejercicio académico.
+La creación de vínculos entre Universidad y empresa son muy difíciles de crear en nuestro país, en conversaciones realizadas con el prestigioso economista Clemente Forero ex-director de COLCIENCIAS, nos comentó de los programas que se realizaron en esta entidad para hacer que los industriales fueran a las universidades a buscar grupos de investigación para desarrollar proyectos conjuntos, y como estos programas fracasaron debido a que las empresas y universidades nunca se pusieron de acuerdo, debido a que según Forero hablan idiomas diferentes. Durante la realización de este trabajo se pudieron establecer relaciones fuertes con 4 empresas tres de ellas creadas por egresados de la Universidad Nacional (emQbit, Santronics, Importex, em-electronics) y con dos empresas externas (SAR S.A y Microensamble S.A.), de estas relaciones se han generado pasantías, prestación de servicios a bajo costo y apoyo financiero para adquisición de equipo y manufactura de sistemas de desarrollo digitales. Se intentó establecer vínculos con grandes empresas como CODENSA y TES AMERICA, pero este tipo de empresas no están interesadas en el desarrollo de productos sino en productos finales; este conocimiento es valioso ya que para poder establecer contacto con estas compañías es necesario tener desarrollos en una etapa que permita su producción masiva. 
 
-Nuestra experiencia con la empresa \textit{emQbit} nos muestra que es posible inculcar en nuestros estudiantes la idea de generación de empresa, generar en ellos las habilidades necesarias para la producción de productos novedosos, y que con un acompañamiento adecuado por parte de la universidad (en el caso de emQbit como asesor externo)  es posible que la empresa se mantenga actualizada y sobreviva en el tiempo, emQbit ha ayudado en el desarrollo de varios proyectos de investigación proporcionando materiales y equipos a costos reducidos (normalmente la empresas duplican sus precios cuando suministran productos a la Universidad Nacional), financiando parcialmente el desarrollo de plataformas \textit{hardware copyleft}; adicionalmente ha vinculado a varios estudiantes de las universidades nacional y de los Andes en la modalidad de pasantía lo que les ha ayuda a formar personal para la propia empresa. Aunque este es el único caso que podemos presentar y no es posible generalizarlo, proporciona una referencia en este tipo de relaciones. La figura \ref{modelo_TT_emqbit} muestra el modelo de transferencia utilizado con la empresa emQbit.
+De lo anterior podemos concluir que la mejor forma de crear vínculos entre la universidad y la empresa es haciendo que los estudiantes sean los actores principales de procesos de investigación e innovación orientados a la construcción de nuevas ideas de empresa (Spin Off Universitarias); sin embargo, el objetivo final no debe ser únicamente la creación de la empresa, sino brindar soporte para que esta pueda generar utilidades que puedan suministrar regalías a las universidades o la posibilidad de proporcionar bienes y servicios útiles en el ejercicio académico.
+
+Nuestra experiencia con la empresa \textit{emQbit} nos muestra que es posible inculcar en nuestros estudiantes la idea de generación de empresa, generar en ellos las habilidades necesarias para la producción de productos novedosos, y que con un acompañamiento adecuado por parte de la universidad (en el caso de emQbit como asesor externo)  es posible que la empresa se mantenga actualizada y sobreviva en el tiempo. La empresa emQbit ha ayudado en el desarrollo de varios proyectos de investigación proporcionando materiales y equipos a costos reducidos (normalmente la empresas duplican sus precios cuando suministran productos a la Universidad Nacional), financiando parcialmente el desarrollo de plataformas \textit{hardware copyleft}; adicionalmente ha vinculado a varios estudiantes de las universidades nacional y de los Andes en la modalidad de pasantía, lo que les ha ayuda a formar personal para la propia empresa. Aunque este es el único caso que podemos presentar, proporciona una referencia en este tipo de relaciones. La figura \ref{modelo_TT_emqbit} muestra el modelo de transferencia utilizado con la empresa emQbit.
 
 
 \begin{figure}[htpb]
@@ -438,7 +452,7 @@ Nuestra experiencia con la empresa \textit{emQbit} nos muestra que es posible in
   \caption{Modelo de transferencia tecnológica aplicado a la empresa emQbit y a la academia} \label{modelo_TT_emqbit}
 \end{figure}
 
-La figura \ref{modelo_TT_emqbit} resume el proceso de transferencia tecnológica y de conocimientos desarrollado en este trabajo; una metodología para la adquisición/adaptación/absorción/asimilación/aplicación/difusión de la tecnología y el conocimiento asociado al diseño de sistemas digitales modernos ejecutada inicialmente por los realizadores de este trabajo, y posteriormente por los integrantes de una comunidad formada por estudiantes, académicos e industriales; transfiere conocimientos necesarios para realizar productos novedosos (que satisfagan necesidades de la sociedad) hacia: la empresa, proporcionando metodologías de diseño basadas en herramientas software abiertas y plataformas \textit{hardware copyleft}, procesos de fabricación y contactos con empresas manufactureras locales y asiáticas;  y a la academia, actualizando los contenidos de los programas académicos para generar las habilidades requeridas por la industria para cumplir con los requerimientos de la sociedad, utilizando metodologías de diseño y procesos de fabricación resultado del proceso de transferencia. La universidad y la academia interactúan en un intercambio de necesidades y soluciones, la empresa requiere personal calificado para cumplir con sus actividades, y la academia responde ajustando sus programas académicos para formar dicho personal y suministrando soporte técnico y capacitación; a cambio de esto, la empresa proporciona servicios a la academia para facilitar su actividad académica aportando dinero producto de regalías o de proyectos conjuntos. Tanto la academia como le empresa aportan a la comunidad personal y conocimientos para que puedan adaptarse a las nuevas necesidades de la sociedad.
+La figura \ref{modelo_TT_emqbit} resume el proceso de transferencia tecnológica y de conocimientos desarrollado en este trabajo; una metodología para la adquisición/adaptación/absorción/asimilación/aplicación/difusión de la tecnología y el conocimiento asociado al diseño de sistemas digitales modernos ejecutada inicialmente por los realizadores de este trabajo, y posteriormente por los integrantes de una comunidad (formada por estudiantes, académicos e industriales), transfiere los conocimientos necesarios para realizar productos novedosos (que satisfagan necesidades de la sociedad) hacia: la empresa, proporcionando metodologías de diseño basadas en herramientas software abiertas y plataformas \textit{hardware copyleft}, procesos de fabricación y contactos con empresas manufactureras locales y asiáticas;  y  la academia, actualizando los contenidos de los programas académicos de tal forma que se generen las habilidades requeridas por la industria para cumplir con los requerimientos de la sociedad; utilizando metodologías de diseño y procesos de fabricación resultado del proceso de transferencia. La universidad y la academia interactúan en un intercambio de necesidades y soluciones, la empresa requiere personal calificado para cumplir con sus actividades, y la academia responde ajustando sus programas académicos para formar dicho personal, suministrando soporte técnico y capacitación; a cambio de esto, la empresa proporciona servicios a la academia para facilitar su actividad académica aportando dinero producto de regalías o de proyectos conjuntos. Tanto la academia como le empresa aportan a la comunidad personal y conocimientos para que puedan adaptarse a las nuevas necesidades de la sociedad.
 
 
 

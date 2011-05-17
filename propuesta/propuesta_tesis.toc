@@ -1,27 +1,19 @@
 \select@language {spanish}
-\contentsline {chapter}{\numberline {1}El Conocimiento Como Bien P\'ublico y su papel en la Difusi\'on Tecnol\'ogica}{3}
-\contentsline {section}{\numberline {1.1}Introducci\'on}{3}
-\contentsline {section}{\numberline {1.2}El Conocimiento Como Bien P\'ublico}{4}
-\contentsline {subsection}{\numberline {1.2.1}Auto-Gobierno}{5}
-\contentsline {subsubsection}{Ecuaci\'on Costo Beneficio de Ostrom}{6}
-\contentsline {subsubsection}{Principios de Dise\~no}{7}
-\contentsline {subsubsection}{Movimiento FOSS}{8}
-\contentsline {section}{\numberline {1.3}Movimiento software Libre y C\'odigo Abierto (FOSS)}{9}
-\contentsline {subsubsection}{Reglas}{10}
-\contentsline {subsubsection}{Atributos de la Comunidad}{11}
-\contentsline {subsubsection}{Atributos F\IeC {\'\i }sicos}{11}
-\contentsline {section}{\numberline {1.4}Hardware Copyleft}{12}
-\contentsline {subsection}{\numberline {1.4.1}Reglas}{13}
-\contentsline {subsubsection}{Licencia CC - BY - SA}{14}
-\contentsline {subsubsection}{Licencia GPL}{14}
-\contentsline {subsection}{\numberline {1.4.2}Caracter\IeC {\'\i }sticas}{14}
-\contentsline {subsubsection}{Archivos necesarios para modificar un proyecto existente}{15}
-\contentsline {section}{\numberline {1.5}Flujo de dise\~no utilizando \textit {hardware copyleft}}{16}
-\contentsline {section}{\numberline {1.6}Comunidad linuxencaja}{18}
-\contentsline {subsection}{\numberline {1.6.1}Recursos}{18}
-\contentsline {subsubsection}{Herramientas}{18}
-\contentsline {subsubsection}{Dise\~nos de referencia}{19}
-\contentsline {subsubsection}{Banco de proyectos acad\'emicos}{19}
-\contentsline {subsubsection}{Documentaci\'on}{19}
-\contentsline {subsubsection}{Miembros}{20}
-\contentsline {section}{\numberline {1.7}Conclusiones}{20}
+\contentsline {chapter}{\numberline {1}Conclusiones}{3}
+\contentsline {section}{\numberline {1.1}situaci\'on de la industria electr\'onica nacional y de la academia}{3}
+\contentsline {subsubsection}{Situaci\'on de la industria }{3}
+\contentsline {subsubsection}{Situaci\'on de la academia}{3}
+\contentsline {section}{\numberline {1.2}Requisitos para una transferencia tecnol\'ogica exitosa}{4}
+\contentsline {section}{\numberline {1.3}Metodolog\IeC {\'\i }a para la transferencia tecnol\'ogica y de conocimientos}{6}
+\contentsline {subsubsection}{Elecci\'on de la tecnolog\IeC {\'\i }a y vigilancia tecnol\'ogica }{7}
+\contentsline {subsubsection}{Adquisici\'on}{8}
+\contentsline {subsubsection}{Adaptaci\'on}{8}
+\contentsline {subsubsection}{Absorci\'on y asimilaci\'on}{8}
+\contentsline {subsubsection}{Aplicaci\'on}{8}
+\contentsline {subsubsection}{Difusi\'on}{11}
+\contentsline {section}{\numberline {1.4}Relaci\'on universidad- empresa}{12}
+\contentsline {section}{\numberline {1.5}Estimaci\'on del costo del presente trabajo}{13}
+\contentsline {subsection}{\numberline {1.5.1}Comparaci\'on con con un centro de desarrollo tecnol\'ogico}{14}
+\contentsline {subsection}{\numberline {1.5.2}Transferencia Tecnol\'ogica desde Corea}{16}
+\contentsline {section}{\numberline {1.6}Trabajo Futuro}{17}
+\contentsline {subsection}{\numberline {1.6.1}Difusi\'on}{17}

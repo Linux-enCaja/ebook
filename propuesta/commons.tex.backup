@@ -288,26 +288,30 @@ Para modificar o reproducir un proyecto existente es necesario suministrar:
 
 \section{Flujo de diseño utilizando \textit{hardware copyleft}}
 
-Para comprobar la utilidad de las plataformas de referencia \textit{hardware copyleft} creadas en este estudio en el desarrollo de nuevos dispositivos se utilizó la plataforma \textit{ECB\_AT91} \cite{CC08c} como punto de partida para la construcción de un monitor de signos vitales \cite{NR11}  y para la creación de un sistema de medición de la calidad del servicio eléctrico \cite{ERAC+09}. En el primer caso, un estudiante de posgrado agregó un módulo de comunicaciones para comunicarse con las tarjetas de adquisición de señales médicas y suministró puertos USB host para conectar módulos de comunicación WiFi, Bluetooth y 3G/GSM; demorando 6 meses en fabricar la nueva plataforma y en escribir la aplicación. 
+Para comprobar la utilidad de las plataformas de referencia \textit{hardware copyleft} creadas en este estudio en el desarrollo de nuevos dispositivos se utilizó la plataforma \textit{ECB\_AT91} \cite{CC08c} como punto de partida para la construcción de un monitor de signos vitales \cite{NR11}  y para la creación de un sistema de medición de la calidad del servicio eléctrico \cite{ERAC+09}. En el primer caso, un estudiante de posgrado agregó un módulo de comunicaciones para comunicarse con las tarjetas de adquisición de señales médicas y suministró puertos USB host para conectar módulos de comunicación WiFi, Bluetooth y 3G/GSM; demorando 6 meses en fabricar la nueva plataforma y en escribir la aplicación. La figura \ref{monitor_signos_vitales} muestra la plataforma original y la modificación realizada para adaptarse a la aplicación.
 
 
 \begin{figure}[H]
-  \begin{center} \includegraphics[scale=.6]{./images/framework_hwcl.pdf} \end{center}
-  \caption{Monitor de signos vitales Fuente: \cite{NR11}} \label{monitor_signos_vitales}
+  \begin{center} \includegraphics[scale=.6]{./images/monitor_signos_vitales.pdf} \end{center}
+  \caption{Adaptación de la plataforma de desarrollo ECB\_AT91 (a) a un monitor de signos vitales (b) Fuente: \cite{NR11}} \label{monitor_signos_vitales}
 \end{figure}
 
-La figura 
-En el segundo caso, la empresa emQbit, agregó una etapa de adquisición de señales análoga, un sistema de comunicación y un sistema de referencia geográfica basada en un GPS, empleando 6 meses en ello. Una reducción drástica frente al tiempo que demoró el desarrollo de la placa utilizada como referencia; esto es posible gracias a la posibilidad de utilizar los archivos de diseño de la plataforma, (los cuales, han pasado por un proceso de depuración y optimización) y el código fuente de las aplicaciones necesarias para la ejecución de aplicaciones Linux (Board Support Package BSP). lo que representa un ahorro de tiempo considerable ya que el proceso de concepción, diseño, puesta en funcionamiento y generación de aplicaciones para esta plataforma duró 18 meses. La figura \ref{design_flow_copyleft_hw} muestra una comparación del flujo de diseño cuando se utilizan o no plataformas \textit{hardware copyeft}
+En el segundo caso, la empresa emQbit, agregó una etapa de adquisición de señales análoga, un sistema de comunicación y un sistema de referencia geográfica basada en un GPS, para crear un sistema que permite medir la calidad del servicio de energía eléctrica \cite{ERAC+09}; empleando 6 meses en ello. 
 
-\begin{figure}[htpb]
+
+Los casos anteriores muestran una disminución drástica del tiempo necesario para la producción de nuevos productos comparados con el tiempo que demoró el desarrollo de la placa utilizada como referencia. Esto es posible, gracias a la posibilidad de utilizar los archivos de diseño de la plataforma, (los cuales, han pasado por un proceso de depuración y optimización) y el código fuente de las aplicaciones necesarias para la ejecución de aplicaciones Linux (Board Support Package BSP). lo que representa un ahorro de tiempo considerable ya que el proceso de concepción, diseño, puesta en funcionamiento y generación de aplicaciones para esta plataforma duró 18 meses. 
+
+La figura \ref{design_flow_copyleft_hw} muestra una comparación del flujo de diseño cuando se utilizan o no plataformas \textit{hardware copyeft}
+
+\begin{figure}[H]
   \centering
   \includegraphics[scale=.65]{./images/design_flow_copyleft_hw.pdf}
   \caption{Flujo de diseño al utilizar hardware copyleft} \label{design_flow_copyleft_hw}
 \end{figure}
 
-Como puede apreciarse en la figura \ref{design_flow_copyleft_hw} la utilización de plataformas \textit{hardware copyleft} afecta únicamente la etapa de implementación en el proceso de diseño (esto debido a que las primeras etapas no deben tener ninguna restricción tecnológica). Cuando se utilizan las plataformas \textit{hardware copyleft} suministradas por este trabajo es posible reducir de forma considerable las tareas necesarias (cuadro azul de la figura) para la fabricación de un prototipo funcional; ya que al proporcionar los archivos necesarios para la modificación de las plataformas, se reduce de forma considerable el tiempo requerido para diseñar, construir, probar la placa de circuito impreso; adicionalmente, no es necesario dedicar tiempo para implementar las funciones básicas software y hardware ya que estas son proporcionadas. 
+Como puede apreciarse en la figura \ref{design_flow_copyleft_hw} la utilización de plataformas \textit{hardware copyleft} afecta únicamente la etapa de implementación en el proceso de diseño (esto debido a que las primeras etapas no deben tener ninguna restricción tecnológica). Cuando se utilizan las plataformas \textit{hardware copyleft} suministradas por este trabajo es posible reducir de forma considerable las tareas necesarias (cuadro azul de las actividades a realizar en el prototipado) para la fabricación de un prototipo funcional; ya que al proporcionar los archivos necesarios para la modificación de las plataformas, se reduce de forma considerable el tiempo requerido para diseñar, construir, probar la placa de circuito impreso e implementar las funciones básicas software y hardware. Por otro lado, se suministra la información de los componentes utilizados, lo que facilita la producción, al utilizar dispositivos que no requieren firmas de contratos a la compra de un número muy grande de unidades.
 
-El proceso de selección de la arquitectura se limita a elegir dentro de la gama de procesadores utilizados en este trabajo \footnote{Es necesario aclarar que los procesadores utilizados en este trabajo son solo una muestra de la gran cantidad de referencias disponibles, por lo que es posible encontrar otros procesadores más económicos que implementen la funcionalidad deseada, las plataformas suministradas por este trabajo permiten ahorrar tiempo y dinero en la elaboración del prototipo y no necesariamente en el costo de fabricación en grandes volúmenes} el más indicado (económica y funcionalmente) para la aplicación, la tabla \ref{plat_specs} resume las características de cada plataforma, indicando el costo de los componentes (costo de 50 unidades, a mayor cantidad menor el costo).
+El proceso de selección de la arquitectura se limita a elegir dentro de la gama de procesadores disponibles \footnote{Es necesario aclarar que los procesadores utilizados en este trabajo son solo una muestra de la gran cantidad de referencias disponibles, por lo que es posible encontrar otros procesadores más económicos que implementen la funcionalidad deseada, las plataformas suministradas por este trabajo permiten ahorrar tiempo y dinero en la elaboración del prototipo y no necesariamente en el costo de fabricación en grandes volúmenes} el más indicado (económica y funcionalmente) para la aplicación. En la tabla \ref{plat_specs} se resumen las características de cada plataforma, indicando el costo de los componentes (costo de 50 unidades).
 
 
 \begin{table}[htpb]
@@ -327,7 +331,7 @@ El proceso de selección de la arquitectura se limita a elegir dentro de la gama 
                                 & \begin{sideways} \textbf{FPGA \$USD} \end{sideways}
                                 & \begin{sideways} \textbf{Mínima config. \$USD} \end{sideways}
                                 & \begin{sideways} \textbf{Sistema Operativo} \end{sideways}
-      \\ \hline              4.5
+      \\ \hline
        ECB\_ARM7          &33  & 3.5       &   & X &    & X & 0 - 6.5 & 0  & NA & 7.5 - 14.5 & RT - eCos
       \\ \hline 
        ECB\_AT91\_V1      &180 & 18        & X & X &    & X & 6       & 9  & NA & 33         & RT - Linux
@@ -348,9 +352,9 @@ El proceso de selección de la arquitectura se limita a elegir dentro de la gama 
 
 La opción más económica (según la tabla \ref{plat_specs} es el uso de una plataforma basada en los SoC SAM7, los cuales incluyen en el mismo sustrato las memorias volátiles y no volátiles; la cantidad de memoria disponible es de máximo 256 kBytes para la memoria no volátil y 64 kBytes de memoria RAM, lo que puede ser suficiente para muchas aplicaciones; sin embargo, las aplicaciones actuales que requieren capacidades multimedia, conexión a diferentes redes y manejo de sistemas de archivos no pueden implementarse en esta arquitectura.
 
-El puerto de comunicaciones USB host permite la conexión de una gran variedad de periféricos (audio, comunicaciones, medios de almacenamiento) disponibles a bajos precios; reduciendo de forma considerable los costos finales. A manera de ejemplo, si una determinada aplicación necesita conexión inalámbrica a internet, una plataforma que no posea puerto USB-host necesita un controlador USB externo  (cuyo costo puede ser de 10 USD) lo que aumenta la complejidad de la placa de circuito impreso y el costo de componentes.
+El puerto de comunicaciones \textit{USB host} permite la conexión de una gran variedad de periféricos (audio, comunicaciones, medios de almacenamiento) disponibles a bajos precios; reduciendo de forma considerable los costos finales.
 
-Las FPGAs son muy costosas y elevan de forma considerable el consumo de potencia del dispositivo, por lo que deben ser utilizadas en aplicaciones donde sea estrictamente necesario, ya sea pora cumplir con restricciones temporales o para cumplir con funcionalidades especiales. 
+Las FPGAs son muy costosas y elevan de forma considerable el consumo de potencia del dispositivo, por lo que deben ser utilizadas en aplicaciones donde sea estrictamente necesario, ya sea para cumplir con restricciones temporales o para cumplir con funcionalidades especiales. 
 
 
 \section{Comunidad linuxencaja}

@@ -1,123 +1,60 @@
 \begin{thebibliography}{10}
 
-\bibitem{EO90}
-{Elinor Ostrom}.
-\newblock {\em Governing the {C}ommons: {T}he {E}volution of {I}nstitutions for
-  {C}ollective {A}ction ({P}olitical {E}conomy of {I}nstitutions and
-  {D}ecisions) ({P}aperback)}.
-\newblock Cambridge University Press, November 1990.
+\bibitem{DODM04}
+{D. Ovalle} and {D. Mendez}.
+\newblock {\em Dise\~no e {I}mplementaci\'on de equipo {B}\'asico de
+  {L}aboratorio {U}tilizando {S}istemas {E}mbebidos y {FPAA}s.}
+\newblock Universidad Nacional de Colombia, 2004.
 
-\bibitem{Ost00}
-Elinor Ostrom.
-\newblock Reformulating the {C}ommons.
-\newblock {\em Swiss Political Science Review, Volume 6, Number 1}, 2000.
+\bibitem{CC11c}
+{C. Camargo}.
+\newblock S{IE}: {P}lataforma {H}ardware copyleft para la {E}nse\~nanza de
+  {S}istemas {D}igitales.
+\newblock {\em XVII Workshop de Iberchip, Bogot\'a Colombia}, February 2011.
 
-\bibitem{ST92}
-{Sandler Todd}.
-\newblock Collective {A}ction: {T}heory and {A}pplications.
-\newblock {\em Ann Arbor: University of Michigan Press}, 1992.
+\bibitem{CC11d}
+{C. Camargo}.
+\newblock Metodolog\'{\i}a {P}ara la {T}ransferencia {T}ecnol\'ogica en la
+  {I}ndustria {E}lectr\'onica {B}asada en {S}oftware {L}ibre y {H}ardware
+  {C}opyleft.
+\newblock {\em XVII Workshop de Iberchip, Bogot\'a Colombia}, February 2011.
 
-\bibitem{MMDG04}
-Ruth Meinzen-Dick, {Monica Di Gregorio}, and {Nancy McCarthy}.
-\newblock Methods for {S}tudying {C}ollective {A}ction in {R}ural
-  {D}evelopment.
-\newblock {\em CAPRi Working Paper, no. 33. International Food Policy Research
-  Institute, 2033 K Street, N.W., Washington, DC 20006.
-  http://www.capri.cgiar.org/pdf/capriwp33.pd}, 2004.
+\bibitem{CC11e}
+{C. Camargo}.
+\newblock Low {C}ost {P}latform for {E}volvable-{B}ased {B}oolean {S}ynthesis.
+\newblock {\em IEEE Latin American Symposium on Circuits and Systems (LASCAS
+  2011), Bogot\'a Colombia}, February 2011.
 
-\bibitem{EO92}
-{E. OSTROM}.
-\newblock The {R}udments of a theory of the {O}rigins, {S}urvival, and
-  {P}erformance of {C}ommon-{P}roperty {I}nstitutions.
-\newblock {\em BROMLEY, D.W. et al. (eds.) Making the Commons Work: Theory,
-  Practice, and Policy. San Francisco, CA: ICS Press}, 1992.
+\bibitem{CC11}
+{C. Camargo}.
+\newblock Hardware copyleft como {H}erramienta para la {E}nse\~nanza de
+  {S}istemas {E}mbebidos.
+\newblock {\em Simposio Argentino de Sistemas Embebidos}, 2011.
 
-\bibitem{J.B96}
-{J .M. BALAND} and {J.P. PLATTEAU}.
-\newblock Halting {D}egradation of {N}atural {R}esources. {I}s {T}here a {R}ole
-  for {R}ural {C}ommunities?
-\newblock {\em Oxford: Clarendon Press}, 1996.
+\bibitem{CC11f}
+{C. Camargo}.
+\newblock P{LATAFORMAS} {ABIERTAS} {HARDWARE}/{SOFTWARE} {PARA} {APLICACIONES}
+  {EN} {ROBOTICA}.
+\newblock {\em V Congreso Internacional de Ingenier\'{\i}a Mec\'anica y III de
+  Ingenier\'{\i}a Mecatr\'onica (por publicar)}, 2011.
 
-\bibitem{Mot}
-Motorola.
-\newblock M{OTODEV} {P}roject.
-\newblock URL: http://developer.motorola.com/platforms/mobile-linux/.
+\bibitem{CCCP+11}
+{C. Camargo}, {C. Pedraza}, {L. Ni\~no}, and {J. Martinez}.
+\newblock Intrinsic {E}volvable {H}ardware for {C}ombinatorial {S}ynthesis
+  {B}ased on {S}o{C}+{FPGA} and {GPU} {P}latforms.
+\newblock {\em Genetic Evolutionary Computation Conference}, 2011.
 
-\bibitem{And}
-Google.
-\newblock Android {P}roject.
-\newblock URL: http://www.android.com/.
+\bibitem{CC09}
+{C. Camargo}.
+\newblock Control de {S}istemas {P}aralelos {I}nspirado en la {N}aturaleza.
+\newblock {\em Colombian Workshop on Circuits and Systems}, 2009.
 
-\bibitem{Mae}
-Nokia.
-\newblock Maemo {P}roject.
-\newblock URL: http://www.maemo.org/.
-
-\bibitem{FSF}
-{Free Software Foundation}.
-\newblock G{NU} {G}eneral {P}ublic {L}icense.
-\newblock URL: http://www.gnu.org/copyleft/gpl.html.
-
-\bibitem{AC09}
-{A. Cortesi}.
-\newblock Elinor {O}strom, the commons problem and {O}pen {S}ource.
-\newblock {\em URL: http://corte.si/posts/opensource/ostrom/index.html}, 2009.
-
-\bibitem{Wikb}
-Wikipedia.
-\newblock Richard {S}tallman.
-\newblock URL: http://es.wikipedia.org/wiki/Richard\_Stallman.
-
-\bibitem{SAS03}
-C.~M Schweik and {A. Semenov}.
-\newblock The {I}nstitutional {D}esign of '{O}pen {S}ource' {P}rogramming:
-  {I}mplications for {A}ddressing {C}omplex {P}ublic {P}olicy and {M}anagement
-  {P}roblems.
-\newblock URL: http://www.firstmonday.org/issues/issue8\_1/schweik/, 2003.
-
-\bibitem{CHEO06}
-{Charlotte Hess} and {Elinor Ostrom}, editors.
-\newblock {\em Understanding {K}nowledge as a {C}ommons: {F}rom {T}heory to
-  {P}ractice}.
-\newblock The MIT Press, December 2006.
-
-\bibitem{Sta99}
-R.~M. Stallman.
-\newblock {\em The {GNU} {O}perating {S}ystem and the {F}ree {S}oftware
-  {M}ovement {V}oices from the {O}pen {S}ource {R}evolution}.
-\newblock O'Reilly and Associates, 1999.
-
-\bibitem{CMS06}
-{Charles M. Schweik}.
-\newblock {\em Understanding {K}nowledge as a {C}ommons: {F}rom {T}heory to
-  {P}ractice}, chapter Free/Open-Source Software as a Framework for
-  Establishing Commons in Science.
-\newblock The MIT Press, 2006.
-
-\bibitem{Web04}
-S.~Weber.
-\newblock {\em The {S}uccess of {O}pen {S}ource}.
-\newblock Harvard University Press, 2004.
-
-\bibitem{VWJ+03}
-{Van Wendel}, R.~Joode, {J. A. de Bruijn}, and {M. J. G. van Eeten}.
-\newblock {\em Protecting the {V}irtual {C}ommons: {S}elf-{O}rganizing {O}pen
-  {S}ource and {F}ree {S}oftware {C}ommunities and {I}nnovative {I}ntellectual
-  {P}roperty {R}egimes.}
-\newblock Asser Press, 2003.
-
-\bibitem{GGR02}
-R.~A. Ghosh, {G. Robles}, and {R. Glott.}
-\newblock Free/{L}ibre and {O}pen {S}ource {S}oftware: {S}urvey and {S}tudy.
-  {T}echnical report {U}niversity of {M}aastricht, {T}he {N}etherlands:
-  {I}nternational {I}nstitute of {I}nfonomics.
-\newblock URL: http://www.infonomics.nl/FLOSS/report/index.htm, 2002.
-
-\bibitem{SS06}
-{S. Shah}.
-\newblock Motivation, {G}overnance, and the {V}iality of {H}ybrid {F}orms in
-  {O}pen {S}ource {S}oftware {D}evelopment.
-\newblock {\em Management Science}, July 2006.
+\bibitem{ERAC+09}
+{E. Rodriguez}, {A. Calder\'on}, {D. Mendez}, and {C. Camargo}.
+\newblock Sistema {I}ntegrado de {M}edici\'on de {E}nerg\'{\i}a, {C}alidad del
+  {S}ervicio y {O}peraci\'on {R}emota.
+\newblock {\em MEMORIAS : VI Jornada de Distribuci\'on de Energia El\'ectrica -
+  ASOCODIS}, 2009.
 
 \bibitem{CC08c}
 {C. Camargo}.
@@ -126,18 +63,97 @@ R.~A. Ghosh, {G. Robles}, and {R. Glott.}
 \newblock {\em VIII Jornadas de Computaci\'on Reconfigurable y Aplicaciones},
   2008.
 
-\bibitem{NR11}
-{N. Rosas}.
-\newblock Dise\~no e {I}mplementaci\'on de un {S}istema {E}mbebido para la
-  {A}dquisici\'on y {T}ransmisi\'on de {S}e\~nales {B}iom\'edicas a {T}rav\'es
-  de la {R}ed {C}elular.
-\newblock Master's thesis, 2011.
+\bibitem{CC08b}
+{C. Camargo}.
+\newblock E{CBOT}: {A}rquitectura {A}bierta para {R}obots {M}\'obiles.
+\newblock {\em VII conferencia Iberoamericana en Sistemas, Cibern\'etica e
+  Inform\'atica}, 2008.
 
-\bibitem{ERAC+09}
-{E. Rodriguez}, {A. Calder\'on}, {D. Mendez}, and {C. Camargo}.
-\newblock Sistema {I}ntegrado de {M}edici\'on de {E}nerg\'{\i}a, {C}alidad del
-  {S}ervicio y {O}peraci\'on {R}emota.
-\newblock {\em MEMORIAS : VI Jornada de Distribuci\'on de Energia El\'ectrica -
-  ASOCODIS}, 2009.
+\bibitem{CC07}
+{C. Camargo}.
+\newblock E{CBOT}: {A}rquitectura {A}bierta para {R}obots {M}\'oviles.
+\newblock {\em IEEE Colombian Workshop on Circuits and Systems}, 2007.
+
+\bibitem{SBME07}
+{S. Banguero} and {M. Erazo}.
+\newblock {\em Plataforma de {D}esarrollo para {S}istemas {E}mbebidos {B}asada
+  en el {G}ame{B}oy {A}dvance}.
+\newblock Universidad Industrial de Santander, 2007.
+
+\bibitem{CC06b}
+{C. Camargo}.
+\newblock Linux como herramienta de {D}esarrollo de {S}istemas {E}mbebidos.
+\newblock {\em XII Workshop de Iberchip, San Jose}, 2006.
+
+\bibitem{CC06}
+{C. Camargo}.
+\newblock First {C}olombian {L}inux {SBC} runs {D}ebian.
+\newblock URL:
+  http://www.linuxfordevices.com/c/a/News/First-Colombian-Linux-SBC-runs-Debia%
+n/, 2006.
+
+\bibitem{ICCC06}
+{I. Castillo}, {C. Camargo}, and {C. Perez}.
+\newblock Automatizaci\'on de un puente gr\'ua a escala, mediante una
+  plataforma embebida la cual soporta multiprogramaci\'on.
+\newblock {\em XII Workshop Iberchip}, 2006.
+
+\bibitem{CCOS06}
+{C. Camargo} and {O. Sanchez}.
+\newblock Linux embebido como herramienta para realizar reconfiguraci\'on
+  parcial.
+\newblock {\em XII Workshop Iberchip}, 2006.
+
+\bibitem{CC05}
+{C. Camargo}.
+\newblock Implementaci\'on de {S}istemas {D}igitales {C}omplejos {U}tilizando
+  {S}istemas {E}mbebidos.
+\newblock {\em Memorias del XI Workshop de Iberchip ISBN 959-261-105-X}, 2005.
+
+\bibitem{FPFS+05}
+{F. Pedraza}, {F. Segura}, {C. Camargo}, and {A. Gauthier}.
+\newblock Control {A}daptativo {E}mbebido.
+\newblock {\em Memorias del XI workshop de Iberchip ISBN 959-261-105-X}, 2005.
+
+\bibitem{JQYP08}
+{J. Quiza} and {Y. Parra}.
+\newblock An\'alisis de {P}atentes y {A}rt\'{\i}culos en {A}plicaciones de
+  {M}icrocontroladores en {C}ontrol e {I}nstrumentaci\'on.
+\newblock {\em I Congreso Internacional de Gesti\'on Tecnol\'ogica e
+  Innovaci\'on.}, 2008.
+
+\bibitem{JQJG08}
+{J. Quiza}, {J. Gonz\'alez}, and {G. Hernandez}.
+\newblock Estudio de {F}abricantes y {F}amilias de {M}icrocontroladores y
+  {M}icorprocesadores {A}plicacados a {S}istemas de {C}ontrol e
+  {I}nstrumentaci\'on.
+\newblock {\em I Congreso Internacional de Gesti\'on Tecnol\'ogica e
+  Innovaci\'on.}, 2008.
+
+\bibitem{DA08}
+{D. Aponte}.
+\newblock Estudio de {V}igilancia {T}ecnol\'ogica en {D}ispositivos {L}\'ogicos
+  {P}rogramables {C}omplejos {CPLD}.
+\newblock {\em I Congreso Internacional de Gesti\'on Tecnol\'ogica e
+  Innovaci\'on.}, 2008.
+
+\bibitem{DACK09}
+{D. Alimisis} and {C. Kynigos}.
+\newblock {\em Teacher {E}ducation on {R}obotics-{E}nhanced {C}onstructivist
+  {P}edagogical {M}ethod}.
+\newblock School of Pedagogical and Technological Education (ASPETE), 2009.
+
+\bibitem{RV07}
+{R. Vallarta}.
+\newblock Open{B}locks : an extendable framework for graphical block
+  programming systems.
+\newblock {\em MIT}, 2007.
+
+\bibitem{MR96}
+{M. Resnick}.
+\newblock Starlogo: {A}n {E}nvironment for {D}ecentralized {M}odeling and
+  {D}ecentralized {T}hinking.
+\newblock {\em Conference Companion on Human Factors in Computing Systems. New
+  York, NY, USA: ACM Press.}, 1996.
 
 \end{thebibliography}
