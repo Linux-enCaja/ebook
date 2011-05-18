@@ -1,0 +1,22 @@
+TEXFILES=$(wildcard *.tex)
+TARGETS=$(patsubst %.tex,%.pdf,$(TEXFILES))
+SRCDIR = .
+TEXSRC	= $(wildcard $(SRCDIR)/*.tex)
+MAINDOC	= HW_copyleft_ES
+
+
+RERUN = "(There were undefined references|Rerun to get (cross-references|the bars) right|Table widths have changed. Rerun LaTeX.|Linenumber reference failed)"
+RERUNBIB = "No file.*\.bbl|Citation.*undefined"
+
+all: pdf
+
+clean:
+	@rm -f *.aux *.bbl *.blg *.log *.dvi *~ *backup\
+	*.idx *.ilg *.ind *.toc *.lot *.lof $(MAINDOC).pdf *bak
+
+
+pdf:
+	pdflatex $(TEXSRC)
+	bibtex $(MAINDOC)
+	pdflatex $(TEXSRC)
+	pdflatex $(TEXSRC)

@@ -1,19 +1,74 @@
 \select@language {spanish}
-\contentsline {chapter}{\numberline {1}Conclusiones}{3}
-\contentsline {section}{\numberline {1.1}situaci\'on de la industria electr\'onica nacional y de la academia}{3}
-\contentsline {subsubsection}{Situaci\'on de la industria }{3}
-\contentsline {subsubsection}{Situaci\'on de la academia}{3}
-\contentsline {section}{\numberline {1.2}Requisitos para una transferencia tecnol\'ogica exitosa}{4}
-\contentsline {section}{\numberline {1.3}Metodolog\IeC {\'\i }a para la transferencia tecnol\'ogica y de conocimientos}{6}
-\contentsline {subsubsection}{Elecci\'on de la tecnolog\IeC {\'\i }a y vigilancia tecnol\'ogica }{7}
-\contentsline {subsubsection}{Adquisici\'on}{8}
-\contentsline {subsubsection}{Adaptaci\'on}{8}
-\contentsline {subsubsection}{Absorci\'on y asimilaci\'on}{8}
-\contentsline {subsubsection}{Aplicaci\'on}{8}
-\contentsline {subsubsection}{Difusi\'on}{11}
-\contentsline {section}{\numberline {1.4}Relaci\'on universidad- empresa}{12}
-\contentsline {section}{\numberline {1.5}Estimaci\'on del costo del presente trabajo}{13}
-\contentsline {subsection}{\numberline {1.5.1}Comparaci\'on con con un centro de desarrollo tecnol\'ogico}{14}
-\contentsline {subsection}{\numberline {1.5.2}Transferencia Tecnol\'ogica desde Corea}{16}
-\contentsline {section}{\numberline {1.6}Trabajo Futuro}{17}
-\contentsline {subsection}{\numberline {1.6.1}Difusi\'on}{17}
+\contentsline {chapter}{\numberline {1}PLATAFORMA DE DESARROLLO ECBOT}{3}
+\contentsline {section}{\numberline {1.1}Introducci\'on}{3}
+\contentsline {subsection}{\numberline {1.1.1}M\'etodos de arranque}{3}
+\contentsline {subsection}{\numberline {1.1.2}Interfaz JTAG}{5}
+\contentsline {subsubsection}{Arquitectura BOUNDARY SCAN}{5}
+\contentsline {subsubsection}{Instrucciones JTAG}{6}
+\contentsline {section}{\numberline {1.2}Herramientas Software de libre distribuci\'on \textit {GNU toolchain}}{6}
+\contentsline {subsubsection}{GNU binutils\cite {A1}}{7}
+\contentsline {subsubsection}{GNU Compiler Collection}{8}
+\contentsline {subsubsection}{GNU Debugger}{9}
+\contentsline {subsubsection}{Librer\IeC {\'\i }as C}{9}
+\contentsline {subsection}{\numberline {1.2.1}Flujo de dise\~no software}{9}
+\contentsline {subsubsection}{Make}{10}
+\contentsline {subsubsection}{El formato \textbf {ELF}}{12}
+\contentsline {subsubsection}{Linker Script}{15}
+\contentsline {section}{\numberline {1.3}Herramientas hardware}{17}
+\contentsline {subsubsection}{SoC}{17}
+\contentsline {subsubsection}{Memorias Vol\'atiles}{18}
+\contentsline {subsubsection}{Memorias No Vol\'atiles}{19}
+\contentsline {subsubsection}{Depuraci\'on del core ARM \cite {DR05}}{21}
+\contentsline {subsubsection}{Programaci\'on de memorias Flash}{22}
+\contentsline {section}{\numberline {1.4}El sistema Operativo Linux}{22}
+\contentsline {subsubsection}{Porqu\'e Linux}{23}
+\contentsline {subsection}{\numberline {1.4.1}Arquitectura de Linux \cite {IBSS98} \cite {IB98}}{24}
+\contentsline {subsubsection}{Drivers de Dispositivos}{28}
+\contentsline {subsubsection}{Sistema de Archivos l\'ogico}{28}
+\contentsline {subsubsection}{M\'odulos}{29}
+\contentsline {section}{\numberline {1.5}Portando Linux a la plataforma ECBOT y ECB\_AT91}{29}
+\contentsline {subsection}{\numberline {1.5.1}El Kernel de Linux}{29}
+\contentsline {subsubsection}{Archivo de configuraci\'on de la plataforma ECB\_AT91 }{31}
+\contentsline {subsubsection}{Archivo de Configuraci\'on del kernel}{35}
+\contentsline {subsection}{\numberline {1.5.2}Imagen del kernel}{35}
+\contentsline {subsubsection}{Compilaci\'on de la Im\'agen del kernel}{35}
+\contentsline {subsubsection}{Componentes de la Im\'agen del kernel}{37}
+\contentsline {section}{\numberline {1.6}Inicializaci\'on del kernel}{39}
+\contentsline {subsection}{\numberline {1.6.1}Darrel's Loader}{40}
+\contentsline {subsubsection}{crt0.S (startup.S)}{42}
+\contentsline {subsubsection}{serial.c, xmpdem.c, dataflash.c, div0.c, interrupts.c}{42}
+\contentsline {subsubsection}{board.c}{43}
+\contentsline {subsection}{\numberline {1.6.2}U-boot}{44}
+\contentsline {subsection}{\numberline {1.6.3}Portando U-boot a la familia de plataformas ECB\_AT91}{45}
+\contentsline {subsubsection}{Makefile}{45}
+\contentsline {subsubsection}{MAKEALL}{45}
+\contentsline {subsubsection}{board/ecb\_at91/Makefile}{46}
+\contentsline {subsubsection}{board/ecb\_at91/board.c}{46}
+\contentsline {subsubsection}{include/configs/ecb\_at91.h}{48}
+\contentsline {subsubsection}{Compilaci\'on de U-boot en la familia de plataformas ECB\_AT91}{49}
+\contentsline {subsection}{\numberline {1.6.4}Almacenamiento de la im\'agen del kernel}{51}
+\contentsline {subsubsection}{Almacenamiento en la memoria DataFlash}{51}
+\contentsline {subsubsection}{Almacenamiento en la memoria RAM}{51}
+\contentsline {subsection}{\numberline {1.6.5}Inicializaci\'on del Kernel}{53}
+\contentsline {subsubsection}{Llamado a la Im\'agen del kernel}{53}
+\contentsline {subsubsection}{Punto de Entrada del Kernel \textit {head.o}}{55}
+\contentsline {section}{\numberline {1.7}Inicializaci\'on del Sistema}{57}
+\contentsline {subsection}{\numberline {1.7.1}Sistema de Archivos}{57}
+\contentsline {subsubsection}{Estructura del Sistema de Archivos}{58}
+\contentsline {subsection}{\numberline {1.7.2}Primer Programa en Espacio de Usuario \textit {init}}{58}
+\contentsline {subsubsection}{Modos de operaci\'on}{59}
+\contentsline {subsubsection}{Niveles de ejecuci\'on}{59}
+\contentsline {subsubsection}{El Archivo \textit {/etc/inittab}}{60}
+\contentsline {subsection}{\numberline {1.7.3}Distribuciones Linux}{62}
+\contentsline {subsubsection}{Busybox}{62}
+\contentsline {subsubsection}{Buildroot}{62}
+\contentsline {subsubsection}{Openembedded}{62}
+\contentsline {section}{\numberline {1.8}M\'odulos del kernel}{63}
+\contentsline {subsection}{\numberline {1.8.1}Ejemplo de un driver tipo caracter}{63}
+\contentsline {subsubsection}{Implementaci\'on del driver de un LED}{64}
+\contentsline {section}{\numberline {1.9}Interfaz con Perif\'ericos dedicados}{66}
+\contentsline {subsection}{\numberline {1.9.1}Comunicaci\'on Procesador - Perif\'erico}{67}
+\contentsline {subsubsection}{Implementaci\'on de Perif\'ericos en una FPGA}{68}
+\contentsline {subsubsection}{Programa en Espacio de Usuario para la comunicaci\'on}{68}
+\contentsline {subsection}{\numberline {1.9.2}Comunicaci\'on Perif\'erico - Procesador}{70}
+\contentsline {subsubsection}{Manejo de Interrupciones}{71}
