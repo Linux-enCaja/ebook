@@ -55,10 +55,10 @@
 
 \begin{frame}
  
-  \tikzstyle{format} = [draw, thin, fill=blue!20]
-  \tikzstyle{medium} = [ellipse, draw, thin, fill=green!20, minimum height=2.5em]
+\tikzstyle{format} = [draw, thin, fill=blue!20]
+\tikzstyle{medium} = [ellipse, draw, thin, fill=green!20, minimum height=2.5em]
 
-  \frametitle{Metodología }
+  \frametitle{Tecnología: Definición}
     \begin{figure}
 	\begin{tikzpicture}[node distance=3cm, auto,>=latex', thick]
 	    % We need to set at bounding box first. Otherwise the diagram
