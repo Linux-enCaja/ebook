@@ -14,18 +14,20 @@
 \usepackage{amsmath,amssymb}
 \usepackage{tikz}
 \usepackage{verbatim}
-\usetikzlibrary{arrows,shapes}
+\usetikzlibrary{arrows,shapes,positioning}
 
 \usepackage{times}
 \usepackage{colortbl}
+\usepackage{color}
 
 \usepackage{tocvsec2}
+\setlength{\leftmargini}   {13pt} 
+\setlength{\leftmarginii}  {13pt} 
+\setlength{\leftmarginiii} {13pt} 
 
 
 
-% \usebackgroundtemplate{\includegraphics[width=\paperwidth, heigth=\paperheight]{../images/tux_ecb_at91.jpg}}
-
-\title[TT en Diseño de Sistemas Embebidos]{METODOLOGÍA PARA LA TRANSFERENCIA TECNOLÓGICA Y DE CONOCIMIENTOS EN EL DISEÑO DE SISTEMAS EMBEBIDOS}
+\title[TT en Diseño de Sistemas Embebidos]{TRANSFERENCIA TECNOLÓGICA Y DE CONOCIMIENTOS EN EL DISEÑO DE SISTEMAS EMBEBIDOS}
 \author{Carlos Iván Camargo Bareño\\
         Director: Luis Fernando Niño (PhD)\\
         }
@@ -48,44 +50,6 @@
 \settocdepth{section}
 \frame[c]{\tableofcontents}
 
-%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-%---------------------------------------------------------------  Metodología   -
-\section{Introducción}
-%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-
-\begin{frame}
- 
-  \tikzstyle{format} = [draw, thin, fill=blue!20]
-  \tikzstyle{medium} = [ellipse, draw, thin, fill=green!20, minimum height=2.5em]
-
-  \frametitle{Metodología }
-    \begin{figure}
-	\begin{tikzpicture}[node distance=3cm, auto,>=latex', thick]
-	    % We need to set at bounding box first. Otherwise the diagram
-	    % will change position for each frame.
-	    \path[use as bounding box] (-1,0) rectangle (10,-2);
-	    \path[->]<1-> node[format] (tex) {.tex file};
-	    \path[->]<2-> node[format, right of=tex] (dvi) {.dvi file}
-			  (tex) edge node {\TeX} (dvi);
-	    \path[->]<3-> node[format, right of=dvi] (ps) {.ps file}
-			  node[medium, below of=dvi] (screen) {screen}
-			  (dvi) edge node {dvips} (ps)
-				edge node[swap] {xdvi} (screen);
-	    \path[->]<4-> node[format, right of=ps] (pdf) {.pdf file}
-			  node[medium, below of=ps] (print) {printer}
-			  (ps) edge node {ps2pdf} (pdf)
-			      edge node[swap] {gs} (screen)
-			      edge (print);
-	    \path[->]<5-> (pdf) edge (screen)
-				edge (print);
-	    \path[->, draw]<6-> (tex) -- +(0,1) -| node[near start] {pdf\TeX} (pdf);
-	\end{tikzpicture}
-    \end{figure}
-\end{frame}
-
-
-
-
 
 %$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 %----------------------------------------------------------------------Introducción-
@@ -104,11 +68,10 @@
   \frametitle{Transferencia Tecnológica}
  
   \begin{alertblock}{}
-   \only<1>
-     {Odedra \cite{Mo94}: \textbf{La transferencia tecnológica se considera exitosa cuando los receptores de la tecnología asimilan estos conceptos para suplir sus necesidades locales}.}
-    \only<2>
-      {Jolly \cite{Jol77}: \textbf{El conocimiento es lo que queda al final de un proceso documentado y difundido de forma apropiada. Para que la transferencia tecnológica sea exitosa es necesario transferir los componentes de la tecnología}.}
-
+    \begin{itemize}
+     \item<1-> Odedra \cite{Mo94}: \textbf{La transferencia tecnológica se considera exitosa cuando los receptores de la tecnología asimilan estos conceptos para suplir sus necesidades locales}.
+     \item<2-> Jolly \cite{Jol77}: \textbf{El conocimiento es lo que queda al final de un proceso documentado y difundido de forma apropiada. Para que la transferencia tecnológica sea exitosa es necesario transferir los componentes de la tecnología}.
+    \end{itemize}
   \end{alertblock}
 
 \end{frame}
@@ -320,132 +283,338 @@
 \end{frame}
 
 
-\section{Actividades Para Realizar una TT Exitosa}
-
-\begin{frame}
-  \frametitle{Actividades a Realizar Para la Transferencia Tecnológica y de Conocimientos}
-   \begin{center} \includegraphics[scale=.4]{../images/thesis_proposal_flow_diagram.pdf}\\
-   \end{center}
-\end{frame}
-
-
- \begin{frame}
-   \frametitle{Actividades a Realizar Para la TT}
-    \begin{center} \includegraphics[scale=.45]{../images/thesis_flow_diagram.pdf}\\
-    \end{center}
- \end{frame}
-
-
 \section{Metodología Propuesta}
 \begin{frame}
-  \frametitle{Metodología Propuesta}
-   \begin{center} \includegraphics[scale=.5]{../images/TT_Methodology_phases.pdf}\\
-   \end{center}
-\end{frame}
-
-\subsection{Elección}
-\begin{frame}
-  \frametitle{Elección}
-   \begin{center} \includegraphics[scale=.7]{../images/GA_vs_ASIC_vs_FPGA.png}\\
-   \end{center}
-\end{frame}
-
-\subsection{Adquisición}
-\begin{frame}
-  \frametitle{Adquisición}
-   \begin{center} \includegraphics[scale=.5]{../images/plataformas_adquiridas.png}\\
-   \end{center}
-\end{frame}
+\frametitle{}
 
 
-\subsection{Adopción}
-\begin{frame}
-  \frametitle{Adopción}
-  \begin{block}{}
-   \begin{itemize}
-    \item Estudio de metodologías de diseño.
-    \item Ingeniería inversa.
-    \item Solución de problemas locales con productos existentes.
+\tikzstyle{phase}       = [draw, thin, fill=blue!20,  text width=2.cm,  text centered, minimum height=0.5cm]
+\tikzstyle{phase2}      = [draw, thin, fill=red!20,   text width=2.5cm, text centered, minimum height=0.5cm]
+\tikzstyle{extern}      = [draw, thin, fill=red!20,   text width=1.5cm, text centered, minimum height=0.5cm]
+\tikzstyle{industry}    = [draw, thin, fill=green!20, text width=6cm,   text centered, minimum height=0.5cm]
+\tikzstyle{academy}     = [draw, thin, fill=brown!20, text width=6cm,   text centered, minimum height=0.5cm]
+\tikzstyle{ph_explain}  = [draw, thin, fill=gray!20,  text width=8cm,   text centered, minimum height=0.5cm]
+\tikzstyle{difusion_es} = [draw, thin, fill=yellow!20,text width=7cm,   text centered, minimum height=0.5cm]
 
-   \end{itemize}
-   \begin{alertblock}{Conocimientos adquiridos}
+\tikzset{
+  myarrow/.style     = {->, >= triangle 90, thick},
+  myarrow1/.style    = {->, >= triangle 90, thick, brown, line width=0.05cm},
+  myarrow2/.style    = {->, >= triangle 90, thick, green, line width=0.05cm},
+  mylabel/.style     = {text width=7em},
+  mylabel2/.style    = {text width=20em}
+} 
+
+% Fija el tamaño de la indentación en los 3 niveles de un enumerate, itemize, list
+\setlength{\leftmargini}   {13pt} 
+\setlength{\leftmarginii}  {13pt} 
+\setlength{\leftmarginiii} {13pt} 
+
+
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+\begin{figure}
+\begin{tikzpicture}[node distance=0.5cm, auto,>=latex', thick]
+\scriptsize
+    % We need to set at bounding box first. Otherwise the diagram
+    % will change position for each frame.
+    \path[use as bounding box] (-1.5,0) rectangle (12,-2);
+
+    % TT methodology     
+    \onslide<1-> \node [phase]                        (monitoreo)     {Monitoreo};
+    \onslide<2-> \node [phase, below of=monitoreo]    (choice)        {Elección};
+    \onslide<3-> \node [phase, below of=choice]       (acquisition)   {Adquisición};
+    \onslide<4-> \node [phase, below of=acquisition]  (adaptation)    {Adaptación};
+    \onslide<5-> \node [phase, below of=adaptation]   (absortion)     {Absorción};
+    \onslide<6-> \node [phase, below of=absortion]    (aplication)    {Aplicación};
+    \onslide<7-> \node [phase, below of=aplication]   (difusion)      {Difusión};
+
+    % linuxencaja + investigación
+    \onslide<8-> \path (difusion.south) +(0,-0.2) node (research)     {Investigación Universitaria};
+    \onslide<8-> \path (monitoreo.north)+(0,+0.2) node (linuxencaja)  {Comunidad \textit{linuxencaja}};
+
+    % Now it's time to draw the colored rectangles.
+     \begin{pgfonlayer}{background}
+        \path (linuxencaja.west |- linuxencaja.north) + (-0.2,0.0)  node (a) {};
+        \path (research.south   -| research.east)     + (+0.1,-0.15) node (b) {};
+        \path (research.east    |- research.east)     + (+0.1,-0.1) node (c) {};
+        \path[fill=yellow!20,rounded corners, draw=black!50] (a) rectangle (c);           
+        \path (monitoreo.north west)+(-0.2,0.2) node (a) {};
+    \end{pgfonlayer}
+
+    % "Empresa" node
+    \onslide<10-> \node [industry, right=1cm of linuxencaja.north east]  (industry)      {\textbf{Empresa}
+                                                                  \begin{itemize}
+                                                                   \item Transferencia de conocimiento.
+                                                                     \begin{itemize}
+                                                                       \scriptsize
+                                                                       \item Procesos de fabricación.
+                                                                       \item Metodologías de diseño.
+                                                                     \end{itemize}
+                                                                   \item Diseños de referencia.
+                                                                  \end{itemize} };
+
+    \onslide<10-> \draw[myarrow2] ([xshift=0.75cm] adaptation.east) -- ++(0.2,0)-- ++ (0,2.2) --  (industry.west);	
+
+    % "Academia" node
+    \onslide<9-> \node [academy, right=0.8cm of research.south east]  (academy)      {\textbf{Academia}
+                                                                  \begin{itemize}
+                                                                   \item Actualización de programas académicos.
+                                                                   \item Generación de habilidades.
+                                                                   \item Creación de industria.
+                                                                   \item Actualización de programas académicos.
+                                                                   \item Creación/adaptación de metodologías /procesos de diseño.
+                                                                  \end{itemize} };
+    \onslide<9-> \draw[myarrow1] ([xshift=0.75cm] adaptation.east) -- ++(0.2,0)-- ++ (0,-2.2) --  (academy.west);	
+
+
+    % Relaciones Universidad - Empresa    
+    \onslide<11-> \draw[myarrow] ([xshift=-2.6cm] industry.south) -- ([xshift=-2.6cm] academy.north);
+    \onslide<11-> \node[mylabel, below left=of industry.south] (label1)  {\scriptsize Pasantías.\\Servicios.\\Regalías.    \\Necesidades.};  
+
+    % Relaciones Empresa - Universidad
+    \onslide<12-> \draw[myarrow] ([xshift= 2.6cm] academy.north)  -- ([xshift= 2.6cm] industry.south);
+    \onslide<12-> \node[mylabel, below right=of industry.south] (label1) {\scriptsize Creación. \\Soporte.  \\Capacitación.\\Personal.};  
+
+    % Necesidades de la sociedad
+    \onslide<13-> \node [extern, right=0.2cm of industry] (needs)   {Necesidades de la sociedad};
+    \onslide<13-> \draw[myarrow] (needs.west)  --  (industry.east);
+    \onslide<13-> \draw[myarrow] (needs.south) -- ++(0, -3.85) -- (academy.east);
+
+    % Realimentación Universidad - Empresa a la metodología de transferencia
+    \onslide<14-> \draw[myarrow] (industry.north)  --++(0,0.3)--++(-5.65,0) -- ([yshift= 0cm] linuxencaja.north);
+    \onslide<14-> \draw[myarrow] (academy.south)  --++(0,-0.3)--++(-5.65,0) -- ([yshift= 0.1cm] research.south);
+    \onslide<14-> \node[mylabel2, above left=of industry.north] (label1) {\scriptsize Necesidades, Personal, Conocimientos};  
+    \onslide<14-> \node[mylabel2, below left=of academy.south]  (label2) {\scriptsize Necesidades, Personal, Conocimientos};  
+
+    %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&    
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    % Explicación de cada etapa de la metodología
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&    
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    %            Monitoreo
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+
+    \onslide<1> \node [ph_explain, right=1cm of adaptation.east] (exp_monitores)
+    {\begin{center} \textbf{Monitoreo} \end{center}
+      \begin{itemize}
+       \item Detectar tecnologías emergentes.
+       \item Dinámica de la tecnología (obsolescencia).
+       \item Soluciones tecnológicas disponibles
+      \end{itemize}
+
+    };
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    %            Elección
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    \onslide<2> \node [ph_explain, right=1cm of adaptation.east] (exp_choice)        
+    { \begin{center} \textbf{Elección} \end{center}
+      \begin{itemize}
+       \item Evaluación del estado de la plataforma tecnológica existente para identificar facilidades y necesidades.
+       \item Encontrar una tecnología que pueda ser implementada con el estado actual de la plataforma tecnológica.
+       \item Identificar los niveles de complejidad, para determinar una alternativa que pueda implementarse y de resultados a mediano y corto plazo con no muy altas inversiones de capital.
+      \end{itemize}
+    };
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    %            Adquisición
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    \onslide<3> \node [ph_explain, right=1cm of adaptation.east] (exp_acquisition)   
+    {      
+     \begin{center} \textbf{Adquisición} \end{center}
+     \begin{itemize}
+      \item Adquisición de equipos que utilicen la tecnología que se desea transferir.
+      \item Fácil adquisición.
+        \begin{itemize}
+        \scriptsize
+         \item Existen aplicaciones en gran parte de las actividades humanas.
+         \item No es necesario firmar acuerdos con países o con grandes industrias.
+        \end{itemize}
+      \item Adquisición de plataformas de desarrollo hardware y software 
+      \item Identificación de herramientas de desarrollo.
+     \end{itemize}
+    };
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    %            Adaptación
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+
+    \onslide<4> \node [ph_explain, right=1cm of adaptation.east] (exp_adaptation)    
+    {
+    \begin{center} \textbf{Adaptación} \end{center}
     \begin{itemize}
-     \item Arquitectura de los SE
-     \item Metodología de diseño usando software libre
+     \item Se presenta cuando la sociedad encuentra posible y deseable realizar cambios para involucrar usos particulares de la tecnología.
+%      \item Es un proceso dinámico que esta formado por etapas donde:
+%        \begin{itemize}
+%         \scriptsize
+%         \item Se proporcionan procedimientos adecuados para la transferencia física.
+%         \item Se proporciona conocimiento, habilidades, datos, y las herramientas necesarias para la evaluación.
+%         \item Etapa de planeación, diseño e implementación del sistema de transferencia, planes y estrategias.
+%        \end{itemize}
+     \item Metodología para el estudio gradual de la tecnología
        \begin{itemize}
-        \item Cadena de herramientas GNU
-        \item Sistema Operativo eCos, Linux
-        \item Diseño de periféricos en PLDs y drivers
+        \scriptsize
+        \item Adquisición de un dispositivo comercial. 
+        \item Aplicar ingeniería inversa para identificar su arquitectura y forma de programación.
+        \item Generación de aplicaciones similares a la original. 
+        \item Diseño y construcción local.
+        \item Transmisión de conocimientos a la academia y a la industria.
+        \item Documentación del proceso a todo sector de la sociedad.
        \end{itemize}
+
     \end{itemize}
-   \end{alertblock}
-  \end{block}
-\end{frame}
+    };
 
-\subsection{Absorción}
-\begin{frame}
-  \frametitle{Absorción}
-  \begin{block}{}
-   Integración de nuevo conocimiento para el país pero no es nuevo para el mundo.
-  \end{block}
-
-  \begin{block}{}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    %            Absorción
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    \onslide<5> \node [ph_explain, right=1cm of adaptation.east] (exp_absortion)     
+    {
+      \begin{center} \textbf{Absorción} \end{center}
+%        Capacidad del receptor para utilizar la tecnología. 
+%        Permite identificar la efectividad de la transferencia.
     \begin{itemize}
-     \item Adaptación de metodologías de diseño y procesos de fabricación al entorno local.
-     \item Desarrollo de productos tecnológicos propios.
-     \item Transmisión de conocimientos a la academia
-    \end{itemize}
-  \end{block}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Absorción: Productos Realizados}
-    \begin{center} \includegraphics[scale=.5]{../images/productos_realizados_absorcion.png} \end{center}
-\end{frame}
-
-\subsection{Aplicación}
-\begin{frame}
-  \frametitle{Aplicación}
-  \begin{block}{}
-    \begin{itemize}
-     \item Uso de metodologías de diseño en la concepción, diseño e implementación de sistemas digitales utilizando la tecnología. 
-     \item Utilización de procesos de fabricación adaptados al entorno local. 
-     \item Desarrollo de soluciones a problemas locales.
+     \item La absorción es la capacidad del receptor para absorber tecnología de un sector y la asimilación es la capacidad de asimilar (analizar, procesar, interpretar y entender) y utilizarla en otro sector 
+     \item Se deben generar dos tipos de habilidades para soportar la tecnología:
        \begin{itemize}
-       \scriptsize
-        \item Control de tornos industriales; Plataforma robótica didáctica; Monitoreo de Temperatura; Sistema de seguimiento vehicular; 
-              Sistema de medición de la calidad del suministro de energía eléctrica; Monitor de signos vitales; sistema de comunicación encriptada utilizando el canal GSM; switch de 4 canales de radio frecuencia.
+        \scriptsize
+        \item Técnicas: hardware, sistemas operativos, redes, tecnologías de la comunicación, aplicaciones SW.
+        \item Humanas: Habilidades y conocimientos necesarios para desarrollar, mantener, manipular, adaptar al entorno local y futuro desarrollo.
        \end{itemize}
-     \item Desarrollo de proyectos académicos utilizando esta tecnología.
-       \begin{itemize}
-       \scriptsize
-        \item Plataformas de desarrollo para: FPGAs, proc. ARM; Linux Embebido; codiseño HW/SW. Programa académico para la enseñanza de sistemas digitales.
-       \end{itemize}
+
+     \item  Mecanismos de aprendizaje para operar y cambiar la nueva tecnología; 
+      \begin{itemize}
+        \scriptsize
+        \item Banco de proyectos que pueden ser utilizados como base de futuros desarrollos.
+        \item Cursos para la enseñanza de metodologías de diseño y procesos de fabricación.
+      \end{itemize}
+     \item  Metodologías de diseño y procesos de fabricación para generación de productos propios.
     \end{itemize}
-  \end{block}
+
+    };
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    %            Aplicación
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    \onslide<6> \node [ph_explain, right=1cm of adaptation.east] (exp_aplication)    
+    {
+      \begin{center} \textbf{Aplicación} \end{center}
+
+      \begin{itemize}
+       \item       Incorporación y aplicación del conocimiento adquirido a:
+	  \begin{itemize}
+	    \scriptsize
+	    \item La academia (UNAL)
+	      \begin{itemize}
+	      \scriptsize
+	      \item Incorporaron metodologías modernas de diseño y fabricación
+	      \item Adaptación a la iniciativa CDIO (Concebir, Diseñar, Implementar y operar).
+	      \end{itemize}
+
+            \item La industria (emQbit):
+	      \begin{itemize}
+	      \scriptsize
+	      \item Evaluar el impacto del uso de esta tecnología en la industria.
+	      \item Obtener información sobre el estado de la industria electrónica en el país.
+	      \item Detectar los obstáculos que enfrentan nuevas empresas en su ejercicio.
+	      \end{itemize}
+            \end{itemize}
+      \end{itemize}
+
+    };
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    %            Difusión
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    \onslide<7> \node [ph_explain, right=1cm of adaptation.east] (exp_difusion)      
+    {\begin{center} \textbf{Difusión (en ejecución)} \end{center}
+       \begin{itemize}
+        \item Difundir los conocimientos adquiridos a los sectores de la sociedad interesados en el.
+        \item Concienciar a la sociedad de la importancia del uso de esta tecnología. 
+        \item Creación de una comunidad que:
+          \begin{itemize}
+           \scriptsize
+           \item Utilice/administre/depure/aumente los conocimientos generados.
+           \item Esté formada por personas con diferentes intereses y niveles de formación (UNAL, UIS, USTA, ULA, UDFJC, emQbit y CorreLibre)
+          \end{itemize}
+        \item Creación de un recurso público formado por:
+          \begin{itemize}
+           \scriptsize
+           \item Archivos necesarios para estudiar, entender, reproducir y programar plataformas \textit{copyleft hardware}. 
+           \item Herramientas de difusión disponibles en el portal público \textit{linuxencaja}
+             \begin{itemize}
+              \scriptsize
+              \item Lista de correo.
+              \item Wikis en donde se documenta el proceso de diseño.
+              \item Sistema de control de versiones.
+             \end{itemize}
+          \end{itemize}
+       \end{itemize}
+    };
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    %        Estrategias de difusión
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    \onslide<8> \node [difusion_es, above right=2cm of adaptation.east] (est_difusion)      
+      {
+       \includegraphics[scale=.25]{../images/plataformas_hwcl.png}\\
+       \color{blue!40!black} {Repositorios + Tutoriales + Cursos en línea}
+      };
+    \onslide<8> \node [difusion_es, below = 0.5cm of est_difusion] (canales_difusion)      
+      {
+       \color{red!60!black} {Canales de difusión} \\
+                          GIT, WIKI, MAIL\\
+        \color{green!60!black}{Código fuente (.c,.v,.vhd,.S,.java), archivos de diseño} 
+      };
+    \onslide<8> \draw[myarrow] (est_difusion.south) -- (canales_difusion.north);	
+    
+    \onslide<8> \node [phase2, below = .6cm of canales_difusion] (dif_academia2)      
+      {
+        Academia \\
+        \begin{itemize}
+         \scriptsize
+         \item UIS, ULA, USTA, UDFJC, ENAP.
+         \item ET-ITC.
+         \item SENA.
+        \end{itemize}
+      };
+    \onslide<8> \draw[myarrow] (canales_difusion.south) -- (dif_academia2.north);	
+
+    \onslide<8> \node [phase2, left = .1cm of dif_academia2] (dif_academia)      
+      {
+        I+D UNAL \\
+        \begin{itemize}
+         \scriptsize
+         \item Telemedicina.
+         \item Veterinaria.
+         \item Mecatrónica.
+         \item Sistemas.
+        \end{itemize}
+      };
+    \onslide<8> \draw[myarrow] (canales_difusion.south) --++(0,-0.2)--++ (-2.8cm, 0) -- (dif_academia.north);	
+
+    \onslide<8> \node [phase2, right = .1cm of dif_academia2] (dif_industria)      
+      {
+        Industria\\
+         \scriptsize
+        \begin{itemize}
+         \item emQbit.
+         \item MicroEnsamble.
+         \item Proyecto SENA.
+        \end{itemize}
+      };
+    \onslide<8> \draw[myarrow] (canales_difusion.south) --++(0,-0.2)--++ (2.8cm, 0) -- (dif_industria.north);	
+
+
+\end{tikzpicture}
+\end{figure}
 
 \end{frame}
-
-\begin{frame}
-  \frametitle{Aplicación: Productos Desarrollados}
-   \begin{center} \includegraphics[scale=.5]{../images/productos_desarrollados.png}\\
-   \end{center}
-\end{frame}
-
-
-\subsection{Difusión}
-\begin{frame}
-  \frametitle{Difusión}
-    \begin{center} \includegraphics[scale=.7]{../images/difusion_TT.png} \end{center}
-\end{frame}
-
- 
- \begin{frame}
-   \begin{center}\includegraphics[scale=.15]{../images/gracias}
-   \newline
-   \huge{¡Gracias!}
-   \end{center}
- \end{frame}
 
 
 \begin{thebibliography}{10}

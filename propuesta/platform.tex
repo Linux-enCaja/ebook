@@ -8,29 +8,30 @@ En esta sección se realizará una explicación detallada del proceso de adaptación
 
 \subsection{Métodos de arranque}
 
-Como es obvio todo SoC debe ser programado para que pueda ejecutar una determinada tarea; este programa debe estar almacenado en una memoria no volátil y debe estar en el formato requerido por el procesador. Normalmente los SoCs proporcionan varios caminos (habilitando diferentes periféricos) para hacer esto. Un programa de inicialización \textit{(boot program)} contenido en una pequeña ROM del SoC se encarga de configurar, y revisar ciertos periféricos en búsqueda de un ejecutable, una vez lo encuentra, lo copia a la memoria RAM interna y lo ejecuta desde allí. No sobra mencionar que este ejecutable debe estar enlazado de tal forma que todas las secciones se encuentren en el espacio de la memoria RAM interna (0x0 después del REMAP \footnote{Los procesadores ARM pueden intercambiar el sitio de la memoria RAM interna y la memoria no volátil}). El AT91RM9200 posee una memoria interna SRAM de 16 kbytes. Después del reset esta memoria esta disponible en la posición 0x200000, después del remap esta memoria se puede acceder en la posición 0x0. Algunos fabricantes, en la etapa de producción graban en las memorias no volátiles las apliacaciones definitivas, y soldan en la placa de circuito impreso los dispoditivos programados, esto es muy conveniente cuando se trabaja con grandes cantidades ya que ahorra tiempo en el montaje de los dispositivos.
+Como vimos anteriormente, la mayoría de los SoC utilizados en aplicaciones modernas no poseen memorias programables en su interior. Todo SoC debe ser programado para que pueda ejecutar una determinada tarea; este programa debe estar almacenado en una memoria no volátil externa y debe estar en el formato requerido por el procesador.  Normalmente los SoCs proporcionan varios caminos (habilitando diferentes periféricos) para hacer esto. Un programa de inicialización \textit{(boot program)} contenido en una pequeña ROM del SoC se encarga de configurar, y revisar ciertos periféricos en búsqueda de un ejecutable válido, una vez lo encuentra, lo copia a la memoria RAM interna y lo ejecuta desde allí. No sobra mencionar que este ejecutable debe estar enlazado de tal forma que todas sus secciones se encuentren en el espacio de la memoria RAM interna (0x0 después del REMAP \footnote{Los procesadores ARM pueden intercambiar el sitio de la memoria RAM interna y la memoria no volátil}). 
 
-El programa de inicialización del AT91RM9200 (se ejecuta si el pin BMS se encuentra en un valor lógico alto) busca una secuencia de 8 vectores de excepción ARM válidos en la DataFlash conectada al puerto SPI, en una EEPROM conectada a la interfaz I2C o en una memoria de 8 bits conectada a la interfaz de bus externo (EBI), estos vectores deben ser instrucciones LDR o Bbranch, menos la sexta instrucción (posición 14 a 17) que contiene información sobre el tamaño de la imágen (en bytes) a descargar y el tipo de dispositivo DataFlash. Si la secuencia es encontrada, el código es almacenado en la memoria SRAM interna y se realiza un remap (con lo que la memoria interna SRAM es accesible en la posición 0x0 ver Figura \ref{soc_boot_remap}).
+El AT91RM9200 posee una memoria interna SRAM de 16 kbytes. Después del \textit{reset} esta memoria esta disponible en la posición 0x200000; después del remap esta memoria se puede acceder en la posición 0x0. Algunos fabricantes, en la etapa de producción graban en las memorias no volátiles las aplicaciones definitivas, y sueldan en la placa de circuito impreso los dispositivos programados, esto es muy conveniente cuando se trabaja con grandes cantidades ya que ahorra tiempo en el montaje de los dispositivos.
+
+El programa de inicialización del AT91RM9200 (se ejecuta si el pin BMS se encuentra en un valor lógico alto) busca una secuencia de 8 vectores de excepción válidos en la DataFlash conectada al puerto SPI, en una EEPROM conectada a la interfaz I2C o en una memoria de 8 bits conectada a la interfaz de bus externo (EBI). Estos vectores son instrucciones LDR o Bbranch, a excepción de la sexta instrucción (posición 14 a 17) que contiene información sobre el tamaño de la imagen (en bytes) a descargar y el tipo de dispositivo \textit{DataFlash}. Si la secuencia es encontrada, el código es almacenado en la memoria SRAM interna y se realiza un \textit{remap} (con lo que la memoria interna SRAM es accesible en la posición 0x0 ver Figura \ref{soc_boot_remap}).
 
 \begin{figure}[h]
   \begin{center} \includegraphics[scale=.6]{./images/soc_boot_remap} \end{center}
   \caption{Diagrama de flujo del programa de inicialización del SoC AT91RM9200} \label{soc_boot_remap}
 \end{figure}
 
-Si no se encuentra la secuencia de vectores ARM, se inicializa un programa que configura el puerto serial de depuración (DBGU) y el puerto USB Device. Quedando en espera de la descarga de una aplicación a través del protocolo DFU (Digital Firmware Upgrade) por el puerto USB o con el protocolo XMODEM en el puerto DBGU. La figura \ref{soc_boot_proc} muestra el diagrama de flujo del programa de inicialización del SoC AT91RM9200
+Si no se encuentra esta secuencia de vectores, se inicializa un programa que configura el puerto serial de depuración (DBGU) y el puerto USB Device. Quedando en espera de la descarga de una aplicación a través del protocolo DFU (Digital Firmware Upgrade) por el puerto USB o con el protocolo XMODEM en el puerto serial DBGU (115200,N81). La figura \ref{soc_boot_proc} muestra el diagrama de flujo del programa de inicialización del SoC AT91RM9200.
 
 \begin{figure}[h]
   \begin{center} \includegraphics[scale=.6]{./images/soc_boot_proc} \end{center}
   \caption{Diagrama de flujo del programa de inicialización del SoC AT91RM9200} \label{soc_boot_proc}
 \end{figure}
 
-El programa descargado a la memoria SRAM interna debe ser capaz de programar una memoria no volátil (La Flash DataFlash SPI para el ECBOT), debe proporcionar un canal de comunicación que permita descargar ejecutables más grandes, y debe inicializar el controlador de memoria SDRAM para que almacene temporalmente el ejecutable a grabar, esto es necesario ya que la memoria interna del AT91RM9200 solo es de 16kBytes. Más adelante hablaremos detalladamente de la aplicación que realiza estas funciones.
-
+El programa descargado a la memoria SRAM interna debe: programar una memoria no volátil (DataFlash SPI para la familia de plataformas ECB\_AT91); proporcionar un canal de comunicación que permita descargar ejecutables más grandes, e inicializar el controlador de memoria SDRAM para que almacene temporalmente el ejecutable a grabar, esto debido a que la memoria interna del AT91RM9200 es de 16kBytes. Más adelante hablaremos detalladamente de la aplicación que realiza estas funciones.
 
 \subsection{Interfaz JTAG}
-A mediados de los 1970s, la estructura de pruebas para tarjetas de circuito impreso (PCB, Printed Circuit Boards) se basaba en el uso de la técnica ``bed-of-nails''. Este método hacia uso de un dispositivo que contenía una serie de puntos de prueba, que permitían el acceso a dispositivos en la tarjeta a través de puntos de prueba colocados en la capa de cobre, o en otros puntos de contacto convenientes. Las pruebas se realizaban en dos fases: La prueba del circuito apagado y la prueba del circuito funcionando. Con la aparición de los dispositivos de montaje superficial se empezó a colocar dispositivos en las dos caras de la tarjeta, debido a que las dimensiones de los dispositivos de montaje superficial son muy pequeñas, se disminuyó la distancia física entre las interconexiones, dificultando el proceso de pruebas.
+A mediados de los 70s, la estructura de pruebas para tarjetas de circuito impreso (PCB, Printed Circuit Boards) se basaba en el uso de la técnica ``bed-of-nails''. Este método utilizaba un dispositivo que contenía una gran cantidad de puntos de prueba, que permitían el acceso a dispositivos en la tarjeta a través de puntos colocados en la capa de cobre para dicho fin. Las pruebas se realizaban en dos fases: con el circuito apagado y con el circuito funcionando. Con la aparición de los dispositivos de montaje superficial se empezó a colocar dispositivos en las dos caras de la tarjeta, y se redujeron de forma considerable las dimensiones de los dispositivos, disminuyendo la distancia física entre las interconexiones (0.4 - 1mm), dificultando el proceso de pruebas tradicional.
 
-A mediados de los 1980s un grupo de ingenieros de pruebas miembros de compañías electrónicas Europeas se reunieron para examinar el problema y buscar posibles soluciones. Este grupo se autodenominó JETAG (Joint European Test Action Group). El método de solución propuesto por ellos estaba basado en el concepto de un registro de corrimiento serial colocado alrededor de la frontera dispositivo, de aquí el nombre ``Boundary Scan''. Después el grupo se asoció a compañías norteamericanas y la ``E'' de ``European'' desapareció del nombre de la organización convirtiéndose en JTAG (Join Test Action Group).
+A mediados de los 80s un grupo de ingenieros de pruebas miembros de compañías electrónicas europeas se reunieron para examinar el problema y buscar posibles soluciones. Este grupo se auto-denominó JETAG (Joint European Test Action Group). El método de solución propuesto por ellos estaba basado en el concepto de un registro de corrimiento serial colocado alrededor de la frontera dispositivo, de aquí el nombre ``Boundary Scan''. Después el grupo se asoció a compañías norteamericanas y la ``E'' de ``European'' desapareció del nombre de la organización convirtiéndose en JTAG (Join Test Action Group).
 
 \subsubsection{Arquitectura BOUNDARY SCAN} 
 A cada señal de entrada o salida se le adiciona un elemento de memoria multi-propósito llamado ``Boundary Scan Cell'' (BSC). Las celdas conectadas a los pines de entrada reciben el nombre de ``Celdas de entrada'', y las que están conectadas a los pines de salida ``Celdas de salida''. En la Figura \ref{jtag_basics} se muestra esta arquitectura.
@@ -42,19 +43,19 @@ A cada señal de entrada o salida se le adiciona un elemento de memoria multi-pro
 
 Las BSC se configuran en un registro de corrimiento de entrada y salida paralela. Una carga paralela de los registros (captura) ocasiona que los valores de las señales aplicadas a los pines del dispositivo pasen a las celdas de entrada y que opcionalmente los valores de las señales internas del dispositivo pasen a las celdas de salida. Una descarga paralela (Actualización) ocasiona que los valores presentes en las celdas de salida pasen a los pines del dispositivo, y opcionalmente los valores almacenados en las celdas de entrada pasen al interior del dispositivo.
 
-Los datos pueden ser corridos a través del registro de corrimiento, de forma serial, empezando por un pin dedicado TDI (Test Data In) y terminando en un pin de salida dedicado llamado TDO (Test Data Out). La señal de reloj se proporciona por un pin externo TCLK (Test Clock) y el modo de operación se controla por la señal TMS (Test Mode Select). Los elementos del Boundary Scan no afectan el funcionamiento del dispositivo. Y son independientes del núcleo lógico del mismo.
+Los datos pueden ser corridos a través del registro de corrimiento de forma serial, empezando por un pin dedicado TDI (Test Data In) y terminando en un pin de salida dedicado llamado TDO (Test Data Out). La señal de reloj se proporciona por un pin externo TCLK (Test Clock) y el modo de operación se controla por la señal TMS (Test Mode Select). Los elementos del Boundary Scan no afectan el funcionamiento del dispositivo. Y son independientes del núcleo lógico del mismo.
 
 \subsubsection{Instrucciones JTAG}
 El Standard IEEE 1149.1 describe tres instrucciones obligatorias: Bypass, Sample/Preload, y Extest \cite{TI96}.
 
 \begin{itemize}
-  \item \textbf{BYPASS} Esta instrucción permite que el chip permanezca en un modo funcional, hace que el registro de Bypass se coloque entre TDI y TDO; permitiendo la transferencia serial de datos a través del circuito integrado desde TDI hacia TDO sin afectar la operación. La codificación en binario para esta instrucción debe ser con todos los bits en uno. 
+  \item \textbf{BYPASS} Esta instrucción permite que el chip permanezca en un modo funcional, hace que el registro de Bypass se coloque entre TDI y TDO; permitiendo la transferencia serial de datos a través del circuito integrado desde TDI hacia TDO sin afectar la operación. La codificación en binario para esta instrucción debe ser con todos sus bits en uno. 
   
-  \item \textbf{SAMPLE/PRELOAD} Esta instrucción selecciona el registro Boundary-Scan para colocarse entre los terminales TDI y TDO. Durante esta instrucción, el registro Boundary-Scan puede ser accesado a través de la operación Data Scan, para tomar una muestra de los datos de entrada y salida del chip. Esta instrucción también se utiliza para precargar los datos de prueba en el registro Boundary-Scan antes de ejecutar la instrucción EXTEST. La codificación de esta instrucción la define el fabricante.
+  \item \textbf{SAMPLE/PRELOAD} Esta instrucción selecciona coloca el registro Boundary-Scan entre los terminales TDI y TDO. Durante esta instrucción, se puede acceder al registro Boundary-Scan y obtener una muestra de los datos de entrada y salida del chip a través de la operación \textit{Data Scan}. Esta instrucción también se utiliza para precargar los datos de prueba en el registro Boundary-Scan, antes de ejecutar la instrucción EXTEST. La codificación de esta instrucción la define el fabricante.
 
-  \item \textbf{EXTEST} Esta instrucción coloca al circuito integrado en  modo de test externo (pruebas de la interconexión) y conecta el regsitro Boundary-Scan entre TDI y TDO. Las señales que salen del circuito son cargadas en el registro boundary-scan en el flanco de bajada de TCK en el estado Capture-DR; las señales de entrada al dispositivo son cargadas al registro boundary-scan durante el flanco de bajada de TCK en el estado Update-DR (ver Figura \ref{jtag_sm}) . La codificación para esta instrucción está definida con todos los bits en cero.
+  \item \textbf{EXTEST} Esta instrucción coloca al circuito integrado en modo de test externo (pruebas de interconexión) y conecta el regsitro Boundary-Scan entre TDI y TDO. Las señales que salen del circuito son cargadas en el registro boundary-scan en el flanco de bajada de TCK del estado Capture-DR; las señales de entrada al dispositivo son cargadas al registro boundary-scan durante el flanco de bajada de TCK dl estado Update-DR (ver Figura \ref{jtag_sm}). La codificación para esta instrucción está definida con todos sus bits en cero.
   
-  \item \textbf{INTEST}  La instrucción opcional INTEST también selecciona el registro boundary-scan, pero es utilizado para capturar las señales que salen del núcleo lógico del dispositivo, y para aplicar valores connocidos a las señales de entrada del núcleo. La codificación para esta señal es asignada por el diseñador.
+  \item \textbf{INTEST}  La instrucción INTEST (opcional) selecciona el registro boundary-scan, pero es utilizado para capturar las señales que salen del núcleo lógico del dispositivo, y para aplicar valores conocidos a las señales de entrada del núcleo. La codificación para esta señal es asignada por el diseñador.
 \end{itemize}
 
 \begin{figure}[h]
@@ -63,98 +64,40 @@ El Standard IEEE 1149.1 describe tres instrucciones obligatorias: Bypass, Sample
 \end{figure}
 
 
+\section{Flujo de diseño software}
 
-
-
-\section{Herramientas Software de libre distribución \textit{GNU  toolchain}}
-En el mercado existe una gran variedad de herramientas de desarrollo para Sistemas Embebidos, 
-sin embargo, en este estudio nos centraremos en el uso de las herramientas de libre distribución;
-esta elección se debe a que la mayoría de los productos comerciales utilizan el toolchain de GNU\footnote{http://www.gnu.org} internamente y proporcionan un entorno gráfico para su fácil manejo. Otro factor considerado a la hora de realizar nuestra elección es el económico, ya que la mayoría de los productos comerciales son costosos y poseen soporte limitado. Por otro lado, el toolchain de GNU es utilizado ampliamente en el medio de los diseñadores de sistemas embebidos y se encuentra un gran soporte en múltiples foros de discusión (ver Figura \ref{tools}).
-
-\begin{figure}[h]
-  \begin{center} \includegraphics[scale=.7]{./images/embedded-linux-tool-trends-sm} \end{center}
-  \caption{Tendencia de utilización de herramientas de desarrollo}\label{tools}
-\end{figure}
-
-\subsubsection{GNU binutils\cite{A1}}
-Son una colección de utilidades para archivos binarios y estan compuestas por:
-
-\begin{itemize}
- \item  \textbf{addr2line} Convierte direcciones de un programa en nombres de archivos y números de línea. Dada una dirección y un ejecutable, usa la información de depuración en el ejecutabe para determinar que nombre de atchivo y número de lpinea está asociado con la dirección dada.
- \item  \textbf{ar} Esta utilidad crea, modifica y extrae desde ficheros. Un fichero es una colección de otros archivos en una estructura que hace posible obtener los archivos individuales miembros del archivo. 
- \item  \textbf{as} Utilidad que compila la salida del compilador de C (GCC).
- \item  \textbf{c++filt} Este program realiza un mapeo inverso: Decodifica nombres de bajo-nivel en nombres a nivel de usuario, de tal forma que el linker pueda mantener estas funciones sobrecargadas (overloaded) ``from clashing''. 
- \item  \textbf{gasp} GNU Assembler Macro Preprocessor
- \item  \textbf{ld} El \textit{linker} GNU combina un número de objetos y ficheros, re-localiza sus datos y los relaciona con referencias. Normalmente el último paso en la construcción de un nuevo programa compilado es el llamado a ld.
- \item  \textbf{nm} Realiza un listado de símbolos de archivos tipo objeto.
- \item  \textbf{objcopy} Copia los contenidos de un archivo tipo objeto a otro. \textit{objcopy} utiliza la librería GNU BFD para leer y escribir el archivo tipo objeto. Permite esccribibr el archivo destino en un formato diferente al del archivo fuente. 
- \item  \textbf{objdump} Despliega información sobre archivos tipo objeto. 
- \item  \textbf{ranlib} Genera un índice de contenidos de un fichero, y lo almacena en él.
- \item  \textbf{readelf} Interpreta encabezados de un archivo ELF.
- \item  \textbf{size} Lista el tamaño de las secciones y el tamaño total de un archivo tipo objeto.
- \item  \textbf{strings} Imprime las secuencias de caracteres imprimibles de almenos 4 caracteres de longitud. 
- \item  \textbf{strip} Elimina todos los símbolos de un archivo tipo objeto.
-
-\end{itemize}
-
-\subsubsection{GNU Compiler Collection}
-El \textit{GNU Compiler Collection} normalmente llamado GCC, es un grupo de compiladores de lenguajes de programación producido por el proyecto GNU. Es el compilador standard para el software libre de los sistemas operativos basados en Unix y algunos propietarios como Mac OS de Apple. Soporta los siguientes lenguajes: ADA, C, C++, Fortran, Java, Objective-C, Objective-C++ para las arquitecturas: Alpha, ARM, Atmel AVR, Blackfin, H8/300, System/370, System/390, IA-32 (x86) and x86-64, IA-64 i.e. the "Itanium", Motorola 68000, Motorola 88000, MIPS, PA-RISC, PDP-11, PowerPC, SuperH, SPARC, VAX, Renesas R8C/M16C/M32C,  MorphoSys.
-
-Como puede verse GCC soporta una gran cantidad de lenguajes de programación, sin embargo, en el presente estudio solo lo utilizaremos como herramienta de compilación para C y C++. Una característica de resaltar de GCC es la gran cantidad de plataformas que soporta, esto lo hace una herramienta Universal para el desarrollo de sistemas embebidos, el código escrito en una plataforma (en un lenguaje de alto nivel) puede ser implementado en otra sin mayores cambios, esto elimina la dependencia entre el código fuente y el HW\footnote{Esto recibe el nombre de re-utilización de código}, lo cual no ocurre al utilizar lenguaje ensamblador. 
-
-Por otro lado, el tiempo requerido para realizar aplicaciones utilizando C o C++ disminuye, ya que no es necesario aprender las instrucciones en assembler de una plataforma determinada; además, la disponibilidad de librerías de múltiples propósitos reduce aún más los tiempos de desarrollo, permitiendo de esta forma tener bajos tiempos \textit{time to market} y reducir de forma considerable el costo del desarrollo.
-
-\subsubsection{GNU Debugger}
-El depurador oficial de GNU (GDB), es un depurador que al igual que GCC tiene soporte para múltiples lenguajes y plataformas. GDB permite al usuario monitorear y modificar las variables internas del programa y hacer llamado a funciones de forma independiente a la ejecución normal del mismo. Además, permite establecer sesiones remotas utilizando el puerto serie o TCP/IP. Aunque GDB no posee una interfaz gráfica, se han desarrollado varios front-ends como DDD o GDB/Insight.
-
-\subsubsection{Librerías C}
-Adicionalmente es necesario contar con una librería que proporcione las librerías standard de C: stdio, stdlib, math; las más utilizadas en sistemas embebidos son:
-
-\begin{itemize}
- \item \textbf{glibc\footnote{http://www.gnu.org/software/libc/}} Es la librería C oficial del proyecto GNU. Uno de los inconvenientes al trabajar con esta librería en sistemas embebidos es que genera ejecutables de mayor tamaño que los generados a partir de otras librerías, lo cual no la hace muy atractiva para este tipo de aplicaciones. 
- \item \textbf{uClibc\footnote{http://uclibc.org/}} Es una librería diseñada especialmente para sistemas embebidos, es mucho más pequeña que \textbf{glibc}.
- \item \textbf{newlib\footnote{http://sources.redhat.com/newlib/}} Al igual que \textbf{uClibc}, está diseñada para sistemas embebidos. El típico ``Hello, world!'' ocupa menos de 30k en un entorno basado en newlib, mientras que en uno basado en glibc, puede ocupar 380k \cite{BG}. 
- \item \textbf{diet libc\footnote{http://www.fefe.de/dietlibc/}} Es una versión de \textit{libc} optimizada en tamaño, puede ser utilizada para crear ejecutables estáticamente enlazados para linux en plataformas alpha, arm, hppa, ia64, i386, mips, s390, sparc, sparc64, ppc y x86\_64.
-\end{itemize}
-
-
-
-
-
-\subsection{Flujo de diseño software}
-
-En la figura \ref{toolchain_flow} se ilustra la secuencia de pasos que se realizan desde la creación de un archivo de texto que posee el código fuente de una aplicación hasta su implementación en la tarjeta de desarrollo.
-
+En la figura \ref{toolchain_flow} se ilustra la secuencia de pasos que se realizan desde la creación de un archivo de texto que posee el código fuente de una aplicación hasta su implementación en la tarjeta de desarrollo. Los pasos necesarios para generar un ejecutable para un sistema embebido son:
 
 \begin{figure}[h]
   \begin{center} \includegraphics[scale=.6]{./images/SW_design_flow} \end{center}
   \caption{Flujo de diseño SW utilizando la cadena de herramientas GNU}\label{toolchain_flow}
 \end{figure}
 
-A continuación se realiza una breve descripción de los pasos necesarios para generar un ejecutable para un sistema embebido:
-
 \begin{enumerate}
  \item \textbf{Escritura del código fuente:} Creación del código fuente en cualquier editor de archivos de texto.
- \item \textbf{Compilación:} Utilizando el compilador gcc se compila el código fuente; vala la pena mencionar que en este punto el compilador solo busca en los encabezados (\textit{headers}) de las librerías la definición de una determinada función, como por ejemplo el \textit{printf} en el archivo \textit{stdio.h}. Como resultado de este paso se obtiene un archivo tipo objeto. 
+ \item \textbf{Compilación:} Utilizando GCC se compila el código fuente; el compilador busca en los encabezados (\textit{headers} .h) de las librerías la definición de una determinada función, pero no busca el segmento de código donde está implementada. (por ejemplo el \textit{printf} en el archivo \textit{stdio.h}). Como resultado de este paso se obtiene un archivo binario tipo objeto que incluye el código necesario para realizar la funcionalidad deseada utilizando en conjunto de instrucciones del procesador.
+
  \item \textbf{Enlazado:} En esta etapa se realizan dos tareas: 
   \begin{enumerate} 
-    \item Se enlazan los archivos tipo objeto del proyecto, junto con las librerías, si una determinada función no es edfinida por ninguna de las librerías pasadas como parámetro al linker, este generará un error y no se generará el ejecutable.
-    \item Se define la posiciónes físicas de las secciones del ejecutable tipo ELF, esto se realiza a través de un link de enlazado el cual define de forma explícita su localización.
-  \end{enumerate}
- \item \textbf{Extracción del archivo de programación} En algunas aplicaciones es necesario extraer únicamente las secciones que residen en los medios de almacenamiento no volátil y eliminar las demás secciones del ejecutable. Esto se realiza con la herramiento \textit{objcopy}, la cual, permite generar archivos en la mayoría de los formatos soportados por los programadores de memorias y procesadores, como por ejemplo S19 e Intel Hex.
- \item \textbf{Descarga del programa a la plataforma}. Dependiendo de la plataforma existen varios métodos para descargar el archivo de programación a la memoria de la plataforma de desarrollo:
-  \begin{enumerate}
-    \item Utilizando un \textit{loader}: El \textit{loader} es una aplicación que reside en un medio de almacenamiento no volátil y permite la descarga de archivos utilizando el puerto serie o una interfaz de red.
-    \item Utilizando el puerto JTAG: El puerto JTAG (Joint Test Action Group) proporciona una interfaz capaz de controlar los registros internos del procesador, y de esta forma, acceder a las memorias de la plataforma y ejecutar un programa residente en una determinada posición de memoria.
+    \item Se enlazan los archivos tipo objeto del proyecto junto con las librerías, si una determinada función no es definida por ninguna de las librerías pasadas como parámetro al enlazador (\textit{linker}), este generará un error y no se generará el ejecutable.
+    \item Se definen la posiciones físicas de las secciones del ejecutable (tipo ELF), esto se realiza a través de un \textit{script de enlazado} que define de forma explícita su localización.
   \end{enumerate}
 
- \item \textbf{Depuración} Una vez se descarga la aplicación a la plataforma es necesario someterla a una serie de pruebas con el fín de probar su correcto funcionamiento. Esto se puede realizar con el depurador GNU (GDB) y una interfaz de comunicación que puede ser un puerto serie o un adaptador de red.
+ \item \textbf{Extracción del archivo de programación} En algunas aplicaciones es necesario extraer únicamente las secciones que residen en los medios de almacenamiento no volátil y eliminar las demás secciones del ejecutable. Esto se realiza con la herramienta \textit{objcopy}, la cual, permite generar archivos en la mayoría de los formatos soportados por los programadores de memorias y procesadores, como por ejemplo S19 e Intel Hex. Adicionalmente se puede generar un archivo binario que contiene las instrucciones en lenguaje del procesador, y pueden ser descargadas directamente a la memoria de la plataforma.
+
+ \item \textbf{Descarga del programa}. Dependiendo de la plataforma, existen varios métodos para descargar el archivo de programación:
+  \begin{enumerate}
+    \item Utilizando un \textit{loader}: El \textit{loader} es una aplicación que reside en un medio de almacenamiento no volátil y permite la descarga de archivos utilizando el puerto serie o una interfaz de red a una memoria no volátil externa.
+    \item Utilizando el puerto JTAG: El puerto JTAG (Joint Test Action Group) proporciona una interfaz capaz de controlar los registros internos del procesador, y de esta forma, acceder a las memorias de la plataforma y ejecutar un programa residente en una posición de memoria determinada.
+  \end{enumerate}
+
+ \item \textbf{Depuración} Una vez se descarga la aplicación a la plataforma es necesario someterla a una serie de pruebas, para verificar su correcto funcionamiento. Esto se puede realizar con el depurador GNU (GDB) y una interfaz de comunicación que puede ser un puerto serie, USB o un adaptador de red.
  
 \end{enumerate}
 
 
 \subsubsection{Make}
-Como vimoas anteriormente es necesario realizar una serie de pasos para poder descargar una aplicación a una plataforma embebida. Debido a que las herramientas GNU solo poseen entrada por consola de comandos, es necesario escribir una serie de comandos cada vez que se realiza un cambio en el código fuente, lo cual resulta poco práctico durante la etapa de desarrollo. Para realizar este proceso de forma automática, se creó la herramienta make, la cual recibe como entrada un archivo que normalmente recibe el nombre de \textit{Makefile} o \textit{makefile}. La herramienta make ejecuta los comandos necesarios para realizar la compilación, depuración, o programación, indicados en el archivo \textit{Makefile} o \textit{makefile}. Un ejemplo de este tipo de archivo se muestra a continuación:
+Como vimos anteriormente, es necesario realizar una serie de pasos para poder descargar una aplicación a una plataforma embebida. Debido a que las herramientas GNU solo poseen entrada por consola de comandos, es necesario ejecutar una serie de comandos cada vez que se realiza un cambio en el código fuente, lo que resulta poco práctico durante la etapa de desarrollo. Para realizar este proceso de forma automática, se creó la herramienta \textit{make}, la cual recibe como entrada un archivo con una serie de instrucciones que normalmente lleva el nombre de \textit{Makefile} o \textit{makefile}. La herramienta \textit{make} ejecuta los comandos necesarios para realizar la compilación, depuración, o programación, indicados en el archivo \textit{Makefile} o \textit{makefile}. Un ejemplo de este tipo de archivo se muestra a continuación:
 
 \begin{lstlisting}[numbers=left]
 SHELL = /bin/sh
@@ -196,8 +139,7 @@ PREPROCESS.c = $(CC) $(CPPFLAGS) $(TARGET_ARCH) -E -Wp,-C,-dD,-dI
   $(PREPROCESS.c) $< > $@
 \end{lstlisting}
 
-En las líneas 3-5 se definen algunas variables globales que serán utilizadas a lo largo del archivo; en las líneas 7 - 10 se definen las herramientas de compilación a utilizar, específicamente los compiladores de C (CC), de assembler (AS), el linker (LD) y la utilidad objcopy. A partir de la línea 15 se definen los objetos que forman parte del proyecto, en este caso: \textit{main.o, debug\_io.o, at91rm9200\_lowlevel.o y p\_string.o}; en la línea 21 se definen los archivos en assembler que contiene el proyecto, para este caso \textit{arm\_init.o}. Las líneas 12 y 13 definen dos variables especiales que se pasan directamente al compilador de C (CFLAGS) y al liniker (LDFLAGS)
-
+En las líneas 3-5 se definen algunas variables globales que serán utilizadas a lo largo del archivo; en las líneas 7 - 10 se definen las herramientas de compilación a utilizar: los compiladores de C (CC), de assembler (AS); el enlazador (LD) y la utilidad objcopy. A partir de la línea 15 se definen los objetos que forman parte del proyecto, en este caso: \textit{main.o, debug\_io.o, at91rm9200\_lowlevel.o y p\_string.o}; en la línea 21 se definen los archivos en lenguaje ensamblador, para este ejemplo \textit{arm\_init.o}. Las líneas 12 y 13 definen dos variables especiales que el compilador de C (CFLAGS) y el enlazador (LDFLAGS) utilizarán como parámetros .
 
 En las líneas 25, 27 y 31 aparecen unas etiquetas de la forma: \textit{nombre:} esta es la forma de definir reglas y permiten ejecutar de forma independiente el conjunto de instrucciones asociadas a ellas, por ejemplo, si se ejecuta el comando:
 \\ \bigskip
@@ -205,7 +147,7 @@ En las líneas 25, 27 y 31 aparecen unas etiquetas de la forma: \textit{nombre:} 
 make ejecutará:\\ \bigskip
 \textit{rm -f *.o *~ hello\_world.*} 
 
-Observemos los comandos asociados a la etiqueta \textit{hello\_world:} En la misma línea aparecen \textit{\${OBJS} \${ASFILES} \${LIBS}}, estos reciben el nombre de dependencias y le indican a la herramienta \textit{make} que antes de ejecutar los comandos asociados a este label, debe realizar las acciones necesarias para generar \textit{\${OBJS} \${ASFILES} \${LIBS}}, esto es: \textit{main.o, debug\_io.o, at91rm9200\_lowlevel.o, p\_string.o, arm\_init.o y libgcc.a}. \textit{make} tiene predefinidas una serie de reglas para compilar los archivos .c la regla es de la forma:
+Observemos los comandos asociados a la etiqueta \textit{hello\_world:} En la misma línea aparecen \textit{\${OBJS} \${ASFILES} \${LIBS}}, estos reciben el nombre de dependencias y le indican a la herramienta \textit{make} que antes de ejecutar los comandos asociados a esta etiqueta, debe realizar las acciones necesarias para generar \textit{\${OBJS} \${ASFILES} \${LIBS}}; es decir: \textit{main.o, debug\_io.o, at91rm9200\_lowlevel.o, p\_string.o, arm\_init.o y libgcc.a}. \textit{make} tiene predefinidas una serie de reglas para compilar los archivos \textit{.c} la regla es de la forma:
 
 \begin{lstlisting}
 .c.o:
@@ -215,7 +157,7 @@ Observemos los comandos asociados a la etiqueta \textit{hello\_world:} En la mis
  
 \end{lstlisting}
 
-Lo cual le indica a la herramienta make que para generar un archivo \textit{.o} a partir de uno \textit{.c} es necesario ejecutar \textit{\$(CC) \$(CFLAGS) -c \$<}; de aqui la importancia de definir bien la variable de entorno \textit{CC} cuando trabajamos con compiladores cruzados\footnote{Un compilador cruzado genera código para una plataforma diferente en la que se está ejecutando, por ejemplo, genera ejecutables para ARM pero se ejecuta en un x86}. Hasta este punto al ejecutar el comando: \textit{make hello\_world}, \textit{make} realizaría las siguientes operaciones: \\
+Lo que le indica a la herramienta \textit{make} que para generar un archivo \textit{.o} a partir de uno \textit{.c} es necesario ejecutar \textit{\$(CC) \$(CFLAGS) -c \$<}; de aquí la importancia de definir bien la variable de entorno \textit{CC} cuando trabajamos con compiladores cruzados\footnote{Un compilador cruzado genera código para una plataforma diferente en la que se está ejecutando, por ejemplo, genera ejecutables para ARM pero se ejecuta en un x86}. Hasta este punto al ejecutar el comando: \textit{make hello\_world}, \textit{make} realizaría las siguientes operaciones: \\
 
 \begin{lstlisting}
 arm-softfloat-linux-gnu-gcc -mcpu=arm920t -I. -Wall -c -o main.o main.c
