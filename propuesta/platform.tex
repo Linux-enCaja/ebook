@@ -3,7 +3,7 @@
 
 
 \section{Introducción}
-En esta sección se realizará una explicación detallada del proceso de adaptación de Linux a la familia de plataformas ECB\_AT91, este proceso es aplicable a otros dispositivos que trabajen con procesadores soportados por la distribución de Linux. Adicionalmente, se explicará de forma detallada el funcionamiento de este sistema operativo, el proceso de arranque y su puesta en marcha, así como las principales distribuciones, aplicaciones y librerías disponibles para el desarrollo de aplicaciones. Esta y otra información recolectada durante más de tres años permite que la industria y la academia desarrollen aplicaciones comerciales utilizando herramientas de diseño modernas.
+En esta sección se realizará una explicación detallada del proceso de adaptación de Linux a la familia de plataformas ECB\_AT91, este proceso es aplicable a otros dispositivos que trabajen con procesadores soportados por la distribución de Linux. Adicionalmente, se explicará de forma detallada el funcionamiento de este sistema operativo, el proceso de arranque y su puesta en marcha, así como las principales distribuciones, aplicaciones y librerías disponibles para el desarrollo de aplicaciones. Esta y otra información recolectada durante más de tres años permite que la industria y la academia desarrollen aplicaciones comerciales utilizando herramientas de diseño modernas \footnote{A lo largo de este capítulo se utilizaran cuadros de texto donde se listará código fuente en color gris, instrucciones ejecutadas en el computador personal en color verde y operaciones que se ejecutan en el sistema embebido en color amarillo}.
 
 
 \subsection{Métodos de arranque}
@@ -99,7 +99,7 @@ En la figura \ref{toolchain_flow} se ilustra la secuencia de pasos que se realiz
 \subsubsection{Make}
 Como vimos anteriormente, es necesario realizar una serie de pasos para poder descargar una aplicación a una plataforma embebida. Debido a que las herramientas GNU solo poseen entrada por consola, es necesario ejecutar una serie de comandos cada vez que se realiza un cambio en el código fuente, lo que resulta poco práctico durante la etapa de desarrollo. Para realizar este proceso de forma automática, se creó la herramienta \textit{make}, la cual recibe como entrada un archivo con una serie de instrucciones que normalmente lleva el nombre de \textit{Makefile} o \textit{makefile}. La herramienta \textit{make} ejecuta los comandos necesarios para realizar la compilación, depuración, o programación, indicados en el archivo \textit{Makefile} o \textit{makefile}. Un ejemplo de este tipo de archivo se muestra a continuación:
 
-\begin{lstlisting}[numbers=left, style=numbered]
+\begin{lstlisting}[numbers=left]
 SHELL = /bin/sh
 
 basetoolsdir = /home/cain/Embedded/ARM/iMX233/toolchain/arm-2008q3
@@ -167,7 +167,7 @@ En la línea 29 se utiliza la herramienta \textit{objcopy} para generar un archiv
 
 Al ejecutar el comando: \textit{make hello\_world}, \textit{make} realizará las siguientes operaciones: \\
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
 arm-none-linux-gnueabi-gcc -mcpu=arm920t -I. -Wall -c main.c -o main.o
 arm-none-linux-gnueabi-gcc -mcpu=arm920t -I. -Wall -c debug_io.c -o debug_io.o
 arm-none-linux-gnueabi-gcc -mcpu=arm920t -I. -Wall -c at91rm9200_lowlevel.c 
@@ -237,7 +237,7 @@ Generemos el objeto compilándolo con el siguiente comando:
 Examinemos que tipo de secciones tiene este ejecutable
 \textit{arm-none-linux-gnueabi-readelf -S hello.o}
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
 Section Headers:
   [Nr] Name              Type            Addr     Off    Size   ES Flg Lk Inf Al
   [ 0]                   NULL            00000000 000000 000000 00      0   0  0
@@ -261,7 +261,7 @@ La sección \textit{.text}, como se dijo anteriormente contiene las instrucciones
 
 \textit{arm-none-linux-gnueabi-objdump -d -j .text hello.o}
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
 00000000 <main>:
    0:   e92d4800        stmdb   sp!, {fp, lr}
    4:   e28db004        add     fp, sp, #4      ; 0x4
@@ -305,14 +305,14 @@ La sección \textit{.data} mantiene las variables inicializadas, y contiene:
  
 \textit{arm-none-linux-gnueabi-objdump -d -j .data hello.o}
  
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
 00000000 <global_1>:
    0:   01 00 00 00
 \end{lstlisting}
 
 Como vemos, la sección \textit{.data} contiene únicamente el valor de inicialización de la variable \textit{global\_1} (1) y no muestra información acerca de la variable \textit{j}, esto se debe a que la información está en el \textit{stack} del proceso. Si observamos el contenido de la sección \textit{.text} observamos que esta variable es asignada en tiempo de ejecución, en la línea \textit{0c:} se ve la asignación de esta variable:
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
 0c:   e3a03002        mov     r3, #2  ; 0x2 
 10:   e50b3008        str     r3, [fp, #-8]
 \end{lstlisting}
@@ -321,7 +321,7 @@ La sección \textit{.bss} mantiene la información de las variables no inicializad
 
 \textit{arm-none-linux-gnueabi-objdump -d -j .bss hello}
  
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
 000145c4 <global>:
     145c4:       00000000
 \end{lstlisting}
@@ -331,7 +331,7 @@ La sección \textit{.rodata} contiene los datos que no cambian durante la ejecuci
 \textit{hexdump -C hello.o | grep -i 000000d0} (la sección \textit{.rodata} comienza en la posición de memoria 0xd4)
  
   
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
 000000d0  01 00 00 00 50 72 69 6e  74 69 6e 67 20 25 64 0a  |....Printing %d.|
 000000e0  00 00 00 00 00 47 43 43  3a 20 28 43 6f 64 65 53  |.....GCC: (CodeS|
 \end{lstlisting}
@@ -376,13 +376,14 @@ SECTIONS
     _data = .;      /* create a global symbol marking the start of the .data section  */
     *(.data)        /* all .data sections  */
     _edata = .;     /* define a global symbol marking the end of the .data section  */
-  } >ram AT >flash  /* put all the above into RAM (but load the LMA initializer copy into FLASH)  */
+  } >ram AT >flash  /* put all the above into RAM (but load the LMA initializer copy 
+                       into FLASH)  */
 
   .bss :            /* collect all uninitialized .bss sections that go into RAM  */
   {
     _bss_start = .; /* define a global symbol marking the start of the .bss section */
     *(.bss)         /* all .bss sections  */
-  } >ram            /* put all the above in RAM (it will be cleared in the startup code */
+  } >ram            /* put all the above in RAM (it will be cleared in the startup code*/
   . = ALIGN(4);     /* advance location counter to the next 32-bit boundary */
   _bss_end = . ;    /* define a global symbol marking the end of the .bss section */
 }
@@ -495,7 +496,7 @@ El proyecto \textit{OpenOCD} (Open On-Chip Debugger \footnote{http://openocd.ber
 
 La herramienta de depuración \textit{GDB} utiliza la información suministrada por las secciones \textit{debug\_xxx} del ejecutable \textit{ELF}. Esta información es generada al agregar \textbf{\textit{-g}} a los parámetros pasados al compilador (CFLAGS); proporcionando la información necesaria para relacionar símbolos y código lo que permite su depuración. A continuación se muestra una parte de la salida del comando \textit{arm-none-linux-gnueabi-objdump -S -j .debug\_info hello} el cual muestra el contenido de la sección \textit{debug\_info}:
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
 int main(void) {
      160:	0001e502 	andeq	lr, r1, r2, lsl #10
      164:	24230200 	strtcs	r0, [r3], #-512
@@ -674,7 +675,7 @@ Como vimos anteriormente el kernel de Linux es el corazón del sistema operativo 
 El código fuente se encuentra dividido entre el código específico a una arquitectura y el código común. El código específico de cada arquitectura lo encontramos en los subdirectorios \textit{arch} y \textit{include/asm-xxx}, en ellos podemos encontrar los archivos para las arquitecturas: alpha, blackfin, h8300, m68k, parisc, s390, sparc, v850, arm, cris, ia64, m68knommu, powerpc, sh, sparc64, x86,
 avr32, frv, m32r, mips, ppc, sh64, um, xtensa. A continuación se listan los directorios que hacen parte del código fuente de Linux.
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
 arch           fs              lib             net             block
 usr            include         crypto          ipc             scripts
 Documentation  mm              security        drivers         kernel
@@ -951,7 +952,7 @@ En esta sección se realizará una descripción de los pasos necesarios para compil
 \subsubsection{Compilación de la Imagen del kernel}
 El primer paso obvio es obtener la imagen del kernel, la que obtenemos del sitio oficial \textit{ftp.kernel.org}
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
 wget http://ftp.kernel.org/pub/linux/kernel/v2.6/linux-2.6.24.4.tar.bz2
 tar xjf linux-2.6.24.4.tar.bz2
 cd linux-2.6.24.4
@@ -959,14 +960,14 @@ cd linux-2.6.24.4
 
 A continuación se debe descargar un parche que mantienen los desarrolladores de la familia de SoCs de ATMEL, este parche modifica algunos archivos de la distribución oficial de Linux para dar soporte completo y actualizado a los procesadores ATMEL. Los cambios que se deben realizar en el código fuente, mencionados anteriormente fueron enviados a los encargados de mantener estas actualizaciones, por lo que no es necesario modificar el código fuente para dar soporte a la familia de plataformas ECB\_AT91.
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
 wget http://maxim.org.za/AT91RM9200/2.6/2.6.24-at91.patch.gz
 zcat 2.6.24-at91.patch.gz | patch -p1
 \end{lstlisting}
 
 Finalmente, debemos compilar el kernel utilizando la cadena de herramientas GNU, el resultado de este compilaciones son ejecutables para una arquitectura ARM, este proceso recibe el nombre de compilación cruzada. El primer paso para el proceso de compilación es hacer visibles los ejecutables de la cadena de herramientas; esto se hace adicionando la ruta donde se encuentran instalados a la variable de entorno \textit{PATH}. 
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
 export export PATH=$PATH:/home/at91/arm-2007q1/bin/
 alias crossmake='make ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi-'
 \end{lstlisting}
@@ -980,7 +981,7 @@ El alias \textit{crossmake} hace que cada vez que se escriba esta palabra el sis
 
 Una vez declaradas estas variables de entorno debemos generar el archivo oculto \textit{.config} \footnote{este archivo es utilizado por las herramientas de compilación para determinar que soporte fue incluido en el kernel} ejecutando el siguiente comando:
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
  crossmake ecbat91_defconfig 
  o 
  make ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi- ecbat91_defconfig
@@ -988,13 +989,13 @@ Una vez declaradas estas variables de entorno debemos generar el archivo oculto 
 
 Finalmente, damos inicio al proceso de compilación:
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
  crossmake -j2 (o make ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi- -j2)
 \end{lstlisting}
 
 Si no ocurre ningún error, al finalizar debemos observar lo siguiente:
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
   LD      vmlinux
   SYSMAP  System.map
   SYSMAP  .tmp_System.map
@@ -1016,7 +1017,7 @@ Si no ocurre ningún error, al finalizar debemos observar lo siguiente:
 
 y el contenido de los siguientes directorios debe ser algo como:
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
 $ ls arch/arm/boot/
 bootp  compressed  Image  install.sh  Makefile  zImage
 
@@ -1029,14 +1030,14 @@ vmlinux  vmlinux.o
 Como nuestro interés en este punto es entender la estructura de la imagen del kernel podemos indicarle a nuestra herramienta de compilación que nos muestre más información del proceso de compilación, esto se hace ejecutando el comando:
 
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
  crossmake -j2 V=1
 \end{lstlisting}
 
 Al finalizar el proceso de compilación obtenemos:
 
-\begin{lstlisting}
-arm-none-linux-gnueabi-ld -EL  -p --no-undefined -X  -o vmlinux -T arch/arm/kernel/vmlinux.lds   
+\begin{lstlisting}[style=numbered]
+arm-none-linux-ld -EL  -p --no-undefined -X  -o vmlinux -T arch/arm/kernel/vmlinux.lds   
  arch/arm/kernel/head.o         arch/arm/kernel/init_task.o  \
  init/built-in.o                                             \
 --start-group                                                \
@@ -1091,9 +1092,9 @@ Cada uno de estos componentes de la imagen del kernel \textit{vmlinux} realizan 
 
 La imagen \textit{vmlinux} generada tiene un tamaño relativamente grande, lo que la hace inconveniente para ser almacenada en un dispositivo Flash, por esta razón se acostumbra comprimirla. El primer paso para reducir el tamaño del ejecutable ELF \textit{vmlinux} es eliminar la información de depuración (notas y comentarios).
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
 $ crossmake  -j3 vmlinux (4.4MBytes)
-$ arm-none-linux-gnueabi-objcopy -O binary -R .note -R .comment -S vmlinux linux.bin (3.4MBytes)
+$ arm-none-linux-objcopy -O binary -R .note -R .comment -S vmlinux linux.bin (3.4MBytes)
 $ gzip -c -9 linux.bin > linux.bin.gz (1.6M)
 \end{lstlisting}
 
@@ -1114,12 +1115,12 @@ Esta aplicación permite configurar la memoria externa SDRAM, configurar el puert
 
 Es interesante analizar esta aplicación, ya que esta se ejecuta sin ningún soporte de sistema operativo, lo que lo hace ideal para plataformas en las que no se puede ejecutar Linux. Su código fuente lo podemos descargar utilizando el siguiente comando:
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
 $svn co http://svn.arhuaco.org/svn/src/emqbit/ECB_AT91_V2/darrell-loader/ 
 \end{lstlisting}
 
 La estructura del código fuente se muestra en el siguiente listado:
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
 |-- include
 |   |-- asm
 |   |   |-- arch
@@ -1135,7 +1136,8 @@ Antes de estudiar el código fuente demos un vistazo al archivo \textit{Makefile}
 
 \begin{lstlisting}
 AOBJS      = src/start.o   //ASSEMBLER OBJECTS
-COBJS      = src/board.o src/serial.o src/xmodem.o src/dataflash.o src/div0.o src/interrupts.o
+COBJS      = src/board.o src/serial.o src/xmodem.o src/dataflash.o src/div0.o \
+             src/interrupts.o
 LDSCRIPT  := u-boot.lds
 LDFLAGS   += -Bstatic -T $(LDSCRIPT) -Ttext $(TEXT_BASE)
 OBJCFLAGS += --gap-fill=0xff
@@ -1152,9 +1154,10 @@ loader.bin:     loader
 
 Como podemos observar, esta aplicación esta compuesta por el código en ensamblador \textit{src/start.S} y el código en C \textit{src/board.c src/serial.c src/xmodem.c src/dataflash.c src/div0.c src/interrupts.c}. Para generar el ejecutable \textit{loader} (en formato ELF), encadenamos los objetos AOBJS y COBJS utilizando el script de enlazado \textit{u-boot.lds}. A continuación se muestra el comando ejecutado por las herramientas de compilación al crear el ejecutable \textit{loader}
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
 arm-elf-ld -Bstatic -T u-boot.lds -Ttext 0x00000000  
-src/start.o src/board.o src/serial.o src/xmodem.o src/dataflash.o src/div0.o src/interrupts.o
+src/start.o src/board.o src/serial.o src/xmodem.o src/dataflash.o src/div0.o
+src/interrupts.o
 --start-group 
 --no-warn-mismatch -L /home/at91/gnutools/arm-elf/bin/../lib/gcc-lib/arm-elf/3.2.1 -lgcc 
 --end-group -Map loader.map 
@@ -1257,13 +1260,13 @@ El archivo \textit{board.c} proporciona el punto de entrada \textit{start\_armbo
 
 Una vez se carga el archivo \textit{loader.bin}, el que resulta de las secciones \textit{text} y \textit{rodata} del ejecutable tipo ELF:
 
-\begin{lstlisting}
-/home/at91/gnutools/arm-elf/bin/arm-elf-objcopy --gap-fill=0xff -O binary loader loader.bin
+\begin{lstlisting}[style=numbered]
+arm-elf-objcopy --gap-fill=0xff -O binary loader loader.bin
 \end{lstlisting}
 
 El programa desplegará el siguiente menú:
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
 Darrell's loader - Thanks to the u-boot project                                                                                           
 Version 1.0. Build Jul 29 2007 12:04:04                                                                                                   
 RAM:32MB                                                                                                                                  
@@ -1313,7 +1316,7 @@ En esta opción se copian 0x1C000 bytes del contenido de la memoria DataFlash com
 \subsection{U-boot}
 \textit{U-boot} es un \textit{bootloader} que permite cargar archivos utilizando una gran variedad de periféricos como: puerto serie, memoria SD, memorias flash paraleas, seriales, NAND. NOR, o puerto ethernet. Es capaz de iniciar una variedad de tipos de archivos, además de un formato especial propio que almacena información sobre el tipo de sistema operativo, la dirección de carga, el punto de entrada, verificación de integridad via CRC, tipos de compresión, y textos descriptivos. La siguiente información es desplegada cuando \textit{u-boot} inicializa una imagen del kernel de Linux.
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
 ## Booting image at c0021840 ...                
    Image Name:   Linux Kernel Image             
    Image Type:   ARM Linux Kernel Image (gzip compressed)
@@ -1326,14 +1329,14 @@ En esta opción se copian 0x1C000 bytes del contenido de la memoria DataFlash com
 
 Para crear una imagen con el formato \textit{U-boot} basta con ejecutar el siguiente comando:
 
-\begin{lstlisting}
-$ mkimage -A arm -O linux -T kernel -C gzip  -a 0x20008000 -e 0x20008000  -n "Linux Kernel Image" \
--d linux.bin.gz ecb_at91.img
+\begin{lstlisting}[style=numbered]
+$ mkimage -A arm -O linux -T kernel -C gzip  -a 0x20008000 -e 0x20008000 \
+-n "Linux Kernel Image" -d linux.bin.gz ecb_at91.img
 \end{lstlisting}
 
 Acá definimos que nuestra arquitectura es \textit{ARM}, el sistema operativo es \textit{Linux}, que se trata de una imagen tipo \textit{Kernel}, se utilizó \textit{gzip} como método de compresión, la dirección de carga y punto de entrada (son iguales para kernels superiores al 2.3.X) es \textit{0x20008000}, el nombre de la imagen es \textit{Linux Kernel Image}, \textit{linux.bin.gz} es el archivo de entrada y \textit{ecb\_at91.img} el archivo de salida. Esta información es almacenada en el encabezado de la imagen y puede ser leído utilizando el comando:
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
 $mkimage -l /home/at91/binaries/ecb_at91.img
 
 Image Name:   Linux Kernel Image
@@ -1538,7 +1541,8 @@ Este archivo contiene variables que son utilizadas para la inicialización de la 
 Este archivo también incluye el valor predeterminado de las variables de entorno utilizadas por \textit{u-boot}:
 
 \begin{lstlisting}
-#define CONFIG_BOOTARGS   "mem=32M root=/dev/mmcblk0p1 rootfstype=ext3 console=ttyS0,115200n8 rootdelay=1"
+#define CONFIG_BOOTARGS   "mem=32M root=/dev/mmcblk0p1 rootfstype=ext3 console=ttyS0,
+                           115200n8 rootdelay=1"
 #define CONFIG_ETHADDR     00:00:00:00:00:5b
 #define CONFIG_NETMASK     255.255.255.0
 #define CONFIG_IPADDR      192.168.0.135
@@ -1575,7 +1579,7 @@ A continuación se indican los pasos necesarios para generar el archivo \textit{u
 
 El primer paso  es obviamente descargar el código fuente de la versión 1.1.6 de \textit{http://sourceforge.net/projects/u-boot/}, después debemos descargar el patch que da soporte a la familia de plataformas ECB\_AT91:
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
 $ wget http://svn.arhuaco.org/svn/src/emqbit/ECB_AT91_V2/u-boot/u-boot-1.1.6-ecbat91.patch
 $ tar xjf u-boot-1.1.6.tar.bz2
 $ cd u-boot-1.1.6
@@ -1583,13 +1587,13 @@ $ cd u-boot-1.1.6
 
 Aplicamos el patch:
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
 $ cat ../u-boot-1.1.6-ecbat91.patch | patch -p1
 \end{lstlisting}
 
 Configuramos y generamos las herramientas utilizadas por \textit{u-boot} (entre ellas \textit{mkimage}).
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
 $ make ecb_at91_config
    Configuring for ecb_at91 board...  (Este es un comentario)
 $ make tools
@@ -1597,14 +1601,14 @@ $ make tools
 
 Por último compilamos \textit{u-boot}:
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
 $ make ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi-
 o
 crossmake (si el alias crossmake está definido)
 \end{lstlisting}
 
 Si el proceso se siguió correctamente y no se presentan errores al final del proceso obtenemos el mensaje:
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
  arm-none-linux-gnueabi-objcopy --gap-fill=0xff -O srec u-boot u-boot.srec
  arm-none-linux-gnueabi-objcopy --gap-fill=0xff -O binary u-boot u-boot.bin
 \end{lstlisting}
@@ -1612,7 +1616,7 @@ Lo que nos indica que se generó exitosamente el archivo \textit{u-boot.bin}; el 
 
 Podemos verificar que el archivo fue generado y almacenado en la Dataflash al ejecutar la opción número 4 del menú del loader de Darrel (\textit{Start u-boot}), como se mencionó anteriormente esta opción copia el archivo \textit{u-boot} desde la DataFlash a la memoria SDRAM y es ejecutado desde allí, con lo que se desplegará el siguiente mensaje:
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered2]
 Dataflash read successful: Starting U-boot                                                                                                
 U-Boot 1.1.6 (Jul 29 2007 - 12:12:38)
 
@@ -1637,7 +1641,7 @@ Hit any key to stop autoboot:  2
 
 Si se presiona cualquier tecla antes de que el contador llegue a \textit{0}, podemos interactuar con \textit{u-boot}, si ejecutamos el comando \textit{print} (Despliega en pantalla las variables de entorno definidas):
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered2]
 bootcmd=bootm C0021840
 bootdelay=2
 baudrate=115200
@@ -1656,20 +1660,20 @@ Environment size: 345/8188
 \end{lstlisting}
 
 Podemos cambiar el valor predeterminado de la variable \textit{bootdelay} a \textit{1}:
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered2]
 ecb_at91> setenv bootdelay 1                                                    
 \end{lstlisting}
 
 Y almacenamos los cambios realizados en una sección de la flash reservada para este fin con el comando:
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered2]
 ecb_at91> save                                                                  
 Saving Environment to dataflash...
 \end{lstlisting}s
 
 Podemos generar una nueva variable de entorno y almacenarla en la DataFlash:
-\begin{lstlisting}
-
-ecb_at91> setenv nfsargs=mem=32M console=ttyS0,115200n8 root=/dev/nfs nfsroot=192.168.0.128:/home
+\begin{lstlisting}[style=numbered2]
+ecb_at91> setenv nfsargs=mem=32M console=ttyS0,115200n8 root=/dev/nfs 
+          nfsroot=192.168.0.128:/home
 /at91/rootfs,timeo=200,retrans=500 ip=:::::eth0:on
  
 ecb_at91> save
@@ -1686,14 +1690,14 @@ Inicialmente debemos ejecutar el loader de Darrel, esto se hace presionando el p
 
 Seleccionando la opción del menú: \textit{3: Upload linux to Dataflash}, podemos iniciar la transferencia de la imagen a la memoria SDRAM de nuestra plataforma:
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered2]
 Please transfer linux via Xmodem
 Receiving Xmodem transfer
 \end{lstlisting}
 
 Cuando aparezca este mensaje se debe transmitir el archivo \textit{ecb\_at91.img} utilizando el protocolo \textit{xmodem}. Unos minutos después la transferencia finaliza; sin embargo, debemos esperar a que la información sea almacenada en la memoria DataFlash, mientras se completa la escritura la consola no mostrará ninguna actividad, eso es normal y no se debe reiniciar la placa. Una vez finalizada la escritura observaremos el mensaje:
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered2]
 Dataflash write successful
 \end{lstlisting}
 
@@ -1704,24 +1708,24 @@ La plataforma \textit{ECB\_AT91} posee una interfaz de red que puede ser control
 
 Primero debemos instalar y configurar el servidor \textit{tftp} en el computador donde se tiene las herramientas de desarrollo:
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
 $ aptitude install tftpd tftp.
 \end{lstlisting}
 
 Se debe agregar la siguiente línea al archivo \textit{/etc/inetd.conf}
-\begin{lstlisting}
-tftp            dgram   udp     wait    nobody  /usr/sbin/tcpd  /usr/sbin/in.tftpd /srv/tftp
+\begin{lstlisting}[style=numbered]
+tftp  dgram  udp  wait  nobody  /usr/sbin/tcpd  /usr/sbin/in.tftpd  /srv/tftp
 \end{lstlisting}
 
 Debe asegurarse que el protocolo \textit{tftp} utiliza el puerto \textit{UDP} 69
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
 $ cat /etc/services | grep tftp
 tftp            69/udp
 \end{lstlisting}
 
 Ahora creamos el directorio \textit{/srv/tftp}\footnote{Este directorio tiene restricciones de seguridad, debe tener permisos de super-usuario para hacer esto} y colocamos la imagen en él:
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
 $ mkdir /srv/tftp/
 $ chown myuser. /srv/tftp/
 $ cp ecb_at91.img /srv/tftp/
@@ -1729,7 +1733,7 @@ $ cp ecb_at91.img /srv/tftp/
 
 Para verificar la correcta configuración del servidor, podemos utilizar un cliente \textit{tftp}:
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
 $ cd /tmp/
 $ tftp localhost # from the server
 tftp> get ecb_at91.img
@@ -1739,7 +1743,7 @@ tftp> quit
 
 Ahora se deben configurar algunas variables de entorno en nuestra plataforma para indicarle a \textit{u-boot} la dirección \textit{IP}, el nombre y la ubicación de la imagen del kernel. Estas variables deben ser modificadas para que contengan los siguientes valores:
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered2]
 loadaddr=0x20200000
 bootdelay=1
 bootfile="ecb_at91.img"
@@ -1751,7 +1755,7 @@ serverip=192.168.0.128
 
 Estas variables fijan la dirección \textit{IP} de: la plataforma a \textit{192.168.0.2}, del gateway a \textit{192.168.0.1}, la del servidor \textit{tftp} a \textit{192.168.0.128\footnote{dirección IP del PC donde están las herramientas de desarrollo}}. Adicionalmente define el nombre de la imagen del kernel a \textit{ecb\_at91.img}. Una vez configurado \textit{U-boot} podemos descargar la imagen a la dirección de memoria \textit{0x20200000}:
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered2]
 ecb_at91 >tftp
 TFTP from server 192.168.0.1; our IP address is 192.168.0.2
 Filename 'ecb_at91.img'.
@@ -2142,7 +2146,7 @@ Existen tres tipos de dispositivos en Linux \cite{JCAR05}:
 
 Recuerde que una aplicación en el área de usuario, no puede acceder directamente al área del kernel; los dispositivos se acceden a través de archivos de dispositivos, localizados en \textit{/dev} (ver figura \ref{kernel_module}), A continuación se muestra la salida del comando \textit{ls -l /dev/}
 
-\begin{lstlisting}
+\begin{lstlisting}[style=numbered]
 brw-rw----  1 root disk     3,   0 Nov 27 hda
 brw-rw----  1 root disk     3,   1 Nov 27 hda1
 brw-rw----  1 root disk     3,   2 Nov 27 hda2
@@ -2234,7 +2238,7 @@ En la línea 76 se define la estructura de operaciones de archivo del módulo; cad
 
 Como se puede ver en la figura \ref{kernel_module} es necesario que el kernel sepa que driver está encargado del dispositivo, esto es, el \textit{major number} del driver que lo maneja. Por esto, lo primero que se debe hacer es obtener este número. En la función \textit{blink\_init} (línea 86) podemos observar la forma en que se realiza el registro de nuestro dispositivo. La función \textit{register\_chrdev} retorna el número mayor asignado de forma dinámica, esto es recomendable ya que si se fijara un número de forma arbitaria, podría causar conflictos con otros dispositivos. De esta forma, al cargar el módulo con el comando: \textit{insmod blinker.ko}, el LED se encenderá y aparecerá el siguiente mensaje en la consola:
 
-\begin{lstlisting}[numbers=none]
+\begin{lstlisting}[numbers=none, style=numbered2]
 BLINK module is Up.
 I was assigned major number 253. To talk to
 the driver, create a dev file with
@@ -2245,7 +2249,7 @@ Con lo anterior, nuestro dispositivo es registrado y se le asigna el número 253 
 
 En la función \textit{blink\_exit} se realiza la liberación del dispositivo ( la función \textit{unregister\_chrdev}, línea 111), (la que se ejecuta cuando se lanza el comando: \textit{rmmod blinker.ko}), se apaga el LED y se imprime en la consola el mensaje:
 
-\begin{lstlisting}[numbers=none]
+\begin{lstlisting}[numbers=none, style=numbered2]
 BLINK driver is down...
 \end{lstlisting}
 
@@ -2291,7 +2295,7 @@ static int device_release(struct inode *inode, struct file *file)
 
 La función \textit{device\_open} (línea 40) se ejecuta cada vez que el archivo de dispositivo \textit{/dev/blink} es abierto, esto sucede en operaciones de lectura o escritura. Es decir si se utilizan los siguientes comandos:
 
-\begin{lstlisting}[numbers=none]
+\begin{lstlisting}[numbers=none, style=numbered2]
 more /dev/blink
 cat file > /dev/blink
 cp file /dev/blink
@@ -2301,7 +2305,7 @@ La función \textit{device\_release} (línea 63) se ejecuta cada vez que se cierre
 
 Con cada acceso de lectura o escritura el LED se parpadeará 5 veces y en la consola se despliega el mensaje:
 
-\begin{lstlisting}[numbers=none]
+\begin{lstlisting}[numbers=none, style=numbered2]
 Open BLINKER
 Close BLINKER
 \end{lstlisting}
@@ -2351,15 +2355,18 @@ La figura \ref{sw_hw_fpga_arch} muestra el diagrama de bloques de la interfaz ne
   \caption{Diagrama de Bloques para la comunicación de tareas HW-SW \ref{computer_arch}}\label{sw_hw_fpga_arch}
 \end{figure}
  
- El módulo \textit{Write Pulse generator} genera un pulso cuando las señales \textit{sncs} y \textit{snwe} son activadas como se indica en la figura \ref{cs_we_pulse}. El decodificador de direcciones selecciona un determinado periférico dependiendo del rango especificado para cada uno. Como mencionamos anteriormente, las FPGAs no permiten implementar buffers tri-estado internamente , por lo que cada periférico debe tener un bus de entrada y uno de salida de datos, los buses de entrada de datos son comunes, mientras que los de salida deben ser manejados por un dispositivo de salida, el cual puede ser un multiplexor controlado por el decodificador de direcciones o una compuerta OR, para este último caso es necesario que los periféricos coloquen el bus de datos en ``0'' cuando no estén seleccionados. Finalmente es necesario colocar un buffer tri-estado en los pines de la FPGA, este buffer está controlado por las señales \textit{RDWRn y ncs2} y solo se activa cuando el procesador inicia una operación de lectura.
+ El módulo \textit{Write Pulse generator} genera un pulso cuando las señales \textit{sncs} y \textit{snwe} son activadas como se indica en la parte inferior izquierda de la figura \ref{computer_arch}. El decodificador de direcciones selecciona un determinado periférico dependiendo del rango especificado para cada uno. Como mencionamos anteriormente, las FPGAs no permiten implementar buffers tri-estado internamente , por lo que cada periférico debe tener un bus de entrada y uno de salida de datos, los buses de entrada de datos son comunes, mientras que los de salida deben ser manejados por un dispositivo de salida, el cual puede ser un multiplexor controlado por el decodificador de direcciones o una compuerta OR, para este último caso es necesario que los periféricos coloquen el bus de datos en ``0'' cuando no estén seleccionados. Finalmente es necesario colocar un buffer tri-estado en los pines de la FPGA, este buffer está controlado por las señales \textit{RDWRn y ncs2} y solo se activa cuando el procesador inicia una operación de lectura.
+
+\subsubsection{Ejemplo de periférico}
+La figura \ref{periph_arch} muestra un ejemplo sencillo de un periférico que implementa una comunicación en ambas vías con el procesador. En cada uno de sus componentes se indica su implementación utilizando el lenguaje de descripción de hardware \textit{verilog}. El periférico instancia una memoria RAM de Xilinx utilizando sus celdas propietarias, de tal forma que visto por el procesador, este periférico no es mas que un espacio de lectura/escritura.
 
 \begin{figure}[h]
-  \begin{center} \includegraphics[scale=.7]{./images/cs_we_pulse} \end{center}
-  \caption{Generación del pulso de escritura}\label{cs_we_pulse}
+  \begin{center} \includegraphics[scale=.65]{./images/sw_hw_fpga_arch_sram.pdf} \end{center}
+  \caption{Diagrama de bloques de un periférico sencillo \label{periph_arch}}
 \end{figure}
 
 \subsubsection{Programa en Espacio de Usuario para la comunicación}
-El kernel de Linux proporciona una interfaz que permite a una aplicación \textit{mapear} un archivo en memoria, lo que hace que exista una correspondencia uno a uno entre las direcciones de memoria y el contenido del archivo. Linux implementa la llamada de sistema \textit{mmap()} para \textit{mapear} objetos en memoria.\cite{RL07}
+El kernel de Linux proporciona una interfaz que permite a una aplicación \textit{mapear} un archivo en memoria virtual; creando una correspondencia uno a uno entre las direcciones de memoria y el contenido del archivo. Linux implementa la llamada de sistema \textit{mmap()} para \textit{mapear} objetos en memoria virtual.\cite{RL07}
 
 \begin{lstlisting}
   #include <sys/mman.h>
@@ -2381,7 +2388,15 @@ Un llamado a \textit{mmap()} le pide al kernel hacer un mapeo en la memoria de \
  \item MAP\_SHARED: Comparte el mapeo con otros procesos que usan el mismo archivo. Escribir en el mapeo equivale a escribir en el archivo. 
 \end{itemize}
 
-A continuación se lista un ejemplo de la utilización del llamado \textit{mmap}
+En la figura \ref{memory_mapping} se muestra el concepto del mapeo de memoria; en ella, se mapean \textit{0x20000000} bytes de dirección física comenzando desde la posición \textit{0x40000000}; la variable \textit{base} retorna la posición dentro del espacio de memoria virtual donde fue asignada la memoria física.
+
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.6]{./images/memory_mapping} \end{center}
+  \caption{Mapeo de memoria.}\label{memory_mapping}
+\end{figure}
+
+A continuación se lista el código en \textit{C} que implementa el mapeo de la dirección de memoria asignado al periférico de la figura \ref{periph_arch}.
 
 \begin{lstlisting}
 #define MAP_SIZE 0x2000000l    // ECBOT USE A11 to A25 
@@ -2592,7 +2607,7 @@ static void __exit qem_exit(void)
 \subsubsection{Comunicación con el driver desde espacio de usuario}
 Aunque es posible leer y escribir la información que suministra un driver desde la consola utilizando las aplicaciones \textit{cat} (lectura) y \textit{echo} (escritura); es importante conocer la forma de comunicación desde aplicaciones propias en espacio de usuario, a continuación se muestra como puede hacerse esto:
 
-\begin{lstlisting}
+\begin{lstlisting}[numbers=left]
 int main(int argc, char **argv) {
   int	       fileNum, bytes;
   unsigned char  buf[40];
@@ -2602,15 +2617,13 @@ int main(int argc, char **argv) {
   if(argc != 2){
     fprintf(stderr,"\nUsage: %s enable|disable|read \n",argv[0]);
   }
-  
   nbytes = sizeof(int);
-  fileNum = open("/dev/irq", O_RDWR);
+  fileNum = open("/dev/fpga", O_RDWR);
   if (fileNum < 0) {
     printf(" Unable to open device\n");
     exit(1);
   }
   printf("Device opened successfully \n");
-
   if(!strcmp(argv[1], "enable"))
     write(fileNum, "Q", 1);
   if(!strcmp(argv[1], "disable"))
@@ -2619,13 +2632,12 @@ int main(int argc, char **argv) {
     read(fileNum, buf, nbytes);
     printf("Interrupts = %d \n",  *((int*)(buf)));
   }
-  if( (strcmp(argv[1], "read") != 0 ) & (strcmp(argv[1], "disable") != 0) & (strcmp(argv[1], "enable") != 0) )
+  if( (strcmp(argv[1], "read") != 0 ) & (strcmp(argv[1], "disable") != 0) & 
+       (strcmp(argv[1], "enable") != 0) )
     fprintf(stderr,"\nUsage: %s enable|disable|read \n",argv[0]);
-
   close(fileNum);
-
 return (0);
 }
 \end{lstlisting}
 
-En este programa se abre el dispositivo \textit{/dev/fpga} que corresponde a nuestro driver, con las funciones utilizadas para manejo de archivos. y se utiliza la función \textit{read} para leer la información suministrada por el driver.
+En la línea XX se abre el archivo de dispositivo \textit{/dev/fpga}, con las funciones utilizadas para manejo de archivos (\textit{open}, línea 11). y se utilizan la funciones \textit{read}(línea 22) para leer la información suministrada por el driver o la función \textit{write} (líneas 18,20) para escribir en él; dependiendo del parámetro pasado al ejecutable (\textit{argv[1]}, l´ineas 17, 19, 21).
