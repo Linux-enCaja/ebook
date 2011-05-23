@@ -99,7 +99,7 @@ En la figura \ref{toolchain_flow} se ilustra la secuencia de pasos que se realiz
 \subsubsection{Make}
 Como vimos anteriormente, es necesario realizar una serie de pasos para poder descargar una aplicación a una plataforma embebida. Debido a que las herramientas GNU solo poseen entrada por consola, es necesario ejecutar una serie de comandos cada vez que se realiza un cambio en el código fuente, lo que resulta poco práctico durante la etapa de desarrollo. Para realizar este proceso de forma automática, se creó la herramienta \textit{make}, la cual recibe como entrada un archivo con una serie de instrucciones que normalmente lleva el nombre de \textit{Makefile} o \textit{makefile}. La herramienta \textit{make} ejecuta los comandos necesarios para realizar la compilación, depuración, o programación, indicados en el archivo \textit{Makefile} o \textit{makefile}. Un ejemplo de este tipo de archivo se muestra a continuación:
 
-\begin{lstlisting}[numbers=left]
+\begin{lstlisting}[numbers=left, style=numbered]
 SHELL = /bin/sh
 
 basetoolsdir = /home/cain/Embedded/ARM/iMX233/toolchain/arm-2008q3
@@ -577,8 +577,7 @@ Es el corazón del sistema operativo Linux; eta encargado de realizar las siguien
 \item Liberar los recursos de los procesos cuando estos finalizan su ejecución.
 \end{itemize}
 
-El programador de procesos proporciona dos interfaces: Una con recursos limitados para los procesos de usuario y una interfaz amplia para el resto del kernel. Debido a que el programador utiliza una interrupción del timer que se presenta cada 10 ms, el cambio de estado del programador\footnote{Un proceso puede estar en uno de los siguientes estados: ejecución, retornando de un llamado de sistema, procesando una rutina de interrupción, procesando un llamado del sistema, listo, en espera)
-\end{itemize} se realiza cada 10 ms. Esto debe ser tenido en cuenta a la hora de realizar procesos que manejen dispositivos hardware veloces. 
+El programador de procesos proporciona dos interfaces: Una con recursos limitados para los procesos de usuario y una interfaz amplia para el resto del kernel. Debido a que el programador utiliza una interrupción del timer que se presenta cada 10 ms, el cambio de estado del programador\footnote{Un proceso puede estar en uno de los siguientes estados: ejecución, retornando de un llamado de sistema, procesando una rutina de interrupción, procesando un llamado del sistema, listo, en espera} se realiza cada 10 ms. Esto debe ser tenido en cuenta a la hora de realizar procesos que manejen dispositivos hardware veloces. 
 
 \subsubsection*{Manejador de Memoria}
 En el momento en que se energiza la CPU, esta solo ve 1 MByte de memoria física (incluyendo las ROMs). El código de inicialización del sistema operativo (OS) debe activar el modo protegido del procesador, de tal forma que se pueda acceder a la memoria extendida (incluyendo la memoria de los dispositivos). Finalmente, el OS habilita la memoria virtual para dar la ilusión de un espacio de memoria de 4 GB. El manejador de memoria proporciona los siguientes servicios (ver figuras \ref{kernel_mapping} y \ref{app_mapping}):
@@ -949,8 +948,8 @@ Finalmente debemos incluir un archivo de configuración para el kernel (\textit{a
 \subsection{Imagen del kernel}
 En esta sección se realizará una descripción de los pasos necesarios para compilar la imagen del kernel de Linux para la familia de plataforma ECB\_AT91; después se realizará un análisis de la imagen, indicando su composición.
 
-\subsubsection{Compilación de la Imágen del kernel}
-El primer paso obvio es obtener la imágen del kernel, la que obtenemos del sitio oficial \textit{ftp.kernel.org}
+\subsubsection{Compilación de la Imagen del kernel}
+El primer paso obvio es obtener la imagen del kernel, la que obtenemos del sitio oficial \textit{ftp.kernel.org}
 
 \begin{lstlisting}
 wget http://ftp.kernel.org/pub/linux/kernel/v2.6/linux-2.6.24.4.tar.bz2
@@ -1787,7 +1786,7 @@ En general los cargadores de Linux como el \textit{u-boot} realizan las siguient
   \end{itemize}
 \end{itemize}
 
-\subsubsection{Llamado a la Imágen del kernel}
+\subsubsection{Llamado a la Imagen del kernel}
 
 Como mencionamos anteriormente, \textit{u-boot} ejecuta las instrucciones almacenadas en la variable de entorno \textit{bootcmd}; que para la familia de plataformas ECB\_AT91 almacena el comando \textit{bootm C0021840}, esta instrucción le indica a \textit{u-boot} que ejecute el comando \textit{bootm} con una imagen almacenada en la posición de memoria \textit{0xC0021840}, en la que (como mencionamos anteriormente (Figura \ref{boot_process})) se almacena la imagen del kernel. El código que implementa el comando \textit{bootm} se encuentra en el archivo \textit{common/cmd\_bootm.c}; analizando este archivo podemos descubrir el proceso que realiza \textit{u-boot} al hacer el llamado a la imagen del kernel (la que almacenamos utilizando la opción 3 del loader de Darrel). La función \textit{do\_bootm} realiza las siguientes operaciones:
 
@@ -1947,7 +1946,7 @@ Anteriormente hemos hecho referencia a la localización de la raíz del sistema de
 
 
 \subsubsection{Estructura del Sistema de Archivos}
-Todas las distribuciones de Linux se basan en el estándar \textit{Filesystem Hierarchy Standard \footnote{}} utilizado en los sistemas operativos UNIX. Este estándar permite que los programas y los usuarios conozcan de antemano la localización de los archivos instalados. Los siguientes directorios o links simbólicos son de uso obligatorio:
+Todas las distribuciones de Linux se basan en el estándar \textit{Filesystem Hierarchy Standard} utilizado en los sistemas operativos UNIX. Este estándar permite que los programas y los usuarios conozcan de antemano la localización de los archivos instalados. Los siguientes directorios o links simbólicos son de uso obligatorio:
 
 \begin{enumerate}
 
@@ -2006,7 +2005,7 @@ Como se mencionó anteriormente el programa \textit{init} está encargado de monta
 
 \begin{itemize}
   \item Una entrada para el nivel de ejecución por defecto. Nivel de ejecución en que inicia el sistema a menos que especifique otra cosa en el boot loader.
-  \item Entradas que deben ser ejecutadas en todos o en un específico nivel de ejecución, su sintáxis es:
+  \item Entradas que deben ser ejecutadas en todos o en un específico nivel de ejecución, su sintaxis es:
   \textit{id:runlevels:action:process [arguments]}
     \begin{itemize}
       \item \textit{id} Cualquier cosa.
@@ -2015,7 +2014,7 @@ Como se mencionó anteriormente el programa \textit{init} está encargado de monta
         \begin{itemize}
           \item \textit{respawn} El proceso debe ser re-iniciado una vez finalice.
           \item \textit{wait start} Ejecuta el proceso cuando se ingresa al nivel de ejecución y espera por su terminación.
-          \item \textit{bootwait} El proceso debe ser ejecutado durante la incialización del sistema.
+          \item \textit{bootwait} El proceso debe ser ejecutado durante la inicialización del sistema.
           \item \textit{initdefault} Especifica el nivel de ejecución al que se ingresa después de la inicialización del sistema.
           \item \textit{sysinit} El proceso debe ejecutarse durante la inicialización del sistema. Debe ejecutarse antes de cualquier entrada \textit{boot} o \textit{bootinit}
         \end{itemize}
@@ -2092,12 +2091,12 @@ esac
 
 Como podemos ver existen tres parámetros que podemos pasar al script: \textit{start}, \textit{stop} y \textit{restart}, cuyas acciones son iniciar, detener y reiniciar el demonio respectivamente. El directorio \textit{/etc/init.d} contiene todos los scripts utilizados en los diferentes niveles de ejecución, el nombre de ellos en este directorio no incluyen los caracteres \textit{S[0-9][0-9]} o \textit{K[0-9][0-9]}.
 
-La línea \textit{S:2345:respawn:/sbin/getty 115200 ttyS0} inicia una consola por el puerto serial \textit{/dev/ttyS0} con una velocidad de 9200 baudios, cuando el nivel de ejecucion sea 2, 3, 4 o 5. Finalmente se crea una terminal virtual para los niveles de ejecución multi-usuario.
+La línea \textit{S:2345:respawn:/sbin/getty 115200 ttyS0} del archivo \textit{inittab} inicia una consola por el puerto serial \textit{/dev/ttyS0} con una velocidad de 115200 baudios, cuando el nivel de ejecución sea 2, 3, 4 o 5. Finalmente se crea una terminal virtual para los niveles de ejecución multi-usuario.
 
-Cuando el super-usuario cambia el nivel de ejecución con el comando \textit{init}, los procesos únicos al nievel anterior son terminados y los procesos únicos del nuevo nivel son iniciados.
+Cuando el super-usuario cambia el nivel de ejecución con el comando \textit{init}, los procesos únicos al nivel anterior son terminados y los procesos únicos del nuevo nivel son iniciados.
 
 \subsection{Distribuciones Linux}
-Aunque es  posible construir el sistema de atchivos nosotros mismos, no es nada práctico ya que es una tarea tediosa que requiere cierto nivel de experiencia. En la actualidad, existen varias distribuciones que realizan estas tareas por nosotros, dentro de las más utilizadas se encuentran:
+Aunque es  posible construir el sistema de archivos desde cero, no es nada práctico ya que es una tarea tediosa que requiere cierto nivel de experiencia. En la actualidad, existen varias distribuciones que realizan estas tareas por nosotros, dentro de las más utilizadas se encuentran:
 
 \subsubsection{Busybox}
 Diseñado para optimizar el tamaño y rendimiento de aplicaciones embebidas, BusyBox \footnote{http://www.busybox.net/} combina en un solo ejecutable más de 70 utilidades estándares UNIX, en sus versiones ligeras. BusyBox es considerada la navaja suiza de los sistema embebidos, dado que permite sustituir la gran mayoría de utilidades que se suelen localizar en los paquetes GNU fileutils, shellutils, findutils, textutils, modutils, grep, gzip, tar, etc.
@@ -2124,9 +2123,9 @@ wget, which, who, whoami, xargs, yes, zcat}.
 Buildroot\footnote{http://buildroot.uclibc.org/} Es un grupo de \textit{Makefiles} y \textit{patches} que facilita la generación de la cadena de herramientas y el sistema de archivos para un sistema embebido que usa Linux. Posee una interfaz que permite realizar de forma fácil la configuración; utiliza busybox para generar la utilidades básicas de Linux y permite adaptar software adicional de forma fácil \footnote{http://buildroot.uclibc.org/buildroot.html\#add\_software}.
 
 \subsubsection{Openembedded}
-Al igual que Buildroot, el proyecto openembedded proporciona un entorno que permite generar la cadena de herramientas y el sistema de atchivos para un sistema embebido, utiliza busybox y permite la creación de archivos que permiten compilar software que no se incluya en la distribución original. Adicionalmente openembedded crea archivos de instalación con un formato derivado del proyecto \textit{handhelds} \footnote{http://handhelds.org} \textit{ipk}, lo que permite la instalación de paquetes de forma similar a la distribución debian.
+Al igual que Buildroot, el proyecto \textit{openembedded} proporciona un entorno que permite generar la cadena de herramientas y el sistema de archivos para un sistema embebido, utiliza busybox y permite la creación de archivos que permiten compilar aplicaciones que no se incluyen en la distribución original. Adicionalmente \textit{openembedded} crea archivos instaladores con un formato derivado del proyecto \textit{handhelds} \footnote{http://handhelds.org} \textit{ipk}, lo que permite la instalación de paquetes de forma similar a la distribución debian.
 
-La información necesaria para generar una distribución utilizando las herramientas de Openembedded se encuentra en http://www.emqbit.com/mediawiki/index.php/Main\_Page/ecb\_at91/OE.
+La información necesaria para generar una distribución utilizando las herramientas de \textit{Openembedded} se encuentra en http://linuxencaja.com/wiki/ECBOT\#Generación\_de\_la\_imagen\_para\_la\_memoria\_Flash.
 
 \section{Módulos del kernel}
 Los módulos son pequeñas piezas de código que pueden ser cargadas y descargadas en el kernel en el momento que sea necesario. Ellos extienden la funcionalidad del kernel, sin la necesidad de reiniciar el sistema y recompilar el kernel. Por ejemplo, un tipo de módulo es el controlador de dispositivo, el cual permite al kernel acceder a un dispositivo hardware conectado al sistema. Este tipo de módulos serán estudiados en esta sección.
@@ -2134,20 +2133,14 @@ Los módulos son pequeñas piezas de código que pueden ser cargadas y descargadas 
 Existen tres tipos de dispositivos en Linux \cite{JCAR05}: 
 
 \begin{itemize}
-\item Tipo Caracter: Puede accederse de forma similar a un archivo; este tipo de dispositivos permite por lo menos las operaciones \textit{open}, \textit{close}, \textit{read}. Ejemplos de este tipo de dispositivo son el puerto serie (\textit{/dev/ttyS0}) y la consola (\textit{/dev/console}) 
-\item Tipo Bloque: Este tipo de dispositivo puede hospedar un sistema de archivos; normalmente realiza operaciónes de bloques de datos únicamente; un ejemplo de este tipo de dispositivo es el disco duro (\textit{/dev/hda}).
+\item Caracter: Puede accederse de forma similar a un archivo; este tipo de dispositivos permite por lo menos las operaciones \textit{open}, \textit{close}, \textit{read}. Ejemplos de este tipo de dispositivo son el puerto serie (\textit{/dev/ttyS0}) y la consola (\textit{/dev/console}) 
+\item Bloque: Este tipo de dispositivo puede hospedar un sistema de archivos; normalmente realiza operaciones de bloques de datos únicamente; un ejemplo de este tipo de dispositivo es el disco duro (\textit{/dev/hda}).
 \item Red: Toda transacción de red se realiza a través de una interfaz, esto es, un dispositivo hardware (\textit{/dev/eth0}) o software (\textit{loopback}) capaz de intercambiar datos con otros hosts.
 \end{itemize}
 
-\begin{figure}[h]
-  \begin{center} \includegraphics[scale=.5]{./images/kernel_module} \end{center}
-  \caption{ Interacción entre el área de usuario y el driver del dispositivo.}\label{kernel_module}
-\end{figure}
-
-
 \subsection{Ejemplo de un driver tipo caracter}
 
-Recuerde que una aplicación en el área de usario, no puede acceder directamente al área del kernel; los dispositivos se acceden a través de archivos de dispositivos, localizados en \textit{/dev} (ver figura \ref{kernel_module}), A continuación se muestra la salida del comando \textit{ls -l /dev/}
+Recuerde que una aplicación en el área de usuario, no puede acceder directamente al área del kernel; los dispositivos se acceden a través de archivos de dispositivos, localizados en \textit{/dev} (ver figura \ref{kernel_module}), A continuación se muestra la salida del comando \textit{ls -l /dev/}
 
 \begin{lstlisting}
 brw-rw----  1 root disk     3,   0 Nov 27 hda
@@ -2158,7 +2151,7 @@ crw-rw----  1 root uucp     4,  65 Nov 27 ttyS1
 \end{lstlisting}
 
 
-Los archivos tipo caracter están identificados por una \textit{``c''} en la primera columna, mientras que los dispositivos tipo bloque por una \textit{``b''}. Podemos observar que existen dos números (5ta y 6ta columna) que identifican al driver, el número de la 5ta columna recibe el nombre de \textit{major number} y el de la sexta \textit{minor number}; estos números son utilizados por el sistema operativo para determinar el dispositivo y el driver que deben ser accesados ante una solicitud a nivel de usuario.
+Los archivos tipo caracter están identificados por una \textit{``c''} en la primera columna, mientras que los dispositivos tipo bloque por una \textit{``b''}. Podemos observar que existen dos números (5ta y 6ta columna) que identifican al driver, el número de la 5ta columna recibe el nombre de \textit{major number} y el de la sexta \textit{minor number}; estos números son utilizados por el sistema operativo para determinar el dispositivo y el driver que deben ser utilizados ante una solicitud a nivel de usuario.
 
 El \textit{major number} identifica la clase o grupo del dispositivo, mientras que el \textit{minor number} se utiliza para identificar sub-dispositivos (Ver Figura \ref{kernel_module}).
 
@@ -2168,24 +2161,26 @@ El \textit{major number} identifica la clase o grupo del dispositivo, mientras q
   \label{kernel_module}
 \end{figure}
 
-El kernel de Linux permite que los drivers compartan el número mayor, como el caso del disco duro, hda posee dos particiones hda1 y hda2, las cuales son manejadas por el mismo driver, pero se asigna un número menor único a cada una; lo mismo sucede con el puerto serie.
+El kernel de Linux permite que los drivers compartan el número mayor, como el caso del disco duro, \textit{hda} posee dos particiones \textit{hda1} y \textit{hda2}, las que son manejadas por el mismo driver, pero se asigna un número menor único a cada una; lo mismo sucede con el puerto serie.
 
 \subsubsection{Implementación del driver de un LED}
-A continuación se realizará la descripción de un driver tipo caracter para un dispositivo muy sencillo, un LED. Este ejemplo fue implementado en un procesador PXA255 de Intel y realiza las siguientes operaciones:
+A continuación se realizará la descripción de un driver tipo caracter para un dispositivo muy sencillo, un LED. Este ejemplo realiza las siguientes operaciones:
 
 \begin{itemize}
-\item \textit{init}: Se ejecuta cuando se carga el módulo, el LED se apagará.
-\item \textit{close}: Se ejecuta cuando se descarga el módulo, el LED se encenderá.
-\item \textit{open}: Se ejecuta cuando se realiza una operación de lectura o escritura al dispositivo.
+\item \textit{init}: Se ejecuta cuando se carga el módulo, el LED se encenderá.
+\item \textit{open}: Se ejecuta cuando se abre el archivo que realiza la interfaz con el driver en una operación de lectura o escritura. El LED parpadeará 5 veces y quedará encendido.
+\item \textit{release}: Se ejecuta cuando se cierra el archivo que hace la interfaz con el módulo después de una operación de lectura o escritura. El LED se apagará.
+\item \textit{exit}: Se ejecuta cuando se descarga el módulo, el LED se apagará.
 \end{itemize}
 
 Existen dos funciones que deben estar presentes en todo tipo de módulo, estas son: \textit{module\_init} y \textit{module\_exit} las cuales se ejecutan cuando se carga y descarga el módulo respectivamente. 
 
-\begin{lstlisting}[firstnumber=40]
+\begin{lstlisting}[numbers=left, firstnumber=76]
 struct file_operations fops = {
   .open    = device_open,
   .release = device_release,
 };
+
 
 static int __init blink_init(void)
 {
@@ -2193,55 +2188,52 @@ static int __init blink_init(void)
 
   Major = register_chrdev(0, DEVICE_NAME, &fops);
 
+
   if (Major < 0) {
-    printk(KERN_ALERT "Registering char device failed 
-        with %d\n", Major);
+    printk(KERN_ALERT "Registering char device failed with %d\n", Major);
     return Major;
   } 
 
-  printk(KERN_ALERT  "I was assigned major number %d. 
-        To talk to\n", Major);
-  printk(KERN_ALERT  "the driver, create a dev file 
-        with\n");
-  printk(KERN_ALERT  "'mknod /dev/%s c %d 0'.\n", 
-        DEVICE_NAME, Major);
+  printk(KERN_ALERT  "I was assigned major number %d. To talk to\n", Major);
+  printk(KERN_ALERT  "the driver, create a dev file with\n");
+  printk(KERN_ALERT  "'mknod /dev/%s c %d 0'.\n", DEVICE_NAME, Major);
 
-  pxa_gpio_mode(GPIO_LED_MD);
-  pxa_gpio_mode(GPIO_LED_OFF);  /* Turn LED OFF*/
+  at91_set_gpio_output(LED, 1);   /*  Let the LED's pin as output*/
+
+  at91_set_gpio_value(LED, 1);    /* Turn LED ON */
 
   return 0;
 }
-
 
 static void __exit blink_exit(void)
 {
   int ret;
 
+  at91_set_gpio_value(LED, 0);
+
   ret = unregister_chrdev(Major, DEVICE_NAME);
+
   if ( ret < 0 )
-    printk( KERN_ALERT "Error in unregister_chrdev: 
-        %d\n", ret );
+    printk( KERN_ALERT "Error in unregister_chrdev: %d\n", ret );
+
   printk( KERN_INFO "BLINK driver is down...\n" );
 }
-
 
 module_init(blink_init);
 module_exit(blink_exit);
 
-
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Carlos Camargo UNAL");
+MODULE_AUTHOR("Carlos Camargo <cicamargoba@gmail.com>");
 MODULE_DESCRIPTION("BLINKER LED driver");
 MODULE_VERSION("1:0.1");
 \end{lstlisting} \normalsize
 
-Las funciones \textit{module\_init} \textit{module\_exit} deben ser declaradas como \textit{static} ya que no serán visibles fuera del archivo. Como puede observarse en la línea 83 se hace la definición de las funciones que deben ejecutarse al cargar y descargar el módulo en nuestro caso \textit{blink\_init} y \textit{blink\_exit} respectivamente. La información sobre el módulo aparece en las líneas 87-90.
+Las funciones \textit{module\_init} \textit{module\_exit} deben ser declaradas como \textit{static} ya que no serán visibles fuera del archivo. Como puede observarse en la línea 119 se hace la definición de las funciones que deben ejecutarse al cargar y descargar el módulo en nuestro caso \textit{blink\_init} y \textit{blink\_exit} respectivamente. La información sobre el módulo aparece en las líneas 122-125.
 
-En la línea 40 se define la estructura de operaciones de archivo del módulo; cada campo de la estructura corresponde a la dirección de una función definida por el driver para manejar una solicitud determinada. En nuestro caso solo existe una función \textit{open}, la cual será definida más adelante.
+En la línea 76 se define la estructura de operaciones de archivo del módulo; cada campo de la estructura corresponde a la dirección de una función definida por el driver para manejar una solicitud determinada. En nuestro caso existen las funciones \textit{open} y \textit{release}, las cuales serán definidas más adelante.
 
-Como se puede ver en la figura \ref{kernel_module} es necesario que el kernel sepa que driver está encargado del dispositivo, esto es, el \textit{major number} del driver que lo maneja; por esto, lo primero que se debe hacer es obtener este número. En la función \textit{blink\_init} (línea 49) podemos observar la forma en que se realiza el registro de nuestro dispositivo. La función \textit{register\_chrdev} retorna el número mayor asignado de forma dinámica, esto es recomendable ya que si se fijara un número de forma arbitaria, podría causar conflictos con otros dispositivos. De esta forma, al cargar el módulo con el comando: \textit{insmod blinker.ko}, el LED se apagará y aparecerá el siguiente mensaje en la consola:
+Como se puede ver en la figura \ref{kernel_module} es necesario que el kernel sepa que driver está encargado del dispositivo, esto es, el \textit{major number} del driver que lo maneja. Por esto, lo primero que se debe hacer es obtener este número. En la función \textit{blink\_init} (línea 86) podemos observar la forma en que se realiza el registro de nuestro dispositivo. La función \textit{register\_chrdev} retorna el número mayor asignado de forma dinámica, esto es recomendable ya que si se fijara un número de forma arbitaria, podría causar conflictos con otros dispositivos. De esta forma, al cargar el módulo con el comando: \textit{insmod blinker.ko}, el LED se encenderá y aparecerá el siguiente mensaje en la consola:
 
-\footnotesize
 \begin{lstlisting}[numbers=none]
 BLINK module is Up.
 I was assigned major number 253. To talk to
@@ -2249,41 +2241,55 @@ the driver, create a dev file with
 'mknod /dev/blink c 253 0'.
 \end{lstlisting}
 
-Con lo anterior, nuestro dispositivo es registrado y se le asigna el número 253 como \textit{major number}, en el archivo \textit{/proc/devices} aparecen los dispositivos que actualmente están siendo utilizados por el kernel, este archivo debe contener una entrada para blink de la forma: \textit{253 blink}.
+Con lo anterior, nuestro dispositivo es registrado y se le asigna el número 253 como \textit{major number}. En el archivo \textit{/proc/devices} aparecen los dispositivos que están siendo utilizados por el kernel, este archivo debe contener una entrada para blink de la forma: \textit{253 blink}.
 
-En la función \textit{blink\_exit} se realiza la liberación del dispositivo ( la función \textit{unregister\_chrdev}, línea 75), la cual se ejecuta cuando se lanza el comando: \textit{rmmod blinker.ko}, el que a su vez hace que se encienda el LED y se imprima en la consola el mensaje:
+En la función \textit{blink\_exit} se realiza la liberación del dispositivo ( la función \textit{unregister\_chrdev}, línea 111), (la que se ejecuta cuando se lanza el comando: \textit{rmmod blinker.ko}), se apaga el LED y se imprime en la consola el mensaje:
 
-\footnotesize
 \begin{lstlisting}[numbers=none]
 BLINK driver is down...
 \end{lstlisting}
 
 Como se mencionó anteriormente es posible manejar un archivo tipo caracter como si fuera un archivo de texto, por lo tanto, es posible adicionar funciones a las acciones de abrir, cerrar, escribir en o leer del dispositivo.
 
-\begin{lstlisting}[firstnumber=20, numbers=right]
-static int device_open(struct inode *inode, \
-                         struct file *file)
+\begin{lstlisting}[firstnumber=40, numbers=left]
+static int device_open(struct inode *inode, struct file *file)
 {
- unsigned int i;
+
+  unsigned int i;
   printk( KERN_INFO "Open BLINKER\n" );
   if (is_device_open)
     return -EBUSY;
 
   is_device_open = 1;
 
+
   for( i=0; i<5; i++ ){
-    pxa_gpio_mode(GPIO_LED_ON);
+    at91_set_gpio_value(LED, 0);
     mdelay(0x0080);
-    pxa_gpio_mode(GPIO_LED_OFF);
+    at91_set_gpio_value(LED, 1);
     mdelay(0x0080);
   }
 
   try_module_get(THIS_MODULE);
+
   return SUCCESS;
+}
+
+static int device_release(struct inode *inode, struct file *file)
+{ 
+  is_device_open = 0;
+
+  at91_set_gpio_value(LED, 0);
+
+  module_put(THIS_MODULE);
+
+  printk( KERN_INFO "Close BLINKER\n" );
+
+  return 0;
 }
 \end{lstlisting}
 
-Esta sección de código se ejecuta cada vez que el archivo de dispositivo /dev/blink es abierto, esto sucede en operaciones de lectura o escritura. Es decir si se utilizan los siguientes comandos:
+La función \textit{device\_open} (línea 40) se ejecuta cada vez que el archivo de dispositivo \textit{/dev/blink} es abierto, esto sucede en operaciones de lectura o escritura. Es decir si se utilizan los siguientes comandos:
 
 \begin{lstlisting}[numbers=none]
 more /dev/blink
@@ -2291,7 +2297,9 @@ cat file > /dev/blink
 cp file /dev/blink
 \end{lstlisting}
 
-Con cada uno de estos comandos el LED se encenderá y apagará y en la consola se despliega el mensaje:
+La función \textit{device\_release} (línea 63) se ejecuta cada vez que se cierre el archivo de dispositivo \textit{/dev/blink}, después de una operación de lectura o escritura.
+
+Con cada acceso de lectura o escritura el LED se parpadeará 5 veces y en la consola se despliega el mensaje:
 
 \begin{lstlisting}[numbers=none]
 Open BLINKER
@@ -2299,53 +2307,51 @@ Close BLINKER
 \end{lstlisting}
 
 \section{Interfaz con Periféricos dedicados}
-Es común que algunas aplicaciones requieran ciertos periféricos especiales que les permitan cumplir las restricciones temporales, es decir, es necesario crear tareas Hardware que ayuden a las tareas software a cumplir con las restricciones de diseño. Para esto es necesario implementar algunas funciones en periféricos externos al procesador. Si la tarea no se encuentra implementada en un dispositivo comercial es necesario implementarlas en un Dispositivo Lógico Programable (PLD) o en un Circuito Integrado de Aplicación Específica (ASIC).
-
-En esta sección realizaremos una explicación detallada del proceso de comunicación entre el procesador y un periférico implementado en una FPGA.
+Es común, que algunas aplicaciones requieran ciertos periféricos especiales que les permitan cumplir las restricciones temporales, es decir, se deben crear tareas Hardware que ayuden a las tareas software a cumplir con las restricciones de diseño. Para esto es necesario implementar algunas funciones en periféricos externos al procesador. Si la tarea no se encuentra implementada en un dispositivo comercial es necesario implementarlas en un dispositivo lógico programable (PLD) o en un circuito integrado de aplicación específica (ASIC). En esta sección realizaremos una explicación detallada del proceso de comunicación entre el procesador y un periférico implementado en una FPGA.
 
 \subsection{Comunicación Procesador - Periférico}
 La figura \ref{computer_arch} muestra una arquitectura básica para la comunicación de tareas Hardware - Software; en ella podemos observar que el procesador maneja tres buses:
 \begin{itemize}
 \item Bus de Datos: Bus bidireccional por donde se realiza el intercambio de información.
-\item Bus de Direcciones: Bis controlado por el procesador y es utilizado para direccionar un determinado periférico o una detrminada funcionalidad del mismo.
-\item Bus de control: Señales necesarias para indicarle a los periféricos el tipo de comunicación (Lectura o escritura).
+\item Bus de Direcciones: Bus controlado por el procesador y es utilizado para direccionar un determinado periférico o una determinada funcionalidad del mismo.
+\item Bus de control: Señales necesarias para indicarle a los periféricos el tipo de comunicación (lectura o escritura).
 \end{itemize}
 
 \begin{figure}[h]
   \begin{center} \includegraphics[scale=.6]{./images/computer-simple} \end{center}
-  \caption{Arquitectura básica Hardware/Software}\label{computer_arch}
+  \caption{Arquitectura básica hardware/software}\label{computer_arch}
 \end{figure}
 
-Todos los periféricos que requieren intercambio de información con el procesador comparten el mismo bus de datos, por lo que es necesario que mientras el procesador no se comunique con ellos permanezcan en estadp de alta impedancia, esto es necesario para evitar corto - circuitos originados por diferentes niveles lógicos en el bus. Por lo tanto, las comunicaciones siempre son iniciadas por el procesador y se selecciona uno y solo un periférico. El decodificador de direcciones es el encargado de habilitar un determinado periférico ante una solicitud del procesador (mediante una dirección de memoria), esto lo hace activando la señal \textit{CSX}, cuando esta señal se encuentra en estado lógico alto el periférico coloca su bus de datos en alta impedancia, si se encuentra en estado lógico bajo el periférica escribe o lee el bus de datos, dependiendo de la activación de las señales del bus de control RD y WR.
+Todos los periféricos que requieren intercambio de información con el procesador comparten el mismo bus de datos, por lo que es necesario que mientras el procesador no se comunique con ellos permanezcan en estado de alta impedancia; esto es necesario para evitar corto - circuitos originados por diferentes niveles lógicos en el bus. Por lo tanto, las comunicaciones siempre son iniciadas por el procesador y se selecciona uno y solo un periférico a la vez. El decodificador de direcciones es el encargado de habilitar un determinado periférico ante una solicitud del procesador (mediante una dirección de memoria), esto lo hace activando la señal $\overline{\textit{CSX}}$, cuando esta señal se encuentra en estado lógico alto el periférico coloca su bus de datos en alta impedancia; si se encuentra en estado lógico bajo, el periférico escribe o lee el bus de datos, dependiendo de la activación de las señales del bus de control RD y WR.
 
-El decodificador de direcciones, como su nombre lo indica utiliza como entradas el bus de direcciones y activa solo una señal de selección de Chip (\textit{CSx}), basándose en un rango de direcciones asignado a cada periférico, este rango de direcciones no debe traslaparse para asegurar que solo un chip es seleccionado. Este rango de direcciones que se asigna a cada dispositivo que puede ser accesado por la unidad de procesamiento recibe el nombre de \textit{mapa de memoria} y puede ser único para cada plataforma.
+El decodificador de direcciones, como su nombre lo indica utiliza como entradas el bus de direcciones y activa solo una señal de selección de Chip ($\overline{\textit{CSX}}$), basándose en un rango de direcciones asignado a cada periférico, este rango de direcciones no debe traslaparse para asegurar que solo un chip es seleccionado. Este rango de direcciones que se asigna a cada dispositivo que puede ser accesado por la unidad de procesamiento recibe el nombre de \textit{mapa de memoria} y puede variar para cada plataforma.
 
-Cuando la unidad de procesamiento necesite comunicarse con un determinado periférico, colocará en el bus de direcciones una valor que se encuentre en el rango de direcciones asignado para ese periférico, esto hace que el decodificador de direcciones active la señal de selección adecuada para informarle al periférico que el procesador va a iniciar una transferencia de información. La Figura \ref{rd_wr_timing} muestra el diagrama de tiempos para un ciclo de lectura y escritura del procesador.
+Cuando la unidad de procesamiento necesite comunicarse con un determinado periférico, colocará en el bus de direcciones un valor que se encuentre en el rango de direcciones asignado para ese periférico; esto hace que el decodificador de direcciones active la señal de selección adecuada para informarle al periférico que el procesador va a iniciar una transferencia de información. La Figura \ref{rd_wr_timing} muestra el diagrama de tiempos para un ciclo de lectura y escritura del procesador.
 
 \begin{figure}[h]
   \begin{center} \includegraphics[scale=.7]{./images/rd_wr_waveform} \end{center}
   \caption{Ciclo de lectura y escritura para la arquitectura de la Figura \ref{computer_arch}}\label{rd_wr_timing}
 \end{figure}
 
-De lo anterior podemos concluir que un periférico es visto por el procesador como una posición de memoria más y las transacciones las inicia únicamente el procesador.
+De lo anterior podemos concluir que un periférico es visto por el procesador como una posición de memoria y las transacciones las inicia únicamente el procesador.
 
 \subsubsection{Implementación de Periféricos en una FPGA}
-Es importante tener en cuenta los siguientes items cuando se implemente una tarea Hardware en una FPGA:
+Es importante tener en cuenta los siguientes putos cuando se implemente una tarea Hardware en una FPGA:
 \begin{itemize}
-  \item La frecuencia del reloj de la FPGA es mucho mayor que la de las señales del bus de control, por lo que es necesario asegurarse que cada vez que el procesador realiza una solicitud de lectura o escritura, la señal de activación cambia del estado lógico alto al bajo; si solo se tiene en cuenta el estado bajo de la señal \textit{CSX} el periférico puede ejecutar la tarea varias veces en el mismo ciclo de activación, lo que puede llevar a resultados incorrectos.
-  \item La fase de los relojes del procesador y la FPGA no es la misma, por lo que es necesario sincronizar las señales del procesador con el reloj de la FPGA; si esto no se hace las señales fuera de fase pueden originar un estado de metaestabilidad en los Flip-Flops internos y por lo tanto el mal-funcionamiento del sistema.
+  \item La frecuencia del reloj de la FPGA es mucho mayor que la de las señales del bus de control; por lo que es necesario asegurarse que cada vez que el procesador realiza una solicitud de lectura o escritura, la señal de activación cambia del estado lógico alto al bajo; si solo se tiene en cuenta el estado bajo de la señal \textit{CSX} el periférico puede ejecutar la tarea varias veces en el mismo ciclo de activación, lo que puede llevar a resultados incorrectos.
+  \item La fase de los relojes del procesador y la FPGA no es la misma, por lo que es necesario sincronizar las señales del procesador con el reloj de la FPGA; si esto no se hace las señales fuera de fase pueden originar un estado de meta-estabilidad en los Flip-Flops internos de la FPGA y por lo tanto el mal-funcionamiento del sistema.
   \item El bus de datos es bidireccional, por lo que es necesario que la FPGA lo coloque en alta impedancia cuando no se esté habilitando un periférico.
-  \item La FPGA no permite implementar buffers tri-estado internamente por lo que es necesario separar los buses de entrada y salida a cada periférico. El bus de entrada es común a todos los periféricos mientra que es necesario utilizar un esquema de multiplexación entre los buses de salida.
+  \item La FPGA no permite implementar buffers tri-estado internamente por lo que es necesario separar los buses de entrada y salida a cada periférico. El bus de entrada es común a todos los periféricos mientras que es necesario utilizar un esquema de multiplexación entre los buses de salida.
 \end{itemize}
 
 La figura \ref{sw_hw_fpga_arch} muestra el diagrama de bloques de la interfaz necesaria para poder comunicar un grupo de periféricos o tareas Hardware con el bus de datos, dirección y control de un procesador. El bloque \textit{SYNC} se encarga de sincronizar las señales provenientes de la FPGA con el reloj interno de la misma.
 
 \begin{figure}[h]
-  \begin{center} \includegraphics[scale=.7]{./images/sw_hw_fpga_arch} \end{center}
+  \begin{center} \includegraphics[scale=.65]{./images/sw_hw_fpga_arch.pdf} \end{center}
   \caption{Diagrama de Bloques para la comunicación de tareas HW-SW \ref{computer_arch}}\label{sw_hw_fpga_arch}
 \end{figure}
  
- El módulo \textit{Write Pulse generator} genera un pulso cuando las señales \textit{sncs} y \textit{snwe} son activadas como se indica en la figura \ref{cs_we_pulse}. El decodificador de direcciones selecciona un determinado periférico dependiendo del rango especificado para cado uno. Como mencionamos anteriormente, las FPGAs no permiten implementar buffers tri-estado internamente , por lo que cada periférico debe tener un bus de entrada y uno de salida de datos, los buses de entrada de datos son comunes, mientras que los de salida deben ser manejados por un dispositivo de salida, el cual puede ser un multiplexor controlado por el decodificador de direcciones o una compuerta OR, para este último caso es necesario que los periféricos coloquen el bus de datos en ``0'' cuando no estén seleccionados. Finalmente es necesario colocar un buffer tri-estado en los pines de la FPGA, este buffer está controlado por las señales \textit{nwe, noe, ncs} y solo se activa cuando \textit{nwe = 1, noe = 0, ncs = 0}, es decir, cuando se selecciona el rango de memoria de la FPGA y el procesador inicia una operación de lectura.
+ El módulo \textit{Write Pulse generator} genera un pulso cuando las señales \textit{sncs} y \textit{snwe} son activadas como se indica en la figura \ref{cs_we_pulse}. El decodificador de direcciones selecciona un determinado periférico dependiendo del rango especificado para cada uno. Como mencionamos anteriormente, las FPGAs no permiten implementar buffers tri-estado internamente , por lo que cada periférico debe tener un bus de entrada y uno de salida de datos, los buses de entrada de datos son comunes, mientras que los de salida deben ser manejados por un dispositivo de salida, el cual puede ser un multiplexor controlado por el decodificador de direcciones o una compuerta OR, para este último caso es necesario que los periféricos coloquen el bus de datos en ``0'' cuando no estén seleccionados. Finalmente es necesario colocar un buffer tri-estado en los pines de la FPGA, este buffer está controlado por las señales \textit{RDWRn y ncs2} y solo se activa cuando el procesador inicia una operación de lectura.
 
 \begin{figure}[h]
   \begin{center} \includegraphics[scale=.7]{./images/cs_we_pulse} \end{center}
@@ -2367,7 +2373,7 @@ El kernel de Linux proporciona una interfaz que permite a una aplicación \textit
 \end{lstlisting}
 
 
-Un llamado a \textit{mmap()} le pide al kernel hacer un mapeo en la memoria de \textit{len} bytes del objeto representado por el descriptor de archivo \textit{fd}, comenzando a \textit{offset} bytes dentro del archivo. Si se especifica \textit{addr}, se utiliza este valor como la dirección inicial en la memoria. Los permisos de acceso son determinados por \textit{prot}; PROT\_READ habilita la lectura, PROT\_WRITE habilita escritura y PROT\_EXEC habilita la ejecución. El argumento \textit{flasgs} describe el tipo de mapeo, y algunos elementos de su comportamiento y puede tomar los valores:
+Un llamado a \textit{mmap()} le pide al kernel hacer un mapeo en la memoria de \textit{len} bytes del objeto representado por el descriptor de archivo \textit{fd}, comenzando a \textit{offset} bytes dentro del archivo. Si se especifica \textit{addr}, se utiliza este valor como la dirección inicial en la memoria. Los permisos de acceso son determinados por \textit{prot}; PROT\_READ habilita la lectura, PROT\_WRITE habilita escritura y PROT\_EXEC habilita la ejecución. El argumento \textit{flags} describe el tipo de mapeo, y algunos elementos de su comportamiento y puede tomar los valores:
 
 \begin{itemize}
  \item  MAP\_FIXED: hace que \textit{addr} sea un requerimiento, si el kernel es incapaz de hacer el mapeo en esta dirección el llamado falla, si los parámetros de dirección y longitud traslapan un mapeo existente se descartan las áreas que se traslapan y se remplazan por el nuevo mapeo.
@@ -2407,7 +2413,7 @@ A continuación se lista un ejemplo de la utilización del llamado \textit{mmap}
     
 \end{lstlisting}
 
-En este ejemplo utilizamos el llamado \textit{mmap} para hacer un mapeo de la dirección de memoria correspondiente al CS3 (0x40000000). El descriptor del archvio utilizado es el dispositivo \textit{/dev/mem} el cual permite operaciones de lectura y escritura a la memoria virtual. Adicionalmente permitimos operaciones de lectura/escritura (PROT\_READ | PROT\_WRITE) y permitimos el acceso a otros proceso. Finalmente podemos usar la variable \textit{virt\_addres} para escribir en cualquier posición de memoria desde \textit{0x40000000} hasta \textit{0x40000000 + MAP\_SIZE}. El siguiente listado muestra un ejemplo de la forma de hacer estas operaciones.
+En este ejemplo utilizamos el llamado \textit{mmap} para hacer un mapeo de la dirección de memoria correspondiente al CS3 (0x40000000). El descriptor del archivo utilizado es el dispositivo \textit{/dev/mem} el cual permite operaciones de lectura y escritura a la memoria virtual. Adicionalmente permitimos operaciones de lectura/escritura (PROT\_READ | PROT\_WRITE) y permitimos el acceso a otros procesos. Finalmente, podemos usar la variable \textit{virt\_addres} para escribir en cualquier posición de memoria desde \textit{0x40000000} hasta \textit{0x40000000 + MAP\_SIZE}. El siguiente listado muestra un ejemplo de la forma de hacer estas operaciones.
 
 \begin{lstlisting}
   printf("Writing Memory..\n");
@@ -2430,7 +2436,7 @@ En este ejemplo utilizamos el llamado \textit{mmap} para hacer un mapeo de la di
 
 \subsection{Comunicación Periférico - Procesador}
 
-Cuando un periférico requiere atención por parte de la CPU debido a que terminó de realizar un proceso o porque requiere nuevas instrucciones para seguir operando, o un evento originado por un usuario necesita ser atendido, se debe iniciar un proceso para que la unidad de procesamiento se comunique con él. Como se mencionó anteriormente la unidad de procesamiento está encargada de forma exclusiva de iniciar las operaciones de lectura/ecritura con los periféricos, por esta razón, el periférico utiliza una señal (IRQ) para informarle al procesador que requiere ser atendido. Algunas arquitecturas poseen un mecanismo que permite el acceso a la memoria por parte de los periféricos sin utilizar el procesador, esto permite que periféricos de diferentes velocidades se comuniquen sin someter al procesador a una carga excesiva. En esta sección hablaremos de la forma de definir las interrupciones en un driver de Linux.
+Cuando un periférico requiere atención por parte de la CPU debido a que terminó de realizar un proceso o porque requiere nuevas instrucciones para seguir operando, o un evento originado por un usuario necesita ser atendido; se debe iniciar un proceso para que la unidad de procesamiento se comunique con él. Como se mencionó anteriormente, la unidad de procesamiento está encargada de forma exclusiva de iniciar las operaciones de lectura/escritura con los periféricos; por esta razón, el periférico utiliza una señal (IRQ) para informarle al procesador que requiere ser atendido. Algunas arquitecturas poseen un mecanismo que permite el acceso a la memoria por parte de los periféricos sin utilizar el procesador, esto permite que periféricos de diferentes velocidades se comuniquen sin someter al procesador a una carga excesiva. En esta sección hablaremos de la forma de definir las interrupciones en un driver de Linux.
 
 \subsubsection{Manejo de Interrupciones}
 A continuación se describirá la forma de manejar las interrupciones utilizando un driver de Linux. Analicemos la función \textit{qem\_init}
@@ -2466,12 +2472,12 @@ Esta rutina es similar a la presentada anteriormente, solo se agrega un par de c
 
 \begin{lstlisting}
  res = request_irq(FPGA_IRQ_PIN, irq_handler, IRQF_DISABLED, "FPGA - IRQ", NULL);
-request_irq (int irq, handler, irqflags, devname, dev_id);   
+ set_irq_type(FPGA_IRQ, IRQT_RISING);   
 \end{lstlisting}
 
 Se hace un llamado a la función \textit{request\_irq} que asigna recursos a la interrupción, habilita el manejador y la línea de interrupción. En nuestro caso define el pin \textit{FPGA\_IRQ\_PIN} como la línea de interrupción, la rutina \textit{irq\_handler} será ejecutada cuando se presente una interrupción, el flag \textit{IRQF\_DISABLED} deshabilita las interrupciones locales mientras se procesa, el nombre del dispositivo que realiza la interrupción es \textit{FPGA - IRQ}.
 
-La función \textit{ioremap(offset, size)}, una secuencia de operaciones que permiten que la memoria de la CPU se pueda acceder con las funciones \textit{readb/readw/readl/writeb/writew/write}, utilizando la variable \textit{ioaddress}. Finalmente se define el tipo de interrupción del pin \textit{FPGA\_IRQ\_PIN} como \textit{IRQT\_RISING}.
+La función \textit{ioremap(offset, size)} permite que la memoria de la CPU se pueda acceder con las funciones \textit{readb/ readw/ readl/ writeb/ writew/ write}, utilizando la variable \textit{ioaddress}. Finalmente se define el tipo de interrupción \textit{FPGA\_IRQ} como \textit{IRQT\_RISING}.
 
 La función que se ejecuta cuando se presenta la interrupción, se define en el siguiente listado:
 
@@ -2482,7 +2488,6 @@ irqreturn_t irq_handler(int irq, void *dev_id, struct pt_regs *regs)
   {
     interrupt_counter++;
     printk(KERN_INFO "interrupt_counter=%d\n",interrupt_counter);
-    printk("\n kernel: IREG_LP:%X \n", readb( &ioaddress[0x40] ) );
     wake_up_interruptible(&wq);
   }
   return IRQ_HANDLED;
@@ -2525,9 +2530,7 @@ Por lo que \textit{irq\_handler} debe hacer:
  wake_up_interruptible(&wq);
 \end{lstlisting}
 
-Si no se hace esto el proceso nunca se despertará y el proceso de lectura quedará bloqueado.
-
-En la línea:
+Si no se hace esto el proceso nunca se despertará y el proceso de lectura quedará bloqueado. En la línea:
 
 \begin{lstlisting}
  copy_to_user ( buffer, &interrupt_counter, sizeof(interrupt_counter) ); 
@@ -2540,6 +2543,35 @@ Se utiliza la función \textit{copy\_to\_user} para intercambiar información con 
   \begin{center} \includegraphics[scale=.7]{./images/copy_to_from_user} \end{center}
   \caption{Intercambio de información entre los espacios de kernel y usuario\label{copy_to_from_user}}
 \end{figure}
+
+
+Inicialmente la variable \textit{irq\_enabled} tiene un valor de \textit{0}, para cambiar su valor se utiliza la función \textit{device\_write}, la que permite pasar información al driver desde espacio de usuario. A continuación se muestra esta función:
+
+\begin{lstlisting}
+static ssize_t
+device_write(struct file *filp, const char *buff, size_t count, loff_t * off)
+{
+  const char cmd = buff[0];
+  
+  if(cmd=='Q')
+  {
+  /* Reset the FPGA  */
+    irq_enabled       = 1;
+    interrupt_counter = 0;
+    printk(KERN_INFO "FPGA irq_enabled...\n");
+        
+  }
+  else
+    if(cmd=='S'){
+      irq_enabled=0;
+      printk(KERN_INFO "FPGA irq disabled.\n");
+    }
+  
+  return 1;
+}
+\end{lstlisting}
+
+la información que el usuario escribe en el driver se encuentra disponible en la variable \textit{buff}, esta función permite escribir cualquier cantidad de información, el tamaño de la información escrita desde espacio de usuario es almacenado en la variable \textit{count}. En este ejemplo, si se escribe el caracter ``Q'' \textit{irq\_enabled} será igual a \textbf{1} y si se escribe ``S'' \textit{irq\_enabled} será igual a \textbf{0}.
 
 En la función \textit{qem\_exit} se liberan los recursos de la interrupción y la variable \textit{ioaddress}.
 
@@ -2557,31 +2589,43 @@ static void __exit qem_exit(void)
 \end{lstlisting}
 
 
-Finalmente el programa en espacion de usuario es:
+\subsubsection{Comunicación con el driver desde espacio de usuario}
+Aunque es posible leer y escribir la información que suministra un driver desde la consola utilizando las aplicaciones \textit{cat} (lectura) y \textit{echo} (escritura); es importante conocer la forma de comunicación desde aplicaciones propias en espacio de usuario, a continuación se muestra como puede hacerse esto:
 
 \begin{lstlisting}
- int main(void) {
+int main(int argc, char **argv) {
+  int	       fileNum, bytes;
+  unsigned char  buf[40];
+  size_t         nbytes;
+  ssize_t        bytes_read;
 
-  int     fileNum, bytes;
-  char    data[40];
-
-  fileNum = open("/dev/fpga", O_RDWR);
-  if (fileNum < 0) {
-     printf(" Unable to open file\n");
-     exit(1);
+  if(argc != 2){
+    fprintf(stderr,"\nUsage: %s enable|disable|read \n",argv[0]);
   }
+  
+  nbytes = sizeof(int);
+  fileNum = open("/dev/irq", O_RDWR);
+  if (fileNum < 0) {
+    printf(" Unable to open device\n");
+    exit(1);
+  }
+  printf("Device opened successfully \n");
 
-  printf(" Opened device\n");
-
-  bytes = read(fileNum, data, sizeof(data));
-
-  if (bytes > 0)
-    printf("%x\n", data);
+  if(!strcmp(argv[1], "enable"))
+    write(fileNum, "Q", 1);
+  if(!strcmp(argv[1], "disable"))
+    write(fileNum, "S", 1);
+  if(!strcmp(argv[1], "read")){
+    read(fileNum, buf, nbytes);
+    printf("Interrupts = %d \n",  *((int*)(buf)));
+  }
+  if( (strcmp(argv[1], "read") != 0 ) & (strcmp(argv[1], "disable") != 0) & (strcmp(argv[1], "enable") != 0) )
+    fprintf(stderr,"\nUsage: %s enable|disable|read \n",argv[0]);
 
   close(fileNum);
 
-  return (0);
+return (0);
 }
 \end{lstlisting}
 
-En este programa se abre el dispositivo \textit{/dev/fpga} que corresponde a nuestro driver y se utiliza la función \textit{read} para leer la información suministrada por el driver.
+En este programa se abre el dispositivo \textit{/dev/fpga} que corresponde a nuestro driver, con las funciones utilizadas para manejo de archivos. y se utiliza la función \textit{read} para leer la información suministrada por el driver.
