@@ -275,6 +275,57 @@
 \end{frame}
 
 
+\section{Objetivos}
+\begin{frame}
+  \frametitle{Objetivos}
+
+%    \setbeamercolor{block title}{bg=red,fg=blue}%bg=background, fg= foreground
+   \setbeamercolor{block body}{bg=yellow!10}%bg=background, fg= foreground
+
+   \only<1>{
+     \begin{alertblock}{Objetivo Principal}
+       Desarrollar una metodología para la transferencia tecnológica y de conocimientos en el diseño de Sistemas Embebidos y de esta forma contribuir a dar solución al problema del atraso tecnológico en Colombia.
+     \end{alertblock}
+   }
+
+   \only<2>{
+     \begin{block}{Objetivos Específicos: Asimilación de conocimientos}
+       \begin{itemize}
+         \small
+         \item \textcolor{DarkGreen}{Formulación/adaptación y aplicación de una metodología para la transferencia tecnológica y de conocimientos} en el área de diseño y fabricación de Sistemas Embebidos en Colombia que permita generar cambios globales a partir de interacciones locales.
+
+         \item \textcolor{DarkGreen}{Formulación o adaptación de una metodología de diseño y producción para sistemas embebidos} aplicable en el entorno local y su respectiva aplicación y validación en un programa académico de un centro de formación superior consolidado y en una empresa de base tecnológica.
+       \end{itemize}
+     \end{block}
+   }
+   \only<3->{
+     \begin{block}{Objetivos Específicos: Creación de habilidades}
+       \begin{itemize}
+
+         \item \textcolor{DarkGreen}{Identificación de las habilidades requeridas por los profesionales en ingeniería electrónica} para estar acorde con la tendencia de la industria electrónica mundial. \textcolor{DarkGreen}{Creación de un programa académico} que ayude al refuerzo de estas habilidades en las asignaturas relacionadas con el diseño digital.
+
+         \item \textcolor{DarkGreen}{Generación de un recurso público} basado en el conocimiento necesario para diseñar implementar y producir sistemas digitales.
+
+         \item \textcolor{DarkGreen}{Creación de herramientas de difusión} que permitan el acceso de este recurso a cualquier sector de la sociedad que esté interesado.
+       \end{itemize}
+     \end{block}
+   }
+
+
+
+% \subsubsection{Resultados Esperados e Impacto}
+% 
+% Con la realización de este proyecto se busca generar la base de un recurso de bien público representado por el conocimiento necesario para concebir, diseñar, implementar y operar sistemas digitales; administrado/usado/mantenido/depurado/aumentado por una comunidad formada por personas o instituciones con disponibilidad para trabajo colectivo cuyas acciones están basadas en el beneficio común; se pretende vincular a esta comunidad a docentes y estudiantes de centros de formación y a industrias de base tecnológica de diferentes regiones del país. El esquema de licencias utilizada por este recurso permitirán su estudio, uso, modificación y reproducción (incluso para fines comerciales); con los requisitos de dar crédito al autor del trabajo original y que los trabajos derivados posean el mismo esquema de licencias, lo que facilitará su difusión y permitirá su aumento y depuración.
+% 
+% El éxito de esta iniciativa radica en el crecimiento de la comunidad que administra/usa/mantiene/depura/aumenta el bien público, a diferencia de los recursos tradicionales como los naturales o económicos, el conocimiento no se ve afectado por el aumento de usuarios; por esto, no deben existir restricciones para acceder a sus contenidos y se deben proporcionar mecanismos de difusión para que este conocimiento llegue a los sectores de la sociedad interesados en él. Se espera que los resultados de esta investigación proporcionen herramientas a centros de diferentes niveles de formación a lo largo del país, que les permitan actualizar sus programas académicos y compartir experiencias educativas con el fin de uniformizar los contenidos de las asignaturas relacionadas con el diseño digital, incorporando actividades que le permitan a los estudiantes adquirir habilidades en el diseño e implementación de dispositivos digitales que den solución a problemas locales reales y puedan ser comercializados. Adicionalmente, se desea crear una red de cooperación entre las universidades que hagan parte de esta comunidad, para realizar proyectos conjuntos encaminados a continuar el presente trabajo y a compartir los escasos recursos gubernamentales destinados a investigación y desarrollo.
+% 
+% Se espera que el suministro de plataformas de referencia que pueden ser utilizadas como punto de partida para el desarrollo de nuevos productos ahorre años de desarrollo y dinero a empresas locales en la absorción de esta tecnología, permitiendo aumentar la oferta interna de diseño de sistemas digitales y a su vez la demanda interna de bienes y servicios relacionados con la manufactura de sistemas digitales, y de esta forma generar empleo para personas con diferentes niveles de formación. El cambio de las costumbres de empresas constituidas y que utilizan productos extranjeros es una utopía, por lo que este cambio se espera realizar en empresas recientemente consolidadas, por estudiantes que fueron formados con las habilidades necesarias para crear productos novedosos.
+% 
+
+\end{frame}
+
+
+
 \section{Metodología Propuesta}
 \begin{frame}
 \frametitle{}
@@ -314,17 +365,17 @@
     \path[use as bounding box] (-1.5,0) rectangle (12,-2);
 
     % TT methodology     
-    \onslide<1-> \node [phase]                        (monitoreo)     {Monitoreo};
-    \onslide<2-> \node [phase, below of=monitoreo]    (choice)        {Elección};
-    \onslide<3-> \node [phase, below of=choice]       (acquisition)   {Adquisición};
-    \onslide<4-> \node [phase, below of=acquisition]  (adaptation)    {Adaptación};
-    \onslide<5-> \node [phase, below of=adaptation]   (absortion)     {Absorción};
-    \onslide<6-> \node [phase, below of=absortion]    (aplication)    {Aplicación};
-    \onslide<7-> \node [phase, below of=aplication]   (difusion)      {Difusión};
+    \onslide<1,2-> \node [phase]                        (monitoreo)     {Monitoreo};
+    \onslide<1,3-> \node [phase, below of=monitoreo]    (choice)        {Elección};
+    \onslide<1,4-> \node [phase, below of=choice]       (acquisition)   {Adquisición};
+    \onslide<1,5-> \node [phase, below of=acquisition]  (adaptation)    {Adaptación};
+    \onslide<1,6-> \node [phase, below of=adaptation]   (absortion)     {Absorción};
+    \onslide<1,7-> \node [phase, below of=absortion]    (aplication)    {Aplicación};
+    \onslide<1,8-> \node [phase, below of=aplication]   (difusion)      {Difusión};
 
     % linuxencaja + investigación
-    \onslide<8-> \path (difusion.south) +(0,-0.2) node (research)     {Investigación Universitaria};
-    \onslide<8-> \path (monitoreo.north)+(0,+0.2) node (linuxencaja)  {Comunidad \textit{linuxencaja}};
+    \onslide<1,9-> \path (difusion.south) +(0,-0.2) node (research)     {Investigación Universitaria};
+    \onslide<1,9-> \path (monitoreo.north)+(0,+0.2) node (linuxencaja)  {Comunidad \textit{linuxencaja}};
 
     % Now it's time to draw the colored rectangles.
      \begin{pgfonlayer}{background}
@@ -336,7 +387,7 @@
     \end{pgfonlayer}
 
     % "Empresa" node
-    \onslide<10-> \node [industry, right=1cm of linuxencaja.north east]  (industry)      {\textbf{Empresa}
+    \onslide<1,11-> \node [industry, right=1cm of linuxencaja.north east]  (industry)      {\textbf{Empresa}
                                                                   \begin{itemize}
                                                                    \item Transferencia de conocimiento.
                                                                      \begin{itemize}
@@ -347,10 +398,10 @@
                                                                    \item Diseños de referencia.
                                                                   \end{itemize} };
 
-    \onslide<10-> \draw[myarrow2] ([xshift=0.75cm] adaptation.east) -- ++(0.2,0)-- ++ (0,2.2) --  (industry.west);	
+    \onslide<1,11-> \draw[myarrow2] ([xshift=0.75cm] adaptation.east) -- ++(0.2,0)-- ++ (0,2.2) --  (industry.west);	
 
     % "Academia" node
-    \onslide<9-> \node [academy, right=0.8cm of research.south east]  (academy)      {\textbf{Academia}
+    \onslide<1,10-> \node [academy, right=0.8cm of research.south east]  (academy)      {\textbf{Academia}
                                                                   \begin{itemize}
                                                                    \item Actualización de programas académicos.
                                                                    \item Generación de habilidades.
@@ -358,27 +409,27 @@
                                                                    \item Actualización de programas académicos.
                                                                    \item Creación/adaptación de metodologías /procesos de diseño.
                                                                   \end{itemize} };
-    \onslide<9-> \draw[myarrow1] ([xshift=0.75cm] adaptation.east) -- ++(0.2,0)-- ++ (0,-2.2) --  (academy.west);	
+    \onslide<1,10-> \draw[myarrow1] ([xshift=0.75cm] adaptation.east) -- ++(0.2,0)-- ++ (0,-2.2) --  (academy.west);	
 
 
     % Relaciones Universidad - Empresa    
-    \onslide<11-> \draw[myarrow] ([xshift=-2.6cm] industry.south) -- ([xshift=-2.6cm] academy.north);
-    \onslide<11-> \node[mylabel, below left=of industry.south] (label1)  {\scriptsize Pasantías.\\Servicios.\\Regalías.    \\Necesidades.};  
+    \onslide<1,12-> \draw[myarrow] ([xshift=-2.6cm] industry.south) -- ([xshift=-2.6cm] academy.north);
+    \onslide<1,12-> \node[mylabel, below left=of industry.south] (label1)  {\scriptsize Pasantías.\\Servicios.\\Regalías.    \\Necesidades.};  
 
     % Relaciones Empresa - Universidad
-    \onslide<12-> \draw[myarrow] ([xshift= 2.6cm] academy.north)  -- ([xshift= 2.6cm] industry.south);
-    \onslide<12-> \node[mylabel, below right=of industry.south] (label1) {\scriptsize Creación. \\Soporte.  \\Capacitación.\\Personal.};  
+    \onslide<1,13-> \draw[myarrow] ([xshift= 2.6cm] academy.north)  -- ([xshift= 2.6cm] industry.south);
+    \onslide<1,13-> \node[mylabel, below right=of industry.south] (label1) {\scriptsize Creación. \\Soporte.  \\Capacitación.\\Personal.};  
 
     % Necesidades de la sociedad
-    \onslide<13-> \node [extern, right=0.2cm of industry] (needs)   {Necesidades de la sociedad};
-    \onslide<13-> \draw[myarrow] (needs.west)  --  (industry.east);
-    \onslide<13-> \draw[myarrow] (needs.south) -- ++(0, -3.85) -- (academy.east);
+    \onslide<1,14-> \node [extern, right=0.2cm of industry] (needs)   {Necesidades de la sociedad};
+    \onslide<1,14-> \draw[myarrow] (needs.west)  --  (industry.east);
+    \onslide<1,14-> \draw[myarrow] (needs.south) -- ++(0, -3.85) -- (academy.east);
 
     % Realimentación Universidad - Empresa a la metodología de transferencia
-    \onslide<14-> \draw[myarrow] (industry.north)  --++(0,0.3)--++(-5.65,0) -- ([yshift= 0cm] linuxencaja.north);
-    \onslide<14-> \draw[myarrow] (academy.south)  --++(0,-0.3)--++(-5.65,0) -- ([yshift= 0.1cm] research.south);
-    \onslide<14-> \node[mylabel2, above left=of industry.north] (label1) {\scriptsize Necesidades, Personal, Conocimientos};  
-    \onslide<14-> \node[mylabel2, below left=of academy.south]  (label2) {\scriptsize Necesidades, Personal, Conocimientos};  
+    \onslide<1,15-> \draw[myarrow] (industry.north)  --++(0,0.3)--++(-5.65,0) -- ([yshift= 0cm] linuxencaja.north);
+    \onslide<1,15-> \draw[myarrow] (academy.south)  --++(0,-0.3)--++(-5.65,0) -- ([yshift= 0.1cm] research.south);
+    \onslide<1,15-> \node[mylabel2, above left=of industry.north] (label1) {\scriptsize Necesidades, Personal, Conocimientos};  
+    \onslide<1,15-> \node[mylabel2, below left=of academy.south]  (label2) {\scriptsize Necesidades, Personal, Conocimientos};  
 
     %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&    
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
@@ -390,7 +441,7 @@
     %            Monitoreo
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
 
-    \onslide<1> \node [ph_explain, right=1cm of adaptation.east] (exp_monitores)
+    \onslide<2> \node [ph_explain, right=1cm of adaptation.east] (exp_monitores)
     {\begin{center} \textbf{Monitoreo} \end{center}
       \begin{itemize}
        \item Detectar tecnologías emergentes.
@@ -403,7 +454,7 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
     %            Elección
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
-    \onslide<2> \node [ph_explain, right=1cm of adaptation.east] (exp_choice)        
+    \onslide<3> \node [ph_explain, right=1cm of adaptation.east] (exp_choice)        
     { \begin{center} \textbf{Elección} \end{center}
       \begin{itemize}
        \item Evaluación del estado de la plataforma tecnológica existente para identificar facilidades y necesidades.
@@ -415,7 +466,7 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
     %            Adquisición
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
-    \onslide<3> \node [ph_explain, right=1cm of adaptation.east] (exp_acquisition)   
+    \onslide<4> \node [ph_explain, right=1cm of adaptation.east] (exp_acquisition)   
     {      
      \begin{center} \textbf{Adquisición} \end{center}
      \begin{itemize}
@@ -435,7 +486,7 @@
     %            Adaptación
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
 
-    \onslide<4> \node [ph_explain, right=1cm of adaptation.east] (exp_adaptation)    
+    \onslide<5> \node [ph_explain, right=1cm of adaptation.east] (exp_adaptation)    
     {
     \begin{center} \textbf{Adaptación} \end{center}
     \begin{itemize}
@@ -464,7 +515,7 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
     %            Absorción
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
-    \onslide<5> \node [ph_explain, right=1cm of adaptation.east] (exp_absortion)     
+    \onslide<6> \node [ph_explain, right=1cm of adaptation.east] (exp_absortion)     
     {
       \begin{center} \textbf{Absorción} \end{center}
 %        Capacidad del receptor para utilizar la tecnología. 
@@ -492,7 +543,7 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
     %            Aplicación
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
-    \onslide<6> \node [ph_explain, right=1cm of adaptation.east] (exp_aplication)    
+    \onslide<7> \node [ph_explain, right=1cm of adaptation.east] (exp_aplication)    
     {
       \begin{center} \textbf{Aplicación} \end{center}
 
@@ -522,7 +573,7 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
     %            Difusión
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
-    \onslide<7> \node [ph_explain, right=1cm of adaptation.east] (exp_difusion)      
+    \onslide<8> \node [ph_explain, right=1cm of adaptation.east] (exp_difusion)      
     {\begin{center} \textbf{Difusión (en ejecución)} \end{center}
        \begin{itemize}
         \item Difundir los conocimientos adquiridos a los sectores de la sociedad interesados en el.
@@ -552,20 +603,20 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
     %        Estrategias de difusión
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
-    \onslide<8> \node [difusion_es, above right=2cm of adaptation.east] (est_difusion)      
+    \onslide<9> \node [difusion_es, above right=2cm of adaptation.east] (est_difusion)      
       {
        \includegraphics[scale=.25]{../images/plataformas_hwcl.png}\\
        \color{blue!40!black} {Repositorios + Tutoriales + Cursos en línea}
       };
-    \onslide<8> \node [difusion_es, below = 0.5cm of est_difusion] (canales_difusion)      
+    \onslide<9> \node [difusion_es, below = 0.5cm of est_difusion] (canales_difusion)      
       {
        \color{red!60!black} {Canales de difusión} \\
                           GIT, WIKI, MAIL\\
         \color{green!60!black}{Código fuente (.c,.v,.vhd,.S,.java), archivos de diseño} 
       };
-    \onslide<8> \draw[myarrow] (est_difusion.south) -- (canales_difusion.north);	
+    \onslide<9> \draw[myarrow] (est_difusion.south) -- (canales_difusion.north);	
     
-    \onslide<8> \node [phase2, below = .6cm of canales_difusion] (dif_academia2)      
+    \onslide<9> \node [phase2, below = .6cm of canales_difusion] (dif_academia2)      
       {
         Academia \\
         \begin{itemize}
@@ -575,9 +626,9 @@
          \item SENA.
         \end{itemize}
       };
-    \onslide<8> \draw[myarrow] (canales_difusion.south) -- (dif_academia2.north);	
+    \onslide<9> \draw[myarrow] (canales_difusion.south) -- (dif_academia2.north);	
 
-    \onslide<8> \node [phase2, left = .1cm of dif_academia2] (dif_academia)      
+    \onslide<9> \node [phase2, left = .1cm of dif_academia2] (dif_academia)      
       {
         I+D UNAL \\
         \begin{itemize}
@@ -588,9 +639,9 @@
          \item Sistemas.
         \end{itemize}
       };
-    \onslide<8> \draw[myarrow] (canales_difusion.south) --++(0,-0.2)--++ (-2.8cm, 0) -- (dif_academia.north);	
+    \onslide<9> \draw[myarrow] (canales_difusion.south) --++(0,-0.2)--++ (-2.8cm, 0) -- (dif_academia.north);	
 
-    \onslide<8> \node [phase2, right = .1cm of dif_academia2] (dif_industria)      
+    \onslide<9> \node [phase2, right = .1cm of dif_academia2] (dif_industria)      
       {
         Industria\\
          \scriptsize
@@ -600,14 +651,224 @@
          \item Proyecto SENA.
         \end{itemize}
       };
-    \onslide<8> \draw[myarrow] (canales_difusion.south) --++(0,-0.2)--++ (2.8cm, 0) -- (dif_industria.north);	
-
-
+    \onslide<9> \draw[myarrow] (canales_difusion.south) --++(0,-0.2)--++ (2.8cm, 0) -- (dif_industria.north);	
 \end{tikzpicture}
 \end{figure}
 
 \end{frame}
 
+\section{Resultados}
+\begin{frame}
+  \frametitle{Comparación con el CIDEI}
+
+  \only<1>{
+    \resizebox{!}{3.5cm}{
+    \begin{tabular}{|p{4cm}|p{7cm}|p{10cm}|}
+      \hline
+      \textbf{Plataforma}       & \textbf{CIDEI}
+                                & \textbf{Este trabajo}
+      \\ \hline
+       Naturaleza          &Privado  & Público 
+      \\ \hline 
+       Líneas de I+D       &\begin{itemize}
+                             \item Reconversión, modernización y/o actualización tecnológica de productos y servicios 
+                             \item Informatización de la producción.
+                             \item Mejoramiento continuo.
+                             \item Automatización Industrial de Bajo Costo.
+                            \end{itemize}
+
+                                              & \begin{itemize}
+                                                  \item Estudio de metodologías de diseño.
+                                                  \item Técnicas de fabricación de sistemas digitales
+                                                  \item Arquitectura de computadores y sistemas operativos.
+                                                  \item Desarrollo de aplicaciones embebidas.
+                                                \end{itemize}
+
+      \\ \hline 
+       Documentación en línea  & Ninguna  & \begin{itemize}
+                                             \item Plataformas copyleft hardware.
+                                             \item Diseños de referencia.
+                                             \item Tutoriales.
+                                             \item Cursos en línea (en construcción)
+                                             \item Base de datos de preguntas y respuestas.
+                                            \end{itemize}
+  
+      \\ \hline 
+       Servicios gratuitos     & Ninguno  & \begin{itemize}
+                                             \item Soporte a través de listas de correo.
+                                             \item Servidores con aplicaciones para almacenar proyectos.
+                                             \item Servidores con aplicaciones para crear, administrar y desarrollar nuevos proyectos.
+                                             \item Contactos con empresas manufactureras asiáticas.
+                                            \end{itemize}
+         \\ \hline 
+    \end{tabular}
+    }
+  }
+
+  \only<2>{
+    \resizebox{!}{4cm}{
+    \begin{tabular}{|p{4cm}|p{6cm}|p{12cm}|}
+      \hline
+      \textbf{Plataforma}       & \textbf{CIDEI}
+                                & \textbf{Este trabajo}
+      \\ \hline
+       Capacitación en diseño de PCBs    & \begin{itemize}
+                                            \item Uso de software con valor de 5000 USD
+                                            \item Costo del curso 350 USD
+                                           \end{itemize}
+
+                                        & \begin{itemize}
+                                           \item Uso de software abierto (\textit{kicad}).
+                                           \item Auto-aprendizaje utilizando como referencia diseños existentes.
+                                           \item Solución de dudas a través de las listas de discusión de Kicad y linuxencaja.
+                                           \item gratuito.
+                                          \end{itemize}
+  
+      \\ \hline 
+       Capacitación en lenguajes de
+       descripción de hardware          & \begin{itemize}
+                                           \item Costo del curso 350 USD.
+                                           \item Metodología de diseño.
+                                           \item Lenguaje VHDL.
+                                           \item Diseño lógico y secuencial.
+                                          \end{itemize}
+
+
+                                                & \begin{itemize}
+                                                   \item Metodología de diseño.
+                                                   \item Lenguajes de descripción de hardware.
+                                                   \item Implementación de tareas hardware utilizando máquinas de estado algorítmicas.
+                                                   \item Arquitectura de sistemas sobre silicio (SoCs)
+                                                   \item Implementación de tareas hardware como periféricos de un SoC.
+                                                   \item Comunicación HW/SW
+                                                   \item Gratuito (próximamente disponible en linuxencaja)
+                                                  \end{itemize}
+
+      \\ \hline 
+       Capacitación procesadores         &\begin{itemize}
+                                          \item Desde el 2010 Costo: 430 USD.
+                                          \item Procesadores ARM.
+                                          \item Programación en C.
+                                          \item Herramientas de desarrollo.
+                                          \item Manejo de interrupciones.
+                                          \item Dispositivos Entrada/salida
+                                          \item Control de periféricos.
+                                         \end{itemize}
+                                                            &  \begin{itemize}
+                                                                \item Trabajos realizados desde el 2004.
+                                                                \item Procesadores MIPS, Blackfin, ARM, 
+                                                                \item Softcores: Lm32, plasma.
+                                                                \item Arquitectura de un SoC, set de instrucciones, manejo de interrupciones 
+                                                                \item Flujo de diseño software.
+                                                                \item Sistemas operativos, inicialización de SoC, kernel de Linux, sistemas de archivos, aplicaciones usando Linux.
+                                                               \end{itemize}
+
+      \\ \hline 
+    \end{tabular}
+    }
+  }
+\end{frame}
+
+\begin{frame}
+  \frametitle{Costo de la Transferencia}
+
+  \only<1>{
+    \resizebox{!}{3.5cm}{
+
+    \begin{tabular}{|p{7.5cm}|p{2cm}|p{2.5cm}|}
+      \hline
+      \textbf{Item}       & \textbf{KETI-ETRI}  & \textbf{Este trabajo}
+      \\ \hline 
+      Equipos de cómputo (25) con licencias de:
+      \begin{itemize}
+       \item Windows, VMWARE.
+       \item Android SDK, Apache
+      \end{itemize}
+                             & 115.000                    & 50.000
+      \\ \hline 
+      Plataforma de desarrollo (15)
+      \begin{itemize}
+       \item Procesador ARM, 512MB DDR, MicroSD
+       \item LCD 800 x 480, touch screen
+       \item USB 2.0, WiFi, Camera.
+       \item Bluetooth. Android OS.  
+      \end{itemize}
+                          & 60.000                    & 4.500
+      \\ \hline 
+      Software para simulación:
+      \begin{itemize}
+       \item Qemu con soporte para OpenMoko 
+      \end{itemize}
+                          & 132.000                   & 0 
+      \\ \hline 
+      Depuración hardware:
+      \begin{itemize}
+       \item Trace 32 de Laterbach (15)
+      \end{itemize}
+                         & 180.000                   & 2.000
+      \\ \hline 
+    \end{tabular}
+    }
+  }
+
+   \only<2>{
+     \resizebox{!}{3.2cm}{
+    \begin{tabular}{|p{7cm}|p{2cm}|p{7cm}|}
+      \hline
+      \textbf{Item}       & \textbf{KETI-ETRI}  & \textbf{Este trabajo}
+      \\ \hline 
+      Herramientas CAD:
+      \begin{itemize}
+       \item PADS de Cadence (15)
+      \end{itemize}
+                         & 180.000                   & 0 
+      \\ \hline 
+      Plataforma hardware (15):
+      \begin{itemize}
+       \item Especificaciones de la plataforma de desarrollo
+       \item Archivos para reproducir el hardware:
+         \begin{itemize}
+          \item Esquemáticos.
+          \item Archivos Gerber.
+         \end{itemize}
+       \item Código fuente:
+         \begin{itemize}
+          \item bootloader: u-boot.
+          \item Kernel de Linux.
+          \item Android OS.
+         \end{itemize}
+       \item documentación
+         \begin{itemize}
+          \item Guía de usuario.
+          \item Port de Android.
+         \end{itemize}
+      \end{itemize}
+                         & 120.000                   & 50.000 
+                                                       \begin{itemize}
+                                                        \item Archivos para \textbf{Modificar} la plataforma
+
+                                                        \item Código fuente:
+                                                          \begin{itemize}
+                                                           \item u-boot
+                                                           \item Kernel de Linux.
+                                                           \item Android OS.
+                                                          \end{itemize}
+                                                        \item Documentación:
+                                                           \begin{itemize}
+                                                            \item Tutoriales.
+                                                            \item Proceso completo de diseño.
+                                                            \item Cursos en línea.
+                                                            \item Listas de discusión.
+                                                           \end{itemize}
+                                                       \end{itemize}
+
+      \\ \hline 
+
+    \end{tabular}
+     }
+   }
+
+\end{frame}
 
 \begin{frame}
   \frametitle{Preguntas}
