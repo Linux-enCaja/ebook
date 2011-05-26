@@ -1,0 +1,1174 @@
+\documentclass[xcolor=svgnames]{beamer}
+% \usetheme{JuanLesPins}
+\usetheme{CambridgeUS}
+\usecolortheme{crane}
+\usepackage{fontenc}
+
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage{fontenc}
+\usepackage{amssymb}
+
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usetikzlibrary{arrows,shapes,positioning}
+\usetikzlibrary{patterns}
+
+\usepackage{times}
+\usepackage{colortbl}
+\usepackage{color}
+
+\usepackage{tocvsec2}
+\setlength{\leftmargini}   {13pt} 
+\setlength{\leftmarginii}  {13pt} 
+\setlength{\leftmarginiii} {13pt} 
+
+
+
+\title[TT en Diseño de Sistemas Embebidos]{TRANSFERENCIA TECNOLÓGICA Y DE CONOCIMIENTOS EN EL DISEÑO DE SISTEMAS EMBEBIDOS}
+\author{Carlos Iván Camargo Bareño\\
+        Director: Luis Fernando Niño (PhD)\\
+        }
+
+\author[Carlos Camargo]{Carlos Iván Camargo Bareño{1} \\  \and Director: Luis Fernando Niño\inst{2}}
+\institute[UNAL]{
+
+\inst{1}Departamento de Ingeniería Eléctrica y Electrónica \and
+\inst{2}Departamento de Ingeniería de Sistemas e Industrial}
+
+\pgfdeclareimage[height=.5cm]{logo}{../images/logo_unal}
+\logo{\pgfuseimage{logo}}
+
+
+
+\begin{document}
+
+%----------------------------------------------------------------------INSERT TITLE-
+\frame[c]{\titlepage}
+\settocdepth{section}
+\frame[c]{\tableofcontents}
+
+
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+%----------------------------------------------------------------------Introducción-
+\section{Introducción}
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+\subsection[Intro]{Definición de Tecnología}
+
+\begin{frame}
+  \frametitle{Tecnología: Definición}
+   \begin{center} \includegraphics[scale=.45]{../images/technology_definition_slides.pdf}   \end{center}
+\end{frame}
+
+\subsection[Intro]{Transferencia Tecnológica}
+\begin{frame}
+  \frametitle{Transferencia Tecnológica}
+ 
+  \begin{alertblock}{}
+    \begin{itemize}
+     \item<1-> Odedra \cite{Mo94}: \textbf{La transferencia tecnológica se considera exitosa cuando los receptores de la tecnología \textcolor{DarkGreen}{asimilan} estos conceptos para \textcolor{DarkGreen}{suplir sus necesidades locales}}.
+     \item<2-> Jolly \cite{Jol77}: \textbf{El conocimiento es lo que queda al final de un proceso \textcolor{DarkGreen}{documentado y difundido} de forma apropiada. Para que la transferencia tecnológica sea exitosa es necesario transferir los componentes de la tecnología}.
+    \end{itemize}
+  \end{alertblock}
+
+\end{frame}
+
+
+
+\subsection{Canales de Transferencia}
+\begin{frame}
+  \frametitle{Canales para la TT}
+   \begin{center} \includegraphics[scale=.6]{../images/TT_canales.pdf}   \end{center}
+\end{frame}
+
+
+\section{Situación Colombiana}
+
+
+\begin{frame}
+  \frametitle{Situación Colombiana \cite{LV98}} 
+     \begin{itemize}
+      \item Según el ministerio de educación en el país existen 297 programas relacionados con la electrónica. 
+      \item Según ASESEL en el 2001 existían 154 empresas productoras de componentes y equipos de la cadena electrónica.
+        \begin{itemize}
+         \item 76\% usa tecnología de los 80 o anterior
+        \end{itemize}
+      \item Las empresas no adquieren el conocimiento necesario para innovar; se limitan a compra de equipo.
+      \item Principal problema: tecnología de producción desactualizada.
+      \item Según el DNP, DDE, basados en información del DANE y la DIAN, las importaciones son 64 veces mayores que las exportaciones.
+% departamento nacional de planeación
+% Dirección de desarrollo empresarial
+% La Underwrite Laboratories (UL)
+     \end{itemize}
+\end{frame}
+
+  
+\subsection{Causas del Atraso}
+\begin{frame}
+  \frametitle{Causas del Atraso}
+    \begin{itemize}
+     \item Deficientes relaciones universidad - empresa.
+     \item Pobre enfoque académico hacia la industria.
+     \item Baja calidad de los productos nacionales.
+     \item Falta de políticas gubernamentales.
+     \item Falta de cultura de investigación y reducida apropiación tecnológica.
+     \item \alert{Atraso tecnológico y limitado recurso humano con formación adecuada}.
+    \end{itemize}
+\end{frame}
+
+\subsubsection[Intro]{Inversión en I+D}
+\begin{frame}
+  \frametitle{Inversión en I+D}
+   \begin{center} \includegraphics[scale=.4]{../images/Inversion_PIB_latam.jpg}\\
+   Fuente: Educación Superior en Iberoamérica 2007   \end{center}
+\end{frame}
+
+
+\subsection{Obstáculos para la Transferencia} 
+\begin{frame}
+  \frametitle{Obstáculos para la Transferencia \cite{MO90}}
+    \begin{itemize}
+     \item  Falta de facilidades en educación y en capacitación. 
+     \item  La resistencia o el desconocimiento a la tecnología.
+     \item  La transferencia es efectiva solo si la economía en la cual es introducida es capaz de utilizarla
+     \item  \textcolor{DarkGreen}{Falta de personal disponible y dispuesto a absorber el \textit{know-how} asociado a la tecnología}.
+     \item  Falta de políticas claras en la Tecnología de la información.
+     \item  Competencia de países asiáticos.
+    \end{itemize}
+\end{frame}
+
+\subsection{Recomendaciones}
+
+\subsubsection{A los generadores de políticas}
+\begin{frame}
+  \frametitle{Recomendaciones para los generadores de políticas}
+  \small
+ \begin{itemize}
+% 
+    \item Promover la importancia de la TT como motor de desarrollo.
+%     \begin{itemize}
+%     \footnotesize
+%       \item Proporcionar educación en transferencia tecnológica y comercialización a las instituciones académicas.
+%       \item Promover la formación de grupos de investigación locales, para superar el aislamiento de investigaciones individuales.
+%       \item Tomar conciencia que la innovación involucra el desarrollo científico y tecnológico a varios niveles, por diferentes medios y a través de un amplio rango de instituciones académicas.
+%        \item Promover actividades que involucren transferencia de conocimiento, creación de nuevos productos y servicios.
+%       \item\ Promoción de vínculos entre grupos de investigación locales y sus pares en el exterior.
+%     \end{itemize}
+% 
+    \item Fomentar la generación de empresas locales de base tecnológica.
+%    \begin{itemize}
+%       \item Evaluar y abordar la transferencia de tecnología desde una perspectiva corporativa.
+%       \item Revisión de la política gubernamental de apoyo a las pequeñas empresas.
+%    \end{itemize}
+% 
+    \item Promover el mejoramiento de la plataforma tecnológica
+%    \begin{itemize}
+%       \item Desarrollar sistemas de medición para capturar de forma efectiva el valor de las actividades relacionadas con la innovación.
+%       \item Crear un centro de intercambio de información para transferencia tecnológica y difundir la información de forma activa.
+%    \end{itemize}
+% 
+    \item Promover la relación universidad-empresa.
+%     \begin{itemize}  
+%     \footnotesize
+%       \item Fomento a centros de investigación y productividad para fortalecer la relaciones universidad empresa.
+%       \item Fomentar la colaboración Universidad-Empresa en I+D, mediante la financiación de becas de cooperación, centros de investigación e incentivos fiscales.
+%        \item Crear estrategias para mejorar la relación Universidad - empresa.
+%        \item Educar a las instituciones académicas sobre los recursos empresariales locales.
+%       \item Trabajar con corporaciones y fundaciones para el fomento de patrocinios y participación en transferencia de tecnología, I+D y desarrollo empresarial.
+%        \item Capturar y retener empresas creadas en las instituciones académicas.
+%       \item Crear políticas que ayuden a vincular a científicos extranjeros y a impedir la migración de los nacionales.
+%     \end{itemize}
+% 
+    \item \textcolor{DarkGreen}{Formular políticas para incentivar actividades de transferencia tecnológica}.
+%     \begin{itemize}  
+%     \footnotesize
+%       \item Fomentar en líderes universitarios el compromiso con el desarrollo económico.
+%        \item Definir agendas de investigación acordes con las tendencias mundiales y desarrollar capacidades en el país.
+%       \item Fomentar cooperación internacional e inversión extranjera con transferencia de tecnología. a nivel gubernamental, Apoyo del gobierno a personas que tienen un alto potencial de crear y desarrollar tecnología.
+%       \item Mejorar la plataforma Tecnológica.
+%     \end{itemize}
+    \item \textcolor{DarkGreen}{Promover la excelencia académica y la investigación}.
+%     \begin{itemize}  
+%     \footnotesize
+%       \item Promoción de las instituciones académicas como bienes económicos
+%       \item Trabajar con las instituciones académicas para identificar sus competencias.
+%       \item Proporcionar fondos para temas específicos de investigación en instituciones académicas.
+%       \item Promover la Investigación y Desarrollo y la transferencia tecnológica
+%        \item Promover la investigación, la colaboración, la transferencia tecnológica y el desarrollo empresarial.
+%        \item Evaluar el impacto de la academia sobre la economía local.
+%     \end{itemize}
+ \end{itemize}
+\end{frame}
+
+\subsubsection{Para la academia}
+\begin{frame}
+
+\frametitle{Recomendaciones para la academia}
+
+\begin{itemize}
+    \item Actualización curricular.
+     \begin{itemize}
+%       \footnotesize
+%       \item Innovación
+%       \item Crear planes de transferencia de tecnología flexibles
+%       \item hacer compromisos con el desarrollo económico.
+        \item \textcolor{Navy}{Mejorar las competencias y habilidades generales de los ingenieros.}
+%        \item Innovación curricular, actualización continua de profesionales.
+        \item \textcolor{DarkGreen}{Maestrías y doctorados nacionales conectados con el sector productivo.}
+        \item Difusión de conocimientos entre todos los estratos de la población.
+     \end{itemize}
+% 
+    \item Alianza con la industria
+     \begin{itemize}
+%       \footnotesize
+       \item \textcolor{Navy}{Desarrollar habilidades y competencias que la empresa requiere.}
+%       \item Buscar alianzas industriales para lograr beneficios a largo-plazo.
+%        \item Vinculación de miembros de la industria a centros de investigación.
+       \item Buscar fortalezas en áreas dominadas por las industrias locales.
+%       \item Promover y soportar la Transferencia de Tecnología
+%       \item Fortalecer el espíritu empresarial para apoyar la comercialización
+%       \item Montar laboratorios de pruebas e incentivar a los productores nacionales para que logren una calidad que cumpla con los estándares internacionales.
+     \end{itemize}
+% 
+    \item Promover y Soportar la Transferencia Tecnológica.
+     \begin{itemize}
+%       \footnotesize
+%       \item Elevar la transferencia tecnológica a un nivel superior y promover la excelencia.
+%       \item Concientizar a los creadores de políticas gubernamentales sobre la importancia de la transferencia tecnológica y las alianzas con la investigación industrial.
+       \item Investigación aplicada orientada a mejorar la productividad empresarial.
+       \item \textcolor{DarkGreen}{Impulsar la actualización tecnológica desarrollando proyectos con una posible transferencia de tecnología.}
+     \end{itemize}
+% 
+    \item Búsqueda de financiación para investigación y desarrollo
+%     \begin{itemize}  
+%       \footnotesize
+%       \item Buscar de forma agresiva fondos para la investigación.
+%       \item Crear recursos empresariales en las instituciones académicas, y enlazarlos con actividades de transferencia tecnológica.
+%        \item Alianzas con fuentes de inversión de capital para nuevas empresas.
+%        \subitem Creación de empresas como parte del proceso de TT.
+%       \item Realizar seminarios y líneas de profundización de temas afines a la administración y la gerencia en empresas de base tecnológica.
+%     \end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\section{¿Por qué TT en Diseño de Sistemas Embebidos (SE)?}
+
+\subsection{Sistemas Embebidos: Aplicaciones}
+
+\begin{frame}
+  \frametitle{¿Por qué Sistemas Embebidos?}
+   \begin{center} \includegraphics[scale=.55]{../images/Embedded_systems_applications.pdf}\\
+   \footnotesize
+   Fuente: TATA Consultancy Services
+   \end{center}
+\end{frame}
+
+\subsection{Sistemas Embebidos: Mercado}
+\begin{frame}
+  \frametitle{Sistemas Embebidos: Mercado}
+   \begin{center} \includegraphics[scale=.45]{../images/glob-emb-software-rev-applicatio.png}\\
+   \end{center}
+\end{frame}
+
+
+\section{Objetivos}
+\begin{frame}
+  \frametitle{Objetivos}
+
+%    \setbeamercolor{block title}{bg=red,fg=blue}%bg=background, fg= foreground
+   \setbeamercolor{block body}{bg=yellow!10}%bg=background, fg= foreground
+
+   \only<1>{
+     \begin{alertblock}{Objetivo Principal}
+       Desarrollar una metodología para la transferencia tecnológica y de conocimientos en el diseño de Sistemas Embebidos y de esta forma contribuir a dar solución al problema del atraso tecnológico en Colombia.
+     \end{alertblock}
+   }
+
+   \only<2>{
+     \begin{block}{Objetivos Específicos: Asimilación de conocimientos}
+       \begin{itemize}
+         \small
+         \item \textcolor{DarkGreen}{Formulación/adaptación y aplicación de una metodología para la transferencia tecnológica y de conocimientos} en el área de diseño y fabricación de Sistemas Embebidos en Colombia que permita generar cambios globales a partir de interacciones locales.
+
+         \item \textcolor{DarkGreen}{Formulación o adaptación de una metodología de diseño y producción para sistemas embebidos} aplicable en el entorno local y su respectiva aplicación y validación en un programa académico de un centro de formación superior consolidado y en una empresa de base tecnológica.
+       \end{itemize}
+     \end{block}
+   }
+   \only<3->{
+     \begin{block}{Objetivos Específicos: Creación de habilidades}
+       \begin{itemize}
+
+         \item \textcolor{DarkGreen}{Identificación de las habilidades requeridas por los profesionales en ingeniería electrónica} para estar acorde con la tendencia de la industria electrónica mundial. \textcolor{DarkGreen}{Creación de un programa académico} que ayude al refuerzo de estas habilidades en las asignaturas relacionadas con el diseño digital.
+
+         \item \textcolor{DarkGreen}{Generación de un recurso público} basado en el conocimiento necesario para diseñar implementar y producir sistemas digitales.
+
+         \item \textcolor{DarkGreen}{Creación de herramientas de difusión} que permitan el acceso de este recurso a cualquier sector de la sociedad que esté interesado.
+       \end{itemize}
+     \end{block}
+   }
+
+
+
+% \subsubsection{Resultados Esperados e Impacto}
+% 
+% Con la realización de este proyecto se busca generar la base de un recurso de bien público representado por el conocimiento necesario para concebir, diseñar, implementar y operar sistemas digitales; administrado/usado/mantenido/depurado/aumentado por una comunidad formada por personas o instituciones con disponibilidad para trabajo colectivo cuyas acciones están basadas en el beneficio común; se pretende vincular a esta comunidad a docentes y estudiantes de centros de formación y a industrias de base tecnológica de diferentes regiones del país. El esquema de licencias utilizada por este recurso permitirán su estudio, uso, modificación y reproducción (incluso para fines comerciales); con los requisitos de dar crédito al autor del trabajo original y que los trabajos derivados posean el mismo esquema de licencias, lo que facilitará su difusión y permitirá su aumento y depuración.
+% 
+% El éxito de esta iniciativa radica en el crecimiento de la comunidad que administra/usa/mantiene/depura/aumenta el bien público, a diferencia de los recursos tradicionales como los naturales o económicos, el conocimiento no se ve afectado por el aumento de usuarios; por esto, no deben existir restricciones para acceder a sus contenidos y se deben proporcionar mecanismos de difusión para que este conocimiento llegue a los sectores de la sociedad interesados en él. Se espera que los resultados de esta investigación proporcionen herramientas a centros de diferentes niveles de formación a lo largo del país, que les permitan actualizar sus programas académicos y compartir experiencias educativas con el fin de uniformizar los contenidos de las asignaturas relacionadas con el diseño digital, incorporando actividades que le permitan a los estudiantes adquirir habilidades en el diseño e implementación de dispositivos digitales que den solución a problemas locales reales y puedan ser comercializados. Adicionalmente, se desea crear una red de cooperación entre las universidades que hagan parte de esta comunidad, para realizar proyectos conjuntos encaminados a continuar el presente trabajo y a compartir los escasos recursos gubernamentales destinados a investigación y desarrollo.
+% 
+% Se espera que el suministro de plataformas de referencia que pueden ser utilizadas como punto de partida para el desarrollo de nuevos productos ahorre años de desarrollo y dinero a empresas locales en la absorción de esta tecnología, permitiendo aumentar la oferta interna de diseño de sistemas digitales y a su vez la demanda interna de bienes y servicios relacionados con la manufactura de sistemas digitales, y de esta forma generar empleo para personas con diferentes niveles de formación. El cambio de las costumbres de empresas constituidas y que utilizan productos extranjeros es una utopía, por lo que este cambio se espera realizar en empresas recientemente consolidadas, por estudiantes que fueron formados con las habilidades necesarias para crear productos novedosos.
+% 
+
+\end{frame}
+
+
+
+\section{Metodología Propuesta}
+\begin{frame}
+\frametitle{}
+
+
+\tikzstyle{phase}       = [draw, thin, fill=blue!20,  text width=2.cm,  text centered, minimum height=0.5cm]
+\tikzstyle{phase2}      = [draw, thin, fill=red!20,   text width=2.5cm, text centered, minimum height=0.5cm]
+\tikzstyle{extern}      = [draw, thin, fill=red!20,   text width=1.5cm, text centered, minimum height=0.5cm]
+\tikzstyle{industry}    = [draw, thin, fill=green!20, text width=6cm,   text centered, minimum height=0.5cm]
+\tikzstyle{academy}     = [draw, thin, fill=brown!20, text width=6cm,   text centered, minimum height=0.5cm]
+\tikzstyle{ph_explain}  = [draw, thin, fill=gray!20,  text width=8cm,   text centered, minimum height=0.5cm]
+\tikzstyle{difusion_es} = [draw, thin, fill=yellow!20,text width=7cm,   text centered, minimum height=0.5cm]
+
+\tikzset{
+  myarrow/.style     = {->, >= triangle 90, thick},
+  myarrow1/.style    = {->, >= triangle 90, thick, brown, line width=0.05cm},
+  myarrow2/.style    = {->, >= triangle 90, thick, green, line width=0.05cm},
+  mylabel/.style     = {text width=7em},
+  mylabel2/.style    = {text width=20em}
+} 
+
+% Fija el tamaño de la indentación en los 3 niveles de un enumerate, itemize, list
+\setlength{\leftmargini}   {13pt} 
+\setlength{\leftmarginii}  {13pt} 
+\setlength{\leftmarginiii} {13pt} 
+
+
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+\begin{figure}
+\begin{tikzpicture}[node distance=0.5cm, auto,>=latex', thick]
+\scriptsize
+    % We need to set at bounding box first. Otherwise the diagram
+    % will change position for each frame.
+    \path[use as bounding box] (-1.5,0) rectangle (12,-2);
+
+    % TT methodology     
+    \onslide<1,2-> \node [phase]                        (monitoreo)     {Monitoreo};
+    \onslide<1,3-> \node [phase, below of=monitoreo]    (choice)        {Elección};
+    \onslide<1,4-> \node [phase, below of=choice]       (acquisition)   {Adquisición};
+    \onslide<1,5-> \node [phase, below of=acquisition]  (adaptation)    {Adaptación};
+    \onslide<1,6-> \node [phase, below of=adaptation]   (absortion)     {Absorción};
+    \onslide<1,7-> \node [phase, below of=absortion]    (aplication)    {Aplicación};
+    \onslide<1,8-> \node [phase, below of=aplication]   (difusion)      {Difusión};
+
+    % linuxencaja + investigación
+    \onslide<1,9-> \path (difusion.south) +(0,-0.2) node (research)     {Investigación Universitaria};
+    \onslide<1,9-> \path (monitoreo.north)+(0,+0.2) node (linuxencaja)  {Comunidad \textit{linuxencaja}};
+
+    % Now it's time to draw the colored rectangles.
+     \begin{pgfonlayer}{background}
+        \path (linuxencaja.west |- linuxencaja.north) + (-0.2,0.0)  node (a) {};
+        \path (research.south   -| research.east)     + (+0.1,-0.15) node (b) {};
+        \path (research.east    |- research.east)     + (+0.1,-0.1) node (c) {};
+        \path[fill=yellow!20,rounded corners, draw=black!50] (a) rectangle (c);           
+        \path (monitoreo.north west)+(-0.2,0.2) node (a) {};
+    \end{pgfonlayer}
+
+    % "Empresa" node
+    \onslide<1,11-> \node [industry, right=1cm of linuxencaja.north east]  (industry)      {\textbf{Empresa}
+                                                                  \begin{itemize}
+                                                                   \item Transferencia de conocimiento.
+                                                                     \begin{itemize}
+                                                                       \scriptsize
+                                                                       \item Procesos de fabricación.
+                                                                       \item Metodologías de diseño.
+                                                                     \end{itemize}
+                                                                   \item Diseños de referencia.
+                                                                  \end{itemize} };
+
+    \onslide<1,11-> \draw[myarrow2] ([xshift=0.75cm] adaptation.east) -- ++(0.2,0)-- ++ (0,2.2) --  (industry.west);	
+
+    % "Academia" node
+    \onslide<1,10-> \node [academy, right=0.8cm of research.south east]  (academy)      {\textbf{Academia}
+                                                                  \begin{itemize}
+                                                                   \item Actualización de programas académicos.
+                                                                   \item Generación de habilidades.
+                                                                   \item Creación de industria.
+                                                                   \item Actualización de programas académicos.
+                                                                   \item Creación/adaptación de metodologías /procesos de diseño.
+                                                                  \end{itemize} };
+    \onslide<1,10-> \draw[myarrow1] ([xshift=0.75cm] adaptation.east) -- ++(0.2,0)-- ++ (0,-2.2) --  (academy.west);	
+
+
+    % Relaciones Universidad - Empresa    
+    \onslide<1,12-> \draw[myarrow] ([xshift=-2.6cm] industry.south) -- ([xshift=-2.6cm] academy.north);
+    \onslide<1,12-> \node[mylabel, below left=of industry.south] (label1)  {\scriptsize Pasantías.\\Servicios.\\Regalías.    \\Necesidades.};  
+
+    % Relaciones Empresa - Universidad
+    \onslide<1,13-> \draw[myarrow] ([xshift= 2.6cm] academy.north)  -- ([xshift= 2.6cm] industry.south);
+    \onslide<1,13-> \node[mylabel, below right=of industry.south] (label1) {\scriptsize Creación. \\Soporte.  \\Capacitación.\\Personal.};  
+
+    % Necesidades de la sociedad
+    \onslide<1,14-> \node [extern, right=0.2cm of industry] (needs)   {Necesidades de la sociedad};
+    \onslide<1,14-> \draw[myarrow] (needs.west)  --  (industry.east);
+    \onslide<1,14-> \draw[myarrow] (needs.south) -- ++(0, -3.85) -- (academy.east);
+
+    % Realimentación Universidad - Empresa a la metodología de transferencia
+    \onslide<1,15-> \draw[myarrow] (industry.north)  --++(0,0.3)--++(-5.65,0) -- ([yshift= 0cm] linuxencaja.north);
+    \onslide<1,15-> \draw[myarrow] (academy.south)  --++(0,-0.3)--++(-5.65,0) -- ([yshift= 0.1cm] research.south);
+    \onslide<1,15-> \node[mylabel2, above left=of industry.north] (label1) {\scriptsize Necesidades, Personal, Conocimientos};  
+    \onslide<1,15-> \node[mylabel2, below left=of academy.south]  (label2) {\scriptsize Necesidades, Personal, Conocimientos};  
+
+    %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&    
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    % Explicación de cada etapa de la metodología
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&    
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    %            Monitoreo
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+
+    \onslide<2> \node [ph_explain, right=1cm of adaptation.east] (exp_monitores)
+    {\begin{center} \textbf{Monitoreo} \end{center}
+      \begin{itemize}
+       \item Detectar tecnologías emergentes.
+       \item Dinámica de la tecnología (obsolescencia).
+       \item Soluciones tecnológicas disponibles
+      \end{itemize}
+
+    };
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    %            Elección
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    \onslide<3> \node [ph_explain, right=1cm of adaptation.east] (exp_choice)        
+    { \begin{center} \textbf{Elección} \end{center}
+      \begin{itemize}
+       \item Evaluación del estado de la plataforma tecnológica existente para identificar facilidades y necesidades.
+       \item Encontrar una tecnología que pueda ser implementada con el estado actual de la plataforma tecnológica.
+       \item Identificar los niveles de complejidad, para determinar una alternativa que pueda implementarse y de resultados a mediano y corto plazo con no muy altas inversiones de capital.
+      \end{itemize}
+    };
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    %            Adquisición
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    \onslide<4> \node [ph_explain, right=1cm of adaptation.east] (exp_acquisition)   
+    {      
+     \begin{center} \textbf{Adquisición} \end{center}
+     \begin{itemize}
+      \item Adquisición de equipos que utilicen la tecnología que se desea transferir.
+      \item Fácil adquisición.
+        \begin{itemize}
+        \scriptsize
+         \item Existen aplicaciones en gran parte de las actividades humanas.
+         \item No es necesario firmar acuerdos con países o con grandes industrias.
+        \end{itemize}
+      \item Adquisición de plataformas de desarrollo hardware y software 
+      \item Identificación de herramientas de desarrollo.
+     \end{itemize}
+    };
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    %            Adaptación
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+
+    \onslide<5> \node [ph_explain, right=1cm of adaptation.east] (exp_adaptation)    
+    {
+    \begin{center} \textbf{Adaptación} \end{center}
+    \begin{itemize}
+     \item Se presenta cuando la sociedad encuentra posible y deseable realizar cambios para involucrar usos particulares de la tecnología.
+%      \item Es un proceso dinámico que esta formado por etapas donde:
+%        \begin{itemize}
+%         \scriptsize
+%         \item Se proporcionan procedimientos adecuados para la transferencia física.
+%         \item Se proporciona conocimiento, habilidades, datos, y las herramientas necesarias para la evaluación.
+%         \item Etapa de planeación, diseño e implementación del sistema de transferencia, planes y estrategias.
+%        \end{itemize}
+     \item Metodología para el estudio gradual de la tecnología
+       \begin{itemize}
+        \scriptsize
+        \item Adquisición de un dispositivo comercial. 
+        \item Aplicar ingeniería inversa para identificar su arquitectura y forma de programación.
+        \item Generación de aplicaciones similares a la original. 
+        \item Diseño y construcción local.
+        \item Transmisión de conocimientos a la academia y a la industria.
+        \item Documentación del proceso a todo sector de la sociedad.
+       \end{itemize}
+
+    \end{itemize}
+    };
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    %            Absorción
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    \onslide<6> \node [ph_explain, right=1cm of adaptation.east] (exp_absortion)     
+    {
+      \begin{center} \textbf{Absorción} \end{center}
+%        Capacidad del receptor para utilizar la tecnología. 
+%        Permite identificar la efectividad de la transferencia.
+    \begin{itemize}
+     \item La absorción es la capacidad del receptor para absorber tecnología de un sector y la asimilación es la capacidad de asimilar (analizar, procesar, interpretar y entender) y utilizarla en otro sector 
+     \item Se deben generar dos tipos de habilidades para soportar la tecnología:
+       \begin{itemize}
+        \scriptsize
+        \item Técnicas: hardware, sistemas operativos, redes, tecnologías de la comunicación, aplicaciones SW.
+        \item Humanas: Habilidades y conocimientos necesarios para desarrollar, mantener, manipular, adaptar al entorno local y futuro desarrollo.
+       \end{itemize}
+
+     \item  Mecanismos de aprendizaje para operar y cambiar la nueva tecnología; 
+      \begin{itemize}
+        \scriptsize
+        \item Banco de proyectos que pueden ser utilizados como base de futuros desarrollos.
+        \item Cursos para la enseñanza de metodologías de diseño y procesos de fabricación.
+      \end{itemize}
+     \item  Metodologías de diseño y procesos de fabricación para generación de productos propios.
+    \end{itemize}
+
+    };
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    %            Aplicación
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    \onslide<7> \node [ph_explain, right=1cm of adaptation.east] (exp_aplication)    
+    {
+      \begin{center} \textbf{Aplicación} \end{center}
+
+      \begin{itemize}
+       \item       Incorporación y aplicación del conocimiento adquirido a:
+	  \begin{itemize}
+	    \scriptsize
+	    \item La academia (UNAL)
+	      \begin{itemize}
+	      \scriptsize
+	      \item Incorporaron metodologías modernas de diseño y fabricación
+	      \item Adaptación a la iniciativa CDIO (Concebir, Diseñar, Implementar y operar).
+	      \end{itemize}
+
+            \item La industria (emQbit):
+	      \begin{itemize}
+	      \scriptsize
+	      \item Evaluar el impacto del uso de esta tecnología en la industria.
+	      \item Obtener información sobre el estado de la industria electrónica en el país.
+	      \item Detectar los obstáculos que enfrentan nuevas empresas en su ejercicio.
+	      \end{itemize}
+            \end{itemize}
+      \end{itemize}
+
+    };
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    %            Difusión
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    \onslide<8> \node [ph_explain, right=1cm of adaptation.east] (exp_difusion)      
+    {\begin{center} \textbf{Difusión (en ejecución)} \end{center}
+       \begin{itemize}
+        \item Difundir los conocimientos adquiridos a los sectores de la sociedad interesados en el.
+        \item Concienciar a la sociedad de la importancia del uso de esta tecnología. 
+        \item Creación de una comunidad que:
+          \begin{itemize}
+           \scriptsize
+           \item Utilice/administre/depure/aumente los conocimientos generados.
+           \item Esté formada por personas con diferentes intereses y niveles de formación (UNAL, UIS, USTA, ULA, UDFJC, emQbit y CorreLibre)
+          \end{itemize}
+        \item Creación de un recurso público formado por:
+          \begin{itemize}
+           \scriptsize
+           \item Archivos necesarios para estudiar, entender, reproducir y programar plataformas \textit{copyleft hardware}. 
+           \item Herramientas de difusión disponibles en el portal público \textit{linuxencaja}
+             \begin{itemize}
+              \scriptsize
+              \item Lista de correo.
+              \item Wikis en donde se documenta el proceso de diseño.
+              \item Sistema de control de versiones.
+             \end{itemize}
+          \end{itemize}
+       \end{itemize}
+    };
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    %        Estrategias de difusión
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    \onslide<9> \node [difusion_es, above right=2cm of adaptation.east] (est_difusion)      
+      {
+       \includegraphics[scale=.25]{../images/plataformas_hwcl.png}\\
+       \color{blue!40!black} {Repositorios + Tutoriales + Cursos en línea}
+      };
+    \onslide<9> \node [difusion_es, below = 0.5cm of est_difusion] (canales_difusion)      
+      {
+       \color{red!60!black} {Canales de difusión} \\
+                          GIT, WIKI, MAIL\\
+        \color{green!60!black}{Código fuente (.c,.v,.vhd,.S,.java), archivos de diseño} 
+      };
+    \onslide<9> \draw[myarrow] (est_difusion.south) -- (canales_difusion.north);	
+    
+    \onslide<9> \node [phase2, below = .6cm of canales_difusion] (dif_academia2)      
+      {
+        Academia \\
+        \begin{itemize}
+         \scriptsize
+         \item UIS, ULA, USTA, UDFJC, ENAP.
+         \item ET-ITC.
+         \item SENA.
+        \end{itemize}
+      };
+    \onslide<9> \draw[myarrow] (canales_difusion.south) -- (dif_academia2.north);	
+
+    \onslide<9> \node [phase2, left = .1cm of dif_academia2] (dif_academia)      
+      {
+        I+D UNAL \\
+        \begin{itemize}
+         \scriptsize
+         \item Telemedicina.
+         \item Veterinaria.
+         \item Mecatrónica.
+         \item Sistemas.
+        \end{itemize}
+      };
+    \onslide<9> \draw[myarrow] (canales_difusion.south) --++(0,-0.2)--++ (-2.8cm, 0) -- (dif_academia.north);	
+
+    \onslide<9> \node [phase2, right = .1cm of dif_academia2] (dif_industria)      
+      {
+        Industria\\
+         \scriptsize
+        \begin{itemize}
+         \item emQbit.
+         \item MicroEnsamble.
+         \item Proyecto SENA.
+        \end{itemize}
+      };
+    \onslide<9> \draw[myarrow] (canales_difusion.south) --++(0,-0.2)--++ (2.8cm, 0) -- (dif_industria.north);	
+\end{tikzpicture}
+\end{figure}
+
+\end{frame}
+
+\section{Resultados}
+\begin{frame}
+  \frametitle{Comparación con el CIDEI}
+
+  \only<1>{
+    \resizebox{!}{3.5cm}{
+    \begin{tabular}{|p{4cm}|p{7cm}|p{10cm}|}
+      \hline
+      \textbf{Plataforma}       & \textbf{CIDEI}
+                                & \textbf{Este trabajo}
+      \\ \hline
+       Naturaleza          &Privado  & Público 
+      \\ \hline 
+       Líneas de I+D       &\begin{itemize}
+                             \item Reconversión, modernización y/o actualización tecnológica de productos y servicios 
+                             \item Informatización de la producción.
+                             \item Mejoramiento continuo.
+                             \item Automatización Industrial de Bajo Costo.
+                            \end{itemize}
+
+                                              & \begin{itemize}
+                                                  \item Estudio de metodologías de diseño.
+                                                  \item Técnicas de fabricación de sistemas digitales
+                                                  \item Arquitectura de computadores y sistemas operativos.
+                                                  \item Desarrollo de aplicaciones embebidas.
+                                                \end{itemize}
+
+      \\ \hline 
+       Documentación en línea  & Ninguna  & \begin{itemize}
+                                             \item Plataformas copyleft hardware.
+                                             \item Diseños de referencia.
+                                             \item Tutoriales.
+                                             \item Cursos en línea (en construcción)
+                                             \item Base de datos de preguntas y respuestas.
+                                            \end{itemize}
+  
+      \\ \hline 
+       Servicios gratuitos     & Ninguno  & \begin{itemize}
+                                             \item Soporte a través de listas de correo.
+                                             \item Servidores con aplicaciones para almacenar proyectos.
+                                             \item Servidores con aplicaciones para crear, administrar y desarrollar nuevos proyectos.
+                                             \item Contactos con empresas manufactureras asiáticas.
+                                            \end{itemize}
+         \\ \hline 
+    \end{tabular}
+    }
+  }
+
+  \only<2>{
+    \resizebox{!}{4cm}{
+    \begin{tabular}{|p{4cm}|p{6cm}|p{12cm}|}
+      \hline
+      \textbf{Plataforma}       & \textbf{CIDEI}
+                                & \textbf{Este trabajo}
+      \\ \hline
+       Capacitación en diseño de PCBs    & \begin{itemize}
+                                            \item Uso de software con valor de 5000 USD
+                                            \item Costo del curso 350 USD
+                                           \end{itemize}
+
+                                        & \begin{itemize}
+                                           \item Uso de software abierto (\textit{kicad}).
+                                           \item Auto-aprendizaje utilizando como referencia diseños existentes.
+                                           \item Solución de dudas a través de las listas de discusión de Kicad y linuxencaja.
+                                           \item gratuito.
+                                          \end{itemize}
+  
+      \\ \hline 
+       Capacitación en lenguajes de
+       descripción de hardware          & \begin{itemize}
+                                           \item Costo del curso 350 USD.
+                                           \item Metodología de diseño.
+                                           \item Lenguaje VHDL.
+                                           \item Diseño lógico y secuencial.
+                                          \end{itemize}
+
+
+                                                & \begin{itemize}
+                                                   \item Metodología de diseño.
+                                                   \item Lenguajes de descripción de hardware.
+                                                   \item Implementación de tareas hardware utilizando máquinas de estado algorítmicas.
+                                                   \item Arquitectura de sistemas sobre silicio (SoCs)
+                                                   \item Implementación de tareas hardware como periféricos de un SoC.
+                                                   \item Comunicación HW/SW
+                                                   \item Gratuito (próximamente disponible en linuxencaja)
+                                                  \end{itemize}
+
+      \\ \hline 
+       Capacitación procesadores         &\begin{itemize}
+                                          \item Desde el 2010 Costo: 430 USD.
+                                          \item Procesadores ARM.
+                                          \item Programación en C.
+                                          \item Herramientas de desarrollo.
+                                          \item Manejo de interrupciones.
+                                          \item Dispositivos Entrada/salida
+                                          \item Control de periféricos.
+                                         \end{itemize}
+                                                            &  \begin{itemize}
+                                                                \item Trabajos realizados desde el 2004.
+                                                                \item Procesadores MIPS, Blackfin, ARM, 
+                                                                \item Softcores: Lm32, plasma.
+                                                                \item Arquitectura de un SoC, set de instrucciones, manejo de interrupciones 
+                                                                \item Flujo de diseño software.
+                                                                \item Sistemas operativos, inicialización de SoC, kernel de Linux, sistemas de archivos, aplicaciones usando Linux.
+                                                               \end{itemize}
+
+      \\ \hline 
+    \end{tabular}
+    }
+  }
+\end{frame}
+
+\begin{frame}
+  \frametitle{Costo de la Transferencia}
+
+  \only<1>{
+    \resizebox{!}{3.5cm}{
+
+    \begin{tabular}{|p{7.5cm}|p{2cm}|p{2.5cm}|}
+      \hline
+      \textbf{Item}       & \textbf{KETI-ETRI}  & \textbf{Este trabajo}
+      \\ \hline 
+      Equipos de cómputo (25) con licencias de:
+      \begin{itemize}
+       \item Windows, VMWARE.
+       \item Android SDK, Apache
+      \end{itemize}
+                             & 115.000                    & 50.000
+      \\ \hline 
+      Plataforma de desarrollo (15)
+      \begin{itemize}
+       \item Procesador ARM, 512MB DDR, MicroSD
+       \item LCD 800 x 480, touch screen
+       \item USB 2.0, WiFi, Camera.
+       \item Bluetooth. Android OS.  
+      \end{itemize}
+                          & 60.000                    & 4.500
+      \\ \hline 
+      Software para simulación:
+      \begin{itemize}
+       \item Qemu con soporte para OpenMoko 
+      \end{itemize}
+                          & 132.000                   & 0 
+      \\ \hline 
+      Depuración hardware:
+      \begin{itemize}
+       \item Trace 32 de Laterbach (15)
+      \end{itemize}
+                         & 180.000                   & 2.000
+      \\ \hline 
+    \end{tabular}
+    }
+  }
+
+   \only<2>{
+     \resizebox{!}{3.2cm}{
+    \begin{tabular}{|p{7cm}|p{2cm}|p{7cm}|}
+      \hline
+      \textbf{Item}       & \textbf{KETI-ETRI}  & \textbf{Este trabajo}
+      \\ \hline 
+      Herramientas CAD:
+      \begin{itemize}
+       \item PADS de Cadence (15)
+      \end{itemize}
+                         & 180.000                   & 0 
+      \\ \hline 
+      Plataforma hardware (15):
+      \begin{itemize}
+       \item Especificaciones de la plataforma de desarrollo
+       \item Archivos para reproducir el hardware:
+         \begin{itemize}
+          \item Esquemáticos.
+          \item Archivos Gerber.
+         \end{itemize}
+       \item Código fuente:
+         \begin{itemize}
+          \item bootloader: u-boot.
+          \item Kernel de Linux.
+          \item Android OS.
+         \end{itemize}
+       \item documentación
+         \begin{itemize}
+          \item Guía de usuario.
+          \item Port de Android.
+         \end{itemize}
+      \end{itemize}
+                         & 120.000                   & 50.000 
+                                                       \begin{itemize}
+                                                        \item Archivos para \textbf{Modificar} la plataforma
+
+                                                        \item Código fuente:
+                                                          \begin{itemize}
+                                                           \item u-boot
+                                                           \item Kernel de Linux.
+                                                           \item Android OS.
+                                                          \end{itemize}
+                                                        \item Documentación:
+                                                           \begin{itemize}
+                                                            \item Tutoriales.
+                                                            \item Proceso completo de diseño.
+                                                            \item Cursos en línea.
+                                                            \item Listas de discusión.
+                                                           \end{itemize}
+                                                       \end{itemize}
+
+      \\ \hline 
+
+    \end{tabular}
+     }
+   }
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Preguntas}
+   \begin{center} \includegraphics[scale=.45]{../images/preguntas.jpg}   \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Gracias}
+   \begin{center} \includegraphics[scale=.2]{../images/gracias.jpg}   \end{center}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Gracias}
+
+\newcommand{\daywidth}{2.2 cm}
+
+\begin{center}
+
+    \begin{tikzpicture}[x=4cm, node distance=0 cm]
+    \tikzstyle{day}=[draw, rectangle,  minimum height=0.5cm, minimum width=\daywidth, fill=yellow!20,anchor=south west]
+    \tikzstyle{hour}=[draw, rectangle, minimum height=.5 cm, minimum width=2cm, fill=blue!30,anchor=north east]
+
+    % Styles for events
+    \tikzstyle{hours}=[rectangle,draw, minimum width=\daywidth, anchor=north west,text centered,text width=4 em]
+    \tikzstyle{1hour}=[draw, rectangle,  minimum height=0.5cm, minimum width=4cm, fill=blue!20,anchor=south west]
+    \tikzstyle{2hours}=[hours,minimum height=2cm]
+    \tikzstyle{4days}=[draw, rectangle,  minimum height=0.5cm, minimum width=4.4cm, fill=yellow!20,anchor=south west]
+    %Style for type of sequence 
+    \tikzstyle{Private} = [2hours,fill=red!20]
+    \tikzstyle{Club}    = [2hours,fill=green!20]
+    \tikzstyle{Common}  = [2hours,fill=blue!20]
+    \tikzstyle{Public}  = [2hours,fill=Violet!20]
+    %Position of sequences
+    \node[hour, rotate=90] (8-9)   at (1,1)   {Exc.};
+    \node[hour, rotate=90] (9-10)  [left = of 8-9] {No exc.};
+    \node[Private] (Private) [right = 0cm of 8-9.south] {Privado}; \node[Club]   (Club)   [right = of Private] {Club};
+    \node[Common]  (Common)  [below = of Private]       {Common};  \node[Public] (Public) [right = of Common]  {Público};
+
+    % % Positioning labels
+
+    \node[day] (lundi) [above = of Private] {Rival};
+    \node[day] (mardi) [right = of lundi]   {No rival};
+
+    \node[4days] (Rivality) [above = 0cm of lundi.north east] {Rivalidad};
+    \node[1hour, rotate=90] (Excludability) [above = 0cm of 8-9.north west] {Exclusión}; 
+    \end{tikzpicture}
+\end{center}
+
+\end{frame}
+
+\begin{thebibliography}{10}
+\footnotesize
+\bibitem{Mo94}[Oedra 1994]
+  M. odedra-straub
+  \newblock The Myths and Illusions of Technology Transfer
+  \newblock \emph{IFIP World Congress Proceedings}, 1994.
+
+\bibitem{Jol77}[Jolly 1977]
+  Jolly, James A.
+  \newblock The Technology Transfer Process: Concepts, Framework and Methodology.
+  \newblock \emph{The Journal of Technology Transfer. Springer}, 1977
+
+\bibitem{LV98}[Vaccarezza 1998]
+  L. Vaccarezza
+  \newblock Ciencia, Tecnología y Sociedad: el estado de la cuestión en América Latina.
+  \newblock \emph{Revista Iberoamericana de Educaci\'on, No 18}, 1998
+
+
+\bibitem{MO90}[Odedra 1990]
+  M. Odedra
+  \newblock Information {T}echnology {T}ransfer to {D}eveloping
+                   {C}ountries: {C}ase studies from {K}enya, {Z}ambia and
+                   {Z}imbabwe
+  \newblock \emph{PhD thesis London School of Economics}, 1990
+
+
+\end{thebibliography}
+
+% 1. Cuál es el problema: Atraso de la industria electrónica, dependencia de productos importados, programas académicos desactualizados, escaza producción local.
+% 2. Que se desea hacer: Adquirir conocimientos necesarios para modernizar los contenidos académicos de las asignaturas relacionadas, para formar profesionales con las capacidades necesarias para crear nuevos productos, proporcionar a las empresas información y dise?os de referencia que les permita copetir con los productos asiáticos.
+% 3. Cómo se va a hacer: Generando un esquema similar al movimiento FOSS pero aplicado al desarrollo HW, permitiendo el estudio, reproducción y modificación de sistemas digitales que permitan el desarrollo de productos locales. Creando metodologías de diseño que utilizan herramientas abiertas que reduzcan de forma considerable la inversión incial. 
+
+
+
+\end{document}
+
+
+Selección
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.8]{../images/GA_vs_FPGA.png} \end{center}
+  \caption{Comparación de costos entre FPGAs y Arreglos de Compuertas, Fuente: Silicon-Pro} \label{GA_vs_FPGA}
+\end{figure}
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.9]{./images/GA_vs_ASIC_vs_FPGA.png} \end{center}
+  \caption{Comparación de costos entre FPGAs, arreglos de compuertas y ASICs basado en celdas estándar, Fuente: Application-Specific Integrated Circuits, MJS Smith} \label{GA_vs_ASIC_vs_FPGA}
+\end{figure}
+
+
+
+Adquisición
+    herramientas
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.7]{./images/embedded_os_trends.png} \end{center}
+  \caption{Comparación del uso de sistemas operativos Fuente: Venture Development Corp} \label{os_trends}
+\end{figure}
+
+
+adquisición plataformas
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.6]{./images/plataformas_adquiridas.png}
+   \includegraphics[scale=.6]{./images/plataformas_adquiridas2.png}
+\end{center}
+  \caption{Plataformas adquiridas para el estudio de los sistemas emebebidos} \label{plataformas_adquiridas}
+\end{figure}
+
+
+Adaptación  arquitectura 
+
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.6]{./images/soc_no_int_volatil_mmu.pdf} \end{center}
+  \caption{Arquitectura típica de un sistema embebido que utiliza SoC sin memoria volátil interna} \label{soc_no_int_volatil}
+\end{figure}
+
+adaptación flujo de diseño SW
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.6]{./images/SW_design_flow.png} \end{center}
+  \caption{Flujo de diseño software para creación de aplicaciones.} \label{sw_flow_diagram}
+\end{figure}
+
+adaptación - absorción conocimientos adquiridos
+\begin{table}[htpb]
+  \caption{Conocimientos Adquiridos durante la etapa de absorción}
+  \centering
+    \begin{tabular}{|l|l|l|p{1.6in}|}
+      \hline
+      \textbf{Plataforma}  & \textbf{Herramientas de desarrollo} & \textbf{Programación} & \textbf{Sistema Operativo y Aplicaciones}
+      \\ \hline 
+       Game Boy            &ARM GNU toolchian         & Puerto serie       & eCos, implementación de periféricos en FPGAs.
+      \\ \hline 
+       Zaurus              &ARM GNU toolchian         & Puerto serie       & Linux 2.4, sistema de archivos, QT.
+      \\ \hline 
+       iPAQ H3600          &ARM GNU toolchian         & Puerto serie       & Linux 2.4, Buildroot, QT.
+      \\ \hline 
+       Chumby              &ARM GNU toolchian         & Puerto serie       & Linux 2.6, u-boot, OpenEmbedded, QT, flash.
+      \\ \hline 
+       Ainol V2000         &MIPS - ELF  GNU toolchian & Puerto serie       & Linux 2.6, openwrt, QT.
+      \\ \hline 
+       SUNGALE DPF         &MIPS - ELF  GNU toolchian & Puerto serie       & Linux 2.6, openwrt, QT.
+      \\ \hline 
+       B\&N NOOK           &ARM  GNU toolchian        & Puerto JTAG, serie & Linux 2.6, Android Dalvik (VM).
+      \\ \hline 
+    \end{tabular}
+  \label{absor_conocimientos_adquiridos}
+\end{table}
+
+Absorción y asimilación Plataformas
+
+\begin{figure}[htpb]
+  \centering
+    \mbox{
+      \subfigure[Diagrama de bloques]{\includegraphics[scale=.45]{./images/ECB_ARM7_Block.pdf}}
+      \subfigure[Prototipo]{\includegraphics[scale=.35]{./images/ECB_ARM7.jpg}}
+    }
+  \caption{Plataforma de desarrollo ECB\_ARM7} \label{ECB_ARM7}
+\end{figure}
+
+
+\begin{figure}[htpb]
+  \centering
+     \mbox{
+      \subfigure[Diagrama de bloques]{\includegraphics[scale=.4]{./images/xport_Block.pdf}}
+      \subfigure[Prototipo]{\includegraphics[scale=.25]{./images/xport.jpg}}
+     }
+  \caption{Plataforma de desarrollo UNAL\_UIS\_XPORT} \label{ECB_xport}
+\end{figure}
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[scale=.45]{./images/ECB_AT91_V1.jpg}
+  \caption{Plataforma de desarrollo ECB\_AT91 V1} \label{ECB_AT91_V1}
+\end{figure}
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[scale=.4]{./images/ECB_AT91_V2.jpg}
+  \caption{Plataforma de desarrollo ECB\_AT91 V2} \label{ECB_AT91_V2}
+\end{figure}
+
+
+\begin{figure}[htpb]
+  \centering
+     \mbox{
+      \subfigure[Diagrama de bloques]{\includegraphics[scale=.3]{./images/ECBOT_Block.png}}
+      \subfigure[Prototipo]{\includegraphics[scale=.35]{./images/ECBOT.png}}
+     }
+  \caption{Plataforma de desarrollo ECBOT} \label{ECBOT}
+\end{figure}
+
+
+\begin{figure}[htpb]
+  \centering
+     \mbox{
+       \subfigure[Diagrama de bloques]{\includegraphics[scale=.4]{./images/ECB_BF532_Block.pdf}}
+      \subfigure[Prototipo]{\includegraphics[scale=.35]{./images/ECB_BF532.png}}
+     }
+  \caption{Plataforma de desarrollo ECB\_BF532} \label{ECB_BF532}
+\end{figure}
+
+
+\begin{figure}[htpb]
+  \centering
+     \mbox{
+      \subfigure[Diagrama de bloques]{\includegraphics[scale=.5]{./images/SIE_block_diagram.png}}
+      \subfigure[Prototipo]{\includegraphics[scale=.35]{./images/SIE.jpg}}
+     }
+  \caption{Plataforma de desarrollo SIE} \label{SIE}
+\end{figure}
+
+
+Absorción y asimilación resumen plataformas
+
+
+\begin{table}[htpb]
+  \caption{Características de las plataformas de desarrollo concebidas, diseñadas e implementadas}
+  \centering
+    \footnotesize
+    \begin{tabular}{|l|l|l|l|l|l|l|}
+      \hline
+      \textbf{Plataforma} & \textbf{CPU}  & \textbf{Capas} 
+                                              & \textbf{Montaje}    & \textbf{Cant.}
+                                                                          &\textbf{OS} &\textbf{Usuario}
+      \\ \hline 
+       ECB\_ARM7          &ARM7,33M      & 2 & local Manual.       & 2   & eCos    & UN
+      \\ \hline 
+       UN\_UIS\_XPORT     &ARM7,50M      & 2 & local Manual.       & 2   & eCos    & UN, UIS
+      \\ \hline 
+       ECB\_AT91\_V1      &ARM920,180M   & 2 & local Manual/Autom. & 100 & Linux   & UN, UIS, ULA, ENAP, UDFJC, USTA
+      \\ \hline 
+       ECB\_AT91\_V2      &ARM920 180M   & 4 & local Manual.       & 30  & Linux   & UN, UIS, ULA, ENAP, UDFJC 
+      \\ \hline 
+       ECBOT              &ARM920 180M   & 4 & local Manual.       & 20  & Linux   & UN, UIS
+      \\ \hline 
+       ECB\_BF532         &Blackfin 400M & 4 & local Manual.       & 5   & uCLinux & UN
+      \\ \hline 
+       SIE                &MIPS32  300M  & 2 & externo Autom.      & 80  & Linux   & UN, UIS, ULA, ECI
+      \\ \hline 
+    \end{tabular}
+  \label{plat_review}
+\end{table}
+
+
+Absorcion diseño PCBs
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[scale=.45]{./images/proceso_de_fabricacion_PCBs.pdf}
+  \caption{Flujo de diseño para las placas de circuito impreso} \label{pcb_design_flow}
+\end{figure}
+
+
+absorción metodología:
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[scale=.55]{./images/SoC_reverse.pdf}
+  \caption{Flujo de actividades para la apropiación de conocimiento.} \label{soc_reverse_flow}
+\end{figure}
+
+ 
+
+Aplicación - Industria
+
+En el desarrollo de sus actividades emQbit encontró las siguientes dificultades:
+
+\begin{itemize}
+ \item Falta de personal con experiencia en desarrollo hardware y en creación de aplicaciones: Es notoria la carencia de habilidades relacionadas con el diseño y montaje de sistemas digitales en la mayoría de profesionales entrevistados por esta empresa para ser parte de su grupo de desarrolladores, en general desconocen el proceso de fabricación y las herramientas necesarias para diseñar una placa de circuito impreso, no son capaces de leer esquemáticos ni de buscar componentes adecuados para realizar una función determinada, lo que refleja la dependencia de la academia hacia las plataformas de desarrollo comerciales. Por otro lado, se detectan fallas de concepto o desconocimiento de partes del proceso de diseño, originado en algunos casos por el uso de herramientas propietarias que automatizan y ``esconden'' etapas de configuración de las plataformas. Por esta razón, emQbit contrata a egresados de la Universidad Nacional de Colombia en la modalidad de pasantes, algunos de ellos en la actualidad hacen parte de su junta directiva.
+
+ \item Escasa oferta de productos, bienes y servicios relacionados con la manufactura de sistemas digitales: Como se mencionó anteriormente, en Colombia solo existen 2 empresas con la capacidad de proporcionar los servicios necesarios para la producción, montaje automático y pruebas de placas de circuito impreso utilizando componentes modernos; desafortunadamente, sus costos son muy elevados en comparación con los de las industrias manufactureras asiáticas, esto se debe a la baja demanda de la industria colombiana y a los altos impuestos que deben pagar los dispositivos semiconductores y demás insumos del proceso (26 \% o más). A pesar de estos inconvenientes, la fabricación de prototipos a nivel local es una buena opción desde el punto de vista económico, ya que la diferencia en costos no es muy grande, y es posible resolver dudas o problemas de forma ágil, gracias a que se trabaja en la misma zona horaria y se utiliza el mismo idioma. 
+
+ \item Desconfianza de la industria local por los productos producidos en el país: Los problemas descritos anteriormente generan un clima de desconfianza hacia los productos nacionales; ya que una gran parte de los productos existentes utilizan tecnologías obsoletas con procesos de fabricación de mala calidad, no cumplen con normas internacionales y no fueron sometidos a rigurosos procesos de pruebas; al parecer, a una gran parte de los industriales nacionales que utilizan el mercado asiático para suplir sus necesidades es más importante el costo que la calidad\footnote{el mercado asiático es famoso por el suministro de productos con diferentes niveles de calidad, que pueden ir desde artículos como los celulares de gama alta de Nokia, Apple, etc, hasta los celulares de 10 USD que funcionan de forma deficiente con una vida útil de varias semanas}. Desde nuestro punto de vista, la desconfianza se presenta por la ausencia de productos locales, por el desconocimiento de los planes académicos de las universidades y por la falta de profesionales con la capacidad de diseñar y construir aplicaciones ``a la medida'' de las necesidades. 
+
+ \item Problemas relacionados con la financiación para desarrollo de nuevos productos: Es muy difícil encontrar entidades que financien el desarrollo de nuevos productos, la mayoría busca dispositivos terminados en fase de producción y no se encuentran interesados en invertir tiempo y dinero en nuevos desarrollos, esto es una consecuencia directa de la pérdida de capacidad de innovación en las empresas colombianas, donde no existen o fueron eliminados los departamentos de investigación y desarrollo (I+D); varias empresas consultadas cerraron sus departamentos de I+D debido a la existencia de productos asiáticos que se adaptaban a las necesidades del mercado, y a la ausencia de profesionales que mejoraran los productos existentes para que fueran competitivos con los productos extranjeros.
+
+ \item Competencia en desigualdad de condiciones con productos importados: Los impuestos a las importaciones de insumos para la fabricación de dispositivos digitales (más del 26 \%), la poca oferta de bienes y servicios relacionados con la manufactura y la falta de políticas gubernamentales que protejan la industria electrónica nacional han generado un clima ideal para que los productos tecnológicos de los países asiáticos desplacen la producción local. Es importante que se formulen políticas que protejan los productos nacionales, sin provocar un desabastecimiento de productos que aún no se generan localmente, para esto es muy importante identificar los productos que son fabricados localmente y agrupar de forma adecuada a las empresas en la clasificación CIIU (Clasificación Industrial Internacional Uniforme). 
+\end{itemize}
+
+
+
+DIFUSION
+
+
+  
+
+
+
+
+
+
