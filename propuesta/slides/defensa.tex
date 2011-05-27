@@ -884,41 +884,6 @@
 
 \begin{frame}
   \frametitle{Gracias}
-
-\newcommand{\daywidth}{2.2 cm}
-
-\begin{center}
-
-    \begin{tikzpicture}[x=4cm, node distance=0 cm]
-    \tikzstyle{day}=[draw, rectangle,  minimum height=0.5cm, minimum width=\daywidth, fill=yellow!20,anchor=south west]
-    \tikzstyle{hour}=[draw, rectangle, minimum height=.5 cm, minimum width=2cm, fill=blue!30,anchor=north east]
-
-    % Styles for events
-    \tikzstyle{hours}=[rectangle,draw, minimum width=\daywidth, anchor=north west,text centered,text width=4 em]
-    \tikzstyle{1hour}=[draw, rectangle,  minimum height=0.5cm, minimum width=4cm, fill=blue!20,anchor=south west]
-    \tikzstyle{2hours}=[hours,minimum height=2cm]
-    \tikzstyle{4days}=[draw, rectangle,  minimum height=0.5cm, minimum width=4.4cm, fill=yellow!20,anchor=south west]
-    %Style for type of sequence 
-    \tikzstyle{Private} = [2hours,fill=red!20]
-    \tikzstyle{Club}    = [2hours,fill=green!20]
-    \tikzstyle{Common}  = [2hours,fill=blue!20]
-    \tikzstyle{Public}  = [2hours,fill=Violet!20]
-    %Position of sequences
-    \node[hour, rotate=90] (8-9)   at (1,1)   {Exc.};
-    \node[hour, rotate=90] (9-10)  [left = of 8-9] {No exc.};
-    \node[Private] (Private) [right = 0cm of 8-9.south] {Privado}; \node[Club]   (Club)   [right = of Private] {Club};
-    \node[Common]  (Common)  [below = of Private]       {Common};  \node[Public] (Public) [right = of Common]  {Público};
-
-    % % Positioning labels
-
-    \node[day] (lundi) [above = of Private] {Rival};
-    \node[day] (mardi) [right = of lundi]   {No rival};
-
-    \node[4days] (Rivality) [above = 0cm of lundi.north east] {Rivalidad};
-    \node[1hour, rotate=90] (Excludability) [above = 0cm of 8-9.north west] {Exclusión}; 
-    \end{tikzpicture}
-\end{center}
-
 \end{frame}
 
 \begin{thebibliography}{10}
@@ -1003,6 +968,19 @@ adaptación flujo de diseño SW
   \begin{center} \includegraphics[scale=.6]{./images/SW_design_flow.png} \end{center}
   \caption{Flujo de diseño software para creación de aplicaciones.} \label{sw_flow_diagram}
 \end{figure}
+
+ \begin{figure}[htpb]
+   \begin{center} \includegraphics[scale=.6]{./images/HW_design_flow.pdf}   \end{center}
+    \caption{Flujo de diseño hardware} \label{hw_design_flow}
+ \end{figure}
+
+ \begin{figure}[htpb]
+   \begin{center} \includegraphics[scale=.5]{./images/soft_SoC_design_flow.pdf}   \end{center}
+    \caption{Flujo de diseño hardware/software al utilizar un procesador \textit{softcore}} \label{soft_SoC_design_flow}
+ \end{figure}
+
+
+
 
 adaptación - absorción conocimientos adquiridos
 \begin{table}[htpb]
@@ -1165,9 +1143,88 @@ En el desarrollo de sus actividades emQbit encontró las siguientes dificultades:
 DIFUSION
 
 
-  
+Conocimiento como bien público  
+
+\begin{center}
+    \newcommand{\daywidth}{2.2 cm}
+
+    \begin{tikzpicture}[x=4cm, node distance=0 cm]
+    \tikzstyle{day}=[draw, rectangle,  minimum height=0.5cm, minimum width=\daywidth, fill=yellow!20,anchor=south west]
+    \tikzstyle{hour}=[draw, rectangle, minimum height=.5 cm, minimum width=2cm, fill=blue!30,anchor=north east]
+
+    % Styles for events
+    \tikzstyle{hours}=[rectangle,draw, minimum width=\daywidth, anchor=north west,text centered,text width=4 em]
+    \tikzstyle{1hour}=[draw, rectangle,  minimum height=0.5cm, minimum width=4cm, fill=blue!20,anchor=south west]
+    \tikzstyle{2hours}=[hours,minimum height=2cm]
+    \tikzstyle{4days}=[draw, rectangle,  minimum height=0.5cm, minimum width=4.4cm, fill=yellow!20,anchor=south west]
+    %Style for type of sequence 
+    \tikzstyle{Private} = [2hours,fill=red!20]
+    \tikzstyle{Club}    = [2hours,fill=green!20]
+    \tikzstyle{Common}  = [2hours,fill=blue!20]
+    \tikzstyle{Public}  = [2hours,fill=Violet!20]
+    %Position of sequences
+    \node[hour, rotate=90] (8-9)   at (1,1)   {Exc.};
+    \node[hour, rotate=90] (9-10)  [left = of 8-9] {No exc.};
+    \node[Private] (Private) [right = 0cm of 8-9.south] {Privado}; \node[Club]   (Club)   [right = of Private] {Club};
+    \node[Common]  (Common)  [below = of Private]       {Common};  \node[Public] (Public) [right = of Common]  {Público};
+
+    % % Positioning labels
+
+    \node[day] (lundi) [above = of Private] {Rival};
+    \node[day] (mardi) [right = of lundi]   {No rival};
+
+    \node[4days] (Rivality) [above = 0cm of lundi.north east] {Rivalidad};
+    \node[1hour, rotate=90] (Excludability) [above = 0cm of 8-9.north west] {Exclusión}; 
+    \end{tikzpicture}
+\end{center}
 
 
+
+
+Difusión: Marco hardware copyeft
+
+\begin{figure}[H]
+  \begin{center} \includegraphics[scale=.6]{./images/framework_hwcl.pdf} \end{center}
+  \caption{Marco para analizar el conocimiento como bien común aplicado al movimiento hardware copyleft: Modificación de: \cite{CHEO06} pág 46} \label{framework_hwcl}
+\end{figure}
+
+
+Difusión: CC + GP
+\begin{center} \includegraphics[scale=.3]{../images/CC_BY_SA.jpg} \hspace{.5cm} \includegraphics[scale=.15]{../images/GNU.png} \end{center}
+
+Difusión: hardware copyleft:
+
+\begin{center} \includegraphics[scale=.3]{../images/copy_left_hardware_requirement.pdf} \end{center}
+
+Difusión: recursos
+
+
+herramientas de difusión/contribución
+
+\begin{itemize}
+ \item Lista de discusión en donde participan desarrolladores hardware/software, estudiantes y miembros de la comunidad para coordinar el desarrollo de nuevos proyectos y resolver dudas sobre conceptos relacionados con el diseño de sistemas embebidos.
+ \item Base de datos de solución de problemas asociadas a las listas de discusión.
+ \item Sistema de control de versiones \textit{git} que permite el trabajo multi-usuario y la creación de repositorios para los proyectos.
+ \item wiki que permite la elaboración de tutoriales, documentación sobre temas relacionados con el diseño de sistemas digitales o reportes del proceso de diseño de nuevos proyectos.
+\end{itemize}
+
+Documentación
+
+\begin{itemize}
+ \item Artículos sobre la metodología de diseño y el programa académico generados por este trabajo.
+ \item Proceso para proporcionar soporte a una plataforma embebida en el kernel de Linux.
+ \item Comunicación entre tareas hardware (implementadas en PLDs) y software (implementadas en un SoC)
+ \item Inicialización de SoCs.
+ \item Proceso de fabricación y montaje (manual y automático) de placas de circuito impreso.
+ \item Proceso de diseño que utiliza la metodología de diseño y el programa académico propuestos en este trabajo.
+ \item Material para los cursos basados en la metodología propuesta (en construcción).
+ \item Tutoriales sobre temas de interés sobre diseño software y hardware de sistemas digitales.
+\end{itemize}
+
+
+Miembros:
+
+\begin{center} \includegraphics[scale=.3]{../images/community_members.pdf} \end{center}
 
 
 
