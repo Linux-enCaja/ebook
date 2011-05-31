@@ -5,10 +5,104 @@
 \section{Introducción}
 En esta sección se realizará una explicación detallada del proceso de adaptación de Linux a la familia de plataformas ECB\_AT91, este proceso es aplicable a otros dispositivos que trabajen con procesadores soportados por la distribución de Linux. Adicionalmente, se explicará de forma detallada el funcionamiento de este sistema operativo, el proceso de arranque y su puesta en marcha, así como las principales distribuciones, aplicaciones y librerías disponibles para el desarrollo de aplicaciones. Esta y otra información recolectada durante más de tres años permite que la industria y la academia desarrollen aplicaciones comerciales utilizando herramientas de diseño modernas \footnote{A lo largo de este capítulo se utilizaran cuadros de texto donde se listará código fuente en color gris, instrucciones ejecutadas en el computador personal en color verde y operaciones que se ejecutan en el sistema embebido en color amarillo}.
 
+\section{Herramientas abiertas para diseño de sistemas embebidos}\label{gnu_cad}
 
-\subsection{Métodos de arranque}
+\subsection{Herramientas de Desarrollo}
+En este apartado se describirán las herramientas abiertas necesarias para el desarrollo de aplicaciones software en sistemas sistemas digitales. Todas las aplicaciones mencionadas a continuación hacen parte de la cadena de herramientas GNU, que son parte de los recursos suministrados por la comunidad de software libre.
 
-Como vimos anteriormente, la mayoría de los SoC utilizados en aplicaciones modernas no poseen memorias programables en su interior. Todo SoC debe ser programado para que pueda ejecutar una determinada tarea; este programa debe estar almacenado en una memoria no volátil externa y debe estar en el formato requerido por el procesador.  Normalmente los SoCs proporcionan varios caminos (habilitando diferentes periféricos) para hacer esto. Un programa de inicialización \textit{(boot program)} contenido en una pequeña ROM del SoC se encarga de configurar, y revisar ciertos periféricos en búsqueda de un ejecutable válido, una vez lo encuentra, lo copia a la memoria RAM interna y lo ejecuta desde allí. No sobra mencionar que este ejecutable debe estar enlazado de tal forma que todas sus secciones se encuentren en el espacio de la memoria RAM interna (0x0 después del REMAP \footnote{Los procesadores ARM pueden intercambiar el sitio de la memoria RAM interna y la memoria no volátil}). 
+\subsubsection{GNU binutils}
+Colección de utilidades para archivos binarios y están compuestas por:
+
+\begin{itemize}
+ \item  \textbf{addr2line} Convierte direcciones de un programa en nombres de archivos y números de línea. Dada una dirección y un ejecutable, usa la información de depuración en el ejecutable para determinar que nombre de archivo y número de línea está asociado con la dirección dada.
+ \item  \textbf{ar} Esta utilidad crea, modifica y extrae desde ficheros; un fichero es una colección de otros archivos en una estructura que hace posible obtener los archivos individuales. 
+ \item  \textbf{as} Utilidad que compila la salida del compilador de C (GCC).
+ \item  \textbf{c++filt} Este programa realiza un mapeo inverso: Decodifica nombres de bajo-nivel en nombres a nivel de usuario, de tal forma que el \textit{linker} pueda mantener estas funciones sobrecargadas (overloaded) ``from clashing''. 
+ \item  \textbf{gasp} GNU Assembler Macro Preprocessor
+ \item  \textbf{ld} El \textit{linker} GNU combina un número de objetos y ficheros, re-localiza sus datos y los relaciona con referencias. Normalmente el último paso en la construcción de un nuevo programa es el llamado a ld.
+ \item  \textbf{nm} Realiza un listado de símbolos de archivos tipo objeto.
+ \item  \textbf{objcopy} Copia los contenidos de un archivo tipo objeto a otro. \textit{objcopy} utiliza la librería GNU BFD para leer y escribir el archivo tipo objeto. Permite escribir el archivo destino en un formato diferente al del archivo fuente. 
+ \item  \textbf{objdump} Despliega información sobre archivos tipo objeto. 
+ \item  \textbf{ranlib} Genera un índice de contenidos de un fichero, y lo almacena en él.
+ \item  \textbf{readelf} Interpreta encabezados de un archivo ELF.
+ \item  \textbf{size} Lista el tamaño de las secciones y el tamaño total de un archivo tipo objeto.
+ \item  \textbf{strings} Imprime las secuencias de caracteres imprimibles de al menos 4 caracteres de longitud. 
+ \item  \textbf{strip} Elimina todos los símbolos de un archivo tipo objeto.
+\end{itemize}
+
+\subsubsection{Compilador}
+El \textit{GNU Compiler Collection} normalmente llamado GCC, es un grupo de compiladores de lenguajes de programación producido por el proyecto GNU. Es el compilador estándar para el software libre, de los sistemas operativos basados en Unix y algunos propietarios como Mac OS de Apple. Soporta los lenguajes ADA, C, C++, Fortran, Java, Objective-C, Objective-C++ para las arquitecturas Alpha, ARM, Atmel AVR, Blackfin, H8/300, System/370, System/390, IA-32 (x86), x86-64, IA-64 i.e. the "Itanium", Motorola 68000, Motorola 88000, MIPS, PA-RISC, PDP-11, PowerPC, SuperH, SPARC, VAX, Renesas R8C/M16C/M32C y MorphoSys. Gracias a esto puede considerarse como una herramienta universal para el desarrollo de sistemas embebidos, el código escrito en una plataforma (en un lenguaje de alto nivel) puede ser implementado en otra sin mayores cambios, esto elimina la dependencia entre el código fuente y el procesador (re-utilización de código), lo que no es posible cuando se utiliza el lenguaje ensamblador. 
+
+\subsubsection{GNU Debugger}
+El depurador oficial de GNU (GDB) al igual que GCC, soporta múltiples lenguajes y plataformas; permite monitorear y modificar las variables internas del programa y hacer llamado a funciones de forma independiente a la ejecución normal del mismo. Además, permite establecer sesiones remotas utilizando el puerto serie o TCP/IP. Aunque GDB es una aplicación que se ejecuta en consola de comandos, se han desarrollado varios front-ends como DDD o GDB/Insight.
+
+\subsubsection{Librerías C}
+Es necesario contar con las librerías standard de C: stdio, stdlib, math, etc; las más utilizadas en sistemas embebidos son:
+
+\begin{itemize}
+ \item \textbf{glibc} Es la librería C oficial del proyecto GNU; el principal inconveniente al trabajar con esta librería en sistemas embebidos es que genera ejecutables de mayor tamaño que los generados a partir de otras librerías, lo cual no la hace muy atractiva para este tipo de aplicaciones. 
+ \item \textbf{uClibc} Es una librería diseñada especialmente para sistemas embebidos, es mucho más pequeña que \textbf{glibc}.
+ \item \textbf{newlib} Al igual que \textbf{uClibc}, está diseñada para sistemas embebidos. El típico ``Hello, world!'' ocupa menos de 30k en un entorno basado en newlib, mientras que en uno basado en glibc, puede ocupar 380k. 
+ \item \textbf{diet libc} Es una versión de \textit{libc} optimizada en tamaño, puede ser utilizada para crear ejecutables estáticamente enlazados para Linux en plataformas alpha, arm, hppa, ia64, i386, mips, s390, sparc, sparc64, ppc y x86\_64.
+\end{itemize}
+
+\subsection{Herramientas CAD}
+
+Para la elaboración de las cajas que contendrán las tarjetas electrónicas y servirán de soporte físico a los dispositivos electrónicos, se utilizará la herramienta \textit{QCAD} disponible para los sistemas operativos más utilizados; con esta aplicación se puede generar la forma de la placa de circuito impreso con los orificios necesarios para ajustarse a la caja y a la aplicación; este archivo puede ser exportado a la herramienta \textit{KICAD} lo que facilita la colocación de componentes.
+
+
+\subsection{Software de ayuda al diseño}
+
+Para la realización de las actividades descritas anteriormente se utilizará software abierto, que pueda ser descargado libremente sin restricción alguna; esto, con el fin de proporcionar al estudiante herramientas software legales que le permitan adquirir las habilidades descritas en el capítulo \ref{ch:education} y puedan ser utilizadas en su ejercicio profesional. Se debe tener presente que además de proporcionar a los estudiantes los conocimientos necesarios en su profesión, también se deben hacer respetar los derechos de autor y la propiedad intelectual de las herramientas software comerciales; en muchas universidades se tolera el uso de software ilegal por parte de los estudiantes, debido a que es necesario para el desarrollo del curso y/o el establecimiento no cuenta con recursos para adquirir las licencias suficientes. Aunque el uso de este software conseguido de forma ilegal es muy loable, no deja de ser una violación a las leyes que protegen los derechos de sus creadores; adicionalmente, formar a estudiantes con herramientas costosas los vuelve dependientes de ellas, lo que requerirá de grandes inversiones en software cuando ellos formen sus propias empresas, lo que puede desalentar este tipo de iniciativas. Por lo anterior, se hizo una revisión y prueba de las herramientas abiertas disponibles que pueden ser utilizadas en los cursos de diseño digital y que proporcionan la funcionalidad requerida en esta propuesta académica.
+
+\subsubsection{Análisis y simulación de circuitos}
+En la mayoría de centros de formación se utilizan herramientas que utilizan el simulador SPICE (Simulation Program with Integrated Circuits Emphasis) el cual ha demostrado ser una herramienta muy útil en diferentes áreas (electrónica análoga, electrónica digital, diseño VLSI, electrónica de potencia, entre otras) ya que proporciona diferentes formas y niveles de simulación; permitiendo el uso de modelos para representar de la mejor forma posible un dispositivo real. SPICE fue desarrollado por el departamento de ingeniería eléctrica y ciencias de la computación de la universidad de Berkeley \footnote{http://http://bwrc.eecs.berkeley.edu/Classes/IcBook/SPICE/} y su código fuente es distribuido bajo la licencia BSD (Berkeley Software Distribution), la última versión disponible es la \textit{3f5}, gracias a esto se han desarrollado una serie de herramientas que utilizan este potente simulador y proporcionan una interfaz amigable para el usuario.
+
+En esta propuesta se utiliza \textit{QUCS} (Quite Universal Circuit Simulator) desarrollado en QT y permite ser ejecutado en cual sistema operativo. QUCS permite realizar análisis AC, DC, transitorio, de balance armónico y soporta dispositivos lineales, no lineales, micro-cintas, coplanares, líneas de transmisión y representados por modelos SPICE. En la figura \ref{qucs} se muestra la captura de esta aplicación.
+
+
+  \begin{figure}[htpb]
+    \begin{center} \includegraphics[scale=.35]{./images/qucs.png}   \end{center}
+     \caption{Simulador QUCS} \label{qucs}
+  \end{figure}
+
+
+
+\subsubsection{Síntesis, simulación y verificación digital}
+
+Para la síntesis digital a partir de lenguajes de descripción de hardware se utilizan las herramientas gratuitas suministradas por los fabricantes de FPGAs, \textit{webpack} de Xilinx y \textit{Quartus} de Altera; debido a que la estructura interna de las FPGAs solo la conocen los fabricantes\footnote{Es posible obtener información valiosa de sus patentes por ejemplo: http://www.freepatentsonline.com/6301693.pdf, con este tipo de información varios proyectos buscan generar herramientas abiertas de síntesis}, es obligatorio utilizar sus herramientas para obtener el archivo de configuración.
+
+Para la simulación de sistemas digitales que utilizan como entrada de diseño lenguajes de descripción de hardware existen los simuladores \textit{ICARUS} para verilog y \textit{GHDL} para vhdl; los dos pueden ser utilizados para realizar simulaciones funcionales, post síntesis o post place \& route (trabajando en conjunto con las herramientas de los fabricantes) y ambos soportan el formato de salida VCD (definido junto con el lenguaje de descripción de hardware verilog por el estándar IEEE 1364-2001). Adicionalmente, estas herramientas pueden ser utilizadas en los sistemas operativos más utilizados.
+
+Como herramienta de simulación se utilizará \textit{GTKWAVE}, la cual acepta como entrada archivos en formato \textit{VCD} y puede ser ejecutada en MAC, Linux y Windows. \textit{GTKWAVE} realiza un manejo adecuado de la jerarquía del sistema bajo análisis, permitiendo observar todas las señales de los diferentes módulos que componen la jerarquía superior, lo que es muy útil en este tipo de simulaciones; en la figura \ref{gtkwave} se puede observar una captura de esta herramienta.
+
+  \begin{figure}[htpb]
+    \begin{center} \includegraphics[scale=.7]{./images/gtkwave.png}   \end{center}
+     \caption{Visualizador de formas de onda \textit{GTKWAVE}} \label{gtkwave}
+  \end{figure}
+
+Una vez configurada la FPGA, se utiliza la herramienta \textit{URJTAG} para verificar el correcto funcionamiento del sistema implementado en la FPGA, \textit{URJTAG} proporciona una capa de abstracción de hardware que permite el manejo del puerto JTAG de cualquier dispositivo, proporcionando funciones de alto nivel para la aplicación de las funciones JTAG (IDCODE, INTEST, EXTEST, BYPASS, SAMPLE/PRELOAD) permitiendo la aplicación de vectores de prueba al núcleo lógico de la FPGA y la captura de la respuesta a estos estímulos; estas pruebas se realizan a baja frecuencia. \textit{URJTAG} soporta varias interfaces físicas para control de las señales del puerto JTAG (TDI, TDO, TMS y TCK) las cuales pueden ser conectadas a diferentes puertos de un computador, o como en este caso a un puerto virtual creado en el procesador MIPS.  
+
+
+\subsubsection{Herramientas para la configuración de PLDs}
+Aunque con la plataforma de desarrollo SIE no es necesario utilizar herramientas ni unidades de programación adicionales para configurar su FPGA; el procesador de SIE ejecuta dos aplicaciones que son utilizadas para realizar esta función y pueden ser ejecutadas en computadores personales: \textit{URJTAG} y \textit{XC3SPROG}, las dos funcionan de forma similar, utilizan dispositivos conectados al puerto paralelo (conexión directa) o USB (basados en el protocolo MPSSE del chip FT2232) del computador; para ejecutar las instrucciones extendidas de la FPGA CFG\_OUT, CFG\_IN, JSTART y JPROGRAM (hasta el momento solo han sido probadas con las FPGAs de Xilinx).
+
+\subsubsection{Diseño de placas de circuito impreso}
+Este tipo de herramientas han sido las más difíciles de conseguir ya que al comienzo de este estudio no existía una herramienta que permitiera realizar de forma fácil la elaboración del esquemático, asignación de \textit{footprints}, distribución y localización de componentes en el layout, ruteo de las señales, y verificación de reglas de diseño tanto en el esquemático como en el layout. En la actualidad, el proyecto \textit{KICAD} ha alcanzado un nivel adecuado para ser utilizado en el desarrollo de aplicaciones comercializables y fue utilizado en todos los proyectos académicos durante la aplicación del presente plan de estudios; está formado por 5 aplicaciones: el editor de esquemáticos \textit{Eeschema}; el editor de circuitos impresos \textit{Pcbnew}; el visor de archivos gerber \textit{Gerbview}; la utilidad para asignar footprints \textit{Cvpcb} y el manejador de proyectos \textit{Kicad}.
+
+  \begin{figure}[htpb]
+    \begin{center} \includegraphics[scale=.8]{./images/kicad.pdf}   \end{center}
+     \caption{Herramienta para la elaboración de circuitos impresos \textit{KICAD}} \label{kicad}
+  \end{figure}
+
+\subsection{Discusión}
+Las aplicaciones mencionadas en esta sección han sido probadas por estudiantes de las universidades: UNAL, ULA, UIS y por la empresa emQbit, por esto se puede afirmar que este grupo de herramientas soporta todo el proceso de diseño de un sistema embebido; su carácter abierto y gratuito permite ahorrar mucho dinero si se compara con el requerido para comprar herramientas propietarias; el único inconveniente de las herramientas abiertas es que en algunos casos su interfaz no es tan amigable y no cuentan con las funcionalidades de su contraparte comercial. Una ventaja adicional es la no utilización de software ilegal, práctica que ha sido tolerada por la academia durante muchos años; adicionalmente, se le enseña al estudiante una alternativa que le permite ahorrar costos de inversión en el software necesario para comenzar una nueva empresa; con lo que este dinero se puede destinar a compra de equipo necesario para el desarrollo de la actividad.
+
+Aunque este grupo de herramientas pueden ejecutarse en los sistemas operativos mas populares (Linux, Mac OS y Windows) se prefiere el uso de Linux ya que es un sistema operativo gratuito y no es necesario pagar ningún tipo de licencia, lo que reduce aún más la inversión en software.
+
+\section{Métodos de arranque}
+
+Como se vio anteriormente, la mayoría de los SoC utilizados en aplicaciones modernas no poseen memorias programables en su interior. Todo SoC debe ser programado para que pueda ejecutar una determinada tarea; este programa debe estar almacenado en una memoria no volátil externa y debe estar en el formato requerido por el procesador.  Normalmente los SoCs proporcionan varios caminos (habilitando diferentes periféricos) para hacer esto. Un programa de inicialización \textit{(boot program)} contenido en una pequeña ROM del SoC se encarga de configurar, y revisar ciertos periféricos en búsqueda de un ejecutable válido, una vez lo encuentra, lo copia a la memoria RAM interna y lo ejecuta desde allí. No sobra mencionar que este ejecutable debe estar enlazado de tal forma que todas sus secciones se encuentren en el espacio de la memoria RAM interna (0x0 después del REMAP \footnote{Los procesadores ARM pueden intercambiar el sitio de la memoria RAM interna y la memoria no volátil}). 
 
 El AT91RM9200 posee una memoria interna SRAM de 16 kbytes. Después del \textit{reset} esta memoria esta disponible en la posición 0x200000; después del remap esta memoria se puede acceder en la posición 0x0. Algunos fabricantes, en la etapa de producción graban en las memorias no volátiles las aplicaciones definitivas, y sueldan en la placa de circuito impreso los dispositivos programados, esto es muy conveniente cuando se trabaja con grandes cantidades ya que ahorra tiempo en el montaje de los dispositivos.
 
@@ -2641,3 +2735,7 @@ return (0);
 \end{lstlisting}
 
 En la línea XX se abre el archivo de dispositivo \textit{/dev/fpga}, con las funciones utilizadas para manejo de archivos (\textit{open}, línea 11). y se utilizan la funciones \textit{read}(línea 22) para leer la información suministrada por el driver o la función \textit{write} (líneas 18,20) para escribir en él; dependiendo del parámetro pasado al ejecutable (\textit{argv[1]}, l´ineas 17, 19, 21).
+
+
+
+Encuestas realizadas a los estudiantes indican que: con este grupo de herramientas se pueden realizar todas las actividades propuestas en este programa académico; que son más difíciles de manejar que las herramientas comerciales; pero que se prefiere el uso de alternativas abiertas al de software ilegal; en el pasado no les importaba utilizar métodos ilegales para licenciar aplicaciones software, pero que ahora van a buscar primero las alternativas libres antes de recurrir al uso de software ilegal; el uso de Linux hace que se sientan identificados con él, llegando al punto de realizar un cambio total de sistema operativo. Lo anterior demuestra que los estudiantes se adaptan fácilmente a nuevas herramientas y que ellos prefieren el uso de software abierto a software ilegal, por lo que el constante uso de herramientas comerciales se puede atribuir a los docentes que no están interesados en buscar alternativas abiertas, ya sea porque cuentan con licencias, porque no les interesa que se utilice software ilegal o porque no quieren aprender a manejar nuevas herramientas.
