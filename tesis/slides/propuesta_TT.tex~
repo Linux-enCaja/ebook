@@ -70,7 +70,7 @@
   \begin{alertblock}{}
     \begin{itemize}
      \item<1-> Odedra \cite{Mo94} \only<1>{\footnote{The Myths and Illusions of Technology Transfer, IFIP World Congress Proceedings. 1994}}: \textbf{La transferencia tecnológica se considera exitosa cuando los receptores de la tecnología la \textcolor{DarkGreen}{asimilan} para \textcolor{DarkGreen}{suplir sus necesidades locales}}.
-     \item<2-> Jolly \cite{Jol77}\only<2>{\footnote{The Technology Transfer Process: Concepts, Framework and Methodology. The Journal of Technology Transfer. Springer, 1977}}: \textbf{El conocimiento es lo que queda al final de un proceso \textcolor{DarkGreen}{documentado y difundido} de forma apropiada}.
+     \item<2-> Jolly \cite{Jol77}: \textbf{El conocimiento es lo que queda al final de un proceso \textcolor{DarkGreen}{documentado y difundido} de forma apropiada}.
     \end{itemize}
   \end{alertblock}
 
