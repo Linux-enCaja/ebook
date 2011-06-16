@@ -1,0 +1,8 @@
+\beamer@endinputifotherversion {3.07pt}
+\select@language {english}
+\beamer@sectionintoc {1}{Sistemas Embebidos}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{Aplicaciones}{2}{0}{1}
+\beamer@subsectionintoc {1}{2}{Conocimientos Necesarios}{3}{0}{1}
+\beamer@sectionintoc {2}{Plataforma Copyleft Hardware SIE}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Especificaciones}{4}{0}{2}
+\beamer@subsectionintoc {2}{2}{SIE: Plataforma hardware copyleft }{5}{0}{2}

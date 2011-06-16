@@ -1,0 +1,51 @@
+\subsection{Absorción}
+\begin{frame}
+\frametitle{}
+
+\begin{figure}
+\begin{tikzpicture}[node distance=0.5cm, auto,>=latex', thick]
+\scriptsize
+    % We need to set at bounding box first. Otherwise the diagram
+    % will change position for each frame.
+    \path[use as bounding box] (-1.5,0) rectangle (12,-2);
+
+    % TT methodology     
+    \node [phase]                        (monitoreo)     {Vigilancia};
+    \node [phase, below of=monitoreo]    (choice)        {Elección};
+    \node [phase, below of=choice]       (acquisition)   {Adquisición};
+    \node [phase, below of=acquisition]  (adaptation)    {Adaptación};
+    \node [phase2,below of=adaptation]   (absortion)     {Absorción};
+    \node [phase, below of=absortion]    (aplication)    {Aplicación};
+    \node [phase, below of=aplication]   (difusion)      {Difusión};
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    %            Absorción
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    \onslide<1> \node [ph_explain, right=1cm of adaptation.east] (exp_absortion)     
+    {
+      \begin{center} \textbf{Absorción} \end{center}
+    \begin{itemize}
+     \item La absorción es la capacidad del receptor para absorber tecnología de un sector y la asimilación es la capacidad de asimilar (analizar, procesar, interpretar y entender) y utilizarla en otro sector 
+     \item Se deben generar dos tipos de habilidades para soportar la tecnología:
+       \begin{itemize}
+        \scriptsize
+        \item Técnicas: hardware, sistemas operativos, redes, tecnologías de la comunicación, aplicaciones SW.
+        \item Humanas: Habilidades y conocimientos necesarios para desarrollar, mantener, manipular, adaptar al entorno local y futuro desarrollo.
+       \end{itemize}
+
+     \item  Mecanismos de aprendizaje para operar y cambiar la nueva tecnología; 
+      \begin{itemize}
+        \scriptsize
+        \item Banco de proyectos que pueden ser utilizados como base de futuros desarrollos.
+        \item Cursos para la enseñanza de metodologías de diseño y procesos de fabricación.
+      \end{itemize}
+     \item  Metodologías de diseño y procesos de fabricación para generación de productos propios.
+    \end{itemize}
+    };
+
+
+    
+\end{tikzpicture}
+\end{figure}
+
+\end{frame}

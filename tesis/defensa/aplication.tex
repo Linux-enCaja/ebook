@@ -1,0 +1,56 @@
+\subsection{Aplicación}
+\begin{frame}
+\frametitle{}
+
+\begin{figure}
+\begin{tikzpicture}[node distance=0.5cm, auto,>=latex', thick]
+\scriptsize
+    % We need to set at bounding box first. Otherwise the diagram
+    % will change position for each frame.
+    \path[use as bounding box] (-1.5,0) rectangle (12,-2);
+
+    % TT methodology     
+    \node [phase]                        (monitoreo)     {Vigilancia};
+    \node [phase, below of=monitoreo]    (choice)        {Elección};
+    \node [phase, below of=choice]       (acquisition)   {Adquisición};
+    \node [phase, below of=acquisition]  (adaptation)    {Adaptación};
+    \node [phase, below of=adaptation]   (absortion)     {Absorción};
+    \node [phase2,below of=absortion]    (aplication)    {Aplicación};
+    \node [phase, below of=aplication]   (difusion)      {Difusión};
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    %            Aplicación
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    \onslide<1> \node [ph_explain, right=1cm of adaptation.east] (exp_aplication)    
+    {
+      \begin{center} \textbf{Aplicación} \end{center}
+
+      \begin{itemize}
+       \item       Incorporación y aplicación del conocimiento adquirido a:
+	  \begin{itemize}
+	    \scriptsize
+	    \item La academia (UNAL)
+	      \begin{itemize}
+	      \scriptsize
+	      \item Incorporaron metodologías modernas de diseño y fabricación
+	      \item Adaptación a la iniciativa CDIO (Concebir, Diseñar, Implementar y operar).
+	      \end{itemize}
+
+            \item La industria (emQbit):
+	      \begin{itemize}
+	      \scriptsize
+	      \item Evaluar el impacto del uso de esta tecnología en la industria.
+	      \item Obtener información sobre el estado de la industria electrónica en el país.
+	      \item Detectar los obstáculos que enfrentan nuevas empresas en su ejercicio.
+	      \end{itemize}
+            \end{itemize}
+      \end{itemize}
+
+    };
+
+
+    
+\end{tikzpicture}
+\end{figure}
+
+\end{frame}

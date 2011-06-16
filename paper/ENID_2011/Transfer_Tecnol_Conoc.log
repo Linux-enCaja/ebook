@@ -1,12 +1,11 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.11.20)  6 MAY 2011 14:27
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.6.6)  15 JUN 2011 21:24
 entering extended mode
- restricted \write18 enabled.
  %&-line parsing enabled.
 **Transfer_Tecnol_Conoc.tex
 (./Transfer_Tecnol_Conoc.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, loaded.
+yphenation, spanish, galician, catalan, loaded.
 (./IEEEtran.cls
 Document Class: IEEEtran 2007/03/05 V1.7a by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
@@ -127,7 +126,7 @@ File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
 (/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2009/08/25 v0.04m Graphics/color for pdfTeX
+File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
 \Gread@gobject=\count91
 ))
 \Gin@req@height=\dimen117
@@ -752,7 +751,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
- (/usr/share/texmf/tex/context/base/supp-pdf.mkii
+
+(/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count179
 \scratchdimen=\dimen232
@@ -813,116 +813,45 @@ Underfull \hbox (badness 1845) in paragraph at lines 95--96
 
  []
 
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 213--213
-[]\OT1/ptm/m/n/8 Reconversi[]on, mod-ern-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 213--213
-\OT1/ptm/m/n/8 izaci[]on y/o ac-tu-al-izaci[]on
- []
-
-
-Underfull \hbox (badness 4899) in paragraph at lines 213--213
-[]\OT1/ptm/m/n/8 Desarrollo de apli-ca-ciones em-be-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 213--213
-[]|\OT1/ptm/m/n/8 Documentaci[]on en
- []
-
-
-Underfull \hbox (badness 7151) in paragraph at lines 213--213
-[]\OT1/ptm/m/n/8 Servidores con apli-ca-ciones para
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 213--213
-[]|\OT1/ptm/m/n/8 Capacitaci[]on en
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 213--213
-[]|\OT1/ptm/m/n/8 Capacitaci[]on en
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 213--213
-\OT1/ptm/m/n/8 lengua-jes de
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 213--213
-\OT1/ptm/m/n/8 de-scripci[]on de
- []
-
-
-Underfull \hbox (badness 1609) in paragraph at lines 213--213
-\OT1/ptm/m/n/8 uti-lizando m[]aquinas de es-tado al-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 213--213
-[]|\OT1/ptm/m/n/8 Capacitci[]on
- []
-
-
-Overfull \hbox (7.28358pt too wide) in paragraph at lines 213--215
- [][] 
- []
-
-
-Underfull \hbox (badness 4013) in paragraph at lines 306--306
-[]\OT1/ptm/m/n/8 Proceso com-pleto de
- []
-
-)
-Overfull \hbox (10.19633pt too wide) in paragraph at lines 324--56
+[5])
+Overfull \hbox (10.19633pt too wide) in paragraph at lines 128--56
 \OT1/ptm/m/n/10 adquisici[]on/adaptaci[]on/absorci[]on/asimilaci[]on/aplicaci[]
 on/difusi[]on
  []
 
 
-Underfull \hbox (badness 2229) in paragraph at lines 324--56
+Underfull \hbox (badness 2229) in paragraph at lines 128--56
 \OT1/ptm/m/n/10 in-te-grantes de una co-mu-nidad for-mada por es-tu-di-antes,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 324--56
+Underfull \hbox (badness 10000) in paragraph at lines 128--56
 \OT1/ptm/m/n/10 acad[]emicos e in-dus-tri-ales; trans-fiere conocimien-tos
  []
 
 
-Underfull \hbox (badness 4060) in paragraph at lines 324--56
+Underfull \hbox (badness 4060) in paragraph at lines 128--56
 \OT1/ptm/m/n/10 abier-tas y platafor-mas \OT1/ptm/m/it/10 hard-ware copy-left\O
 T1/ptm/m/n/10 , pro-ce-sos de
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 324--56
+Underfull \hbox (badness 10000) in paragraph at lines 128--56
 \OT1/ptm/m/n/10 fab-ri-caci[]on y con-tac-tos con em-pre-sas man-u-fac-tur-eras
 
  []
 
 
-Underfull \hbox (badness 2573) in paragraph at lines 324--56
+Underfull \hbox (badness 2573) in paragraph at lines 128--56
 \OT1/ptm/m/n/10 lo-cales y asi[]aticas; y a la academia, ac-tu-al-izando los
  []
 
 
-Underfull \hbox (badness 3058) in paragraph at lines 324--56
+Underfull \hbox (badness 3058) in paragraph at lines 128--56
 \OT1/ptm/m/n/10 apor-tando dinero pro-ducto de re-gal[]^^Pas o de proyec-tos
  []
 
-[6] (./Transfer_Tecnol_Conoc.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 118--123
-\OT1/ptm/m/n/8 http://www.linuxfordevices.com/c/a/News/First-Colombian-Linux-SB
-C-
- []
-
-)
+(./Transfer_Tecnol_Conoc.bbl)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -934,24 +863,23 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[7] (./Transfer_Tecnol_Conoc.aux) ) 
+[6] (./Transfer_Tecnol_Conoc.aux) ) 
 Here is how much of TeX's memory you used:
- 12620 strings out of 495061
- 206768 string characters out of 1182620
- 362976 words of memory out of 3000000
- 15458 multiletter control sequences out of 15000+50000
- 44966 words of font info for 94 fonts, out of 3000000 for 9000
- 29 hyphenation exceptions out of 8191
- 47i,20n,54p,1666b,424s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 12603 strings out of 494999
+ 206665 string characters out of 1180817
+ 345251 words of memory out of 3000000
+ 15451 multiletter control sequences out of 15000+50000
+ 42135 words of font info for 91 fonts, out of 3000000 for 9000
+ 55 hyphenation exceptions out of 8191
+ 47i,9n,54p,1666b,309s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/ba
-se/8r.enc}</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy6.pfb></
-usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/te
-xmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/ty
-pe1/urw/times/utmbi8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8
-a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Transfer_Tecnol_Conoc.pdf (7 pages, 200857 bytes).
+se/8r.enc}</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy7.pfb></
+usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texl
+ive/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-texlive/fonts/type1/urw
+/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Transfer_Tecnol_Conoc.pdf (6 pages, 182103 bytes).
 PDF statistics:
- 76 PDF objects out of 1000 (max. 8388607)
+ 67 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 

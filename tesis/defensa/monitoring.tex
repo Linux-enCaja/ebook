@@ -1,0 +1,38 @@
+\subsection{Vigilancia}
+\begin{frame}
+\frametitle{}
+
+\begin{figure}
+\begin{tikzpicture}[node distance=0.5cm, auto,>=latex', thick]
+\scriptsize
+    % We need to set at bounding box first. Otherwise the diagram
+    % will change position for each frame.
+    \path[use as bounding box] (-1.5,0) rectangle (12,-2);
+
+    % TT methodology     
+    \node [phase2]                        (monitoreo)     {Vigilancia};
+    \node [phase, below of=monitoreo]    (choice)        {Elección};
+    \node [phase, below of=choice]       (acquisition)   {Adquisición};
+    \node [phase, below of=acquisition]  (adaptation)    {Adaptación};
+    \node [phase, below of=adaptation]   (absortion)     {Absorción};
+    \node [phase, below of=absortion]    (aplication)    {Aplicación};
+    \node [phase, below of=aplication]   (difusion)      {Difusión};
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    %            Vigilancia
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+
+    \node [ph_explain, right=1cm of adaptation.east] (exp_monitores)
+    {\begin{center} \textbf{Vigilancia Tecnológica} \end{center}
+      \begin{itemize}
+       \item Detectar tecnologías emergentes.
+       \item Dinámica de la tecnología (obsolescencia).
+       \item Soluciones tecnológicas disponibles
+      \end{itemize}
+
+    };
+    
+\end{tikzpicture}
+\end{figure}
+
+\end{frame}
