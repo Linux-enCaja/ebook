@@ -1,0 +1,44 @@
+\subsection{Elección}
+\begin{frame}
+\frametitle{}
+
+\begin{figure}
+\begin{tikzpicture}[node distance=0.5cm, auto,>=latex', thick]
+\scriptsize
+    % We need to set at bounding box first. Otherwise the diagram
+    % will change position for each frame.
+    \path[use as bounding box] (-1.5,0) rectangle (12,-2);
+
+    % TT methodology     
+    \node [phase]                        (monitoreo)     {Vigilancia};
+    \node [phase2,below of=monitoreo]    (choice)        {Elección};
+    \node [phase, below of=choice]       (acquisition)   {Adquisición};
+    \node [phase, below of=acquisition]  (adaptation)    {Adaptación};
+    \node [phase, below of=adaptation]   (absortion)     {Absorción};
+    \node [phase, below of=absortion]    (aplication)    {Aplicación};
+    \node [phase, below of=aplication]   (difusion)      {Difusión};
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    %            Elección
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    \onslide<1> \node [ph_explain, right=.5cm of adaptation.east] (exp_choice)        
+    { \begin{center} \textbf{Elección} \end{center}
+      \begin{itemize}
+       \item Evaluación del estado de la plataforma tecnológica existente para identificar facilidades y necesidades.
+       \item Encontrar una tecnología que pueda ser implementada con el estado actual de la plataforma tecnológica.
+       \item Identificar los niveles de complejidad, para determinar una alternativa que pueda implementarse y de resultados a mediano y corto plazo con no muy altas inversiones de capital.
+      \end{itemize}
+    };
+    
+
+    \onslide<2> \node [ph_explain, right=.5cm of adaptation.east] (exp_choice)        
+    { \begin{center} \textbf{Elección} \end{center}
+      \begin{center} \includegraphics[scale=.55]{../tesis/images/GA_vs_ASIC_vs_FPGA.png} \end{center}
+      \caption{Comparación de costos entre FPGAs, arreglos de compuertas y ASICs basado en celdas estándar, Fuente: Application-Specific Integrated Circuits, MJS Smith} 
+    };
+
+
+\end{tikzpicture}
+\end{figure}
+
+\end{frame}

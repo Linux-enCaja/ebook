@@ -1,0 +1,60 @@
+\subsection{Adquisición}
+\begin{frame}
+\frametitle{}
+
+\begin{figure}
+\begin{tikzpicture}[node distance=0.5cm, auto,>=latex', thick]
+\scriptsize
+    % We need to set at bounding box first. Otherwise the diagram
+    % will change position for each frame.
+    \path[use as bounding box] (-1.5,0) rectangle (12,-2);
+
+    % TT methodology     
+    \node [phase]                        (monitoreo)     {Vigilancia};
+    \node [phase, below of=monitoreo]    (choice)        {Elección};
+    \node [phase2,below of=choice]       (acquisition)   {Adquisición};
+    \node [phase, below of=acquisition]  (adaptation)    {Adaptación};
+    \node [phase, below of=adaptation]   (absortion)     {Absorción};
+    \node [phase, below of=absortion]    (aplication)    {Aplicación};
+    \node [phase, below of=aplication]   (difusion)      {Difusión};
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    %            Adquisición
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    \onslide<1> \node [ph_explain, right=.5cm of adaptation.east] (exp_acquisition)   
+    {      
+     \begin{center} \textbf{Adquisición} \end{center}
+     \begin{itemize}
+      \item Adquisición de equipos que utilicen la tecnología que se desea transferir.
+      \item Fácil adquisición.
+        \begin{itemize}
+        \scriptsize
+         \item Existen aplicaciones en gran parte de las actividades humanas.
+         \item No es necesario firmar acuerdos con países o con grandes industrias.
+        \end{itemize}
+      \item Adquisición de plataformas de desarrollo hardware y software 
+      \item Identificación de herramientas de desarrollo.
+     \end{itemize}
+    };
+
+
+    \onslide<2> \node [ph_explain, right=.5cm of adaptation.east] (exp_acquisition)   
+    {      
+     \begin{center} \textbf{Adquisición} \end{center}
+      \begin{center} \includegraphics[scale=.45]{../tesis/images/embedded_os_trends.png} \end{center}
+      \caption{\footnotesize Comparación del uso de sistemas operativos Fuente: Venture Development Corp} \label{os_trends}
+    };
+
+    \onslide<3> \node [ph_explain, right=.5cm of adaptation.east] (exp_acquisition)   
+    {      
+     \begin{center} \textbf{Adquisición} \end{center}
+      \begin{center} \includegraphics[scale=.3]{../tesis/images/plataformas_adquiridas.png} \\
+        \includegraphics[scale=.29]{../tesis/images/plataformas_adquiridas2.png}
+      \end{center}
+      \caption{Plataformas adquiridas para el estudio de los sistemas emebebidos} 
+    };
+    
+\end{tikzpicture}
+\end{figure}
+
+\end{frame}
