@@ -22,6 +22,9 @@
 \usepackage{listings,color}
 \lstset{language=C} 
 
+\usepackage{fancyhdr}
+
+
 \lstset{backgroundcolor=\color[gray]{.9}, frame=single,emph={EMPTY}, emphstyle=\color{white}, showstringspaces=false,
         commentstyle=\itshape, commentstyle=\color[rgb]{0.083,0.545,0.083}, 
         keywordstyle=\color{blue},
@@ -47,7 +50,7 @@
 \usepackage{amsmath,amssymb,latexsym,array, bm, times}
 
 \pagestyle{myheadings}
-\markboth{Sistemas Embebidos}{Carlos Iván Camargo Bareño}
+% \markboth{Sistemas Embebidos}{Carlos Iván Camargo Bareño}
 
 \usepackage{longtable}
 \parindent 1cm
@@ -68,20 +71,33 @@
 
 
 \parindent=1cm            
-      \input title
-\tableofcontents
-       \input intro                  %  Introducción planteamiento del problema
-       \input technology_transfer    %  Marco teórico, recomendaciones, formulación de la metodología
-       \input embedded               %  Aplicación de la metodología, resultados obtenidos
-       \input education              %  Difusión en la academia 
-       \input commons                %  Difusión como movimiento
-       \input conclusions             %  Conclusiones
+\makeatletter\@openrightfalse         %  Elimina la condición de colocar los capítulos en páginas impares, lo que no es necesario
+                                      %  cuando se imprime solo por un lado de la hoja
+        \input title
+
+%   Elimina la numeración de la tabla de contenidos, lista de imágenes, tablas, 
+        \renewcommand\thepage{}
+        \tableofcontents
+        \listoffigures
+        \newpage
+        \renewcommand\thepage{\arabic{page}}
+        \setcounter{page}{1}
+%   y fija la numeración en 1 para el primer capítulo 
+        \input intro                  %  Introducción planteamiento del problema
+        \input technology_transfer    %  Marco teórico, recomendaciones, formulación de la metodología
+        \input embedded               %  Aplicación de la metodología, resultados obtenidos
+        \input education              %  Difusión en la academia 
+        \input commons                %  Difusión como movimiento
+
+%         \input conclusions             %  Conclusiones
+\@openrighttrue\makeatother
+
 % *******************
 %              Anexos
 % *******************
-       \input papers
-       \input platform
-       \input emqbit
+%        \input papers
+%        \input platform
+%        \input emqbit
 % *******************
 %       Bibliografía
 % *******************

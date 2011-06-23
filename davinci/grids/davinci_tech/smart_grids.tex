@@ -1,0 +1,531 @@
+\documentclass[xcolor=svgnames]{beamer}
+% \usetheme{JuanLesPins}
+\usetheme{CambridgeUS}
+\usecolortheme{crane}
+\usepackage{fontenc}
+
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage{fontenc}
+\usepackage{amssymb}
+
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usetikzlibrary{arrows,shapes,positioning}
+\usetikzlibrary{patterns}
+
+\usepackage{times}
+\usepackage{colortbl}
+\usepackage{color}
+
+\usepackage{tocvsec2}
+\setlength{\leftmargini}   {13pt} 
+\setlength{\leftmarginii}  {13pt} 
+\setlength{\leftmarginiii} {13pt} 
+
+
+% First Page, Title, author..
+%
+\title{Redes Inteligentes Para la Gestión de Redes de Distribución Eléctrica Ajustadas al Entorno Social Latinoamericano.}
+\author{Carlos I. Camargo Bareño (UN) \\ Jorge Ramón (UIS) \\ Andrés Calderón (emQbit)}
+
+
+\pgfdeclareimage[height=.7cm]{logo}{./img/logo_un_uis_emqbit.png}
+\logo{\pgfuseimage{logo}}
+
+
+\begin{document}
+
+%----------------------------------------------------------------------INSERT TITLE-
+\frame[c]{\titlepage}
+\settocdepth{section}
+\frame[c]{\tableofcontents}
+
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+%----------------------------------------------------------------------Introducción-
+\section{Equipo de Trabajo}
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+\begin{frame}
+  \frametitle{Equipo de Trabajo}
+    \begin{alertblock}{Equipo de trabajo}
+      \begin{enumerate}
+        \footnotesize
+        \item Grupo de Microelectrónica de la Universidad Nacional: Formado en 1992. Líneas de investigación: Instrumentación, sistemas embebidos Técnicas de Diseño de alto nivel, microondas y diseño de antenas, electrónica de potencia.
+        \item Grupo de Investigación en Conectividad y Procesado de Señales: Formado en el 2002. Líneas de investigación: Procesamiento Digital de Señales, embedded systems, computación evolutiva, redes de computadores y microelectrónica. 
+        \item emQbit Ltda: Empresa pionera en el diseño y fabricación de sistemas digitales.
+      \end{enumerate}
+    \end{alertblock}
+\end{frame}
+
+% ¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿
+% ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡
+% `` ''
+% `` ''
+% `` ''
+
+
+
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+%----------------------------------------------------------------------Introducción-
+\section{Motivación}
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+\subsection[Motivación]{Redes Inteligentes}
+  \begin{frame}
+    \frametitle{¿Qué es una Red Inteligente?}
+    \begin{center}
+      \includegraphics[height=7.5cm]{./img/SmartGrid_topology.png}
+    \end{center}
+  \end{frame}
+
+\subsection[Motivación]{Ventajas al Usar Redes Inteligentes}
+\begin{frame}
+  \frametitle{Ventajas al Usar Redes Inteligentes}
+      \begin{itemize}
+        \item Ahorro de energía.
+        \item Mejoramiento de la calidad del servicios.
+        \item Reducción de los costos operativos.
+          \begin{itemize}
+            \item Eliminación del costo de la lectura.
+            \item Rápida detección de cortes/fallas
+            \item Conexión/desconexión Remota   
+          \end{itemize} 
+        \item Disminución de las pérdidas de energía.
+          \begin{itemize}
+            \item Permite detectar sobre-dimensionamiento de transformadores.
+            \item Facilita la detección de fraudes.
+          \end{itemize} 
+        \item Permite manejar precios dinámicos.
+        \item Permite el control de la carga.
+        \item Conocimiento del consumo en tiempo real (usuarios).
+      \end{itemize}
+\end{frame}
+
+
+\subsection[Motivación]{Justificación}
+\begin{frame}
+  \frametitle{Justificación}
+    \begin{block}{}
+      \begin{itemize}
+       \item En la actualidad existen muchas opciones que permiten realizar diferentes mediciones sobre el sistema de distribución de energía eléctrica.
+       \item No se ofrece una solución completa que incluya los diferentes niveles del sistema.
+       \item Las soluciones actuales las proveen diferentes fabricantes que utilizan diferentes tecnologías, requiriendo un gran esfuerzo de integración para poder recolectar y procesar la información.
+       \item Estos sistemas son diseñados para países con situaciones políticas, económicas, sociales diferentes a las de los países latinoamericanos.
+      \end{itemize}
+    \end{block}
+\end{frame}
+
+
+\section{Solución}
+\begin{frame}
+  \frametitle{Solución}
+   \only<1>{
+     \begin{block}{}
+       \begin{itemize}
+        \footnotesize
+        \item Crear equipos diseñados a la medida y acorde a las necesidades y requerimientos del sector eléctrico nacional.
+          \begin{itemize}
+            \footnotesize
+            \item Apoyo a la industria electrónica nacional.
+            \item Elimina dependencia tecnológica.
+            \item Desarrollo tecnológico del país.
+          \end{itemize}
+        \item Implementar redes de transmisión inteligente, robustas ante condiciones de falla. 
+        \item Medición del consumo de energía, corte y reconexión de forma remota. 
+       \end{itemize}
+     \end{block}
+   }
+   \only<2>{ 
+      \begin{block}{}
+        Registro en tiempo real de la calidad del suministro eléctrico y del usuario final. 
+          \begin{itemize}
+          \footnotesize
+            \item Monitoreo de el sistema de iluminación.
+            \item Detección temprana de interrupciones del servicio.
+            \item Perfiles de carga a través del día.
+            \item Perfiles de corriente por fase.
+            \item Detección de picos de demanda. 
+            \item Balances de energías activa, reactiva y aparente por fase.
+            \item Generación de alarmas por manipulación mal-intencionada de los equipos de medida. 
+          \end{itemize}
+      \end{block}
+   }
+
+\end{frame}
+
+
+\section{Innovación}
+\begin{frame}
+  \frametitle{Innovación}
+   \only<1>{
+      \begin{block}{}
+        Se da una solución a uno de los problemas técnicos que ha limitado la adopción de las redes inteligentes: la \textbf{falta de estándares} 
+          \begin{itemize}
+          \footnotesize
+            \item Uso de protocolos estandarizados  ampliamente difundidos (tcp/ip v4 y v6 y WiFi).
+            \begin{itemize}
+              \footnotesize
+              \item Reducción de costos de infraestructura.
+              \item Posibilidad de oferta de servicios sobre redes IP (Internet, VozIP, domótica, etc).
+            \end{itemize}
+            \item Uso de protocolos estándares de seguridad (Transport Layer Security y Secure Sockets Layer). 
+          \end{itemize}
+      \end{block}
+   }
+   \only<2>{ 
+      \begin{block}{}
+        Otras características innovadoras. 
+          \begin{itemize}
+          \footnotesize
+            \item Dispositivos programables: Capacidad de actualización del software por las empresas de distribución, (por ejemplo:  ante cambios en la normativa.)
+            \item Capacidad de medición de parámetros de calidad  (eventos THDv, THDi, etc) incluso en los medidores de los usuarios.
+            \item Compatibilidad con futuros protocolos.
+            \item Compatibilidad con Google PowerMeter.
+          \end{itemize}
+      
+         \centering \includegraphics[height=2.5cm]{./img/google_pm.png}
+
+
+      \end{block}
+   }
+
+\end{frame}
+
+%-----------------------------------------------------------------  Propuesta -
+\section{Sistema integrado de operación remota, medición de energía y calidad del servicio}
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+\subsection[Sistema de Medición Propuesto]{Propuesta}
+\frame[c]
+{
+  \frametitle{Sistema de Monitoreo Energético en Tiempo Real}
+      \begin{center}
+        \includegraphics[height=7.5cm]{./img/smart_grid_propuesta}
+      \end{center}
+}
+
+
+\subsection[Sistema de Medición Propuesto]{Micromedidor}
+\frame[c]
+{
+  \frametitle{Características del micromedidor (medidor domiciliario)}
+
+      \begin{columns}[c]
+        \begin{column}{0.45\textwidth}
+          \pgfimage[height=5cm]{./img/comunication1}
+        \end{column}
+        
+        \begin{column}{0.55\textwidth}
+         \only<1>{
+          \begin{block}{\small Características}
+           \tiny
+            \begin{itemize}
+              \item Cálculo de energía y potencia activa, reactiva y aparente.
+              \item  \textbf{Análisis de armónicos}
+              \item  \textbf{Calculo de THDV y THDI}
+              \item Comunicaciones seguras usando  el protocolo AES.
+              \item Identificador único en ROM por cada medidor.
+              \item Sistema de desconexión remota de hasta 70A.
+             \end{itemize}
+          \end{block}
+
+            \begin{alertblock}{\small Beneficios}
+             \tiny
+              \begin{itemize}
+                \item Robustez en la comunicación
+                \item Fácil detección de desconexiones
+                \item Es posible determinar con certeza a que fase y a que transformador se encuentra 
+                    conectado cada medidor.
+                \item Precisión hasta 0.2\%.
+
+               \end{itemize}
+            \end{alertblock}
+          }
+          \only<2>{
+            \begin{alertblock}{\small Ventajas}
+             \tiny
+              \begin{itemize}
+                \item Permite detectar maniobras en el medidor.
+                \item Permite Sistema de Energía Prepagada.
+                \item Posibilidad de Integración de medición con otras empresas (Gas, Agua)
+               \end{itemize}
+            \end{alertblock}
+
+            \begin{block}{\small Costos (estimados)}
+             \tiny
+             \begin{center}
+              \begin{tabular}{|l|l|}
+               \hline 
+               Cantidad & Costo (\$USD) \\
+               \hline 
+               500     & menos de 90\\
+               \hline 
+               1000    & menos de 80\\
+               \hline 
+               5000    & menos de 70\\
+               \hline 
+              \end{tabular}
+             \end{center}
+           \end{block}
+          }
+        \end{column}
+      \end{columns}
+}
+
+
+
+\subsection[Sistema de Medición Propuesto]{Macromedidor}
+\frame[c]
+{
+  \frametitle{Características del Macromedidor}
+
+      \begin{columns}[c]
+        \begin{column}{0.45\textwidth}
+          \pgfimage[height=5cm]{./img/comunication2}
+        \end{column}
+        
+        \begin{column}{0.55\textwidth}
+         
+         \only<1>{
+          \begin{block}{\small Medición}
+           \tiny
+            \begin{itemize}
+              \item Medición trifásica de energía.
+              \item Medición de corriente del neutro.
+              \item Medición de energía en la línea de alumbrado público.
+              \item Calculo de energía y potencia (activa, reactiva y aparente).
+              \item Calculo de Balance, Factor K, Análisis de armónicos.
+              \item Cálculo de flicker, Cálculo de eventos (SAGs y SWELLs)
+              \item Registro de DES y FES, Capacidad de almacenamiento.
+              \item Baterías de Ion de Litio.
+             \end{itemize}
+          \end{block}
+
+            \begin{alertblock}{\tiny normas}
+             \tiny
+              \begin{itemize}
+                \item Análisis de armónicos (IEC 61000-4-7 y IEEE 519)
+                \item Calidad de energía y potencia  (IEC 61000-4-30 clase A, IEEE1159, IEEE1459)
+                \item Análisis de armónicos (IEC 61000-4-7 y IEEE 519)
+                \item Flickers (IEC 61000-4-15)
+                \item SAGs y SWELLs (61000-4-30 clase A)
+                \item DES y FES GREG 083 y 091 de 2004
+               \end{itemize}
+            \end{alertblock}
+         }
+          \only<2>{
+          \begin{block}{\small Ventajas y Beneficios}
+           \tiny
+            \begin{itemize}
+              \item Posibilidad de detectar maniobras y cortes del servicio.
+              \item Cálculo de la carga del transformador, lo cual permite su correcto dimensionamiento.
+              \item La información recolectada de forma periódica proporciona información precisa de la carga, lo cual facilita los procesos de programación del suministro, operaciones de conmutación, planificación, balance, etc.
+             \end{itemize}
+          \end{block}
+
+             \begin{block}{\small Costos (estimados)}
+             \tiny
+             \begin{center}
+              \begin{tabular}{|l|l|}
+               \hline 
+               Cantidad & Costo (\$USD) \\
+               \hline 
+               25     & 910\\
+               \hline 
+               100    & 670\\
+               \hline 
+               1000   & 585\\
+               \hline 
+              \end{tabular}
+             \end{center}
+            \end{block}
+          }
+
+
+        \end{column}
+      \end{columns}
+}
+
+\subsection[Sistema de Medición Propuesto]{Software}
+\frame[c]
+{
+  \frametitle{Software}
+    \begin{block}{Software de gestión}<1->
+      \begin{itemize}
+        \item Recolección de datos acumulados en los macromedidores.
+        \item Operacion remota de los micromedidores.
+        \item Configuración remota de la red.
+        \item Generación de balances de energía.
+        \item Generación de reportes de calidad del servicio.
+      \end{itemize}
+    \end{block}
+}
+
+
+
+%----------------------------------------------------------------   Estado del Proyecto  -
+\section{Estado del Proyecto}
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+\subsection[Estado]{Prueba de Concepto y de arquitectura}
+\begin{frame}
+ \frametitle{Prueba de concepto y de arquitectura}
+
+      \begin{columns}[c]
+        \begin{column}{0.6\textwidth}
+          \pgfimage[height=5cm]{./img/smart_grid_uis}
+        \end{column}
+        
+        \begin{column}{0.4\textwidth}
+         
+          \begin{block}{\small Características}
+           \tiny
+            \begin{itemize}
+              \item Implementado en el barrio comuneros de Bucaramanga (ESSA).
+              \item 56 Usuarios residenciales.
+              \item Cada poste posee medidores, relés electrónicos y acometidas para cada usuario.
+              \item Comunicación inalámbrica (Zigbee) entre los postes y el transformador.
+              \item Cálculo de energía por usuario en cada medidor.
+              \item Balance de Carga en el transformador.
+              \item Comunicación desde el transformador y el centro de control vía WiMax.
+              \item Permite desconexión individual.
+             \end{itemize}
+          \end{block}
+        \end{column}
+      \end{columns}
+
+
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Micromedidor}
+      \begin{columns}[c]
+        \begin{column}{0.6\textwidth}
+          \pgfimage[height=5cm]{./img/xburst_sbc}
+        \end{column}
+        
+        \begin{column}{0.4\textwidth}
+         \only<1>{
+          \begin{block}{\small Características}
+           \tiny
+            \begin{itemize}
+              \item Procesador 32 bit (MIPS).
+              \item 8/16 MBytes SDRAM.
+              \item FLASH 125MB.
+              \item ADCs de 18bits.
+              \item Sistema operativo Linux.
+             \end{itemize}
+          \end{block}
+         }
+        \end{column}
+      \end{columns}
+ 
+\end{frame}
+
+\begin{frame}
+ \frametitle{Macromedidor}
+    \begin{center}
+      \includegraphics[height=8cm]{./img/macro_blocks.pdf}
+    \end{center}
+ 
+\end{frame}
+
+\begin{frame}
+ \frametitle{Comparación con productos comerciales}
+    \begin{center}
+      \includegraphics[height=7cm]{./img/comparacion-medidores.pdf}
+    \end{center}
+
+\end{frame}
+
+\begin{frame}
+ \frametitle{Donde está siendo utilizado}
+    \begin{block}{Uso del Macromedidor existente (Como analizador de calidad del servicio en subestaciones)}
+      \begin{itemize}
+       \item Empresa de Energía de Boyacá S.A. ESP.
+       \item Empresa de Energía de Casanare S.A ESP.
+       \item Universidad Industrial de Santander.
+      \end{itemize}
+    \end{block}
+\end{frame}
+
+
+%----------------------------------------------------------------   Clientes  -
+\section{Siguientes Pasos}
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+\begin{frame}
+ \frametitle{Siguientes Pasos}
+    \begin{block}{Uso del Macromedidor existente}
+      \begin{itemize}
+       \item Alianzas estratégicas con los entes reguladores.
+       \item Certificación.
+       \item Diseño para Manufactura (DFM).
+      \end{itemize}
+    \end{block}
+\end{frame}
+
+
+%----------------------------------------------------------------   Clientes  -
+\section{Clientes Potenciales}
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+\begin{frame}
+ \frametitle{Clientes Potenciales}
+    \begin{block}{Clientes Potenciales}
+      \begin{itemize}
+       \item Empresas comercializadoras de energía eléctrica.
+       \item Empresas de distribución de energía eléctrica.
+       \item Empresas de interventoría de alumbrado público.
+       \item Empresas de consultoria sobre el uso eficiente de la energía eléctrica.
+       \item Usuarios finales que optimizan el uso de energía eléctrica.
+      \end{itemize}
+    \end{block}
+\end{frame}
+
+
+
+\section{Condiciones Económico}
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+\begin{frame}
+ \frametitle{Requerimiento económico}
+    \begin{block}{Requerimiento económico}
+      \begin{tabular}{|p{4cm}|p{6cm}|}
+        \hline
+        \textbf{Item}       & \textbf{Valor}
+        \\ \hline
+        Desarrollo (1 año)  &180 Millones
+        \\ \hline
+        Prototipos          &200 Millones
+        \\ \hline
+        Certificaciones     &120 Millones
+        \\ \hline 
+        \textbf{Total}      & \textbf{400 Millones}
+        \\ \hline 
+        \end{tabular}
+    \end{block}
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Modelo de negocio}
+
+   \begin{block}{Venta de medidores}
+      \begin{tabular}{|p{4cm}|p{3cm}|c|c|}
+        \hline
+        \textbf{Item}       & \textbf{Año 1} & \textbf{Año 2} & \textbf{Año 3}
+        \\ \hline
+        Inversión           & 460 M          & 0              & 0
+        \\ \hline
+        Ventas \footnote{Estimación hecha con base en ventas esperadas de 60 unidades el primer año, 240 el segundo y 360 en el tercer año.}               & 270 M          & 1080 M         & 1620 M
+        \\ \hline
+        Costos              & 410 M          & 330 M          & 500 M
+        \\ \hline
+        Utilidad acumulada  & 0 M            & 600 M          & 1770 M
+        \\ \hline
+      \end{tabular}
+   \end{block}
+  \end{frame}
+\end{document}
+
