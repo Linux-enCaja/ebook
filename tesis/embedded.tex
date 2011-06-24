@@ -565,3 +565,115 @@ Esta metodología de transferencia tecnológica y de conocimientos no cuenta con e
 
  \item Relaciones con la industria: Para trabajar con empresas de base tecnológica se creó un proyecto\footnote{En la actualidad se están buscando fuentes de financiación para su ejecución} que busca difundir el uso de esta tecnología en la creación de nuevos productos que den solución a un problema local; este proyecto realizará un proceso para seleccionar 2 empresas de base tecnológica en ciudades donde existan centros de formación que utilicen este recurso; dichas empresas formularán un proyecto que satisfaga una necesidad local; estudiantes de los centros de formación (como trabajo de grado) ayudarán a estas empresas en el diseño y construcción de un dispositivo que implemente la solución propuesta por ellas. Todos los proyectos deben ser de tal naturaleza que puedan ser implementados en un dispositivo electrónico que utilice la tecnología utilizada en este estudio; esto con el fin de implementar todos los proyectos con una plataforma electrónica base que permita adaptarse a las diferentes aplicaciones; esta \textit{plataforma base} será diseñada por todos los participantes y se buscará reunir la máxima funcionalidad con el menor precio posible; utilizando los recursos suministrados por el portal \textit{linuxencaja} se coordinará el trabajo entre los diferentes grupos de trabajo; una vez diseñada esta plataforma base se fabricaran tantos prototipos como grupos de trabajo para determinar su correcto funcionamiento, una vez corregidos los posibles errores  y comprobado el correcto funcionamiento de todos los componentes; se realizará la producción de 100 unidades con el fin de adquirir experiencia en la producción de estos sistemas utilizando la industria manufacturera asiática; después de realizar la pruebas necesarias, cada grupo de trabajo diseñará y fabricará una tarjeta hija que proporcione la funcionalidad requerida por cada proyecto. Todo el proceso de diseño, los criterios de desarrollo, las discusiones para determinar las especificaciones tanto de la plataforma base como de las plataformas hijas se documentará en el portal \textit{linuxencaja} para permitir la reproducción de este curso.
 \end{itemize}
+
+En la actualidad se está evaluando la posibilidad de realizar una transferencia tecnológica entre el estado Colombiano y dos centros de desarrollo coreanos Electronics and Telecommunications Research Institute (ETRI) y Korea Electronics Technology Institute (KETI) en el área de aplicación de televisión digital. Como parte de la transferencia, se contempla transferir conocimientos necesarios para realizar la fabricación de una plataforma de desarrollo que pueda ser utilizada en este tipo de aplicaciones. La tabla \ref{KETI_vs_linuxencaja} muestra los costos de esta transferencia (en miles de dólares) y el ahorro que se puede realizar gracias a los resultados de este trabajo.
+
+\setcounter{mpfootnote}{12}
+\begin{table}[H]
+  \caption{Comparación de precios entre la transferencia ofrecida por Corea y el costo utilizando los conocimientos generados en este trabajo}
+  \centering
+    \footnotesize
+    \begin{tabular}{|p{6.7cm}|p{2cm}|p{5,5cm}|}
+      \hline
+      \textbf{Item}       & \textbf{KETI-ETRI}  & \textbf{Este trabajo}
+      \\ \hline 
+      Equipos de cómputo (25) con licencias de:
+      \begin{itemize}
+       \item Windows, VMWARE, \footnote{KETI/ETRI utilizan Microsoft Windows y un software comercial para emular Linux (VMWARE)}
+       \item Android SDK, Apache
+      \end{itemize}
+                             & 115.000                    & 50.000\footnotemark[12]
+      \\ \hline 
+      Plataforma de desarrollo (15)
+      \begin{itemize}
+       \item Procesador ARM, 512MB DDR, MicroSD
+       \item LCD 800 x 480, touch screen
+       \item USB 2.0, WiFi, Camera.
+       \item Bluetooth. Android OS.  
+      \end{itemize}
+                          & 60.000                    & 4.500 \footnotemark[13] 
+      \\ \hline 
+      Software para simulación:
+      \begin{itemize}
+       \item Qemu con soporte para OpenMoko 
+      \end{itemize}
+                          & 132.000                   & 0 \footnotemark[14]
+      \\ \hline 
+      Depuración hardware:
+      \begin{itemize}
+       \item Trace 32 de Laterbach (15)
+      \end{itemize}
+                         & 180.000                   & 2.000 \footnotemark[15]
+
+      \\ \hline 
+      Herramientas CAD:
+      \begin{itemize}
+       \item PADS de Cadence (15)
+      \end{itemize}
+                         & 180.000                   & 0 \footnotemark[16]
+      \\ \hline 
+      Plataforma hardware (15):
+      \begin{itemize}
+       \item Especificaciones de la plataforma de desarrollo
+       \item Archivos para reproducir el hardware:
+         \begin{itemize}
+          \item Esquemáticos.
+          \item Archivos Gerber.
+         \end{itemize}
+       \item Código fuente:
+         \begin{itemize}
+          \item bootloader: u-boot.
+          \item Kernel de Linux.
+          \item Android OS.
+         \end{itemize}
+       \item documentación
+         \begin{itemize}
+          \item Guía de usuario.
+          \item Port de Android.
+         \end{itemize}
+      \end{itemize}
+                         & 120.000                   & 50.000 
+                                                       \begin{itemize}
+                                                        \item Archivos para \textbf{Modificar} la plataforma \footnotemark[17]
+
+                                                        \item Código fuente:
+                                                          \begin{itemize}
+                                                           \item u-boot
+                                                           \item Kernel de Linux.
+                                                           \item Android OS.
+                                                          \end{itemize}
+                                                        \item Documentación:
+                                                           \begin{itemize}
+                                                            \item Tutoriales.
+                                                            \item Proceso completo de diseño.
+                                                            \item Cursos en línea.
+                                                            \item Listas de discusión.
+                                                           \end{itemize}
+                                                       \end{itemize}
+
+      \\ \hline 
+
+    \end{tabular}
+  \label{KETI_vs_linuxencaja}
+\end{table}
+
+
+
+\footnotetext[12]{Se eliminan las licencias de Windows y VMWARE al utilizar Linux, Android SDK y Apache son gratuitos}
+\footnotetext[13]{Existen dispositivos comerciales con estas características que pueden ser utilizados en el desarrollo utilizando ingeniería inversa, como se hizo en este trabajo}
+\footnotetext[14]{Qemu es gratuito, el proyecto del celular abierto OpenMoko distribuye de forma gratuita su simulador}
+\footnotetext[15]{El proyecto OpenOCD permite realizar este tipo de pruebas utilizando una interfaz con el puerto JTAG de los procesadores; en este trabajo se desarrolló una interfaz USB-JTAG que permite hacer esto de forma económica.}
+\footnotetext[16]{Este trabajo proporciona una metodología para utilizar herramientas abiertas en todo el proceso de fabricación de PCBs}
+\footnotetext[17]{Plataforma \textit{hardware copyleft}}
+
+\newpage
+\setcounter{footnote}{18}
+
+Como podemos observar en la tabla \ref{KETI_vs_linuxencaja}, los costos de esta parte de la transferencia\footnote{El costo total de la transferencia cuesta 2 millones de USD} son muy elevados (787.000 USD), frente al costo que tendría realizar las mismas actividades con los conocimientos adquiridos en este trabajo (106.500).
+
+La transferencia que ofrece Corea no tiene en cuenta la capacitación necesaria para que el país pueda absorber y asimilar estos conocimientos de tal forma que pueda generar sus propios productos lo que constituye el éxito de la transferencia. Si este proyecto se llegara a formalizar se crearía una dependencia del país hacia a tecnología ofrecida por Corea. El uso de herramientas comerciales en la etapa de diseño hace que los costos de este tipo de productos aumente de forma considerable, en esta comparación las herramientas de diseño de circuitos impresos, el sistema operativo y un emulador de Linux cuestan 245.000 USD, y son reemplazadas sin costo alguno por las herramientas utilizadas en este trabajo.
+
+
+
+
+

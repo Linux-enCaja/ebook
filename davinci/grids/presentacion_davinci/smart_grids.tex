@@ -81,28 +81,28 @@
     \end{center}
   \end{frame}
 
-\subsection[Motivación]{Ventajas al Usar Redes Inteligentes}
-\begin{frame}
-  \frametitle{Ventajas al Usar Redes Inteligentes}
-      \begin{itemize}
-        \item Ahorro de energía.
-        \item Mejoramiento de la calidad del servicios.
-        \item Reducción de los costos operativos.
-          \begin{itemize}
-            \item Eliminación del costo de la lectura.
-            \item Rápida detección de cortes/fallas
-            \item Conexión/desconexión Remota   
-          \end{itemize} 
-        \item Disminución de las pérdidas de energía.
-          \begin{itemize}
-            \item Permite detectar sobre-dimensionamiento de transformadores.
-            \item Facilita la detección de fraudes.
-          \end{itemize} 
-        \item Permite manejar precios dinámicos.
-        \item Permite el control de la carga.
-        \item Conocimiento del consumo en tiempo real (usuarios).
-      \end{itemize}
-\end{frame}
+% \subsection[Motivación]{Ventajas al Usar Redes Inteligentes}
+% \begin{frame}
+%   \frametitle{Ventajas al Usar Redes Inteligentes}
+%       \begin{itemize}
+%         \item Ahorro de energía.
+%         \item Mejoramiento de la calidad del servicios.
+%         \item Reducción de los costos operativos.
+%           \begin{itemize}
+%             \item Eliminación del costo de la lectura.
+%             \item Rápida detección de cortes/fallas
+%             \item Conexión/desconexión Remota   
+%           \end{itemize} 
+%         \item Disminución de las pérdidas de energía.
+%           \begin{itemize}
+%             \item Permite detectar sobre-dimensionamiento de transformadores.
+%             \item Facilita la detección de fraudes.
+%           \end{itemize} 
+%         \item Permite manejar precios dinámicos.
+%         \item Permite el control de la carga.
+%         \item Conocimiento del consumo en tiempo real (usuarios).
+%       \end{itemize}
+% \end{frame}
 
 
 \subsection[Motivación]{Inconvenientes}
@@ -118,6 +118,15 @@
       \end{itemize}
     \end{block}
 \end{frame}
+
+
+\begin{frame}
+  \frametitle{Pérdidas de las empresas de energía en latinoamérica}
+     \begin{center}
+       \includegraphics[height=7cm]{./img/perdidas.png}
+     \end{center}
+\end{frame}
+
 
 %----------------------------------------------------------------   Estado del Proyecto  -
 \section{Propuesta de Solución}
@@ -356,11 +365,12 @@
   \frametitle{Innovación}
       \begin{block}{}
         \begin{itemize}
-         \item Se da una solución a uno de los problemas técnicos que ha limitado la adopción de las redes inteligentes: la \textbf{falta de estándares} 
+         \item Ayuda a la formulación de \textbf{estándares} 
          \item Reducción de costos de infraestructura.
          \item Posibilidad de oferta de servicios sobre redes IP (Internet, VozIP, domótica, etc).
-         \item Dispositivos programables: Capacidad de actualización del software por las empresas de distribución, (por ejemplo:  ante cambios en la normativa
+         \item Dispositivos programables.
          \item Compatibilidad con Google PowerMeter.
+         \item Permite sistema de energía prepagada.
         \end{itemize}
          \centering \includegraphics[height=2.5cm]{./img/google_pm.png}
       \end{block}
@@ -374,24 +384,57 @@
 %$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 \subsection[Estado]{Prueba de Concepto y de arquitectura}
-\begin{frame}
- \frametitle{Prueba de concepto y de arquitectura}
+% \begin{frame}
+%  \frametitle{Prueba de concepto y de arquitectura}
+% 
+%     \begin{block}{}
+%       \footnotesize
+%       \begin{itemize}
+%         \item Implementado en el barrio comuneros de Bucaramanga (ESSA).
+%         \item 56 Usuarios residenciales.
+%         \item Cada poste posee medidores, relés electrónicos y acometidas para cada usuario.
+%         \item Comunicación inalámbrica (Zigbee) entre los postes y el transformador.
+%         \item Cálculo de energía por usuario en cada medidor.
+%         \item Balance de Carga en el transformador.
+%         \item Comunicación desde el transformador y el centro de control vía WiMax.
+%         \item Permite desconexión individual.
+%         \end{itemize}
+%     \end{block}
+% 
+% \end{frame}
 
-    \begin{block}{}
-      \footnotesize
-      \begin{itemize}
-        \item Implementado en el barrio comuneros de Bucaramanga (ESSA).
-        \item 56 Usuarios residenciales.
-        \item Cada poste posee medidores, relés electrónicos y acometidas para cada usuario.
-        \item Comunicación inalámbrica (Zigbee) entre los postes y el transformador.
-        \item Cálculo de energía por usuario en cada medidor.
-        \item Balance de Carga en el transformador.
-        \item Comunicación desde el transformador y el centro de control vía WiMax.
-        \item Permite desconexión individual.
-        \end{itemize}
-    \end{block}
 
+ \begin{frame}
+  \frametitle{Prueba de Concepto y Arquitectura}
+     \begin{center}
+       \includegraphics[height=6cm]{./img/UIS_arquitectura.png}
+     \end{center}
 \end{frame}
+
+ \begin{frame}
+  \frametitle{Montaje}
+     \begin{center}
+       \includegraphics[height=6cm]{./img/UIS_montaje.png}
+     \end{center}
+ \end{frame}
+
+
+ \begin{frame}
+  \frametitle{Ubicación}
+     \begin{center}
+       \includegraphics[height=7cm]{./img/UIS_ubicacion.png}
+     \end{center}
+ \end{frame}
+
+
+ \begin{frame}
+  \frametitle{Medidor de calidad de energía utilizando productos comerciales}
+     \begin{center}
+       \includegraphics[height=7cm]{./img/UIS_medidor_calidad.png}
+     \end{center}
+ \end{frame}
+
+  
 
 
 % \begin{frame}
@@ -435,6 +478,17 @@
 % 
 % \end{frame}
 
+
+ \begin{frame}
+  \frametitle{Medidor de calidad de energía diseñado a la medida}
+     \begin{center}
+       \includegraphics[height=7cm]{./img/medidor_emqbit.png}
+     \end{center}
+ \end{frame}
+
+
+
+
 \begin{frame}
  \frametitle{Donde está siendo utilizado}
     \begin{block}{}
@@ -465,9 +519,28 @@
 
 \section{Consideraciones Económicas}
 %$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+ \begin{frame}
+  \frametitle{Costos para una empresa de distribución de energía}
+     \begin{center}
+       \includegraphics[height=7cm]{./img/UIS_costos2.png}
+     \end{center}
+ \end{frame}
+
+ \begin{frame}
+  \frametitle{Costos para una empresa de distribución de energía}
+     \begin{center}
+       \includegraphics[height=7cm]{./img/UIS_retorno.png}
+     \end{center}
+ \end{frame}
+
+
+
+
 \begin{frame}
  \frametitle{Requerimiento económico}
-    \begin{block}{Requerimiento económico}
+    \begin{block}{Requerimiento económico Para terminar el proyecto}
         \footnotesize
       \begin{tabular}{|p{4cm}|p{6cm}|}
         \hline
@@ -503,6 +576,9 @@
    \end{block}
 
 \end{frame}
+
+
+
 
 \end{document}
 
