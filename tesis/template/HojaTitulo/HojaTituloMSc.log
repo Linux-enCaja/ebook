@@ -1,0 +1,53 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.6.6)  28 JUN 2011 20:02
+entering extended mode
+ %&-line parsing enabled.
+**HojaTituloMSc.tex
+(./HojaTituloMSc.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, spanish, galician, catalan, loaded.
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3 \begin{center}
+                  
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 3--3
+[] 
+ []
+
+)
+Runaway argument?
+{\huge TRANSFERENCIA TECNOLÓGICA Y DE CONOCIMIENTOS EN EL DISEÑO DE S\ETC.
+! File ended while scanning use of \textbf .
+<inserted text> 
+                \par 
+<*> HojaTituloMSc.tex
+                     
+I suspect you have forgotten a `}', causing me
+to read past where you wanted me to stop.
+I'll try to recover; but if the error is serious,
+you'd better type `E' or `X' now and fix your file.
+
+! Emergency stop.
+<*> HojaTituloMSc.tex
+                     
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 9 strings out of 494999
+ 176 string characters out of 1180817
+ 47208 words of memory out of 3000000
+ 3294 multiletter control sequences out of 15000+50000
+ 3640 words of font info for 14 fonts, out of 3000000 for 9000
+ 54 hyphenation exceptions out of 8191
+ 9i,1n,4p,705b,59s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!
