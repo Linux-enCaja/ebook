@@ -1,0 +1,107 @@
+\section{Metodología Propuesta}
+\begin{frame}
+\frametitle{}
+
+\begin{figure}
+\begin{tikzpicture}[node distance=0.5cm, auto,>=latex', thick]
+\scriptsize
+    % We need to set at bounding box first. Otherwise the diagram
+    % will change position for each frame.
+    \path[use as bounding box] (-1.5,0) rectangle (12,-2);
+
+    % TT methodology     
+    \onslide<1,2-> \node [phase]                        (monitoreo)     {Vigilancia};
+    \onslide<1,\value{choice} ->     \node [phase, below of=monitoreo]    (choice)        {Elección};
+    \onslide<1,\value{acquisition}-> \node [phase, below of=choice]       (acquisition)   {Adquisición};
+    \onslide<1,\value{adaptation}->  \node [phase, below of=acquisition]  (adaptation)    {Adaptación};
+    \onslide<1,\value{absortion}->   \node [phase, below of=adaptation]   (absortion)     {Absorción};
+    \onslide<1,\value{aplication}->  \node [phase, below of=absortion]    (aplication)    {Aplicación};
+    \onslide<1,\value{difusion}->    \node [phase, below of=aplication]   (difusion)      {Difusión};
+
+    % linuxencaja + investigación
+    \onslide<1,9-> \path (difusion.south) +(0,-0.2) node (research)     {Investigación Universitaria};
+    \onslide<1,9-> \path (monitoreo.north)+(0,+0.2) node (linuxencaja)  {Comunidad \textit{linuxencaja}};
+
+    % Now it's time to draw the colored rectangles.
+     \begin{pgfonlayer}{background}
+        \path (linuxencaja.west |- linuxencaja.north) + (-0.2,0.0)  node (a) {};
+        \path (research.south   -| research.east)     + (+0.1,-0.15) node (b) {};
+        \path (research.east    |- research.east)     + (+0.1,-0.1) node (c) {};
+        \path[fill=yellow!20,rounded corners, draw=black!50] (a) rectangle (c);           
+        \path (monitoreo.north west)+(-0.2,0.2) node (a) {};
+    \end{pgfonlayer}
+
+    % "Empresa" node
+    \onslide<1,11-> \node [industry, right=1cm of linuxencaja.north east]  (industry)      {\textbf{Empresa}
+                                                                  \begin{itemize}
+                                                                   \item Transferencia de conocimiento.
+                                                                     \begin{itemize}
+                                                                       \scriptsize
+                                                                       \item Procesos de fabricación.
+                                                                       \item Metodologías de diseño.
+                                                                     \end{itemize}
+                                                                   \item Diseños de referencia.
+                                                                  \end{itemize} };
+
+    \onslide<1,11-> \draw[myarrow2] ([xshift=0.75cm] adaptation.east) -- ++(0.2,0)-- ++ (0,2.2) --  (industry.west);	
+
+    % "Academia" node
+    \onslide<1,10-> \node [academy, right=0.8cm of research.south east]  (academy)      {\textbf{Academia}
+                                                                  \begin{itemize}
+                                                                   \item Actualización de programas académicos.
+                                                                   \item Generación de habilidades.
+                                                                   \item Creación de industria.
+                                                                   \item Actualización de programas académicos.
+                                                                   \item Creación/adaptación de metodologías /procesos de diseño.
+                                                                  \end{itemize} };
+    \onslide<1,10-> \draw[myarrow1] ([xshift=0.75cm] adaptation.east) -- ++(0.2,0)-- ++ (0,-2.2) --  (academy.west);	
+
+
+    % Relaciones Universidad - Empresa    
+    \onslide<1,12-> \draw[myarrow] ([xshift=-2.6cm] industry.south) -- ([xshift=-2.6cm] academy.north);
+    \onslide<1,12-> \node[mylabel, below left=of industry.south] (label1)  {\scriptsize Pasantías.\\Servicios.\\Regalías.    \\Necesidades.};  
+
+    % Relaciones Empresa - Universidad
+    \onslide<1,13-> \draw[myarrow] ([xshift= 2.6cm] academy.north)  -- ([xshift= 2.6cm] industry.south);
+    \onslide<1,13-> \node[mylabel, below right=of industry.south] (label1) {\scriptsize Creación. \\Soporte.  \\Capacitación.\\Personal.};  
+
+    % Necesidades de la sociedad
+    \onslide<1,14-> \node [extern, right=0.2cm of industry] (needs)   {Necesidades de la sociedad};
+    \onslide<1,14-> \draw[myarrow] (needs.west)  --  (industry.east);
+    \onslide<1,14-> \draw[myarrow] (needs.south) -- ++(0, -3.85) -- (academy.east);
+
+    % Realimentación Universidad - Empresa a la metodología de transferencia
+    \onslide<1,15-> \draw[myarrow] (industry.north)  --++(0,0.3)--++(-5.65,0) -- ([yshift= 0cm] linuxencaja.north);
+    \onslide<1,15-> \draw[myarrow] (academy.south)  --++(0,-0.3)--++(-5.65,0) -- ([yshift= 0.1cm] research.south);
+    \onslide<1,15-> \node[mylabel2, above left=of industry.north] (label1) {\scriptsize Necesidades, Personal, Conocimientos};  
+    \onslide<1,15-> \node[mylabel2, below left=of academy.south]  (label2) {\scriptsize Necesidades, Personal, Conocimientos};
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    %            Vigilancia
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+
+    \onslide<2> \node [ph_explain, right=1cm of adaptation.east] (exp_monitores)
+    {\begin{center} \textbf{Vigilancia Tecnológica} \end{center}
+      \begin{itemize}
+       \item Detectar tecnologías emergentes.
+       \item Dinámica de la tecnología (obsolescencia).
+       \item Soluciones tecnológicas disponibles
+      \end{itemize}
+
+    };
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    %            Elección
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    \onslide<\value{choice}> \node [ph_explain, right=1cm of adaptation.east] (exp_choice)        
+    { \begin{center} \textbf{Elección} \end{center}
+      \begin{itemize}
+       \item Evaluación del estado de la plataforma tecnológica existente para identificar facilidades y necesidades.
+       \item Encontrar una tecnología que pueda ser implementada con el estado actual de la plataforma tecnológica.
+       \item Identificar los niveles de complejidad, para determinar una alternativa que pueda implementarse y de resultados a mediano y corto plazo con no muy altas inversiones de capital.
+      \end{itemize}
+    };
+    
+\end{tikzpicture}
+\end{figure}
+
+\end{frame}
