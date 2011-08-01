@@ -21,8 +21,7 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
     %            Adaptación
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
-
-    \onslide<1> \node [ph_explain, right=1cm of adaptation.east] (exp_adaptation)    
+    \onslide<1> \node [ph_explain, right=.5cm of adaptation.east] (exp_adaptation)    
     {
     \begin{center} \textbf{Adaptación} \end{center}
     \begin{itemize}
@@ -40,8 +39,96 @@
     \end{itemize}
     };
 
+    \onslide<2> \node [ph_explain, right=.5cm of adaptation.east] (exp_adaptation)    
+    {
+    \begin{center} \textbf{Adaptación: Arquitectura de un Sistema Embebido} \end{center}
+      \begin{center} \includegraphics[scale=.45]{../images/soc_no_int_volatil_mmu.pdf} \end{center}
+    };
+
+
+
+    \onslide<3> \node [ph_explain, right=.5cm of adaptation.east] (exp_adaptation)    
+    {
+    \begin{center} \textbf{Adaptación: Flujo de diseño Software} \end{center}
+      \begin{center} \includegraphics[scale=.6]{../images/SW_design_flow.png} \end{center}
+    };
+
+
+
+    \onslide<4> \node [ph_explain, right=.5cm of adaptation.east] (exp_adaptation)    
+    {
+    \begin{center} \textbf{Adaptación: Flujo de Diseño Hardware} \end{center}
+      \begin{center} \includegraphics[scale=.35]{../images/HW_design_flow.pdf}   \end{center}
+    };
+
+
+
+
+    \onslide<5> \node [ph_explain, right=.5cm of adaptation.east] (exp_adaptation)    
+    {
+    \begin{center} \textbf{Adaptación: Flujo de Diseño SoC (softcore))} \end{center}
+	\begin{center} \includegraphics[scale=.35]{../images/soft_SoC_design_flow.pdf}   \end{center}
+    };
+
+
+
+    \onslide<6> \node [ph_explain, right=.5cm of adaptation.east] (exp_adaptation)    
+    {
+    \begin{center} \textbf{Adaptación: Conocimientos adquiridos} \end{center}
+      \begin{table}[htpb]
+        \centering
+        \resizebox{!}{1.3cm}{
+          \begin{tabular}{|l|l|l|p{1.6in}|}
+            \hline
+            \textbf{Plataforma}  & \textbf{Herramientas de desarrollo} & \textbf{Programación} & \textbf{Sistema Operativo y Aplicaciones}
+            \\ \hline 
+            Game Boy            &ARM GNU toolchian         & Puerto serie       & eCos, implementación de periféricos en FPGAs.
+            \\ \hline 
+            Zaurus              &ARM GNU toolchian         & Puerto serie       & Linux 2.4, sistema de archivos, QT.
+            \\ \hline 
+            iPAQ H3600          &ARM GNU toolchian         & Puerto serie       & Linux 2.4, Buildroot, QT.
+            \\ \hline 
+            Chumby              &ARM GNU toolchian         & Puerto serie       & Linux 2.6, u-boot, OpenEmbedded, QT, flash.
+            \\ \hline 
+            Ainol V2000         &MIPS - ELF  GNU toolchian & Puerto serie       & Linux 2.6, openwrt, QT.
+            \\ \hline 
+            SUNGALE DPF         &MIPS - ELF  GNU toolchian & Puerto serie       & Linux 2.6, openwrt, QT.
+            \\ \hline 
+            B\&N NOOK           &ARM  GNU toolchian        & Puerto JTAG, serie & Linux 2.6, Android Dalvik (VM).
+            \\ \hline 
+          \end{tabular}
+         }
+      \end{table}
+    };
+
+
+    \onslide<7> \node [ph_explain, right=.5cm of adaptation.east] (exp_adaptation)    
+    {
+    \begin{center} \textbf{Adaptación: Metodología de diseño} \end{center}
+        \begin{center} \includegraphics[scale=.35]{../images/embedded_system_design_flow.pdf}   \end{center}
+    };
+
+
     
 \end{tikzpicture}
 \end{figure}
 
 \end{frame}
+
+
+
+% 
+%  \begin{figure}[htpb]
+
+%  \end{figure}
+% 
+%  \begin{figure}[htpb]
+%    \begin{center} \includegraphics[scale=.5]{../images/soft_SoC_design_flow.pdf}   \end{center}
+%     \caption{\smallFlujo de diseño hardware/software al utilizar un procesador \textit{softcore}} \label{soft_SoC_design_flow}
+%  \end{figure}
+% 
+% 
+% 
+% 
+% adaptación - absorción conocimientos adquiridos
+
