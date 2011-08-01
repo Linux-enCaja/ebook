@@ -1,7 +1,7 @@
 TEXFILES=$(wildcard *.tex)
 TARGETS=$(patsubst %.tex,%.pdf,$(TEXFILES))
 SRCDIR = .
-MAINDOC	= propuesta_TT
+MAINDOC	= Campus_TT
 TEXSRC	= $(MAINDOC).tex
 
 RERUN = "(There were undefined references|Rerun to get (cross-references|the bars) right|Table widths have changed. Rerun LaTeX.|Linenumber reference failed)"
