@@ -1,0 +1,151 @@
+% \documentclass[xcolor=svgnames]{book}
+
+
+\documentclass[spanish,fleqn,openany,letterpaper,pagesize]{scrbook}
+
+\usepackage{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{appendix}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,positioning}
+\usetikzlibrary{patterns}
+\usepackage{colortbl}
+\usetikzlibrary{arrows,shapes,snakes,automata,backgrounds,petri}
+\usepackage{times}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{pdfpages}
+\usepackage{listings,color}
+\lstset{language=C} 
+\usepackage{fancyhdr}
+
+
+\lstset{backgroundcolor=\color[gray]{.9}, frame=single,emph={EMPTY}, emphstyle=\color{white}, showstringspaces=false,
+        commentstyle=\itshape, commentstyle=\color[rgb]{0.083,0.545,0.083}, 
+        keywordstyle=\color{blue},
+        stringstyle=\ttfamily\color[rgb]{0.627,0.126,0.941}, 
+        morekeywords={printf}, tabsize=2, fontadjust=true, basicstyle=\footnotesize}
+
+
+\lstdefinestyle{numbered}{ backgroundcolor=\color{green!10}}
+\lstdefinestyle{numbered2}{ backgroundcolor=\color{yellow!10}}
+
+\usepackage{float}
+\usepackage{rotating}
+\usepackage{subfigure}
+\usepackage{pdflscape}
+\usepackage{pstricks}
+
+
+\definecolor{code-color}{cmyk}{0, 0, 0, 0.1}
+\usepackage{amsmath,amssymb,latexsym,array, bm, times}
+\pagestyle{myheadings}
+% \markboth{Sistemas Embebidos}{Carlos Iván Camargo Bareño}
+
+\usepackage{longtable}
+% \parindent 1cm
+% \parskip 0.2cm
+% \topmargin 0.2cm
+% \oddsidemargin 1cm
+% \evensidemargin 0.5cm
+% \textwidth 15cm
+% \textheight 21cm
+
+% Hace que evite cortar las palabras al final del párrafo
+\pretolerance=2000
+\tolerance=3000
+% texlive-lang-spanish da soporte al español !!! importante !!!
+
+
+
+
+\pagestyle{fancyplain}%\addtolength{\headwidth}{\marginparwidth}
+\textheight22cm 
+\topmargin0.2cm 
+\textwidth15.49cm
+\oddsidemargin0.5cm 
+\evensidemargin-0.5cm%
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter\; #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\; #1}}
+\lhead[\fancyplain{}{\thepage}]{\fancyplain{}{\rightmark}}
+\rhead[\fancyplain{}{\leftmark}]{\fancyplain{}{\thepage}}
+\fancyfoot{}
+\thispagestyle{fancy}
+
+
+\addtolength{\headwidth}{0cm}
+\unitlength1mm %Define la unidad LE para Figuras
+\mathindent0cm %Define la distancia de las formulas al texto,  fleqn las descentra
+\marginparwidth0cm
+\parindent0cm %Define la distancia de la primera linea de un parrafo a la margen
+
+%Para tablas,  redefine el backschlash en tablas donde se define la posici\'{o}n del texto en las
+%casillas (con \centering \raggedright o \raggedleft)
+\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
+\let\PBS=\PreserveBackslash
+
+
+
+
+
+\begin{document}
+\pagenumbering{roman}
+
+\bibliographystyle{unsrt}
+
+
+\parindent=1cm            
+% \makeatletter\@openrightfalse         %  Elimina la condición de colocar los capítulos en páginas impares, lo que no es necesario
+                                      %  cuando se imprime solo por un lado de la hoja
+\input title
+
+  \renewcommand{\tablename}{\textbf{Tabla}}
+  \renewcommand{\figurename}{\textbf{Figura}}
+  \renewcommand{\listtablename}{Lista de Tablas}
+  \renewcommand{\listfigurename}{Lista de Figuras}
+  \renewcommand{\contentsname}{Contenido}
+
+
+%    Elimina la numeración de la tabla de contenidos, lista de imágenes, tablas, 
+%          \renewcommand\thepage{}
+         \tableofcontents
+         \listoffigures
+         \listoftables
+
+%          \newpage
+%          \renewcommand\thepage{\arabic{page}}
+          \setcounter{page}{0}
+%    y fija la numeración en 1 para el primer capítulo 
+  \pagenumbering{arabic}
+
+          \input intro                  %  Introducción planteamiento del problema
+          \input technology_transfer    %  Marco teórico, recomendaciones, formulación de la metodología
+          \input embedded               %  Aplicación de la metodología, resultados obtenidos
+          \input education              %  Difusión en la academia 
+          \input commons                %  Difusión como movimiento
+          \input conclusions             %  Conclusiones
+% \@openrighttrue\makeatother
+
+% *******************
+%              Anexos
+% *******************
+        \input papers
+        \input platform
+
+\addcontentsline{toc}{chapter}{\numberline{}Bibliograf\'{\i}a}
+
+
+% *******************
+%       Bibliografía
+% *******************
+  \bibliography{biblio}
+
+\end{document} 
+
+¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿
+¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡
+`` ''
+`` ''
+`` ''

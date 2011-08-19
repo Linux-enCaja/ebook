@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: tesis.aux
+The style file: unsrt.bst
+Database file #1: biblio.bib
+Warning--empty note in WCI
+Warning--empty year in BBS
+You've used 3 entries,
+            1791 wiz_defined-function locations,
+            460 strings with 3879 characters,
+and the built_in function-call counts, 390 in all, are:
+= -- 29
+> -- 13
+< -- 0
++ -- 6
+- -- 3
+* -- 14
+:= -- 75
+add.period$ -- 8
+call.type$ -- 3
+change.case$ -- 2
+chr.to.int$ -- 0
+cite$ -- 5
+duplicate$ -- 23
+empty$ -- 42
+format.name$ -- 3
+if$ -- 80
+int.to.chr$ -- 0
+int.to.str$ -- 3
+missing$ -- 2
+newline$ -- 17
+num.names$ -- 4
+pop$ -- 12
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 6
+stack$ -- 0
+substring$ -- 0
+swap$ -- 2
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 2
+while$ -- 3
+width$ -- 4
+write$ -- 28
+(There were 2 warnings)

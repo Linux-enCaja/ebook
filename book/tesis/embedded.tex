@@ -1,0 +1,694 @@
+\chapter[Implementación de la Metodología]{Implementación de la Metodología de Transferencia Tecnológica Propuesta en el diseño de Sistemas Embebidos} 
+\label{ch:embedded}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                        INTODUCCION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introducción}
+
+\subsection{Qué es un Sistema Embebido}
+Un Sistema Embebido (ES) es un sistema de propósito específico en el cual, el computador es encapsulado completamente por el dispositivo que el controla. A diferencia de los computadores de propósito general, los sistemas embebidos son diseñados para una aplicación específica, es decir, estos sistemas realizan un grupo de funciones previamente definidas y una vez el sistema es diseñado, no se puede cambiar fácilmente su funcionalidad; debido a su interacción con el entorno deben cumplir restricciones temporales estrictas, el término \textit{sistemas de tiempo real} es utilizado para enfatizar este aspecto; son heterogéneos, es decir, están compuestos por componentes hardware (PLDs, ASICs) y software ($\mu$-controladores, $\mu$-procesadores, DSPs); tienen grandes requerimientos en términos de confiabilidad.
+
+\subsection{Arquitectura}
+
+En la Figura \ref{es_arch} se muestra la arquitectura típica de un Sistema Embebido. La cual integra un componente hardware (HW), implementado ya sea en un (CPLD, FPGA) o en un ASIC, (conocido con el nombre de tarea hardware) y un componente software (SW) capaz de ejecutar software; la parte del procesador está dividida en la CPU (En algunos casos posee una caché) y las unidades de Memoria.
+
+\begin{figure}
+  \begin{center} \includegraphics[scale=.6]{./images/ES_Architecture} \end{center}
+  \caption{Arquitectura de un Sistema Embebido}\label{es_arch}
+\end{figure} 
+
+Al momento de diseñar un sistema embebido se encuentran diferentes opciones de implementación, la más adecuada, resultará de un análisis económico donde se valora el costo de la solución ante el cumplimiento de los requerimientos del sistema; estas opciones son:
+
+\begin{itemize}
+  \item Componente HW y SW integrado en un dispositivo semiconductor (System on Chip - SoC, Circuito integrado de aplicación específica - ASIC): En la actualidad existen muchas compañías que fabrican procesadores de 32 bits conectados a una gran variedad de periféricos y fabricados en un mismo circuito integrado, lo que simplifica el diseño y reduce costos de materiales. Este tipo de implementación es muy popular en los dispositivos de consumo masivo (reproductores de MP3, consolas de juego, teléfonos celulares, etc.), debido a los grandes niveles de producción (del orden de millones de unidades) resulta más económico contar con un dispositivo que integre el mayor número de funcionalidades que disminuye el costo de componentes y reduce el área de circuito impreso.
+
+  \item Componente SW en un SoC y componente HW en un dispositivo lógico programable (CPLD, FPGA): Cuando no existe en el mercado un SoC con la cantidad de periféricos requerida para una determinada aplicación, o con una funcionalidad específica, es necesario recurrir a la utilización de dispositivos comerciales que implementen dicha función; en algunas ocasiones el periférico puede realizar funciones poco comunes y no se proporciona comercialmente, la solución es entonces, implementar estas funcionalidades en un dispositivo lógico programable (PLD). También se recomienda la utilización de PLDs en sistemas que requieren la utilización de la misma funcionalidad un gran número de veces (puertos seriales, pines de entrada/salida). Esta decisión está atada al nivel de producción, ya que al incluir un PLD aumenta el costo global del proyecto y el consumo de potencia (el consumo de las FPGAs actuales las hace poca prácticas para aplicaciones móviles).
+
+  \item Componente SW y HW en una FPGA: Esta es la opción más flexible, pero la de menor desempeño, ya que al utilizar los recursos lógicos de la FPGA para la implementación del procesador (softcore) la longitud y capacitancia asociada a los caminos de interconexión entre los bloques lógicos aumentan el retardo de las señales, lo que disminuye la máxima velocidad de funcionamiento. Los procesadores \textit{softcore} más populares en la actualidad son: Microblaze y Picoblaze de Xilinx, Leon de Gaisler Research y Lattice-Mico32 de Lattice Semiconductors.
+
+\end{itemize}
+
+
+\subsection{Aplicaciones}
+Los sistemas embebidos se encuentran en casi todas las actividades humanas, a diario se interactúa con ellos, aún sin darse cuenta, ya sea porque son parte de la vida diaria o porque hacen parte de aparatos que se utilizan a diario. La figura \ref{es_apps} muestra los campos de aplicación de los sistemas embebidos.
+
+\begin{figure}
+  \begin{center} \includegraphics[scale=.6]{./images/Embedded_systems_applications.pdf} \end{center}
+  \caption{Aplicaciones de los Sistema Embebidos Fuente: TATA Consultancy services}\label{es_apps}
+\end{figure} 
+
+
+\subsection{Metodología de Diseño}
+\label{design_metodology}
+
+El proceso de diseño de un sistema embebido comienza con la {\textit{especificación del sistema}}, (ver Figura \ref{des_flow}), en este 
+punto se describe la funcionalidad y se definen las restricciones físicas, eléctricas y económicas del sistema. Esta especificación debe ser muy general y no deben existir dependencias tecnológicas de ningún tipo, se suelen utilizar lenguajes de alto nivel, como UML, MARTE C++, System-C, Spec-C. La especificación puede ser verificada a través de una serie de pasos de análisis cuyo objetivo es determinar la validez de los algoritmos seleccionados, por ejemplo, determinar si el algoritmo converge o si sus resultados satisfacen las especificaciones. Desde el punto de vista de la re-utilización, algunas partes del funcionamiento global pueden tomarse de una librería de algoritmos existentes.
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.55]{./images/design_flow} \end{center}
+  \caption{Flujo de diseño de un sistema embebido \cite{Cor05}}\label{des_flow}
+\end{figure} 
+
+Una vez definidas las especificaciones del sistema, se debe realizar un modelamiento que permita extraer de estas su funcionalidad. El modelamiento es crucial en el diseño ya que de él depende el paso exitoso de la especificación a la implementación. Es importante definir que modelo matemático debe soportar el entorno de diseño; cada modelo posee propiedades matemáticas que pueden explotarse de forma eficiente para responder preguntas sobre la funcionalidad del sistema sin llevar a cabo dispendiosas tareas de verificación. Todo modelo obtenido debe ser verificado para comprobar que cumple con las restricciones del sistema.
+
+Una vez se ha obtenido el modelo del sistema se procede a determinar su {\textit{arquitectura}}, esto es, el número y tipo de componentes y su inter-conexión; este paso no es mas que una exploración del espacio de diseño en búsqueda de soluciones que permitan la implementación de una funcionalidad dada, y puede realizarse con varios criterios en mente: costos, confiabilidad y viabilidad comercial.
+
+Utilizando como base la arquitectura obtenida en el paso anterior las tareas del modelo del sistemas son implementadas en los componentes; esto es, asignación de funciones a los componentes de la arquitectura. Existen dos opciones a la hora de implementar las tareas o procesos:
+
+\begin{enumerate}
+  \item Implementación software: La tarea se va a ejecutar en un micro-procesador, micro-controlador o DSP.
+  \item Implementación hardware: La tarea se va a ejecutar en un sistema digital dedicado ASIC o PLD.
+\end{enumerate}
+
+Para cumplir las especificaciones del sistema algunas tareas deben ser implementadas en hardware, esto con el fin de no ocupar al procesador en tareas cíclicas o que requieran mucho poder computacional, un ejemplo típico de estas tareas es la generación de bases de tiempos o la implementación de protocolos de comunicación. La decisión de que tareas se implementan en SW y que tareas se implementan en HW recibe el nombre de {\textit{particionamiento}}; esta selección depende fuertemente de restricciones económicas y temporales.
+
+Las tareas software deben compartir los recursos que existan en el sistema (procesador y memoria), por lo tanto se deben tomar decisiones sobre el orden de ejecución y la prioridad de estas. Este proceso recibe el nombre de \textit{planificación}. En este punto del diseño el modelo debe incluir información sobre el mapeo, el particionamiento y la planificación del sistema.
+
+Las siguientes fases corresponden a la implementación del modelo, para esto las tareas hardware deben ser llevadas al dispositivo elegido (ASIC, FPGA, micro-controlador, micro-procesador, DSP) y se debe obtener el \textit{archivo binario} con las instrucciones que implementan la funcionalidad de las tareas software y un \textit{archivo de configuración} para implementarla funcionalidad de las tareas hardware en el PLD, este proceso recibe el nombre de {\textit{síntesis}} HW y SW respectivamente, así mismo se deben sintetizar los mecanismos de comunicación entre las tareas hardware y software.
+
+El proceso de prototipado consiste en la realización física del sistema, finalmente el sistema físico debe someterse a pruebas para verificar que cumple con las especificaciones iniciales.
+
+Como puede verse en el flujo de diseño existen realimentaciones, estas permiten depurar el resultado de pasos anteriores en el caso
+de no cumplirse con las especificaciones iniciales.
+
+
+\section[Implementación de la Metodología]{Implementación de la Metodología Propuesta para la Transferencia Tecnológica en Diseño de Sistemas Embebidos}
+
+\subsection{Selección de la Tecnología}
+El Plan Estratégico del Programa Nacional de Desarrollo Tecnológico Industrial y Calidad 2005 - 2015 \cite{Col05} identifica 5 \textit{tecnologías} con mucho potencial en el área de la electrónica, estas son: microelectrónica, diseño y construcción de circuitos integrados, diseño digital con FPGAs, PCB multi-capa y dispositivos de montaje superficial. Aunque todos ellos no representan líneas de estudio, todas hacen parte del mismo tema: diseño y fabricación de sistemas digitales. Se nota cierto desconocimiento en el tema ya que separan el área de la microelectrónica y el diseño de circuitos integrados (la microelectrónica estudia el diseño y fabricación de ASICs); las otras tecnologías en realidad no lo son, el diseño de PCBs, uso de dispositivos de montaje superficial y uso de FPGAs, no representan líneas de investigación, sino herramientas útiles para la implementación de sistemas digitales. Esto demuestra la desconexión que existe entre los entes generadores de políticas y la academia. 
+
+\subsubsection{Niveles de complejidad de la tecnología}
+
+Existen varias alternativas para la implementación de un sistema embebido: dispositivos lógicos programables (FPGAs, CPLDs), sistema sobre silicio (SoC), micro-controlador, micro-procesador, SoC + FPGA y ASIC; su utilización está determinada por el cumplimiento de restricciones temporales, funcionales y económicas. La opción tecnológicamente más avanzada es el uso de un Circuito Integrado de Aplicación Específica (ASIC) que implemente las tareas hardware y software en un solo dispositivo semiconductor; sin embargo, se estima que solo a partir de 10 mil unidades es conveniente utilizar un ASIC para reducir los costos de producción; esta es una cantidad muy alta para las pequeñas industrias electrónicas nacionales, y hasta donde llega el conocimiento del autor de este trabajo, por el momento no se conoce el primer circuito integrado fabricado y comercializado por una empresa colombiana o de existir, no es una práctica común. Por otro lado, las herramientas de desarrollo para el diseño de circuitos integrados son muy costosas y el grado de conocimientos de los diseñadores es mayor que en otro tipo de implementación.
+
+Un proyecto vigente promovido por la Unión Europea llamado \textit{Iberchip} empezó desde hace 17 años un proceso de transferencia tecnológica en el diseño de circuitos integrados de aplicación específica (ASICs) hacia los países iberoamericanos; gracias a esta iniciativa se incluyeron asignaturas relacionadas con el diseño de los sistemas embebidos en la mayoría de las carreras de centros de formación consolidados. Sin embargo; esto no ayudó a aumentar la demanda de estos dispositivos por parte de la industria.
+
+En todas las universidades consolidadas del país es común el uso de los lenguajes de descripción de hardware (HDL) como herramienta para la implementación de aplicaciones; es normal encontrar trabajos de pregrado y posgrado que utilizan familias de FPGA que incluyen procesadores \textit{hardcore} o \textit{softcore} con periféricos dedicados en aplicaciones de procesamiento de imágenes, o de señales. Sin embargo, aún existen muchos centros de formación que continúan utilizando tecnologías y metodologías de diseño obsoletas y pocas industrias locales reportan el uso de estos dispositivos para desarrollar productos comerciales. Por lo tanto, es necesario crear mecanismos que permitan difundir aún más el uso de las FPGAs. Aunque en la actualidad existe una oferta considerable de cursos de extensión para la capacitación en el uso de dispositivos lógicos programables y lenguajes de descripción de hardware, el uso de esta tecnología debe ser justificada por los requerimientos de la aplicación. Debido a que el uso de estas tecnologías requiere un mayor nivel de conocimiento de los sistemas digitales, es necesario realizar rigurosos procesos de verificación para comprobar su correcto funcionamiento; su depuración es un poco tediosa (en comparación con las tareas software). En conclusión, si se desea impulsar el uso de esta tecnología se debe ser muy cuidadoso al momento de elegir las aplicaciones que serán implementadas, esto con el fin de no desalentar a los usuarios de la misma.
+
+Las FPGAs proporcionan una alternativa flexible para prototipado de ASICs, ya que permiten cumplir de forma rápida con los requerimientos del mercado (el proceso de fabricación de un ASIC toma varios meses). Sin embargo, para que un producto sea viable económicamente es necesaria una solución ASIC de bajo costo; en la actualidad existe la posibilidad de bajar los costos de producción gracias a la demanda de los mismos y a la utilización de una tecnología intermedia llamada \textit{arreglo de compuertas}, la arquitectura de estos dispositivos proporciona una gran cantidad de transistores en arreglos genéricos en un substrato común; y pueden ser utilizados para la implementación de \textit{celdas estándar} o diseños \textit{full custom}; utilizando esta técnica, es posible reducir el número de unidades necesarias para encontrar un punto económicamente viable de 5000 unidades (fuente Silicon-Pro). 
+
+
+Según  Smith \cite{MS9}, la opción más económica para bajos volúmenes de producción son las FPGAs, a medida que la producción aumenta se produce un punto de quiebra entre las FPGAs y el arreglo de compuertas cerca a las 5000 unidades, y el segundo punto de ruptura se produce alrededor de las 50000 unidades, donde es más rentable la producción de un ASIC basado en celdas estándar. Es muy importante tener en mente estas cifras ya que ellas determinan la tecnología a utilizar. No obstante, vale la pena aclarar que en esta comparación no se tiene en cuenta la utilización de SoC, micro-controladores o micro-procesadores comerciales, por lo que no es necesariamente cierto que a bajos niveles de producción la opción más rentable sea la utilización de FPGAs; adicionalmente, debido a su alto consumo de potencia (del orden de 10 veces mayor que un ASIC) no es posible su utilización en aplicaciones móviles.
+
+En Colombia es muy común el uso de micro-controladores y micro-procesadores de 8 bits para la implementación de sistemas digitales, la mayor parte de los centros de educación del país (de todo nivel) proporcionan cursos de programación y es posible encontrar en el mercado un suministro continuo de ciertas referencias. Gracias a esto, existen numerosos desarrollos basados en ellos; sin embargo, debido a los limitados recursos de estos dispositivos (velocidad, periféricos, herramientas de programación) no es posible utilizarlos para la implementación de aplicaciones con las necesidades actuales como conectividad con diferentes redes, manejo de pantallas de cristal líquido, aplicaciones multimedia, y diversos medios de almacenamiento de información.
+
+Los \textit{System on Chip} (SoC) proporcionan una excelente alternativa para la implementación de aplicaciones modernas; integran un procesador de 32 bits o un DSP que corre a frecuencias que van desde los 75 MHz hasta los 800 MHz y poseen periféricos que permiten controlar directamente una gran cantidad de dispositivos; muchos de ellos están diseñados para aplicaciones que requieren manejo de pantallas táctiles de cristal líquido, conexión a internet, diferentes medios de almacenamiento, reproducción de audio, manejo de sensores de imagen, entre otros; muchas de estas tareas son realizadas por procesadores dedicados diferentes al procesador principal del SoC. Adicionalmente, existe una gran gama de productos ofrecidos por diversos fabricantes como Freescale, NXP, Ingenic, Analog Devices, Altera, Marvell; por otro lado, su uso en aplicaciones de consumo masivo ha reducido el costo de estos dispositivos y es posible comprarlos en cualquier cantidad a precios que oscilan entre 4 y 20 USD.
+
+\subsubsection{Diagnóstico de la industria local}
+La empresa emQbit desarrolló una serie de proyectos y actividades que ayudaron a entender e identificar los siguientes obstáculos para el desarrollo y comercialización de sistemas digitales: Falta de proveedores de bienes y servicios relacionados con la actividad (venta de dispositivos semiconductores, fabricación de placas de circuito impreso, montaje automático de componentes, etc); desconocimiento de la tecnología (alcances y limitaciones) debido al uso de tecnologías y metodologías de diseño obsoletas; competencia con productos asiáticos de muy bajo costo; falta de confianza en los productos nacionales; desconexión de la academia con el sistema productivo; inexistencia de reglamentación de la industria de manufactura electrónica; profesionales con pocos conocimientos en procesos de diseño y fabricación. Estas observaciones coinciden con los resultados de estudios consultados \cite{MO90} \cite{IAI} \cite{MDAG99} \cite{DZSC+07} \cite{MTRR07} \cite{Mar04}.
+
+\subsubsection{Diagnóstico de la academia}
+Basándose en conversaciones con encargados de la línea de electrónica digital de varias universidades, se puede decir que la tendencia moderna en los programas académicos a la utilización de herramientas de alto nivel para la enseñanza en áreas afines al desarrollo de dispositivos digitales \cite{JH09} ocasiona que los profesionales no adquieran ciertas habilidades necesarias para completar la cadena concepción - diseño - implementación - operación. En la mayoría de los casos se generan habilidades para la concepción y el diseño a alto nivel y dejan los otros pasos en manos de herramientas especializadas y/o a empresas asiáticas. Esta situación resulta la más atractiva desde el punto de vista económico, ya que no es necesario adquirir maquinaria costosa ni contratar técnicos especializados para operarlas; ; limitando la generación de empleo local a personas con alto nivel de formación \cite{AG10} generando desempleo en las personas menos capacitadas. Según John Hall presidente y CEO de Linux International `` algunas facultades preparan a la gente en el uso de productos en vez de tecnologías de nivel básico'' \cite{JH09}. Esta situación unida al abandono de la implementación hace que la dependencia con las empresas manufactureras asiáticas aumente cada vez más.
+
+Por otro lado, en muchas instituciones educativas de poca consolidación se utilizan: tecnologías y metodologías de diseño obsoletas (Familias 74XXX o 40XXX, lenguaje ensamblador, mapas de karnaugh); y programas académicos centrados en el análisis y no el diseño, donde el paso final es la simulación. Esto, unido al poco contacto por parte del personal docente con el sector productivo, origina una deficiencia de habilidades necesarias para realizar el proceso completo para el diseño de dispositivos, lo que se traduce en profesionales que no disponen de las herramientas necesarias para resolver los problemas del país y al mismo tiempo competir con los productos asiáticos.
+
+\subsubsection{Centros de desarrollo tecnológico}
+
+Según el XII Encuentro Colombia compite (patrocinado por el Ministerio de comercio industria y turismo - 2010) el sector electrónico cuenta con solo un centro de desarrollo el CIDEI (Centro de Investigación y Desarrollo de la Industria Electro Electrónica e Informática), el cual ha sido beneficiado con recursos cercanos a los dos mil millones de pesos para la ejecución de proyectos de desarrollo empresarial y con 1200 millones para proyectos de desarrollo tecnológico. Proporciona 2 servicios a la comunidad: diseño, fabricación y montaje de PCBs y capacitación. Los conocimientos generados en estos proyectos no son difundidos a las universidades ni a la sociedad de forma gratuita, lo que limita la difusión de estos conocimientos a quien pueda pagar por ello; por otro lado, la Universidad Nacional proporcionó la capacitación para algunos de estos proyectos, lo que indica que este centro no genera conocimiento propio y los temas de sus investigaciones ya han sido tratados por varias universidades del país.
+
+
+\subsubsection{Discusión}
+
+Como se vio anteriormente, la opción más económica para niveles de producción inferiores a 5000 unidades son las FPGAs; sin embargo; esto es cierto únicamente si no existe un dispositivo comercial como SoC, DSP, micro-controlador, o micro-procesador que permita el cumplimiento de las restricciones del sistema. Esto, debido a que el costo de las FPGAs es más elevado y como se dijo anteriormente su consumo de potencia impide su utilización en aplicaciones móviles (por esta razón no es común encontrar FPGAs en dispositivos de consumo masivo). Una revisión de los circuitos integrados utilizados en dispositivos como reproductores MP3, juegos, routers, y algunos teléfonos móviles, revela el uso de SoCs comerciales de diferentes fabricantes. Los fabricantes de SoC se adaptan rápidamente a los requerimientos del mercado y proporcionan dispositivos con los periféricos necesarios para una determinada aplicación; un ejemplo de esto se puede observar en las diferentes versiones de reproductores MP3 de la compañía \textit{AINOL}, la primera versión evaluada contenía un DSP de Analog Devices, un codec de audio externo y un controlador para el puerto USB (Universal Serial Bus); en la siguiente versión evaluada solo se encontró un circuito integrado del fabricante Ingenic; una revisión de la hoja de especificaciones de este último circuito integrado indicaba que este ya poseía el codec de audio y el controlador de la interfaz USB como periféricos internos; adicionalmente, su costo es de 3.5 USD en grandes volúmenes. Los grandes fabricantes como Atmel, Freescale, Marvell, NXP, Ingenic, etc, de forma dinámica ajustan sus productos a los requerimientos del mercado, agregando el soporte que demandan las aplicaciones. Gracias a esto y a la creciente demanda es posible encontrar SoCs muy baratos, con grandes capacidad de cómputo que pueden ser utilizados en muchas aplicaciones. Por esta razón y por la poca utilización de los SoC en el país, se trabajará en el estudio de técnicas de fabricación y metodologías de diseño basadas en estos dispositivos; esto, sin descuidar el fomento de la utilización de las FPGAs a nivel académico e industrial y el estudio de técnicas de diseño y fabricación de circuitos integrados para estar preparados a un aumento en la producción que justifique su uso.
+
+La hipótesis de este trabajo es que el aumento de diseños locales que utilicen SoC y metodologías de diseño modernas permitirán a la industria electrónica local competir con productos importados; debido a que, el país no cuenta con una oferta considerable de bienes y servicios relacionados con la industria manufacturera de dispositivos digitales (sólo existen 2 empresas), es necesario, utilizar inicialmente los servicios de la industria asiática para construir dispositivos diseñados en el país, que puedan ser configurados para las necesidades exactas del entorno social local y de esta forma aumentar la demanda interna. Finalmente, se debe continuar con el estudio de técnicas de fabricación de circuitos integrados para una futura demanda de la industria local. 
+
+\subsection{Adquisición de Tecnología}
+
+\subsubsection{Herramientas de desarrollo}
+
+Las herramientas de desarrollo son fundamentales en el proceso de diseño, de su estado y capacidades depende el tiempo necesario para completar un determinado diseño; la disponibilidad de aplicaciones y librerías que permitan acelerar el proceso de diseño son puntos claves a la hora de seleccionar el entorno de desarrollo; otro factor importante es su costo, ya que pequeñas y medianas empresas no pueden invertir grandes sumas de dinero en su adquisición; adicionalmente, es crucial contar con una adecuada documentación e información que ayude a resolver problemas que se presenten en el ciclo de diseño. Se pueden clasificar estas herramientas en \textit{propietarias} y \textit{abiertas}, las primeras requieren la compra de licencias para su uso y es necesario pagar por soporte; las segundas, son distribuidas de forma gratuita y existe una gran cantidad de listas de discusión donde puede encontrarse respuesta a una gran variedad de problemas o pueden ser formuladas nuevas preguntas a un grupo especializado de usuarios.
+
+La utilización de herramientas abiertas reduce de forma considerable la inversión en la plataforma de desarrollo; pero, ¿es posible realizar el flujo completo de concepción, diseño e implementación utilizando software abierto?, ¿el estado de desarrollo de las mismas facilita el diseño?, ¿existen dispositivos comerciales desarrollados con estas herramientas?. Para resolver estas dudas se consultaron varias encuestas realizadas por compañías y sitios especializados para observar la tendencia en utilización de sistemas operativos; los sitios consultados (Venture Development Corp, linuxfordevices) indican que el 27.9\% de los diseñadores utiliza sistemas operativos licenciados comercialmente, el 23.5\% sistemas operativos obtenidos públicamente, 15.9\% desarrollan su propio sistema operativo, el 12.1\% utiliza sistemas operativos comerciales basados en proyectos abiertos y el 30\% restante no utiliza un sistema operativo (ver figura \ref{os_trends}; el porcentaje de utilización de sistemas operativos basados en proyectos abiertos es del 35.6\%, lo que supera a los sistemas operativos comerciales; es interesante observar que casi el 70\% de los encuestados utilizan algún tipo de sistema operativo, lo que da un claro indicio de la necesidad de este en el ciclo de diseño.
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.7]{./images/embedded_os_trends.png} \end{center}
+  \caption{Comparación del uso de sistemas operativos Fuente: Venture Development Corp} \label{os_trends}
+\end{figure}
+
+De lo anterior se puede afirmar que más de la mitad de los diseñadores que utilizan sistemas operativos para sus aplicaciones eligen proyectos abiertos, lo que indica que estas herramientas tienen el grado de madurez necesaria para su uso en aplicaciones comerciales; por otro lado, una revisión del mercado de los teléfonos móviles realizada por \textit{Admob} indica que android superó a los sistemas operativos de Apple y RIM (utilizado en los blackberry) y se proyecta que en el 2014 igualará a Symbian de Nokia. Android utiliza el kernel de Linux como base de sus aplicaciones y utiliza herramientas abiertas para su desarrollo; otras empresas como Motorola y Nokia utilizan Linux como plataforma de algunas de sus aplicaciones; así mismo, muchos routers basados en procesadores ARM o MIPS; una gran variedad de reproductores multimedia, tablets y mini-laptops; todo esto, unido a la disponibilidad de foros de discusión donde programadores expertos y creadores de una gran variedad de aplicaciones brindan soporte a quien este interesado, hace de las herramientas abiertas y de Linux, una alternativa muy atractiva para desarrollar una metodología de diseño en torno a ella y adaptarla a las necesidades del país.
+
+\textit{Linux Foundation} publicó un estudio \cite{LF08} donde calcula que el valor del kernel de Linux es de USD\$1400 millones; y son necesarios USD\$10.800 millones para desarrollar el stack completo de componentes desde cero; por este motivo, el uso de Linux reduce de forma considerable los costos finales del proyecto, \textit{Black Duck Software}\footnote{http://www.blackducksoftware.com Líder mundial en el suministro de productos y servicios que aceleran el desarrollo software utilizando software libre} posee la más completa base de datos de proyectos abiertos, representados en 200.000 proyectos, 4.9 billones de líneas de código; utilizando su detallado conocimiento de los proyectos abiertos y aplicando técnicas estándar de estimación de costos, calculan que el costo de desarrollo total del proyecto FOSS excede los USD\$387000 millones y representa la inversión colectiva de mas de dos millones de desarrolladores al año. Un análisis adicional, estima que el 10\% de las aplicaciones utilizadas para el desarrollo de aplicaciones en tecnología de la información se pueden reemplazar por proyectos abiertoss, lo que ahorraría mas de USD\$22 billones al año.
+
+Los proyectos de código abierto permiten a las organizaciones ahorrar tiempo y dinero en muchos aspectos, al no tener que pagar por las herramientas de desarrollo y por librerías y aplicaciones que pueden utilizar para la implementación de nuevos productos; permitiendo la inversión de tiempo y esfuerzo en proyectos que pueden ser comercializados rápidamente.
+
+% http://www.blackducksoftware.com/development-cost-of-open-source
+
+\subsubsection{Dispositivos semiconductores}
+En la actualidad existe una gran oferta de SoCs, grandes compañías proporcionan constantemente nuevos dispositivos con una gran variedad de periféricos para diferentes aplicaciones. El procesador más utilizado para aplicaciones embebidas es el procesador ARM (Advanced RISC Machine). ARM no fabrica circuitos integrados, suministra sus diseños en forma de \textit{netlist} a nivel de compuertas o a nivel de Lógica de Transferencia de Registros (RTL) en un lenguaje de descripción de hardware. Estas descripciones pueden ser utilizados en el proceso de diseño ASIC, permitiendo su integración con una gran variedad de núcleos IP (Intellectual Property); compañías como Atmel, Marvell, Freescale, NXP, Cirrus Logic, Samsung, Texas Instruments adquieren licencias que les permiten utilizar estos núcleos lógicos en la fabricación de sus SoCs.
+
+Encuestas realizadas a diseñadores por el portal \textit{linuxfordevices} \footnote{Linuxfordevices es un sitio de encuentro y centro de noticias para la comunidad que utiliza Linux en dispositivos digitales.} sobre sus preferencias en el procesador utilizado en sus proyectos; como se dijo anteriormente. ARM es el más utilizado (30\%) seguido de cerca por los basados en x86 (25\%), la arquitectura POWERPC (15\%), MIPS (10\%), DSPs (5\%). Por este motivo, en esta investigación se utilizaron dispositivos basados en procesadores ARM (AT91RM9200 y SAM7 de Atmel, imx233 de Freescale), MIPS (JZ4740 de Ingenic) y el DSP de Analog devices BF532, cubriendo de esta forma un gran campo de aplicaciones.
+
+
+\subsubsection{Dispositivos disponibles}
+Existen dos tipos de dispositivos que pueden ser utilizados en el proceso de transferencia tecnológica y de conocimientos: productos de consumo, productos fabricados a grandes volúmenes y que se pueden adquirir fácilmente a bajo precio; y dispositivos \textit{Commercial off-the-shelf} (COTS), diseñados para ser utilizados como punto de partida en el desarrollo de una aplicación, se pueden encontrar en la forma de tarjetas de desarrollo, las cuales incluyen una gran variedad de dispositivos hardware (puertos de comunicación, LEDs, Displays, LCDs, pulsadores) que permiten explorar la capacidad de un determinado SoC, o se pueden encontrar en forma de unidades genéricas que proporcionan las conexiones para su funcionamiento básico (alimentación, memorias), proporcionando todas las señales que controlan periféricos externos para que sean utilizadas en una tarjeta que integre los componentes requeridos en una determinada aplicación. El término OEM (Original Equipment Manufacturer) se aplica a las organizaciones que compran estos artículos y los revenden; en algunas ocasiones se realizan mejoras como valor agregado. 
+
+En la actualidad existe una gran oferta de este tipo de dispositivos a nivel mundial, muchas compañías realizan diseños para que sean utilizados como punto de partida de productos comerciales, o que sean parte de ellos, lo que reduce los costos y tiempos de desarrollo; desafortunadamente en el país no existe una gran demanda, por lo que no existen proveedores locales y deben ser importados, lo que hace que su costo se eleve por lo menos en un 26\% (arancel e IVA). 
+
+Durante la primera etapa de este estudio se utilizaron los siguientes dispositivos: GameBoy + Xport, es una combinación de la consola de juegos \copyright NINTENDO (basado en ARM7) y la plataforma \textit{XPORT} de la compañía norteamericana Charmedlabs (basado en una FPGA Spartan3); la plataforma de desarrollo de la compañía china \textit{Embest} basada en el SoC AT91R40008 (ARM7); la agenda electrónica Zaurus de Toshiba (basado en el StrongARM de Intel SA-1110); el dispositivo chumby (basado en un ARM de freescale iMX21); el MP4 de Ainol V2000 que posee un procesador MIPS fabricado por la compañía china Ingenic; la agenda iPAQ H3600 fabricada por Compaq basada en un procesador Strong ARM de Intel; el porta-retratos digital de la empresa china \textit{SUNGALE} basada en un procesador MIPS de la empresa Ingenic y finalmente el lector de libros electrónicos de Barnes \& Noble basado en un procesador ARM fabricado por Samsung.
+
+\subsubsection{Discusión}
+En la actualidad es posible adquirir dispositivos semiconductores y demás componentes necesarios para la fabricación de sistemas digitales, sin embargo, para poder competir en precios con productos del mercado asiático, es necesario entender la dinámica de su industria manufacturera, y establecer relaciones con los proveedores de bienes y servicios en esta región. El mercado asiático se ha especializado en el aprovechamiento de recursos y posee diferentes niveles de calidad de los componentes y productos; por esta razón, es posible encontrar teléfonos móviles desde USD \$10 hasta los más costosos de cientos de USDs; los bajos costos son posibles gracias al reciclaje de componentes, una gran cantidad de trabajadores desmontan circuitos integrados y componentes de dispositivos desechados, y son re-utilizados en nuevos productos, el nivel de reciclaje es tan alto que únicamente las placas de circuito impreso son descartadas; obviamente la confiabilidad de estos dispositivos es menor que la de los dispositivos nuevos, por lo cual es muy importante contar con fuentes de suministros confiables. Por otro lado, en el mercado asiático es posible conseguir dispositivos semiconductores que no se conocen en occidente, y normalmente son mas baratos que productos similares de compañías reconocidas mundialmente, sin embargo, muchos de estos dispositivos se encuentran disponibles únicamente para ciudadanos chinos, lo que hace imprescindible el establecimiento de relaciones con facilitadores asiáticos.
+
+\subsection{Adaptación}
+
+En esta etapa se utilizaron las plataformas comerciales mencionadas anteriormente y las herramientas de desarrollo abiertas para: explorar las diferentes alternativas de implementación; entender y aplicar la metodología de diseño adoptada internacionalmente; generación de conocimiento sobre el uso de las herramientas de desarrollo. 
+
+Los dispositivos comerciales con grandes niveles de producción son un buen punto de partida para el estudio de la arquitectura de sistemas digitales que utilizan SoCs, ya que están optimizadas (en número de componentes) para ser utilizadas en una aplicación específica, gracias a esto, su costo es muy bajo (en comparación con plataformas de desarrollo). Por otro lado, es posible encontrar estos dispositivos en el mercado local; reduciendo de forma considerable la inversión necesaria para realizar las actividades de esta etapa.
+
+
+\subsubsection{Metodología}
+Se utilizó ingeniería inversa para determinar como están construidos, como funcionan y como son programados los productos adquiridos. Esta tarea no se ejecutó en un único instante de tiempo, ya que el estudio se realizó de forma gradual, de tal forma que cada vez que se abordaba un nuevo tópico se repetía el proceso con un producto que permitiera su estudio. 
+
+Como se puede ver en la figura \ref{os_trends} existen dos formas de realizar las aplicaciones de un sistema embebido: con sistema operativo (OS) y sin OS (\textit{standalone}). Las aplicaciones standalone son muy eficientes debido a que son escritas teniendo en cuenta los recursos hardware (memoria, velocidad del procesador y periféricos) de la plataforma donde van a ser ejecutadas, sin embargo, requiere el desarrollo completo de toda la funcionalidad. Por otro lado, los sistemas operativos proporcionan servicios (manejo de periféricos, capacidad de ejecución multi-tarea, manejo de sistemas de archivos y librerías) que facilitan el desarrollo de aplicaciones; sin embargo, al ser diseñados para ser ejecutados en cualquier dispositivo, es necesario cumplir con unos requerimientos de recursos mínimos para que se puedan ejecutar las aplicaciones. En este estudio se trabajó con dos sistemas operativos abiertos: \textit{eCos} desarrollado por Redhat y \textit{Linux} desarrollado por Linus Torvalds. A continuación se muestran los temas de estudio que se abordaron en esta etapa.
+
+\begin{itemize}
+ \item Arquitectura: Determinar los componentes más utilizados y las diferentes topologías.
+ \item Programación: Mecanismos que permiten cambiar el \textit{firmware} original del dispositivo.
+ \item Aplicaciones sin sistema operativo:  Estudio de herramientas que permiten generar nuevas aplicaciones en los dispositivos sin el uso de sistemas operativos.
+ \item Aplicaciones con sistema operativo: Uso de sistemas operativos para acelerar el proceso de desarrollo de aplicaciones, utilizando las facilidades que ellos proporcionan.
+   \begin{itemize}
+      \item eCos: Sistema operativo de tiempo real altamente configurable que permite el uso eficiente de los recursos hardware.
+      \item Linux: Sistema operativo ampliamente utilizado que posee una gran cantidad de aplicaciones y un número considerable de desarrolladores.
+        \begin{itemize}
+          \item Inicialización: Requerimientos mínimos para la ejecución de Linux.
+          \item Imagen del kernel: Adaptación del kernel de Linux a una determinada plataforma.
+          \item Sistema de archivos: Distribuciones y aplicaciones mínimas necesarias para la ejecución de Linux.
+          \item Drivers de dispositivos: Como dar soporte a nuevos periféricos.
+          \item Comunicación con periféricos dedicados implementados en FPGAs: Comunicación entre FPGAs y SoCs.
+          \item Aplicaciones gráficas: Uso de librerías gráficas para el desarrollo de aplicaciones.
+        \end{itemize}
+   \end{itemize}
+\end{itemize}
+ 
+\subsubsection{Arquitectura: SoC, memorias, periféricos}
+Los SoCs comerciales se pueden dividir en dos grandes grupos dependiendo de la existencia o no de memoria no volátil para el almacenamiento del programa (memoria de instrucciones) dentro del SoC. Los que poseen memoria no volátil (hasta 512 Kbytes) normalmente incorporan una memoria RAM (hasta 32 kbytes) junto con una serie de periféricos (timers, I2C, SPI, USARTs, ADCs, Watchdog, USB device, canales para acceso directo a memoria - DMA); están diseñados para no utilizar componentes externos; normalmente este tipo de dispositivos utilizan procesadores que no tienen unidad de manejo de memoria \footnote{La MMU permite el manejo de memoria, dentro de sus funciones se encuentra el traslado de la memoria física a virtual, protección de la memoria, control de cache, control de buses} (MMU) como la familia ARM7, cuyas velocidades de ejecución varían entre los 50 y 70MHz. En la figura \ref{soc_int_volatil} se muestra la arquitectura típica de un sistema basado en estos dispositivos.
+
+\begin{figure}[H]
+   \begin{center} \includegraphics[scale=.6]{./images/soc_int_volatil.pdf} \end{center}
+  \caption{Arquitectura típica de un sistema embebido que utiliza SoC con memoria volátil interna} \label{soc_int_volatil}
+\end{figure}
+
+Los procesadores que no poseen memoria no volátil interna se dividen en dos grupos: los que poseen o no unidad de manejo de memoria; en ambos casos, se cuenta con una memoria RAM interna (del orden de cientos de Kbytes) y adicionalmente a los periféricos mencionados anteriormente se suministran controladores para USB host, puertos SSI, controlador de LCD, codecs de audio, controlador de touch screen; debido a la ausencia de memoria no volátil interna, estos dispositivos poseen periféricos dedicados al manejo de memorias no volátiles NAND flash, NOR flash, SPI, I2C  y SD; y memorias volátiles SDRAM y DDR; su velocidad de operación varía entre los 75MHz y 800MHz. En la figura \ref{soc_no_int_volatil} se muestra la arquitectura típica de un sistema basado en estos procesadores.
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.6]{./images/soc_no_int_volatil_mmu.pdf} \end{center}
+  \caption{Arquitectura típica de un sistema embebido que utiliza SoC sin memoria volátil interna} \label{soc_no_int_volatil}
+\end{figure}
+
+
+Debido a la falta de memoria volátil, las aplicaciones de este tipo de dispositivos requieren una memoria externa para almacenar las aplicaciones básicas y datos, en la actualidad las más populares son las memorias NAND flash, NOR flash, SPI, EEPROM y SD. Normalmente, este tipo de procesadores son utilizados en aplicaciones que utilizan sistemas operativos, como se verá más adelante. Para que ciertos sistemas operativos (Linux, Windows CE) puedan ejecutarse se requiere una mínima cantidad de memoria RAM (del orden de los Mbytes), por esta razón es necesario incluir una memoria RAM externa, en la actualidad las más utilizadas son las SDRAM, DDR y DDR2. 
+
+Como conclusión, se puede decir que en el mercado existen diferentes arquitecturas de SoCs que permiten realizar proyectos con diferentes grados de complejidad y que se ajustan a las opciones más utilizadas por los desarrolladores; la opción más económica es la utilización de un SoC que incluya las memorias no volátiles y RAM internamente; sin embargo, hasta el momento no existen dispositivos con grandes capacidades de memoria Flash y RAM internas, por lo que no es recomendado su uso en ciertas aplicaciones. Utilizar un SoC que no integre las memorias no volátiles proporciona una mayor flexibilidad, ya que estos dispositivos proporcionan periféricos que pueden controlar varios tipos de memorias, y se puede elegir la más económica, algo similar ocurre con la memoria RAM; sin embargo, el costo total de las memorias externas, SoC y área de circuito impreso es mayor que en el caso anterior. En la tabla \ref{arquitectura_plataformas_comerciales} se resume la arquitectura de las plataformas utilizadas.
+
+\begin{table}[htpb]
+  \caption{Arquitectura de las plataformas comerciales utilizadas en la etapa de absorción}
+  \centering
+    \begin{tabular}{|l|l|l|l|l|l|}
+      \hline
+      \textbf{Plataforma}  & \textbf{CPU}  & \textbf{Mem. volátil} & \textbf{Mem. no volátil} & \textbf{MMU} & \textbf{OS}
+      \\ \hline 
+       Game Boy            & ARM 7         &Externa NOR  & Interna       & NO & Propietario
+      \\ \hline 
+       Zaurus              & Strong ARM    &Externa NAND & Externa SDRAM & SI & Linux
+      \\ \hline 
+       iPAQ H3600          & Strong ARM    &Externa NAND & Externa SDRAM & SI & Windows CE
+      \\ \hline 
+       Chumby              & ARM MC94MX21  &Externa NAND & Externa SDRAM & SI & Linux
+      \\ \hline 
+       Ainol V2000         & MIPS JZ4740   &Externa NAND & Externa SDRAM & SI & Linux
+      \\ \hline 
+       SUNGALE DPF         & MIPS JZ4740   &Externa NAND & Externa SDRAM & SI & Linux
+      \\ \hline 
+       B\&N NOOK           & ARM  S3C6410  &Externa SD   & Externa SDRAM & SI & Android
+      \\ \hline 
+    \end{tabular}
+  \label{arquitectura_plataformas_comerciales}
+\end{table}
+
+Aunque estos procesadores operan a velocidades entre los 75 y 800 MHz, no todos los componentes del SoC operan a esta frecuencia, el componente externo que requiere la mayor velocidad de operación es la memoria RAM y puede estar entre los 50 y 130 MHz, los demás periféricos funcionan a frecuencias del orden de las decenas de MHz o KHz; por esta razón estos SoC suministran un circuito PLL que permite generar la frecuencia de operación a partir de cristales de frecuencias del orden de las decenas de MHz, lo que facilita el diseño de la placa de circuito impreso.
+
+Cada periférico requiere una conexión específica con el dispositivo que controla, los SoC modernos incluyen la mayor parte del circuito internamente con el objetivo de minimizar las conexiones y dispositivos adicionales. Existen tendencias de los fabricantes a agrupar periféricos teniendo en mente dos aplicaciones: multimedia, e industriales; para aplicaciones multimedia se proporcionan controladores de LCDs, ratón, teclado, pantalla táctil, CODECs de audio, control de potencia, relojes de tiempo real, control de carga de baterías entre otros; para aplicaciones industriales se proporcionan controladores de red cableada, puertos CAN, I2C, y SPI.
+
+\subsubsection{Programación}
+
+Como se mencionó anteriormente, para este estudio se utilizaron herramientas abiertas para la creación de aplicaciones, en la figura \ref{sw_flow_diagram} se muestra el flujo de creación de las tareas software usando la cadena de herramientas GNU \cite{Sta99}. La ventaja de utilizar estas herramientas (adicional a la económica) es el soporte a diferentes procesadores (24 diferentes CPUs, incluyendo micro-controladores de 8 bits), lo que permite la fácil migración entre CPUs; adicionalmente su alto grado de configurabilidad permite el cambio de disposición de las memorias volátiles y no volátiles de forma fácil (a través del script de enlazado). El proceso de generación del archivo binario que debe ser grabado en la memoria no volátil de la plataforma puede ser realizado en su totalidad por la cadena de herramientas GNU.
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.6]{./images/SW_design_flow.png} \end{center}
+  \caption{Flujo de diseño software para creación de aplicaciones.} \label{sw_flow_diagram}
+\end{figure}
+
+Los SoC poseen la capacidad de \textit{iniciar} desde diferentes dispositivos; cuando se activa la señal de \textit{reset} a un SoC que no posee memoria volátil interna, el primer programa en ejecutarse es el que reside en una memoria ROM interna, este programa revisa varios periféricos en búsqueda de un programa válido; los periféricos soportados varían según el fabricante, pero por lo general siempre soportan el uso de memorias NOR Flash (paralelas) y en SoCs más recientes memorias NAND Flash, SPI, o SD; sin embargo, la mayoría de SoC soportan memorias que se encuentran soldadas en la placa de circuito impreso, lo que hace necesario buscar métodos de programación de estas memorias que no implique desmontarlas o el uso de costosos conectores. En la mayoría de los SoC, cuando el programa residente en la ROM no encuentra ninguna aplicación válida en los periféricos soportados, establece una comunicación por uno de sus puertos seriales o USB y queda en espera del envío de un programa válido, el programa enviado es almacenado en la memoria RAM interna, y una vez finaliza su descarga se ejecuta desde la RAM interna. La figura \ref{soc_boot} muestra este proceso.
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.4]{./images/SoC_boot.pdf} \end{center}
+  \caption{Inicialización de un SoC cuando las memorias no volátiles no están programadas.} \label{soc_boot}
+\end{figure}
+
+Debido a que la RAM interna normalmente es pequeña (del orden de decenas de Kbytes), no es posible cargar aplicaciones muy grandes en ella, por lo que es necesario realizar el proceso de programación en varias etapas: en la primera etapa se carga una aplicación (\textit{first - stage bootloader}) que se encarga de configurar el procesador (pila, frecuencia de operación), configurar la memoria RAM externa y habilitar un canal de comunicación para descarga de aplicaciones, de esta forma, es posible almacenar aplicaciones tan extensas como la capacidad de la memoria RAM externa (del orden de MBytes). En la segunda etapa se descarga una aplicación a la memoria externa que tiene la capacidad de programar las memorias no volátiles externas con la información proveniente de los diferentes periféricos de comunicación del SoC (como puerto serial, memoria SD, USB), este segundo programa recibe el nombre de \textit{booloader} y se auto-almacena en las primeras posiciones de la memoria no volátil, de tal forma que sea ejecutado después de la activación de la señal de \textit{reset} y de la búsqueda que realiza el programa interno de la ROM. 
+
+Una vez programada la memoria no volátil con una aplicación válida, los SoCs realizan una serie de pasos para ejecutar las aplicaciones almacenadas en ella, esto debido a la poca capacidad de la memoria RAM interna. Como se dijo anteriormente, una vez se activa la señal de \textit{reset} se ejecuta un programa contenido en la memoria ROM interna del SoC (figura \ref{soc_boot2} (a)), esta aplicación configura un periférico que permite la comunicación con los dispositivos de almacenamiento masivo externos, y además copia una determinada cantidad de información desde la memoria no volátil externa a la memoria RAM interna (figura \ref{soc_boot2} (b)), esto se hace porque el programa en la ROM no conoce la configuración de la plataforma y esta puede cambiar según la aplicación; después de esto ejecuta la aplicación copiada a la memoria RAM interna colocando en el contador de programa (PC) el valor correspondiente a la memoria RAM interna (figura \ref{soc_boot2} (c)).
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.6]{./images/SoC_boot2.pdf} \end{center}
+  \caption{Inicialización de un SoC cuando la memoria no volátil está programada, parte 1.} \label{soc_boot2}
+\end{figure}
+
+Este programa (\textit{loader}) está encargado de: configurar la memoria RAM externa (su capacidad varía dependiendo de la aplicación) y de copiar la aplicación propiamente dicha desde la memoria no volátil a la memoria RAM externa, (con lo que es posible cargar aplicaciones de mayor tamaño que la memoria RAM interna); finalmente, el \textit{loader} ejecuta la aplicación almacenada en la memoria RAM haciendo que el contador de programa (PC) sea igual a la dirección donde se almacenó esta aplicación (ver figura \ref{soc_boot3})
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.6]{./images/SoC_boot3.pdf} \end{center}
+  \caption{Inicialización de un SoC cuando la memoria no volátil está programada, parte 2.} \label{soc_boot3}
+\end{figure}
+
+\subsubsection{Programación utilizando el puerto JTAG}
+Algunos SoCs no suministran un camino para la programación de la memoria RAM interna, para estos casos, se puede utilizar un periférico que la mayoría de los dispositivos proporciona: el puerto JTAG (creado inicialmente como un mecanismo para realizar pruebas en las tarjetas de circuito impreso para verificar la correcta conexión entre componentes, y verificar el correcto funcionamiento de los circuitos integrados) el cual, esta formado por un registro de desplazamiento (ver figura \ref{jtag_basics}) que controla el paso de información desde y hacia cada uno de los pines del circuito integrado, permitiendo realizar varias operaciones. Con el paso del tiempo, se han adicionado funcionalidades a este protocolo y una de ellas es el control de circuitos especializados dentro de los SoCs para realizar emulación en circuito (ICE), suministrando un canal para la programación de la memoria RAM interna.
+
+Algunos SoCs antiguos no poseen una unidad de emulación en circuito por lo que no es posible acceder a la memoria RAM interna, en estos casos es posible utilizar el protocolo JTAG para controlar directamente los pines del SoC conectados a las memorias no volátiles y ejecutar los protocolos de programación de las mismas; debido a que es necesario programar todos los registros de la cadena Boundary Scan, el tiempo de programación suele ser más largo que cuando se utiliza el ICE.
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.6]{./images/jtag_basics.png} \end{center}
+  \caption{Cadena Boundary Scan fuente: Texas Instruments.} \label{jtag_basics}
+\end{figure}
+
+
+\subsubsection{Aplicaciones \textit{standalone} vs aplicaciones con sistema operativo}
+
+Los sistemas operativos proporcionan facilidades al programador que permiten acelerar el desarrollo de aplicaciones, suministrando una capa de abstracción de hardware que permite manejar los periféricos a alto nivel sin preocuparse por el manejo tedioso a nivel de registros; adicionalmente, proporciona soporte para aplicaciones en red, manejo de sistemas de archivos, multitarea, seguridad, entre otras (ver figura \ref{kernel_arch}; adicionalmente, existen librerías especializadas que ayudan al desarrollo en diferentes áreas. Sin embargo, el uso de sistemas operativos como Linux, Android, Mac OS o Windows, exige el cumplimiento de condiciones mínimas para su uso; por ejemplo, Linux requiere 8 Mbytes de memoria RAM y 2 Mbytes de memoria no volátil, Android requiere 128 Mbytes de memoria RAM y 32 Mbyte de memoria no volátil; por esta razón es necesario agregar dos memorias externas, lo que aumenta la complejidad de la placa de circuito impreso y el costo del dispositivo. Por otro lado, los sistemas operativos tienen una particularidad en su funcionamiento que recibe el nombre de \textit{latencia}; y se define como el tiempo que transcurre entre la generación de un evento (interrupciones hardware o software ) y la respuesta ante este evento, este tiempo varía según el estado de carga del sistema; en un sistema operativo de tiempo real esta latencia es conocida y no depende de la carga de sistema. Esta latencia en algunas aplicaciones hace imposible el manejo de eventos ya que es posible que se pierdan algunos cuando el sistema se encuentre muy cargado.
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.6]{./images/kernel.jpg} \end{center}
+  \caption{Estructura del kernel de Linux.} \label{kernel_arch}
+\end{figure}
+
+
+Las aplicaciones \textit{standalone} utilizan los recursos necesarios y dependiendo de su complejidad pueden ajustarse a un SoC que incorpore la memoria RAM y no volátil internamente; adicionalmente, su programación puede reducir el problema que se presenta en la latencia a las interrupciones en los sistemas operativos. Sin embargo; es necesario dar soporte a todos los periféricos que se utilizarán y se deben escribir todas las rutinas, lo que puede aumentar el tiempo de desarrollo. 
+
+En conclusión, el uso de sistemas operativos o aplicaciones standalone depende de la complejidad de la aplicación, y de consideraciones económicas como el \textit{time to market} y costo de los desarrolladores. 
+
+
+\subsubsection{Conocimientos adquiridos}
+En la tabla \ref{absor_conocimientos_adquiridos} se muestran los conocimientos adquiridos al aplicar ingeniería inversa a las plataformas comerciales utilizadas en esta etapa.
+
+\begin{table}[htpb]
+  \caption{Conocimientos Adquiridos durante la etapa de adaptación}
+  \centering
+    \begin{tabular}{|l|l|l|p{1.6in}|}
+      \hline
+      \textbf{Plataforma}  & \textbf{Herramientas de desarrollo} & \textbf{Programación} & \textbf{Sistema Operativo y Aplicaciones}
+      \\ \hline 
+       Game Boy            &ARM GNU toolchian         & Puerto serie       & eCos, implementación de periféricos en FPGAs.
+      \\ \hline 
+       Zaurus              &ARM GNU toolchian         & Puerto serie       & Linux 2.4, sistema de archivos, QT.
+      \\ \hline 
+       iPAQ H3600          &ARM GNU toolchian         & Puerto serie       & Linux 2.4, Buildroot, QT.
+      \\ \hline 
+       Chumby              &ARM GNU toolchian         & Puerto serie       & Linux 2.6, u-boot, OpenEmbedded, QT, flash.
+      \\ \hline 
+       Ainol V2000         &MIPS - ELF  GNU toolchian & Puerto serie       & Linux 2.6, openwrt, QT.
+      \\ \hline 
+       SUNGALE DPF         &MIPS - ELF  GNU toolchian & Puerto serie       & Linux 2.6, openwrt, QT.
+      \\ \hline 
+       B\&N NOOK           &ARM  GNU toolchian        & Puerto JTAG, serie & Linux 2.6, Android Dalvik (VM).
+      \\ \hline 
+    \end{tabular}
+  \label{absor_conocimientos_adquiridos}
+\end{table}
+
+
+\subsubsection{Discusión}
+En la etapa de adopción se utilizaron herramientas comerciales para aprender: como están construidos; como funcionan y como se programan dispositivos comerciales; su utilización facilita el aprendizaje del funcionamiento de la tecnología, permitiendo el estudio de metodologías de diseño y la evaluación de herramientas de desarrollo, reduciendo el tiempo y el costo de desarrollo de plataformas propias diseñadas para dicho fin; adicionalmente, pueden ser utilizadas como base de nuevos productos comerciales. Sin embargo, se notaron los siguientes inconvenientes durante su utilización: al ser diseñadas para una aplicación específica son difíciles de adaptar a nuevas aplicaciones; los fabricantes no proporcionan documentación sobre su arquitectura; su uso crea dependencia hacia el fabricante y puede reducir la demanda de diseñadores y proveedores de bienes y servicios de manufactura; solo pueden utilizarse en aplicaciones similares para las que fueron creadas.
+
+En esta etapa se utilizaron plataformas de desarrollo comerciales diseñadas para proporcionar herramientas en el estudio de un determinado procesador, en la mayoría de los casos utilizan la mayor parte de sus recursos (del procesador) y ponen a disposición del usuario una gran cantidad de periféricos, conectores y señales, lo que facilita el aprendizaje y su uso en aplicaciones comerciales. Sin embargo, su costo es relativamente alto (en comparación con los dispositivos comerciales de alto nivel de producción); debido a su gran oferta de conexiones son tarjetas muy grandes y difíciles de adaptar en algunas aplicaciones reales; por otro lado, es necesario fabricar tarjetas adicionales para que se adapten a la aplicación lo que incrementa el costo final.
+
+
+\subsection{Absorción y Asimilación}
+
+En esta etapa se realizan actividades que integran nuevo conocimiento para el país pero que no es nuevo para el mundo y están encaminadas al desarrollo o adaptación de metodologías de diseño y procesos de fabricación, desarrollo de productos tecnológicos propios, enseñanza de metodologías de diseño y procesos de fabricación.
+
+La utilización de plataformas de desarrollo o dispositivos comerciales como punto de partida para nuevos productos es viable en casos donde solo se requiera un cambio de software, ya que adiciones en el hardware aumentarían el costo total o simplemente no se pueden hacer debido a que no se tiene acceso a los archivos de diseño. Para poder ser competitivos, es necesario reducir los costos de componentes y de fabricación, para lograr esto es necesario utilizar la mínima cantidad de componentes para la aplicación, lo que implica la producción de placas de circuito impreso (PCBs). El país no cuenta con una buena oferta para la producción de PCBs, solo existen tres empresas que pueden ofrecer productos que cumplen con los requerimientos: Microensamble en Bogotá, Colcircuitos en Medellín y Microcircuitos en Cali, de los cuales, solo las dos primeras proporcionan el servicio de tarjetas de 1 a 10 capas. 
+
+El diseño de PCBs es una actividad que da empleo a profesionales de diferentes niveles de formación (técnicos, ingenieros, diseñadores) en los países asiáticos; desafortunadamente en Colombia existen muy pocas empresas que proporcionan este servicio, lo que evidencia la falta de demanda interna en las actividades relacionadas con la manufactura de dispositivos digitales; adicionalmente, en la mayoría de las universidades no se enseñan normas para el diseño de PCBs ni se somete a los estudiantes a este proceso de diseño, aceptando soluciones intermedias como el uso de placas de proyectos (project boards) o baquelitas universales o simplemente se ignora la parte de implementación física y el último paso es la simulación. Por estos motivos, una parte importante en esta etapa es el diseño y construcción de tarjetas de desarrollo que serán utilizadas para explorar las técnicas de fabricación y montaje y posteriormente ser utilizadas en el desarrollo de aplicaciones académicas.
+
+
+\subsubsection{Plataformas de desarrollo }
+
+La primera plataforma desarrollada en este proyecto utiliza el SoC AT91R40008 de ATMEL y se le dió el nombre de ECB\_ARM7, el diagrama de bloques de la plataforma y la foto del prototipo se muestra en la figura \ref{ECB_ARM7}, ECB\_ARM7 posee componentes de montaje superficial y fue el punto de partida para el estudio de técnicas de fabricación de placas de circuito impreso, con ella se realizaron aplicaciones \textit{standalone} y con el sistema operativo eCos. Dentro del proceso de diseño de sistemas digitales, algunas de las tareas deben ser implementadas en hardware para cumplir con los requerimientos temporales; por este motivo es importante realizar implementaciones de tareas hardware en dispositivos lógicos programables (PLDs); para estudiar la forma de comunicar estas tareas hardware con SoC comerciales se diseño un clon de la tarjeta comercial XPORT de la empresa norteamericana Charmedlabs, que permite conectarse con el procesador de la plataforma comercial \copyright GameBoy Advance de Nintendo \cite{SBME07} (ver figura\ref{ECB_xport}).
+  
+
+\begin{figure}[htpb]
+  \centering
+    \mbox{
+      \subfigure[Diagrama de bloques]{\includegraphics[scale=.45]{./images/ECB_ARM7_Block.pdf}}
+      \subfigure[Prototipo]{\includegraphics[scale=.35]{./images/ECB_ARM7.jpg}}
+    }
+  \caption{Plataforma de desarrollo ECB\_ARM7} \label{ECB_ARM7}
+\end{figure}
+
+
+\begin{figure}[htpb]
+  \centering
+     \mbox{
+      \subfigure[Diagrama de bloques]{\includegraphics[scale=.4]{./images/xport_Block.pdf}}
+      \subfigure[Prototipo]{\includegraphics[scale=.25]{./images/xport.jpg}}
+     }
+  \caption{Plataforma de desarrollo UNAL\_UIS\_XPORT} \label{ECB_xport}
+\end{figure}
+
+El uso de Linux como herramienta de desarrollo ha aumentado en los últimos años, llegando a ser el sistema operativo más utilizado por los desarrolladores (ver figura\ref{os_trends}); empresas como Nokia, Motorola, Google, Dlink, Hewlett Packard utilizan Linux para desarrollar el firmware de sus dispositivos; por este motivo, se diseñaron plataformas que soportan la ejecución de este sistema operativo. Se diseñó una familia de plataformas denominadas ECB\_AT91 V1 (ver figura \ref{ECB_AT91_V1} \cite{CC} \cite{CC06} ), ECB\_AT91 V2 (ver figura \ref{ECB_AT91_V2}) y ECBOT (ver figura \ref{ECBOT} \cite{CC08b} \cite{CC08} \cite{CC07}); esta familia de plataformas se encuentran registradas en el kernel oficial de Linux, por lo tanto, su soporte queda garantizado en futuras versiones del kernel. ECB\_AT91 V1 fue el punto de partida para el estudio de técnicas de fabricación de placas de circuito impreso para SoC que operan a velocidades mayores de 180MHz, y para aprender el proceso completo de adaptar el kernel de Linux a una plataforma nueva, el proceso detallado se muestra en el apéndice \ref{ap:platform}. En la figura \ref{ECBOT} (a) se muestra el diagrama de bloques de estas tres arquitecturas; todas poseen el SoC de 180MHz de Atmel AT91RM9200, debido a que este SoC no posee conversores análogos - digitales internos fue necesario incluir un micro-controlador de 8 bits que se comunica con el SoC vía I2C, el SoC realiza la programación del microcontrolador emulando un puerto paralelo en sus pines de entrada/salida de propósito general (GPIOs) que van conectados a los pines del puerto ISP del microcontrolador.
+
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[scale=.45]{./images/ECB_AT91_V1.jpg}
+  \caption{Plataforma de desarrollo ECB\_AT91 V1} \label{ECB_AT91_V1}
+\end{figure}
+
+
+La plataforma ECB\_AT91 V2 es el resultado del interés de utilizar dispositivos lógicos programables y SoC comerciales para crear periféricos dedicados y la creación de nuevos drivers de Linux que los controlaran, su arquitectura es idéntica a la de la plataforma ECB\_AT91 V1 pero el bus de datos, dirección y control del SoC se conectan a la FPGA para permitir la comunicación con los periféricos implementados en ella; la FPGA es configurada por el SoC utilizando unos GPIOs que van conectados al puerto JTAG de la FPGA, lo que elimina la necesidad de cables adicionales de conexión, permitiendo su re-programación total de forma remota.
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[scale=.7]{./images/ECB_AT91_V2.jpg}
+  \caption{Plataforma de desarrollo ECB\_AT91 V2} \label{ECB_AT91_V2}
+\end{figure}
+
+La plataforma ECBOT fue diseñada con el propósito de iniciar el estudio en robótica móvil y procesamiento de imagen; para esto, se utilizó una arquitectura similar a la de la plataforma ECB\_AT91\_V2 adicionando una conexión dedicada a un sensor de imagen y circuitos especializados para el control de sensores (6 sensores de choque, 1 sensor de imagen, movimiento de los motores basado en BEMF \footnote{Back Electro Magnetic Force} ), actuadores (8 leds RGB, 2 motores DC) y un coversor DC/DC que garantiza el máximo uso de las baterías. Como parte de este trabajó, se realizó la adaptación de proyectos libres que facilitan la investigación en robótica como \textit{player/stage}\footnote{http://playerstage.sourceforge.net/} y \textit{openblocks}\footnote{http://dspace.mit.edu/handle/1721.1/41550}. En la actualidad ECBOT está siendo usado por los grupos de robótica de los departamentos de Sistemas y mecatrónica de la Universidad Nacional de Colombia. 
+
+\begin{figure}[htpb]
+  \centering
+     \mbox{
+      \subfigure[Diagrama de bloques]{\includegraphics[scale=.3]{./images/ECBOT_Block.png}}
+      \subfigure[Prototipo]{\includegraphics[scale=.35]{./images/ECBOT.png}}
+     }
+  \caption{Plataforma de desarrollo ECBOT} \label{ECBOT}
+\end{figure}
+
+Los SoC utilizados en las plataformas anteriores no pueden ser utilizados en aplicaciones de procesamiento de señales o de imágenes en tiempo real (a menos que se implemente algún periférico en la FPGA), ya que su arquitectura no está diseñada para este fin. Los DSPs son procesadores especializados para ejecutar las operaciones más comunes en procesamiento digital de señales; pensando en este tipo de aplicaciones se diseñó la plataforma ECB\_BF532 \cite{CC11f} que utiliza el DSP BF532 de la familia Blackfin de Analog Devices. Esta plataforma será utilizada en los cursos de procesamiento digital de señales del Departamento de Ingeniería Eléctrica y Electrónica de la Universidad Nacional de Colombia.
+
+\begin{figure}[htpb]
+  \centering
+     \mbox{
+       \subfigure[Diagrama de bloques]{\includegraphics[scale=.4]{./images/ECB_BF532_Block.pdf}}
+      \subfigure[Prototipo]{\includegraphics[scale=.35]{./images/ECB_BF532.png}}
+     }
+  \caption{Plataforma de desarrollo ECB\_BF532} \label{ECB_BF532}
+\end{figure}
+
+La plataforma SIE\cite{CC11c}, permite el desarrollo de aplicaciones gráficas; esta compuesta por un procesador MIPS fabricado por la compañía china Ingenic y por una FPGA (Spartan 3E de Xilinx) lo que posibilita la implementación de tareas hardware y la creación de controladores específicos en el sistema operativo Linux. En la actualidad esta pataforma esta siendo utilizada en tres de los cuatro cursos de la línea de electrónica digital en el Departamento de Ingeniería Eléctrica y Electrónica de la Universidad Nacional de Colombia. En el capítulo \ref{ch:education} se realizará una detallada explicación del uso de SIE en la enseñanza de diseño de sistemas embebidos.
+
+\begin{figure}[htpb]
+  \centering
+     \mbox{
+      \subfigure[Diagrama de bloques]{\includegraphics[scale=.5]{./images/SIE_block_diagram.png}}
+      \subfigure[Prototipo]{\includegraphics[scale=.35]{./images/SIE.jpg}}
+     }
+  \caption{Plataforma de desarrollo SIE} \label{SIE}
+\end{figure}
+
+
+La plataforma STAMP (se encuentra en proceso de pruebas al momento de escribir este documento) es el resultado del interés por el estudio del sistema operativo Android; debido a los requerimientos de memoria de este sistema operativo, las plataformas anteriormente diseñadas no pueden ejecutar aplicaciones Android. Por este motivo se utilizó el SoC de Freescale iMX233 que incluye el controlador de memorias DDR (las que son más económicas y de mayor densidad que las SDRAM utilizadas en las plataformas existentes); adicionalmente, este SoC permite inicializar desde una memoria SD, lo que elimina la necesidad de utilizar memorias NAND, reduciendo de forma considerable el costo. En la figura \ref{stamp} se puede observar el diagrama de bloques y una foto del prototipo de esta plataforma.
+
+\begin{figure}[htpb]
+  \centering
+     \mbox{
+      \subfigure[Diagrama de bloques]{\includegraphics[scale=.5]{./images/STAMP_block_diagram.pdf}}
+      \subfigure[Prototipo]{\includegraphics[scale=.2]{./images/stamp.png}}
+     }
+  \caption{Plataforma de desarrollo STAMP} \label{stamp}
+\end{figure}
+
+
+
+\subsubsection{Técnicas de fabricación}
+
+Durante el proceso de concepción, diseño, implementación y operación de estas plataformas se trabajó con diferentes proveedores de bienes y servicios nacionales y extranjeros, y se utilizaron diferentes técnicas para su construcción y montaje; en la tabla \ref{plat_review} se resumen las principales características de cada plataforma: CPU utilizada, número de capas del PCB, tipo de montaje: manual o automático, cantidad de unidades producidas, sistema operativo (OS) estudiado y adaptado totalmente a la plataforma y finalmente las universidades que utilizan estas plataformas.
+
+\begin{table}[htpb]
+  \caption{Características de las plataformas de desarrollo concebidas, diseñadas e implementadas}
+  \centering
+    \footnotesize
+    \begin{tabular}{|l|l|l|l|l|l|l|}
+      \hline
+      \textbf{Plataforma} & \textbf{CPU}  & \textbf{Capas} 
+                                              & \textbf{Montaje}    & \textbf{Cant.}
+                                                                          &\textbf{OS} &\textbf{Usuario}
+      \\ \hline 
+       ECB\_ARM7          &ARM7,33M      & 2 & local Manual.       & 2   & eCos    & UN
+      \\ \hline 
+       UN\_UIS\_XPORT     &ARM7,50M      & 2 & local Manual.       & 2   & eCos    & UN, UIS
+      \\ \hline 
+       ECB\_AT91\_V1      &ARM920,180M   & 2 & local Manual/Autom. & 100 & Linux   & UN, UIS, ULA, ENAP, UDFJC, USTA
+      \\ \hline 
+       ECB\_AT91\_V2      &ARM920 180M   & 4 & local Manual.       & 30  & Linux   & UN, UIS, ULA, ENAP, UDFJC 
+      \\ \hline 
+       ECBOT              &ARM920 180M   & 4 & local Manual.       & 20  & Linux   & UN, UIS
+      \\ \hline 
+       ECB\_BF532         &Blackfin 400M & 4 & local Manual.       & 5   & uCLinux & UN
+      \\ \hline 
+       SIE                &MIPS32  300M  & 2 & externo Autom.      & 80  & Linux   & UN, UIS, ULA, ECI
+      \\ \hline 
+       STAMP              &ARM926  454M  & 2 & local Manual.       & 2   & Android & UN
+      \\ \hline 
+    \end{tabular}
+  \label{plat_review}
+\end{table}
+
+\subsubsection{Proceso de diseño y fabricación}
+La figura \ref{pcb_design_flow} muestra los pasos que se siguieron en la elaboración de las plataformas de desarrollo; esta metodología puede ser utilizada para la realización de cualquier nivel de producción; el montaje de prototipos puede realizarse de forma manual o automática, dependiendo de los recursos económicos, de la disponibilidad de equipo y de personal especializado.
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[scale=.45]{./images/proceso_de_fabricacion_PCBs.pdf}
+  \caption{Flujo de diseño para las placas de circuito impreso} \label{pcb_design_flow}
+\end{figure}
+
+En esta etapa se adquirieron las siguientes habilidades:
+
+\begin{itemize}
+ \item Concepción, diseño, implementación y operación de tarjetas electrónicas que utilizan SoC de 32 bits.
+   \subitem Técnicas de diseño de placas de circuito impreso.
+   \subitem Técnicas de montaje manual y automático.
+   \subitem Metodología para el diseño e implementación de tarjetas electrónicas.
+   \subitem Diseño de protocolo de pruebas.
+ \item Adaptación del sistema operativo Linux a una nueva plataforma.
+\end{itemize}
+
+\subsubsection{Aplicaciones académicas realizadas}
+Durante esta etapa (que se realiza de forma continua cada vez que se desea incluir un nuevo tema de estudio) se desarrollaron una serie de trabajos de grado a nivel de pregrado en las universidades Nacional de Colombia, de los Andes e Industrial de Santander y se diseñó un nuevo curso llamado \textit{Sistemas Embebidos} que fue dictado en varias ocasiones como electiva en la Universidad de los Andes y es un curso optativo en la Universidad Nacional de Colombia. Se ayudó a dos egresados de la carrera de Ingeniería Electrónica en la creación de la empresa \textit{EM Electrónica}, proporcionando la información necesaria para la construcción y modificación de tarjetas de desarrollo de dispositivos lógicos programables (CPLDs y FPGAs), las que fueron utilizadas en los cursos de la línea de electrónica digital en la Universidad Nacional. Como resultado de la utilización de estas plataformas se eliminó el uso de componentes discretos (familias lógicas TTL y CMOS 40XX y 74XX) y se comenzó el uso de lenguajes de descripción de hardware desde el primer curso de la línea. A continuación se listan los trabajos realizados durante esta etapa:
+
+\begin{itemize}
+ \item Trabajos de grado: UIS: \cite{SBME07}, UNAL:\cite{DODM04} \cite{OO11} \cite{CG10} \cite{JD11} \cite{DA09}
+ \item Tesis de Maestría UN: \cite{NR11} \cite{DM07}
+ \item Artículos \cite{CC05} \cite{CC09} \cite{CC06b} \cite{CCOS06} \cite{ICCC06} \cite{JEFS05} \cite{CC08} \cite{CC11c} \cite{CC08c} \cite{CC11} \cite{CC11b} \cite{CC11d} \cite{CC11e} \cite{CC07}
+\end{itemize}
+
+Todos estos productos académicos tienen como característica el desarrollo de placas de circuito impreso y la utilización de los conocimientos adquiridos durante este estudio. Inicialmente, las placas de circuito impreso fueron diseñadas con herramientas comerciales debido a la falta de una herramienta abierta con las características necesarias para realizar el proceso completo. En los últimos dos años el desarrollo de la herramienta \textit{Kicad} permitió la eliminación de estas herramientas propietarias; a partir de ese momento solo se utilizaron herramientas abiertas en todo el flujo de diseño.
+
+\subsubsection{Metodología para la apropiación de conocimiento y generación de nuevos productos}
+En la figura \ref{soc_reverse_flow} se resumen los pasos que se siguieron con las diferentes arquitecturas (CPUs) estudiadas; estas actividades conforman una metodología que minimiza el costo de inversión al utilizar software libre y productos de consumo masivo; adicionalmente, puede ser aplicada a cualquier dispositivo comercial y la curva de aprendizaje es tal que los pasos en las últimas CPUs estudiadas se realizaron en menos de un mes, mientras que la primera tomó cerca de 1 año.
+  
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[scale=.55]{./images/SoC_reverse.pdf}
+  \caption{Flujo de actividades para la apropiación de conocimiento } \label{soc_reverse_flow}
+\end{figure}
+
+\subsubsection{Discusión}
+La fabricación de placas de circuito impreso a la medida permite reducir el costo final de un dispositivo digital; en su proceso de diseño y fabricación intervienen diferentes personas con diversos niveles de formación, lo que la hace muy atractiva como actividad generadora de empleo. La situación actual de las empresas manufactureras del país (solo 2) no permite la producción a grandes escalas ya que en el país no se cuenta con empresas que suministren componentes electrónicos a precios competitivos (los impuestos locales producen un sobre-costo de cerca del 26\%). En el país se pueden construir prototipos de muy buena calidad, por lo que la mejor opción es la fabricación local del prototipo y la producción en masa en el exterior. Esto mientras se crea en el país la demanda suficiente para poder realizar el proceso completo de forma local.
+
+\subsection{Aplicación}
+
+En esta etapa se aplican los conocimientos adquiridos previamente a la academia y a la industria, con el fin de evaluar su impacto. En la academia se utilizó la posición del investigador principal de este trabajo como docente del departamento de ingeniería eléctrica y electrónica de la Universidad Nacional de Colombia, para modificar las asignaturas del área de electrónica digital incorporando los temas recientemente absorbidos y asimilados. En el sector industrial , se formó una empresa de base tecnológica y se brindó asesoría en la adecuación de las plataformas \textit {hardware copyleft} para convertirlos en productos comerciales.
+
+\subsubsection{En la academia}
+
+Se diseñó un nuevo programa académico que sigue los lineamientos de la iniciativa CDIO; en el capítulo \ref{ch:education} se detallan las características de este programa, el cual fue implementado en el Departamento de ingeniería eléctrica y electrónica de la Universidad Nacional de Colombia en las asignaturas del área de electrónica digital con el fin de formar profesionales con las habilidades necesarias para desarrollar productos comercializables basados en esta tecnología, el proceso de aplicación duró dos años y actualmente es el programa oficial en dicha institución; los cambios generados debido a su aplicación son sorprendentes y se evidencian en la calidad de los trabajos de grado donde se pasó del uso de tabletas experimentales o proto-boards, placas de prototipado o stripboards y micro-controladores de 8 bits al uso de placas de circuito impreso diseñadas específicamente para la aplicación y el uso de SoCs de 32 bits y sistemas operativos. Estudiantes encuestados \footnote{Encuestas realizadas por este estudio y la información suministrada por el sistema de evaluación de cursos de la Universidad Nacional} sobre la pertinencia de esta nueva metodología de enseñanza manifiestan que concuerda con sus expectativas y se les proporcionan herramientas que pueden utilizar en el mundo real, motivándolos a crear nuevos productos que den solución a problemas reales ya sea como empleados en empresas ya constituidas o en nuevas empresas creadas por ellos.
+
+
+\subsubsection{En la industria}
+
+En el campo comercial, se trabajó con la empresa de base tecnológica emQbit, uno de los objetivos de trabajar con esta empresa era evaluar el impacto del uso de esta tecnología en la industria Colombiana; adicionalmente, emQbit proporcionó información sobre el estado de la industria electrónica en el país, ayudando a detectar los obstáculos que enfrentan las nuevas empresas en su ejercicio de suministrar soluciones a problemas locales. La mayor parte de sus productos utilizan como base las plataformas \textit{hardware copyleft} diseñadas y distribuidas bajo el esquema de licencias \textit{CC BY-SA}; el proceso de modificación se facilitó gracias a la disponibilidad de los archivos de diseño y al código fuente de las aplicaciones necesarias para la operación básica de las mismas. Estos productos están siendo documentados y podrán ser estudiados/utilizados/modificados por quien esté interesado. Es muy importante mencionar que (hasta donde llegan los conocimientos del autor) emQbit es la única empresa colombiana que realiza el proceso completo: diseño, construcción y programación de dispositivos electrónicos que utilizan tecnologías modernas (procesadores de 32 bits, sistema operativo Linux). En el desarrollo de sus actividades emQbit encontró las siguientes dificultades:
+
+\begin{itemize}
+ \item Falta de personal con experiencia en desarrollo hardware y en creación de aplicaciones: Es notoria la carencia de habilidades relacionadas con el diseño y montaje de sistemas digitales en la mayoría de los profesionales entrevistados por esta empresa para ser parte de su grupo de desarrolladores; en general, desconocen el proceso de fabricación y las herramientas necesarias para diseñar una placa de circuito impreso, no son capaces de leer esquemáticos ni de buscar componentes adecuados para realizar una función determinada (lo que refleja la dependencia de la academia hacia las plataformas de desarrollo comerciales). Por otro lado, se detectan fallas de concepto o desconocimiento de partes del proceso de diseño, originado en algunos casos por el uso de herramientas propietarias que automatizan etapas de configuración de las plataformas.
+
+ \item Escasa oferta de productos, bienes y servicios relacionados con la manufactura de sistemas digitales: Como se mencionó anteriormente, en Colombia solo existen 2 empresas con la capacidad de proporcionar los servicios necesarios para la producción, montaje automático y pruebas de placas de circuito impreso utilizando componentes modernos y con la calidad de las empresas asiáticas; desafortunadamente, sus costos son muy elevados en comparación con los de las industrias manufactureras asiáticas; esto se debe a la baja demanda de la industria colombiana y a los altos impuestos que deben pagar los dispositivos semiconductores y demás insumos del proceso (26 \% o más). A pesar de estos inconvenientes, la fabricación de prototipos a nivel local es una buena opción desde el punto de vista económico, ya que la diferencia en costos no es muy grande, y es posible resolver dudas o problemas de forma ágil gracias a que se trabaja en la misma zona horaria.
+
+ \item Desconfianza de la industria local por los productos del país: Los problemas descritos anteriormente generan un clima de desconfianza hacia los productos nacionales; ya que gran parte de ellos utilizan tecnologías obsoletas con procesos de fabricación de mala calidad, no cumplen con normas internacionales y no fueron sometidos a rigurosos procesos de pruebas. La desconfianza se presenta por la ausencia de productos locales, por el desconocimiento de los planes académicos de las universidades y por la falta de profesionales con la capacidad de diseñar y construir aplicaciones ``a la medida'' de las necesidades. 
+
+ \item Problemas relacionados con la financiación para desarrollo de nuevos productos: Es muy difícil encontrar entidades que financien el desarrollo de nuevos productos, la mayoría busca dispositivos terminados en fase de producción y no se encuentran interesados en invertir tiempo y dinero en nuevos desarrollos, esto es una consecuencia directa de la pérdida de capacidad de innovación en las empresas colombianas, donde no existen o fueron eliminados los departamentos de investigación y desarrollo (I+D).
+
+ \item Competencia en desigualdad de condiciones con productos importados: Los impuestos a las importaciones de insumos para la fabricación de dispositivos digitales (más del 26 \%), la poca oferta de bienes y servicios relacionados con la manufactura y la falta de políticas gubernamentales que protejan la industria electrónica nacional han permitido que los productos tecnológicos de los países asiáticos desplacen la producción local. Es importante que se formulen políticas que protejan los productos nacionales, sin provocar un desabastecimiento de productos que aún no se generan localmente, para esto es muy importante identificar los productos que son fabricados localmente y agrupar de forma adecuada a las empresas en la clasificación CIIU en el registro de cámara y comercio. 
+
+
+\end{itemize}
+
+\subsubsection{Discusión}
+La adaptación de esta metodología al entorno académico reveló la deficiencia de los programas académicos del área de electrónica digital en la Universidad Nacional de Colombia, vale la pena mencionar que esta universidad ha ocupado los primeros puestos en los exámenes de estado \textit{SABER PRO} (antes ECAES), por lo que es de esperarse que algunos programas académicos de otras universidades presenten problemas similares. La falla más notoria que se encontró en este proceso fue la ausencia de una metodología de diseño unificada durante la enseñanza de las asignaturas que componen el área; cada curso tenía su metodología y no existía una relación entre los contenidos de las asignaturas, lo que dejaba en los estudiantes la sensación de que se trataban de temas diferentes. Por otro lado, el uso de tecnologías obsoletas desviaba el enfoque del estudio a tediosas tareas manuales de minimización e implementación, restando importancia a la concepción y validación del diseño. Errores conceptuales en el diseño de los cursos hicieron que un lenguaje de descripción de hardware como el Verilog o VHDL fuera el centro de atención ignorando por completo temas relacionados con la arquitectura de computadores. Al final de estos dos cursos, los estudiantes no veían la utilidad práctica de los conocimientos adquiridos ya que nunca fueron enfrentados a la solución de problemas reales; esto, unido a la falta de herramientas de desarrollo hicieron que muchos de ellos no consideraran la electrónica digital para dar solución de problemas. El último curso del área (micro-controladores) proporcionaba herramientas que permitían dar solución a problemas reales, por este motivo, los estudiantes opinaban que era la única útil de la línea; sin embargo, la falta de bases en arquitectura de computadores hacía que se pensara en el micro-controlador como una caja negra sin entender completamente su arquitectura,lo que limitaba el entendimiento del proceso de diseño.
+
+Los cambios introducidos en estas asignaturas utilizan una única metodología de diseño, los problemas son atacados de la misma forma pero con herramientas cada vez más complejas pero más sencillas de utilizar. El uso de plataformas de desarrollo abiertas permite estudiar su arquitectura y entender completamente los flujos de diseño; adicionalmente, pueden ser utilizadas como punto de partida de desarrollos comerciales. Esto unido a la experiencia de diseño de circuitos impresos en 3 asignaturas, hizo cambiar completamente la mentalidad de los estudiantes sobre el uso de estas tecnologías, haciendo que realizaran búsquedas de problemas que puedan ser solucionados con estas herramientas, lo que constituye la base de la innovación. Todo esto representa una transferencia exitosa de esta investigación hacia la academia ya que se modificaron los hábitos existentes y se utilizaron los conocimientos generados por esta investigación; adicionalmente, se demostró la importancia del uso de esta tecnología. 
+
+Por otro lado, desde el punto de vista comercial, se comprobó que la universidad puede incentivar la creación de empresa, siempre y cuando se proporcionen herramientas para que puedan crear productos novedosos, y se brinde soporte técnico para su utilización. Sin embargo, los problemas mencionados anteriormente dificultan su operación, lo que permite concluir que es necesario una alianza entre este tipo de empresas, las universidades, los generadores de políticas gubernamentales y los \textit{ángeles inversores} para financiar el desarrollo de productos comercializables. Así mismo, se comprobó que es posible que empresas de base tecnológica colombianas utilicen tecnologías modernas para competir con productos provenientes del exterior. Desde el punto de vista de la transferencia tecnológica se puede afirmar que en este caso, se realizó una transferencia exitosa hacia la empresa, ya que los conocimientos fueron absorbidos, asimilados y se generaron nuevos productos que fueron utilizados para dar solución a problemas locales.
+
+\subsection{Difusión y Desarrollo}
+
+La tarea más importante de esta etapa, es la creación de una comunidad que sea consciente de la importancia de la tecnología y utilice los conocimientos generados en el proceso (recurso, bien común), proporcione nuevo conocimiento que haga parte de este recurso; depure las herramientas de difusión y el contenido del mismo; y ayude a crear conciencia en la sociedad de la importancia de esta tecnología en el desarrollo tecnológico del país. Para esto, se deben proporcionar mecanismos que permitan la realización de esas tareas así como estrategias para la vinculación de nuevos miembros. En el capítulo \ref{ch:common} se muestra como está conformada esta comunidad, sus reglas y recursos.
+
+\subsubsection{Herramientas para el manejo, almacenamiento, depuración y aumento del recurso}
+El conocimiento absorbido y generado durante este estudio se encuentra representado en una metodología de diseño e implementación de sistemas digitales que utiliza herramientas abiertas y en una metodología para la transferencia tecnológica y de conocimiento informal basada en la libertad del conocimiento y el uso de este como un bien público. Las plataformas hardwre desarrolladas en este estudio y que se encuentran disponibles bajo el esquema de licencias Creative Commons CC-BY-SA representan la aplicación del conocimiento acumulado en el diseño y fabricación de sistemas embebidos y pueden ser utilizadas por cualquier interesado para mejorar sus habilidades en el diseño, implementación, fabricación o programación de este tipo de dispositivos. El recurso inicial esta compuesto por la información necesaria para entender, programar, reproducir, y modificar estas plataformas; este será la base de nuevos productos tecnológicos que den solución a problemas del país y ayuden a difundir el uso de esta tecnología en centros de formación y empresas de base tecnológica y de esta forma aumentar la oferta de bienes y servicios relacionados con el diseño de aplicaciones personalizadas que se ajusten exactamente a los requerimientos de la sociedad. Sin embargo, para que esto sea posible, es necesario proporcionar herramientas que permitan la administración y difusión del recurso; por este motivo, se creó el portal abierto \textbf{\textit{linuxencaja}} donde se proporcionan los siguientes servicios:
+
+\begin{itemize}
+ \item Sistema distribuido de control de versiones \footnote{http://projects.linuxencaja.net/}: El intercambio de información entre programadores/usuarios que se encuentran separados geográficamente puede generar una sobrecarga de mensajes que dificultan el proceso de desarrollo; si no se cuenta con una infraestructura adecuada, se corre el riesgo de perder valiosa información por falta de sincronización entre los desarrolladores. De aquí la importancia de contar con un sistema que permita seguir el avance de un proyecto y los cambios que han sido realizados por otros miembros del equipo, los cuales, pueden estar en cualquier lugar del mundo. Para facilitar esta tarea, se cuenta con los sistemas distribuidos de control de versiones abiertos; siendo los más populares \textit{subversion} (svn) y \textit{git}, en este estudio se utilizó \textit{git} ya que permite el seguimiento total del proyecto indicando el autor y un comentario descriptivo con el aporte. En la figura \ref{git} se muestran las funcionalidades de esta aplicación.
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.6]{./images/git.pdf} \end{center}
+  \caption{Funcionalidad del sistema distribuido de control de versiones \textbf{git}} \label{git}
+\end{figure}
+
+ El \textit{sitio de trabajo} es donde se realiza el proyecto y contiene archivos que serán o no tenidos en cuenta para el control de revisiones. El índice (\textit{staging area}, se utiliza para preparar los cambios que serán publicados (\textit{commits}) se pueden agregar (\textit{add}) archivos o partes de archivos para al siguiente \textit{commit}. Todos los cambios que se deseen publicar van primero al \textit{índice}; la acción \textit{commit} aplica los cambios en el índice en el sitio de almacenamiento de los objetos. Este repositorio de objetos puede ser creado localmente y puede ser copiado a (\textit{push}) o desde (\textit{pull}) otro repositorio remoto. De esta forma es posible sincronizarse y realizar modificaciones sobre un repositorio remoto. Si por algún motivo, accidentalmente se borra o se daña el contenido de algunos archivos del repositorio, es posible restaurar el estado del mismo a un punto donde se reviertan los cambios que ocasionaron los daños (\textit{reset}). Si se piensa introducir un cambio que requiera la modificación de un extenso número de objetos es posible crear y trabajar con una nueva rama del proyecto (\textit{checkout} y conservar la rama original (\textit{merge}). En la actualidad \textit{linuxencaja} cuenta con 5 repositorios: SIE, ECB\_AT91, ECBOT, ECB\_BF532 y AndroidStamp; cada uno de ellos reúne la información necesaria para entender y reproducir plataformas hardware que utilizan diferentes SoC. En ellos se pueden encontrar las siguientes aplicaciones:
+   \begin{itemize}
+    \item Archivos de diseño: Archivos necesarios para reproducir y modificar el PCB.
+    \item Hello World: Esta aplicación implementa un parpadeo (blink) en un LED conectado a un pin de entrada/salida de propósito general, con este sencillo ejemplo se indica como se puede programar la memoria RAM interna del SoC, se proporciona un ejemplo funcional para el desarrollo de aplicaciones sin sistema operativo.
+    \item Loader: Aplicación que permite escribir en las memorias no volátiles de la plataforma.
+    \item Kernel: Parches que dan soporte a la plataforma en el kernel de Linux.
+    \item File system: Sistema de archivos con las utilidades necesarias para la ejecución de aplicaciones.
+    \item Drivers: Módulos del kernel que muestran como implementar drivers de Linux para control de periféricos
+      \subitem blink: La misma funcionalidad que \textit{Hello World} pero como un driver de Linux.
+      \subitem irq: Ejemplo de un módulo del kernel con interrupciones y con un programa en espacio de usuario que controla este módulo.
+    \item Examples: Proyectos académicos destacados que utilizan la plataforma y que pueden ser utilizados como referencia para desarrollo de aplicaciones.
+   \end{itemize}
+
+ \item Wiki \footnote{http://wiki.linuxencaja.net/}: Las wikis son sitios web con facilidades de edición de páginas web utilizando un lenguaje propio (wikitexto). En este estudio se utilizó el software \textit{Mediawiki} que permite la creación instantánea de páginas web sin la necesidad de permisos especiales por parte del administrador de la máquina; Mediawiki (y demás aplicaciones similares) almacena en una base de datos el contenido de las páginas en texto plano, (este formato se suministra al usuario en el momento de la edición) y genera en tiempo real el código HTML a partir de este texto plano cada vez que se solicita una página; una característica especial es que las páginas pueden ser editadas por múltiples voluntarios; adicionalmente, se dispone de un historial de cambios que le permite al administrador restaurar el contenido en un eventual daño voluntario o involuntario.
+
+ Con esta herramienta es posible que usuarios del recurso documenten nuevos proyectos o mejoren la documentación de los ya existentes; en la actualidad, esta wiki está siendo utilizada por los estudiantes del área de electrónica digital del Departamento de Ingeniería Eléctrica y Electrónica de la Universidad Nacional de Colombia para documentar el proceso de diseño de los proyectos de estas asignaturas; los mejores proyectos son conservados y etiquetados como proyectos de referencia y se encuentran disponibles por futuros usuarios que pueden ser industriales o estudiantes de próximos semestres; generando de esta forma un banco de proyectos que puede ser utilizado como fuente de información para mejorar habilidades o para ayuda en el proceso de diseño de nuevos proyectos/productos.
+
+ \item Lista de correo \footnote{http://groups.google.com/group/linuxencaja}: Contar con un canal de comunicación directo entre los diseñadores y usuarios con más experiencia, permite resolver dudas en corto tiempo, estas respuestas constituyen una fuente de documentación muy importante y debe ser almacenadas para crear un banco de preguntas/respuestas que ayuden a usuarios con las mismas inquietudes. Por esta razón, se creó una cuenta de correo que permite este intercambio de información y puede ser utilizado por los miembros de un determinado proyecto para discutir temas propios del desarrollo del mismo. La metodología utilizada por un determinado grupo quedará registrada en esta lista y puede ser utilizada como referencia de ese y otros proyectos; adicionalmente, estas listas de correo permiten realizar contactos académicos y laborales entre sus miembros.
+\end{itemize}
+
+\subsubsection{Estrategia de difusión}
+Esta metodología de transferencia tecnológica y de conocimientos no cuenta con el apoyo financiero necesario para realizar cursos de capacitación a empresas de base tecnológica destinados a transferir las metodologías de diseño y fabricación propuestas, por este motivo se utilizará una difusión basada en relaciones locales entre centros de formación, empresas, y entidades del estado que financien proyectos de transferencia tecnológica.
+
+\begin{itemize}
+ \item Relaciones con grupos de investigación de la misma universidad: En la Universidad Nacional (sede Bogotá) se importaban todas las placas electrónicas necesarias para el desarrollo de proyectos de investigación en diferentes departamentos de la facultad de ingeniería, muchas de ellas con grandes sobre-costos originados por la importación. Existen áreas de trabajo que pueden ser estudiadas por grupos interdisciplinarios como robótica, telemedicina, telemetría o control. Bajo esta investigación se desarrollaron aplicaciones con los departamentos de sistemas y mecatrónica para desarrollar plataformas robóticas \cite{CC11f} \cite{CC11f} que pudieran ser utilizadas para validar los modelos computacionales y algoritmos propuestos y con el centro de telemedicina de la Universidad Nacional, con quien se diseñó y construyó un monitor remoto de signos vitales \cite{NR11}.
+
+ \item Relaciones con centros de formación: Aprovechando la posición y reconocimiento de la Universidad Nacional de Colombia y los contactos existentes con los centros de formación que participaron en este estudio. Se difundieron los conocimientos obtenidos y generados en este estudio y se proporcionó la información necesaria para que sean incorporados en los programas académicos de las asignaturas relacionadas con el diseño digital en estos centros de formación. Con esto se busca aumentar el número de personas que utilicen y contribuyan al crecimiento del recurso público. Adicionalmente, el programa académico (ver capítulo {ch:education}) creado e implementado en la Universidad Nacional de Colombia se encuentra disponible para cualquier centro de educación que quiera implementarlo parcial o totalmente.
+
+ \item Relaciones con la industria: Para trabajar con empresas de base tecnológica se creó un proyecto\footnote{En la actualidad se están buscando fuentes de financiación para su ejecución} que busca difundir el uso de esta tecnología en la creación de nuevos productos que den solución a un problema local; este proyecto realizará un proceso para seleccionar 2 empresas de base tecnológica en ciudades donde existan centros de formación que utilicen este recurso; dichas empresas formularán un proyecto que satisfaga una necesidad local; estudiantes de los centros de formación (como trabajo de grado) ayudarán a estas empresas en el diseño y construcción de un dispositivo que implemente la solución propuesta por ellas. Todos los proyectos deben ser de tal naturaleza que puedan ser implementados en un dispositivo electrónico que utilice la tecnología utilizada en este estudio; esto con el fin de implementar todos los proyectos con una plataforma electrónica base que permita adaptarse a las diferentes aplicaciones; esta \textit{plataforma base} será diseñada por todos los participantes y se buscará reunir la máxima funcionalidad con el menor precio posible; utilizando los recursos suministrados por el portal \textit{linuxencaja} se coordinará el trabajo entre los diferentes grupos de trabajo; una vez diseñada esta plataforma base se fabricaran tantos prototipos como grupos de trabajo para determinar su correcto funcionamiento, una vez corregidos los posibles errores  y comprobado el correcto funcionamiento de todos los componentes; se realizará la producción de 100 unidades con el fin de adquirir experiencia en la producción de estos sistemas utilizando la industria manufacturera asiática; después de realizar la pruebas necesarias, cada grupo de trabajo diseñará y fabricará una tarjeta hija que proporcione la funcionalidad requerida por cada proyecto. Todo el proceso de diseño, los criterios de desarrollo, las discusiones para determinar las especificaciones tanto de la plataforma base como de las plataformas hijas se documentará en el portal \textit{linuxencaja} para permitir la reproducción de este curso.
+\end{itemize}
+
+\setcounter{mpfootnote}{12}
+\begin{table}[H]
+  \caption{Comparación de precios entre la transferencia ofrecida por Corea y el costo utilizando los conocimientos generados en este trabajo}
+  \centering
+    \footnotesize
+    \begin{tabular}{|p{6.7cm}|p{2cm}|p{5,5cm}|}
+      \hline
+      \textbf{Item}       & \textbf{KETI-ETRI}  & \textbf{Este trabajo}
+      \\ \hline 
+      Equipos de cómputo (25) con licencias de:
+      \begin{itemize}
+       \item Windows, VMWARE, \footnote{KETI/ETRI utilizan Microsoft Windows y un software comercial para emular Linux (VMWARE)}
+       \item Android SDK, Apache
+      \end{itemize}
+                             & 115.000                    & 50.000\footnotemark[12]
+      \\ \hline 
+      Plataforma de desarrollo (15)
+      \begin{itemize}
+       \item Procesador ARM, 512MB DDR, MicroSD
+       \item LCD 800 x 480, touch screen
+       \item USB 2.0, WiFi, Camera.
+       \item Bluetooth. Android OS.  
+      \end{itemize}
+                          & 60.000                    & 4.500 \footnotemark[13] 
+      \\ \hline 
+      Software para simulación:
+      \begin{itemize}
+       \item Qemu con soporte para OpenMoko 
+      \end{itemize}
+                          & 132.000                   & 0 \footnotemark[14]
+      \\ \hline 
+      Depuración hardware:
+      \begin{itemize}
+       \item Trace 32 de Laterbach (15)
+      \end{itemize}
+                         & 180.000                   & 2.000 \footnotemark[15]
+
+      \\ \hline 
+      Herramientas CAD:
+      \begin{itemize}
+       \item PADS de Cadence (15)
+      \end{itemize}
+                         & 180.000                   & 0 \footnotemark[16]
+      \\ \hline 
+      Plataforma hardware (15):
+      \begin{itemize}
+       \item Especificaciones de la plataforma de desarrollo
+       \item Archivos para reproducir el hardware:
+         \begin{itemize}
+          \item Esquemáticos.
+          \item Archivos Gerber.
+         \end{itemize}
+       \item Código fuente:
+         \begin{itemize}
+          \item bootloader: u-boot.
+          \item Kernel de Linux.
+          \item Android OS.
+         \end{itemize}
+       \item documentación
+         \begin{itemize}
+          \item Guía de usuario.
+          \item Port de Android.
+         \end{itemize}
+      \end{itemize}
+                         & 120.000                   & 50.000 
+                                                       \begin{itemize}
+                                                        \item Archivos para \textbf{Modificar} la plataforma \footnotemark[17]
+
+                                                        \item Código fuente:
+                                                          \begin{itemize}
+                                                           \item u-boot
+                                                           \item Kernel de Linux.
+                                                           \item Android OS.
+                                                          \end{itemize}
+                                                        \item Documentación:
+                                                           \begin{itemize}
+                                                            \item Tutoriales.
+                                                            \item Proceso completo de diseño.
+                                                            \item Cursos en línea.
+                                                            \item Listas de discusión.
+                                                           \end{itemize}
+                                                       \end{itemize}
+
+      \\ \hline 
+
+    \end{tabular}
+  \label{KETI_vs_linuxencaja}
+\end{table}
+
+
+En la actualidad se está evaluando la posibilidad de realizar una transferencia tecnológica entre el estado Colombiano y dos centros de desarrollo coreanos Electronics and Telecommunications Research Institute (ETRI) y Korea Electronics Technology Institute (KETI) en el área de aplicación de televisión digital. Como parte de la transferencia, se contempla transferir conocimientos necesarios para realizar la fabricación de una plataforma de desarrollo que pueda ser utilizada en este tipo de aplicaciones. La tabla \ref{KETI_vs_linuxencaja} muestra los costos de esta transferencia (en miles de dólares) y el ahorro que se puede realizar gracias a los resultados de este trabajo.
+
+
+\footnotetext[12]{Se eliminan las licencias de Windows y VMWARE al utilizar Linux, Android SDK y Apache son gratuitos}
+\footnotetext[13]{Existen dispositivos comerciales con estas características que pueden ser utilizados en el desarrollo utilizando ingeniería inversa, como se hizo en este trabajo}
+\footnotetext[14]{Qemu es gratuito, el proyecto del celular abierto OpenMoko distribuye de forma gratuita su simulador}
+\footnotetext[15]{El proyecto OpenOCD permite realizar este tipo de pruebas utilizando una interfaz con el puerto JTAG de los procesadores; en este trabajo se desarrolló una interfaz USB-JTAG que permite hacer esto de forma económica.}
+\footnotetext[16]{Este trabajo proporciona una metodología para utilizar herramientas abiertas en todo el proceso de fabricación de PCBs}
+\footnotetext[17]{Plataforma \textit{hardware copyleft}}
+
+\setcounter{footnote}{18}
+
+Como podemos observar en la tabla \ref{KETI_vs_linuxencaja}, los costos de esta parte de la transferencia\footnote{El costo total de la transferencia cuesta 2 millones de USD} son muy elevados (787.000 USD), frente al costo que tendría realizar las mismas actividades con los conocimientos adquiridos en este trabajo (106.500).
+
+La transferencia que ofrece Corea no tiene en cuenta la capacitación necesaria para que el país pueda absorber y asimilar estos conocimientos de tal forma que pueda generar sus propios productos lo que constituye el éxito de la transferencia. Si este proyecto se llegara a formalizar se crearía una dependencia del país hacia a tecnología ofrecida por Corea. El uso de herramientas comerciales en la etapa de diseño hace que los costos de este tipo de productos aumente de forma considerable, en esta comparación las herramientas de diseño de circuitos impresos, el sistema operativo y un emulador de Linux cuestan 245.000 USD, y son reemplazadas sin costo alguno por las herramientas utilizadas en este trabajo.
+
+
+
+
+
