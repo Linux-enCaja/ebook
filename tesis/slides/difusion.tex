@@ -21,84 +21,85 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
     %            Difusión
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
-    \onslide<1> \node [ph_explain, right=1cm of adaptation.east] (exp_difusion)      
-    {\begin{center} \textbf{Difusión (en ejecución)} \end{center}
-       \begin{itemize}
-        \item Difundir los conocimientos adquiridos a los sectores de la sociedad interesados en el.
-        \item Concienciar a la sociedad de la importancia del uso de esta tecnología. 
-        \item Creación de una comunidad que:
-          \begin{itemize}
-           \scriptsize
-           \item Utilice/administre/depure/aumente los conocimientos generados.
-           \item Esté formada por personas con diferentes intereses y niveles de formación (UNAL, UIS, USTA, ULA, UDFJC, emQbit y CorreLibre)
-          \end{itemize}
-        \item Creación de un recurso público formado por:
-          \begin{itemize}
-           \scriptsize
-           \item Archivos necesarios para estudiar, entender, reproducir y programar plataformas \textit{copyleft hardware}. 
-           \item Herramientas de difusión disponibles en el portal público \textit{linuxencaja}
-             \begin{itemize}
-              \scriptsize
-              \item Lista de correo.
-              \item Wikis en donde se documenta el proceso de diseño.
-              \item Sistema de control de versiones.
-             \end{itemize}
-          \end{itemize}
-       \end{itemize}
-    };
+
+
+    \onslide<1> \node [difusion_es, right=1cm of absortion.east] (est_difusion)      
+      {
+       \begin{center} \textbf{El conocimiento como bien público} \end{center}
+       \includegraphics[scale=.4]{../images/bienes_clasific.png}\\
+       
+        \noindent{Ecuación costo-beneficio de Ostrom:\hfill} \\
+        \noindent{$ BC > BN + C $\hfill \\
+        BC: Beneficio a contribuir.\hfill \\
+        C : Costo de la contribución.\hfill \\
+        BN: Costo de no contribuir.\hfill}
+      };
+
+    \onslide<2> \node [difusion_es, right=1cm of absortion.east] (est_difusion)      
+      {
+       \begin{center} \textbf{Marco para analizar el conocimiento como bien público aplicado a la metodología propuesta} \end{center}
+       \begin{center} \includegraphics[scale=.39]{../images/framework_hwcl.pdf} \end{center}
+      };
+
+    \onslide<3> \node [difusion_es, right=1cm of absortion.east] (est_difusion)      
+      {
+       \begin{center} \textbf{Marco para analizar el conocimiento como bien público aplicado a la metodología propuesta} \end{center}
+       \begin{center} \includegraphics[scale=.39]{../images/framework_hwcl.pdf} \end{center}
+      };
+
+
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
     %        Estrategias de difusión
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
-    \onslide<2> \node [difusion_es, above right=2cm of adaptation.east] (est_difusion)      
+    \onslide<4> \node [difusion_es, above right=2cm of adaptation.east] (est_difusion)      
       {
        \includegraphics[scale=.25]{../images/plataformas_hwcl.png}\\
        \color{blue!40!black} {Repositorios + Tutoriales + Cursos en línea}
       };
-    \onslide<2> \node [difusion_es, below = 0.5cm of est_difusion] (canales_difusion)      
+    \onslide<4> \node [difusion_es, below = 0.5cm of est_difusion] (canales_difusion)      
       {
        \color{red!60!black} {Canales de difusión} \\
                           GIT, WIKI, MAIL\\
         \color{green!60!black}{Código fuente (.c,.v,.vhd,.S,.java), archivos de diseño} 
       };
-    \onslide<2> \draw[myarrow] (est_difusion.south) -- (canales_difusion.north);	
+    \onslide<4> \draw[myarrow] (est_difusion.south) -- (canales_difusion.north);	
     
-    \onslide<2> \node [phase2, below = .6cm of canales_difusion] (dif_academia2)      
+    \onslide<4> \node [phase2, below = .6cm of canales_difusion] (dif_academia2)      
       {
         Academia \\
         \begin{itemize}
          \scriptsize
          \item UIS, ULA, USTA, UDFJC, ENAP.
          \item ET-ITC.
-         \item SENA.
+         \item SEB.
         \end{itemize}
       };
-    \onslide<2> \draw[myarrow] (canales_difusion.south) -- (dif_academia2.north);	
+    \onslide<4> \draw[myarrow] (canales_difusion.south) -- (dif_academia2.north);	
 
-    \onslide<2> \node [phase2, left = .1cm of dif_academia2] (dif_academia)      
+    \onslide<4> \node [phase2, left = .1cm of dif_academia2] (dif_academia)      
       {
         I+D UNAL \\
         \begin{itemize}
          \scriptsize
-         \item Telemedicina.
-         \item Veterinaria.
-         \item Mecatrónica.
-         \item Sistemas.
+         \item Medicina
+         \item Veterinaria
+         \item Mecatrónica
+         \item Sistemas
         \end{itemize}
       };
-    \onslide<2> \draw[myarrow] (canales_difusion.south) --++(0,-0.2)--++ (-2.8cm, 0) -- (dif_academia.north);	
+    \onslide<4> \draw[myarrow] (canales_difusion.south) --++(0,-0.2)--++ (-2.3cm, 0) -- (dif_academia.north);	
 
-    \onslide<2> \node [phase2, right = .1cm of dif_academia2] (dif_industria)      
+    \onslide<4> \node [phase2, right = .1cm of dif_academia2] (dif_industria)      
       {
         Industria\\
          \scriptsize
         \begin{itemize}
          \item emQbit.
-         \item MicroEnsamble.
-         \item Proyecto SENA.
+         \item $\mu$Ensamble.
         \end{itemize}
       };
-    \onslide<2> \draw[myarrow] (canales_difusion.south) --++(0,-0.2)--++ (2.8cm, 0) -- (dif_industria.north);	
+    \onslide<4> \draw[myarrow] (canales_difusion.south) --++(0,-0.2)--++ (2.3cm, 0) -- (dif_industria.north);	
     
 \end{tikzpicture}
 \end{figure}

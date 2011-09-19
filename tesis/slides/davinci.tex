@@ -1,0 +1,93 @@
+\subsection{Aplicación}
+\begin{frame}
+\frametitle{}
+
+\begin{figure}
+\begin{tikzpicture}[node distance=0.5cm, auto,>=latex', thick]
+\scriptsize
+    % We need to set at bounding box first. Otherwise the diagram
+    % will change position for each frame.
+    \path[use as bounding box] (-1.5,0) rectangle (12,-2);
+
+    % TT methodology     
+    \node [phase]                        (monitoreo)     {Vigilancia};
+    \node [phase, below of=monitoreo]    (choice)        {Elección};
+    \node [phase, below of=choice]       (acquisition)   {Adquisición};
+    \node [phase, below of=acquisition]  (adaptation)    {Adaptación};
+    \node [phase, below of=adaptation]   (absortion)     {Absorción};
+    \node [phase2,below of=absortion]    (aplication)    {Aplicación};
+    \node [phase, below of=aplication]   (difusion)      {Difusión};
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    %            Aplicación
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    \node [ph_explain, right=0.5cm of adaptation.east] (exp_aplication)    
+    {
+      \begin{center} \textbf{Proyecto Davinci} \end{center}
+ 
+      \begin{itemize}
+        \footnotesize
+        \item Programa de la secretaría de desarrollo económico
+         \begin{itemize}
+          \footnotesize
+          \item Transferencia de conocimiento en evaluación tecnológica.
+          \item Transformación de resultados de la investigación en innnovaciones del mercado.
+          \item Se presentaron 85 investigaciones.
+            \begin{itemize}
+             \footnotesize
+             \item Se generaron descriptivos tecnológicos 
+             \item Se generó el mapa de tecnología para la siguiente etapa con 25 tecnologías.
+            \end{itemize}
+          \item Capacitación en el seminario comportamental Embate (Emprendimiento de base tecnológica) \copyright.
+            \begin{itemize}
+             \footnotesize
+             \item Selección de los 10 mejores proyectos.
+            \end{itemize}
+         \end{itemize}
+       \item Validación empresarial de cara al mercado. Para revisar la pertinencia y aplicabilidad de los modelos de negocio construidos en la fase Diligencia de la Innovación.
+      \end{itemize}
+    };
+
+\end{tikzpicture}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+   \frametitle{Proyecto Smart Grids}
+
+     \only<1>{
+       \begin{center} \includegraphics[scale=.45]{../images/smart_grid_propuesta.png} \end{center}
+     }
+      \only<2>{
+        \includegraphics[height=7.5cm]{../images/emQbit_medidor}
+     }
+
+      \only<3>
+     {
+     \includegraphics[height=5cm]{../images/analizador1}
+     \includegraphics[height=5cm]{../images/analizador2}
+     }
+
+      \only<4>
+     {
+     \includegraphics[height=5cm]{../images/analizador3}
+     \includegraphics[height=5cm]{../images/analizador4}
+     }
+
+\end{frame}
+ 
+
+\begin{frame}
+
+   \frametitle{Proyecto SIEBOT}
+
+     \only<1>{
+       \begin{center} \includegraphics[scale=.45]{../images/siebot1} \end{center}
+     }
+
+     \only<2>{
+       \begin{center} \includegraphics[scale=.7]{../images/siebot2} \end{center}
+     }
+ 
+\end{frame}
+
