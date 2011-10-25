@@ -1,0 +1,18 @@
+\printsymline{e}{\ensuremath{e}}{\texttt{syme}}{small e}{\protect \unhbox \voidb@x \hbox {\protect \relax \protect \edef n{sc}\protect \xdef \OT1/ptm/bx/n/10 {\OT1/ptm/m/n/10.95 }\OT1/ptm/bx/n/10 \size@update \enc@update \par@update \protect \xdef \OT1/ptm/bx/n/10 {\OT1/ptm/m/n/10.95 }\OT1/ptm/bx/n/10 \size@update \enc@update \par@update \gdef 10.95{10.95}\gdef 8{8}\gdef 6{6}\protect \afterassignment \edef 10.95{10.95}\afterassignment \edef 13.6pt{13.6pt}\edef 1{1}\let 11\def \size@update {\baselineskip 13.6pt\relax \baselineskip 1\baselineskip \normalbaselineskip \baselineskip \setbox \strutbox \hbox {\vrule height.7\baselineskip depth.3\baselineskip width\z@ }\let \size@update \relax }\protect \xdef \OT1/ptm/bx/n/10 {\OT1/ptm/m/n/10.95 }\OT1/ptm/bx/n/10 \size@update \enc@update \par@update \protect \begingroup \def \MessageBreak {
+(spanish)                }\let \protect \immediate\write \@unused {
+Package spanish Warning: Replacing `OT1/ptm/m/n' by \MessageBreak faked small caps on input line 112.
+}\endgroup \uppercase {ix}}}
+\printsymline{\protect \relax \protect \begingroup \immediate \write \@unused   \def \MessageBreak  
+ \let \protect \edef  You're in trouble here.  Try typing  <return>  to proceed.\MessageBreak If that doesn't work, type  X <return>  to quit.  \errhelp \let \def \MessageBreak  
+                \def   \errmessage  LaTeX Error: \mathcal allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help   \endgroup \relax {P}_S}{\ensuremath{\protect \relax \protect \begingroup \immediate \write \@unused   \def \MessageBreak  
+ \let \protect \edef  You're in trouble here.  Try typing  <return>  to proceed.\MessageBreak If that doesn't work, type  X <return>  to quit.  \errhelp \let \def \MessageBreak  
+                \def   \errmessage  LaTeX Error: \mathcal allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help   \endgroup \relax {P}_S}}{\texttt{mcalP}}{ABC is the speaker period}{\protect \unhbox \voidb@x \hbox {\protect \relax \protect \edef n{sc}\protect \xdef \OT1/ptm/bx/n/10 {\OT1/ptm/m/n/10.95 }\OT1/ptm/bx/n/10 \size@update \enc@update \par@update \protect \xdef \OT1/ptm/bx/n/10 {\OT1/ptm/m/n/10.95 }\OT1/ptm/bx/n/10 \size@update \enc@update \par@update \gdef 10.95{10.95}\gdef 8{8}\gdef 6{6}\protect \afterassignment \edef 10.95{10.95}\afterassignment \edef 13.6pt{13.6pt}\edef 1{1}\let 11\def \size@update {\baselineskip 13.6pt\relax \baselineskip 1\baselineskip \normalbaselineskip \baselineskip \setbox \strutbox \hbox {\vrule height.7\baselineskip depth.3\baselineskip width\z@ }\let \size@update \relax }\protect \xdef \OT1/ptm/bx/n/10 {\OT1/ptm/m/n/10.95 }\OT1/ptm/bx/n/10 \size@update \enc@update \par@update \protect \begingroup \def \MessageBreak {
+(spanish)                }\let \protect \immediate\write \@unused {
+Package spanish Warning: Replacing `OT1/ptm/m/n' by \MessageBreak faked small caps on input line 113.
+}\endgroup \uppercase {ix}}}

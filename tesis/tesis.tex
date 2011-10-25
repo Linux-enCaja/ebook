@@ -20,6 +20,13 @@
 \usepackage{listings,color}
 \lstset{language=C} 
 \usepackage{fancyhdr}
+% \usepackage[colorlinks]{hyperref}
+% \usepackage[printonlyused,smaller]{acronym} 
+
+\usepackage[acronym,toc,shortcuts]{glossaries}
+
+
+
 
 
 \lstset{backgroundcolor=\color[gray]{.9}, frame=single,emph={EMPTY}, emphstyle=\color{white}, showstringspaces=false,
@@ -88,9 +95,17 @@
 
 
 
+% Lista de siglas: Para compilar usar:
+%  pdflatex tesis
+%  makeglossaries tesis
+%  pdflatex tesis
+ \input acronym
+
+
 
 
 \begin{document}
+
 \pagenumbering{roman}
 
 \bibliographystyle{unsrt}
@@ -107,12 +122,14 @@
   \renewcommand{\listfigurename}{Lista de Figuras}
   \renewcommand{\contentsname}{Contenido}
 
-
 %    Elimina la numeración de la tabla de contenidos, lista de imágenes, tablas, 
 %          \renewcommand\thepage{}
          \tableofcontents
          \listoffigures
          \listoftables
+
+         \printglossary[type=\acronymtype,style=long]
+
 
 %          \newpage
 %          \renewcommand\thepage{\arabic{page}}
@@ -131,8 +148,9 @@
 % *******************
 %              Anexos
 % *******************
-        \input papers
-        \input platform
+         \input emqbit
+         \input papers
+%         \input platform
 
 \addcontentsline{toc}{chapter}{\numberline{}Bibliograf\'{\i}a}
 
@@ -149,3 +167,18 @@
 `` ''
 `` ''
 `` ''
+
+
+
+
+1. Listado de las principales siglas utilizadas y su significado
+
+
+3. Otro anexo con la descripción de cuáles fueron los conocimientos generados en el estudio que se transmitieron para que sean parte los programas curriculares de las asignaturas relacionadas con el diseño digital ?utilizando los contactos existentes entre la Universidad Nacional de Colombia (UNAL) y las universidades Distrital Francisco José de Caldas (UDFJC), Industrial de Santander (UIS), de los Andes (ULA), Santo Tomás de Aquino (USTA), Escuela Colombiana de Ingeniería (ECI) y Escuela Naval Almirante Padilla (ENAP)?
+
+4. Precisar en qué consiste la ?comunidad conformada por: estudiantes y profesores de las universidades Nacional, Andes, Javeriana, Santo Tomás, Distrital, Escuela Colombiana, UIS, Nacional del Comahue (Argentina); empleados de las empresas emQbit, Santronics, ingeniería inversa (argentina); profesionales y aficionados de diferentes ciudades del país? que, según el texto, se creó.
+
+5. Enumerar y precisar las actividades que se realizaron en desarrollo de las ?relaciones fuertes con 4 empresas tres de ellas creadas por egresados de la Universidad Nacional (emQbit, Santronics, Importex, em-electronics) y con dos empresas externas (SAR S.A y Microensamble S.A.), de estas relaciones se han generado pasantías, prestación de servicios a bajo costo y apoyo financiero para adquisición de equipo y manufactura de sistemas de desarrollo digitales?
+
+
+
