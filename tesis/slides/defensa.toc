@@ -3,22 +3,11 @@
 \setcounter {tocdepth}{1}
 \beamer@sectionintoc {1}{Introducci\'on}{3}{0}{1}
 \beamer@subsectionintoc {1}{1}{Transferencia Tecnol\'ogica}{3}{0}{1}
-\beamer@subsectionintoc {1}{2}{Canales de Transferencia}{5}{0}{1}
-\beamer@subsectionintoc {1}{3}{Situaci\'on Colombiana}{6}{0}{1}
-\beamer@subsectionintoc {1}{4}{Causas del Atraso}{7}{0}{1}
-\beamer@subsectionintoc {1}{5}{Obst\'aculos para la Transferencia}{8}{0}{1}
-\beamer@subsectionintoc {1}{6}{Recomendaciones a la Academia}{9}{0}{1}
-\beamer@subsectionintoc {1}{7}{\IeC {\textquestiondown }Por qu\'e TT en Dise\~no de Sistemas Embebidos (SE)?}{10}{0}{1}
-\beamer@subsubsectionintoc {0}{1}{7}{1}{10}{1}{Sistemas Embebidos: Aplicaciones}
-\beamer@subsubsectionintoc {0}{1}{7}{2}{11}{1}{Sistemas Embebidos: Mercado}
-\beamer@sectionintoc {2}{Objetivos}{12}{0}{2}
-\beamer@sectionintoc {3}{Metodolog\IeC {\'\i }a Propuesta}{15}{0}{3}
-\beamer@subsectionintoc {3}{1}{Modelo de Transferencia}{16}{0}{3}
-\beamer@subsectionintoc {3}{2}{Vigilancia}{17}{0}{3}
-\beamer@subsectionintoc {3}{3}{Elecci\'on}{18}{0}{3}
-\beamer@subsectionintoc {3}{4}{Adquisici\'on}{20}{0}{3}
-\beamer@subsectionintoc {3}{5}{Adaptaci\'on}{23}{0}{3}
-\beamer@subsectionintoc {3}{6}{Absorci\'on}{30}{0}{3}
-\beamer@subsectionintoc {3}{7}{Aplicaci\'on}{42}{0}{3}
-\beamer@subsectionintoc {3}{8}{Aplicaci\'on}{55}{0}{3}
-\beamer@subsectionintoc {3}{9}{Difusi\'on}{62}{0}{3}
+\beamer@subsectionintoc {1}{2}{Canales de Transferencia}{4}{0}{1}
+\beamer@subsectionintoc {1}{3}{Situaci\'on Colombiana}{5}{0}{1}
+\beamer@subsectionintoc {1}{4}{Causas del Atraso}{6}{0}{1}
+\beamer@subsectionintoc {1}{5}{Obst\'aculos para la Transferencia}{7}{0}{1}
+\beamer@subsectionintoc {1}{6}{Recomendaciones a la Academia}{8}{0}{1}
+\beamer@subsectionintoc {1}{7}{\IeC {\textquestiondown }Por qu\'e TT en Dise\~no de Sistemas Embebidos (SE)?}{9}{0}{1}
+\beamer@subsubsectionintoc {0}{1}{7}{1}{9}{1}{Sistemas Embebidos: Aplicaciones}
+\beamer@sectionintoc {2}{Objetivos}{10}{0}{2}

@@ -16,8 +16,8 @@
  
   \begin{alertblock}{}
     \begin{itemize}
-     \item<1-> Odedra \cite{Mo94}: \textbf{La transferencia tecnológica se considera exitosa cuando los receptores de la tecnología \textcolor{DarkGreen}{asimilan} estos conceptos para \textcolor{DarkGreen}{suplir sus necesidades locales} generando productos novedosos}.
-     \item<2-> Jolly \cite{Jol77}: \textbf{El conocimiento es lo que queda al final de un proceso \textcolor{DarkGreen}{documentado y difundido} de forma apropiada. Para que la transferencia tecnológica sea exitosa es necesario transferir los componentes de la tecnología}.
+     \item Odedra \cite{Mo94}: \textbf{La transferencia tecnológica se considera exitosa cuando los receptores de la tecnología \textcolor{DarkGreen}{asimilan} estos conceptos para \textcolor{DarkGreen}{suplir sus necesidades locales} generando productos novedosos}.
+     \item Jolly \cite{Jol77}: \textbf{El conocimiento es lo que queda al final de un proceso \textcolor{DarkGreen}{documentado y difundido} de forma apropiada}.
     \end{itemize}
   \end{alertblock}
 
@@ -43,10 +43,7 @@
         \end{itemize}
       \item Las empresas no adquieren el conocimiento necesario para innovar; se limitan a compra de equipo.
       \item Principal problema: tecnología de producción desactualizada.
-      \item Según el DNP, DDE, basados en información del DANE y la DIAN, las importaciones son 64 veces mayores que las exportaciones.
-% departamento nacional de planeación
-% Dirección de desarrollo empresarial
-% La Underwrite Laboratories (UL)
+      \item Según el DNP\footnote{Departamento nacional de planeación}, DDE\footnote{Dirección de desarrollo empresarial}, basados en información del DANE y la DIAN, las importaciones son 64 veces mayores que las exportaciones.
      \end{itemize}
 \end{frame}
 
@@ -63,14 +60,6 @@
      \item \alert{Atraso tecnológico y limitado recurso humano con formación adecuada}.
     \end{itemize}
 \end{frame}
-
-% \subsubsection[Intro]{Inversión en I+D}
-% \begin{frame}
-%   \frametitle{Inversión en I+D}
-%    \begin{center} \includegraphics[scale=.4]{../images/Inversion_PIB_latam.jpg}\\
-%    Fuente: Educación Superior en Iberoamérica 2007   \end{center}
-% \end{frame}
-
 
 \subsection{Obstáculos para la Transferencia} 
 \begin{frame}
@@ -124,15 +113,6 @@
    \end{center}
 \end{frame}
 
-\subsubsection{Sistemas Embebidos: Mercado}
-\begin{frame}
-  \frametitle{Sistemas Embebidos: Mercado}
-   \begin{center} \includegraphics[scale=.45]{../images/glob-emb-software-rev-applicatio.png}\\
-   \end{center}
-\end{frame}
-
-
-
 \section{Objetivos}
 \begin{frame}
   \frametitle{Objetivos}
@@ -149,7 +129,7 @@
    \only<2>{
      \begin{block}{Objetivos Específicos: Asimilación de conocimientos}
        \begin{itemize}
-         \small
+         \footnotesize
          \item \textcolor{DarkGreen}{Formulación/adaptación y aplicación de una metodología para la transferencia tecnológica y de conocimientos} en el área de diseño y fabricación de Sistemas Embebidos en Colombia que permita generar cambios globales a partir de interacciones locales.
 
          \item \textcolor{DarkGreen}{Formulación o adaptación de una metodología de diseño y producción para sistemas embebidos} aplicable en el entorno local y su respectiva aplicación y validación en un programa académico de un centro de formación superior consolidado y en una empresa de base tecnológica.
@@ -159,7 +139,7 @@
    \only<3->{
      \begin{block}{Objetivos Específicos: Creación de habilidades}
        \begin{itemize}
-
+         \footnotesize
          \item \textcolor{DarkGreen}{Identificación de las habilidades requeridas por los profesionales en ingeniería electrónica} para estar acorde con la tendencia de la industria electrónica mundial. \textcolor{DarkGreen}{Creación de un programa académico} que ayude al refuerzo de estas habilidades en las asignaturas relacionadas con el diseño digital.
 
          \item \textcolor{DarkGreen}{Generación de un recurso público} basado en el conocimiento necesario para diseñar implementar y producir sistemas digitales.
@@ -171,6 +151,32 @@
 \end{frame}
 
 
+\begin{frame}
+ 
+
+%\def\firstcircle{posición  shape radio}  
+%                 Grados:distancia al orígen
+\def\firstcircle{(0,0) circle (2.5cm)}
+\def\secondcircle{(30:2cm) circle (2.5cm)}
+\def\thirdcircle{(-30:-2cm) circle (2.5cm)}
+
+\begin{tikzpicture}
+    \begin{scope}[shift={(3cm,-5cm)}, fill opacity=0.5]
+        \fill[red] \firstcircle;
+        \fill[green] \secondcircle;
+        \fill[blue] \thirdcircle;
+        \draw \firstcircle  node [text=black, below=1cm] {Propiedad Intelectual};
+        \draw \secondcircle node [text=black, above=1cm] {Transferenica Tecnológica};
+        \draw \thirdcircle  node [text=black, below] {$C$};
+    \end{scope}
+
+
+\end{tikzpicture}
 
 
 
+
+
+
+
+\end{frame}
