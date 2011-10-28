@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.7.25)  25 OCT 2011 22:22
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.7.25)  28 OCT 2011 08:09
 entering extended mode
  %&-line parsing enabled.
 **defensa.tex
@@ -1049,24 +1049,24 @@ Dictionary: translator-theorem-dictionary, Language: English
 \pgf@layerboxsaved@background=\box90
 \pgf@layerbox@foreground=\box91
 \pgf@layerboxsaved@foreground=\box92
-LaTeX Font Info:    Try loading font information for U+msa on input line 87.
+LaTeX Font Info:    Try loading font information for U+msa on input line 92.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 87.
+LaTeX Font Info:    Try loading font information for U+msb on input line 92.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 87.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 92.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <8> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 87.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 92.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <6> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 87.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 92.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <5> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 87.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 92.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <../images/logo_unal.jpg>] 
@@ -1079,7 +1079,7 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10.95> not available
  [3
 
 ]
-<../images/TT_canales.pdf, id=49, 408.52625pt x 219.82124pt>
+<../images/TT_canales.pdf, id=47, 408.52625pt x 219.82124pt>
 File: ../images/TT_canales.pdf Graphic file (type pdf)
 
 <use ../images/TT_canales.pdf> [4
@@ -1097,33 +1097,1443 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
 [8
 
 ]
-<../images/Embedded_systems_applications.pdf, id=122, 484.81125pt x 334.24875pt
+<../images/Embedded_systems_applications.pdf, id=120, 484.81125pt x 334.24875pt
 >
 File: ../images/Embedded_systems_applications.pdf Graphic file (type pdf)
  <use ../images/Embedded_systems_applications.pdf> [9
 
- <../images/Embedded_systems_applications.pdf>] [10
+ <../images/Embedded_systems_applications.pdf>]
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <9> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 205.
 
-] [11
+Underfull \hbox (badness 10000) in paragraph at lines 205--205
+[]\T1/phv/m/n/10 Formulación o adaptación de una
+ []
 
-] [12
+
+Overfull \hbox (9.48387pt too wide) in paragraph at lines 205--205
+[][]  
+ []
+
+[10
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 205--205
+[]\T1/phv/m/n/10 Formulación o adaptación de una
+ []
 
-! LaTeX Error: Something's wrong--perhaps a missing \item.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.182 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+Overfull \hbox (9.48387pt too wide) in paragraph at lines 205--205
+[][]  
+ []
+
+[11
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 205--205
+[]\T1/phv/m/n/10 Formulación o adaptación de una
+ []
+
+
+Overfull \hbox (9.48387pt too wide) in paragraph at lines 205--205
+[][]  
+ []
+
+[12
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 205--205
+[]\T1/phv/m/n/10 Formulación o adaptación de una
+ []
+
+
+Overfull \hbox (9.48387pt too wide) in paragraph at lines 205--205
+[][]  
+ []
 
 [13
 
-]) (./biblio.tex) [14
+]) (./absortion.tex
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <8> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 242.
+
+<../images/ECB_ARM7_Block.pdf, id=170, 509.905pt x 217.81375pt>
+File: ../images/ECB_ARM7_Block.pdf Graphic file (type pdf)
+
+<use ../images/ECB_ARM7_Block.pdf>
+<../images/ECB_ARM7.jpg, id=172, 533.74406pt x 547.2947pt>
+File: ../images/ECB_ARM7.jpg Graphic file (type jpg)
+
+<use ../images/ECB_ARM7.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [] 
+ []
+
+<../images/xport_Block.pdf, id=173, 531.9875pt x 566.115pt>
+File: ../images/xport_Block.pdf Graphic file (type pdf)
+
+<use ../images/xport_Block.pdf>
+<../images/xport.jpg, id=175, 832.61063pt x 389.95688pt>
+File: ../images/xport.jpg Graphic file (type jpg)
+
+<use ../images/xport.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [] 
+ []
+
+<../images/ECB_AT91_V1.jpg, id=176, 864.98157pt x 365.86688pt>
+File: ../images/ECB_AT91_V1.jpg Graphic file (type jpg)
+
+<use ../images/ECB_AT91_V1.jpg>
+Overfull \hbox (3.42168pt too wide) in paragraph at lines 242--242
+ [] 
+ []
+
+<../images/ECB_AT91_V2.jpg, id=177, 576.65437pt x 385.44pt>
+File: ../images/ECB_AT91_V2.jpg Graphic file (type jpg)
+
+<use ../images/ECB_AT91_V2.jpg>
+Underfull \hbox (badness 1430) in paragraph at lines 242--242
+ [][] 
+ []
+
+<../images/ECBOT_Block.png, id=178, 803.25093pt x 545.78906pt>
+File: ../images/ECBOT_Block.png Graphic file (type png)
+
+<use ../images/ECBOT_Block.png>
+<../images/ECBOT.png, id=180, 582.67688pt x 564.60938pt>
+File: ../images/ECBOT.png Graphic file (type png)
+
+<use ../images/ECBOT.png>
+Underfull \hbox (badness 3049) in paragraph at lines 242--242
+ [][] 
+ []
+
+<../images/ECB_BF532_Block.pdf, id=181, 509.905pt x 231.86626pt>
+File: ../images/ECB_BF532_Block.pdf Graphic file (type pdf)
+
+<use ../images/ECB_BF532_Block.pdf>
+<../images/ECB_BF532.png, id=183, 669.2503pt x 513.41812pt>
+File: ../images/ECB_BF532.png Graphic file (type png)
+
+<use ../images/ECB_BF532.png>
+<../images/SIE_block_diagram.png, id=184, 501.37312pt x 274.02374pt>
+File: ../images/SIE_block_diagram.png Graphic file (type png)
+
+<use ../images/SIE_block_diagram.png>
+<../images/SIE.jpg, id=185, 597.73312pt x 345.54094pt>
+File: ../images/SIE.jpg Graphic file (type jpg)
+ <use ../images/SIE.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [][] 
+ []
+
+<../images/stamp_block.pdf, id=186, 533.995pt x 408.52625pt>
+File: ../images/stamp_block.pdf Graphic file (type pdf)
+
+<use ../images/stamp_block.pdf>
+<../images/proceso_de_fabricacion_PCBs.pdf, id=188, 498.86375pt x 590.205pt>
+File: ../images/proceso_de_fabricacion_PCBs.pdf Graphic file (type pdf)
+
+<use ../images/proceso_de_fabricacion_PCBs.pdf>
+<../images/SoC_reverse.pdf, id=190, 387.4475pt x 475.7775pt>
+File: ../images/SoC_reverse.pdf Graphic file (type pdf)
+
+<use ../images/SoC_reverse.pdf>
+Underfull \hbox (badness 1231) in paragraph at lines 242--242
+ [] 
+ []
+
+
+Overfull \hbox (41.81673pt too wide) in paragraph at lines 242--242
+ [][] 
+ []
+
+[14
+
+ <../images/ECB_ARM7_Block.pdf> <../images/ECB_ARM7.jpg> <../images/xport_Block
+.pdf> <../images/xport.jpg> <../images/ECB_AT91_V1.jpg> <../images/ECB_AT91_V2.
+jpg> <../images/ECBOT_Block.png> <../images/ECBOT.png (PNG copy)> <../images/EC
+B_BF532_Block.pdf> <../images/ECB_BF532.png> <../images/SIE_block_diagram.png> 
+<../images/SIE.jpg> <../images/stamp_block.pdf> <../images/proceso_de_fabricaci
+on_PCBs.pdf> <../images/SoC_reverse.pdf>]
+File: ../images/ECB_ARM7_Block.pdf Graphic file (type pdf)
+
+<use ../images/ECB_ARM7_Block.pdf>
+File: ../images/ECB_ARM7.jpg Graphic file (type jpg)
+ <use ../images/ECB_ARM7.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/xport_Block.pdf Graphic file (type pdf)
+<use ../images/xport_Block.pdf>
+File: ../images/xport.jpg Graphic file (type jpg)
+ <use ../images/xport.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/ECB_AT91_V1.jpg Graphic file (type jpg)
+<use ../images/ECB_AT91_V1.jpg>
+Overfull \hbox (3.42168pt too wide) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/ECB_AT91_V2.jpg Graphic file (type jpg)
+<use ../images/ECB_AT91_V2.jpg>
+Underfull \hbox (badness 1430) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/ECBOT_Block.png Graphic file (type png)
+<use ../images/ECBOT_Block.png>
+File: ../images/ECBOT.png Graphic file (type png)
+ <use ../images/ECBOT.png>
+Underfull \hbox (badness 3049) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/ECB_BF532_Block.pdf Graphic file (type pdf)
+<use ../images/ECB_BF532_Block.pdf>
+File: ../images/ECB_BF532.png Graphic file (type png)
+ <use ../images/ECB_BF532.png>
+File: ../images/SIE_block_diagram.png Graphic file (type png)
+
+<use ../images/SIE_block_diagram.png>
+File: ../images/SIE.jpg Graphic file (type jpg)
+ <use ../images/SIE.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/stamp_block.pdf Graphic file (type pdf)
+<use ../images/stamp_block.pdf>
+File: ../images/proceso_de_fabricacion_PCBs.pdf Graphic file (type pdf)
+
+<use ../images/proceso_de_fabricacion_PCBs.pdf>
+File: ../images/SoC_reverse.pdf Graphic file (type pdf)
+
+<use ../images/SoC_reverse.pdf>
+Underfull \hbox (badness 1231) in paragraph at lines 242--242
+ [] 
+ []
+
+
+Overfull \hbox (41.81673pt too wide) in paragraph at lines 242--242
+ [][] 
+ []
+
+[15
+
+]
+File: ../images/ECB_ARM7_Block.pdf Graphic file (type pdf)
+ <use ../images/ECB_ARM7_Block.pdf>
+File: ../images/ECB_ARM7.jpg Graphic file (type jpg)
+ <use ../images/ECB_ARM7.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/xport_Block.pdf Graphic file (type pdf)
+<use ../images/xport_Block.pdf>
+File: ../images/xport.jpg Graphic file (type jpg)
+ <use ../images/xport.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/ECB_AT91_V1.jpg Graphic file (type jpg)
+<use ../images/ECB_AT91_V1.jpg>
+Overfull \hbox (3.42168pt too wide) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/ECB_AT91_V2.jpg Graphic file (type jpg)
+<use ../images/ECB_AT91_V2.jpg>
+Underfull \hbox (badness 1430) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/ECBOT_Block.png Graphic file (type png)
+<use ../images/ECBOT_Block.png>
+File: ../images/ECBOT.png Graphic file (type png)
+ <use ../images/ECBOT.png>
+Underfull \hbox (badness 3049) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/ECB_BF532_Block.pdf Graphic file (type pdf)
+<use ../images/ECB_BF532_Block.pdf>
+File: ../images/ECB_BF532.png Graphic file (type png)
+ <use ../images/ECB_BF532.png>
+File: ../images/SIE_block_diagram.png Graphic file (type png)
+
+<use ../images/SIE_block_diagram.png>
+File: ../images/SIE.jpg Graphic file (type jpg)
+ <use ../images/SIE.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/stamp_block.pdf Graphic file (type pdf)
+<use ../images/stamp_block.pdf>
+File: ../images/proceso_de_fabricacion_PCBs.pdf Graphic file (type pdf)
+
+<use ../images/proceso_de_fabricacion_PCBs.pdf>
+File: ../images/SoC_reverse.pdf Graphic file (type pdf)
+
+<use ../images/SoC_reverse.pdf>
+Underfull \hbox (badness 1231) in paragraph at lines 242--242
+ [] 
+ []
+
+
+Overfull \hbox (41.81673pt too wide) in paragraph at lines 242--242
+ [][] 
+ []
+
+[16
+
+]
+File: ../images/ECB_ARM7_Block.pdf Graphic file (type pdf)
+ <use ../images/ECB_ARM7_Block.pdf>
+File: ../images/ECB_ARM7.jpg Graphic file (type jpg)
+ <use ../images/ECB_ARM7.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/xport_Block.pdf Graphic file (type pdf)
+<use ../images/xport_Block.pdf>
+File: ../images/xport.jpg Graphic file (type jpg)
+ <use ../images/xport.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/ECB_AT91_V1.jpg Graphic file (type jpg)
+<use ../images/ECB_AT91_V1.jpg>
+Overfull \hbox (3.42168pt too wide) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/ECB_AT91_V2.jpg Graphic file (type jpg)
+<use ../images/ECB_AT91_V2.jpg>
+Underfull \hbox (badness 1430) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/ECBOT_Block.png Graphic file (type png)
+<use ../images/ECBOT_Block.png>
+File: ../images/ECBOT.png Graphic file (type png)
+ <use ../images/ECBOT.png>
+Underfull \hbox (badness 3049) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/ECB_BF532_Block.pdf Graphic file (type pdf)
+<use ../images/ECB_BF532_Block.pdf>
+File: ../images/ECB_BF532.png Graphic file (type png)
+ <use ../images/ECB_BF532.png>
+File: ../images/SIE_block_diagram.png Graphic file (type png)
+
+<use ../images/SIE_block_diagram.png>
+File: ../images/SIE.jpg Graphic file (type jpg)
+ <use ../images/SIE.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/stamp_block.pdf Graphic file (type pdf)
+<use ../images/stamp_block.pdf>
+File: ../images/proceso_de_fabricacion_PCBs.pdf Graphic file (type pdf)
+
+<use ../images/proceso_de_fabricacion_PCBs.pdf>
+File: ../images/SoC_reverse.pdf Graphic file (type pdf)
+
+<use ../images/SoC_reverse.pdf>
+Underfull \hbox (badness 1231) in paragraph at lines 242--242
+ [] 
+ []
+
+
+Overfull \hbox (41.81673pt too wide) in paragraph at lines 242--242
+ [][] 
+ []
+
+[17
+
+]
+File: ../images/ECB_ARM7_Block.pdf Graphic file (type pdf)
+ <use ../images/ECB_ARM7_Block.pdf>
+File: ../images/ECB_ARM7.jpg Graphic file (type jpg)
+ <use ../images/ECB_ARM7.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/xport_Block.pdf Graphic file (type pdf)
+<use ../images/xport_Block.pdf>
+File: ../images/xport.jpg Graphic file (type jpg)
+ <use ../images/xport.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/ECB_AT91_V1.jpg Graphic file (type jpg)
+<use ../images/ECB_AT91_V1.jpg>
+Overfull \hbox (3.42168pt too wide) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/ECB_AT91_V2.jpg Graphic file (type jpg)
+<use ../images/ECB_AT91_V2.jpg>
+Underfull \hbox (badness 1430) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/ECBOT_Block.png Graphic file (type png)
+<use ../images/ECBOT_Block.png>
+File: ../images/ECBOT.png Graphic file (type png)
+ <use ../images/ECBOT.png>
+Underfull \hbox (badness 3049) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/ECB_BF532_Block.pdf Graphic file (type pdf)
+<use ../images/ECB_BF532_Block.pdf>
+File: ../images/ECB_BF532.png Graphic file (type png)
+ <use ../images/ECB_BF532.png>
+File: ../images/SIE_block_diagram.png Graphic file (type png)
+
+<use ../images/SIE_block_diagram.png>
+File: ../images/SIE.jpg Graphic file (type jpg)
+ <use ../images/SIE.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/stamp_block.pdf Graphic file (type pdf)
+<use ../images/stamp_block.pdf>
+File: ../images/proceso_de_fabricacion_PCBs.pdf Graphic file (type pdf)
+
+<use ../images/proceso_de_fabricacion_PCBs.pdf>
+File: ../images/SoC_reverse.pdf Graphic file (type pdf)
+
+<use ../images/SoC_reverse.pdf>
+Underfull \hbox (badness 1231) in paragraph at lines 242--242
+ [] 
+ []
+
+
+Overfull \hbox (41.81673pt too wide) in paragraph at lines 242--242
+ [][] 
+ []
+
+[18
+
+]
+File: ../images/ECB_ARM7_Block.pdf Graphic file (type pdf)
+ <use ../images/ECB_ARM7_Block.pdf>
+File: ../images/ECB_ARM7.jpg Graphic file (type jpg)
+ <use ../images/ECB_ARM7.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/xport_Block.pdf Graphic file (type pdf)
+<use ../images/xport_Block.pdf>
+File: ../images/xport.jpg Graphic file (type jpg)
+ <use ../images/xport.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/ECB_AT91_V1.jpg Graphic file (type jpg)
+<use ../images/ECB_AT91_V1.jpg>
+Overfull \hbox (3.42168pt too wide) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/ECB_AT91_V2.jpg Graphic file (type jpg)
+<use ../images/ECB_AT91_V2.jpg>
+Underfull \hbox (badness 1430) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/ECBOT_Block.png Graphic file (type png)
+<use ../images/ECBOT_Block.png>
+File: ../images/ECBOT.png Graphic file (type png)
+ <use ../images/ECBOT.png>
+Underfull \hbox (badness 3049) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/ECB_BF532_Block.pdf Graphic file (type pdf)
+<use ../images/ECB_BF532_Block.pdf>
+File: ../images/ECB_BF532.png Graphic file (type png)
+ <use ../images/ECB_BF532.png>
+File: ../images/SIE_block_diagram.png Graphic file (type png)
+
+<use ../images/SIE_block_diagram.png>
+File: ../images/SIE.jpg Graphic file (type jpg)
+ <use ../images/SIE.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/stamp_block.pdf Graphic file (type pdf)
+<use ../images/stamp_block.pdf>
+File: ../images/proceso_de_fabricacion_PCBs.pdf Graphic file (type pdf)
+
+<use ../images/proceso_de_fabricacion_PCBs.pdf>
+File: ../images/SoC_reverse.pdf Graphic file (type pdf)
+
+<use ../images/SoC_reverse.pdf>
+Underfull \hbox (badness 1231) in paragraph at lines 242--242
+ [] 
+ []
+
+
+Overfull \hbox (41.81673pt too wide) in paragraph at lines 242--242
+ [][] 
+ []
+
+[19
+
+]
+File: ../images/ECB_ARM7_Block.pdf Graphic file (type pdf)
+ <use ../images/ECB_ARM7_Block.pdf>
+File: ../images/ECB_ARM7.jpg Graphic file (type jpg)
+ <use ../images/ECB_ARM7.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/xport_Block.pdf Graphic file (type pdf)
+<use ../images/xport_Block.pdf>
+File: ../images/xport.jpg Graphic file (type jpg)
+ <use ../images/xport.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/ECB_AT91_V1.jpg Graphic file (type jpg)
+<use ../images/ECB_AT91_V1.jpg>
+Overfull \hbox (3.42168pt too wide) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/ECB_AT91_V2.jpg Graphic file (type jpg)
+<use ../images/ECB_AT91_V2.jpg>
+Underfull \hbox (badness 1430) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/ECBOT_Block.png Graphic file (type png)
+<use ../images/ECBOT_Block.png>
+File: ../images/ECBOT.png Graphic file (type png)
+ <use ../images/ECBOT.png>
+Underfull \hbox (badness 3049) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/ECB_BF532_Block.pdf Graphic file (type pdf)
+<use ../images/ECB_BF532_Block.pdf>
+File: ../images/ECB_BF532.png Graphic file (type png)
+ <use ../images/ECB_BF532.png>
+File: ../images/SIE_block_diagram.png Graphic file (type png)
+
+<use ../images/SIE_block_diagram.png>
+File: ../images/SIE.jpg Graphic file (type jpg)
+ <use ../images/SIE.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/stamp_block.pdf Graphic file (type pdf)
+<use ../images/stamp_block.pdf>
+File: ../images/proceso_de_fabricacion_PCBs.pdf Graphic file (type pdf)
+
+<use ../images/proceso_de_fabricacion_PCBs.pdf>
+File: ../images/SoC_reverse.pdf Graphic file (type pdf)
+
+<use ../images/SoC_reverse.pdf>
+Underfull \hbox (badness 1231) in paragraph at lines 242--242
+ [] 
+ []
+
+
+Overfull \hbox (41.81673pt too wide) in paragraph at lines 242--242
+ [][] 
+ []
+
+[20
+
+]
+File: ../images/ECB_ARM7_Block.pdf Graphic file (type pdf)
+ <use ../images/ECB_ARM7_Block.pdf>
+File: ../images/ECB_ARM7.jpg Graphic file (type jpg)
+ <use ../images/ECB_ARM7.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/xport_Block.pdf Graphic file (type pdf)
+<use ../images/xport_Block.pdf>
+File: ../images/xport.jpg Graphic file (type jpg)
+ <use ../images/xport.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/ECB_AT91_V1.jpg Graphic file (type jpg)
+<use ../images/ECB_AT91_V1.jpg>
+Overfull \hbox (3.42168pt too wide) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/ECB_AT91_V2.jpg Graphic file (type jpg)
+<use ../images/ECB_AT91_V2.jpg>
+Underfull \hbox (badness 1430) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/ECBOT_Block.png Graphic file (type png)
+<use ../images/ECBOT_Block.png>
+File: ../images/ECBOT.png Graphic file (type png)
+ <use ../images/ECBOT.png>
+Underfull \hbox (badness 3049) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/ECB_BF532_Block.pdf Graphic file (type pdf)
+<use ../images/ECB_BF532_Block.pdf>
+File: ../images/ECB_BF532.png Graphic file (type png)
+ <use ../images/ECB_BF532.png>
+File: ../images/SIE_block_diagram.png Graphic file (type png)
+
+<use ../images/SIE_block_diagram.png>
+File: ../images/SIE.jpg Graphic file (type jpg)
+ <use ../images/SIE.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/stamp_block.pdf Graphic file (type pdf)
+<use ../images/stamp_block.pdf>
+File: ../images/proceso_de_fabricacion_PCBs.pdf Graphic file (type pdf)
+
+<use ../images/proceso_de_fabricacion_PCBs.pdf>
+File: ../images/SoC_reverse.pdf Graphic file (type pdf)
+
+<use ../images/SoC_reverse.pdf>
+Underfull \hbox (badness 1231) in paragraph at lines 242--242
+ [] 
+ []
+
+
+Overfull \hbox (41.81673pt too wide) in paragraph at lines 242--242
+ [][] 
+ []
+
+[21
+
+]
+File: ../images/ECB_ARM7_Block.pdf Graphic file (type pdf)
+ <use ../images/ECB_ARM7_Block.pdf>
+File: ../images/ECB_ARM7.jpg Graphic file (type jpg)
+ <use ../images/ECB_ARM7.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/xport_Block.pdf Graphic file (type pdf)
+<use ../images/xport_Block.pdf>
+File: ../images/xport.jpg Graphic file (type jpg)
+ <use ../images/xport.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/ECB_AT91_V1.jpg Graphic file (type jpg)
+<use ../images/ECB_AT91_V1.jpg>
+Overfull \hbox (3.42168pt too wide) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/ECB_AT91_V2.jpg Graphic file (type jpg)
+<use ../images/ECB_AT91_V2.jpg>
+Underfull \hbox (badness 1430) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/ECBOT_Block.png Graphic file (type png)
+<use ../images/ECBOT_Block.png>
+File: ../images/ECBOT.png Graphic file (type png)
+ <use ../images/ECBOT.png>
+Underfull \hbox (badness 3049) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/ECB_BF532_Block.pdf Graphic file (type pdf)
+<use ../images/ECB_BF532_Block.pdf>
+File: ../images/ECB_BF532.png Graphic file (type png)
+ <use ../images/ECB_BF532.png>
+File: ../images/SIE_block_diagram.png Graphic file (type png)
+
+<use ../images/SIE_block_diagram.png>
+File: ../images/SIE.jpg Graphic file (type jpg)
+ <use ../images/SIE.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/stamp_block.pdf Graphic file (type pdf)
+<use ../images/stamp_block.pdf>
+File: ../images/proceso_de_fabricacion_PCBs.pdf Graphic file (type pdf)
+
+<use ../images/proceso_de_fabricacion_PCBs.pdf>
+File: ../images/SoC_reverse.pdf Graphic file (type pdf)
+
+<use ../images/SoC_reverse.pdf>
+Underfull \hbox (badness 1231) in paragraph at lines 242--242
+ [] 
+ []
+
+
+Overfull \hbox (41.81673pt too wide) in paragraph at lines 242--242
+ [][] 
+ []
+
+[22
+
+]
+File: ../images/ECB_ARM7_Block.pdf Graphic file (type pdf)
+ <use ../images/ECB_ARM7_Block.pdf>
+File: ../images/ECB_ARM7.jpg Graphic file (type jpg)
+ <use ../images/ECB_ARM7.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/xport_Block.pdf Graphic file (type pdf)
+<use ../images/xport_Block.pdf>
+File: ../images/xport.jpg Graphic file (type jpg)
+ <use ../images/xport.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/ECB_AT91_V1.jpg Graphic file (type jpg)
+<use ../images/ECB_AT91_V1.jpg>
+Overfull \hbox (3.42168pt too wide) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/ECB_AT91_V2.jpg Graphic file (type jpg)
+<use ../images/ECB_AT91_V2.jpg>
+Underfull \hbox (badness 1430) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/ECBOT_Block.png Graphic file (type png)
+<use ../images/ECBOT_Block.png>
+File: ../images/ECBOT.png Graphic file (type png)
+ <use ../images/ECBOT.png>
+Underfull \hbox (badness 3049) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/ECB_BF532_Block.pdf Graphic file (type pdf)
+<use ../images/ECB_BF532_Block.pdf>
+File: ../images/ECB_BF532.png Graphic file (type png)
+ <use ../images/ECB_BF532.png>
+File: ../images/SIE_block_diagram.png Graphic file (type png)
+
+<use ../images/SIE_block_diagram.png>
+File: ../images/SIE.jpg Graphic file (type jpg)
+ <use ../images/SIE.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/stamp_block.pdf Graphic file (type pdf)
+<use ../images/stamp_block.pdf>
+File: ../images/proceso_de_fabricacion_PCBs.pdf Graphic file (type pdf)
+
+<use ../images/proceso_de_fabricacion_PCBs.pdf>
+File: ../images/SoC_reverse.pdf Graphic file (type pdf)
+
+<use ../images/SoC_reverse.pdf>
+Underfull \hbox (badness 1231) in paragraph at lines 242--242
+ [] 
+ []
+
+
+Overfull \hbox (41.81673pt too wide) in paragraph at lines 242--242
+ [][] 
+ []
+
+[23
+
+]
+File: ../images/ECB_ARM7_Block.pdf Graphic file (type pdf)
+ <use ../images/ECB_ARM7_Block.pdf>
+File: ../images/ECB_ARM7.jpg Graphic file (type jpg)
+ <use ../images/ECB_ARM7.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/xport_Block.pdf Graphic file (type pdf)
+<use ../images/xport_Block.pdf>
+File: ../images/xport.jpg Graphic file (type jpg)
+ <use ../images/xport.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/ECB_AT91_V1.jpg Graphic file (type jpg)
+<use ../images/ECB_AT91_V1.jpg>
+Overfull \hbox (3.42168pt too wide) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/ECB_AT91_V2.jpg Graphic file (type jpg)
+<use ../images/ECB_AT91_V2.jpg>
+Underfull \hbox (badness 1430) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/ECBOT_Block.png Graphic file (type png)
+<use ../images/ECBOT_Block.png>
+File: ../images/ECBOT.png Graphic file (type png)
+ <use ../images/ECBOT.png>
+Underfull \hbox (badness 3049) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/ECB_BF532_Block.pdf Graphic file (type pdf)
+<use ../images/ECB_BF532_Block.pdf>
+File: ../images/ECB_BF532.png Graphic file (type png)
+ <use ../images/ECB_BF532.png>
+File: ../images/SIE_block_diagram.png Graphic file (type png)
+
+<use ../images/SIE_block_diagram.png>
+File: ../images/SIE.jpg Graphic file (type jpg)
+ <use ../images/SIE.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/stamp_block.pdf Graphic file (type pdf)
+<use ../images/stamp_block.pdf>
+File: ../images/proceso_de_fabricacion_PCBs.pdf Graphic file (type pdf)
+
+<use ../images/proceso_de_fabricacion_PCBs.pdf>
+File: ../images/SoC_reverse.pdf Graphic file (type pdf)
+
+<use ../images/SoC_reverse.pdf>
+Underfull \hbox (badness 1231) in paragraph at lines 242--242
+ [] 
+ []
+
+
+Overfull \hbox (41.81673pt too wide) in paragraph at lines 242--242
+ [][] 
+ []
+
+[24
+
+]
+File: ../images/ECB_ARM7_Block.pdf Graphic file (type pdf)
+ <use ../images/ECB_ARM7_Block.pdf>
+File: ../images/ECB_ARM7.jpg Graphic file (type jpg)
+ <use ../images/ECB_ARM7.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/xport_Block.pdf Graphic file (type pdf)
+<use ../images/xport_Block.pdf>
+File: ../images/xport.jpg Graphic file (type jpg)
+ <use ../images/xport.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/ECB_AT91_V1.jpg Graphic file (type jpg)
+<use ../images/ECB_AT91_V1.jpg>
+Overfull \hbox (3.42168pt too wide) in paragraph at lines 242--242
+ [] 
+ []
+
+File: ../images/ECB_AT91_V2.jpg Graphic file (type jpg)
+<use ../images/ECB_AT91_V2.jpg>
+Underfull \hbox (badness 1430) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/ECBOT_Block.png Graphic file (type png)
+<use ../images/ECBOT_Block.png>
+File: ../images/ECBOT.png Graphic file (type png)
+ <use ../images/ECBOT.png>
+Underfull \hbox (badness 3049) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/ECB_BF532_Block.pdf Graphic file (type pdf)
+<use ../images/ECB_BF532_Block.pdf>
+File: ../images/ECB_BF532.png Graphic file (type png)
+ <use ../images/ECB_BF532.png>
+File: ../images/SIE_block_diagram.png Graphic file (type png)
+
+<use ../images/SIE_block_diagram.png>
+File: ../images/SIE.jpg Graphic file (type jpg)
+ <use ../images/SIE.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 242--242
+ [][] 
+ []
+
+File: ../images/stamp_block.pdf Graphic file (type pdf)
+<use ../images/stamp_block.pdf>
+File: ../images/proceso_de_fabricacion_PCBs.pdf Graphic file (type pdf)
+
+<use ../images/proceso_de_fabricacion_PCBs.pdf>
+File: ../images/SoC_reverse.pdf Graphic file (type pdf)
+
+<use ../images/SoC_reverse.pdf>
+Underfull \hbox (badness 1231) in paragraph at lines 242--242
+ [] 
+ []
+
+
+Overfull \hbox (41.81673pt too wide) in paragraph at lines 242--242
+ [][] 
+ []
+
+[25
+
+]) (./aplication.tex
+<../images/habilidades_digitales.pdf, id=330, 494.84875pt x 595.22375pt>
+File: ../images/habilidades_digitales.pdf Graphic file (type pdf)
+
+<use ../images/habilidades_digitales.pdf>
+LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <8> not available
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 302.
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <8> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 302.
+
+<../images/SIE_education.pdf, id=332, 1302.8675pt x 1002.74625pt>
+File: ../images/SIE_education.pdf Graphic file (type pdf)
+
+<use ../images/SIE_education.pdf>
+Overfull \hbox (4.49408pt too wide) in paragraph at lines 302--302
+ [] 
+ []
+
+<../images/academic_result_5.JPG, id=334, 465.23813pt x 419.31656pt>
+File: ../images/academic_result_5.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_5.JPG>
+<../images/academic_result_2.JPG, id=335, 1027.84pt x 770.88pt>
+File: ../images/academic_result_2.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_2.JPG>
+<../images/academic_result_3.JPG, id=336, 1027.84pt x 770.88pt>
+File: ../images/academic_result_3.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_3.JPG>
+<../images/academic_result_4.JPG, id=337, 642.4pt x 481.8pt>
+File: ../images/academic_result_4.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_4.JPG>
+<../images/academic_result_7.JPG, id=338, 321.45094pt x 214.55156pt>
+File: ../images/academic_result_7.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_7.JPG>
+<../images/academic_result_6.JPG, id=339, 948.54375pt x 704.6325pt>
+File: ../images/academic_result_6.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_6.JPG>
+<../images/academic_result_1.JPG, id=340, 1951.29pt x 2601.72pt>
+File: ../images/academic_result_1.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_1.JPG>
+Underfull \hbox (badness 10000) in paragraph at lines 302--302
+ [][] 
+ []
+
+
+Overfull \hbox (41.81673pt too wide) in paragraph at lines 302--302
+ [][] 
+ []
+
+[26
+
+ <../images/habilidades_digitales.pdf> <../images/SIE_education.pdf> <../images
+/academic_result_5.JPG (PNG copy)> <../images/academic_result_2.JPG> <../images
+/academic_result_3.JPG> <../images/academic_result_4.JPG> <../images/academic_r
+esult_7.JPG> <../images/academic_result_6.JPG> <../images/academic_result_1.JPG
+>]
+File: ../images/habilidades_digitales.pdf Graphic file (type pdf)
+ <use ../images/habilidades_digitales.pdf>
+File: ../images/SIE_education.pdf Graphic file (type pdf)
+
+<use ../images/SIE_education.pdf>
+Overfull \hbox (4.49408pt too wide) in paragraph at lines 302--302
+ [] 
+ []
+
+File: ../images/academic_result_5.JPG Graphic file (type jpg)
+<use ../images/academic_result_5.JPG>
+File: ../images/academic_result_2.JPG Graphic file (type jpg)
+ <use ../images/academic_result_2.JPG>
+File: ../images/academic_result_3.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_3.JPG>
+File: ../images/academic_result_4.JPG Graphic file (type jpg)
+ <use ../images/academic_result_4.JPG>
+File: ../images/academic_result_7.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_7.JPG>
+File: ../images/academic_result_6.JPG Graphic file (type jpg)
+ <use ../images/academic_result_6.JPG>
+File: ../images/academic_result_1.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_1.JPG>
+Underfull \hbox (badness 10000) in paragraph at lines 302--302
+ [][] 
+ []
+
+
+Overfull \hbox (41.81673pt too wide) in paragraph at lines 302--302
+ [][] 
+ []
+
+[27
+
+]
+File: ../images/habilidades_digitales.pdf Graphic file (type pdf)
+ <use ../images/habilidades_digitales.pdf>
+File: ../images/SIE_education.pdf Graphic file (type pdf)
+
+<use ../images/SIE_education.pdf>
+Overfull \hbox (4.49408pt too wide) in paragraph at lines 302--302
+ [] 
+ []
+
+File: ../images/academic_result_5.JPG Graphic file (type jpg)
+<use ../images/academic_result_5.JPG>
+File: ../images/academic_result_2.JPG Graphic file (type jpg)
+ <use ../images/academic_result_2.JPG>
+File: ../images/academic_result_3.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_3.JPG>
+File: ../images/academic_result_4.JPG Graphic file (type jpg)
+ <use ../images/academic_result_4.JPG>
+File: ../images/academic_result_7.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_7.JPG>
+File: ../images/academic_result_6.JPG Graphic file (type jpg)
+ <use ../images/academic_result_6.JPG>
+File: ../images/academic_result_1.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_1.JPG>
+Underfull \hbox (badness 10000) in paragraph at lines 302--302
+ [][] 
+ []
+
+
+Overfull \hbox (41.81673pt too wide) in paragraph at lines 302--302
+ [][] 
+ []
+
+[28
+
+]
+File: ../images/habilidades_digitales.pdf Graphic file (type pdf)
+ <use ../images/habilidades_digitales.pdf>
+File: ../images/SIE_education.pdf Graphic file (type pdf)
+
+<use ../images/SIE_education.pdf>
+Overfull \hbox (4.49408pt too wide) in paragraph at lines 302--302
+ [] 
+ []
+
+File: ../images/academic_result_5.JPG Graphic file (type jpg)
+<use ../images/academic_result_5.JPG>
+File: ../images/academic_result_2.JPG Graphic file (type jpg)
+ <use ../images/academic_result_2.JPG>
+File: ../images/academic_result_3.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_3.JPG>
+File: ../images/academic_result_4.JPG Graphic file (type jpg)
+ <use ../images/academic_result_4.JPG>
+File: ../images/academic_result_7.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_7.JPG>
+File: ../images/academic_result_6.JPG Graphic file (type jpg)
+ <use ../images/academic_result_6.JPG>
+File: ../images/academic_result_1.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_1.JPG>
+Underfull \hbox (badness 10000) in paragraph at lines 302--302
+ [][] 
+ []
+
+
+Overfull \hbox (41.81673pt too wide) in paragraph at lines 302--302
+ [][] 
+ []
+
+[29
+
+]
+File: ../images/habilidades_digitales.pdf Graphic file (type pdf)
+ <use ../images/habilidades_digitales.pdf>
+File: ../images/SIE_education.pdf Graphic file (type pdf)
+
+<use ../images/SIE_education.pdf>
+Overfull \hbox (4.49408pt too wide) in paragraph at lines 302--302
+ [] 
+ []
+
+File: ../images/academic_result_5.JPG Graphic file (type jpg)
+<use ../images/academic_result_5.JPG>
+File: ../images/academic_result_2.JPG Graphic file (type jpg)
+ <use ../images/academic_result_2.JPG>
+File: ../images/academic_result_3.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_3.JPG>
+File: ../images/academic_result_4.JPG Graphic file (type jpg)
+ <use ../images/academic_result_4.JPG>
+File: ../images/academic_result_7.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_7.JPG>
+File: ../images/academic_result_6.JPG Graphic file (type jpg)
+ <use ../images/academic_result_6.JPG>
+File: ../images/academic_result_1.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_1.JPG>
+Underfull \hbox (badness 10000) in paragraph at lines 302--302
+ [][] 
+ []
+
+
+Overfull \hbox (41.81673pt too wide) in paragraph at lines 302--302
+ [][] 
+ []
+
+[30
+
+]
+File: ../images/habilidades_digitales.pdf Graphic file (type pdf)
+ <use ../images/habilidades_digitales.pdf>
+File: ../images/SIE_education.pdf Graphic file (type pdf)
+
+<use ../images/SIE_education.pdf>
+Overfull \hbox (4.49408pt too wide) in paragraph at lines 302--302
+ [] 
+ []
+
+File: ../images/academic_result_5.JPG Graphic file (type jpg)
+<use ../images/academic_result_5.JPG>
+File: ../images/academic_result_2.JPG Graphic file (type jpg)
+ <use ../images/academic_result_2.JPG>
+File: ../images/academic_result_3.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_3.JPG>
+File: ../images/academic_result_4.JPG Graphic file (type jpg)
+ <use ../images/academic_result_4.JPG>
+File: ../images/academic_result_7.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_7.JPG>
+File: ../images/academic_result_6.JPG Graphic file (type jpg)
+ <use ../images/academic_result_6.JPG>
+File: ../images/academic_result_1.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_1.JPG>
+Underfull \hbox (badness 10000) in paragraph at lines 302--302
+ [][] 
+ []
+
+
+Overfull \hbox (41.81673pt too wide) in paragraph at lines 302--302
+ [][] 
+ []
+
+[31
+
+]
+File: ../images/habilidades_digitales.pdf Graphic file (type pdf)
+ <use ../images/habilidades_digitales.pdf>
+File: ../images/SIE_education.pdf Graphic file (type pdf)
+
+<use ../images/SIE_education.pdf>
+Overfull \hbox (4.49408pt too wide) in paragraph at lines 302--302
+ [] 
+ []
+
+File: ../images/academic_result_5.JPG Graphic file (type jpg)
+<use ../images/academic_result_5.JPG>
+File: ../images/academic_result_2.JPG Graphic file (type jpg)
+ <use ../images/academic_result_2.JPG>
+File: ../images/academic_result_3.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_3.JPG>
+File: ../images/academic_result_4.JPG Graphic file (type jpg)
+ <use ../images/academic_result_4.JPG>
+File: ../images/academic_result_7.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_7.JPG>
+File: ../images/academic_result_6.JPG Graphic file (type jpg)
+ <use ../images/academic_result_6.JPG>
+File: ../images/academic_result_1.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_1.JPG>
+Underfull \hbox (badness 10000) in paragraph at lines 302--302
+ [][] 
+ []
+
+
+Overfull \hbox (41.81673pt too wide) in paragraph at lines 302--302
+ [][] 
+ []
+
+[32
+
+]
+File: ../images/habilidades_digitales.pdf Graphic file (type pdf)
+ <use ../images/habilidades_digitales.pdf>
+File: ../images/SIE_education.pdf Graphic file (type pdf)
+
+<use ../images/SIE_education.pdf>
+Overfull \hbox (4.49408pt too wide) in paragraph at lines 302--302
+ [] 
+ []
+
+File: ../images/academic_result_5.JPG Graphic file (type jpg)
+<use ../images/academic_result_5.JPG>
+File: ../images/academic_result_2.JPG Graphic file (type jpg)
+ <use ../images/academic_result_2.JPG>
+File: ../images/academic_result_3.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_3.JPG>
+File: ../images/academic_result_4.JPG Graphic file (type jpg)
+ <use ../images/academic_result_4.JPG>
+File: ../images/academic_result_7.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_7.JPG>
+File: ../images/academic_result_6.JPG Graphic file (type jpg)
+ <use ../images/academic_result_6.JPG>
+File: ../images/academic_result_1.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_1.JPG>
+Underfull \hbox (badness 10000) in paragraph at lines 302--302
+ [][] 
+ []
+
+
+Overfull \hbox (41.81673pt too wide) in paragraph at lines 302--302
+ [][] 
+ []
+
+[33
+
+]
+File: ../images/habilidades_digitales.pdf Graphic file (type pdf)
+ <use ../images/habilidades_digitales.pdf>
+File: ../images/SIE_education.pdf Graphic file (type pdf)
+
+<use ../images/SIE_education.pdf>
+Overfull \hbox (4.49408pt too wide) in paragraph at lines 302--302
+ [] 
+ []
+
+File: ../images/academic_result_5.JPG Graphic file (type jpg)
+<use ../images/academic_result_5.JPG>
+File: ../images/academic_result_2.JPG Graphic file (type jpg)
+ <use ../images/academic_result_2.JPG>
+File: ../images/academic_result_3.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_3.JPG>
+File: ../images/academic_result_4.JPG Graphic file (type jpg)
+ <use ../images/academic_result_4.JPG>
+File: ../images/academic_result_7.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_7.JPG>
+File: ../images/academic_result_6.JPG Graphic file (type jpg)
+ <use ../images/academic_result_6.JPG>
+File: ../images/academic_result_1.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_1.JPG>
+Underfull \hbox (badness 10000) in paragraph at lines 302--302
+ [][] 
+ []
+
+
+Overfull \hbox (41.81673pt too wide) in paragraph at lines 302--302
+ [][] 
+ []
+
+[34
+
+]
+File: ../images/habilidades_digitales.pdf Graphic file (type pdf)
+ <use ../images/habilidades_digitales.pdf>
+File: ../images/SIE_education.pdf Graphic file (type pdf)
+
+<use ../images/SIE_education.pdf>
+Overfull \hbox (4.49408pt too wide) in paragraph at lines 302--302
+ [] 
+ []
+
+File: ../images/academic_result_5.JPG Graphic file (type jpg)
+<use ../images/academic_result_5.JPG>
+File: ../images/academic_result_2.JPG Graphic file (type jpg)
+ <use ../images/academic_result_2.JPG>
+File: ../images/academic_result_3.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_3.JPG>
+File: ../images/academic_result_4.JPG Graphic file (type jpg)
+ <use ../images/academic_result_4.JPG>
+File: ../images/academic_result_7.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_7.JPG>
+File: ../images/academic_result_6.JPG Graphic file (type jpg)
+ <use ../images/academic_result_6.JPG>
+File: ../images/academic_result_1.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_1.JPG>
+Underfull \hbox (badness 10000) in paragraph at lines 302--302
+ [][] 
+ []
+
+
+Overfull \hbox (41.81673pt too wide) in paragraph at lines 302--302
+ [][] 
+ []
+
+[35
+
+]
+File: ../images/habilidades_digitales.pdf Graphic file (type pdf)
+ <use ../images/habilidades_digitales.pdf>
+File: ../images/SIE_education.pdf Graphic file (type pdf)
+
+<use ../images/SIE_education.pdf>
+Overfull \hbox (4.49408pt too wide) in paragraph at lines 302--302
+ [] 
+ []
+
+File: ../images/academic_result_5.JPG Graphic file (type jpg)
+<use ../images/academic_result_5.JPG>
+File: ../images/academic_result_2.JPG Graphic file (type jpg)
+ <use ../images/academic_result_2.JPG>
+File: ../images/academic_result_3.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_3.JPG>
+File: ../images/academic_result_4.JPG Graphic file (type jpg)
+ <use ../images/academic_result_4.JPG>
+File: ../images/academic_result_7.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_7.JPG>
+File: ../images/academic_result_6.JPG Graphic file (type jpg)
+ <use ../images/academic_result_6.JPG>
+File: ../images/academic_result_1.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_1.JPG>
+Underfull \hbox (badness 10000) in paragraph at lines 302--302
+ [][] 
+ []
+
+
+Overfull \hbox (41.81673pt too wide) in paragraph at lines 302--302
+ [][] 
+ []
+
+[36
+
+]
+File: ../images/habilidades_digitales.pdf Graphic file (type pdf)
+ <use ../images/habilidades_digitales.pdf>
+File: ../images/SIE_education.pdf Graphic file (type pdf)
+
+<use ../images/SIE_education.pdf>
+Overfull \hbox (4.49408pt too wide) in paragraph at lines 302--302
+ [] 
+ []
+
+File: ../images/academic_result_5.JPG Graphic file (type jpg)
+<use ../images/academic_result_5.JPG>
+File: ../images/academic_result_2.JPG Graphic file (type jpg)
+ <use ../images/academic_result_2.JPG>
+File: ../images/academic_result_3.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_3.JPG>
+File: ../images/academic_result_4.JPG Graphic file (type jpg)
+ <use ../images/academic_result_4.JPG>
+File: ../images/academic_result_7.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_7.JPG>
+File: ../images/academic_result_6.JPG Graphic file (type jpg)
+ <use ../images/academic_result_6.JPG>
+File: ../images/academic_result_1.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_1.JPG>
+Underfull \hbox (badness 10000) in paragraph at lines 302--302
+ [][] 
+ []
+
+
+Overfull \hbox (41.81673pt too wide) in paragraph at lines 302--302
+ [][] 
+ []
+
+[37
+
+]
+File: ../images/habilidades_digitales.pdf Graphic file (type pdf)
+ <use ../images/habilidades_digitales.pdf>
+File: ../images/SIE_education.pdf Graphic file (type pdf)
+
+<use ../images/SIE_education.pdf>
+Overfull \hbox (4.49408pt too wide) in paragraph at lines 302--302
+ [] 
+ []
+
+File: ../images/academic_result_5.JPG Graphic file (type jpg)
+<use ../images/academic_result_5.JPG>
+File: ../images/academic_result_2.JPG Graphic file (type jpg)
+ <use ../images/academic_result_2.JPG>
+File: ../images/academic_result_3.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_3.JPG>
+File: ../images/academic_result_4.JPG Graphic file (type jpg)
+ <use ../images/academic_result_4.JPG>
+File: ../images/academic_result_7.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_7.JPG>
+File: ../images/academic_result_6.JPG Graphic file (type jpg)
+ <use ../images/academic_result_6.JPG>
+File: ../images/academic_result_1.JPG Graphic file (type jpg)
+
+<use ../images/academic_result_1.JPG>
+Underfull \hbox (badness 10000) in paragraph at lines 302--302
+ [][] 
+ []
+
+
+Overfull \hbox (41.81673pt too wide) in paragraph at lines 302--302
+ [][] 
+ []
+
+[38
+
+]) (./biblio.tex) [39
 
  </usr/share/texmf/tex/latex/beamer/base/art/beamericonarticle.pdf>]
 \tf@nav=\write6
@@ -1137,20 +2547,21 @@ If that doesn't work, type  X <return>  to quit.
 
  (./defensa.aux) ) 
 Here is how much of TeX's memory you used:
- 17685 strings out of 495061
- 334930 string characters out of 1182621
- 448986 words of memory out of 3000000
- 20294 multiletter control sequences out of 15000+50000
- 46834 words of font info for 67 fonts, out of 3000000 for 9000
+ 18047 strings out of 495061
+ 342632 string characters out of 1182621
+ 599392 words of memory out of 3000000
+ 20562 multiletter control sequences out of 15000+50000
+ 56367 words of font info for 74 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 45i,16n,63p,450b,714s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 45i,16n,63p,453b,1328s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/s
 hare/texmf-texlive/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-texliv
-e/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw
-/helvetic/uhvro8a.pfb>
-Output written on defensa.pdf (14 pages, 146516 bytes).
+e/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texmf-texlive/fonts/type1/ur
+w/helvetic/uhvr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvro8
+a.pfb>
+Output written on defensa.pdf (39 pages, 6032395 bytes).
 PDF statistics:
- 214 PDF objects out of 1000 (max. 8388607)
- 43 named destinations out of 1000 (max. 500000)
- 108 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 516 PDF objects out of 1000 (max. 8388607)
+ 94 named destinations out of 1000 (max. 500000)
+ 210 words of extra memory for PDF output out of 10000 (max. 10000000)
 

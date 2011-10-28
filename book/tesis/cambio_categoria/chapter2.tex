@@ -1,0 +1,24 @@
+\chapter{Sistema en un Chip (SoC)}
+
+En esta sección estudiaremos la arquitectura básica de un SoC moderno, componentes, funcionamiento, programación y operación. Como se mencionó anteriormente, la tendencia actual de la industria de los semiconductores es integrar en un solo dispositivo las funcionalidades necesarias para la implementación de dispositivos digitales modernos. Esto es posibe gracias a los grandes avances en las técnicas de fabricación de circuitos integrados y a la demanda de nuevas características exigidas por los fabricantes de dispositivos digitales de consumo masivo como teléfonos celulares, PDAs, consolas de juegos y reproductores multimedia. Para utilizar estos avances tecnológicos es necesario conocer su arquitectura, principio de funcionamiento, programación e implementación, para esto, se estudiarán dos proyectos abiertos que implementan un SoC en un PLD utilizando lenguaje de descripción de hardware y herramientas GNU; proporcionan el código fuente, lo que permite un estudio profundo de su arquitectura. El proyecto \textit{Plasma} \cite{SR08} y el proyecto Mico32\cite{LSC08}.
+
+
+\section{Arquitectura}
+
+Un SoC, integra un conjunto de periféricos, memorias y una o varias unidades de procesamiento (CPUs) en un solo chip, lo cual facilita el desarrollo de aplicaciones. Comercialmente encontramos una gran variedad de configuraciones CPU - periféricos, dependiendo de la aplicación; dentro de los más comunes se encuentran: controladores de memorias externas (NOR, NAND, SDRAM, DDR), puertos de comunicación (I2C, SPI), puerto de depuración (UART), timers, reloj de tiempo real, codecs de audio, controladores de LCD, controladores de red, controlador de puerto USB host, controlador para sensores de imágenes, etc. La figura \ref{min_soc_arch} muestra una arquitectura de un SoC sencillo con los componentes necesarios para implementar tareas simples.
+
+
+\begin{figure}
+  \begin{center} \includegraphics[scale=.6]{./images/Computer-simple} \end{center}
+  \caption{Arquitectura mínima de un SoC}\label{min_soc_arch}
+\end{figure}
+
+\subsubsection{Unidad de Procesamiento Central (CPU)}
+
+La unidad de procesamiento central (CPU), como su nombre lo indica, está encargada de centralizar las tareas del sistema coordinando las acciones de los periféricos. Puede ser vista como una máquina de estados programable que controla un camino de datos compuesto por bloques aritméticos, lógicos y un banco de registros. Cada CPU es capaz de realizar una serie de operaciones sobre variables almacenadas en el banco de registros, estas operaciones reciben el nombre de \textit{conjunto de instrucciones}. El programador utiliza estas instrucciones para hacer que la CPU realice una función específica, indicandole paso a paso donde debe leer la información, como procesarla y como entregar el resultado. A Esta función se le conoce con el nombre de programa o tarea Software.
+
+
+\subsubsection{Periféricos}
+Los periféricos proporcionan la comunicación con el exterior, permiten el ingreso, almacenamiento y procesamiento de la información
+
+

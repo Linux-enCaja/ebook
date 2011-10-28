@@ -1,0 +1,63 @@
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+%----------------------------------------------------------------------Introducción-
+\section{Introducción}
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+% \subsection[Intro]{Definición de Tecnología}
+% 
+% \begin{frame}
+%   \frametitle{Tecnología: Definición}
+%    \begin{center} \includegraphics[scale=.45]{../images/technology_definition_slides.pdf}   \end{center}
+% \end{frame}
+
+\subsection[Intro]{Transferencia Tecnológica}
+\begin{frame}
+  \frametitle{Transferencia Tecnológica}
+ 
+  \begin{alertblock}{}
+    \begin{itemize}
+     \item<1-> Odedra \cite{Mo94}: \textbf{La transferencia tecnológica se considera exitosa cuando los receptores de la tecnología \textcolor{DarkGreen}{asimilan} estos conceptos para \textcolor{DarkGreen}{suplir sus necesidades locales} generando productos novedosos}.
+     \item<2-> Jolly \cite{Jol77}: \textbf{El conocimiento es lo que queda al final de un proceso \textcolor{DarkGreen}{documentado y difundido} de forma apropiada. Para que la transferencia tecnológica sea exitosa es necesario transferir los componentes de la tecnología}.
+    \end{itemize}
+  \end{alertblock}
+
+\end{frame}
+
+\subsection{Canales de Transferencia}
+\begin{frame}
+  \frametitle{Canales para la TT}
+   \begin{center} \includegraphics[scale=.6]{../images/TT_canales.pdf}   \end{center}
+\end{frame}
+
+\input TT_methodology                  
+
+
+\section{Robótica en la Educación}
+\begin{frame}
+  \frametitle{Robótica en la Educación}
+
+  \begin{block}{}
+    La utilización de la robótica en la educación básica y media ha venido en aumento, y su uso adecuado permite el desarrollo de habilidades asociadas al constructivismo y al aprendizaje significativo.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Utilización de la robótica en la educación}
+
+  \begin{block}{}
+    \begin{itemize}
+     \item Como objeto de aprendizaje: Enfocado a aspectos relacionados con el robot como construcción, programación e inteligencia artificial y la robótica.
+     \item Como herramienta de aprendizaje: Visto como proyecto interdisciplinario que involucra ciencias, matemáticas, tecnologías de la información y comunicaciones.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Aprender diseñando}
+  \begin{center} \includegraphics[scale=.7]{../images/siebot2} \end{center}
+\end{frame}
+
+
+\section{Herramientas de Desarrollo}
+
+

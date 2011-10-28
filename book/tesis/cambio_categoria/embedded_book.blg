@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: embedded_book.aux
+The style file: unsrt.bst
+Database file #1: biblio_EL.bib
+Warning--I didn't find a database entry for "Cor05"
+Warning--I didn't find a database entry for "CH06"
+You've used 11 entries,
+            1791 wiz_defined-function locations,
+            513 strings with 4884 characters,
+and the built_in function-call counts, 1472 in all, are:
+= -- 119
+> -- 51
+< -- 0
++ -- 24
+- -- 13
+* -- 33
+:= -- 246
+add.period$ -- 33
+call.type$ -- 11
+change.case$ -- 11
+chr.to.int$ -- 0
+cite$ -- 11
+duplicate$ -- 64
+empty$ -- 187
+format.name$ -- 13
+if$ -- 336
+int.to.chr$ -- 0
+int.to.str$ -- 11
+missing$ -- 3
+newline$ -- 58
+num.names$ -- 11
+pop$ -- 54
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 38
+stack$ -- 0
+substring$ -- 0
+swap$ -- 11
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 11
+width$ -- 13
+write$ -- 109
+(There were 2 warnings)

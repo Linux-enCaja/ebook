@@ -1,0 +1,666 @@
+\chapter{Diseño de Sistemas Embebidos}
+
+\section{Definición}
+
+Un Sistema Embebidos es un sistema de propósito específico en el cual, el computador es encapsulado completamente por el dispositivo que el controla. A diferencia de los computadores de propósito general, un Sistema Embebido realiza tareas pre-definidas, lo cual permite su optimización, reduciendo el tamaño y costo del producto \cite{Wik}
+
+\section{Características}
+
+\begin{itemize}
+  \item Los sistemas embebidos son diseñados para una aplicación
+  espec\'{\i}fica, es decir, estos sistemas realizan un grupo de funciones
+  previamente definidasm y una vez el sistema es diseñado, no se puede cambiar
+  su funcionalidad. Por ejemplo, el control de un asensor siempre realizar\'a
+  las mismas acciones durante su vida \'util.
+  \item Debido a su interacción con el entorno los ES deben cumplir
+  esctríctamente restricciones temporales. El t\'ermino {\textit{Sistemas
+  de Tiempo Real}} es utilizado para enfatizar este aspecto.
+  \item Los Sistemas Embebidos son heterog\'eneos, es decir, est\'an
+  compuestos por componentes Hardware y Software. Los componentes Hardware,
+  como ASICs y Dispositivos L\'ogicos Programables (PLD) proporcionan la
+  velocidad de ejecuci\'on y el cosumo de potencia necesarios en algunas
+  aplicaciones.
+  \item Los Sitemas Embebidos tienen grandes requerimientos en t\'erminos de
+  confiabilidad. Errores en aplicaciones como la aviaci\'on y el
+  automovilismo, pueden tener consecuencias desastrosas.
+\end{itemize}
+
+\section{Arquitectura}
+
+Una arquitectura típica para un Sistema Embebido se muestra en la Figura \ref{es_arch}; La cual integra un componente hardware, implementado ya sea en un PLD (CPLD, FPGA) o en un ASIC, conocido con el nombre de periféricos y un componente software (procesador o DSP) capáz de ejecutar software, la parte del procesador está dividida en la CPU (En algunos casos posee una caché) y las unidades de Memoria.
+
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.6]{./images/ES_Architecture} \end{center}
+  \caption{Arquitectura de un Sistema Embebido}\label{es_arch}
+\end{figure} 
+
+
+Podemos utilziar
+\begin{itemize}
+\item Componente HW y SW Integrado en un dispositivo semiconductor (SoC): En la actualidad existen muchas compañías que fabrican procesadores de 32 bits integrados a una gran variedad de periféricos, lo cual simplifica el diseño y reduce costos (menos componentes y menos área de circuito impreso) \footnote{http://www.sharpsma.com, http://www.atmel.com, http://www.cirrus.com, http://www.samsung.com, http://www.freescale.com, etc}.
+
+\item Componente SW en un SoC y componente HW en una FPGA: Cuando no existen en el mercado SoC con la cantidad de periféricos requerida para una determinada aplicación, es necesario recurrir a la utilización de dispositivos comerciales que implementen dicha operación, en algunas ocaciones el periférico puede relizar funciones muy específicas de modo que no existe en el mercado, la solución es entonces implementar estos dispositivos en una FPGA, también se recomienda la utilización de FPGAs en sistemas que requieren una gran cantidad y variedad de periféricos ya que reduce la complejidad y costo del sistema.
+
+\item Componente SW y HW en una FPGA: Esta es tal vez la opción más económica y flexible, pero la de menor desempeño, ya que al utilizar los recursos lógicos de la FPGA para la implementación del procesador (softcore) la lngitud de los caminos de interconexión entre los bloques lógicos aumentan el retardo de las señales . Los procesadores \textit{softcore} más populares en la actualidad son:
+
+  \begin{itemize}
+  \item Microblaze de Xilinx\footnote{http://www.xilinx.com}
+  \item Leon de Gaisler Research \footnote{http://www.gaisler.com/}
+  \item LatticeMico32 de Lattice Semiconductors\footnote{http://www.latticesemi.com}
+  \item OpenRisc \footnote{http://www.opencores.com}
+  \end{itemize}
+ 
+\end{itemize}
+
+
+\section{Metodología de Diseño}
+
+La Figura \ref{des_flow}, muestra un diagrama de flujo genérico para diseño para sistemas embebidos {\cite{Cor05}}
+
+\begin{figure}[H]
+  \begin{center} \includegraphics[scale=.55]{./images/design_flow} \end{center}
+  \caption{Flujo de Diseño de un Sistema Embebido}\label{des_flow}
+\end{figure} 
+
+
+El proceso comienza con la {\textit{especificaci\'on del sistema}}, en este punto se describe la funcionalidad y se definen las restricciones f\'{\i}sicas, el\'ectricas y econ\'omicas. Esta especificaci\'on debe ser muy general y no deben existir dependencias (tecnol\'ogicas, metodol\'ogicas) de ning\'un tipo, se suele utilizar lenguajes de alto nivel, como UML, C++. La especificaci\'on puede ser verificada a trav\'es de una serie de pasos de an\'alisis cuyo objetivo es determinar la validez de los algor\'{\i}tmos seleccionados, por ejemplo, determinar si el algoritmo siempre termina, los resultados satisfacen las especificaciones. Desde el punto de vista de la re-utilizaci\'on, algunas partes del funcionamiento global deben tomarse de una librer\'{\i}a de algor\'{\i}tmos existentes.
+
+Una vez definidas las especificaciones del sistema se debe realizar un modelamiento que permita extraer de estas la funcionalidad. El modelamiento es crucial en el diseño ya que de \'el depende el paso existoso de la especificaci\'on a la implementaci\'on. Es importante definir que modelo matem\'atico debe soportar el entorno de diseño. Los modelos m\'as utilizados son: M\'aquinas de estados finitos, diagramas de flujos de datos, Sistemad de Eventos Discretos y Redes de Petri. Cada modelo posee propiedades matem\'aticas que pueden explotarse de forma eficiente para responder preguntas sobre la funcionalidad del sistema sin llevar a cabo dispendiosas tareas de verificaci\'on. \ Todo modelo obtenido debe ser verificado para comprobar que cumple con las restricciones del sistema.
+
+Una vez se ha obtenido el modelo del sistema se procede a determinar su {\textit{arquitectura}}, esto es, el n\'umero y tipo de componentes y su inter-conexi\'on. Este paso no es m\'as que una exploraci\'on del espacio de diseño en b\'usqueda de soluciones que permitan la implementaci\'on de una funcionalidad dada, y puede realizarse con varios criterios en mente: Costos, confiabilidad, viabilidad comercial.
+
+Utilizando como base la arquitectura obtenida en el paso anterior las tareas del modelo del sistemas son mapeadas dentro de los componentes. Esto es,
+asignaci\'on de funciones a los componentes de la arquitectura. Existen dos opciones a la hora de implementar las tareas o procesos:
+\begin{enumerate}
+  \item Implementaci\'on Software: La tarea se va a ejecutar en un procesador.
+  \item Implementaci\'on Hardware: La tarea se va a ejecutar en un dispositivo lógico programable.
+\end{enumerate}
+
+Para cumplir las especificaciones del sistema algunas tareas deben ser implementadas en Hardware, esto con el f\'{\i}n de no ocupar al procesador en tareas c\'{\i}clicas, un ejemplo t\'{\i}pico de estas tareas es la generaci\'on de bases de tiempos. La decisi\'on de que tareas se implementan en SW y que tareas se implementan en HW recibe el nombre de {\textit{particionamiento}}, esta selecci\'on es fuertemente dependiente de restricciones econ\'omicas y temporales.
+
+Las tareas Software deben compartir los recursos que existan en el sistema (procesador y memoria), por lo tanto se deben hacer decisiones sobre el orden de ejecuci\'on y la prioridad de estas. Este proceso recibe el nombre de {\textit{planificaci\'on}}. En este punto del diseño el modelo debe incluir informaci\'on sobre el mapeo, el particionamiento y la planificaci\'on del sistema.
+
+Las siguientes fases corresponden a la implementaci\'on del modelo, para esto las tareas hardware deben ser llevadas al dispositivo elegido (ASIC o FPGA) y
+se debe obtener el $''$ejecutable$''$ de las tareas software, este proceso recibe el nombre de {\textit{s\'{\i}ntesis}} HW y SW respectivamente, as\'{\i}
+mismo se deben sintetizar los mecanismos de comunicaci\'on.
+
+El proceso de prototipado consiste en la realizaci\'on f\'{\i}sica del sistema, finalmente el sistema f\'{\i}sico debe someterse a pruebas para verificar que se cumplen con las especificaciones iniciales.
+
+Como puede verse en el flujo de diseño existen realimentaciones, estas realimentaciones permiten depurar el resultado de pasos anteriores en el caso de no cumplirse las especificaciones iniciales
+
+
+\section{Herramientas de Diseño Software}
+
+En el mercado existe una gran variedad de herramientas de desarrollo para Sistemas Embebidos, sin embargo, en este estudio nos centraremos en el uso de las herramientas de libre distribución; esta elección se debe a que la mayoría de los productos comerciales utilizan el toolchain de GNU\footnote{http://www.gnu.org} internamente y proporcionan un entorno gráfico para su fácil manejo. Otro factor considerado a la hora de realizar nuestra elección es el económico, ya que la mayoría de los productos comerciales son costosos y poseen soporte limitado. Por otro lado, el toolchain de GNU es utilizado ampliamente en el medio de los diseñadores de sistemas embebidos y se encuentra un gran soporte en múltiples foros de discusión (ver Figura \ref{tools}).
+
+\begin{figure}[H]
+  \begin{center} \includegraphics[scale=.7]{./images/embedded-linux-tool-trends-sm} \end{center}
+  \caption{Tendencia de utilización de herramientas de desarrollo}\label{tools}
+\end{figure}
+
+\subsection{Componentes del \textit{GNU toolchain} }
+
+\subsubsection{GNU binutils\cite{A1}}
+Son una colección de utilidades para archivos binarios y estan compuestas por:
+
+\begin{itemize}
+ \item  \textbf{addr2line} Convierte direcciones de un programa en nombres de archivos y números de línea. Dada una dirección y un ejecutable, usa la información de depuración en el ejecutabe para determinar que nombre de atchivo y número de lpinea está asociado con la dirección dada.
+ \item  \textbf{ar} Esta utilidad crea, modifica y extrae desde ficheros. Un fichero es una colección de otros archivos en una estructura que hace posible obtener los archivos individuales miembros del archivo. 
+ \item  \textbf{as} Utilidad que compila la salida del compilador de C (GCC).
+ \item  \textbf{c++filt} Este program realiza un mapeo inverso: Decodifica nombres de bajo-nivel en nombres a nivel de usuario, de tal forma que el linker pueda mantener estas funciones sobrecargadas (overloaded) ``from clashing''. 
+ \item  \textbf{gasp} GNU Assembler Macro Preprocessor
+ \item  \textbf{ld} El \textit{linker} GNU combina un número de objetos y ficheros, re-localiza sus datos y los relaciona con referencias. Normalmente el último paso en la construcción de un nuevo programa compilado es el llamado a ld.
+ \item  \textbf{nm} Realiza un listado de símbolos de archivos tipo objeto.
+ \item  \textbf{objcopy} Copia los contenidos de un archivo tipo objeto a otro. \textit{objcopy} utiliza la librería GNU BFD para leer y escribir el archivo tipo objeto. Permite esccribibr el archivo destino en un formato diferente al del archivo fuente. 
+ \item  \textbf{objdump} Despliega información sobre archivos tipo objeto. 
+ \item  \textbf{ranlib} Genera un índice de contenidos de un fichero, y lo almacena en él.
+ \item  \textbf{readelf} Interpreta encabezados de un archivo ELF.
+ \item  \textbf{size} Lista el tamaño de las secciones y el tamaño total de un archivo tipo objeto.
+ \item  \textbf{strings} Imprime las secuencias de caracteres imprimibles de almenos 4 caracteres de longitud. 
+ \item  \textbf{strip} Elimina todos los símbolos de un archivo tipo objeto.
+
+\end{itemize}
+ 
+\subsubsection{GNU Compiler Collection\cite{Wik}}
+El \textit{GNU Compiler Collection} normalmente llamado GCC, es un grupo de compiladores de lenguajes de programación producido por el proyecto GNU. Es el compilador standard para el software libre de los sistemas operativos basados en Unix y algunos propietarios como Mac OS de Apple.
+
+\subsubsection{Lenguajes}
+GCC soporta los siguientes lenguajes:
+\begin{itemize}
+ \item \textbf{ADA} 
+ \item \textbf{C} 
+ \item \textbf{C++} 
+ \item \textbf{Fortran} 
+ \item \textbf{Java} 
+ \item \textbf{Objective-C} 
+ \item \textbf{Objective-C++} 
+\end{itemize}
+
+\subsubsection{Arquitecturas}
+\begin{itemize}
+ \item \textbf{Alpha}
+ \item \textbf{ARM}
+ \item \textbf{Atmel AVR}
+ \item \textbf{Blackfin}
+ \item \textbf{H8/300}
+ \item \textbf{System/370, System/390}
+ \item \textbf{IA-32 (x86) and x86-64}
+ \item \textbf{IA-64 i.e. the "Itanium"}
+ \item \textbf{Motorola 68000}
+ \item \textbf{Motorola 88000}
+ \item \textbf{MIPS}
+ \item \textbf{PA-RISC}
+ \item \textbf{PDP-11}
+ \item \textbf{PowerPC}
+ \item \textbf{SuperH}
+ \item \textbf{SPARC}
+ \item \textbf{VAX}
+ \item \textbf{Renesas R8C/M16C/M32C}
+ \item \textbf{MorphoSys}
+\end{itemize}
+Como puede verse GCC soporta una gran cantidad de lenguajes de programación, sin embargo, en el presente estudio solo lo utilizaremos como herramienta de compilación para C y C++. Una característica de resaltar de GCC es la gran cantidad de plataformas que soporta, esto lo hace una herramienta Universal para el desarrollo de sistemas embebidos, el código escrito en una plataforma (en un lenguaje de alto nivel) puede ser implementado en otra sin mayores cambios, esto elimina la dependencia entre el código fuente y el HW\footnote{Esto recibe el nombre de re-utilización de código}, lo cual no ocurre al utilizar lenguaje ensamblador. 
+
+Por otro lado, el tiempo requerido para realizar aplicaciones utilizando C o C++ disminuye, ya que no es necesario aprender las instrucciones en assembler de una plataforma determinada; además, la disponibilidad de librerías de múltiples propósitos reduce aún más los tiempos de desarrollo, permitiendo de esta forma tener bajos tiempos \textit{time to market} y reducir de forma considerable el costo del desarrollo. Una consecuencia de esto se refleja en el número de desarrolladores en un grupo de trabajo, en la actualidad casi el 60\% de las empresas desarrolladoras de dispositivos embebidos tiene grupos con menos de 10 desarrolladores \ref{group}.
+
+
+\begin{figure}[H]
+  \begin{center} \includegraphics[scale=.2]{./images/vdc_embedded_dev_company_size} \end{center}
+  \caption{Número promedio de desarrolladores por compañía. Fuente Venture Development Corp}\label{group}
+\end{figure}
+ 
+\subsubsection{GNU Debugger}
+El depurador oficial de GNU (GDB), es un depurador que al igual que GCC tiene soporte para múltiples lenguajes y plataformas. GDB permite al usuario monitorear y modificar las variables internas del programa y hacer llamado a funciones de forma independiente a la ejecución normal del mismo. Además, permite establecer sesiones remotas utilizando el puerto serie o TCP/IP. Aunque GDB no posee una interfaz gráfica, se han desarrollado varios front-ends como DDD o GDB/Insight. A continuación se muestra un ejemplo de una sesión con gdb.
+
+\begin{lstlisting}[firstnumber=40]
+GNU gdb Red Hat Linux (6.3.0.0-1.21rh)
+Copyright 2004 Free Software Foundation, Inc.
+GDB is free software, covered by the GNU General Public License, and you are
+welcome to change it and/or distribute copies of it under certain conditions.
+Type "show copying" to see the conditions.
+There is absolutely no warranty for GDB.  Type "show warranty" for details.
+This GDB was configured as "i386-redhat-linux-gnu"...Using host libthread_db 
+library "/lib/libthread_db.so.1".
+
+(gdb) run
+Starting program: /home/sam/programming/crash
+Reading symbols from shared object read from target memory...done.
+Loaded system supplied DSO at 0xc11000
+This program will demonstrate gdb
+
+Program received signal SIGSEGV, Segmentation fault.
+0x08048428 in function_2 (x=24) at crash.c:22
+22         return *y;
+(gdb) edit
+(gdb) shell gcc crash.c -o crash -gstabs+
+(gdb) run
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+warning: cannot close "shared object read from target memory": File in wrong format
+`/home/sam/programming/crash' has changed; re-reading symbols.
+Starting program: /home/sam/programming/crash
+Reading symbols from shared object read from target memory...done.
+Loaded system supplied DSO at 0xa3e000
+This program will demonstrate gdb
+24
+Program exited normally.
+(gdb) quit 
+\end{lstlisting}
+
+
+
+\subsubsection{C Libraries}
+Adicionalmente es necesario contar con una librería que proporcione las librerías standard de C: stdio, stdlib, math; las más utilizadas en sistemas embebidos son:
+
+\begin{itemize}
+ \item \textbf{glibc\footnote{http://www.gnu.org/software/libc/}} Es la librería C oficial del proyecto GNU. Uno de los inconvenientes al trabajar con esta librería en sistemas embebidos es que genera ejecutables de mayor tamaño que los generados a partir de otras librerías, lo cual no la hace muy atractiva para este tipo de aplicaciones. 
+ \item \textbf{uClibc\footnote{http://uclibc.org/}} Es una librería diseñada especialmente para sistemas embebidos, es mucho más pequeña que \textbf{glibc}.
+ \item \textbf{newlib\footnote{http://sources.redhat.com/newlib/}} Al igual que \textbf{uClibc}, está diseñada para sistemas embebidos. El típico ``Hello, world!'' ocupa menos de 30k en un entorno basado en newlib, mientras que en uno basado en glibc, puede ocupar 380k \cite{BG}. 
+ \item \textbf{diet libc\footnote{http://www.fefe.de/dietlibc/}} Es una versión de \textit{libc} optimizada en tamaño, puede ser utilizada para crear ejecutables estáticamente enlazados para linux en plataformas alpha, arm, hppa, ia64, i386, mips, s390, sparc, sparc64, ppc y x86\_64.
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                     SECCION Obtención y utilización del GNU toolchain
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Desarrollo Software}
+
+El primer paso en nuestro estudio consiste en tener una cadena de herramientas funcional que soporte la familia de procesadores a utilizar. La arquitectura sobre la cual realizaremos nuestro estudio inicial es la ARM (Advanced Risc Machines), ya que la más utilizada en la actualidad por los diseñadores de sistemas embebidos (ver figura \ref{arch}) y se encuentran disponibles una gran variedad de herramientas para esta arquitectura. Sin embargo, lo contenido en esta sección es aplicable a cualquier familia de procesadores soportada por la cadena de herrmientas GNU. Existen dos formas de obtener la cadena de herramientas GNU:
+
+\begin{figure}
+  \begin{center} \includegraphics[scale=.8]{./images/embedded-processor-trends-sm} \end{center}
+  \caption{Tendencia del mercado de procesadores para sistemas embebidos. Fuente:\cite{Lin05} }\label{arch}
+\end{figure}
+
+\begin{enumerate}
+ \item Utilizar una distribución precompilada: Esta es la via más rápida, sin embargo, hay que tener cuidado al momento de instalarlas, ya que debe hacerse en un directorio con el mismo \textit{path} con el que fueron creadas. por ejemplo \textit{/usr/local/gnutools}; si esto no se cumple, las herramientas no funcionarán de forma adecuada.
+ \item Utilizar un script de compilación: Existen disponibles en la red una serie de \textit{scripts} que permiten descargar, configurar, compilar e instalar la cadena de herramientas, la ventaja de utilizar este método es que es posible elegir las versiones de las herramientas instaladas, al igual que el directorio de instalación. En este estudio utilizaremos los \textit{scripts} creados por Dan Kegel \cite{DK06}.
+\end{enumerate}
+
+\subsection{Flujo de diseño software}
+
+En la figura \ref{toolchain_flow} se ilustra la secuencia de pasos que se realizan desde la creación de un archivo de texto que posee el código fuente que implementa la funcionalidad de una tarea software utilizando un lenguaje de alto nivel como C o C++, hasta su programación en una memoria permanente en la plataforma física. Los pasos necesarios para crear un archivo que pueda ser programado en dicha memoria son:
+
+\begin{figure}
+  \begin{center} \includegraphics[scale=.6]{./images/SW_design_flow} \end{center}
+  \caption{Tendencia del mercado de procesadores para sistemas embebidos. Fuente:\cite{Lin05} }\label{toolchain_flow}
+\end{figure}
+
+
+\begin{enumerate}
+ \item \textbf{Escritura del código fuente:} Creación del código fuente en cualquier editor de texto utilizando un lenguaje de alto nivel como C o C++.
+
+ \item \textbf{Compilación:} Utilizando un compilador (GCC en nuestro caso) se crea un \textit{objeto} que contiene las instrucciones en \textit{lenguaje de máquina} del procesador a utilizar (uno diferente al que realiza la compilación que normalmente es de la familia x86); en este punto el compilador solo busca en los encabezados (\textit{headers}) la definición de una determinada función, esto es, la forma en que debe ser utilizada, el tipo de datos y el número de parámetros con que debe ser invocada, por ejemplo, la función \textit{printf} esta declarada en el archivo \textit{stdio.h} como: \textit{ int printf (const char *template, ...)}. Esta declaración es utilizada por el compilador para verificar el correcto uso de esta función.
+
+ \item \textbf{Enlazado:} En esta etapa se realizan dos tareas: 
+  \begin{enumerate} 
+    \item Se enlazan los archivos tipo objeto del proyecto, junto con librerías precompiladas para el procesador de la plataforma, si una determinada función no es definida en ninguna de estas librerías, el \textit{enlazador} generará un error y no se generará el ejecutable. 
+    \item Se definen las posiciónes físicas de las secciones que componen el archivo ejecutable (tipo ELF), esto se realiza a través de un link de enlazado en el que se define de forma explícita su localización.
+  \end{enumerate}
+
+ \item \textbf{Extracción del archivo de programación} En algunas aplicaciones (cuando no se cuenta con un sistema operativo) es necesario extraer las secciones del ejecutable que residen en los medios de almacenamiento no volátil, que como veremos más adelante representan el conjunto de instrucciones que debe ejecutar el procesador de la plataforma y las constantes del programa. Esto se realiza con la herramiento \textit{objcopy}, la cual, nos permite generar archivos en la mayoría de los formatos soportados por los programadores de memorias y procesadores, como S19 e Intel Hex.
+
+ \item \textbf{Descarga del programa a la plataforma}. Dependiendo de la plataforma existen varios métodos para descargar el archivo de programación a la memoria de la plataforma:
+  \begin{enumerate}
+    \item Utilizando un \textit{loader}: El \textit{loader} es una aplicación que reside en un medio de almacenamiento no volátil y permite la descarga de archivos utilizando el puerto serie, USB,  o una interfaz de red.
+    \item Utilizando el puerto JTAG: El puerto JTAG (Joint Test Action Group) proporciona una interfaz capaz de controlar los registros internos del procesador, y de esta forma, acceder a las memorias de la plataforma y ejecutar un programa residente en una determinada posición de memoria.
+  \end{enumerate}
+
+ \item \textbf{Depuración} Una vez se descarga la aplicación a la plataforma es necesario someterla a una serie de pruebas con el fín de probar su correcto funcionamiento. Esto se puede realizar con el depurador GNU (GDB) y una interfaz de comunicación que puede ser un puerto serie, USB o un adaptador de red.
+ 
+\end{enumerate}
+
+
+\subsection{El formato \textbf{ELF}}
+
+El formato ELF (\textit{Executable and Linkable Format}) Es un stándard para objetos, librerías y ejecutables y es el formato que genera las herramientas GNU. Como puede verse en la figura \ref{elf1} está compuesto por varias secciones (\textit{link view}) o segmentos (\textit{execution view}). Si un programador está interesado en obtener información de secciones sobre tablas de símbolos, código ejecutable específico o información de enlazado dinámico debe utilizar \textit{link view}. Pero si busca información sobre segmentos, como por ejemplo, la localización de los segmentos \textit{text} o \textit{data} debe utilizar \textit{execution view}. El encabezado describe el layout del archivo, proporcionando información de la forma de acceder a las secciones \cite{MLH98}.
+
+\begin{figure}
+  \begin{center} \includegraphics[scale=.4]{./images/ELF_Link_exec1} \end{center}
+  \caption{Formato ELF}\label{elf1}
+\end{figure}
+
+Las secciones pueden almacenar código ejecutable, datos, información de enlazado dinámico, datos de depuración, tablas de símbolos,comentarios, tablas de strings, y notas. Las secciones más importantes son las siguientes:
+
+\begin{itemize}
+ \item \textbf{.bss}            Datos no inicializados. (RAM)
+ \item \textbf{.comment}        Información de la versión.
+ \item \textbf{.data y .data1}  Datos inicializados.    (RAM)
+ \item \textbf{.debug}          Información para depuración simbólica. 
+ \item \textbf{.dynamic}        Información sobre enlace dinámico 
+ \item \textbf{.dynstr}         Strings necesarios para el enlacedinámico 
+ \item \textbf{.dynsym}         Tabla de símbolos utilizada para enlace dinámico.
+ \item \textbf{.fini}           Código de terminación de proceso.
+ \item \textbf{.init}           Código de inicialización de proceso.
+ \item \textbf{.line}           Información de número de línea para depuración simbólica.
+ \item \textbf{.rodata y .rodta1} Datos de solo-lectura (ROM)
+ \item \textbf{.shstrtab}       Nombres de secciones.
+ \item \textbf{.symtab}         Tabla de símbolos.
+ \item \textbf{.text}           Instrucciones ejecutables (ROM)
+\end{itemize}
+
+Para aclarar un poco este concepto, escribamos una aplicación sencilla:
+
+\begin{lstlisting}
+#include <stdio.h>
+
+int global;
+int global_1 = 1;
+
+int main(void)
+{
+  int i;                                // Variable no inicializada
+  int j = 2;                            // Variable inicializada
+  for(i=0; i<10; i++){
+    printf("Printing %d\n", i*j);       // Caracteres constantes
+    j = j + 1;
+    global   = i;
+    global_1 = i+j;
+  }
+  return 0;
+}
+\end{lstlisting}
+
+Generemos el objeto compilándolo con el siguiente comando:
+\textit{arm-none-eabi-gcc -c hello.c}
+
+Examinemos que tipo de secciones tiene este ejecutable
+\textit{arm-none-eabi-readelf -S hello.o}
+
+\begin{lstlisting}
+Section Headers:
+  [Nr] Name              Type            Addr     Off    Size   ES Flg Lk Inf Al
+  [ 0]                   NULL            00000000 000000 000000 00      0   0  0
+  [ 1] .text             PROGBITS        00000000 000034 00009c 00  AX  0   0  4
+  [ 2] .rel.text         REL             00000000 000484 000020 08      9   1  4
+  [ 3] .data             PROGBITS        00000000 0000d0 000004 00  WA  0   0  4
+  [ 4] .bss              NOBITS          00000000 0000d4 000000 00  WA  0   0  1
+  [ 5] .rodata           PROGBITS        00000000 0000d4 000010 00   A  0   0  4
+  [ 6] .comment          PROGBITS        00000000 0000e4 00004d 00      0   0  1
+  [ 7] .ARM.attributes   ARM_ATTRIBUTES  00000000 000131 00002e 00      0   0  1
+  [ 8] .shstrtab         STRTAB          00000000 00015f 000051 00      0   0  1
+  [ 9] .symtab           SYMTAB          00000000 000368 0000f0 10     10  11  4
+  [10] .strtab           STRTAB          00000000 000458 00002b 00      0   0  1
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings)
+  I (info), L (link order), G (group), x (unknown)
+  O (extra OS processing required) o (OS specific), p (processor specific)
+\end{lstlisting}
+
+La sección \textit{.text}, como se dijo anteriormente contiene las instrucciones ejecutables, por esta razón se marca como ejecutable \textit{``X''} en la columna \textit{Flg}. Es posible ver las instrucciones que se ejecutan en esta sección:
+
+\textit{arm-none-eabi-objdump -d -j .text hello.o}
+
+\begin{lstlisting}
+00000000 <main>:
+   0:   e92d4800        stmdb   sp!, {fp, lr}
+   4:   e28db004        add     fp, sp, #4      ; 0x4
+   8:   e24dd008        sub     sp, sp, #8      ; 0x8
+   c:   e3a03002        mov     r3, #2  ; 0x2
+  10:   e50b3008        str     r3, [fp, #-8]
+  14:   e3a03000        mov     r3, #0  ; 0x0
+  18:   e50b300c        str     r3, [fp, #-12]
+  1c:   ea000013        b       70 <main+0x70>
+  20:   e51b200c        ldr     r2, [fp, #-12]
+  24:   e51b3008        ldr     r3, [fp, #-8]
+  28:   e0030392        mul     r3, r2, r3
+  2c:   e59f005c        ldr     r0, [pc, #92]   ; 90 <.text+0x90>
+  30:   e1a01003        mov     r1, r3
+  34:   ebfffffe        bl      0 <printf>
+  38:   e51b3008        ldr     r3, [fp, #-8]
+  3c:   e2833001        add     r3, r3, #1      ; 0x1
+  40:   e50b3008        str     r3, [fp, #-8]
+  44:   e59f2048        ldr     r2, [pc, #72]   ; 94 <.text+0x94>
+  48:   e51b300c        ldr     r3, [fp, #-12]
+  4c:   e5823000        str     r3, [r2]
+  50:   e51b200c        ldr     r2, [fp, #-12]
+  54:   e51b3008        ldr     r3, [fp, #-8]
+  58:   e0822003        add     r2, r2, r3
+  5c:   e59f3034        ldr     r3, [pc, #52]   ; 98 <.text+0x98>
+  60:   e5832000        str     r2, [r3]
+  64:   e51b300c        ldr     r3, [fp, #-12]
+  68:   e2833001        add     r3, r3, #1      ; 0x1
+  6c:   e50b300c        str     r3, [fp, #-12]
+  70:   e51b300c        ldr     r3, [fp, #-12]
+  74:   e3530009        cmp     r3, #9  ; 0x9
+  78:   daffffe8        ble     20 <main+0x20>
+  7c:   e3a03000        mov     r3, #0  ; 0x0
+  80:   e1a00003        mov     r0, r3
+  84:   e24bd004        sub     sp, fp, #4      ; 0x4
+  88:   e8bd4800        ldmia   sp!, {fp, lr}
+  8c:   e12fff1e        bx      lr
+\end{lstlisting}
+
+La sección \textit{.data} mantiene las variables inicializadas, y contiene:
+ 
+\textit{arm-none-eabi-objdump -d -j .data hello.o}
+ 
+\begin{lstlisting}
+00000000 <global_1>:
+   0:   01 00 00 00
+\end{lstlisting}
+
+Como vemos, la sección \textit{.data} contiene \'unicamente el valor de inicializaci\'on de la variable \textit{global\_1} (1) y no muestra informació\'on acerca de la variable \textit{j}, esto se debe a que la informaci\'on est\'a en el \textit{stack} del proceso. Si observamos el contenido de la sección \textit{.text} observamos que esta variable es asignada en tiempo de ejecución, en la línea \textit{0c:} se ve la asignación de esta variable.
+
+\begin{lstlisting}
+0c:   e3a03002        mov     r3, #2  ; 0x2 
+10:   e50b3008        str     r3, [fp, #-8]
+\end{lstlisting}
+
+
+La sección \textit{.bss} mantiene la informaci\'on de las variables no incializadas (En Linux todas las variables no inicializadas, se inicializadan en cero):
+
+\textit{arm-none-eabi-objdump -d -j .bss hello}
+ 
+\begin{lstlisting}
+000145c4 <global>:
+    145c4:       00000000
+\end{lstlisting}
+   
+ 
+La sección \textit{.rodata} mantiene los datos que no cambian durante la ejecución del programa, es decir, de solo lectura, si examinamos esta sección obtenemos:
+ 
+\textit{hexdump -C hello.o | grep -i 000000d0} (la sección \textit{.rodata} comienza en la posición de memoria 0xd4)
+ 
+  
+\begin{lstlisting}
+000000d0  01 00 00 00 50 72 69 6e  74 69 6e 67 20 25 64 0a  |....Printing %d.|
+000000e0  00 00 00 00 00 47 43 43  3a 20 28 43 6f 64 65 53  |.....GCC: (CodeS|
+\end{lstlisting}
+ 
+En el contenido de esta sección aparece la cadena de caracteres \textit{Printing \%d\\n}, es decir, los datos que no cambian durante la ejecución.
+
+
+\subsection{Herramienta de compilación make}
+Como pudo verse en la sección es necesario realizar una serie de pasos para poder descargar una aplicación a una plataforma embebida. Debido a que las herramientas GNU solo poseen entrada por consola, es necesario esribir una serie de comandos cada vez que se realiza un cambio en el código fuente, lo cual resulta poco práctico. Para realizar este proceso de forma automática se creó la herramienta \textit{make}, la cual recibe como entrada un archivo que normalmente tiene el nombre \textit{Makefile} o \textit{makefile} y determina que archivos han sido modificados desde la última compilación y ejecuta los comandos necesarios para recompilarlos. Un ejemplo de este tipo de archivo se muestra a continuación:
+
+\begin{lstlisting}[numbers=left]
+SHELL = /bin/sh
+
+basetoolsdir = /home/at91/gcc-3.4.5-glibc-2.3.6/arm-softfloat-linux-gnu
+bindir  = ${basetoolsdir}/bin
+libdir  = ${basetoolsdir}/lib/gcc/arm-softfloat-linux-gnu/3.4.5
+
+CC      = arm-softfloat-linux-gnu-gcc 
+AS      = arm-softfloat-linux-gnu-as 
+LD      = arm-softfloat-linux-gnu-ld
+OBJCOPY = arm-softfloat-linux-gnu-objcopy
+
+CFLAGS  =-mcpu=arm920t -I. -Wall
+LDFLAGS =-L${libdir} -l gcc
+
+OBJS = \
+	main.o 			\
+	debug_io.o 		\
+	at91rm9200_lowlevel.o 	\
+	p_string.o
+
+ASFILES = arm_init.o
+
+LIBS=${libdir}/
+
+all: hello_world 
+
+hello_world: ${OBJS} ${ASFILES} ${LIBS}
+	${LD} -e 0 -o hello_world.elf -T linker.cfg ${ASFILES} ${OBJS} ${LDFLAGS}
+	${OBJCOPY} -O binary hello_world.elf hello_world.bin
+
+clean:
+	rm -f *.o *~ hello_world.*
+
+PREPROCESS.c = $(CC) $(CPPFLAGS) $(TARGET_ARCH) -E -Wp,-C,-dD,-dI
+
+%.pp : %.c FORCE
+	$(PREPROCESS.c) $< > $@
+\end{lstlisting}
+
+En las líneas 3-5 se definen algunas variables globales que serán utilizadas a lo largo del archivo; en las líneas 7 - 10 se definen las herramientas de compilación a utilizar, específicamente el compilador C (CC), el ensamblador (AS), el enlazador (LD) y la utilidad objcopy. A partir de la línea 15 se definen los objetos que forman parte del proyecto, en este caso: \textit{main.o, debug\_io.o, at91rm9200\_lowlevel.o y p\_string.o}; en la línea 21 se definen los archivos en assembler que contiene el proyecto, para este ejemplo \textit{arm\_init.o}. Las líneas 12 y 13 definen dos variables especiales que se pasan directamente al compilador C (CFLAGS) y al enlazador (LDFLAGS) y definen parámetros de comportamiento de estas herramientas.
+
+\begin{lstlisting}
+CFLAGS  =-mcpu=arm920t -I. -Wall
+\end{lstlisting}
+
+El parámetro \textit{-mcpu} le indica al compilador C para arquitecturas \textit{ARM} que utilice la familia \textit{arm920}; el parámetro \textit{-I} le indica un directorio donde puede buscar los encabezados, en este caso el caracter "." le indica que busque en el mismo sitio donde se encuentran los archivos fuente; el parámetro \textit{-Wall} le indica que imprima todos los mensajes de errores y advertencias.
+
+\begin{lstlisting}
+LDFLAGS =-L${libdir} -l gcc
+\end{lstlisting}
+
+El parámetro \textit{-L} le indica al enlazador la ruta del directorio donde se encuentran las librerías, en este ejemplo apunta a la variable textit{libdir} que se encuentra declarado como \textit{\${basetoolsdir}/lib/gcc/arm-softfloat-linux-gnu/3.4.5}; el parámetro \textit{-l} le indica al enlazador que debe utilizar la librería \textit{gcc} que se encuentra en el directorio definido previamente. En realidad el archivo de la librería tienen el nombre \textit{libgcc.a}, pero como todas las librerías tienen el nombre \textit{libXXXX.a} se eliminan el encabezado y la extensión del archivo.
+
+
+En las líneas 25, 27 y 31 aparecen unas etiquetas de la forma: \textit{nombre:} estos labels permiten ejecutar de forma independiente el conjunto de instrucciones asociadas a ellas, por ejemplo, si se ejecuta:
+\\ \bigskip
+\textit{make clean}\\ \bigskip
+make ejecutará el comando:\\ \bigskip
+\textit{rm -f *.o *~ hello\_world.*} 
+
+Observemos los comandos asociados a la etiqueta \textit{hello\_world:} En la misma línea aparecen \textit{\${OBJS} \${ASFILES} \${LIBS}} esto le indica a la herramienta \textit{make} que antes de ejecutar los comandos asociados a este label, debe realizar las acciones necesarias para generar \textit{\${OBJS} \${ASFILES} \${LIBS}} o lo que es lo mismo: \textit{main.o, debug\_io.o, at91rm9200\_lowlevel.o, p\_string.o, arm\_init.o y libgcc.a}. Para esto, \textit{make} tiene predefinidas una serie de reglas para compilar los archivos .c la regla es de la forma:
+
+\begin{lstlisting}
+
+.c.o:
+        $(CC) $(CFLAGS) -c $<
+.c:
+        $(CC) $(CFLAGS) $@.c $(LDFLAGS) -o $@
+ 
+\end{lstlisting}
+
+Lo cual le indica a la herramienta make que para generar un archivo \textit{.o} a partir de uno \textit{.c} es necesario ejecutar \textit{\$(CC) \$(CFLAGS) -c \$<}; de aqui la importancia de definir bien la variable de entorno \textit{CC} cuando trabajamos con compiladores cruzados\footnote{Un compilador cruzado genera código para una plataforma diferente en la que se está ejecutando, por ejemplo, genera ejecutables para ARM pero se ejecuta en un x86}. Hasta este punto al ejecutar el comando: \textit{make hello\_world}, \textit{make} realizaría las siguientes operaciones: \\
+
+\begin{lstlisting}
+arm-softfloat-linux-gnu-gcc  -mcpu=arm920t -I. -Wall   -c -o main.o main.c
+arm-softfloat-linux-gnu-gcc  -mcpu=arm920t -I. -Wall   -c -o debug_io.o debug_io.c
+arm-softfloat-linux-gnu-gcc  -mcpu=arm920t -I. -Wall   -c -o at91rm9200_lowlevel.o at91rm9200_lowlevel.c
+arm-softfloat-linux-gnu-gcc  -mcpu=arm920t -I. -Wall   -c -o p_string.o p_string.c
+arm-softfloat-linux-gnu-as    -o arm_init.o arm_init.s
+\end{lstlisting}
+
+En las líneas 28 se realiza el proceso de enlazado; al \textit{enlazador} se le pasan los parámetros:
+\begin{itemize}
+ \item \textbf{-e 0}: Punto de entrada , utiliza la dirección de memoria 0 como punto de entrada.
+ \item \textbf{-o hello\_world.elf}: Nombre del archivo de salida \textit{hello\_world}
+ \item \textbf{-T linker.cfg}: Utilice el archivo de enlace \textit{linker.cfg} para definir las posiciones de memoria de las secciones del ejecutable.
+ \item \textbf{\${ASFILES} \${OBJS} \${LDFLAGS}}: Lista de objetos y librerías para crear el ejecutable.
+\end{itemize}
+
+En la línea 29 se utiliza la herramienta \textit{objcopy} para generar un archivo binario (\textit{-O binary}) con la información necesaria para cargar en una memoria no volátil.
+
+
+\subsection{Archivo de enlace}
+
+Como vimos anteriormente, el enlazador o \textit{linker} es el encargado de agrupar todos los archivos objeto \textit{.o}, y las librerías necesarias para crear el ejecutable, adicionalmente, permite definir donde serán ubicados los diferentes segmentos del archivo ELF en un archivo de enlace \textit{linker script}. De esta forma podemos ajustar el ejecutable a plataformas con diferentes configuraciones de memoria, lo que proporciona un grado mayor de flexibilidaad de la cadena de herramientas GNU.  Cuando se dispone de un sistema operativo como Linux no es necesario definir este archivo, ya que el sistema operativo se encarga del manejo de las diferentes secciones, sin embargo, es necesario tenerlo presente ya que como veremos más adelante existe un momento en el que el sistema operativo no ha sido cargado en la plataforma y las aplicaciones que se ejecuten deben proporcionar esta información. A continuación se muestra un ejemplo de este archivo:
+
+\begin{lstlisting}
+ /* identify the Entry Point  (_vec_reset is defined in file crt.s)  */
+ENTRY(_vec_reset)
+
+/* specify the memory areas  */
+MEMORY 
+{
+    flash : ORIGIN = 0,          LENGTH = 256K    /* FLASH EPROM          */
+    ram   : ORIGIN = 0x00200000, LENGTH = 64K     /* static RAM area      */
+}
+
+/* define a global symbol _stack_end */
+_stack_end = 0x20FFFC;
+
+/* now define the output sections  */
+SECTIONS
+{
+  . = 0;            /* set location counter to address zero  */
+  .text :           /* collect all sections that should go into FLASH after startup  */
+  {
+    *(.text)        /* all .text sections (code)  */
+    *(.rodata)      /* all .rodata sections (constants, strings, etc.)  */
+    *(.rodata*)     /* all .rodata* sections (constants, strings, etc.)  */
+    *(.glue_7)      /* all .glue_7 sections  (no idea what these are) */
+    *(.glue_7t)     /* all .glue_7t sections (no idea what these are) */
+    _etext = .;     /* define a global symbol _etext just after the last code byte */
+  } >flash          /* put all the above into FLASH */
+
+  .data :           /* collect all initialized .data sections that go into RAM  */ 
+  {
+    _data = .;      /* create a global symbol marking the start of the .data section  */
+    *(.data)        /* all .data sections  */
+    _edata = .;     /* define a global symbol marking the end of the .data section  */
+  } >ram AT >flash  /* put all the above into RAM (but load the LMA initializer copy into FLASH)  */
+
+  .bss :            /* collect all uninitialized .bss sections that go into RAM  */
+  {
+    _bss_start = .; /* define a global symbol marking the start of the .bss section */
+    *(.bss)         /* all .bss sections  */
+  } >ram            /* put all the above in RAM (it will be cleared in the startup code */
+  . = ALIGN(4);     /* advance location counter to the next 32-bit boundary */
+  _bss_end = . ;    /* define a global symbol marking the end of the .bss section */
+}
+_end = .;           /* define a global symbol marking the end of application RAM */
+\end{lstlisting}
+
+En las primeras líneas del archivo aparece la declaración de las memorias de la plataforma, en este ejemplo tenemos una memoria RAM de 64kB que comienza en la posición de memoria 0x00200000 y una memoria flash de 256k que comienza en la posición 0x0. A continuacion se definen las secciones y el lugar donde serán almacenadas; En este caso, las secciones \textit{.text} (código ejecutable) y \textit{.rodata} (datos de solo lectura) se almacenan en una memoria no volátil la flash. Cuando el sistema sea energizado el procesador ejecutará el código almacenado en su memoria no volátil. Las secciones \textit{.data} (variables inicializadas) y \textit{.bss} (variables no inicializadas) se almacenarán en la memoria volátil RAM, ya que el acceso a las memorias no volátiles son más lentas y tienen ciclos de lectura/escritura finitos.
+
+\section{Herramientas hardware}
+En esta subsección se realizará una breve descripción de los dispositivos semiconductores más utilizados para la implementación de dispositivos digitales, esto, con el fín de determinar el estado actual de la industria de los semiconductores y entender los componentes básicos con los que se pueden implementar dispositivos digitlaes modernos.
+
+\subsection{SoC}
+
+La Figura \ref{at91rm} muestra la arquitectura de un SoC actual, específicamente del AT91RM920 de Atmel. En este diagrama podemos observar el núcleo central un procesador ARM920T de 180MHz y los periféricos asociados a él. En la actualidad podemos encontrar una gran variedad de SoC diseñados para diferentes aplicaciones: Multimedia, Comunicaciones, Asistentes Digitales; los periféricos incluidos en cada SoC buscan minimizar el número de componentes externos, y de esta forma reducir los costos. Este SoC en particular fué uno de los primeros que diseño ATMEL y está enfocado a tareas en las que se requiere una conexión de red. La arquitectura de estos SoC evoluciona muy rápido acomodándose a los requerimientos de nuevas aplicaciones, básicamente, los cambios se producen en la velocidad del procesador central y la adición de periféricos que permiten el control directo de nuevos periféricos, como por ejemplo, la adición de controladores de pantallas de cristal líquido o salidas de video. Dentro de estos periféricos encontramos:
+ \begin{itemize}
+  \item Controlador para memorias: NAND flash, DataFlash, SDRAM, DDR, SD/MMC
+  \item Puertos USB host o device.
+  \item Puerto I2C
+  \item Interfaz Ethernet 10/100.
+  \item Interfaz high speed USB 2.0
+  \item Puertos SPI.
+  \item Puertos seriales (RS232).
+  \item Soporte JTAG.
+  \item Interfáz de Bus externo (EBI).
+  \item Controlador de LCD.
+  \item Driver de video.
+  \item Tarjetas de sonido.
+ \end{itemize}
+
+\begin{figure}
+  \begin{center} \includegraphics[scale=.7]{./images/at91rm9200} \end{center}
+  \caption{SoC AT91RM9200 fuente: Hoja de Especificaciones AT91RM9200, ATMEL} \label{at91rm}
+\end{figure}
+
+Existen una serie de periféricos que son indispensables en todo Sistema Embebido, los cuales facilitan la programación de aplicaciones y la depuración de las mismas. Uno de los más importantes y que están presentes en todos los SoC actuales es el controlador de memorias, este periférico permite controlar los medios de almecenamiento que son vitales para la correcta oepración del dispositivo, a continuación se hace un breve recuento de las memorias disponibles para el desarrollo de aplicaciones embebidas.
+
+\subsection{Memorias Volátiles}
+
+Como se estudió anteriormente existen secciones de un ejecutable que deben ser almacenadas en memorias volátiles o en memorias no volátiles. Debido a esto, la mayoría de los SoC incluyen periféricos dedicados a controlar diferentes tipos de memoria, las memorias volátiles son utilizadas como memoria de acceso aleatorio (RAM) gracias a su bajo tiempo de accesso y al ilimitado número de ciclos de lectura/escritura. 
+
+\subsubsection{memoria SDRAM}
+El tipo de memoria más utilizado en los sistemas embebidos actuales es la memoria SDRAM; la cual está organizada como una matriz de celdas, con un número de bits dedicados al direccionamiento de las filas y un número dedicado a direccionar columnas (ver Figura \ref{sdram_basics}).
+
+\begin{figure}
+  \begin{center} \includegraphics[scale=.6]{./images/sdram_basics} \end{center}
+  \caption{Diagrama de Bloques de una memoria SDRAM fuente: Hoja de Especificaciones MT48LC16M16, Micron Technology} \label{sdram_basics}
+\end{figure}
+
+Una celda de memoria SDRAM esta compuesta por un transistor y un condensador; el transistor suministra la carga y el condensador almacena el estado de cada celda, esta carga en el condensador desaparece con el tiempo, razón por la cual es necesario recargar estos condensadores periódicamente, este proceso recibe el nombre de \textit{Refresco}. Un ciclo de refresco es un ciclo especial en el que no se escribe ni se lee información, solo se recargan los condensadores para mantener la información.
+
+Un ejemplo simplificado de una operación de lectura es el siguiente: Una posición de memoria se determina colocando la dirección de la fila y la de la columna en las líneas de dirección de fila y columna respectivamente, un tiempo después el dato almacenado aparecerá en el bus de datos. El procesador coloca la dirección de la fila en el bus de direcciones y después activa la señal \textit{RAS} (Row Access Strobe). Después de un retardo de tiempo predeterminado para permitir que el circuito de la SDRAM capture la dirección de la fila, el procesador coloca la dirección de la columna en el bus de direcciones y activa la señal \textit{CAS} (Column Access Strobe). El periférico que controla la SDRAM está encargado de garantizar los ciclos de refresco de acuerdo con los requerimientos de la SDRAM \cite{CH06}.
+
+\subsection{Memorias No Volátiles}
+La memorias no volátiles almacenan por largos períodos de tiempo la información necesaria para la operación de un Sistema Embebido, pueden ser vistos como discos duros de estado sólido. Existen dos tipos de memoria las NOR y las NAND; las dos poseen la capacidad de ser escritas y borradas utilizando control de software, con lo que no es necesario utilizar programadores externos y pueden ser modificadas una vez sean instaladas en el circuito impreso. Una desventaja de estas memorias es que los tiempos de escritura y borrado son muy largos en comparación con los de las memorias RAM y que presentan un número finito de ciclos de borrado y exritura.
+
+\subsubsection{Memorias NOR}
+
+Las memorias NOR poseen buses de datos y dirección, con lo que es posible acceder de forma fácil a cada byte almacenado en ella. Los bits almacenados pueden ser cambiados de 0 a 1 utilizando el control de software un byte a la vez, sin embargo, para cambiar un bit de 1 a 0 es necesario borrar una serie de unidades de borrado que reciben el nombre de bloques, lo que reduce el tiempo de borrado de la memoria. Debido a que el borrado y escritura de una memoria ROM se puede realizar utilizando el control software (ver Figura \ref{nor_prog}) no es necesario contar con un periférico especializado para su manejo. Las memorias NOR son utilizadas en aplicaciones donde se necesiten altas velocidades de lectura y baja densidad, debido a que los tiempos de escritura y lectura son muy grandes, se utilizan como memorias ROM.
+
+\begin{figure}
+  \begin{center} \includegraphics[scale=.6]{./images/nor_prog} \end{center}
+  \caption{Ciclos de escritura y borrado de una memoria flash NOR} \label{nor_prog}
+\end{figure}
+
+\subsubsection{Memorias NAND}
+
+Las memorias NAND disminuyen los tiempos de escritura y aumentan la capacidad de almacenamiento, ideales para aplicaciones donde se requiera almacenamiento de información. Adicionalmente las memorias NAND consumen menos potencia que las memorias NAND, por esta razón este tipo de memorias son utilizadas en casi todos los dispositivos de almacenamiento modernos como las memorias SD y las memorias USB, los cuales integran una memoria NAND con un circuito encargado de controlarlas e implementar el protocolo de comunicación. A diferencia de las flash tipo NOR, los dispositivos NAND se acceden de forma serial utilizando interfaces complejas; su operación se asemeja a un disco duro tradicional. Se accede a la información utilizando bloques (más pequeños que los bloques NOR). Los ciclos de escritura de las flash NAND son mayores en un orden de magnitud que los de las memorias NOR.
+
+Un problema al momento de trabajar con las memorias tipo NAND es que requieren el uso de un \textit{manejo de bloques defectuosos}, esto es necesario ya que las celdas de memoria pueden dañarse de forma espontánea durante la operación normal. Debido a esto se debe tener un determinado número de bloques que se encargen de almacenar tablas de mapeo para manejar los bloques defectuosos; o puede hacerse un chequeo en cada inicialización del sistema de toda la RAM para actualizar esta lista de sectores defectuosos. El algoritmo de ECC (Error-Correcting Code) debe ser capáz de corregir errores tan pequeños como un bit de cada 2048 bits, hasta 22 bits de cada 2048. Este algorítmo es capaz de detectar bloques defectuosos en la fase de programacíón comparando la información almacenada con la que debe ser almacenada (verificación), si encuentra un error marca el bloque como defectuoso y utiliza un bloque sin defactos para almacenar la información.
+
+
+La tabla \ref{flash_comp} resume las principales características de los diferentes tipos de memoria flash y muestra sus aplicaciones típicas.
+
+\begin{center}
+  \begin{table}[ht]
+  \begin{tabular}{|l|c|c|c|}
+    \hline
+                           & \textbf{SLC NAND} & \textbf{MLC NAND}  & MLC NOR         \\ \hline
+     Densidad              & 512Mbits - 4GBits & 1Gbits - 16GBits   & 16MBits - 1GBit \\ \hline
+     Velocidad de Lectura  & 24MB/s            & 18.6MB/s           & 103MB/s         \\ \hline
+     Velocidad de escritura& 8 MB/s            & 2.4MB/s            & 0,47MB/s        \\ \hline
+     Tiempo de borrado     & 2ms               & 2ms                & 900ms           \\ \hline
+     Interfaz              & Acceso Indirecto  & Acceso Indirecto   & Acceso Aleatorio\\ \hline
+     Aplicación            & Almacenamiento    & Almacenamiento     & Solo lectura    \\ \hline
+  \end{tabular}
+  \caption{Cuadro de comparación de las memorias flash NAND y NOR} \label{flash_comp} 
+  \end{table}
+\end{center}
+
+Adicionalmente, se encuentran dispoibles las memorias DATAFLASH, estos dispositivos son básicamente una memoria flash tipo NOR con una interfaz SPI, permite una velocidad de lectura de  hasta 66MHz utilizando solamente 4 pines para la comunicación con el procesador.
+
+

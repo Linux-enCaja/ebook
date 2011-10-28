@@ -1,0 +1,47 @@
+\chapter{Introducción}
+
+La industria de los semiconductores ha crecido velozmente durante los últimos años, su campo de acción se ha extendido a casi todas las actividades del ser humano (Entretenimiento, salud, seguridad, transporte, educación, etc); los tiempos de los procesos de diseño son cada vez mas cortos, lo cual require herramientas Hardware, Software y metodologías de diseño que ayuden a cumplir con las exigencias impuestas al sistema.
+
+Esta \textit{invasión} digital ha sido posible gracias a la industria de los semiconductores y a las empresas desarrolladoras de software, las primeras haciendo uso de un altísimo grado de integración ponen a disposición de los diseñadores \textit{Systems On Chip} (SoC) en los cuales se integran procesadores de 32 bits con una gran variedad de periféricos tales como: Controladores de dispositivos de red (cableada e inalámbricos), controladores de video, procesadores aritméticos, controladores de memorias (Flash, SDRAM, DDR, USB, SD), codecs de audio, controladores de touch screen, etc; lo cual permite la implementación de aplicaciones completas dentro de uno de estos SoCs.
+
+Por otro lado, las empresas desarrolladoras de SW crean herramientas de programación que permiten manejar toda la capacidad de estos SoCs. colocando a disposición de los diseñadores: compiladores, simuladores, emuladores, librerías, Sistemas Operativos y drivers. Lo cual permite realizar desarrollos complejos en tiempos cortos.
+
+En la actualidad existe un gran número de sistemas operativos (OS) disponibles tanto comerciales como \textit{open source}. La figura \ref{os} muestra la utilización actual de OS comerciales en aplicaciones embebidas; si sumamos los sistemas operativos basados en linux se obtiene un valor del 19.3 \% lo cual hace ganador al sistema operativo de libre distribución \cite{CLSB05}. La figura \ref{os2} muestra un cuadro comparativo de la utilización de herramientas comerciales y linux; de nuevo se observa que linux es el preferido por los diseñadores. Este resultado es interesante ya que uno de los supuestos puntos débiles del software de libre distribución es el soporte, lo cual no lo hace tan agradable a la hora de realizar aplicaciones comerciales, sin embargo, esto es solo un mito, ya que gracias a que el código fuente está disponible, es posible comprender perfectamente su funcionamiento, lo cual no sucede con el software comercial; además, existen muchos foros de diseñadores y desarrolladores que se encargan de responder las inquietudes, estos foros almacenan todos los mensajes recibidos e incluyen herramientas de búsqueda para poder consultarlos, por regla general de estos foros, se debe buscar primero en estos archivos históricos, muy seguramente alguien más preguntó lo mismo antes que nosotros.
+
+
+El caracter gratutito de las herramientas de libre distribución no significa, ni mucho menos, mala calidad, todo lo contrario, existen muchas personas que escudriñan su código fuente en búsqueda de posibles errores, y realizan cambios con el fín de eliminarlo; por lo tanto, se cuenta con miles de personas que están constantemente depurando y perfeccionando una determinada aplicación; esto no ocurre con el software comercial, normalmente el soporte hay que pagarlo y las perosnas involucradas en el desarrollo no son tantas como las que tienen acceso al código fuente del software libre. Por esta razón empresas como PALM, han dejado de lado productos propietarios como el PALM OS para utilizar linux, SUN Microsystems, liberó el código fuente de su sistema operativo Solaris, ya que no era comparable con linux y está en el proceso de liberar uno de sus procesadores.
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.45, angle=90]{./images/Current_OS} \end{center}
+  \caption{Utilización actual de OS para aplicaciones embebidas: Fuente \cite{JT04}.}\label{os}
+\end{figure}
+
+\begin{figure}
+  \begin{center} \includegraphics[scale=1]{./images/OS_embedded} \end{center}
+  \caption{Utilización actual de OS para aplicaciones embebidas: Fuente http://www.linuxdevices.com/articles/AT7070519787.html.}\label{os2}
+\end{figure} 
+
+
+De lo anterior se deduce que el mundo de los sistemas digitales ha cambiado en forma considerable, y que en la actualidad existen grandes facilidades para el desarrollo de productos de forma rápida y económica \footnote{En la actualidad cerca del 60\% de los ingenieros trabajan en compañías con menos de 10 desarrolladores de SW \cite{VDC06}}.  Desafortunadamente estas tendencias no se han aplicado aún en Colombia; existen varias razones para esto:
+
+\begin{enumerate}
+\item Desactualización de los programas acedémicos: En muchas de las Universidades de Colombia se utilizan tecnologías obsoletas que impiden la aplicación de metodologías de diseño modernas además de impedir el desarrollo de aplicaciones comerciales, un ejemplo de este tipo de tecnologías es la lógica TTL (74XX) y sus equivalentes en CMOS. Aunque vale la pena aclarar que este tipo de tecnología es útil a la hora de enseñar conceptos básicos, no puede ser utilizada como única herramienta de implementación. Un ejemplo de desactualización de metodologías de diseño lo encontramos en las herramientas de programación para microcontroladores, una gran cantidad de Universidades utilizan lenguaje ensamblador, lo cual impide la re-utilización de código y crea dependencias con el HW utilizado.
+
+\item Falta de interés de la Industria: Un gran porcentaje de la industria Colombiana es consumidora de tecnología, es decir, no generan sus propias soluciones, no cuentan con departamentos de Investigación y Desarrollo; esto se debe a la falta de confianza en los productos nacionales y en algunos casos a la inexistencia de producción nacional. Por otro lado, la cooperación entre la Universidad y la industria es muy reducida, debido a falta de políticas en las Universidades que regulen esta actividad y a la poca inversión por parte de las empresas.
+
+\item Políticas del Estado: Casi la totalidad de estos nuevos dispositivos semiconductores deben ser importados, ya que en Colombia no existen distribuidores, por lo tanto, es necesario pagar una serie de impuestos que no desalientan su utilización, estos impuestos están por el orden del 26\% del valor del producto. Por otro lado la apertura económica permite que ingresen productos a bajo precio, con los que no pueden competir los pocos productos desarrollados en el pais, eso sumado a la falta de protección por parte de las políticas estatales condena a los desarrolladores de estos sistemas a la quiebra económica.
+
+\end{enumerate}
+
+Este proyecto resume el trabajo realizado durante los últimos cuatro años en el área de la electrónica digital y más exactamente en el estudio de las metodologías de diseño modernas con aplicaciones comerciales y es presentado para cumplir parcialmente los requisitos de cambio de categoría de profesor asistente a asociado. El presente informe está dividido de la siguiente forma:
+
+
+\begin{itemize}
+\item En el capítulo 1 se realiza una breve descripción de los sistemas embebidos, se enumeran sus características, aplicaciones y se hace una descripción de las herramientas HW y SW necesarias para el diseño de los mismos. En los capítulos siguientes se desarrollan casos de estudio encaminados a la comprensión de estos sistemas:
+\item En el capítulo dos se trabaja con una plataforma comercial de bajo costo: El GameBoy de Nintendo, (gracias a los elevados volúmenes de producción el costo de este dispositivo es bajo alrededor de 40 USD) esta plataforma nos permite desarrollar conceptos básicos como la compilación cruzada, la interfaz HW-SW y los sistemas operativos.
+\item En el capítulo tres se muestra la implementación de la primera plataforma de desarrollo para sistemas embebidos diseñada en la Universidad Nacional, a pesar de ser muy sencilla permite dar un gran paso en el proceso de fabricación de este tipo de dispositivos.
+\item En el capítulo cuatro se realiza la implementción de una plataforma de desarrollo que utiliza el sistema operativo linux sobre un arreglo de compuertas programable en campo (FPGA) y se muestran los resultados de una aplicación en el área del Hardware Reconfigurable.
+\item El capítulo cinco es una guía de adaptación del sistema operativo linux para una arquitectura ARM.
+\end{itemize}
+
+Por último se muestra como algunos de los resultados de este estudio han sido introducidos a los cursos del área de los sistemas digitales en la Universidad Nacional de Colombia y como se ha realizado su difusión en otras Universidades de Colombia.

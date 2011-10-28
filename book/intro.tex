@@ -1,0 +1,242 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                     INTRODUCCION                           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Introducción}
+\label{ch:intro}
+
+  El gran avance de las técnicas de fabricación de circuitos integrados ha permitido que los sistemas digitales sean parte fundamental de la vida  humana, facilitando las tareas cotidianas. Los niveles de integración actuales permiten construir sistemas cada vez más pequeños, veloces y de menor consumo de potencia, lo cual ha favorecido su difusión a casi todas las actividades humanas. A medida que se extiende el campo de aplicación de los sistemas digitales, lo hacen las exigencias de funcionamiento a ellos impuestas; nuevos retos en el diseño se presentan a medida que los sistemas embebidos se integran a las actividades humanas. Observando la tendencia actual de los sistemas electrónicos, se puede especular que el computador tal como se conoce actualmente desaparecerá {\cite{WM91}}, ya que estará en todas partes, ubicuo, interactuando con los seres humanos para realzar su mundo. Se pasará de un esquema en el que existe un computador para uno o varios usuarios (PC, mainframe) a uno en el que existan muchos computadores para un usuario. Estos computadores disponen de grandes capacidades de cálculo y de comunicación, pero a la vez, poseen un grado de integración tal que serán invisibles; para aclarar como se puede lograr esta invisibilidad, imagine que existen sistemas embebidos construidos con técnicas de micro-fabricación y que son capaces de tomar su energía de fuentes alternas como la temperatura, la radiación solar, o a partir de fenómenos químicos; debido a su reducido tamaño, estos sistemas pueden integrarse a objetos o pintarse sobre ellos, de tal forma que no sean visibles ante los ojos humanos. Esta desaparición no solo será una consecuencia de la tecnología, sino de la sicología humana; cuando las personas asimilan perfectamente algo y se convierte en parte de la vida diaria no se es consciente de su existencia y utilización.
+
+  Esta situación ha dado origen a una industria gigantesca que proporciona dispositivos que satisfacen las nuevas necesidades humanas, el volumen de producción de este tipo de aplicaciones es tal, que el número de procesadores utilizados en ellas ha superado ampliamente a los procesadores utilizados en aplicaciones tradicionales (como estaciones de trabajo y computadores personales); en muchas áreas, los procesadores para aplicaciones específicas los han desplazado por completo (por ejemplo, puntos de venta, entretenimiento, asistentes personales, equipos de automatización, etc). Esto, unido a la saturación en el mercado tradicional de software, ha originado una migración de muchas compañías y profesionales al diseño de aplicaciones específicas, donde el sistema está diseñado para cumplir una función determinada.
+
+  Gracias a esta enorme y creciente demanda, la industria de los semiconductores presenta una gran dinámica en la creación de nuevos productos que facilitan el desarrollo de nuevas aplicaciones; a diario se crean nuevos dispositivos de consumo masivo como reproductores MP4, cámaras de video, teléfonos celulares que se superan en capacidad y funcionalidad al paso de cortos períodos de tiempo. Esto ha originado una disminución dramática en el costo de los dispositivos semiconductores necesarios para construir estos productos y, a su vez, un aumento en la funcionalidad de los mismos; esto, en respuesta a la necesidad de un número cada vez menor de componentes para implementar este tipo de aplicaciones. Por otro lado, se generó un cambio en la forma de suministrar información por parte de los fabricantes sobre la programación y funcionamiento de sus dispositivos, pasando de un esquema de confidencialidad a uno totalmente abierto donde se suministra todo lo necesario (manuales de programación, notas de aplicación, diseños de referencia y software de desarrollo) para entender y utilizar sus productos. Esta dinámica también se presenta en las herramientas de desarrollo necesarias para crear la funcionalidad deseada. Los sistemas propietarios se utilizan cada vez menos gracias a la oferta de entornos de desarrollo abiertos creados y mantenidos por una comunidad de desarrolladores que suministran sus conocimientos para el beneficio colectivo; fruto de esta tendencia se han creado aplicaciones tan importantes como el movimiento de software libre y de código abierto (FOSS por sus siglas en inglés), el sistema operativo Linux, y recientemente la plataforma para dispositivos móviles Android.
+
+  Todo lo anterior ha generado un clima adecuado para la creación de empresas que utilizan estas facilidades en el desarrollo de productos que puedan ser comercializados local o globalmente, y de esta forma contribuir a mejorar la calidad de vida de la sociedad. Un ejemplo de esto se puede observar en algunos países asiáticos, donde se fortaleció la industria manufacturera de dispositivos electrónicos hasta el punto de dar empleo a una gran cantidad de personas con diferentes niveles de formación y desplazar casi por completo la manufactura de este tipo de productos en el resto del mundo.
+
+  Desafortunadamente, la situación en países en vías de desarrollo como Colombia es totalmente diferente; el uso de tecnologías, metodologías de diseño y técnicas de fabricación obsoletas; falta de políticas gubernamentales que estimulen la transferencia real de tecnologías y del conocimiento asociado a ellas; la desconexión entre la academia con los problemas sociales del país y las necesidades de las empresas. Lo anterior ha sumido a la industria electrónica en un atraso de forma tal que depende por completo de productos manufacturados en el exterior, y la mayoría de empresas de base tecnológica se convierten en representantes de firmas extranjeras sin capacidad de creación local.
+
+  Los canales de transferencia tradicionales que se limitan a la compra de equipo y a la capacitación para usarlo y mantenerlo en operación no suministra los conocimientos necesarios para que en el país se generen productos similares adaptados al entorno social, político y económico local. Por lo que es necesario crear metodologías de transferencia que permitan asimilar el conocimiento asociado y pueda ser aplicado por diferentes sectores de la sociedad para mejorar su calidad de vida.
+
+  Este trabajo propone una metodología para la transferencia tecnológica y de conocimientos que busca a partir de interacciones locales generar una absorción y asimilación global de los conocimientos necesarios para el diseño, construcción y comercialización de sistemas digitales que utilicen los últimos avances en la industria de los semiconductores. Esta metodología se aplicó inicialmente en una universidad consolidada\footnote{Departamento de Ingeniería Eléctrica y Electrónica de la Universidad Nacional de Colombia} y en una empresa de base tecnológica \textit{emQbit Ltda}, para formar una comunidad que se encargue de crear herramientas para la difusión de los conocimientos adquiridos durante el proceso de transferencia (recurso). El carácter de la comunidad y del conocimiento que utiliza/genera/mantiene/depura es totalmente abierto, y cualquiera que esté interesado puede utilizar/generar/mantener/depurar dicho recurso y ser miembro de esta comunidad; es decir, el conocimiento es considerado como un bien público y el acceso a él es un derecho que debe ser garantizado.
+
+
+\subsection{Sistemas Embebidos}
+
+En la actualidad, cada vez con más frecuencia, se notan signos de la invasión digital, por ejemplo, en el aumento de chips embebidos en los dispositivos que se utilizan a diario. Se ha demostrado {\cite{MW93}} que una persona que vive en un país industrializado se ve confrontada con un promedio de 40 chips al día, de los cuales 5 son capaces de comunicarse en redes. Se estima que en la actualidad una persona está en contacto con cientos de estos chips, la mayoría de los cuales acceden a densas redes de información{\cite{DS02}}. Muchos de estos artefactos toman la apariencia de objetos que se utilizan en la vida diaria (herramientas, vestuario, electrodomésticos, etc) pero son mejorados con sensores, actuadores, procesadores y software embebido. Una de las razones de la aparición de estos sistemas es económica; las industrias han visto como se muestran signos de recesión en los mercados tradicionales. Por lo tanto, buscan nuevos productos en los que pueden ser embebidos chips y software.
+
+La aparición de los dispositivos digitales en las actividades humanas, es una consecuencia lógica de la evolución de las relaciones entre los usuarios y los sistemas digitales, los cuales se han caracterizado por una democratización de acceso a los equipos y una descentralización de la infraestructura subyacente. En los 90s la aparición de Internet permitió compartir recursos a través de un computador personal. Internet no es más que un paso adelante hacia la llegada de los sistemas de computación ubicua. La misma filosofía de simplificación y descentralización prevalece hasta hoy y conduce a una situación donde miles de dispositivos computacionales estarán disponibles para realizar tareas cotidianas y se compartirán recursos a través de redes más intrincadas que Internet.
+
+\subsection{¿Por qué los Sistemas Embebidos?}
+
+\subsubsection{Mercado de los sistemas embebidos}
+
+Según BCC, inc.  \footnote{http://www.bccresearch.com/} el mercado de los sistemas embebidos es de \$92 billones de dólares y se estima que sea de \$112.5 billones en 2013, con una tasa compuesta de crecimiento anual (CAGR) del 4.1\%. El hardware embebido tuvo un valor de \$89.8 billones en 2008 y se espera que crezca a un CAGR del 4.1\% para alcanzar \$109.6 billones en 2013. El software embebido generó \$2.2 billones en 2008 y podrá aumentar a \$2.9 billones en 2013 para un CAGR del \$5.6\%. Este estudio revela que USA, Canadá, y los países asiáticos dominan este creciente mercado.
+
+
+\subsubsection{Penetración de los sistemas embebidos}
+
+Más de un billón de dispositivos embebidos fueron vendidos en el 2004, siendo sus principales áreas de aplicación los computadores, las telecomunicaciones, consumo, automóviles, medicina, oficina, industria militar. Según BBC, inc. las ganancias en el 2009 son de aproximadamente 100.000 millones de dólares.
+
+% \subsubsection{Perspectivas de Empleo}
+% La industria de los sistemas embebidos proporciona empleo a diferentes niveles de especialización:
+% 
+% \begin{itemize}
+%  \item Software
+%    \begin{itemize} 
+%     \item Soluciones y aplicaciones embebidas: Desarrollo de aplicaciones software que implementan funcionalidades específicas al área de acción del dispositivo; utilización de entornos de programación, lenguajes de alto nivel, interfaces para programación de aplicaciones (APIs)
+%     \item Integración de sistemas: Utilización de dispositivos comerciales existentes (como plataformas de desarrollo, librerías) para la creación de nuevos productos.
+%     \item Creación de drivers de dispositivos: Soporte de dispositivos hardware como puertos de comunicaciones, interfaces hombre-máquina, dispositivos de almacenamiento a un determinado sistema operativo.
+%     \item Desarrollo de paquetes para soporte a plataformas: Generación de distribuciones de un determinado sistema operativo donde se incluya soporte a todos los periféricos de una determinada plataforma de desarrollo, software necesario para administrar aplicaciones y entornos de programación de aplicaciones.
+%    \end{itemize}
+% 
+%  \item Hardware
+%    \begin{itemize} 
+%     \item Diseño y verificación ASIC: Diseño y certificación de circuitos integrados de aplicación específica, esto es la mejor opción desde el punto de vista económico cuando se superan las 20000 unidades de un determinado producto.
+%     \item Diseño de placas de circuito impreso: Placas electrónicas diseñadas a la medida de una determinada aplicación. 
+%     \item Diseño de carcasas: Diseño de la caja donde se colocará la placa de circuito impreso y que permitirá la interacción con el usuario.
+%     \item Certificaciones: Pruebas que certifican el cumplimiento de normas locales e internacionales que permiten el uso de dispositivos electrónicos.
+%    \end{itemize}
+% 
+%  \item No Técnicos
+%    \begin{itemize}
+%     \item Comercialización
+%     \item Ventas
+%     \item Servicios post-venta
+%     \item Soporte
+%    \end{itemize}
+%   
+% \end{itemize}
+% 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                     Historia                                       %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \section{Transferencia Tecnológica en Latinoamérica \cite{UNE}}
+
+% \subsection{Trasfondo histórico}
+% 
+% Durante el período que va de los años 40 a la década de los 80, en América Latina y el Caribe se puso en práctica una política de 
+% industrialización por sustitución de importaciones mediante modalidades de proteccionismo de la industria manufacturera local. 
+% Con lo que se comenzó a importar los bienes de capital necesarios para la fabricación en el ámbito local, desarrollando; se importaron los equipos para realizar la transformación industrial, pero no se generaron las bases científico-tecnológicas que se encargaran de generar nuevos productos asociados a las materias primas proporcionadas por los recursos naturales locales, se descuidó el capital humano capaz de entender, adaptar y llevar estos inventos a la sociedad, salvo en algunas disciplinas agrícolas donde la especificidad local obligó a la investigación. Adicionalmente, no se generó demanda local que impulsara la producción de conocimiento, las nuevas empresas no contaban con departamentos de Investigación y desarrollo (I+D) y los gobiernos no estimulaban la creación de centros de investigación asociados a este proceso de industrialización. Para dar solución a esta situación se creó la Comisión para América Latina y el Caribe (CEPAL); a partir 
+% de las décadas de los cincuentas y setentas comenzaron a crear políticas en las áreas científicas y tecnológicas, creando instituciones 
+% destinadas al fomento de la ciencia y la tecnología. Muchos de estos esfuerzos fueron discontinuos y contradictorios, pero algunos siguieron las pautas establecidas por la UNESCO y la OEA exhibiendo una notable continuidad. Esto unido al apoyo gubernamental y 
+% el interés de las universidades fue clave para la formulación de políticas de apoyo a la ciencia y la tecnología.
+% 
+% Gracias a estas políticas hubo un fuerte proceso de institucionalización de la investigación científica y de los mecanismos de desarrollo: 
+% Sistemas de promoción del I+D, legislación en transferencia de tecnología, planificación de la ciencia, métodos de diagnóstico de recursos, sistemas de fijación de prioridades tecnológicas, etc. A finales de los 50s y durante los 60s y 70s, estas actividades eran soportadas casi de forma exclusiva por el estado (incluyendo las universidades públicas), estos esfuerzos no provocaron una dinámica sostenida de innovación en el conocimiento y en la economía, ya que en muchos sectores no se generó un vínculo sólido entre la producción y la investigación, esto debido a la creación de dos modelos de investigación en ciencia y tecnología:
+% \begin{itemize}
+%  \item Ciencia Académica: Basada en las universidades, es incorporada a la comunidad científica internacional, de quien recibe legitimidad, orientación, organización.
+%  \item Actividad Tecnológica: Sustentada por organismos sectoriales, legitimada por instituciones estatales, su objetivo es dar solución a problemas prácticos y a la transferencia de tecnología al sector productivo.
+% \end{itemize}
+% 
+% En los años 80 disminuyó la confianza de poder encontrar un camino hacia un desarrollo endógeno, lo que originó un giro hacia políticas de ajuste, estabilización y apertura de la economía que buscaban vías alternas para llegar a la globalización. La apertura de la economía suponía un abastecimiento de nuevos conocimientos por parte de las empresas locales para estar a tono con el estado internacional o la búsqueda de nuevos nichos de mercado; por otro lado, la apertura forzaría una homogeneización tecnológica, por lo que el aumento de la competitividad se lograría a través de la transferencia de productos externos y no la inventiva e innovación local. 
+% 
+% En los años 90 los países de la región realizan grandes compras a costa de su endeudamiento externo. La industria local se ve enfrentadas a productos extranjeros baratos, lo que ocasiona el cierre de muchas industrias manufactureras y la transformación de muchas en importadores; esta política desmantela el aparato productivo y no fomenta actividades de adaptación, mejora y creación de productos. La oferta tecnológica proviene del exterior, se diluye el sistema nacional de ciencia y tecnología basado en el aumento de la oferta interna de conocimiento. 
+% 
+% Las políticas públicas se reducen a la aceptación de normas de la Organización Mundial de Comercio (OMC) basadas en presiones de Estados 
+% Unidos y la Unión Europea sobre patentes farmacéuticas, tecnologías agrícolas y de otros tipos. Los esfuerzos e interacciones tecnológicas entre la ciencia y la producción no constituyen un sistema auto-sostenido de relaciones dinámicas que marquen un rumbo claro a la investigación en ciencia y tecnología vinculado con las sociedades y las economías donde se desenvuelven.
+% 
+% La ciencia y la tecnología en la región presenta dos grandes problemas: \textbf{a) su escasa magnitud; b) su desvinculación con la sociedad a la que pertenece}, con el agravante de la pérdida de legitimidad que se produjo en las últimas dos décadas, sustentada por una parte en el estado, y en su integración en una ciencia internacional fuertemente académica, por la otra \cite{LV98}.
+% 
+% \subsection{Financiación}
+% 
+% Según la Red de Indicadores de Ciencia y Tecnología (RYCIT), el gasto en actividades de ciencia y tecnología en los países latinoamericanos alcanza poco menos de los 8.000 millones de dólares anuales, lo cual representa el 2,3\% del gasto mundial en el sector. Mientras el PIB de Estados Unidos cuadruplica al de América Latina y el Caribe, su inversión en I+D es más de 20 veces mayor que la latinoamericana; dicho de otro modo, el esfuerzo de los países de la región en ciencia y tecnología es inferior al que les correspondería realizar tomando en cuenta el valor del producto regional.
+% 
+% Según la Organization for Economic Co-operation and Development (OCED) los países Latinoamericanos dedican en promedio algo más del 0,6\% de su Producto Interno Bruto a I+D. Esta inversión se concentra en Brasil, México y Argentina, en Colombia el gasto es del 0.18\% (lo que contrasta fuertemente con el gasto militar de 3.4\%). En la Unión Europea, en cambio, el porcentaje alcanza el 1,7\% del PIB, en Estados Unidos alcanza el 2,8\%, Japón (3,13\%), Corea del Sur (2,52\%) y otros como China e India en los cuales, aunque la inversión es algo inferior, la tendencia de los últimos años hace pensar en un aumento progresivo de sus inversiones en I+D.  El gasto en ciencia y tecnología como el recurso promedio que tienen los investigadores para llevar a cabo su tarea, en EEUU asciende a 171.000 dólares por investigador, y en el conjunto de países latinoamericanos a 59.000.
+% 
+% Un rasgo característico de la investigación científica en América Latina es su gran dependencia del estado, según un estudio de la OCED, en el plano estrictamente tecnológico, las estadísticas sobre patentes describen un panorama entre el norte y el sur similar a los datos del I+D: el número de solicitudes de patentes en EEUU es del orden de los 200.000 por año, más de 50.000 y de 40.000 en España y Canadá, respectivamente. En América Latina, sólo Brasil y México (pero ambos con marcados desniveles anuales) presentan cifras algo significativas: entre 6.000 y 10.000 patentes anuales; aún así, son valores marcadamente inferiores. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                      ESTADO DE LA INDUSTRIA COLOMBIANA                     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Estado de la Industria Electrónica en Colombia}
+
+En la actualidad Colombia atraviesa por una ``crisis'' a nivel de diseño de sistemas digitales, existe un atraso muy grande en esta área. Existen dos grandes responsables de esta situación; por un lado, las políticas de la mayoría de las industrias al no realizar inversión de capital en sus departamentos de I+D; por otro lado, algunas universidades no cuentan con programas actualizados que permitan explotar los avances realizados en las industrias electrónica y de semiconductores. La situación se agrava aún más al ver el estado de la relación entre la universidad y la industria, la cual no existe en algunos casos. Desde el punto de vista industrial los resultados obtenidos en la academia parten de entornos ideales y no se tienen en cuenta las características de los entornos industriales.
+
+\subsubsection{Apropiación de conocimiento y transferencia tecnológica}
+  
+El estudio en \cite{Mar04} asegura que para que Colombia llegue a ser generador de productos tecnológicos, es necesario generar un conocimiento que permita esta transición. ``Para que el conocimiento sea motor de desarrollo es necesario el traspaso desde sus creadores a la sociedad, mediante la conversión a tecnologías que produzcan cambios radicales que incrementen la producción. Esa transmisión de tecnología generadora de crecimiento económico esta influenciada por diversos factores: medio geográfico, leyes de propiedad industrial, costos laborales, nivel de ciencia y tecnología, religión, tipos de instituciones, resistencia a innovar, políticas de estado, guerras, factores demográficos, entre otros'' \cite{Mar04}.
+ 
+Pero ¿cómo obtener este conocimiento? Arrow \cite{Arr62} afirma que la obtención de conocimiento puede efectuarse de varias formas: ``aprender haciendo'', ``aprender usando'', ``aprender leyendo''. Cuando una empresa decide transmitir su conocimiento disponible, lo hace en procesos de investigaciones conjuntas, en actividades de producción, y distribución, mercadeo, servicio y soporte operativo o riesgo compartido. También se presentan alianzas entre firmas como: contratos de I+D, acuerdos de licencias y licencias cruzadas. La conformación de estas asociaciones permite crear redes tecnológicas dominadas por países industrializados con sus respectivas empresas multinacionales monopolizando conocimiento \cite{Mar04}.
+ 
+El problema colombiano radica en que las empresas nacionales no adquieren el conocimiento necesario para innovar; de forma que puedan ser competitivas y puedan acceder a mercados internacionales ofreciendo nuevos productos de calidad y a precios competitivos, con efectos directos como: generación de empleos especializados, desarrollo tecnológico e industrial sostenido, ampliación del conocimiento nacional y disminución de la salida de divisas \cite{Mar04}.
+ 
+Según los estudios realizados por Martínez \cite{Mar04}, con base en registros del Decreto 259/92, del Incomex, la importación de conocimiento no está siendo empleada con el propósito de utilizar tecnologías de punta que permitan efectuar innovaciones al interior de las empresas y de los sectores; las empresas nacionales se limitan a comprar un determinado dispositivo o equipo, sin tener el conocimiento para operarlo, hacerle mantenimiento, mejorarlo, ni mucho menos producirlo, por lo que se ven obligadas a contratar con el vendedor para dicho fin; esto indica, que la adquisición de tecnología no se realiza con base en un programa desarrollado de antemano, sino son una respuesta a cambios en el mercado, lo cual evidencia la inexistencia de programas de innovación encaminados a la disminución de la brecha tecnológica.
+ 
+\subsubsection{Situación de la industria electrónica en Colombia}
+ 
+La industria electrónica nacional no es ajena a las políticas que siguen las empresas nacionales en cuanto a la apropiación de tecnología; Colombia depende totalmente de economías más desarrolladas para el suministro de dispositivos electrónicos en diversas áreas (comunicaciones, entretenimiento, industria, medicina, etc). Mientras en otros sectores de la economía (Alimentos, textiles, bebidas) han pasado de ser consumidores a exportadores, y adquieren nuevas tecnologías para ser más competitivos, el sector electrónico del país ha reducido sus actividades de investigación y desarrollo hasta el punto de depender totalmente de productos externos, de los cuales, algunos son de baja calidad y no suplen los requerimientos del mercado local, pero son utilizados porque son muy económicos.
+ 
+En la actualidad la industria electrónica presenta una gran dinámica a nivel mundial \cite{ETPoSSI(09}. La inversión de capital necesaria para el diseño de sistemas digitales es relativamente baja, gracias a la gran demanda originada y a la constante reducción de los costos asociados a los servicios de fabricación; adicionalmente, las herramientas de desarrollo necesarias para la programación y depuración de este tipo de sistemas son de libre distribución, lo que permite reducir de forma considerable la inversión en este ítem.
+
+Según ASESEL \footnote{Asociación de entidades del Sector Electrónico} en el 2001 \footnote{Desde este año no se ha realizado ningún estudio sobre la industria electrónica. Por otro lado, debido a que no existe un código para la clasificación industrial internacional uniforme (CIIU) específico para la industria electrónica, las empresas del sector electrónico se encuentran dispersas y la gran mayoría comparten la clasificación \textit{no clasificadas previamente} (NCP), su estudio se dificulta. Adicionalmente, la industria electro-electrónica hace un aporte muy bajo al PIB y no tiene mayo peso en la industria nacional (fuente: ASESEL)} existían 154 empresas productoras de componentes y equipos de la cadena electrónica; dentro de los productos que la industria electrónica exporta se encuentran registrados: circuitos integrados, circuitos impresos, micro-estructuras, (no son fabricados en el país, son compradas en el exterior y vendidas nuevamente) instrumentos para medida y control, instrumentos y aparatos eléctricos o electrónicos. Según Proexport, el 91\% de las exportaciones son realizadas por Bogotá y los destinos se encuentran en países cercanos como Venezuela, Perú, Ecuador y USA. La producción durante el período 2000 - 2007 aumentó en un 4\% llegando a 936 mil millones de pesos, las exportaciones aumentaron en un 15\% llegando a 1093 mil millones de pesos y las importaciones subieron en un 18\% llegando a 13.262 mil millones en el mismo período de tiempo.
+
+\subsubsection{Causas del atraso tecnológico en Colombia}
+
+Estudios realizados en Colombia \cite{MTRR07} \cite{MDAG99} \cite{DZSC+07} y en otros países \cite{MO90} \cite{IAI} \cite{Mar04} identificaron los siguientes obstáculos para el desarrollo de la industria electrónica: deficientes relaciones universidad - empresa, pobre enfoque académico hacia la industria, baja calidad de los productos nacionales, falta de políticas gubernamentales, falta de cultura de investigación, reducida apropiación tecnológica, competencia con productos extranjeros, atraso tecnológico y limitado recurso humano con formación avanzada.
+
+De los problemas expuestos anteriormente se pueden decir que los que más afecta al desarrollo de la industria electrónica en Colombia es el atraso tecnológico; no es posible ser competitivo en el mercado electrónico mundial con tecnologías y metodologías de diseño obsoletas.  La culpa de este atraso tecnológico no es exclusiva de la industria, la falta de confiabilidad en los productos colombianos agrava este problema.
+
+Otro actor que contribuye al retraso tecnológico es el sector académico; según el Sistema Nacional de Información Superior, durante los últimos 10 años se han abierto 230 programas relacionados con la industria electrónica, estos programas están repartidos entre programas de formación universitaria, tecnológica terminal y técnica profesional. La mayoría de los centros de formación se encuentran ubicados en 3 departamentos: Bogotá, Antioquia y Valle \cite{DZSC+07}. El número de ingenieros graduados en un año es entre 2 y 8 veces mayor que en los países en vías de desarrollo y doce veces mayor que los que se gradúan en los países desarrollados {MDAG99}.
+
+Por otro lado, en las universidades con poca consolidación, el contenido y metodologías de las asignaturas relacionadas directamente con la industria electrónica se encuentran desactualizados y fuera del contexto mundial; se utilizan metodologías de diseño antiguas en las que primaba la experiencia del diseñador, se realizan tareas manuales, repetitivas que pueden ser realizadas por herramientas de diseño moderno, hay poca experimentación y su estructuración y metodologías son anticuadas. Adicionalmente, muchos investigadores dedican sus estudios en proyectos que no aportan al desarrollo del país pero que les proporcionan más reconocimiento internacional. Otro problema radica en la falta de experiencia en el sector productivo por parte del personal académico, una componente importante del grupo de profesores nunca ha sido parte de un proceso productivo o de un proceso de desarrollo que tenga como fin la creación de un producto comercial, razón por la cual se evita la experimentación y se da más énfasis al análisis, siendo la simulación el último paso del proceso de análisis. Se puede decir que en Colombia se presenta una sobre-oferta de profesionales en el área electrónica, formados con programas desactualizados que no tienen en cuenta los avances tecnológicos y metodológicos; lo que explica la falta de ingenieros con altos niveles de formación y la escasa demanda de profesionales en el área.
+
+\section{El Conocimiento como Bien Público}
+
+Es indudable que el desarrollo tecnológico de un país se encuentra ligado al mejoramiento de la calidad de vida de sus habitantes, y que para que en un país en vías de desarrollo se realice una transferencia tecnológica y de conocimientos asociados a la tecnología que se transfiere exitosos que permitan desarrollar productos similares, pero ajustados al contexto socio-económico local, es necesario que el país cuente con la capacidad de absorber las habilidades, técnicas, información y organización asociados. Esta absorción de conocimientos debe ser realizada por un gran número de personas y entidades para que la transferencia tenga un impacto significativo en la sociedad; para que esto suceda, este conocimiento debe ser considerado como un bien público, y como tal, el acceso a él, debe ser un derecho y por lo tanto, la sociedad debe garantizar los mecanismos de difusión para que llegue a los sectores interesados. De igual forma, es un deber de los sectores que utilizan este bien contribuir a su difusión, actualización, mejoramiento, y crecimiento. El conocimiento en esta propuesta se refiere a las ideas intangibles; información y datos en el que el conocimiento es expresado u obtenido, y como el entendimiento adquirido a través de la experiencia o estudio científico, académico o no académico.
+
+Ostrom \cite{CMS06} propone dos variables generales para clasificar los diferentes tipos de bienes: \textit{el nivel de exclusión} entendido como la dificultad para excluir el acceso a un recurso por parte de usuarios potenciales; y el \textit{nivel de rivalidad} el cual se refiere al impacto que tiene el uso de un recurso por un individuo (o grupo) sobre el uso de otros usuarios. Ostrom, identifica cuatro tipos de bienes y/o servicios: \textit{bienes públicos} bajo nivel de rivalidad y bajo nivel de exclusión; \textit{bienes comunes} alto nivel de rivalidad y bajo nivel de exclusión; \textit{club goods} bajo nivel de rivalidad y alto nivel de exclusión y \textit{bienes privados} alto nivel de rivalidad y alto nivel de exclusión. El conocimiento es un recurso con un grado de rivalidad bajo, ya que no se afecta negativamente al aumentar el número de usuarios, lo que entonces deja la posibilidad de clasificarlo como un bien público o un bien tipo club (ver figura \ref{goods_class}).
+
+\begin{figure}[htpb]
+    \begin{center}
+	\newcommand{\daywidth}{2.2 cm}
+
+	\begin{tikzpicture}[x=4cm, node distance=0 cm]
+	\tikzstyle{day}=[draw, rectangle,  minimum height=0.5cm, minimum width=\daywidth, fill=yellow!20,anchor=south west]
+	\tikzstyle{hour}=[draw, rectangle, minimum height=.5 cm, minimum width=2cm, fill=blue!30,anchor=north east]
+
+	% Styles for events
+	\tikzstyle{hours}=[rectangle,draw, minimum width=\daywidth, anchor=north west,text centered,text width=4 em]
+	\tikzstyle{1hour}=[draw, rectangle,  minimum height=0.5cm, minimum width=4cm, fill=blue!20,anchor=south west]
+	\tikzstyle{2hours}=[hours,minimum height=2cm]
+	\tikzstyle{4days}=[draw, rectangle,  minimum height=0.5cm, minimum width=4.4cm, fill=yellow!20,anchor=south west]
+	%Style for type of sequence 
+	\tikzstyle{Private} = [2hours,fill=red!20]
+	\tikzstyle{Club}    = [2hours,fill=green!20]
+	\tikzstyle{Common}  = [2hours,fill=blue!20]
+	\tikzstyle{Public}  = [2hours,fill=brown!20]
+	%Position of sequences
+	\node[hour, rotate=90] (8-9)   at (1,1)   {Exc.};
+	\node[hour, rotate=90] (9-10)  [left = of 8-9] {No exc.};
+	\node[Private] (Private) [right = 0cm of 8-9.south] {Privado}; \node[Club]   (Club)   [right = of Private] {Club};
+	\node[Common]  (Common)  [below = of Private]       {Common};  \node[Public] (Public) [right = of Common]  {Público};
+
+	% % Positioning labels
+
+	\node[day] (lundi) [above = of Private] {Rival};
+	\node[day] (mardi) [right = of lundi]   {No rival};
+
+	\node[4days] (Rivality) [above = 0cm of lundi.north east] {Rivalidad};
+	\node[1hour, rotate=90] (Excludability) [above = 0cm of 8-9.north west] {Exclusión}; 
+	\end{tikzpicture}
+    \end{center}
+  \caption{Clasificación general de los bienes. fuente: \cite{CMS06}} 
+  \label{goods_class}
+\end{figure}
+
+
+Idealmente, el conocimiento debería ser un bien público; esto es, no deberían existir restricciones para acceder a él; sin embargo, en la actualidad el acceso al conocimiento es restringido, ya sea por medio de patentes, derechos de propiedad intelectual (lo cual es muy común en el desarrollo de nuevos productos y tecnologías) o por que el acceso al conocimiento tiene un costo que no puede ser pagado por cualquier miembro de la sociedad. En Colombia el acceso a la educación técnica, tecnológica y superior es limitado, se tiene una cobertura del 37\% \footnote{Según el observatorio de la universidad colombiana, esta cifra aumentó en los últimos años gracias a las matrículas del SENA}. La escasez de cupos en los centros de formación públicos y los altos costos de las matrículas en las universidades privadas (con niveles de calidad similares) han convertido al conocimiento en un bien tipo club (en Colombia); afectando de forma considerable la cantidad de personal con las capacidades necesarias para absorber los conocimientos asociados a nuevas tecnologías; adicionalmente, según el ministerio de educación nacional, el 64\% de los matriculados cursan programas universitarios y solo el 24\% están en programas relacionados con ingeniería.
+
+Otro tipo de fuentes de capacitación la suministra el Centro de Investigación y Desarrollo tecnológico de la industria Electrónica e Informática (CIDEI), a través de tres cursos: Diseño digital empleando dispositivos lógicos programables; diseño de software embebido para microcontroladores ARM y diseño de circuitos impresos con normas internacionales IPC; sin embargo, el elevado costo de estos cursos genera una barrera en la obtención de este conocimiento por parte de los interesados.
+
+Basados en el estado de la industria electrónica nacional y de la capacidad del país para la formación de personal calificado, se puede afirmar que el principal problema que presenta la industria electrónica nacional es la falta de conocimientos sobre procesos de diseño y fabricación, debido en parte a la fuerte exclusión que se tiene al acceso de la información relacionada con estos procesos, lo que se traduce en la incapacidad de producción local de productos que cumplan con los estándares internacionales. Para contribuir en la solución de este problema, este trabajo proporciona un recurso público basado en el conocimiento necesario para concebir, diseñar, implementar y operar sistemas digitales que utilicen tecnología de punta y metodo    logías de diseño modernas proporcionando: 
+
+\begin{itemize}
+ \item Diseños de referencia de sistemas digitales funcionales que puedan ser utilizados en la generación de nuevos productos.
+ \item Repositorios donde se puedan descargar los archivos necesarios para entender, reproducir y modificar estos diseños de referencia.
+ \item Una lista de discusión que proporcione soporte sobre el proceso de diseño.
+ \item Un programa académico que actualice los contenidos y la metodología de las asignaturas del área de electrónica digital.
+ \item Documentación que puede ser utilizada por las empresas para capacitar a su personal.
+\end{itemize}
+
+Este recurso estará representado por: la información necesaria para entender, reproducir y modificar plataformas de desarrollo que pueden ser utilizadas para la creación de nuevos productos que den solución a problemas locales; la documentación necesaria para entender el proceso de diseño de un sistema digital complejo; una comunidad que crea/utiliza/mantiene el recurso; medios de comunicación y de almacenamiento para los proyectos existentes y facilidades que permitan la creación de nuevos proyectos. Cada uno de estos proyectos representa la aplicación de técnicas de diseño y de fabricación modernas de sistemas embebidos que pueden ser utilizados por los industriales y por la academia como herramientas de capacitación; su carácter público permite el acceso y uso por parte de cualquier interesado; proporcionando un canal de acceso al conocimiento sin restricciones. 
+
+Tomando como fuente de inspiración el movimiento de software libre y de código abierto (FOSS), se definió un concepto similar pero aplicado al desarrollo hardware, permitiendo la generación, distribución, estudio y modificación de plataformas físicas (placas de circuito impreso y dispositivos funcionales). Este nuevo concepto recibe el nombre de \textit{hardware copyleft}, su principal objetivo es servir como canal para la transferencia del conocimiento necesario para diseñar y producir sistemas digitales a todo sector de la sociedad que esté interesado. Con esto, se pretende generar en el país los conocimientos necesarios para aumentar la oferta de productos tecnológicos producidos localmente, lo que se traducirá en un aumento de la oferta local de bienes y servicios relacionados con la manufactura de sistemas digitales, generando empleo para personas con diferentes niveles de formación.
+
+% \section{Propuesta de Metodología para la Transferencia Tecnológica y de Conocimientos}
+% 
+% Este trabajo proporciona una metodología novedosa para la transferencia de los resultados de la investigación a la academia y a la industria; con su aplicación a nivel nacional se pretende contribuir a la situación de la industria electrónica nacional. La figura \ref{modelo_TT_intro} ilustra los pasos de esta metodología.
+% 
+% 
+% \begin{figure}[htpb]
+%   \centering
+%   \includegraphics[scale=.7]{./images/modelo_transferencia_tecnologica.pdf}
+%   \caption{Modelo de transferencia tecnológica.} \label{modelo_TT_intro}
+% \end{figure}
+% 
+% En el capítulo \ref{ch:transfer} se realizará una descripción de los canales de transferencia tecnológica tradicionales, evaluando su efectividad en la transferencia de conocimientos hacia la industria electrónica nacional e identificando los obstáculos para que se logre una transferencia exitosa. Tomando como base estudios realizados en el país y en países con problemáticas similares, se enumeraran una serie de recomendaciones dirigidas a la academia, la industria y las entidades gubernamentales que tienen como objetivo permitir que se alcancen los objetivos de la transferencia; de esta lista de recomendaciones se obtuvieron las actividades prioritarias que se realizaron durante el desarrollo de esta investigación. Con estas actividades y con la experiencia de procesos similares en otros países se formuló una metodología que permite la transferencia tecnológica y de conocimientos en el área de diseño de sistemas digitales. Para su validación se ejecutaron todas sus etapas; los resultados de este proceso (ver capítulo \ref{ch:embedded}) y los conocimientos adquiridos fueron aplicados en la academia y a la industria con el fin de determinar la pertinencia, importancia y utilidad de los mismos. 
+% 
+% Como se mencionó anteriormente, es importante que la sociedad cuente con las habilidades necesarias para entender, adaptarse a los cambios de la tecnología y generar productos que satisfagan necesidades locales, por este motivo se creó un programa académico que ayuda a la creación de estas habilidades en los estudiantes de las carreras relacionadas con el diseño digital; este programa académico sigue los lineamientos de la iniciativa CDIO \footnote{Concebir - Diseñar - Implementar - Operar; creada por el Massachusetts Institute of Technology (MIT)} y será explicada en el capítulo \ref{ch:education}. 
+% 
+% La etapa de \textit{difusión} es una de las más importantes ya que permite que el conocimiento adquirido llegue a todos los sectores de la sociedad interesados en él y ayuda a crear consciencia de su importancia. Utilizando los contactos existentes entre la Universidad Nacional de Colombia (UNAL) y las  universidades Distrital Francisco José de Caldas (UDFJC), Industrial de Santander (UIS), de los Andes (ULA), Santo Tomás de Aquino (USTA), Escuela Colombiana de Ingeniería (ECI) y Escuela Naval Almirante Padilla (ENAP); se transmitieron parte de los conocimientos generados en este estudio para que sean parte los programas curriculares de las asignaturas relacionadas con el diseño digital. Adicionalmente, se formuló un proyecto presentado al SENA para capacitar a empresas de base tecnológica en el diseño, implementación y producción de sistemas digitales.
+% 
+% Se creó la empresa de base tecnológica \textbf{emQbit} formada por egresados de las carrera de ingeniería electrónica y de sistemas de la Universidad Nacional de Colombia, a la que se le suministró el conocimiento necesario para generar productos que utilizan los conocimientos adquiridos en este trabajo. Esto con el fin de determinar las necesidades de las nuevas empresas y como puede ayudar la universidad a su consolidación; los resultados de esta interacción pueden verse en el capítulo \ref{ch:embedded}.
+% 
+% Para asegurar la eficacia de esta metodología es necesaria la interacción entre la academia, la industria y la sociedad. En este trabajo se muestra como los resultados de investigaciones pueden enriquecer los programas académicos de las instituciones de educación superior y como se puede transmitir a la industria y de esta forma ayudar a dar solución a problemas de la sociedad. Al crear la oferta de personal calificado por parte de la academia se establece un flujo de conocimientos desde esta hacia la industria, ya sea en forma de asesoría o de personal con las habilidades requeridas; a cambio, la academia recibe regalías de proyectos conjuntos y bienes y servicios más económicos.
+% 
+% Al permitir la utilización de los resultados de esta investigación por quien esté interesado y considerar este conocimiento como un bien público se aumentan las posibilidades de difusión. Para proteger la propiedad intelectual de los creadores de este recurso y para asegurar el crecimiento del mismo, se trabajó con el esquema de licencias \textit{Creative Commons} CC-BY-SA \cite{CC10}, el cual permite la distribución, replica y modificación (incluso para fines comerciales) de los productos generados de esta investigación sujeto a las condiciones: 
+% 
+% \begin{itemize}
+%  \item Dar crédito al autor del trabajo original.
+%  \item Toda obra derivada de este trabajo debe distribuirse con el mismo esquema de licencias (esquema de licencia viral).
+% \end{itemize}
+% 
+% Para ayudar al proceso de difusión, y siguiendo la metodología de los proyectos de software libre, se creó una comunidad conformada por: estudiantes y profesores de las universidades Nacional, Andes, Javeriana, Santo Tomás, Distrital, Escuela Colombiana, UIS, Nacional del Comahue (Argentina); empleados de las empresas emQbit, Santronics, ingeniería inversa (argentina); profesionales y aficionados de diferentes ciudades del país \footnote{Esto gracias a la difusión realizada en diferentes eventos como el Campus Party, FLISOL y conferencias sobre los movimientos abiertos}. La incorporación de centros de formación e industriales a esta comunidad posibilita identificar necesidades de la industria y ofertas de la academia permitiendo la creación de un vínculo entre ambos sectores. Los aficionados, realizan labores fundamentales de vigilancia tecnológica y de mantenimiento y depuración del contenido. La filosofía de esta comunidad, sus recursos, sus miembros y sus reglas se muestran en el capítulo \ref{ch:common}. 
+% 
+% Adicionalmente, se diseñaron, construyeron, probaron y programaron una serie de plataformas hardware que pueden ser utilizadas como base de nuevos productos comercializables o como herramientas didácticas en la capacitación a nivel académico o industrial. Estas plataformas son distribuidas con los archivos y documentación necesarios para su estudio, reproducción y modificación; esto unido al uso de software libre en todo el proceso de diseño y programación define el concepto \textit{hardware copyleft}. El uso de plataformas \textit{hardware copyleft} permite ahorrar tiempo y dinero en el desarrollo de aplicaciones proporcionando diseños de referencia modificables que pueden ser utilizados como base para futuros desarrollos. La diferencia importante, entre el uso de plataformas \textit{hardware copyleft} y el uso de plataformas de desarrollo disponibles comercialmente es la posibilidad de modificación, lo que permite optimizar los componentes a una aplicación determinada eliminando el costo de los componentes necesarios en la adaptación de estas plataformas genéricas; adicionalmente, se aumenta la oferta de productos generados localmente, lo que puede generar un aumento de la oferta de bienes y servicios en la manufactura de sistemas digitales (como ya ha ocurrido en otros países de la región). Las plataformas suministradas como parte de este trabajo cubren un amplio rango de aplicaciones y pueden ser utilizadas por cualquiera que este interesado para aumentar los conocimientos en el diseño e implementación de sistemas digitales.
+% 
+% Como se demostrará en el capítulo \ref{ch:conclusions} este trabajo proporciona los conocimientos que suministraría una transferencia tecnológica realizada por un país industrializado. Al momento de escribir este trabajo, se está evaluando la posibilidad de realizar una transferencia tecnológica entre el estado Colombiano y dos centros de desarrollo coreanos Electronics and Telecommunications Research Institute (ETRI) y Korea Electronics Technology Institute (KETI) en el área de aplicación de televisión digital; como parte de este proyecto se contempla transferir los conocimientos necesarios para realizar la fabricación de una plataforma de desarrollo que pueda ser utilizada en este tipo de aplicaciones. Se estima que se puede ahorrar por lo menos 800.000 USD, en esta transferencia, al tiempo que se suministran herramientas para la formación de personal calificado.
+
+
+\input technology_transfer

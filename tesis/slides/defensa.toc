@@ -10,4 +10,5 @@
 \beamer@subsectionintoc {1}{6}{Recomendaciones a la Academia}{8}{0}{1}
 \beamer@subsectionintoc {1}{7}{\IeC {\textquestiondown }Por qu\'e TT en Dise\~no de Sistemas Embebidos (SE)?}{9}{0}{1}
 \beamer@subsubsectionintoc {0}{1}{7}{1}{9}{1}{Sistemas Embebidos: Aplicaciones}
-\beamer@sectionintoc {2}{Objetivos}{10}{0}{2}
+\beamer@subsectionintoc {1}{8}{Absorci\'on}{14}{0}{1}
+\beamer@subsectionintoc {1}{9}{Aplicaci\'on}{26}{0}{1}

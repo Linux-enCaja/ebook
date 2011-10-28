@@ -1,0 +1,989 @@
+\section{La Iniciativa CDIO}
+La disponibilidad de personal calificado que absorba, asimile y aplique los conocimientos asociados a una tecnología es, el punto más importante en el proceso de transferencia tecnológica propuesto en este trabajo; como se mencionó anteriormente, los canales tradicionales de transferencia han demostrado ser poco efectivos para difundir estos conocimientos en el área bajo estudio; la hipótesis central que maneja esta investigación es que la causa principal del atraso de la industria electrónica (relacionada con el diseño digital) es la poca oferta de personal calificado que genere un cambio que permita pasar de importadores a generadores de soluciones que utilizan los últimos avances tecnológicos en la industria electrónica mundial.
+
+Es importante que los estudiantes utilicen herramientas adecuadas cuando se enfrentan a la implementación física. Hasta hace poco en el DIEE se encontraban trabajos académicos realizados por estudiantes de pregrado y posgrado que utilizaban placas de prototipos; se proporcionaban soluciones basadas en herramientas comerciales las cuales eran conseguidas de forma ilegal o se utilizaban demostraciones con funcionalidad limitada. Este tipo de soluciones están muy lejos de una solución comercial real, primero por que no proporciona una plataforma física robusta y segundo porque es necesario adquirir software muy costoso. Adicionalmente, no es ético utilizar herramientas comerciales en la enseñanza, si no se cuentan con las licencias necesarias; es muy común ignorar este tipo de violaciones a los derechos de autor cuando se trabaja en aplicaciones académicas; por esta razón, una de las premisas de esta metodología de enseñanza/aprendizaje es el uso de herramientas abiertas que produzcan resultados comparables al de las herramientas comerciales.
+
+El plan de estudios propuesto en este capítulo adopta los conocimientos generados en el proceso de transferencia descrito en el capítulo \ref{ch:intro}, lo que lo convierte en una herramienta de difusión hacia la academia, con esto se espera que los estudiantes tomen conciencia de la importancia del uso de esta tecnología. El contenido y la metodología del plan de estudios se ajustará a la iniciativa CDIO. El Departamento de Ingeniería Eléctrica y Electrónica de la Universidad Nacional de Colombia está realizando el proceso de adaptar la Iniciativa CDIO a las asignaturas de sus dos carreras (eléctrica y electrónica); la mayoría de las asignaturas que componen estos programas no contemplan actividades que ayuden a mejorar las habilidades en la implementación de sistemas, de aquí la importancia de incluirlos como parte de esta propuesta.
+
+La iniciativa CDIO \footnote{http://www.cdio.org} ha sido desarrollada por el MIT con ayuda de académicos, industriales, ingenieros y estudiantes \cite {WCI} como respuesta a los diferentes caminos que están tomando la educación de la ingeniería y las demandas del mundo real \footnote{lo que se aplica perfectamente al estado de la industria electrónica en Colombia}. Esta iniciativa ha sido adoptada por un creciente número de instituciones académicas; hacer parte de este esfuerzo mundial ayuda a mantener los planes académicos actualizados con los cambios que se realizan en países más industrializados. En este capítulo se mostrará cómo esta iniciativa se adapta perfectamente a la metodología propuesta en este trabajo ya que adiciona dos componentes importantes para la aplicación de la tecnología en la creación de nuevos productos: la implementación y la operación. 
+
+La iniciativa CDIO se basa en la suposición de que los egresados de los centros de formación en ingeniería deben ser capaces de: \textbf{C}oncebir, \textbf{D}iseñar, \textbf{I}mplementar y \textbf{O}perar sistemas funcionales en el mundo real. Como se mencionó anteriormente, en Colombia, una parte importante de los centros de formación solo tienen en cuenta la concepción y el diseño, descuidando la implementación y la operación. Lo que impide que se generen habilidades necesarias para establecer una estrecha relación con la industria, la cual, requiere productos que pueda comercializar o den soluciones a sus necesidades. La frase \textit{en el mundo real} resalta la importancia de trabajar en la solución de problemas que pueden encontrarse en el ejercicio profesional, lo que es muy difícil de determinar cuando los docentes no tienen un contacto frecuente con él. La iniciativa CDIO se enfoca en preparar a los estudiantes con los conocimientos habilidades y aptitudes para ser ingenieros líder; y sus principales objetivos son \cite {WCI}:
+
+\begin{itemize}
+ \item Educar a los estudiantes para dominar un conocimiento más profundo de los fundamentos técnicos.
+ \item Educar a los ingenieros para liderar la creación y operación de nuevos productos y sistemas.
+ \item Educar futuros investigadores para que conozcan la importancia estratégica y el valor de su trabajo.
+\end{itemize}
+
+Estos objetivos se adaptan a los requerimientos que se exige a la plataforma tecnológica de un país para que pueda realizar una adecuada absorción del conocimiento transferido para la creación de nuevos productos adaptados a las necesidades locales. Las premisas que capturan la visión, objetivos y fundamentos pedagógicos de la iniciativa son:
+
+\begin{itemize}
+ \item Es posible cumplir las necesidades propias de la profesión mientras se realiza el proceso de concebir, diseñar, implementar y operar sistemas en el contexto de los sistemas de ingeniería. 
+ \item Los resultados de la formación deben ser fijados por los sectores interesados (academia, industria, gobierno) y deben formar una secuencia de experiencias de aprendizaje, algunas de las cuales son experimentales; es decir, deben enfrentar a los estudiantes a situaciones que encontrarán en el ejercicio de su profesión.
+ \item La adecuada construcción de esta cadena de actividades tendrán un doble impacto en la formación de los estudiantes: por un lado facilitará el aprendizaje de habilidades críticas e inter-personales y fortalecerá las habilidades de construcción de sistemas, productos y procesos, mientras se mejora el aprendizaje de los conceptos fundamentales.
+\end{itemize}
+
+% \subsubsection{Emprendimiento y liderazgo}
+% 
+% La situación actual por la que atraviesa la industria electrónica nacional, requiere que los profesionales en el área tengan las capacidades de emprendimiento y liderazgo necesarias para la creación de nuevas empresas o para la creación de nuevos productos, la Figura \ref{cdio_emp_lid} muestra la relación entre emprendimiento \footnote{El concepto clásico de emprendimiento involucra el re-direccionamiento y movilización de capital y recursos humanos para crear una nueva actividad económica; actualmente, el emprendimiento esta asociado a la creación de una nueva empresa con una nueva línea de negocios.}, liderazgo y las habilidades CDIO. 
+% 
+% \begin{figure}[H]
+%   \begin{center} \includegraphics[scale=.35]{./images/CDIO_emp_lid.pdf} \end{center}
+%   \caption{Relación entre emprendimiento, liderazgo y las habilidades CDIO} fuente:\cite{ECJM+09} \label{cdio_emp_lid}
+% \end{figure}
+
+\subsection{Estructura del Plan de Estudios CDIO}
+La figura \ref{cdio_blocks} muestra los bloques constructores del plan de estudios CDIO. En el primer nivel se puede observar que todo individuo interesado en obtener habilidades técnicas posee \textit{habilidades personales y profesionales}, las cuales son fundamentales para la práctica. Para ser capaces de desarrollar sistemas complejos en ingeniería, los estudiantes deben dominar los fundamentos del \textit{razonamiento y conocimiento técnico}; para trabajar en un entorno moderno basado en grupos de trabajo, los estudiantes deben desarrollar \textit{habilidades interpersonales} de comunicación y trabajo en equipo; finalmente, para ser capaz de crear y operar productos y sistemas, un estudiante debe entender el concepto de \textit{concebir, diseñar, implementar y operar sistemas en el contexto social y empresarial} \cite{EFC01}
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.8]{./images/CDIO.pdf} \end{center}
+  \caption{Bloques constructores de conocimiento, habilidades y actitudes necesarias para concebir, diseñar, implementar y operar sistemas en el contexto social y empresarial  fuente:\cite{EFC01}} \label{cdio_blocks}
+\end{figure}
+
+
+\textbf{Razonamiento y conocimiento técnico} Los componentes del primer nivel \textit{razonamiento y conocimiento técnico} son comunes a los planes de estudio de las ingenierías modernas y son:
+
+\begin{itemize}
+ \item Fundamentos avanzados de ingeniería.
+ \item Fundamentos del núcleo de ingeniería.
+ \item Conocimiento científico.
+\end{itemize}
+
+La razón de poner este bloque constructor en el primer nivel es solo para recordar que el objetivo primordial de cualquier programa de pregrado es el desarrollo de un conocimiento profundo de fundamentos técnicos. En este trabajo no se cambiará este componente ya que para hacerlo es necesario un consenso con las demás carreras de la facultad de ingeniería de la Universidad Nacional, labor que puede tomar varios años.
+
+\textbf{Habilidades personales, profesionales e interpersonales} Los niveles 2 y 3 se centran en las habilidades personales que debe poseer un individuo para que pueda cumplir con el objetivo de la iniciativa CDIO. El nivel 2 está compuesto por:
+\begin{itemize}
+ \item Las habilidades profesionales que representan las tres formas de pensar más practicadas por los ingenieros: resolución de problemas; descubrimiento de conocimiento y pensamiento sistémico.
+ \item Actitudes que incluyen integridad y comportamiento profesional así como las necesarias para planear la profesión.
+\end{itemize}
+
+Las habilidades que no hacen parte del contexto profesional ni del inter-personal son llamadas \textit{habilidades y actitudes personales}, incluyen el carácter; iniciativa; perseverancia; formas de pensar más genéricas como pensamiento crítico, creativo; y habilidades propias como curiosidad, aprendizaje continuo y manejo del tiempo.
+
+Las habilidades inter-personales, son un subconjunto de las habilidades personales y se dividen en dos grupos (que se traslapan) llamados: equipo de trabajo y comunicaciones. El equipo de trabajo hace referencia a las habilidades necesarias para formar, operar, fortalecer y liderar un equipo con habilidades específicas de un equipo de trabajo técnico. La comunicación se compone de habilidades para idear estrategias de comunicación y aquellas que utilizan los medios orales, escritos, electrónicos y gráficos, y, en el caso colombiano, el uso del idioma Inglés. 
+
+% La Figura \ref{cdio_2_3} muestra  la relación entre las habilidades de nivel 2 (personales y profesionales) y nivel 3 (interpersonales). 
+% \begin{figure}[htpb]
+%   \begin{center} \includegraphics[scale=.8]{./images/CDIO_2_3.pdf} \end{center}
+%   \caption{Relación entre las habilidades personales, profesionales e interpersonales} fuente:\cite{EFC01} \label{cdio_2_3}
+% \end{figure}
+
+
+\textbf{Habilidades CDIO} Habilidades necesarias parea concebir, diseñar, implementar y operar sistemas en el contexto social y empresarial; estos cuatro componentes son necesarios para que los egresados de las carreras relacionadas con la ingeniería electrónica sean capaces de absorber los conocimientos que las nuevas tecnologías proporcionan, adaptarlos a la situación tecnológica y al contexto social del país para generar productos que resuelvan necesidades locales. Para satisfacer una necesidad de la sociedad es necesario conocer la dinámica empresarial, los principios que la rigen y como se debe actuar en una empresa de cualquier tipo y tamaño.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%      IDENTIFICACION DE HABILIDADES CDIO                              %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Implementación del Plan de Estudios CDIO}
+La Figura \ref{impl_CDIO} muestra los componentes que deben ser especificados para implementar el plan de estudios CDIO al currículo de las asignaturas del área de electrónica digital; en primer lugar se encuentran los resultados esperados del proceso de aprendizaje, esto es, ¿Qué deben saber y qué deben ser capaces de hacer los estudiantes al final del curso? Para contestar a esta pregunta es necesario definir las \textbf{habilidades} que serán reforzadas o desarrolladas y los \textit{objetivos} de cada asignatura. 
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.35]{./images/CDIO_metodologia.pdf} \end{center}
+  \caption{Objetivos, actividades, y evaluación: } \label{impl_CDIO}
+\end{figure}
+
+Para alcanzar los objetivos definidos en el primer paso, es necesario generar una serie de \textbf{actividades} que le permitan al estudiante retener nuevos conocimientos y habilidades y desarrollar las competencias deseadas; las actividades deben cubrir todas las habilidades que se quieran desarrollar o reforzar. Finalmente, se deben desarrollar métodos de evaluación que permitan conocer el nivel de competencia de los estudiantes, y de esta forma ajustar las actividades para obtener los resultados esperados.
+
+\subsection{Definición e Identificación de las Habilidades CDIO}
+El primer paso en la implementación del plan de estudios CDIO es definir e identificar las habilidades requeridas en una determinada área del plan de estudios; en este caso en las asignaturas del área de electrónica digital. En el DIEE de la Universidad Nacional de Colombia, el área de electrónica digital está compuesta por tres asignaturas para la carrera de ingeniería electrónica: Electrónica Digital 1, Electrónica Digital 2 y Sistemas Embebidos y por electrónica Digital 1 para ingeniería eléctrica.
+
+\subsubsection{Grado de competencia}
+Para trasladar las habilidades a objetivos de aprendizaje es necesario determinar el grado de competencia que se espera que el profesional adquiera en cada una de las asignaturas; por supuesto, algunas de estas habilidades no pueden obtenerse solo en una asignatura y es necesario que todo el plan académico contribuya a generarla, lo que requiere un consenso del personal académico. Los niveles de competencia seleccionados para indicar el grado en que debe ser apropiada una determinada habilidad son:
+
+\begin{itemize}
+ \item \textit{Introducir} (\textbf{I}): Introduce pero no evalúa.
+ \item \textit{Enseñar} (\textbf{E}) : Enseña y evalúa.
+ \item \textit{Utilizar} (\textbf{U}): Utiliza, puede ser evaluado o no.
+\end{itemize}
+
+\subsubsection {Aptitudes personales, profesionales y habilidades interpersonales}
+La tabla \ref{compet_2_3} muestra las habilidades para las \textit{aptitudes personales y profesionales} de las tres asignaturas del área de electrónica digital. En ella se puede observar que existen habilidades comunes a las tres asignaturas en lo relacionado con el planteamiento y resolución de problemas, experimentación y descubrimiento de conocimiento y habilidades y actitudes personales; todas ellas buscan que el estudiante sea capaz de identificar un problema y con base en los conocimientos adquiridos formule hipótesis y modelos que permitan darle solución. Las habilidades interpersonales son tratadas de forma gradual, en el primer curso, se guía en la formación de estas habilidades utilizando ejemplos que ellos utilizarán en los cursos posteriores. 
+
+\subsubsection{Habilidades CDIO Sistemas en el contexto Empresarial, Social y Ambiental - Innovación}
+
+La primera columna de la tabla \ref{compet_4} muestra las habilidades C.D.I.O. Sistemas en el contexto Empresarial, Social y Ambiental - Innovación. Este grupo de habilidades son las que marcan diferencia con las otras asignaturas del plan de estudios ya que como se mencionó anteriormente, la mayoría de los cursos no contemplan la implementación de sistemas reales donde se apliquen los conocimientos que se intentan transmitir. 
+
+\begin{landscape}
+
+\begin{minipage}{0.55 \textwidth}
+
+\begin{center}
+  \begin{table}[H]
+    \resizebox{!}{6cm}{
+      \begin{tabular}{|l|c|c|c|} \hline
+        \multicolumn{4}{|c|}{\textbf{Competencias de las habilidades CDIO nivel 2 y 3}}                 \\ \hline 
+        \multirow{2}{*}{\textbf{APTITUDES PERSONALES Y PROFESIONALES}} & \multicolumn{3}{c|} {Nivel 1}          \\ \cline{2-4}
+                                                        & E. Dig1 & E. Dig2 & Sist. Emb. \\ \hline 
+        \textbf{\textit{Planteamiento y resolución de problemas de ingeniería}} & \multicolumn{3}{c|} {EU}       \\ \hline
+          1 Identificación y formulación del problema    & \multicolumn{3}{c|} {EU}       \\ \hline
+          2 Modelamiento                                 & \multicolumn{3}{c|} {EU}       \\ \hline
+          3 Solución y recomendación                     & \multicolumn{3}{c|} {EU}       \\ \hline
+        \textbf{\textit{Experimentación y descubrimiento de conocimiento}} & \multicolumn{3}{c|} {U}       \\ \hline
+          4 Formulación de hipótesis                     & \multicolumn{3}{c|} {U}        \\ \hline
+          5 Investigación experimental                   & \multicolumn{3}{c|} {U}        \\ \hline
+        \textbf{\textit{Pensamiento sistemático}}        & \multicolumn{3}{c|} {EU}       \\ \hline
+          6 Pensamiento global                           & \multicolumn{3}{c|} {U}        \\ \hline
+          7 Surgimiento e interacciones                  & \multicolumn{3}{c|} {U}        \\ \hline
+        \textbf{\textit{Habilidades y actitudes personales}}   & \multicolumn{3}{c|} {U}       \\ \hline
+          8 Pensamiento creativo                         & \multicolumn{3}{c|} {IEU}      \\ \hline
+          9 Pensamiento crítico                          & \multicolumn{3}{c|} {IEU}      \\ \hline
+          10 Toma de conciencia de conocimientos propios & \multicolumn{3}{c|} {IEU}      \\ \hline
+          11 Curiosidad y aprendizaje permanente         
+        \textbf{\textit{Habilidades y actitudes profesionales}} & \multicolumn{3}{c|} {U} \\ \hline%         \begin{enumerate}
+          12 Ética profesional, integridad, responsabilidad & \multicolumn{3}{c|} {U}     \\ \hline
+          13 Comportamiento profesional                  & \multicolumn{3}{c|} {U}        \\ \hline
+          39 Confianza y lealtad                         & \multicolumn{3}{c|} {IEU}       \\ \hline
+        \multirow{2}{*}{\textbf{HABILIDADES INTERPERSONALES}} & \multicolumn{3}{c|} {Nivel 1}          \\ \cline{2-4}
+                                                        & E. Dig1 & E. Dig2 & Sist. Emb. \\ \hline 
+        \textbf{\textit{Equipo de trabajo}}              & \multicolumn{3}{c|} {EU}       \\ \hline
+          14 Formar grupos efectivos                     & EU & U & U                     \\ \hline
+          15 Equipo de liderazgo                         & EU & U & U                     \\ \hline
+          40 Equipo Técnico y Multi-disciplinario        & EU & U & U                     \\ \hline
+        \textbf{\textit{Comunicaciones estructuradas}}   & \multicolumn{3}{c|} {EU}       \\ \hline
+          16 Estrategia de comunicación                  & EU & U & U                     \\ \hline
+          17 Estructura de la comunicación               & EU & U & U                     \\ \hline
+          18 Comunicación Escrita                        & EU & U & U                     \\ \hline
+          19 Comunicación Electrónica                    & EU & U & U                     \\ \hline
+          20 Presentación Oral                           & EU & U & U                     \\ \hline
+        \textbf{\textit{Comunicación en Idioma Extranjero}} & \multicolumn{3}{c|} {U}     \\ \hline
+          21 Inglés                                      & \multicolumn{3}{c|} {U}        \\ \hline
+        \textbf{\textit{Comunicaciones Informales: Relacionarse con los demás}} & \multicolumn{3}{c|} {U}       \\ \hline 
+          41 Preguntar, Escuchar y Dialogar              & EU & U & U                     \\ \hline
+          42 Negociación, compromiso y resolución de conflictos & EU & U & U              \\ \hline
+          43 Establecimiento de conexiones               & IEU& U & U                     \\ \hline
+      \end{tabular}
+    }
+  \caption{Competencias para los niveles 2 y 3 CDIO} \label{compet_2_3} 
+  \end{table}
+\end{center}
+
+\end{minipage}
+\   \
+\hfill \begin{minipage}{0.55 \textwidth}
+
+\begin{center}
+  \begin{table}[H]
+    \resizebox{!}{4cm}{
+      \begin{tabular}{|l|c|c|c|} \hline
+        \multirow{2}{*}{\textbf{HABILIDADES CDIO}}              & \multicolumn{3}{c|} {Nivel 1}          \\ \cline{2-4}
+                                                                & E. Dig1 & E. Dig2 & Sist. Emb. \\ \hline 
+        \textbf{\textit{Contexto Externo, Social, Económico y Ambiental}} & \multicolumn{3}{c|} {IEU}        \\ \hline
+          22 Rol y responsabilidad de los Ingenieros               & \multicolumn{3}{c|} {IEU}     \\ \hline
+          23 Impacto sobre la sociedad y el medio ambiente         & \multicolumn{3}{c|} {IEU}     \\ \hline
+          24 Cuestiones y valores actuales                         & \multicolumn{3}{c|} {IEU}     \\ \hline
+          44 Sostenibilidad y necesidad de un desarrollo sostenible& IE & IE & IE                  \\ \hline
+        \textbf{\textit{Empresa y contexto empresarial}}           & \multicolumn{3}{c|} {EU}         \\ \hline
+          25 Interesados en la empresa, metas y objetivos          & \multicolumn{3}{c|} {I}       \\ \hline
+          26 Espíritu Empresarial Técnico                          & \multicolumn{3}{c|} {I}       \\ \hline
+          27 Trabajo exitoso en organizaciones                     & \multicolumn{3}{c|} {I}       \\ \hline
+          45 Finanzas y Economía de los Proyectos de Ingeniería    & IE & IE & IE                  \\ \hline
+        \textbf{\textit{Concepción y Administración de Sistemas en Ingeniería.}} & \multicolumn{3}{c|} {IEU}        \\ \hline
+          28 Entender las necesidades y establecer las metas       & IEU & EU & U                  \\ \hline
+          29 Definir la función, concepto y arquitectura           & IEU & EU & U                  \\ \hline
+        \textbf{\textit{Diseño}}                                   & \multicolumn{3}{c|} {IEU}        \\ \hline
+          30 Proceso de Diseño                                     & IEU & EU & U                  \\ \hline
+          31 Fases del proceso de Diseño y enfoques                & IEU & EU & U                  \\ \hline
+          32 Utilización de conocimiento científico en el diseño   & IEU & EU & U                  \\ \hline
+          33 Diseño específico                                     & IEU & EU & U                  \\ \hline   
+          34 Diseño multi-disciplinario                            & I   & E  & U                  \\ \hline
+        \textbf{\textit{Implementación}}                           & \multicolumn{3}{c|} {EU}         \\ \hline
+          35 Proceso de fabricación Hardware                       & IEU & EU & U                  \\ \hline   
+          36 Proceso de Implementación de Software                 & I   & EU & U                  \\ \hline  
+          37 Integración Software - Hardware                       & I   & EU & U                  \\ \hline  
+          38 Pruebas, verificación, validación y certificación     & IE  & EU & U                  \\ \hline  
+      \end{tabular}
+    }
+  \caption{Competencias para CDIO} \label{compet_4} 
+  \end{table}
+\end{center}
+\end{minipage}
+\end{landscape}
+ 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%
+\section{Integración de las Habilidades CDIO al Plan de Estudios}
+%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Metodología de Diseño}
+
+La metodología de diseño utilizada en la creación de este programa académico se describió en la sección \ref{design_metodology} del capítulo \ref{ch:embedded}. En la figura \ref{design_method} se muestra como será abordada esta metodología en los diferentes cursos que componen la línea de electrónica digital.
+ 
+ \begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.6]{./images/habilidades_digitales.pdf} \end{center}
+  \caption{Metodología de diseño para el área de Sistemas Digitales} \label{design_method}
+ \end{figure}
+
+
+% \subsection{Objetivo General}
+% Generar en el estudiante las habilidades necesarias para concebir, diseñar, implementar y operar sistemas digitales complejos que satisfagan necesidades de la sociedad y proporcionar un canal para la transferencia de tecnología y conocimiento a la Industria Colombiana. 
+% 
+% \subsubsection{Electrónica Digital 1}
+% Concebir y definir las especificaciones y requerimientos de un sistema digital, modelar su funcionamiento, y realizar la implementación siguiendo la metodología de diseño de sistemas embebidos utilizando únicamente tareas hardware.
+% 
+% \subsubsection{Electrónica Digital 2}
+% Concebir, definir las especificaciones, modelar, diseñar un sistema digital siguiendo la metodología de diseño de sistemas embebidos y realizar su implementación óptima utilizando tareas hardware (implementadas en un PLD) y tareas software (que se ejecutan en un procesador).
+% 
+% \subsubsection{Sistemas Embebidos}
+% Concebir, diseñar, e implementar un sistema digital complejo utilizando la metodología de diseño de sistemas embebidos, un SoC comercial y un sistema operativo para su implementación.
+% 
+% \subsection{Objetivos Específicos}
+% 
+% \subsection {Ojbetivos comúnes}
+% \begin{itemize}
+%  \item Identificar las especificaciones funcionales del sistema, su arquitectura de alto nivel y definir su descomposición en elementos.
+%  \item Explicar las actividades en las etapas del proceso de diseño, 
+%  \item Desarrollar el pensamiento sistémico.
+%  \item Modelar funcionalmente sistemas digitales.
+%  \item Diseñar pruebas para comprobar el correcto funcionamiento de los sistemas implementados.
+%  \item Leer y entender material técnico escrito en inglés.
+%  \item Implementar un sistemas embebido (hardware o hardware/software) para cumplir una tarea determinada que cumpla con una necesidad real (Obtener e interpretar las necesidades del consumidor) utilizando técnicas, herramientas y procesos adecuados.
+%  \item Estudiar y aplicar el concepto de la re-utilización de código.
+%  \item Desarrollar trabajo en equipo incluyendo presentaciones, describiendo los diversos roles y responsabilidades.
+%  \item Documentar los diseños realizados para crear una base de datos que contribuya a la difusión del conocimiento adquirido.
+% \end{itemize}
+% 
+% \subsubsection{Electrónica Digital 1}
+% \begin{itemize}
+%  \item Estudiar las fases de la metodología de diseño para sistemas embebidos.
+%  \item Estudiar los dominios de diseño estructural, funcional y físico. 
+%  \item Estudiar los lenguajes de descripción de hardware.
+%  \item Estudiar los componentes básicos de la lógica combinatoria y secuencial.
+%  \item Estudio de las máquinas de estado algorítmicas.
+% \end{itemize}
+% 
+% \subsubsection{Electrónica Digital 2}
+% \begin{itemize}
+%  \item Estudiar los requisitos para un particionamiento hardware/software óptimo.
+%  \item Estudiar la arquitectura de un procesador, micro-arquitectura, set de instrucciones, interrupciones, direccionamiento, memorias.
+%  \item Estudiar el proceso de implementación de tareas software.
+%  \item Estudiar la integración software-hardware.
+%  \item Diseñar pruebas para comprobar el correcto funcionamiento de los sistemas implementados.
+% \end{itemize}
+% 
+% \subsubsection{Sistemas Embebidos}
+% \begin{itemize}
+%  \item Realizar aplicaciones que requieran diseño multi-disciplinario.
+%  \item Estudiar y realizar el proceso de fabricación hardware.
+%  \item Estudiar el principio básico de los sistemas operativos.
+%  \item Describir la integración de software en hardware electrónico
+%  \item Entender diagramas de circuitos electrónicos de sistemas digitales, identificar sus componentes y su función.
+%  \item Estudiar diseños software y hardware existentes para entender su funcionamiento, arquitectura y adquirir experiencia en el diseño.
+%  \item Hacer parte de listas de discusión de temas técnicos que usen el inglés como lenguaje.
+%  \item Utilizar medios electrónicos para documentar procesos de diseño.
+% \end{itemize}
+% 
+% Con estos objetivos se busca que al cursar todas las asignaturas del área el estudiante adquiera los conocimientos que se resumen en la figura \ref{ES_education}.
+% 
+% \begin{figure}[htpb]
+%    \begin{center} \includegraphics[scale=.6]{./images/ES_CDIO_flow.png}   \end{center}
+%     \caption{Educación de sistemas embebidos. Tomada de:\cite{HMHK09} y modificada} \label{ES_education}
+%  \end{figure}
+
+% \subsection{Contenido}
+% 
+% \subsubsection{Electrónica Digital 1}
+% \begin{itemize}
+%  \item \textbf{Flujo de Diseño de Sistemas Embebidos}
+%      \begin{itemize}
+%        \item Sistemas Digitales: Panorama Y Perspectiva 
+%        \item Metodología de Diseño
+%        \item Representaciones de Diseño y Niveles de Abstracción
+%      \end{itemize}
+%  \item \textbf{Sistemas Numéricos y Operaciones Aritméticas}
+%      \begin{itemize}
+%        \item Representación de Datos
+%        \item Sistemas numéricos: Binario, Octal Hexadecimal
+%        \item Representación de números negativos
+%        \item Algoritmos para la implementación de operaciones aritméticas
+%        \begin{itemize}
+%          \item Camino de Datos
+%          \item Control
+%        \end{itemize}
+%      \end{itemize}
+%  \item \textbf{Lógica Combinatoria}
+%      \begin{itemize}
+%       \item Definición.
+%       \item Ecuaciones Booleanas, Formas canónicas.
+%       \item Módulos Básicos: Multiplexores, codificadores, sumadores, restadores comparadores.
+%      \end{itemize}
+%  \item \textbf{Lógica Secuencial}
+%      \begin{itemize}
+%       \item Definición
+%       \item Elementos de memoria:
+%         \begin{itemize}
+%         \item Latch
+%         \item Flip-Flop
+%         \end{itemize}
+%       \item Bloques básicos
+%         \begin{itemize}
+%         \item Registros
+%         \item Acumuladores
+%         \item Contadores
+%         \end{itemize}
+%       \item Máquina de Estados Finitos (FSM)
+%         \begin{itemize}
+%         \item Arquitectura
+%         \item Tipos: Mealy, Moore
+%         \item Diagramas de Estado
+%         \item Síntesis de Máquinas de Estado
+%         \end{itemize}
+%       \item Máquinas de Estado Algorítmicas (ASM)
+%         \begin{itemize}
+%         \item Tareas Hardware
+%         \item Componentes: Camino de Datos y Máquina de Control
+%         \item Implementación de operaciones aritméticas utilizando ASM
+%         \item Identificación, funcionamiento e interfaz de bloques constructores.
+%         \item Interacción entre el Camino de Datos y la Máquina de Control
+%         \item Lenguajes de Descripción de Hardware
+%         \end{itemize}
+%      \end{itemize}
+%  \item \textbf{Tecnologías de Implementación}
+%      \begin{itemize}
+%       \item Familia Lógica CMOS
+%         \begin{itemize}
+%         \item Principio de funcionamiento, consumo de potencia
+%         \item Niveles Lógicos y márgenes de ruido
+%         \item Retardos, Manejo de Corriente
+%         \item Compuertas tri-estado y Open-Drain
+%         \end{itemize}
+%       \item Dispositivos Lógicos Programables
+%         \begin{itemize}
+%          \item Arreglos Lógicos Programables (PALs)
+%          \item Dispositivos Lógicos Programables (PLDs, CPLDs)
+%          \item Arreglo de Compuertas Programable en Campo (FPGA)
+%          \item Flujo de Diseño - Programación en Sistema
+%         \end{itemize}
+%      \end{itemize}
+%  \item \textbf{Introducción a los procesadores}
+%      \begin{itemize}
+%       \item Máquina de Estados Algorítmica Programable
+%      \end{itemize}
+% \end{itemize}
+% 
+% 
+% \subsubsection{Electrónica Digital 2}
+% 
+% \begin{itemize}
+%  \item \textbf{Codiseño Hardware-Software}
+%     \begin{itemize}
+%      \item Flujo de Diseño y Particionamiento HW/SW.
+%      \item Comunicación SW -> HW (Direccionamiento)
+%      \item Comunicación HW -> SW (Interrupciones)
+%      \item Componentes de un Sistema etherogéneo.
+%       \begin{itemize}
+%         \item Procesador
+%         \item Buses
+%         \item Periféricos
+%         \item Memorias
+%       \end{itemize}
+%     \end{itemize}
+%  \item \textbf{Arquitectura de Procesadores}
+%     \begin{itemize}
+%      \item Micro-Arquitectura
+%      \item Set de Instrucciones
+%      \item Modos de direccionamiento
+%      \item Interrupciones
+%      \item Pipeline
+%     \end{itemize}
+% 
+%  \item \textbf{Implementacion de Tareas Hardware}
+%     \begin{itemize}
+%      \item Arquitectura de computadores
+%      \begin{itemize}
+%        \item CPU
+%        \item Memorias
+%        \item Periféricos
+%        \item Mapa de Memoria
+%        \item Controlador de Interrupciones Programable
+%      \end{itemize}
+%      \item Definición de la Interfaz HS <-> SW
+%      \item Implementación de Tareas Hardware en Periféricos.
+%     \end{itemize}
+% 
+%  \item \textbf{Flujo de Diseño Software}
+%     \begin{itemize}
+%      \item Cadena de Herramientas: 
+%      \begin{itemize}
+%        \item Compilador
+%        \item Librerías standard
+%        \item Depurador
+%        \item Utilidades binarias
+%        \item Código de Inicio C RunTime crt0
+%        \item Herramienta \textit{make}
+%      \end{itemize}
+%      \item Integración del Software sobre hardware Electrónico.
+%        \begin{itemize}
+%         \item Ejecución en Memoria Interna
+%         \item Ejecución en Memoria Externa: Bootloaders
+%        \end{itemize}
+%      \item Implementación de tareas software y comunicación con tareas Hardware.
+%      \end{itemize}
+%  \item \textbf{Sistemas Sobre Silicio}
+%     \begin{itemize}
+%      \item Arquitectura
+%     \end{itemize}
+% \end{itemize}
+% 
+% \subsubsection{Sistemas Embebidos}
+% \begin{itemize}
+%  \item \textbf{Sistemas Embebidos}
+%     \begin{itemize}
+%      \item Definición,aplicaciones
+%      \item Metodología de Diseño
+%      \item Arquitectura
+%        \begin{itemize}
+%           \item Sistema Sobre Silicio
+%           \item Circuitos de Referencia
+%        \end{itemize}
+%     \end{itemize}
+%      \item Iniclialización
+%        \begin{itemize}
+%           \item Métodos de arranque
+%           \item Bootloaders
+%        \end{itemize}
+%  \item \textbf{Sistema Operativo Linux}
+%     \begin{itemize}
+%      \item Arquitectura
+%      \item Sincronización entre procesos
+%      \item Estructura del Kernel y Organización del código fuente
+%      \item Drivers de Dispositivos y módulos del kernel
+%      \item Imágen del kernel
+%      \item Inicialización del Kernel
+%     \end{itemize}
+%  \item \textbf{Sistema de Archivos del root}
+%     \begin{itemize}
+%      \item Tipos de Sistema de Archivos
+%      \item Estructura del Sistema de Archivos del root
+%      \item Archivos de configuración y niveles de ejecución.
+%      \item Montaje del sistema de archvios del root
+%     \end{itemize}
+%  \item \textbf{Interfaz con dispositivos externos al SoC}
+%     \begin{itemize}
+%      \item Control utilizando señales de Entrada/Salida de propósito general (GPIOs)
+%      \item Utilizando puertos de comunicaciones UART, I2C, SPI, USB.
+%      \item Utilizando el controlador de memorias externas del SoC
+%     \end{itemize}
+%  \item \textbf{Interfaz con Periféricos Dedicados Implementados en PLDs}
+%     \begin{itemize}
+%      \item Configuración del PLD utilizando GPIOs del SoC
+%      \item Definición de la Interfaz HW y SW
+%      \item Comunicación con periféricos dedicados
+%     \end{itemize}
+% \end{itemize}
+
+
+\subsection{Objetivos de Aprendizaje - Dominio Cognitivo}
+El dominio cognitivo involucra conocimiento y desarrollo de habilidades intelectuales. Incluye el reconocimiento de hechos específicos, procedimientos, y conceptos que ayudan en el desarrollo de habilidades y capacidades intelectuales. Bloom \cite{BBS} identificó las siguientes seis categorías, las que están ordenadas desde el comportamiento más simple al más complejo. Las categorías pueden considerarse como grados de dificultad. Es decir, se deben dominar las primeras antes de poder desarrollar las otras.
+
+% defines; describes; enumerates;  identifies;  labels;  lists;  matches;  names;  reads;  records;  reproduces;  selects;  states;  views; 
+% writes;.
+
+\begin{enumerate}
+ \item Conocimiento: definido como la acción de recordar información aprendida anteriormente. 
+
+  \begin{itemize}
+    \item Objetivos generales
+      \begin{itemize}
+        \item \textit{Identifica} y \textit{reproduce} las diferentes etapas del proceso de diseño.
+        \item \textit{Identifica} la estructura de un sistema digital.
+        \item \textit{Selecciona} los componentes adecuados para cada problema (particionamiento hardware/software).
+        \item \textit{Define} las especificaciones de un sistema digital.
+        \item \textit{Lee} esquemáticos electrónicos y hojas de especificaciones de sus componentes.
+        \item \textit{Escribe} documentos que \textit{describen} el proceso de diseño de un sistema digital.
+      \end{itemize}
+
+    \item Electrónica digital 1
+      \begin{itemize}
+        \item \textit{Identifica} la arquitectura de un circuito lógico y secuencial.
+        \item \textit{Reproduce} los pasos para sintetizar una máquina de estados algorítmica.
+        \item \textit{Identifica} los componentes básicos de una máquina de estados algorítmica.
+        \item \textit{Identifica} los pasos del flujo de diseño hardware.
+      \end{itemize}
+
+    \item Electrónica digital 2
+      \begin{itemize}
+        \item \textit{Identifica} las tareas que deben ser ejecutadas en software y en hardware. 
+        \item \textit{Identifica} y \textit{describe} los componentes de un SoC.
+        \item \textit{Identifica} y \textit{describe} el funcionamiento de los componentes de una unidad de procesamiento central.
+        \item \textit{Identifica} los pasos del flujo de diseño software.
+        \item \textit{Describe} el comportamiento de tareas hardware y software.
+      \end{itemize}
+
+    \item Sistemas embebidos
+      \begin{itemize}
+        \item \textit{Describe} la integración de software en hardware electrónico.
+        \item \textit{Identifica} los componentes de un sistema embebido.
+      \end{itemize}
+
+  \end{itemize}
+
+
+ \item Comprensión: relacionado con los objetivos, comportamientos o respuestas que representan el entendimiento de un mensaje contenido en una comunicación, sin referirse a otro material. Para llegar a este entendimiento el estudiante puede cambiar la comunicación en su mente para reflejar una forma alterna más significativa para él.
+
+% classifies; cites; converts; describes; discusses; estimates; explains; generalizes; gives examples; illustrates; makes sense out of; paraphrases; restates (in own words); summarizes; traces; understands.
+% 
+% clasifica; cita; convierte, describe, analiza, calcula, explica, generaliza, da ejemplos, ilustra, hace sentido a, parafrasea, reitera (en sus propias palabras), resumen, los rastros; entiende.
+
+
+  \begin{itemize}
+    \item Objetivos generales
+      \begin{itemize}
+        \item \textit{Entiende} las etapas de la metodología de diseño de sistemas digitales.
+        \item \textit{Entiende} la diferencia entre tareas hardware y software.
+        \item \textit{Analiza} las diferentes formas de implementar un sistema digital.
+        \item \textit{Describe} el comportamiento de un sistema digital.
+      \end{itemize}
+
+    \item Electrónica digital 1
+      \begin{itemize}
+        \item \textit{Entiende} la forma de implementar máquinas de estado algorítmicas en dispositivos lógicos programables (PLD) utilizando lenguajes de descripción de hardware.
+      \end{itemize}
+
+    \item Electrónica digital 2
+      \begin{itemize}
+        \item \textit{Entiende} el funcionamiento de un SoC.
+        \item \textit{Entiende} los canales de comunicación entre un periférico y la unidad de procesamiento central.
+        \item \textit{Entiende} los pasos necesarios para crear aplicaciones utilizando lenguajes de alto nivel.
+        \item \textit{Entiende} el uso del conjunto de instrucciones en la elaboración de aplicaciones.
+      \end{itemize}
+
+    \item Sistemas embebidos
+      \begin{itemize}
+        \item \textit{Entiende} la diferencia entre procesadores softcore y hardcore.
+        \item \textit{Entiende} la diferencia entre aplicaciones que utilizan y las que no utilizan sistema operativo.
+      \end{itemize}
+  \end{itemize}
+ 
+
+ \item Aplicación: habilidad de utilizar información aprendida previamente en nuevas situaciones para resolver problemas con una única o mejor solución.
+
+% acts; administers; applies; articulates; assesses; charts; collects; computes; constructs; contributes; controls; demonstrates; determines; develops; discovers; establishes; extends; implements; includes; informs; instructs; operationalizes; participates; predicts; prepares; preserves; produces; projects; provides; relates; reports; shows; solves; teaches; transfers; uses; utilizes.
+ 
+  \begin{itemize}
+    \item Objetivos generales
+      \begin{itemize}
+        \item \textit{utiliza y aplica} la metodología de diseño de sistemas embebidos en la solución de problemas.
+        \item \textit{Implementa} sistemas digitales que dan solución a una necesidad de la sociedad.
+        \item \textit{Implementa} placas de circuito impreso.
+        \item \textit{Utiliza} software como ayuda en el proceso de diseño.
+        \item \textit{Aplica} el concepto de re-utilización de código. 
+        \item \textit{Utiliza} niveles de jerarquía para el diseño de sistemas digitales.
+        \item \textit{Construye} sistemas digitales.
+        \item \textit{Desarrolla y aplica} pruebas para comprobar el correcto funcionamiento de un sistema digital.
+      \end{itemize}
+
+    \item Electrónica digital 1
+      \begin{itemize}
+        \item \textit{Implementa} máquinas de estado algorítmicas.
+        \item \textit{Utiliza} lenguajes de descripción de hardware.
+        \item \textit{Utiliza} el flujo de diseño hardware.
+      \end{itemize}
+
+    \item Electrónica digital 2
+      \begin{itemize}
+        \item \textit{Implementa} tareas hardware como periféricos de un SoC.
+        \item \textit{Utiliza} herramientas de compilación y el flujo de diseño software.
+        \item \textit{Implementa} tareas software utilizando una unidad de procesamiento central.
+        \item \textit{Desarrolla} aplicaciones que implementan tareas hardware y software.
+        \item \textit{Utiliza} canales de comunicación entre tareas hardware y software
+      \end{itemize}
+
+    \item Sistemas embebidos
+      \begin{itemize}
+        \item \textit{Desarrolla} aplicaciones utilizando un sistema operativo.
+        \item \textit{Implementa} periféricos en un PLD.
+        \item \textit{Desarrolla} controladores del sistema operativo para periféricos implementados en PLDs.
+        \item \textit{Utiliza} librerías disponibles para el desarrollo de aplicaciones.
+        \item \textit{Desarrolla} interfaces gráficas para aplicaciones embebidas.
+      \end{itemize}
+  \end{itemize}
+
+
+ \item Análisis: La separación de la información en sus partes componentes, examinando y entendiendo su estructura. Distinguiendo entre hechos e inferencias.
+
+% analyzes; breaks down; categorizes; compares; contrasts; correlates; diagrams; differentiates; discriminates; distinguishes; focuses; illustrates; infers; limits; outlines; points out; prioritizes; recognizes; separates; subdivides.
+
+  \begin{itemize}
+    \item Objetivos generales
+      \begin{itemize}
+        \item \textit{Distingue} las diferentes formas de implementación de sistemas digitales.
+        \item \textit{Subdivide} un problema en componentes funcionales.
+        \item \textit{Reconoce} los componentes de un sistema digital. 
+        \item \textit{Distingue} los dominios de descripción y los niveles de abstracción de los sistemas digitales.
+        \item \textit{Reconoce} los niveles jerárquicos en un proceso de diseño.
+        \item \textit{Diferencia} la implementación de tareas hardware y software.
+      \end{itemize}
+
+    \item Electrónica digital 1
+      \begin{itemize}
+        \item \textit{Distingue} los componentes de la lógica combinatoria y secuencial.
+        \item \textit{Reconoce} la arquitectura de las máquinas de estado algorítmicas.
+        \item \textit{Reconoce} sistemas implementados con lenguajes de descripción de hardware.
+      \end{itemize}
+
+    \item Electrónica digital 2
+      \begin{itemize}
+        \item \textit{Reconoce} la arquitectura de un SoC.
+        \item \textit{Distingue} los componentes de una unidad de procesamiento central.
+        \item \textit{Reconoce} funciones que deben ser implementadas en hardware para cumplir con restricciones de diseño.
+        \item \textit{Distingue} la diferencia entre un lenguaje de alto nivel y el lenguaje ensamblador.
+      \end{itemize}
+
+    \item Sistemas embebidos
+      \begin{itemize}
+        \item \textit{Distingue} los componentes de un sistema embebido.
+        \item \textit{Reconoce} la arquitectura de sistemas digitales comerciales. 
+        \item \textit{Diferencia} las aplicaciones independientes (standalone) de las que usan sistemas operativos.
+        \item \textit{Reconoce} las funciones de un sistema operativo.
+      \end{itemize}
+  \end{itemize}
+
+
+ \item Síntesis: definida como la acción de unir elementos y partes para conformar una estructura o patrón, enfatizando en la creación de un nuevo significado o estructura.
+
+  \begin{itemize}
+    \item Objetivos generales
+      \begin{itemize}
+        \item \textit{Diseña y genera} sistemas digitales que dan solución a problemas reales.
+        \item \textit{Colabora} en un grupo de trabajo para dar solución a un problema común.
+        \item \textit{Colabora} con la sociedad compartiendo el resultado de sus estudios.
+        \item \textit{Combina} dispositivos semiconductores para cumplir especificaciones de diseño.
+        \item \textit{Comunica} el resultado de sus investigaciones utilizando medios electrónicos.
+        \item \textit{Desarrolla} pruebas para determinar el correcto funcionamiento de un sistema.
+        \item \textit{Crea} soluciones a problemas reales utilizando dispositivos electrónicos.
+        \item \textit{Planea} actividades que darán como resultado soluciones a problemas reales.
+        \item \textit{Valida} el cumplimiento de restricciones de diseño.
+      \end{itemize}
+% adapts; anticipates; collaborates; combines; communicates; compiles; composes; creates; designs; develops; devises; expresses; facilitates; formulates; generates; hypothesizes; incorporates; individualizes; initiates; integrates; intervenes; invents; models; modifies; negotiates; plans; progresses; rearranges; reconstructs; reinforces; reorganizes; revises; structures; substitutes; validates.
+
+    \item Electrónica digital 1
+      \begin{itemize}
+        \item \textit{Diseña} máquinas de estado algorítmicas 
+        \item \textit{Modifica} diseños de referencia para ajustarlos a necesidades puntuales.
+      \end{itemize}
+
+    \item Electrónica digital 2
+      \begin{itemize}
+        \item \textit{Integra} tareas software en el diseño de soluciones.
+        \item \textit{Diseña} SoC dedicados.
+        \item \textit{Diseña y desarrolla} tareas hardware como periféricos de un SoC.
+      \end{itemize}
+
+    \item Sistemas embebidos
+      \begin{itemize}
+        \item \textit{Diseña} sistemas digitales utilizando SoC comerciales que ejecutan un sistema operativo.
+        \item \textit{Integra} librerías y aplicaciones existentes en el diseño.
+        \item \textit{Diseña} periféricos y sus respectivos controladores para el sistema operativo utilizado.
+      \end{itemize}
+  \end{itemize}
+
+ 
+ \item Evaluación: emitir juicios personales sobre el valor de las ideas o materiales.
+
+% appraises; compares y contrasts; concludes; criticizes; critiques; decides; defends; interprets; judges; justifies; reframes; supports.
+% evalúa, compara y contrasta; concluye, critica, criticas, decide; defiende, interpreta, jueces, justifica; replanteamientos; apoya.
+  \begin{itemize}
+    \item Objetivos generales
+      \begin{itemize}
+        \item \textit{Compara} las ventajas y desventajas de las tareas hardware y software.
+        \item \textit{Decide} la arquitectura mas adecuada para un sistema digital.
+        \item \textit{Interpreta} los resultados de las simulaciones.
+        \item \textit{Justifica y replantea} sus criterios de diseño.
+        \item \textit{Critica} implementaciones y arquitecturas de sistemas digitales.
+        \item \textit{Evalúa} las diferentes alternativas de implementación de un sistema digital.
+      \end{itemize}
+
+    \item Electrónica digital 2
+      \begin{itemize}
+        \item \textit{Evalúa y compara} el desempeño de funciones implementadas en software y en hardware. 
+        \item \textit{Decide} el particionamiento hardware/software.
+      \end{itemize}
+
+    \item Sistemas embebidos
+      \begin{itemize}
+        \item \textit{Evalúa} las ventajas y desventajas de utilizar un sistema operativo.
+      \end{itemize}
+  \end{itemize}
+
+\end{enumerate}
+
+
+\subsection{Dominio Afectivo}
+
+\begin{itemize}
+ \item Recibir: disposición a recibir información:
+
+    \begin{itemize}
+     \item \textit{Identifica} malas costumbres en su método de estudio que le impiden el aprendizaje.
+     \item \textit{Utiliza} material disponible para aumentar su conocimiento.
+     \item \textit{Localiza} vacíos conceptuales e identifica soluciones.
+    \end{itemize}
+
+
+ \item Responder: reacciona y participa activamente en su propio aprendizaje.
+    \begin{itemize}
+     \item \textit{Lee} material relacionado con el tema del curso con anterioridad. 
+     \item \textit{Responde} dudas formuladas en clase de temas que no han sido tratados previamente.
+     \item \textit{Asiste} a las clases con preguntas relacionadas con el proceso de concepción, diseño e implementación de sistemas digitales.
+     \item \textit{Presenta} los ejercicios propuestos en clase.
+     \item \textit{Ayuda} a sus compañeros en el proceso de aprendizaje.
+     \item \textit{Practica} para adquirir habilidad en temas relacionados con el curso.
+     \item \textit{Escribe} material que le ayude a entender los temas desarrollados en clase.
+    \end{itemize}
+ \item Valorar: Asigna valores y expresa opiniones personales
+    \begin{itemize}
+     \item \textit{Muestra una creencia} en la importancia del auto-aprendizaje en el desarrollo de habilidades personales.
+     \item \textit{Muestra una creencia} en la importancia de la creación de nuevos productos en el desarrollo del país. 
+     \item \textit{Comparte} el resultado de su esfuerzo con futuras generaciones. 
+     \item \textit{Participa} y hace aportes en grupos de discusión.
+     \item \textit{Valora} el trabajo en equipo. 
+     \item \textit{Explica} sus criterios de diseño.  
+    \end{itemize}
+ \item Organizar valores: resuelve conflictos internos y desarrolla un sistema de valores.
+    \begin{itemize}
+     \item \textit{Combina} diferentes habilidades para lograr el objetivo. 
+     \item \textit{Compara} alternativas de solución y elige la más adecuada. 
+     \item \textit{Integra} resultados obtenidos en procesos anteriores a solución de nuevos problemas. 
+     \item \textit{Formula} estrategias para resolver problemas de forma óptima. 
+    \end{itemize}
+ \item Interiorizar valores: actúa de acuerdo a los valores que ha interiorizado, el comportamiento es pervasivo, consistente, predecible y característico de cada aprendiz.  
+    \begin{itemize}
+     \item \textit{Propone} métodos para crear nuevos sistemas.
+     \item \textit{Soluciona} problemas de la sociedad aplicando conocimiento adquirido previa y constantemente.
+    \end{itemize}
+
+\end{itemize}
+
+
+\subsection{Dominio Psicomotor}
+
+\begin{itemize}
+ \item Imitación: repetir un acto que ha sido demostrado o explicado.
+   \begin{itemize}
+    \item \textit{Construir y ensamblar} placas de circuito impreso.
+    \item \textit{Sigue} guías para la elaboración de layouts.
+   \end{itemize}
+
+ \item Manipulación: práctica de una habilidad específica hasta que la acción se realice con seguridad.
+   \begin{itemize}
+    \item \textit{Manejar} herramientas para montaje de placas de circuito impreso. 
+    \item \textit{Manejar} herramientas para diseño de placas de circuito impreso.
+   \end{itemize}
+
+ \item Precisión: se obtienen resultados de muy alta calidad en la ejecución de una tarea con poco esfuerzo. 
+   \begin{itemize}
+    \item \textit{Mostrar} capacidades elevadas en el montaje y rework de placas de circuito impreso. 
+    \item \textit{Mostrar} habilidades en la elaboración de layouts.
+   \end{itemize}
+
+ \item Articulación: las habilidades han sido desarrolladas de tal forma que pueden modificarse patrones para ajustarse a requerimientos especiales.
+   \begin{itemize}
+    \item \textit{Combinar} diferentes técnicas en la elaboración, montaje y adecuación de placas de circuito impreso. 
+    \item \textit{Adapta} diferentes técnicas de ruteo a necesidades específicas de la aplicación.
+   \end{itemize}
+
+ \item Naturalización: 
+   \begin{itemize}
+    \item \textit{Especifica} el método más adecuado para elaborar, montar, y modificar una placa de circuito impreso.
+   \end{itemize}
+
+\end{itemize}
+
+\subsection{Metodología}
+Todas las actividades que se realizarán en estos cursos están encaminadas a generar habilidades necesarias para concebir, diseñar, e implementar sistemas digitales complejos, y están articuladas alrededor de una única metodología de diseño. Los tres cursos tienen un carácter teórico-práctico, el componente teórico tratará los diferentes temas de forma general, con el fin de no crear dependencia con las herramientas utilizadas, lo que permitirá realizar actualizaciones fácilmente. En el componente práctico, se tratarán temas específicos de manejo de las herramientas (lenguajes de descripción de hardware, lenguajes de programación y manejo de plataformas de desarrollo) y como se relacionan con la metodología de diseño utilizada.
+
+El estudiante debe estudiar, profundizar y comprobar algunos temas tratados en clase y debe leer previamente la documentación que se encuentra disponible en el sitio web de los cursos. Adicionalmente, debe formar grupos de trabajo para realizar actividades a lo largo del semestre.
+
+Durante el período académico se trabajará para definir las especificaciones, diseñar e implementar un dispositivo que resuelva una determinada necesidad (con la complejidad adecuada para cada curso). En la sesión teórica se tratarán aspectos relacionados con la concepción, diseño, identificación y definición de las funciones de los componentes del sistema, mientras que en el laboratorio se tratarán temas relacionados con la implementación de dichos componentes sobre PLDs o SoC. Se realizarán presentaciones del avance, indicando las razones que se tuvieron en cuenta en cada decisión y como se resolvieron los problemas encontrados, todo este proceso debe documentarse en la wiki del portal \textit{linuxencaja}, esto último para formar un banco de proyectos que pueda ser utilizado como referencia por quien esté interesado.
+
+\subsubsection{SIE: Plataforma abierta para el desarrollo de sistemas embebidos}
+En el mercado existe una gran variedad de plataformas que pueden ser utilizadas en el estudio de sistemas embebidos, sin embargo, no todas son adecuadas para la implementación del método que propone este trabajo, ya que la plataforma que se utilice debe proporcionar toda la información necesaria para entenderla, programarla, replicarla y modificarla. Con el fin de proporcionar al estudiante una herramienta que pueda ser utilizada en el desarrollo de nuevos productos comerciales se requiere: acceso a los esquemáticos y a los archivos de fabricación del PCB con posibilidad de modificación; acceso a la documentación completa del proceso de fabricación; acceso a la cadena de producción; utilización de herramientas abiertas para su programación; un PLD para la implementación de tareas HW; un procesador para la implementación de tareas SW; un canal de comunicación entre el procesador y el PLD; y una comunidad que desarrolle aplicaciones para dicha plataforma y que proporcione medios para el intercambio de información a través de listas de correo y wikis.
+
+Después de una búsqueda minuciosa no se encontraron plataformas que cumplieran con estas condiciones, en especial con las relacionadas con el proceso de diseño y de producción; esto es normal, ya que la mayoría de las empresas no quieren que se fabriquen sus plataformas y los proyectos individuales no poseen la infraestructura necesaria para la producción masiva. Por este motivo, se decidió crear una plataforma que cumpliera con los requerimientos (plataforma \textit{SIE}), pudiera ser utilizada en los tres cursos del área y se convirtiera en una herramienta más para la difusión de los conocimientos adquiridos en este estudio.
+
+La Figura \ref{SIE_arch} muestra el diagrama de bloques de la plataforma SIE, en ella se observa un procesador que posee periféricos para comunicación serial (UART), memorias micro-SD, un puerto I2C, un LCD a color de 3 pulgadas, 2 entradas y salidas de audio stereo, 2 entradas análogas; una FPGA que proporciona 25 señales de entrada/salida digitales de propósito general (GPIOs) y controla un conversor análogo digital de 8 canales. Existen dos canales de comunicación entre la FPGA y el procesador: uno para controlar el puerto JTAG, lo que permite la configuración de la FPGA desde el procesador (lo que elimina la necesidad de cables de programación); y otro que proporciona el bus de datos, dirección y control para comunicarse con las tareas HW o periféricos implementadas en la FPGA. El procesador utilizado es un Ingenic JZ4725 (MIPS) corriendo a 400MHz, se dispone de una memoria NAND de 2GB para almacenamiento de datos y programas, así como de una memoria SDRAM de 32 MB, lo que permite la ejecución de una gran variedad de aplicaciones Linux.
+
+ \begin{figure}[htpb]
+   \begin{center} \includegraphics[scale=.5]{./images/SIE_block_diagram.png}   \end{center}
+    \caption{Estructura de la plataforma de desarrollo SIE} \label{SIE_arch}
+ \end{figure}
+
+SIE proporciona un canal de comunicación y alimentación a través del puerto USB-device, y es configurado para ser utilizado como una interfaz de red (\textit{usb0}), permitiendo la transferencia de archivos y ejecución de una consola remota utilizando el protocolo \textit{ssh}; este canal de comunicación también se utiliza para programar la memoria NAND no volátil, por lo que para realizar la programación completa de los componentes de la plataforma solo es necesario un cable USB. SIE posee un sistema de archivos basado en el proyecto \textit{openwrt} y dispone de una gran cantidad de aplicaciones y librerías que pueden ser compiladas en un computador tradicional, siguiendo los tutoriales de la wiki del proyecto.
+
+\subsection{Integración de SIE con los Cursos de la Línea de Electrónica Digital}
+En la actualidad SIE está siendo utilizada en los cursos de la línea de electrónica digital de la Universidad Nacional de Colombia (sede Bogotá). En el anexo \ref{ap:platform} se listan las herramientas abiertas que se utilizan en el desarrollo de las actividades propuestas en este plan de estudios.
+
+\subsubsection{Electrónica digital 1}
+En el primer curso del área de diseño digital en la UNAL se realiza el estudio, diseño e implementación de máquinas de estado algorítmicas utilizando la metodología de diseño presentada anteriormente y la herramienta gratuita de Xilinx \textit{Webpack}, los estudiantes implementarán sus diseños utilizando lenguajes de descripción de hardware (VHDL, verilog), como resultado de este proceso se obtendrán 3 archivos: uno para configurar a la FPGA con la funcionalidad deseada; uno que informa sobre la función asignada por el diseñador a todos los pines de la FPGA; y otro que contiene los resultados de la simulación del sistema \footnote{Este archivo lo generan las herramientas de simulación abiertas \textit{icarus} y \textit{ghdl} }. SIE proporciona un canal de comunicación entre el procesador y el puerto JTAG de la FPGA que puede ser utilizado para: 
+
+\begin{itemize}
+ \item Configuración: Carga del archivo de configuración con la funcionalidad deseada a la FPGA; este archivo puede ser transferido al sistema de archivos de SIE utilizando el cable \textit{USB} y el protocolo de comunicaciones \textit{ssh}. Cuando este archivo de configuración ha sido transmitido, se utiliza la aplicación \textit{xc3sprog} para configurar la FPGA.
+
+ \item Prueba a baja frecuencia: Como se mencionó anteriormente, el protocolo JTAG permite la aplicación de vectores de prueba a un dispositivo semiconductor y la recolección de la respuesta a estos estímulos utilizando 4 señales (TDI, TDO, TMS y TCK). 
+
+ Una aplicación abierta, creada por este trabajo, recibe como entrada los archivos que contienen la información de la asignación de pines y los resultados de la simulación (ver figura \ref{hw_design_flow}); extrae la información correspondiente a los vectores de prueba y los aplica al circuito implementado en la FPGA, utilizando la instrucción INTEST del protocolo JTAG; finalmente, captura la respuesta a estos estímulos \footnote{para el control del puerto JTAG se modificó la herramienta \textit{urjtag}} los que son desplegados en el LCD de la plataforma y pueden ser exportados a un archivo tipo imagen. Esta herramienta puede verse como una combinación de un analizador lógico y un generador de vectores de prueba de bajo costo.
+\end{itemize}
+
+ \begin{figure}[htpb]
+   \begin{center} \includegraphics[scale=.6]{./images/HW_design_flow.pdf}   \end{center}
+    \caption{Flujo de diseño hardware} \label{hw_design_flow}
+ \end{figure}
+
+
+\subsubsection{Electrónica digital 2}
+
+Como se mencionó anteriormente, en este curso se busca que el estudiante entienda la diferencia entre tareas hardware y software, y los canales de comunicación entre ellas; para esto, se implementarán las tareas software en un procesador \textit{softcore} que proporciones la descripción completa en un lenguaje de descripción de hardware (en la actualidad se utiliza el LM32 de Lattice). Adicionalmente, se estudiará la arquitectura de la unidad de procesamiento, su conjunto de instrucciones, manejo de interrupciones, comunicación con las memorias de datos y de instrucciones, su programación y la forma de comunicación con periféricos.
+
+El acceso al código fuente del procesador facilita el estudio de las operaciones internas del procesador al permitir la simulación y seguimiento de señales específicas. Este tipo de simulaciones permiten entender los conceptos relacionados con el funcionamiento del sistema lo cual no es posible si se utilizan dispositivos comerciales, ya que los simuladores existentes se enfocan en los contenidos del banco de registros y de la memoria y no pueden mostrar (hasta el momento) las señales internas. Al estudiar la estructura interna de un procesador, es posible entender los mecanismos de comunicación entre la CPU y los periféricos; permite entender la diferencia conceptual entre tareas hardware y tareas software (aún cuando ambas se implementan en el mismo dispositivo). La creación de periféricos, su conexión con el procesador y el soporte que se debe dar en la aplicación software para su control; al tiempo que se proporcionan los conocimientos de la estructura de un sistema sobre silicio (SoC) moderno.  
+
+ \begin{figure}[htpb]
+   \begin{center} \includegraphics[scale=.5]{./images/soft_SoC_design_flow.pdf}   \end{center}
+    \caption{Flujo de diseño hardware/software al utilizar un procesador \textit{softcore}} \label{soft_SoC_design_flow}
+ \end{figure}
+
+La metodología que propone este trabajo permite utilizar la cadena de herramientas GNU existente para el procesador LM32, la que permite trabajar con lenguaje ensamblador, C y C++ y proporciona un flujo de diseño software que puede ser utilizado en otros procesadores comerciales. En la figura \ref{soft_SoC_design_flow} se muestra el flujo de diseño al utilizar un procesador \textit{softcore}; con él, el estudiante puede entender que el flujo de diseño software se utiliza para generar el contenido de la memoria de programa del SoC y que la estructura del procesador se describe en un lenguaje de descripción de hardware al que se le aplica el mismo flujo de diseño que aplicó en la asignatura anterior.
+
+En este curso el procesador de la plataforma SIE es utilizado como herramienta de configuración del PLD, los archivos de configuración son transferidos al sistema de archivos de SIE utilizando el protocolo \textit{ssh} y desde allí son transferidos a la FPGA utilizando \textit{xc3sprog} o \textit{urjtag}. Es posible establecer una comunicación serial entre los procesadores \textit{softcore} implementado en la FPGA y \textit{hardcore} de la plataforma; proporcionando un canal de depuración para las aplicaciones que se ejecutan en la FPGA; con lo que se suministran todas las herramientas necesarias para la realización de las actividades previstas en este curso.
+
+\subsubsection{Sistemas embebidos}
+
+Una vez asimilados los conceptos de arquitectura de SoCs e implementación de tareas hardware y software se utilizará un SoC comercial, para que los estudiantes entiendan las diferencias entre los procesadores softcore y hardcore y conozcan las herramientas más utilizadas en la implementación de sistemas digitales modernos. Así mismo, se utilizará el sistema operativo Linux para ilustrar la diferencia entre las aplicaciones \textit{standalone} y las que utilizan sistemas operativos; se utiliza el SoC de ingenic JX4725 para ejecutar tareas de visualización, comunicación, control e interfaz con el usuario, librerías gráficas de alto nivel como QT (de Nokia) para realizar la interfaz, se desarrollan módulos del kernel y programas en espacio de usuario para el control de periféricos dedicados (implementados en la FPGA). Con esto se proporciona a los estudiantes herramientas que están siendo utilizadas en la actualidad por los grandes fabricantes de dispositivos digitales como Nokia, Dell, Hewlett Packard.
+
+%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+%          Metodos DE EVALUACIÓN
+%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+\section{Desarrollo de Métodos de Evaluación}
+
+La naturaleza de esta metodología hace poco eficiente el método tradicional de evaluación, ya que el proceso de diseño no se puede limitar a las 2 o 4 horas que puede durar una prueba escrita, tampoco se puede aislar al estudiante de las fuentes de información, ni de la consulta con otros estudiantes. La forma de evaluación debe simular un entorno laboral, donde se trabaja en equipo y cada uno de sus miembros es responsable de una tarea; en la evaluación se tendrá en cuenta el resultado final, pero cada miembro del equipo debe sustentar de forma individual su aporte y sus conocimientos; esto con el fin de asegurar que todos los miembros del equipo realicen sus labores asignadas y estén al corriente de las actividades que realizan sus compañeros.
+
+La aplicación de la forma de evaluación tradicional a asignaturas en las que se busca crear en el estudiante habilidades que le permitan realizar el flujo de diseño completo de un sistema digital, contemplaba una marcada división entre el componente práctico y el componente teórico. Antes de aplicar este programa académico, las prácticas de laboratorio y el tema que se trataba en clase no estaban relacionadas y las metodologías utilizadas eran diferentes, lo que originaba confusión en los estudiantes; existía un proyecto final que debía ser elaborado junto con las prácticas de laboratorio, lo que creaba una sobrecarga de trabajo que se traducía en proyectos de muy baja calidad. Por otro lado, no se puede medir la capacidad de diseño de un estudiante en un examen convencional como los que se utilizan en otras asignaturas, primero porque el tiempo requerido para entender y asimilar el problema varía dependiendo de cada persona, y limitar este tiempo favorecería a los más rápidos pero no necesariamente a las mejores soluciones.
+
+Durante todo el semestre se realizará un proyecto que busca dar solución a un determinado problema; se realizarán tres avances para determinar su estado, las fechas y contenido de estos avances están sincronizadas con un cronograma que permite a los estudiantes aplicar los conocimientos adquiridos. De esta forma, los estudiantes estarán realizando actividades durante todo el semestre, lo que los obliga a estar revisando y aplicando constantemente la información obtenida en el componente teórico; durante las horas de práctica los estudiantes trabajarán en el mismo proyecto y darán solución a problemas de implementación con ayuda del profesor encargado del componente práctico. Esta forma de evaluación elimina la costumbre de estudiar una semana o un día antes de la prueba, buscar evaluaciones de semestres anteriores y memorizar la forma de solucionarlos. Asimismo, se proporciona al estudiante el tiempo suficiente para realizar el proceso de diseño completo lo que hace que esta experiencia se aproxime mucho a una situación que va a encontrar en el ejercicio de su profesión; adicionalmente, se pretende reducir la presión y el estrés que generan las pruebas escritas en los estudiantes.
+
+\subsubsection{Contenido de las entregas}
+
+En cada entrega el equipo de trabajo debe realizar una serie de actividades que le ayuden a crear o mejorar habilidades en: la generación de documentos técnicos; presentación oral y escrita de proyectos en ingeniería; aplicación de metodologías de diseño; uso de la tecnología para resolver problemas locales; trabajo en equipo y mejoramiento de técnicas de auto-aprendizaje. Por esta razón, se evaluará el contenido del informe, su presentación oral y el avance de la solución. Para la elaboración de los informes se suministran las herramientas web (\textit{wiki}) que permiten la edición de documentos por múltiples usuarios, llevar un historial de cambios que les permita conocer los últimos aportes y publicar de forma fácil imágenes y videos; lo que facilita la realización del documento, permitiendo que sea editado desde diferentes lugares; al tiempo que lo pone a disposición de quien esté interesado.
+
+\subsubsection{Sustentación individual}
+Con las entregas parciales se obtiene una calificación que refleja el trabajo realizado por el grupo de trabajo; sin embargo, es necesario determinar la contribución de cada miembro del equipo y evaluar la asimilación de conocimiento de forma individual; adicionalmente, se pretende evitar que miembros del equipo no realicen aportes. Para determinar este nivel de asimilación, se aplica una prueba oral a cada uno de los integrantes, con el fin de determinar si existen o no vacíos conceptuales y si se conoce el trabajo realizado en la elaboración del proyecto; de esta prueba se obtendrá un coeficiente entre \textbf{0} y \textbf{1}, el cual será aplicado a la calificación obtenida por el grupo y de esta forma obtener la calificación individual.
+
+
+% \subsection {Ojbetivos comúnes}
+% \begin{itemize}
+%  \item Identificar las especificaciones funcionales del sistema, su arquitectura de alto nivel y definir su descomposición en elementos
+%  \item Explicar las actividades en las etapas del proceso de diseño, 
+%  \item Desarrollar el pensamiento sistémico.
+%  \item Modelar funcionalmente sistemas digitales.
+%  \item Diseñar pruebas para comprobar el correcto funcionamiento de los sistemas implementados.
+%  \item Leer y entender material técnico escrito en inglés.
+%  \item Implementar un sistemas embebido (hardware o hardware/software) para cumplir una tarea determinada que cumpla con una necesidad real (Obtener e interpretar las necesidades del consumidor) utilizando técnicas, herramientas y procesos adecuados.
+%  \item Estudiar y aplicar el concepto de la re-utilización de código.
+%  \item Desarrollar trabajo en equipo incluyendo presentaciones, describiendo los diversos roles y responsabilidades.
+%  \item Documentar los diseños realizados para crear una base de datos que contribuya a la difusión del conocimiento adquirido.
+% \end{itemize}
+% 
+% \subsubsection{Electrónica Digital 1}
+% \begin{itemize}
+%  \item Estudiar las fases de la metodología de diseño para sistemas embebidos.
+%  \item Estudiar los dominios de diseño estructural, funcional y físico. 
+%  \item Estudiar los lenguajes de descripción de hardware.
+%  \item Estudiar los componentes básicos de la lógica combinatoria y secuencial.
+%  \item Estudio de las máquinas de estado algorítmicas.
+% \end{itemize}
+% 
+% \subsubsection{Electrónica Digital 2}
+% \begin{itemize}
+%  \item Estudiar los requisitos para un particionamiento Hardware / Software óptimo.
+%  \item Estudiar la arquitectura de un procesador, micro-arquitectura, set de instrucciones, interrupciones, direccionamiento, memorias.
+%  \item Estudiar el proceso de implementación de tareas software.
+%  \item Estudiar la integración Software-Hardware.
+%  \item Diseñar pruebas para comprobar el correcto funcionamiento de los sistemas implementados.
+% \end{itemize}
+% 
+% \subsubsection{Sistemas Embebidos}
+% \begin{itemize}
+%  \item Realizar aplicaciones que requieran diseño multi-disciplinario.
+%  \item Estudiar y realizar el proceso de fabricación hardware.
+%  \item Estudiar el principio básico de los sistemas operativos.
+%  \item Describir la integración de software en hardware electrónico
+%  \item Entender diagramas de circuitos electrónicos de sistemas digitales, identifcar sus componentes y su función.
+%  \item Estudiar diseños software y hardware existentes para entender su funcionamiento, arquitectura y adquirir experiencia en el diseño.
+%  \item Hacer parte de listas de discusión de temas técnicos que usen el inglés como lenguaje.
+%  \item Utilizar medios electrónicos para documentar procesos de diseño.
+% \end{itemize}
+
+
+\section{Actividades}
+A continuación se enumerarán las actividades que se desarrollan en las tres asignaturas, indicando las habilidades (ver tablas \ref{compet_2_3} y \ref{compet_4}) que se quieren reforzar o desarrollar.
+
+\subsubsection{Lectura de material del curso 10, 11}
+Con la lectura previa de los temas, el estudiante adquiere la capacidad de absorber conocimiento (11), identificar sus preferencias, deficiencias y buscar ayuda para suplirlas (10), lo cual ayuda al mejoramiento de las habilidades para el auto-aprendizaje.
+
+\subsubsection{Lectura de material técnico en inglés 10, 11, 6, 30, 33, 21}
+La mayor parte de la documentación de los componentes electrónicos y literatura relacionada con los avances de la industria electrónica está escrita en inglés técnico; por esta razón, es necesario que el estudiante aprenda a entender este tipo de escritura y se familiarice con su estructura. Esto le permite identificar el funcionamiento de un componente del sistema (6,30), determinar que componente se adapta mejor a sus necesidades (33) y mejorar sus habilidades para comunicarse en inglés (21).
+
+\subsubsection{Utilización de metodologías de diseño 1, 2, 3, 6, 7, 9, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38}
+
+La metodología de diseño (30,31) de sistemas embebidos requiere identificar un problema (1, 28), plantear una solución (3,29,32) lógica (9) de alto nivel (9), modelarla (2) a nivel de sistema(6), verificar el cumplimiento de los requerimientos (33,38); proporciona métodos para determinar su arquitectura óptima y definir la función e interacción (37,7) de sus componentes software (36) y hardware (35).
+
+\subsubsection{Implementación de sistemas digitales sencillos 3, 14, 29, 30, 35, 36, 17, 18, 19}
+
+La realización de prácticas de laboratorio en las que grupos de trabajo (14) implementan diseños de baja o media complejidad le permite al estudiante: Formular recomendaciones (3) para que no se repitan errores en experiencias futuras y utilizar sistemas de desarrollo (30) para la implementación de tareas HW y SW a bajo nivel (36). Con el fin de mejorar la capacidad de comunicación escrita (18, 19) se deben presentar informes que refuercen las habilidades generadas en la utilización de la metodología de diseño, los cuales deben tener la siguiente estructura (17): 
+\begin{itemize}
+ \item Un diagrama de caja negra que indique las entradas y salidas del sistema.
+ \item Una descripción de alto nivel del algoritmo que implementa la solución (29).
+ \item Un diagrama de bloques que indique el particionamiento y la interconexión entre sus componentes (30).
+ \item Descripciones de alto nivel de cada uno de los componentes (31).
+ \item La implementación y simulación de cada componente y del sistema completo (35), donde se muestre que el sistema cumple con las especificaciones funcionales (38).
+\end{itemize}
+
+\subsubsection{Proyecto del curso 1,2,3, 14, 15, 30, 31, 32, 33, 34, 35, 22, 23, 24, 25, 27}
+Durante el semestre se trabajará para definir las especificaciones (1,2,3), diseñar (30,31,32,33,34) e implementar un dispositivo que resuelva una necesidad de la sociedad (22). En la sesión teórica se tratarán aspectos relacionados con la concepción, diseño, identificación y definición de las funciones de los componentes del sistema, mientras que en el componente práctico, los relacionados con la implementación de dichos componentes sobre PLDs o SoCs.
+
+Los estudiantes hacen una descripción funcional de alto nivel del sistema, se organizan en grupos de trabajo (14,15), definen la función de cada uno de sus integrantes (27,14,31), establecen estrategias de comunicación (16,31), realizan y cumplen un cronograma de actividades (25,31) que permite resolver la necesidad en el tiempo especificado (22). Una de las estrategias de comunicación es la realización de presentaciones orales (20), en las que cada equipo de trabajo expondrá el estado de su proyecto, indicando las razones que se tuvieron en cuenta en cada decisión y como se resolvieron los problemas encontrados (24). Adicionalmente, todo este proceso debe documentarse en el sitio web del curso (wiki del portal \textit{linuxencaja}) con el objetivo de crear una base de proyectos que permitan a futuros estudiantes utilizar la experiencia obtenida (23) y cuando sea el caso dar continuidad al proyecto.
+
+El estudiante debe diseñar y construir placas de circuito impreso con los circuitos necesarios para su aplicación (35) siguiendo las normas de diseño establecidas por el fabricante (resolución, número de capas, costo) y las restricciones del circuito (capacidad de corriente, niveles de ruido, compatibilidad electromagnética, etc). Vale la pena aclarar que durante el primer curso los estudiantes no poseen la experiencia necesaria para realizar (sin asistencia) labores como la división de tareas, generación de un cronograma de actividades y fijar la estrategia de comunicación, razón por la cual el docente debe acompañarlos en este proceso.
+
+\subsubsection{Desarrollo del plan de innovación del Producto, 22, 23, 44, 25, 26, 45}
+Todo proyecto debe ser presentado como una idea innovadora; por este motivo, se debe realizar un plan de innovación donde se especifique:
+
+\begin{itemize}
+ \item Oportunidad: 
+   \begin{itemize}
+     \item Concepto de la innovación
+     \item ¿Qué problema pretende solucionar?
+     \item ¿De dónde viene la idea?
+     \item ¿Existen productos similares? 
+     \item Etapa de desarrollo.
+   \end{itemize}
+
+ \item ¿Quiénes son los clientes claves de esta propuesta?
+ \item ¿Cuál es el valor del producto para sus clientes? 
+ \item Mercado y crecimiento
+    \begin{itemize}
+     \item ¿En que mercado está inmersa la innovación?
+     \item ¿Qué alianzas son necesarias para terminar el desarrollo de la innovación?
+   \end{itemize}
+ \item Productos/servicios 
+   \begin{itemize}
+     \item ¿Qué etapas de desarrollo adicionales son necesarias?
+     \item ¿Qué productos derivados se pueden obtener? 
+     \item Canales de distribución.
+   \end{itemize}
+ \item Inversión 
+   \begin{itemize}
+     \item Inversión estimada para finalizar el producto.
+     \item Inversión necesaria para comercializar el producto,
+   \end{itemize}
+ \item Próximos pasos para concretar la innovación.
+\end{itemize}
+
+
+\subsubsection{Participación en listas de discusión 21}
+Con el objeto de aumentar las capacidades en la comunicación en idioma extranjero, se alentará a los estudiantes a que hagan parte de listas de discusión en diferentes temas técnicos, algunos problemas que encontrarán en la realización de las diferentes prácticas deben ser consultados en estas listas para encontrar una forma de solución.

@@ -1,0 +1,31 @@
+\select@language {spanish}
+\contentsline {chapter}{\numberline {1}Introducci\'on}{3}
+\contentsline {chapter}{\numberline {2}Dise\~no de Sistemas Embebidos}{7}
+\contentsline {section}{\numberline {2.1}Definici\'on}{7}
+\contentsline {section}{\numberline {2.2}Caracter\IeC {\'\i }sticas}{7}
+\contentsline {section}{\numberline {2.3}Arquitectura}{7}
+\contentsline {section}{\numberline {2.4}Metodolog\IeC {\'\i }a de Dise\~no}{9}
+\contentsline {section}{\numberline {2.5}Herramientas de Dise\~no Software}{10}
+\contentsline {subsection}{\numberline {2.5.1}Componentes del \textit {GNU toolchain} }{10}
+\contentsline {subsubsection}{GNU binutils\cite {A1}}{10}
+\contentsline {subsubsection}{GNU Compiler Collection\cite {Wik}}{11}
+\contentsline {subsubsection}{Lenguajes}{11}
+\contentsline {subsubsection}{Arquitecturas}{11}
+\contentsline {subsubsection}{GNU Debugger}{12}
+\contentsline {subsubsection}{C Libraries}{13}
+\contentsline {section}{\numberline {2.6}Desarrollo Software}{14}
+\contentsline {subsection}{\numberline {2.6.1}Flujo de dise\~no software}{14}
+\contentsline {subsection}{\numberline {2.6.2}El formato \textbf {ELF}}{15}
+\contentsline {subsection}{\numberline {2.6.3}Herramienta de compilaci\'on make}{18}
+\contentsline {subsection}{\numberline {2.6.4}Archivo de enlace}{20}
+\contentsline {section}{\numberline {2.7}Herramientas hardware}{21}
+\contentsline {subsection}{\numberline {2.7.1}SoC}{21}
+\contentsline {subsection}{\numberline {2.7.2}Memorias Vol\'atiles}{22}
+\contentsline {subsubsection}{memoria SDRAM}{22}
+\contentsline {subsection}{\numberline {2.7.3}Memorias No Vol\'atiles}{22}
+\contentsline {subsubsection}{Memorias NOR}{22}
+\contentsline {subsubsection}{Memorias NAND}{23}
+\contentsline {chapter}{\numberline {3}Sistema en un Chip (SoC)}{29}
+\contentsline {section}{\numberline {3.1}Arquitectura}{29}
+\contentsline {subsubsection}{Unidad de Procesamiento Central (CPU)}{29}
+\contentsline {subsubsection}{Perif\'ericos}{30}

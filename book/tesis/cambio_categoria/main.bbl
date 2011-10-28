@@ -1,0 +1,51 @@
+\begin{thebibliography}{1}
+
+\bibitem{A1}
+{Aleph 1}.
+\newblock Building the {T}oolchain.
+\newblock http://www.aleph1.co.uk/node/279.
+
+\bibitem{Wik}
+Wikipedia.
+\newblock Wikipedia, the free encyclopedia.
+\newblock http://en.wikipedia.org/.
+
+\bibitem{CLSB05}
+{C. Lanfear}, {S. Balacco}, and {M. Volckmann}.
+\newblock The 2005 {E}mbedded {S}oftware {S}trategic {M}arket {I}ntelligence
+  {P}rogram.
+\newblock {\em Venture Development Corporation http://www.vdc-corp.com}, August
+  2005.
+
+\bibitem{JT04}
+{J. Turley}.
+\newblock Embedded systems survey: {O}perating systems up for grabs.
+\newblock {\em Embedded Systems Programming}, May 2004.
+
+\bibitem{VDC06}
+{Venture Development Corp.}
+\newblock Small teams dominate embedded software development.
+\newblock http://www.linuxdevices.com/articles/AT7019328497.html, 1 June 2006.
+
+\bibitem{BG}
+{Bill Gatliff}.
+\newblock Porting and {U}sing {N}ewlib in {E}mbedded {S}ystems.
+\newblock http://venus.billgatliff.com/node/3.
+
+\bibitem{Lin05}
+Linuxdevices.
+\newblock Embedded {L}inux market snapshot, 2005.
+\newblock {\em http://www.linuxdevices.com}, 4 May 2005.
+
+\bibitem{DK06}
+{Dan Kegel}.
+\newblock Building and {T}esting gcc/glibc cross toolchains.
+\newblock http://www.kegel.com/crosstool/, 20 February 2006.
+
+\bibitem{MLH98}
+{Michael L. Haungs}.
+\newblock The {E}xecutable and {L}inking {F}ormat ({ELF}).
+\newblock http://www.cs.ucdavis.edu/~haungs/paper/node1.html, 21 September
+  1998.
+
+\end{thebibliography}

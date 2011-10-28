@@ -1,0 +1,508 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.7.25)  22 AUG 2011 07:51
+entering extended mode
+ %&-line parsing enabled.
+**embedded_book.tex
+(./embedded_book.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, loaded.
+(/usr/share/texmf-texlive/tex/latex/base/report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texmf-texlive/tex/latex/base/size10.clo
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf-texlive/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+)
+(/usr/share/texmf-texlive/tex/latex/base/inputenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+(/usr/share/texmf-texlive/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+))
+(/usr/share/texmf-texlive/tex/generic/babel/babel.sty
+Package: babel 2008/07/06 v3.8l The Babel package
+
+(/usr/share/texmf-texlive/tex/generic/babel/spanish.ldf
+Language: spanish.ldf 2009/01/02 v5.0h Spanish support from the babel system
+
+(/usr/share/texmf-texlive/tex/generic/babel/babel.def
+File: babel.def 2008/07/06 v3.8l Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen103
+)
+
+Package babel Warning: No hyphenation patterns were loaded for
+(babel)                the language `Spanish'
+(babel)                I will use the patterns loaded for \language=0 instead.
+
+\l@spanish = a dialect from \language0
+\es@datefmt=\count89
+\es@quottoks=\toks16
+\es@quotdepth=\count90
+Package babel Info: Making " an active character on input line 492.
+Package babel Info: Making . an active character on input line 585.
+Package babel Info: Making < an active character on input line 630.
+Package babel Info: Making > an active character on input line 630.
+)) (/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/etc/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2009/08/25 v0.04m Graphics/color for pdfTeX
+\Gread@gobject=\count91
+))
+\Gin@req@height=\dimen104
+\Gin@req@width=\dimen105
+)
+(/usr/share/texmf-texlive/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(/usr/share/texmf-texlive/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2001/02/13 v0.1j Color table columns (DPC)
+
+(/usr/share/texmf-texlive/tex/latex/tools/array.sty
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen106
+\extrarowheight=\dimen107
+\NC@list=\toks18
+\extratabsurround=\skip43
+\backup@length=\skip44
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/etc/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+\everycr=\toks19
+\minrowclearance=\skip45
+)
+(/usr/share/texmf-texlive/tex/latex/tools/multicol.sty
+Package: multicol 2008/12/05 v1.6h multicolumn formatting (FMi)
+\c@tracingmulticols=\count92
+\mult@box=\box26
+\multicol@leftmargin=\dimen108
+\c@unbalance=\count93
+\c@collectmore=\count94
+\doublecol@number=\count95
+\multicoltolerance=\count96
+\multicolpretolerance=\count97
+\full@width=\dimen109
+\page@free=\dimen110
+\premulticols=\dimen111
+\postmulticols=\dimen112
+\multicolsep=\skip46
+\multicolbaselineskip=\skip47
+\partial@page=\box27
+\last@line=\box28
+\mult@rightbox=\box29
+\mult@grightbox=\box30
+\mult@gfirstbox=\box31
+\mult@firstbox=\box32
+\@tempa=\box33
+\@tempa=\box34
+\@tempa=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\c@columnbadness=\count98
+\c@finalcolumnbadness=\count99
+\last@try=\dimen113
+\multicolovershoot=\dimen114
+\multicolundershoot=\dimen115
+\mult@nat@firstbox=\box50
+\colbreak@box=\box51
+)
+(/usr/share/texmf-texlive/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen116
+)
+(/usr/share/texmf-texlive/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2009/02/07 v0.4g Insert pages of external PDF documents (AM)
+
+(/usr/share/texmf-texlive/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texmf-texlive/tex/latex/tools/calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count100
+\calc@Bcount=\count101
+\calc@Adimen=\dimen117
+\calc@Bdimen=\dimen118
+\calc@Askip=\skip48
+\calc@Bskip=\skip49
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count102
+\calc@Cskip=\skip50
+)
+(/usr/share/texmf-texlive/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2006/07/14 v1.1d eso-pic (RN)
+
+(/usr/share/texmf-texlive/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(/usr/share/texmf-texlive/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2009/02/07 v0.4g Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box52
+\AM@toc@title=\toks20
+\c@AM@survey=\count103
+\AM@templatesizebox=\box53
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+(/usr/share/texmf-texlive/tex/latex/listings/listings.sty
+\lst@mode=\count104
+\lst@gtempboxa=\box54
+\lst@token=\toks21
+\lst@length=\count105
+\lst@currlwidth=\dimen119
+\lst@column=\count106
+\lst@pos=\count107
+\lst@lostspace=\dimen120
+\lst@width=\dimen121
+\lst@newlines=\count108
+\lst@lineno=\count109
+\lst@maxwidth=\dimen122
+
+(/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+\c@lstnumber=\count110
+\lst@skipnumbers=\count111
+\lst@framebox=\box55
+)
+(/usr/share/texmf-texlive/tex/latex/listings/listings.cfg
+File: listings.cfg 2007/02/22 1.4 listings configuration
+))
+Package: listings 2007/02/22 1.4 (Carsten Heinz)
+
+(/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+)
+(/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+)
+(/usr/share/texmf-texlive/tex/latex/tools/longtable.sty
+Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip51
+\LTright=\skip52
+\LTpre=\skip53
+\LTpost=\skip54
+\LTchunksize=\count112
+\LTcapwidth=\dimen123
+\LT@head=\box56
+\LT@firsthead=\box57
+\LT@foot=\box58
+\LT@lastfoot=\box59
+\LT@cols=\count113
+\LT@rows=\count114
+\c@LT@tables=\count115
+\c@LT@chunks=\count116
+\LT@p@ftn=\toks22
+) (./embedded_book.aux)
+\openout1 = `embedded_book.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 44.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+(/usr/share/texmf/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count117
+\scratchdimen=\dimen124
+\scratchbox=\box60
+\nofMPsegments=\count118
+\nofMParguments=\count119
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count120
+\MPscratchDim=\dimen125
+\MPnumerator=\count121
+\everyMPtoPDFconversion=\toks24
+) ABD: EveryShipout initializing macros
+\c@lstlisting=\count122
+ (./title.tex
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 11.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 11.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 11.
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 16--20
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 23.
+(/usr/share/texmf-texlive/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 23.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 24.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 23--25
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--30
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--34
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--36
+
+ []
+
+[1])
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 47.
+ (./embedded_book.toc
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 4.
+)
+\tf@toc=\write3
+\openout3 = `embedded_book.toc'.
+
+ (./introduction.tex [2
+
+]
+Cap\'{\i }tulo 1.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20.74> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+[3
+
+] <./images/Current_OS.jpg, id=19, 401.5pt x 460.72125pt>
+File: ./images/Current_OS.jpg Graphic file (type jpg)
+
+<use ./images/Current_OS.jpg>
+<./images/OS_embedded.jpg, id=20, 301.125pt x 232.79893pt>
+File: ./images/OS_embedded.jpg Graphic file (type jpg)
+
+<use ./images/OS_embedded.jpg>
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
+[]\OT1/ptm/m/n/10 Figura 1.2: Uti-lizaci[]on ac-tu-al de OS para apli-ca-ciones
+ em-be-bidas: Fuente
+ []
+
+[4 <./images/Current_OS.jpg>] [5 <./images/OS_embedded.jpg>]) (./chapter1.tex
+[6]
+Cap\'{\i }tulo 2.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+<./images/ES_Architecture.png, id=32, 488.82625pt x 407.5225pt>
+File: ./images/ES_Architecture.png Graphic file (type png)
+
+<use ./images/ES_Architecture.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[7
+
+] [8 <./images/ES_Architecture.png (PNG copy)>]
+
+LaTeX Warning: Citation `Cor05' on page 9 undefined on input line 59.
+
+<./images/design_flow.jpg, id=39, 675.52374pt x 1068.99374pt>
+File: ./images/design_flow.jpg Graphic file (type jpg)
+
+<use ./images/design_flow.jpg>
+
+LaTeX Warning: Float too large for page by 24.60542pt on input line 64.
+
+[9]
+<./images/embedded-linux-tool-trends-sm.jpg, id=43, 301.125pt x 227.04292pt>
+File: ./images/embedded-linux-tool-trends-sm.jpg Graphic file (type jpg)
+
+<use ./images/embedded-linux-tool-trends-sm.jpg>
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 102.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 102.
+ [10] [11]
+<./images/vdc_embedded_dev_company_size.jpg, id=52, 1806.75pt x 843.15pt>
+File: ./images/vdc_embedded_dev_company_size.jpg Graphic file (type jpg)
+
+<use ./images/vdc_embedded_dev_company_size.jpg>
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 181.
+ [12]
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <7> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 193.
+ [13]
+<./images/embedded-processor-trends-sm.jpg, id=60, 301.125pt x 223.84514pt>
+File: ./images/embedded-processor-trends-sm.jpg Graphic file (type jpg)
+
+<use ./images/embedded-processor-trends-sm.jpg>
+<./images/SW_design_flow.png, id=61, 411.03563pt x 295.1025pt>
+File: ./images/SW_design_flow.png Graphic file (type png)
+
+<use ./images/SW_design_flow.png> [14]
+<./images/ELF_Link_exec1.png, id=66, 509.905pt x 312.16624pt>
+File: ./images/ELF_Link_exec1.png Graphic file (type png)
+
+<use ./images/ELF_Link_exec1.png> [15]
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 306.
+
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/omlptm.fd
+File: omlptm.fd 
+)
+LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <7> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 306.
+ [16] [17] [18]
+Underfull \hbox (badness 10000) in paragraph at lines 510--511
+
+ []
+
+
+Overfull \hbox (10.0131pt too wide) in paragraph at lines 515--516
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][] 
+ []
+
+[19]
+LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <7> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 536.
+ [20] <./images/at91rm9200.png, id=87, 556.32843pt x 447.17062pt>
+File: ./images/at91rm9200.png Graphic file (type png)
+
+<use ./images/at91rm9200.png> [21]
+<./images/sdram_basics.png, id=91, 629.35126pt x 328.22626pt>
+File: ./images/sdram_basics.png Graphic file (type png)
+
+<use ./images/sdram_basics.png>
+Underfull \hbox (badness 2922) in paragraph at lines 620--620
+[]\OT1/ptm/m/n/10 Figura 2.9: Di-a-gra-ma de Blo-ques de una memo-ria SDRAM fue
+nte: Ho-ja de Es-peci-fi-ca-ciones
+ []
+
+
+LaTeX Warning: Citation `CH06' on page 22 undefined on input line 625.
+
+<./images/nor_prog.png, id=92, 647.41875pt x 344.78813pt>
+File: ./images/nor_prog.png Graphic file (type png)
+
+<use ./images/nor_prog.png> [22]) (./chapter2.tex [23] [24 <./images/design_flo
+w.jpg>] [25 <./images/embedded-linux-tool-trends-sm.jpg> <./images/vdc_embedded
+_dev_company_size.jpg>] [26 <./images/embedded-processor-trends-sm.jpg> <./imag
+es/SW_design_flow.png>] [27 <./images/ELF_Link_exec1.png (PNG copy)> <./images/
+at91rm9200.png>] [28 <./images/sdram_basics.png> <./images/nor_prog.png>]
+Cap\'{\i }tulo 3.
+
+Overfull \hbox (2.1569pt too wide) in paragraph at lines 3--4
+[]\OT1/ptm/m/n/10 En es-ta sec-ci[]on es-tu-di-are-mos la ar-qui-tec-tura b[]as
+ica de un SoC mod-er-no, com-po-nentes, fun-cionamien-
+ []
+
+<./images/Computer-simple.png, id=119, 488.57532pt x 328.22626pt>
+File: ./images/Computer-simple.png Graphic file (type png)
+
+<use ./images/Computer-simple.png> [29
+
+]) (./embedded_book.bbl [30 <./images/Computer-simple.png (PNG copy)>]
+Underfull \hbox (badness 7256) in paragraph at lines 16--19
+[]\OT1/ptm/m/n/10 Venture De-vel-op-ment Corp.  Small teams dom-i-nate em-bed-d
+ed soft-ware de-vel-op-ment.
+ []
+
+) [31
+
+] (./embedded_book.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 5826 strings out of 495061
+ 73804 string characters out of 1182621
+ 221655 words of memory out of 3000000
+ 8900 multiletter control sequences out of 15000+50000
+ 34963 words of font info for 61 fonts, out of 3000000 for 9000
+ 28 hyphenation exceptions out of 8191
+ 34i,10n,49p,1376b,1800s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
+ve/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/typ
+e1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/a
+msfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/urw/courier/ucrr8a.p
+fb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf
+-texlive/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-texlive/fonts/type
+1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.p
+fb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
+Output written on embedded_book.pdf (32 pages, 839854 bytes).
+PDF statistics:
+ 160 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+

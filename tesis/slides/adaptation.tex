@@ -42,24 +42,24 @@
 
     \onslide<2> \node [ph_explain, right=.5cm of adaptation.east] (exp_adaptation)    
     {
-    \begin{center} \textbf{Adaptación: Arquitectura de un Sistema Embebido} \end{center}
+    \begin{center} \textbf{Arquitectura de un Sistema Embebido} \end{center}
       \begin{center} \includegraphics[scale=.45]{../images/soc_no_int_volatil_mmu.pdf} \end{center}
     };
 
 
 
-    \onslide<3> \node [ph_explain, right=.5cm of adaptation.east] (exp_adaptation)    
+    \onslide<3> \node [ph_explain2, right=.5cm of adaptation.east] (exp_adaptation)    
     {
-    \begin{center} \textbf{Adaptación: Flujo de diseño Software} \end{center}
+    \begin{center} \textbf{Flujo de diseño Software} \end{center}
       \begin{center} \includegraphics[scale=.6]{../images/SW_design_flow.png} \end{center}
     };
 
 
 
-    \onslide<4> \node [ph_explain, right=.5cm of adaptation.east] (exp_adaptation)    
+    \onslide<4> \node [ph_explain2, right=.2cm of adaptation.east] (exp_adaptation)    
     {
-    \begin{center} \textbf{Adaptación: Flujo de Diseño Hardware} \end{center}
-      \begin{center} \includegraphics[scale=.35]{../images/HW_design_flow.pdf}   \end{center}
+    \begin{center} \textbf{Flujo de Diseño Hardware} \end{center}
+      \begin{center} \includegraphics[scale=.37]{../images/HW_design_flow.pdf}   \end{center}
     };
 
 
@@ -68,7 +68,7 @@
     \onslide<5> \node [ph_explain, right=.5cm of adaptation.east] (exp_adaptation)    
     {
 
-    \begin{center} \textbf{Adaptación: Flujo de Diseño SoC (softcore))} \end{center}
+    \begin{center} \textbf{Flujo de Diseño SoC (softcore))} \end{center}
 	\begin{center} \includegraphics[scale=.35]{../images/soft_SoC_design_flow.pdf}   \end{center}
     };
 
@@ -76,27 +76,27 @@
 
     \onslide<6> \node [ph_explain, right=.5cm of adaptation.east] (exp_adaptation)    
     {
-    \begin{center} \textbf{Adaptación: Conocimientos adquiridos} \end{center}
+    \begin{center} \textbf{Conocimientos adquiridos} \end{center}
       \begin{table}[htpb]
         \centering
-        \resizebox{!}{1cm}{
-          \begin{tabular}{|l|l|l|p{1.6in}|}
+        \resizebox{!}{1.5cm}{
+          \begin{tabular}{|l|l|l|}
             \hline
-            \textbf{Plataforma}  & \textbf{Herramientas de desarrollo}  & \textbf{Sistema Operativo y Aplicaciones}
+            \textbf{Plataforma}  & \textbf{Sistema Operativo y Aplicaciones}
             \\ \hline 
-            Game Boy            &ARM GNU toolchian         & eCos, implementación de periféricos en FPGAs.
+            Game Boy             & eCos, periféricos en FPGAs.
             \\ \hline 
-            Zaurus              &ARM GNU toolchian         & Linux 2.4, sistema de archivos, QT.
+            Zaurus               & Linux 2.4, sistema de archivos, QT.
             \\ \hline 
-            iPAQ H3600          &ARM GNU toolchian         & Linux 2.4, Buildroot, QT.
+            iPAQ H3600           & Linux 2.4, Buildroot, QT.
             \\ \hline 
-            Chumby              &ARM GNU toolchian         & Linux 2.6, u-boot, OpenEmbedded, QT, flash.
+            Chumby               & Linux 2.6, u-boot, OpenEmbedded, QT, flash.
             \\ \hline 
-            Ainol V2000         &MIPS - ELF  GNU toolchian & Linux 2.6, openwrt, QT.
+            Ainol V2000          & Linux 2.6, openwrt, QT.
             \\ \hline 
-            SUNGALE DPF         &MIPS - ELF  GNU toolchian & Linux 2.6, openwrt, QT.
+            SUNGALE DPF          & Linux 2.6, openwrt, QT.
             \\ \hline 
-            B\&N NOOK           &ARM  GNU toolchian        & Linux 2.6, Android Dalvik (VM).
+            B\&N NOOK            & Linux 2.6, Android Dalvik (VM).
             \\ \hline 
           \end{tabular}
          }
@@ -106,8 +106,8 @@
 
     \onslide<7> \node [ph_explain, right=.5cm of adaptation.east] (exp_adaptation)    
     {
-    \begin{center} \textbf{Adaptación: Metodología de diseño} \end{center}
-        \begin{center} \includegraphics[scale=.41]{../images/embedded_system_design_flow.pdf}   \end{center}
+%     \begin{center} \textbf{Metodología de diseño} \end{center}
+        \begin{center} \includegraphics[scale=.45]{../images/embedded_system_design_flow.pdf}   \end{center}
     };
     
 \end{tikzpicture}

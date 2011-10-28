@@ -1,0 +1,47 @@
+This is BibTeX, Version 0.99c (Web2C 7.5.4)
+The top-level auxiliary file: main.aux
+The style file: unsrt.bst
+Database file #1: biblio_EL.bib
+Warning--I didn't find a database entry for "Cor05"
+You've used 9 entries,
+            1791 wiz_defined-function locations,
+            500 strings with 4568 characters,
+and the built_in function-call counts, 1212 in all, are:
+= -- 97
+> -- 43
+< -- 0
++ -- 20
+- -- 11
+* -- 31
+:= -- 204
+add.period$ -- 27
+call.type$ -- 9
+change.case$ -- 9
+chr.to.int$ -- 0
+cite$ -- 9
+duplicate$ -- 54
+empty$ -- 151
+format.name$ -- 11
+if$ -- 274
+int.to.chr$ -- 0
+int.to.str$ -- 9
+missing$ -- 3
+newline$ -- 48
+num.names$ -- 9
+pop$ -- 42
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 33
+stack$ -- 0
+substring$ -- 0
+swap$ -- 9
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 9
+width$ -- 10
+write$ -- 89
+(There was 1 warning)

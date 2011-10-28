@@ -1,0 +1,20 @@
+\select@language {spanish}
+\contentsline {chapter}{\numberline {1}Introducci\'on}{3}
+\contentsline {chapter}{\numberline {2}Conceptos B\'asicos de los Sistemas Embebidos}{7}
+\contentsline {section}{\numberline {2.1}Definici\'on}{7}
+\contentsline {section}{\numberline {2.2}Caracter\IeC {\'\i }sticas}{7}
+\contentsline {section}{\numberline {2.3}Arquitectura}{7}
+\contentsline {section}{\numberline {2.4}Metodolog\IeC {\'\i }a de Dise\~no}{9}
+\contentsline {subsection}{\numberline {2.4.1}Herramientas Software de libre distribuci\'on \textit {GNU toolchain}}{11}
+\contentsline {subsection}{\numberline {2.4.2}Componentes del \textit {GNU toolchain} }{11}
+\contentsline {subsection}{\numberline {2.4.3}GNU binutils\cite {A1}}{11}
+\contentsline {subsection}{\numberline {2.4.4}GNU Compiler Collection\cite {Wik}}{12}
+\contentsline {subsubsection}{Lenguajes}{12}
+\contentsline {subsubsection}{Arquitecturas}{13}
+\contentsline {subsection}{\numberline {2.4.5}GNU Debugger}{14}
+\contentsline {subsection}{\numberline {2.4.6}C Libraries}{15}
+\contentsline {section}{\numberline {2.5}Obtenci\'on y utilizaci\'on del \textit {GNU toolchain}}{15}
+\contentsline {subsection}{\numberline {2.5.1}Conceptos Previos}{15}
+\contentsline {subsubsection}{El formato \textbf {ELF}}{16}
+\contentsline {subsection}{\numberline {2.5.2}Flujo de dise\~no software}{18}
+\contentsline {section}{\numberline {2.6}Makefile}{19}

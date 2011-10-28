@@ -1,0 +1,128 @@
+\documentclass[leter,10pt]{memoir}
+\usepackage{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage[spanish,es-noshorthands]{babel}
+
+
+\usepackage{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{appendix}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,positioning}
+\usetikzlibrary{patterns}
+\usetikzlibrary{arrows,shapes,snakes,automata,backgrounds,petri}
+\usepackage{times}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{pdfpages}
+\usepackage{listings,color}
+\lstset{language=C} 
+% \usepackage{fancyhdr}
+\usepackage{colortbl}
+
+
+\lstset{backgroundcolor=\color[gray]{.9}, frame=single,emph={EMPTY}, emphstyle=\color{white}, showstringspaces=false,
+        commentstyle=\itshape, commentstyle=\color[rgb]{0.083,0.545,0.083}, 
+        keywordstyle=\color{blue},
+        stringstyle=\ttfamily\color[rgb]{0.627,0.126,0.941}, 
+        morekeywords={printf}, tabsize=2, fontadjust=true, basicstyle=\footnotesize}
+
+\lstdefinestyle{numbered}{ backgroundcolor=\color{green!10}}
+\lstdefinestyle{numbered2}{ backgroundcolor=\color{yellow!10}}
+
+\usepackage{float}
+\usepackage{rotating}
+% \usepackage{subfigure}
+\usepackage{pdflscape}
+\usepackage{pstricks}
+
+\definecolor{code-color}{cmyk}{0, 0, 0, 0.1}
+\usepackage{amsmath,amssymb,latexsym,array, bm, times}
+\pagestyle{myheadings}
+\usepackage{longtable}
+
+
+\usepackage{palatino}
+\newfont{\pplbxviii}{pplbc scaled 1800}%
+\newfont{\pplbcxii}{pplbc scaled 1200}% Palatino Bold + Small Caps 
+% \usepackage[svgnames]{xcolor}
+
+% Chapter Style
+\makechapterstyle{daleif3}{
+%\renewcommand\chapternamenum{}
+%\renewcommand\printchaptername{}
+\renewcommand{\chaptitlefont}{%
+\color[cmyk]{.3,1.0,.85,.25}%
+% \scshape\large\centering}
+\scshape\huge\centering}
+\renewcommand{\chapnumfont}{%
+\color[cmyk]{.3,1.0,.85,.25}
+\scshape}
+\renewcommand{\chapnamefont}{%
+\color[cmyk]{.3,1.0,.85,.25}%
+% \scshape\huge\centering}
+\scshape\large\centering}
+}
+
+\usepackage{hyperref}
+\usepackage{memhfixc} % Needed after hyperref ?
+
+\chapterstyle{daleif3} 
+
+\begin{document}
+\bibliographystyle{unsrt}
+
+
+%%% --------------------------------------------------------
+%%% titlepage
+%%% --------------------------------------------------------
+\title{\pplbxviii Metodología de Diseño e Implementación de Sistemas Embebidos\\\Large ---Utilizando Herramientas Abiertas---}
+\author{\pplbcxii Carlos Iván Camargo Bareño}
+\date{}
+\maketitle
+\thispagestyle{empty}
+\clearpage
+
+%%% --------------------------------------------------------
+\frontmatter
+%%% --------------------------------------------------------
+\tableofcontents
+
+
+%%% --------------------------------------------------------
+\mainmatter
+%%% --------------------------------------------------------
+
+
+%  \input intro                  %
+%  \input educacion_embebidos    %
+ \input hardware_task
+ \bibliography{biblio}
+
+% 
+% \chapter{A chapter title}
+% \pagecolor{blue!5}
+% \thispagestyle{empty}
+% \newpage
+% 
+% \pagecolor{white}
+% Some text at the beginning of a chapter. And we add a lot of text to
+% make sure that it spans more than one line.
+% \par\fancybreak{$***$}\par
+% 
+% \chapter*{A non-numbered chapter title}
+% \pagecolor{yellow!10} %
+% \thispagestyle{empty}
+% \newpage
+% 
+% \pagecolor{white}
+% Some text at ?`the beginning of a chapter. And we add a lot of text to
+% make sure that it spans more than one line.
+\end{document} 
+
+
+
+
+?`?`?`?`?`?`?`?`?`?`?`?`?`?`

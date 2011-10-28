@@ -1,0 +1,5 @@
+\select@language {spanish}
+\contentsline {chapter}{\'Indice general}{\es@scroman {i}}{section*.1}
+\contentsline {chapter}{\chapternumberline {1}}{1}{chapter.1}
+\contentsline {subsection}{M\'aquinas de estado algor\IeC {\'\i }tmicas}{1}{section*.2}
+\contentsline {chapter}{Bibliograf\'{\i }a}{3}{section*.4}
