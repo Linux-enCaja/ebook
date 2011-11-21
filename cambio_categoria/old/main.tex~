@@ -1,0 +1,56 @@
+\documentclass[]{report}
+
+
+\usepackage{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage[spanish]{babel}
+
+% \usepackage{pgf}
+\usepackage{graphicx}
+\usepackage{times}
+\usepackage{colortbl}
+
+\usepackage{multicol}
+\usepackage{multirow}
+
+\usepackage{pdfpages}
+\usepackage{lscape}
+
+\usepackage{graphicx, color}
+
+\usepackage{listings}
+\lstset{language=C} 
+% \lstset{ basicstyle=\small, keywordstyle=\color{blue}\bfseries, identifierstyle=, commentstyle=\color{gray}, showstringspaces=false, keywordstyle=\color{blue}, morekeywords={one,three,five}}
+\lstset{backgroundcolor=\color{gray},frame=single,emph={EMPTY},emphstyle=\color{white}, showstringspaces=false,commentstyle=\itshape, morekeywords={printf} }
+%\lstset{framexleftmargin=5mm, frame=shadowbox, rulesepcolor=\color{black}, backgroundcolor=\color[gray]{.9}}
+\lstset{backgroundcolor=\color[gray]{.8}}
+
+
+\pagestyle{myheadings}
+\markboth{Codiseño y Sistemas Embebidos}{Universidad Nacional de Colombia}
+
+\usepackage{longtable}
+
+\parindent 1cm
+\parskip 0.2cm
+\topmargin 0.2cm
+\oddsidemargin 1cm
+\evensidemargin 0.5cm
+\textwidth 15cm
+\textheight 21cm
+
+
+\begin{document}
+\bibliographystyle{unsrt}
+\input title
+\tableofcontents
+
+\parindent=1cm            %Sangría de 1.5 cm al comienzo de cada párrafo
+
+  \input introduction
+  \input chapter1
+%  \input information}
+
+\bibliography{biblio_EL}
+
+\end{document} 

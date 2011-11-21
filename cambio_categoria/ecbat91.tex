@@ -1,0 +1,75 @@
+\chapter{Computador en una sola tarjeta ECB\_AT91}
+
+\subsection{Especificaciones}
+
+La familia de plataformas ECB\_AT91 se diseñó y fabricó para dar inicio al estudio de sistemas embebidos con Linux como sistema operativo, su importancia radica en ser el primer \gls{SBC} fabricado en Colombia. Y gracias a que los archivos de fabricación y el código fuente de las aplicaciones requeridas para su funcionamiento se encuentran disponibles, ha sido utilizada en varias universidades en diferentes países de mundo; se tienen reportes de la utilización de ECB\_AT91 en: Perú, Venezuela, Portugal, USA, Bélgica, España, Italia, Alemania y Brasil.
+
+El uso de Linux como herramienta de desarrollo ha aumentado en los últimos años, llegando a ser el sistema operativo más utilizado por los desarrolladores; empresas como Nokia, Motorola, Google, Dlink, Hewlett Packard utilizan Linux para desarrollar el firmware de sus dispositivos; por este motivo, se diseñaron plataformas que soportan la ejecución de este sistema operativo. Se diseñó una familia de plataformas denominadas ECB\_AT91 V1 (ver figura \ref{ECB_AT91_V1} \cite{CC} \cite{CC06} ), ECB\_AT91 V2 (ver figura \ref{ECB_AT91_V2}) y ECBOT (ver figura \ref{ECBOT} \cite{CC08b} \cite{CC08} \cite{CC07}); esta familia de plataformas se encuentran registradas en el kernel oficial de Linux, por lo tanto, su soporte queda garantizado en futuras versiones del kernel. ECB\_AT91 V1 fue el punto de partida para el estudio de técnicas de fabricación de placas de circuito impreso para SoC que operan a velocidades mayores de 180MHz, y para aprender el proceso completo de adaptar el kernel de Linux a una plataforma nueva, el proceso detallado se muestra en el capítulo 3. Los archivos necesarios para la reproducción, programación y modificación de esta familia de plataformas se encuentran en la página de proyectos del portal \textit{linuxencaja \footnote{http://projects.linuxencaja.net/}}
+
+Las características comúnes de estas plataformas son:
+
+\begin{itemize}
+ \item procesador ARM9 de 180 MHz (Atmel AT91RM9200).
+ \item 2 MBytes de memorial flash serial.
+ \item 32 MBytes de memoria SDRAM.
+ \item 1 slot SD/MMC.
+ \item 1 puerto host USB 2.0.
+ \item 1 puerto I2C.
+ \item 1 Interfaz Ethernet 10/100.
+ \item 4 Interfaces SPI.
+ \item 2 Interfaces seriales (RS232).
+ \item Soporte JTAG.
+ \item Bus de Datos (16 bits), Dirección (7 bits) y Control Disponibles.
+ \item 8 Pines de Entrada/Salida de Propósito General Disponibles.
+\end{itemize}
+
+Los prototipos de estas plataformas fueron construidos por la empresa colombiana Microensamble, una de las pocas empresas en Colombia que posee la tecnología necesaria para fabricar este tipo de placas. Para su montaje, se desarrollaron técnicas manuales de soldadura de componentes de montaje superficial; en Colombia el uso de este tipo de componentes no es muy frecuente, razón por la cual el proceso de montaje fue un poco largo (6 meses). La implementación física de estas plataformas ayudó a crear un protocolo de montaje manual que utiliza materiales económicos; este proceso ha sido utilizado con éxito en el montaje de una gran cantidad de plataformas y ha sido documentado en el portal \textit{linuxencaja \footnote{http://linuxencaja.com/wiki/Tutorial\_de\_soldadura\_de\_prototipos}}.
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[scale=.5]{./images/ECB_AT91_FREE_spec_top} \end{center}
+  \caption{Lado de Componentes de la placa ECB\_AT91.}\label{ECB_AT91_V1}
+\end{figure}
+
+La plataforma ECB\_AT91 V2 es el resultado del interés de utilizar dispositivos lógicos programables y SoC comerciales para crear periféricos dedicados y la creación de nuevos drivers de Linux que los controlaran, su arquitectura es idéntica a la de la plataforma ECB\_AT91 V1 pero el bus de datos, dirección y control del \gls{SoC} se conectan a la \gls{FPGA} para permitir la comunicación con los periféricos implementados en ella; la \gls{FPGA} es configurada por el \gls{SoC} utilizando unos \gls{GPIO}s que van conectados al puerto \gls{JTAG} de la \gls{FPGA}, lo que elimina la necesidad de cables adicionales de conexión, permitiendo su re-programación total de forma remota.
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[scale=.7]{./images/ECB_AT91_V2.jpg}
+  \caption{Plataforma de desarrollo ECB\_AT91 V2} \label{ECB_AT91_V2}
+\end{figure}
+
+La plataforma ECBOT fue diseñada con el propósito de iniciar el estudio en robótica móvil y procesamiento de imagen; para esto, se utilizó una arquitectura similar a la de la plataforma ECB\_AT91\_V2 adicionando una conexión dedicada a un sensor de imagen y circuitos especializados para el control de sensores (6 sensores de choque, 1 sensor de imagen, movimiento de los motores basado en BEMF \footnote{Back Electro Magnetic Force} ), actuadores (8 \gls{LED}s RGB, 2 motores DC) y un coversor DC/DC que garantiza el máximo uso de las baterías. Como parte de este trabajó, se realizó la adaptación de proyectos libres que facilitan la investigación en robótica como \textit{player/stage}\footnote{http://playerstage.sourceforge.net/} y \textit{openblocks}\footnote{http://dspace.mit.edu/handle/1721.1/41550}. En la actualidad ECBOT está siendo usado por los grupos de robótica de los departamentos de Sistemas y mecatrónica de la Universidad Nacional de Colombia. 
+
+\begin{figure}[htpb]
+  \centering
+   \includegraphics[scale=.5]{./images/ECBOT.png}
+  \caption{Plataforma de desarrollo ECBOT} \label{ECBOT}
+\end{figure}
+
+
+\section{Diagrama de Bloques}
+
+
+En la figura \ref{ECBOT_Block} se muestra el diagrama de bloques de estas tres arquitecturas; todas poseen el SoC de 180MHz de Atmel AT91RM9200, debido a que este SoC no posee conversores análogos - digitales internos fue necesario incluir un micro-controlador de 8 bits que se comunica con el \gls{SoC} vía \gls{I2C}, el SoC realiza la programación del microcontrolador emulando un puerto paralelo en sus pines de entrada/salida de propósito general (\gls{GPIO}s) que van conectados a los pines del puerto \gls{ISP} del microcontrolador.
+
+\begin{figure}[ht]
+  \begin{center} \includegraphics[scale=.5]{./images/ECBOT_Block.png} \end{center}
+  \caption{Diagrama de bloques de ECB\_AT91.}\label{ECBOT_Block}
+\end{figure}
+
+% \bigskip
+
+\subsection{Unidad Central de Procesamiento}
+El cerebro de ECBOT es un procesador de 32 Bits de la familia ARM de ATMEL el AT91RM9200, que corre a 180 MHz. Este procesador goza de gran popularidad dentro del grupo de desarrolladores de drivers para Linux, por lo que casi la totalidad de sus periféricos están soportados. Esto facilita la creación del soporte necesario para la board.
+
+\subsection{Comunicaciones}
+La familia de plataformas ECB\_AT91 proporciona 3 formas de comunicación con dispositivos externos:
+\begin{itemize}
+ \item Módulo WiFi: ECBOT permite la conexión de un adaptador USB 802.11, en la actualidad solo los adaptadores basados en el chip ZD1211 están soportados.
+ \item Puerto Serie: En las primeras etapas del desarrollo es necesario utilizar el puerto serie para cargar las imágenes del loader, bootloader y kernel.
+ \item Puerto \gls{I2C}: Puerto de comunicación serial adaptado por un amplio número de dispositivos entre los que se encuentran sensores, memorias, relojes de tiempo real entre otros. 
+\end{itemize}
+
+% \bigskip
+\subsection{Memorias y Dispositivos de Almacenamiento}
+Se cuenta con una memoria Flash serial de 2 Mbytes donde se almacenan las imágenes del loader, bootloader y kernel, esta memoria puede ser modificada utilizando un loader que se ejecuta al inicializar la plataforma, o puede modificarse desde linux a través de un dispositivo MTD (Memory Technology Device). ECBOT permite la utilización de una memoria SDRAM de hasta 64 MBytes, la cual es utilizada como memoria de propósito general para las aplicaciones que corren bajo Linux. Adicionalmente se proporcionan dos conectores para memoria SD, uno para una SD standard y el otro para una tarjeta micro-SD.

@@ -1,0 +1,13 @@
+#
+# TransFig makefile
+#
+
+all: elastic_blob.gif.tex 
+
+# translation into gif
+
+elastic_blob.gif.gif: elastic_blob.gif.fig Makefile
+	fig2dev -L gif elastic_blob.gif.fig elastic_blob.gif.gif
+clean::
+	rm -f elastic_blob.gif.tex
+

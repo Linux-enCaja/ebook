@@ -1,0 +1,512 @@
+\chapter{Conceptos Básicos de los Sistemas Embebidos}
+
+\section{Definición}
+
+Un Sistema Embebidos es un sistema de propósito específico en el cual, el computador es encapsulado completamente por el dispositivo que el controla. A diferencia de los computadores de propósito general, un Sistema Embebido realiza tareas pre-definidas, lo cual permite su optimización, reduciendo el tamaño y costo del producto \cite{Wik}
+
+\section{Características}
+
+\begin{itemize}
+  \item Los sistemas embebidos son diseñados para una aplicación
+  espec\'{\i}fica, es decir, estos sistemas realizan un grupo de funciones
+  previamente definidasm y una vez el sistema es diseñado, no se puede cambiar
+  su funcionalidad. Por ejemplo, el control de un asensor siempre realizar\'a
+  las mismas acciones durante su vida \'util.
+  \item Debido a su interacción con el entorno los ES deben cumplir
+  esctríctamente restricciones temporales. El t\'ermino {\textit{Sistemas
+  de Tiempo Real}} es utilizado para enfatizar este aspecto.
+  \item Los Sistemas Embebidos son heterog\'eneos, es decir, est\'an
+  compuestos por componentes Hardware y Software. Los componentes Hardware,
+  como ASICs y Dispositivos L\'ogicos Programables (PLD) proporcionan la
+  velocidad de ejecuci\'on y el cosumo de potencia necesarios en algunas
+  aplicaciones.
+  \item Los Sitemas Embebidos tienen grandes requerimientos en t\'erminos de
+  confiabilidad. Errores en aplicaciones como la aviaci\'on y el
+  automovilismo, pueden tener consecuencias desastrosas.
+\end{itemize}
+
+\section{Arquitectura}
+
+Una arquitectura típica para un Sistema Embebido se muestra en la Figura \ref{es_arch}; La cual integra un componente hardware, implementado ya sea en un PLD (CPLD, FPGA) o en un ASIC, conocido con el nombre de periféricos y un componente software (procesador o DSP) capáz de ejecutar software, la parte del procesador está dividida en la CPU (En algunos casos posee una caché) y las unidades de Memoria.
+
+
+\begin{figure}
+  \begin{center} \includegraphics[scale=.6]{./images/ES_Architecture} \end{center}
+  \caption{Arquitectura de un Sistema Embebido}\label{es_arch}
+\end{figure} 
+
+
+Al momento de diseñar un Sistema Embebido encontramos las siguientes opciones:
+\begin{itemize}
+\item Componente HW y SW Integrado en un dispositivo semiconductor (SoC): En la actualidad existen muchas compañías que fabrican procesadores de 32 bits integrados a una gran variedad de periféricos, lo cual simplifica el diseño y reduce costos (menos componentes y menos área de circuito impreso) \footnote{http://www.sharpsma.com, http://www.atmel.com, http://www.cirrus.com, http://www.samsung.com, http://www.freescale.com, etc}.
+
+\item Componente SW en un SoC y componente HW en una FPGA: Cuando no existen en el mercado SoC con la cantidad de periféricos requerida para una determinada aplicación, es necesario recurrir a la utilización de dispositivos comerciales que implementen dicha operación, en algunas ocaciones el periférico puede relizar funciones muy específicas de modo que no existe en el mercado, la solución es entonces implementar estos dispositivos en una FPGA, también se recomienda la utilización de FPGAs en sistemas que requieren una gran cantidad y variedad de periféricos ya que reduce la complejidad y costo del sistema.
+
+\item Componente SW y HW en una FPGA: Esta es tal vez la opción más económica y flexible, pero la de menor desempeño, ya que al utilizar los recursos lógicos de la FPGA para la implementación del procesador (softcore) la lngitud de los caminos de interconexión entre los bloques lógicos aumentan el retardo de las señales . Los procesadores \textit{softcore} más populares en la actualidad son:
+
+  \begin{itemize}
+  \item Microblaze de Xilinx\footnote{http://www.xilinx.com}
+  \item Leon de Gaisler Research \footnote{http://www.gaisler.com/}
+  \item LatticeMico32 de Lattice Semiconductors\footnote{http://www.latticesemi.com}
+  \item OpenRisc \footnote{http://www.opencores.com}
+  \end{itemize}
+ 
+\end{itemize}
+
+
+
+
+\section{Metodología de Diseño}
+
+La Figura \ref{des_flow}, muestra un diagrama de flujo de diseño genérico para sistemas
+embebidos {\cite{Cor05}}
+
+\begin{figure}
+  \begin{center} \includegraphics[scale=.55]{./images/design_flow} \end{center}
+  \caption{Flujo de Diseño de un Sistema Embebido}\label{des_flow}
+\end{figure} 
+
+
+El proceso comienza con la {\textit{especificaci\'on del sistema}}, en este
+punto se describe la funcionalidad y se definen las restricciones
+f\'{\i}sicas, el\'ectricas y econ\'omicas. Esta especificaci\'on debe ser muy
+general y no deben existir dependencias (tecnol\'ogicas, metodol\'ogicas) de
+ning\'un tipo, se suele utilizar lenguajes de alto nivel, como UML, C++. La
+especificaci\'on puede ser verificada a trav\'es de una serie de pasos de
+an\'alisis cuyo objetivo es determinar la validez de los algor\'{\i}tmos
+seleccionados, por ejemplo, determinar si el algoritmo siempre termina, los
+resultados satisfacen las especificaciones. Desde el punto de vista de la
+re-utilizaci\'on, algunas partes del funcionamiento global deben tomarse de
+una librer\'{\i}a de algor\'{\i}tmos existentes.
+
+
+
+Una vez definidas las especificaciones del sistema se debe realizar un
+modelamiento que permita extraer de estas la funcionalidad. El modelamiento es
+crucial en el diseño ya que de \'el depende el paso existoso de la
+especificaci\'on a la implementaci\'on. Es importante definir que modelo
+matem\'atico debe soportar el entorno de diseño. Los modelos m\'as utilizados
+son: M\'aquinas de estados finitos, diagramas de flujos de datos, Sistemad de
+Eventos Discretos y Redes de Petri. Cada modelo posee propiedades
+matem\'aticas que pueden explotarse de forma eficiente para responder
+preguntas sobre la funcionalidad del sistema sin llevar a cabo dispendiosas
+tareas de verificaci\'on. \ Todo modelo obtenido debe ser verificado para
+comprobar que cumple con las restricciones del sistema.
+
+
+
+Una vez se ha obtenido el modelo del sistema se procede a determinar su
+{\textit{arquitectura}}, esto es, el n\'umero y tipo de componentes y su
+inter-conexi\'on. Este paso no es m\'as que una exploraci\'on del espacio de
+diseño en b\'usqueda de soluciones que permitan la implementaci\'on de una
+funcionalidad dada, y puede realizarse con varios criterios en mente: Costos,
+confiabilidad, viabilidad comercial.
+
+
+
+Utilizando como base la arquitectura obtenida en el paso anterior las tareas
+del modelo del sistemas son mapeadas dentro de los componentes. Esto es,
+asignaci\'on de funciones a los componentes de la arquitectura. Existen dos
+opciones a la hora de implementar las tareas o procesos:
+\begin{enumerate}
+  \item Implementaci\'on Software: La tarea se va a ejecutar en un procesador.
+  \item Implementaci\'on Hardware: La tarea se va a ejecutar en un sistema
+  digital dedicado.
+\end{enumerate}
+
+Para cumplir las especificaciones del sistema algunas tareas deben ser
+implementadas en Hardware, esto con el f\'{\i}n de no ocupar al procesador en
+tareas c\'{\i}clicas, un ejemplo t\'{\i}pico de estas tareas es la
+generaci\'on de bases de tiempos. La decisi\'on de que tareas se implementan
+en SW y que tareas se implementan en HW recibe el nombre de
+{\textit{particionamiento}}, esta selecci\'on es fuertemente dependiente de
+restricciones econ\'omicas y temporales.
+
+
+Las tareas Software deben compartir los recursos que existan en el sistema
+(procesador y memoria), por lo tanto se deben hacer decisiones sobre el orden
+de ejecuci\'on y la prioridad de estas. Este proceso recibe el nombre de
+{\textit{planificaci\'on}}. En este punto del diseño el modelo debe incluir
+informaci\'on sobre el mapeo, el particionamiento y la planificaci\'on del
+sistema.
+
+
+Las siguientes fases corresponden a la implementaci\'on del modelo, para esto
+las tareas hardware deben ser llevadas al dispositivo elegido (ASIC o FPGA) y
+se debe obtener el $''$ejecutable$''$ de las tareas software, este proceso
+recibe el nombre de {\textit{s\'{\i}ntesis}} HW y SW respectivamente, as\'{\i}
+mismo se deben sintetizar los mecanismos de comunicaci\'on.
+
+
+El proceso de prototipado consiste en la realizaci\'on f\'{\i}sica del
+sistema, finalmente el sistema f\'{\i}sico debe someterse a pruebas para
+verificar que se cumplen con las especificaciones iniciales.
+
+Como puede verse en el flujo de diseño existen realimentaciones, estas
+realimentaciones permiten depurar el resultado de pasos anteriores en el caso
+de no cumplirse las especificaciones iniciales
+
+\subsection{Herramientas Software de libre distribución \textit{GNU  toolchain}}
+En el mercado existe una gran variedad de herramientas de desarrollo para Sistemas Embebidos, 
+sin embargo, en este estudio nos centraremos en el uso de las herramientas de libre distribución;
+esta elección se debe a que la mayoría de los productos comerciales utilizan el toolchain de GNU\footnote{http://www.gnu.org} internamente y proporcionan un entorno gráfico para su fácil manejo. Otro factor considerado a la hora de realizar nuestra elección es el económico, ya que la mayoría de los productos comerciales son costosos y poseen soporte limitado. Por otro lado, el toolchain de GNU es utilizado ampliamente en el medio de los diseñadores de sistemas embebidos y se encuentra un gran soporte en múltiples foros de discusión (ver Figura \ref{tools}).
+
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.7]{./images/embedded-linux-tool-trends-sm} \end{center}
+  \caption{Tendencia de utilización de herramientas de desarrollo}\label{tools}
+\end{figure}
+
+\subsection{Componentes del \textit{GNU toolchain} }
+
+\subsection{GNU binutils\cite{A1}}
+Son una colección de utilidades para archivos binarios y estan compuestas por:
+
+\begin{itemize}
+ \item  \textbf{addr2line} Convierte direcciones de un programa en nombres de archivos y números de línea. Dada una dirección y un ejecutable, usa la información de depuración en el ejecutabe para determinar que nombre de atchivo y número de lpinea está asociado con la dirección dada.
+ \item  \textbf{ar} Esta utilidad crea, modifica y extrae desde ficheros. Un fichero es una colección de otros archivos en una estructura que hace posible obtener los archivos individuales miembros del archivo. 
+ \item  \textbf{as} Utilidad que compila la salida del compilador de C (GCC).
+ \item  \textbf{c++filt} Este program realiza un mapeo inverso: Decodifica nombres de bajo-nivel en nombres a nivel de usuario, de tal forma que el linker pueda mantener estas funciones sobrecargadas (overloaded) ``from clashing''. 
+ \item  \textbf{gasp} GNU Assembler Macro Preprocessor
+ \item  \textbf{ld} El \textit{linker} GNU combina un número de objetos y ficheros, re-localiza sus datos y los relaciona con referencias. Normalmente el último paso en la construcción de un nuevo programa compilado es el llamado a ld.
+ \item  \textbf{nm} Realiza un listado de símbolos de archivos tipo objeto.
+ \item  \textbf{objcopy} Copia los contenidos de un archivo tipo objeto a otro. \textit{objcopy} utiliza la librería GNU BFD para leer y escribir el archivo tipo objeto. Permite esccribibr el archivo destino en un formato diferente al del archivo fuente. 
+ \item  \textbf{objdump} Despliega información sobre archivos tipo objeto. 
+ \item  \textbf{ranlib} Genera un índice de contenidos de un fichero, y lo almacena en él.
+ \item  \textbf{readelf} Interpreta encabezados de un archivo ELF.
+ \item  \textbf{size} Lista el tamaño de las secciones y el tamaño total de un archivo tipo objeto.
+ \item  \textbf{strings} Imprime las secuencias de caracteres imprimibles de almenos 4 caracteres de longitud. 
+ \item  \textbf{strip} Elimina todos los símbolos de un archivo tipo objeto.
+
+\end{itemize}
+ 
+\subsection{GNU Compiler Collection\cite{Wik}}
+El \textit{GNU Compiler Collection} normalmente llamado GCC, es un grupo de compiladores de lenguajes de programación producido por el proyecto GNU. Es el compilador standard para el software libre de los sistemas operativos basados en Unix y algunos propietarios como Mac OS de Apple.
+
+
+\subsubsection{Lenguajes}
+GCC soporta los siguientes lenguajes:
+\begin{itemize}
+ \item \textbf{ADA} 
+ \item \textbf{C} 
+ \item \textbf{C++} 
+ \item \textbf{Fortran} 
+ \item \textbf{Java} 
+ \item \textbf{Objective-C} 
+ \item \textbf{Objective-C++} 
+\end{itemize}
+
+\subsubsection{Arquitecturas}
+\begin{itemize}
+ \item \textbf{Alpha}
+ \item \textbf{ARM}
+ \item \textbf{Atmel AVR}
+ \item \textbf{Blackfin}
+ \item \textbf{H8/300}
+ \item \textbf{System/370, System/390}
+ \item \textbf{IA-32 (x86) and x86-64}
+ \item \textbf{IA-64 i.e. the "Itanium"}
+ \item \textbf{Motorola 68000}
+ \item \textbf{Motorola 88000}
+ \item \textbf{MIPS}
+ \item \textbf{PA-RISC}
+ \item \textbf{PDP-11}
+ \item \textbf{PowerPC}
+ \item \textbf{SuperH}
+ \item \textbf{SPARC}
+ \item \textbf{VAX}
+ \item \textbf{Renesas R8C/M16C/M32C}
+ \item \textbf{MorphoSys}
+\end{itemize}
+Como puede verse GCC soporta una gran cantidad de lenguajes de programación, sin embargo, en el presente estudio solo lo utilizaremos como herramienta de compilación para C y C++. Una característica de resaltar de GCC es la gran cantidad de plataformas que soporta, esto lo hace una herramienta Universal para el desarrollo de sistemas embebidos, el código escrito en una plataforma (en un lenguaje de alto nivel) puede ser implementado en otra sin mayores cambios, esto elimina la dependencia entre el código fuente y el HW\footnote{Esto recibe el nombre de re-utilización de código}, lo cual no ocurre al utilizar lenguaje ensamblador. 
+
+Por otro lado, el tiempo requerido para realizar aplicaciones utilizando C o C++ disminuye, ya que no es necesario aprender las instrucciones en assembler de una plataforma determinada; además, la disponibilidad de librerías de múltiples propósitos reduce aún más los tiempos de desarrollo, permitiendo de esta forma tener bajos tiempos \textit{time to market} y reducir de forma considerable el costo del desarrollo. Una consecuencia de esto se refleja en el número de desarrolladores en un grupo de trabajo, en la actualidad casi el 60\% de las empresas desarrolladoras de dispositivos embebidos tiene grupos con menos de 10 desarrolladores \ref{group}.
+
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.2]{./images/vdc_embedded_dev_company_size} \end{center}
+  \caption{Número promedio de desarrolladores por compañía. Fuente Venture Development Corp}\label{group}
+\end{figure}
+ 
+\subsection{GNU Debugger\cite{Wik}}
+El depurador oficial de GNU (GDB), es un depurador que al igual que GCC tiene soporte para múltiples lenguajes y plataformas. GDB permite al usuario monitorear y modificar las variables internas del programa y hacer llamado a funciones de forma independiente a la ejecución normal del mismo. Además, permite establecer sesiones remotas utilizando el puerto serie o TCP/IP. Aunque GDB no posee una interfaz gráfica, se han desarrollado varios front-ends como DDD o GDB/Insight. A continuación se muestra un ejemplo de una sesión con gdb.
+
+\footnotesize
+\begin{lstlisting}[firstnumber=40]
+GNU gdb Red Hat Linux (6.3.0.0-1.21rh)
+Copyright 2004 Free Software Foundation, Inc.
+GDB is free software, covered by the GNU General Public License, and you are
+welcome to change it and/or distribute copies of it under certain conditions.
+Type "show copying" to see the conditions.
+There is absolutely no warranty for GDB.  Type "show warranty" for details.
+This GDB was configured as "i386-redhat-linux-gnu"...Using host libthread_db 
+library "/lib/libthread_db.so.1".
+
+(gdb) run
+Starting program: /home/sam/programming/crash
+Reading symbols from shared object read from target memory...done.
+Loaded system supplied DSO at 0xc11000
+This program will demonstrate gdb
+
+Program received signal SIGSEGV, Segmentation fault.
+0x08048428 in function_2 (x=24) at crash.c:22
+22         return *y;
+(gdb) edit
+(gdb) shell gcc crash.c -o crash -gstabs+
+(gdb) run
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+warning: cannot close "shared object read from target memory": File in wrong format
+`/home/sam/programming/crash' has changed; re-reading symbols.
+Starting program: /home/sam/programming/crash
+Reading symbols from shared object read from target memory...done.
+Loaded system supplied DSO at 0xa3e000
+This program will demonstrate gdb
+24
+Program exited normally.
+(gdb) quit 
+\end{lstlisting}
+
+
+
+\subsection{C Libraries}
+Adicionalmente es necesario contar con una librería que proporcione las librerías standard de C: stdio, stdlib, math; las más utilizadas en sistemas embebidos son:
+
+\begin{itemize}
+ \item \textbf{glibc\footnote{http://www.gnu.org/software/libc/}} Es la librería C oficial del proyecto GNU. Uno de los inconvenientes al trabajar con esta librería en sistemas embebidos es que genera ejecutables de mayor tamaño que los generados a partir de otras librerías, lo cual no la hace muy atractiva para este tipo de aplicaciones. 
+ \item \textbf{uClibc\footnote{http://uclibc.org/}} Es una librería diseñada especialmente para sistemas embebidos, es mucho más pequeña que \textbf{glibc}.
+ \item \textbf{newlib\footnote{http://sources.redhat.com/newlib/}} Al igual que \textbf{uClibc}, está diseñada para sistemas embebidos. El típico ``Hello, world!'' ocupa menos de 30k en un entorno basado en newlib, mientras que en uno basado en glibc, puede ocupar 380k \cite{BG}. 
+ \item \textbf{diet libc\footnote{http://www.fefe.de/dietlibc/}} Es una versión de \textit{libc} optimizada en tamaño, puede ser utilizada para crear ejecutables estáticamente enlazados para linux en plataformas alpha, arm, hppa, ia64, i386, mips, s390, sparc, sparc64, ppc y x86\_64.
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                     SECCION Obtención y utilización del GNU toolchain
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Obtención y utilización del \textit{GNU toolchain}}
+
+El primer paso en nuestro estudio consiste en tener una cadena de herramientas funcional que soporte la familia de procesadores a utilizar. La arquitectura sobre la cual realizaremos nuestra investigación es la ARM (Advanced Risc Machines), ya que un la más utilizada en la actualidad por los diseñadores de sistemas embebidos (ver figura \ref{arch}) y se encuentran disponibles una gran variedad de herramientas para esta arquitectura. Existen dos formas de obtener la cadena de herramientas GNU:
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.8]{./images/embedded-processor-trends-sm} \end{center}
+  \caption{Tendencia del mercado de procesadores para sistemas embebidos. Fuente:\cite{Lin05} }\label{arch}
+\end{figure}
+
+\begin{enumerate}
+ \item Utilizar una distribución precompilada: Esta es la via más rápida, sin embargo, hay que tener cuidado al momento de instalarlas, ya que debe hacerse en un directorio con el mismo \textit{path} con el que fueron creadas. por ejemplo \textit{/usr/local/gnutools}; si esto no se cumple, las herramientas no funcionarán de forma adecuada.
+ \item Utilizar un script de compilación: Existen disponibles en la red una serie de \textit{scripts} que permiten descargar, configurar, compilar e instalar la cadena de herramientas, la ventaja de utilizar este método es que es posible elegir las versiones de las herramientas instaladas, al igual que el directorio de instalación. En este estudio utilizaremos los \textit{scripts} creados por Dan Kegel \cite{DK06}.
+\end{enumerate}
+
+\subsection{Conceptos Previos}
+Antes de hablar sobre el uso de las herramientas GNU hablaremos sobre varios conceptos que deben quedar claros; estos son: El flujo de diseño software, y el formato ELF.
+
+\subsubsection{El formato \textbf{ELF}}
+
+El formato ELF (\textit{Executable and Linkable Format}) Es un stándard para objetos, librerías y ejecutables. Como puede verse en la figura \ref{elf1} el formato ELF está compuesto por varias secciones (\textit{link view}) o segmentos (\textit{execution view}). Si un programador está interesado en obtener información de secciones sobre tablas de símbolos, código ejecutable específico o información de enlazado dinámico debe utilizar \textit{link view}. Pero si busca información sobre segmentos, como por ejemplo, la localización de los segmentos \textit{text} o \textit{data} debe utilizar \textit{execution view}. El encabezado describe el layout del archivo, proporcionando información de la forma de acceder a las secciones \cite{MLH98}.
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.4]{./images/ELF_Link_exec1} \end{center}
+  \caption{Tendencia del mercado de procesadores para sistemas embebidos. Fuente:\cite{Lin05} }\label{elf1}
+\end{figure}
+
+
+Las secciones pueden almacenar código ejecutable, datos, información de enlazado dinámico, datos de depuración, tablas de símbolos,comentarios, tablas de strings, y notas. Las secciones más importantes son las siguientes:
+
+\begin{itemize}
+ \item \textbf{.bss}		Datos no inicializados. (RAM)
+ \item \textbf{.comment}	Información de la versión.
+ \item \textbf{.data y .data1}	Datos inicializados.    (RAM)
+ \item \textbf{.debug}		Información para depuración simbólica. 
+ \item \textbf{.dynamic}	Información sobre enlace dinámico 
+ \item \textbf{.dynstr}		Strings necesarios para el enlacedinámico 
+ \item \textbf{.dynsym} 	Tabla de símbolos utilizada para enlace dinámico.
+ \item \textbf{.fini} 		Código de terminación de proceso.
+ \item \textbf{.init} 		Código de inicialización de proceso.
+ \item \textbf{.line} 		Información de número de línea para depuración simbólica.
+ \item \textbf{.rodata y .rodta1} Datos de solo-lectura (ROM)
+ \item \textbf{.shstrtab} 	Nombres de secciones.
+ \item \textbf{.symtab} 	Tabla de símbolos.
+ \item \textbf{.text} 		Instrucciones ejecutables (ROM)
+\end{itemize}
+
+Para aclarar un poco este concepto consideremos el siguiente código:
+
+
+\begin{lstlisting}
+#include <stdio.h>
+
+int main(void)
+{
+  int i;				// Variable no inicializada
+  int j = 2;				// Variable inicializada
+  for(i=0; i<10; i++){
+    printf("Printing %d\n", i*j);	// Caracteres constantes
+    j = j + 1;
+  }
+  return 0;
+}
+
+\end{lstlisting}
+ 
+
+En el ejemplo observamos que tenemos dos variables, una sin inicializar (\textit{i}) y otra inicializada (\textit{j}); estas variables estarán en las secciones \textit{.bss} y \textit{.data} respectivamente, así mismo los caracteres ``Printing `` Estarán incluidos en la sección \textit{.rodata} ya que son datos que no cambian a lo largo de la ejecución del programa. Las instrucciones que forman el programa residen en la sección \textit{.text}. A continuación se muestra la información de este archivo una vez compilado, utilizando la herramienta \textit{objdump} de los utilitarios binarios \textit{binutils} y más específicamente el comando:
+
+\textit{objdump -h hello}
+
+
+\begin{lstlisting}
+hello:     file format elf32-littlearm
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .interp       00000014  000080f4  000080f4  000000f4  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  1 .hash         00000050  00008108  00008108  00000108  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  2 .dynsym       000000f0  00008158  00008158  00000158  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  3 .dynstr       0000008a  00008248  00008248  00000248  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  5 .init         00000010  000082f4  000082f4  000002f4  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  7 .text         0000017c  00008348  00008348  00000348  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  8 .fini         0000000c  000084c4  000084c4  000004c4  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  9 .rodata       00000010  000084d0  000084d0  000004d0  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+ 10 .eh_frame     00000004  000084e0  000084e0  000004e0  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+ 16 .data         0000000c  000105ac  000105ac  000005ac  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+ 17 .bss          00000004  000105b8  000105b8  000005b8  2**0
+                  ALLOC
+ 18 .comment      00000094  00000000  00000000  000005b8  2**0
+                  CONTENTS, READONLY
+\end{lstlisting}
+En el item 9, se observa la información correspondiente a la sección \textit{.rodata}, la primera columna corresponde al tamaño de la sección, en este caso 16 bytes, las columnas 2 y 3 corresponden a la dirección de ejecución (VMA) y a la dirección de carga (LMA) respectivamente. La columna 4 indica la dirección dentro del ejecutable donde se encuentra almacenada esta información, en este caso la  \textit{0x000004d0}, utilizando la herramienta \textit{hexdump} podemos ver el contenido de esa dirección en el archivo ejecutable:
+
+\textit{hexdump -C hello | grep -i 000004d0}
+
+\begin{lstlisting}
+ 000004d0  50 72 69 6e 74 69 6e 67  20 25 64 0a 00 00 00 00  |Printing %d.....|
+\end{lstlisting}
+
+
+\subsection{Flujo de diseño software}
+
+En la figura \ref{toolchain_flow} se ilustra la secuencia de pasos que se realizan desde la creación de un archivo de texto que posee el código fuente de una aplicación hasta su implementación en la tarjeta de desarrollo.
+
+
+\begin{figure}[h]
+  \begin{center} \includegraphics[scale=.6]{./images/SW_design_flow} \end{center}
+  \caption{Tendencia del mercado de procesadores para sistemas embebidos. Fuente:\cite{Lin05} }\label{toolchain_flow}
+\end{figure}
+
+A continuación se realiza una breve descripción de los pasos necesarios para generar un ejecutable para un sistema embebido:
+
+\begin{enumerate}
+ \item \textbf{Escritura del código fuente:} Creación del código fuente en cualquier editor de archivos de texto.
+ \item \textbf{Compilación:} Utilizando el compilador gcc se compila el código fuente; vala la pena mencionar que en este punto el compilador solo busca en los encabezados (\textit{headers}) de las librerías la definición de una determinada función, como por ejemplo el \textit{printf} en el archivo \textit{stdio.h}. Como resultado de este paso se obtiene un archivo tipo objeto. 
+ \item \textbf{Enlazado:} En esta etapa se realizan dos tareas: 
+  \begin{enumerate} 
+    \item Se enlazan los archivos tipo objeto del proyecto, junto con las librerías, si una determinada función no es edfinida por ninguna de las librerías pasadas como parámetro al linker, este generará un error y no se generará el ejecutable.
+    \item Se define la posiciónes físicas de las secciones del ejecutable tipo ELF, esto se realiza a través de un link de enlazado el cual define de forma explícita su localización.
+  \end{enumerate}
+ \item \textbf{Extracción del archivo de programación} En algunas aplicaciones es necesario extraer únicamente las secciones que residen en los medios de almacenamiento no volátil y eliminar las demás secciones del ejecutable. Esto se realiza con la herramiento \textit{objcopy}, la cual, permite generar archivos en la mayoría de los formatos soportados por los programadores de memorias y procesadores, como por ejemplo S19 e Intel Hex.
+ \item \textbf{Descarga del programa a la plataforma}. Dependiendo de la plataforma existen varios métodos para descargar el archivo de programación a la memoria de la plataforma de desarrollo:
+  \begin{enumerate}
+    \item Utilizando un \textit{loader}: El \textit{loader} es una aplicación que reside en un medio de almacenamiento no volátil y permite la descarga de archivos utilizando el puerto serie o una interfaz de red.
+    \item Utilizando el puerto JTAG: El puerto JTAG (Joint Test Action Group) proporciona una interfaz capaz de controlar los registros internos del procesador, y de esta forma, acceder a las memorias de la plataforma y ejecutar un programa residente en una determinada posición de memoria.
+  \end{enumerate}
+
+ \item \textbf{Depuración} Una vez se descarga la aplicación a la plataforma es necesario someterla a una serie de pruebas con el fín de probar su correcto funcionamiento. Esto se puede realizar con el depurador GNU (GDB) y una interfaz de comunicación que puede ser un puerto serie o un adaptador de red.
+ 
+\end{enumerate}
+
+\section{Makefile}
+Como pudo verse en la sección es necesario realizar una serie de pasos para poder descargar una aplicación a una plataforma embebida. Debido a que las herramientas GNU solo poseen entrada por consola de comandos, es necesario esribir una serie de comandos cada vez que se realiza un cambio en el código fuente, lo cual resulta poco práctico. Para realizar este proceso de forma automática se creó la herramienta make, la cual recibe como entrada un archivo que normalmente recibe el nombre de \textit{Makefile} o \textit{makefile}. Un ejemplo de este tipo de archivo se muestra a continuación:
+
+\begin{lstlisting}[numbers=left]
+SHELL = /bin/sh
+
+basetoolsdir = /home/at91/gcc-3.4.5-glibc-2.3.6/arm-softfloat-linux-gnu
+bindir  = ${basetoolsdir}/bin
+libdir  = ${basetoolsdir}/lib/gcc/arm-softfloat-linux-gnu/3.4.5
+
+CC      = arm-softfloat-linux-gnu-gcc 
+AS      = arm-softfloat-linux-gnu-as 
+LD      = arm-softfloat-linux-gnu-ld
+OBJCOPY = arm-softfloat-linux-gnu-objcopy
+
+CFLAGS  =-mcpu=arm920t -I. -Wall
+LDFLAGS =-L${libdir} -l gcc
+
+OBJS = \
+	main.o 			\
+	debug_io.o 		\
+	at91rm9200_lowlevel.o 	\
+	p_string.o
+
+ASFILES = arm_init.o
+
+LIBS=${libdir}/
+
+all: hello_world 
+
+hello_world: ${OBJS} ${ASFILES} ${LIBS}
+	${LD} -e 0 -o hello_world.elf -T linker.cfg ${ASFILES} ${OBJS} ${LDFLAGS}
+	${OBJCOPY} -O binary hello_world.elf hello_world.bin
+
+clean:
+	rm -f *.o *~ hello_world.*
+
+PREPROCESS.c = $(CC) $(CPPFLAGS) $(TARGET_ARCH) -E -Wp,-C,-dD,-dI
+
+%.pp : %.c FORCE
+	$(PREPROCESS.c) $< > $@
+\end{lstlisting}
+
+En las líneas 3-5 se definen algunas variables globales que serán utilizadas a lo largo del archivo; en las líneas 7 - 10 se definen las herramientas de compilación a utilizar, específicamente los compiladores de C (CC), de assembler (AS), el linker (LD) y la utilidad objcopy. A partir de la línea 15 se definen los objetos que forman parte del proyecto, en este caso: \textit{main.o, debug\_io.o, at91rm9200\_lowlevel.o y p\_string.o}; en la línea 21 se definen los archivos en assembler que contiene el proyecto, para este caso \textit{arm\_init.o}. Las líneas 12 y 13 definen dos variables especiales que se pasan directamente al copmílador de C (CFLAGS) y al liniker (LDFLAGS)
+
+
+En las líneas 25, 27 y 31 aparecen unas etiquetas de la forma: \textit{nombre:} estos labels permiten ejecutar de forma independiente el conjunto de instrucciones asociadas a ellas, por ejemplo, si se ejecuta el comando:
+\\ \bigskip
+\textit{make clean}\\ \bigskip
+make ejecutará el comando:\\ \bigskip
+\textit{rm -f *.o *~ hello\_world.*} 
+
+Observemos los comandos asociados a la etiqueta \textit{hello\_world:} En la misma línea aparecen \textit{\${OBJS} \${ASFILES} \${LIBS}} esto le indica a la herramienta \textit{make} que antes de ejecutar los comandos asociados a este label, debe realizar las acciones necesarias para generar \textit{\${OBJS} \${ASFILES} \${LIBS}} o lo que es lo mmismo: \textit{main.o, debug\_io.o, at91rm9200\_lowlevel.o, p\_string.o, arm\_init.o y libgcc.a}. \textit{make} tiene predefinidas una serie de reglas para compilar los archivos .c la regla es de la forma:
+
+\begin{lstlisting}
+
+.c.o:
+        $(CC) $(CFLAGS) -c $<
+.c:
+        $(CC) $(CFLAGS) $@.c $(LDFLAGS) -o $@
+ 
+\end{lstlisting}
+
+Lo cual le indica a la herramienta make que para generar un archivo \textit{.o} a partir de uno \textit{.c} es necesario ejecutar \textit{\$(CC) \$(CFLAGS) -c \$<}; de aqui la importancia de definir bien la variable de entorno \textit{CC} cuando trabajamos con compiladores cruzados\footnote{Un compilador cruzado genera código para una plataforma diferente en la que se está ejecutando, por ejemplo, genera ejecutables para ARM pero se ejecuta en un x86}. Hasta este punto al ejecutar el comando: \textit{make hello\_world}, \textit{make} realizaría las siguientes operaciones: \\
+
+\begin{lstlisting}
+arm-softfloat-linux-gnu-gcc  -mcpu=arm920t -I. -Wall   -c -o main.o main.c
+arm-softfloat-linux-gnu-gcc  -mcpu=arm920t -I. -Wall   -c -o debug_io.o debug_io.c
+arm-softfloat-linux-gnu-gcc  -mcpu=arm920t -I. -Wall   -c -o at91rm9200_lowlevel.o at91rm9200_lowlevel.c
+arm-softfloat-linux-gnu-gcc  -mcpu=arm920t -I. -Wall   -c -o p_string.o p_string.c
+arm-softfloat-linux-gnu-as    -o arm_init.o arm_init.s
+\end{lstlisting}
+
+En las líneas 28 se realiza el proceso de enlazado; al \textit{linker} se le pasan los parámetros:
+\begin{itemize}
+ \item \textbf{-e 0}: Punto de entrada , utilice 0 como símbolo para el inicio de ejecución.
+ \item \textbf{-o hello\_world.elf}: Nombre del archivo de salida \textit{hello\_world}
+ \item \textbf{-T linker.cfg}: Utilice el archivo de enlace \textit{linker.cfg}
+ \item \textbf{\${ASFILES} \${OBJS} \${LDFLAGS}}: Lista de objetos y librerías para crear el ejecutable.
+\end{itemize}
+
+En la línea 29 se utiliza la herramienta \textit{objcopy} para generar un archivo binario (\textit{-O binary}) con la información necesaria para cargar en una memoria no volátil.
+
+
+

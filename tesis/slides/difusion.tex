@@ -36,36 +36,36 @@
       };
 
 
-    \onslide<2> \node [difusion_es, right=1cm of absortion.east] (est_difusion)      
-      {
-       \begin{center} \textbf{Hardware Copyleft vs. Software Libre} \end{center}
-          \setlength\minrowclearance{1pt}
-          \setlength\arrayrulewidth{1pt}
-          \begin{tabular}{|l|l|l|}
-            \hline
-            \rowcolor[rgb]{0.9,0.9,0.4}
-            \bf Concepto          &\bf Software           & \bf Hardware \\
-            \hline
-            Código Fuente         & Programa              & Esquemático y Layout \\
-            \rowcolor[rgb]{0.8,1,1}
-            Editor                & Editor de Texto       & Sistema EDA \\
-            Conversión            & Compilador, etc.      & Sistema EDA \\
-            \rowcolor[rgb]{0.8,1,1}
-            Prueba                & Ejecución             & Prototipo(s) \\
-            Depuración            & Debugger              & Laboratorio \\
-            \rowcolor[rgb]{0.8,1,1}
-            Reproducción          & Descarga              & Producción, \\
-            \rowcolor[rgb]{0.8,1,1}
-                                  & (Copia perfecta)      & Pruebas \\
-            Distribución          & Internet              & Envíos, Aduanas \\
-            \hline
-          \end{tabular}
+%     \onslide<2> \node [difusion_es, right=1cm of absortion.east] (est_difusion)      
+%       {
+%        \begin{center} \textbf{Hardware Copyleft vs. Software Libre} \end{center}
+%           \setlength\minrowclearance{1pt}
+%           \setlength\arrayrulewidth{1pt}
+%           \begin{tabular}{|l|l|l|}
+%             \hline
+%             \rowcolor[rgb]{0.9,0.9,0.4}
+%             \bf Concepto          &\bf Software           & \bf Hardware \\
+%             \hline
+%             Código Fuente         & Programa              & Esquemático y Layout \\
+%             \rowcolor[rgb]{0.8,1,1}
+%             Editor                & Editor de Texto       & Sistema EDA \\
+%             Conversión            & Compilador, etc.      & Sistema EDA \\
+%             \rowcolor[rgb]{0.8,1,1}
+%             Prueba                & Ejecución             & Prototipo(s) \\
+%             Depuración            & Debugger              & Laboratorio \\
+%             \rowcolor[rgb]{0.8,1,1}
+%             Reproducción          & Descarga              & Producción, \\
+%             \rowcolor[rgb]{0.8,1,1}
+%                                   & (Copia perfecta)      & Pruebas \\
+%             Distribución          & Internet              & Envíos, Aduanas \\
+%             \hline
+%           \end{tabular}
+% 
+%       };
 
-      };
-
-    \onslide<3> \node [difusion_es, right=1cm of absortion.east] (est_difusion)      
+    \onslide<2> \node [ph_explain2, right=.5cm of absortion.east] (est_difusion)      
       {
-       \begin{center} \textbf{Las cuatro libertades $[1]$} \end{center}
+       \begin{center} \textbf{Hardware Copyleft: Las cuatro libertades $[1]$} \end{center}
 
           \begin{enumerate}
             \item[0] Ejecutar el programa
@@ -96,14 +96,22 @@
 
       };
 
-    \onslide<4> \node [difusion_es, right=1cm of absortion.east] (est_difusion)      
+    \onslide<3> \node [ph_explain2, right=.5cm of absortion.east] (est_difusion)      
       {
-       \begin{center} \textbf{Flujo de diseño} \end{center}
-       \includegraphics[scale=.39]{../images/flow.pdf}\\
-       {\scriptsize Fuente: Werner Almesberger  FISL 12, Brazil}
+       \begin{center} \textbf{Hardware Copyleft: Requerimientos} \end{center}
+       \includegraphics[scale=.5]{../images/copy_left_hardware_requirement.pdf}\\
+%        {\scriptsize Fuente: Werner Almesberger  FISL 12, Brazil}
       };
 
-    \onslide<5> \node [difusion_es, right=1cm of absortion.east] (est_difusion)      
+    \onslide<4> \node [ph_explain2, right=.1cm of absortion.east] (est_difusion)      
+      {
+       \begin{center} \textbf{Flujo de diseño utilizando hardware copyleft} \end{center}
+       \begin{center} \includegraphics[scale=.48]{../images/design_flow_copyleft_hw.pdf} \end{center}
+      };
+
+
+
+    \onslide<5> \node [difusion_es, right=.5cm of absortion.east] (est_difusion)      
       {
        \begin{center} \textbf{Marco para analizar el conocimiento como bien público aplicado a la metodología propuesta} \end{center}
        \begin{center} \includegraphics[scale=.39]{../images/framework_hwcl.pdf} \end{center}
@@ -113,10 +121,10 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
     %        Estrategias de difusión
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
-    \onslide<6> 
+    \onslide<6>
       \node [difusion_es, above right=1cm of adaptation.east] (est_difusion)      
       {
-       \begin{center} \textbf{Estrategia de Difusión} \end{center}
+       \begin{center} \textbf{Linuxencaja: Estrategia de Difusión} \end{center}
        \includegraphics[scale=.25]{../images/plataformas_hwcl.png}\\
        \color{blue!40!black} {Repositorios + Tutoriales + Cursos en línea}
       };
@@ -161,6 +169,20 @@
         \end{itemize}
       };
      \draw[myarrow] (canales_difusion.south) --++(0,-0.2)--++ (2.3cm, 0) -- (dif_industria.north);
+
+    \onslide<7> \node [ph_explain2, right=.5cm of absortion.east] (est_difusion)      
+      {
+       \begin{center} \textbf{Miembros de la Comunidad} \end{center}
+       \begin{center} \includegraphics[scale=.65]{../images/community_members.pdf} \end{center}
+      };
+
+
+ 
+
+
+
+
+
 \end{tikzpicture}
 \end{figure}
 
