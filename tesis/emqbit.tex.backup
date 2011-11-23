@@ -1,0 +1,94 @@
+\appendix  
+\chapter{Relaciones con la industria y la Academia.}
+
+\section{Introducción}
+En este anexo se enumeraran las actividades realizadas con centros académicos y con empresas electrónicas del país; y de esta forma mostrar como este estudio modificó las conductas de los profesionales relacionados con el área de diseño electrónico. 
+
+
+
+\section{Relaciones con la industria}
+
+\subsection{emQbit ltda.}
+\label{ap:emqbit}
+\includepdf[pages=-]{./anexos/documento_emqbit.pdf} 
+\vspace{15 mm}
+\begin{center} \textbf{A quien corresponda}\end{center}
+\vspace{10 mm}
+
+
+Como gerente general de la empresa emQbit certifico que el profesor Carlos Iván Camargo Bareño ha colaborado en diversas tareas de diseño, soporte y capacitación, los productos realizados en conjunto con el profesor Camargo poseen la licencia Creative Commons BY-SA la que permite su uso, reproducción y modificación aún para uso comercial, con el único requisito de dar crédito al autor del trabajo original y publicar los trabajos derivados bajo la misma licencia. \\
+
+
+Esta filosofía de hardware abierto es el eje de nuestra empresa, de tal forma que la mayor parte de nuestros productos poseen la licencia CC-BY-SA; esto debido a que por un lado, gran parte de ellos se deriva de tarjetas de desarrollo elaboradas por el profesor Camargo y por otro lado, uno de los objetivos de la creación de emQbit es ayudar a la difusión del conocimiento necesario para diseñar e implementar sistemas digitales que utilizan tecnología de punta. \\
+
+
+Adicionalmente, el profesor Camargo participó en la creación de emQbit proporicionando las plataformas diseñadas por él para que fueran utilizadas como diseños de referencia para la creación de nuevos productos, de igual forma, proporcionó soporte técnico para la implementación de la funcionalidad requerida. \\
+
+Como parte del proceso de transferencia tecnológica entre el estudio realizado por el profesor Camargo y emQbit se realizaron 2 pasantías que permitieron capacitar a estudiantes en el diseño de sistemas digitales.\\
+
+Finalmente, gracias al apoyo del profesor Camargo, nuestra empresa ha podido posisionarse como la única en Colombia que realiza el proceso de diseño completo desde la concepción hasta la implementación de sistemas digitales que utilizan herramientas abiertas y tecnología de punta. Por esta razón, emQbit colabora en los procesos de importación de materiales y suministros necesarios para la realización de proyectos de investigación de los departamentos de eléctrica y electrónica, mecatrónica y sistemas de la Universidad Nacional, estos servicios son gratuitos. Adicionalmente, la empresa ha financiado parte de los desarrollos del profesor Camargo, los cuales han sido liberados bajo la licencia CC-BY-SA.
+
+
+\begin{center}
+\includegraphics[scale=.65]{./images/sign_afc}\\
+Andrés Felipe Calderón de Restrepo\\
+Gerente General emQbit LTDA.\\
+C.C. 79.684.619 de Bogotá\\
+\end{center}
+
+\newpage
+
+\subsection{e-modust}
+e-modust, es una empresa creada por los egresados de la carrera de Ingeniería electrónica Edison Olarte e Israel Santoyo y su principal campo de aplicación es la creación de aplicaciones para la medición de campos eléctricos y magnéticos asociados a tormentas eléctricas \cite{DAHT+07}. Su producto comercial registrado en Colombia es un molino de campo eléctrico \cite{DAHT+04}; en el primer prototipo se utilizó la plataforma \textit{ECB\_AT91} (desarrollada en este estudio) como núcleo del sistema, encargado de la comunicación con el sensor de campo, procesamiento de esta información y despliegue de la misma; la comunicación con el usuario se realizó a través de un servidor \gls{HTTP} utilizando conexión inalámbrica y cableada. La utilización de la plataforma \textit{ECb\_AT91} redujo de forma considerable el tiempo necesario para el diseño de esta aplicación, ya que al utilizar los archivos de diseño y los tutoriales sobre su manejo, esta empresa pudo terminar un prototipo en cerca de 6 meses; este prototipo permitió que la empresa CODENSA invirtiera en un proyecto conjunto con la Universidad Nacional para instalar molinos de campo en zonas donde las descargas eléctricas deben ser monitoreadas de forma constante.
+
+\subsection{Importex}
+Importex, es una empresa creada por egresados de la Universidad Industrial de Santander y en la actualidad es el encargado de distribuir las plataformas de desarrollo SIE, utilizadas en los cursos de la línea de electrónica digital de la Universidad Nacional de Colombia sede Bogotá y en la UIS. Esta empresa descargó los archivos de diseño de dicha plataforma del portal \textit{linuxencaja} y fabricó un pequeño lote de 100 unidades en Taiwan, el contacto con las empresas manufactureras en este país fue proporcionado por linuxencaja y gracias a esta asociación los estudiantes de ambas universidades pueden utilizar estas plataformas en sus cursos.
+
+\subsection{em-electronics}
+em-electronics fué una empresa creada por los ingenieros electrónicos de la Universidad Nacional Ernesto y Alejandro Poveda; esta empesa utilizó plataformas de desarrollo abiertas (no están en la actualidad en la página de linuxencaja) diseñadas como parte del estudio que finalizó en el desarrollo del presente estudio, estas plataformas ayudaron a la actualización tecnológica en la carrera de ingeniería electrónica de la Universidad Nacional pasando del uso de componentes discretos (familias 74 y 40) al uso de CPLDs y FPGAs, desafortunadamente esta empresa no siguió con el suministro de este tipo de pataformas.
+
+
+\subsection{Microensamble}
+Microensamble SAS es una empresa Bogotana fundada por Jorge Dominguez dedicada a la fabricación y verificación de placas de circuito impreso y montaje automático de componentes electrónicos, en Colombia solo existen dos empresas con la capacidad de realizar fabricación y montaje automático de \gls{PCB}s con la calidad de las empresas asiáticas, micro-ensamble es una de ellas. La alianza con microensamble ayudó a esta empresa a ajustar los procesos de fabricación de PCBs, este proyecto proporcionó diseños de referencia que utilizaban medidas adecuadas para este proceso. 
+
+Por otro lado, este proyecto realizó la capacitación a empleados de microensamble en el diseño de sistemas digitales utilizando Linux, como resultado de esta capacitación se generó un producto que permite la comunicación segura utilizando mensajes de texto a través de la red celular.
+
+Gracias a esta alianza, los estudiantes de la Universidad Nacional pueden realizar circuitos impresos a bajos costos utilizando equipos adecuados para esto, lo que elimina la costumbre anterior de realizar los PCBs de forma artesanal lo que complicaba la implementación.
+
+\subsection{SAR SA}
+Las relaciones con SAR SA. se realizaron de forma indirecta a través de la empresa emQbit; SAR S.A. junto con su cliente y aliado Angelcom S.A, es el concesionario de la Fase I del sistema de recaudo TransMilenio S.A en la ciudad de Bogotá D.C. Aportan la plataforma tecnológica de recaudo para 68 estaciones actualmente en funcionamiento enen 4 vías troncales (Calle 80, Av. Caracas, Avenida Jiménez, Autopista Norte y Calle 13). Adicionalmente son parte de la Unión Temporal Fase II, concesionario de recaudo para la fase II del sistema TransMilenio, responsable de la operación de 47 estaciones, distribuidas en tres troncales en la ciudad de Bogotá (NQS, Av. De las Américas y Av. Suba).
+
+
+emQbit LTDA. ayudó en la puesta en marcha de este sistema de recaudo, aportando la programación de los dispositivos que controlan en ecceso a las estaciones de TransMilenio; la ayuda de emQbit fue de vital importancia en este proyecto ya que es la única empresa en Colombia que trabaja con Linux en sistemas embebidos; adicionalmente, la unidad de procesamiento de la plataforma de recaudo de SAR S.A posee el mismo procesador utilizado por la familia de plataformas ECB\_AT91, y muchas pruebas de funcionamiento fueron implementadas primero en las plataformas hardware copyleft desarrolladas en esta investigación. A continuación se muestra la carta que califica el trabajo realizado por emQbit como \textit{muy confiable}.
+
+
+\begin{center}
+\includegraphics{./images/sar_emqbit.pdf}\\
+\end{center}
+
+
+\section{Relaciones con la academia}
+Como parte de la estrategia de difusión se realizaron las siguientes actividades con grupos de investigación en diferentes universidades del país.
+
+
+\subsubsection{Universidad Distrital Francisco José de Caldas}
+Curso de capacitación en el diseño de sistemas embebidos utilizando Linux y las plataformas de desarrollo de la familia ECB\_AT91, al grupo de investigación en Robótica móvil Autónoma ``ROMA``\footnote{http://www.youtube.com/watch?v=HKuY198f09U}.
+
+\subsubsection{Universidad de Los Andes}
+Se dictó el curso de sistemas embebidos, el cual se convirtió en una electiva del Departamento de Ingeniería Electrónica, como resultado se dirigieron las tesis de pregrado: \cite{CP05} y se asesoró la tesis de maestría \cite{DM07}.
+
+En la actualidad el Centro de Microelectrónica de la Universida de Los Andes a través del profesor Fredy Segura está repitiendo el proceso de diseño y construcción de una plataforma embebida\footnote{http://157.253.195.173/mirror2/index.php/Condor_Board} basándose en los diseños existentes de la familia de plataformas ECB\_AT91 y en la metodología de diseño y fabricación presentadas en este informe.
+
+
+\subsubsection{Escuala Naval Almiramte Padilla}
+Curso de capacitación en el diseño de sistemas embebidos a 
+
+\subsubsection{Universidad Industrial de Santander}
+
+\subsubsection{Universidad Santo Tomás}
+
+\subsubsection{}
+
+
+
+

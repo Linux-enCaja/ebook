@@ -321,3 +321,5 @@
 \glossaryentry{RAM?\glossaryentryfield{RAM}{\glsnamefont{RAM}}{Random Acess Memory}{\relax }|setentrycounter{page}\glsnumberformat}{103}
 \glossaryentry{USB?\glossaryentryfield{USB}{\glsnamefont{USB}}{Universal Serial Bus}{\relax }|setentrycounter{page}\glsnumberformat}{103}
 \glossaryentry{FPGA?\glossaryentryfield{FPGA}{\glsnamefont{FPGA}}{Field Programmable Gate Array}{\relax }|setentrycounter{page}\glsnumberformat}{103}
+\glossaryentry{HTTP?\glossaryentryfield{HTTP}{\glsnamefont{HTTP}}{Hypertext Transfer Protocol}{\relax }|setentrycounter{page}\glsnumberformat}{123}
+\glossaryentry{PCB?\glossaryentryfield{PCB}{\glsnamefont{PCB}}{Printed Circuit Board}{\relax }|setentrycounter{page}\glsnumberformat}{123}

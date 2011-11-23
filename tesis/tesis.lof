@@ -1,0 +1,61 @@
+\select@language {spanish}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {\relax 1.1}{\ignorespaces Clasificaci\'on general de los bienes. fuente: \cite {CMS06}}}{8}
+\contentsline {figure}{\numberline {\relax 1.2}{\ignorespaces Modelo de transferencia tecnol\'ogica.}}{9}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {\relax 2.1}{\ignorespaces Modelo del proceso de transferencia de tecnolog\IeC {\'\i }a indicando la composici\'on de los canales formales e informales}}{13}
+\contentsline {figure}{\numberline {\relax 2.2}{\ignorespaces Resumen de las recomendaciones para una transferencia tecnol\'ogica exitosa}}{20}
+\contentsline {figure}{\numberline {\relax 2.3}{\ignorespaces Etapas de la metodolog\IeC {\'\i }a propuesta para la transferencia tecnol\'ogica y de conocimientos en el \'area de dise\~no de sistemas embebidos}}{21}
+\contentsline {figure}{\numberline {\relax 2.4}{\ignorespaces Canales formales e informales del proceso de transferencia tecnol\'ogica}}{24}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces Arquitectura de un Sistema Embebido}}{28}
+\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces Aplicaciones de los Sistema Embebidos Fuente: TATA Consultancy services}}{29}
+\contentsline {figure}{\numberline {\relax 3.3}{\ignorespaces Flujo de dise\~no de un sistema embebido \cite {Cor05}}}{30}
+\contentsline {figure}{\numberline {\relax 3.4}{\ignorespaces Comparaci\'on del uso de sistemas operativos Fuente: Venture Development Corp}}{36}
+\contentsline {figure}{\numberline {\relax 3.5}{\ignorespaces Arquitectura t\IeC {\'\i }pica de un sistema embebido que utiliza SoC con memoria vol\'atil interna}}{40}
+\contentsline {figure}{\numberline {\relax 3.6}{\ignorespaces Arquitectura t\IeC {\'\i }pica de un sistema embebido que utiliza SoC sin memoria vol\'atil interna}}{41}
+\contentsline {figure}{\numberline {\relax 3.7}{\ignorespaces Flujo de dise\~no software para creaci\'on de aplicaciones.}}{42}
+\contentsline {figure}{\numberline {\relax 3.8}{\ignorespaces Inicializaci\'on de un SoC cuando las memorias no vol\'atiles no est\'an programadas.}}{43}
+\contentsline {figure}{\numberline {\relax 3.9}{\ignorespaces Inicializaci\'on de un SoC cuando la memoria no vol\'atil est\'a programada, parte 1.}}{44}
+\contentsline {figure}{\numberline {\relax 3.10}{\ignorespaces Inicializaci\'on de un SoC cuando la memoria no vol\'atil est\'a programada, parte 2.}}{44}
+\contentsline {figure}{\numberline {\relax 3.11}{\ignorespaces Cadena Boundary Scan fuente: Texas Instruments.}}{45}
+\contentsline {figure}{\numberline {\relax 3.12}{\ignorespaces Estructura del kernel de Linux.}}{46}
+\contentsline {figure}{\numberline {\relax 3.13}{\ignorespaces Plataforma de desarrollo ECB\_ARM7}}{48}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Diagrama de bloques}}}{48}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Prototipo}}}{48}
+\contentsline {figure}{\numberline {\relax 3.14}{\ignorespaces Plataforma de desarrollo UNAL\_UIS\_XPORT}}{49}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Diagrama de bloques}}}{49}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Prototipo}}}{49}
+\contentsline {figure}{\numberline {\relax 3.15}{\ignorespaces Plataforma de desarrollo ECB\_AT91 V1}}{49}
+\contentsline {figure}{\numberline {\relax 3.16}{\ignorespaces Plataforma de desarrollo ECB\_AT91 V2}}{50}
+\contentsline {figure}{\numberline {\relax 3.17}{\ignorespaces Plataforma de desarrollo ECBOT}}{51}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Diagrama de bloques}}}{51}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Prototipo}}}{51}
+\contentsline {figure}{\numberline {\relax 3.18}{\ignorespaces Plataforma de desarrollo ECB\_BF532}}{51}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Diagrama de bloques}}}{51}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Prototipo}}}{51}
+\contentsline {figure}{\numberline {\relax 3.19}{\ignorespaces Plataforma de desarrollo SIE}}{52}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Diagrama de bloques}}}{52}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Prototipo}}}{52}
+\contentsline {figure}{\numberline {\relax 3.20}{\ignorespaces Plataforma de desarrollo STAMP}}{52}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Diagrama de bloques}}}{52}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Prototipo}}}{52}
+\contentsline {figure}{\numberline {\relax 3.21}{\ignorespaces Flujo de dise\~no para las placas de circuito impreso}}{53}
+\contentsline {figure}{\numberline {\relax 3.22}{\ignorespaces Flujo de actividades para la apropiaci\'on de conocimiento }}{55}
+\contentsline {figure}{\numberline {\relax 3.23}{\ignorespaces Funcionalidad del sistema distribuido de control de versiones \textbf {git}}}{60}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {\relax 4.1}{\ignorespaces Bloques constructores de conocimiento, habilidades y actitudes necesarias para concebir, dise\~nar, implementar y operar sistemas en el contexto social y empresarial fuente:\cite {EFC01}}}{67}
+\contentsline {figure}{\numberline {\relax 4.2}{\ignorespaces Objetivos, actividades, y evaluaci\'on: }}{68}
+\contentsline {figure}{\numberline {\relax 4.3}{\ignorespaces Metodolog\IeC {\'\i }a de dise\~no para el \'area de Sistemas Digitales}}{71}
+\contentsline {figure}{\numberline {\relax 4.4}{\ignorespaces Estructura de la plataforma de desarrollo SIE}}{79}
+\contentsline {figure}{\numberline {\relax 4.5}{\ignorespaces Flujo de dise\~no hardware}}{80}
+\contentsline {figure}{\numberline {\relax 4.6}{\ignorespaces Flujo de dise\~no hardware/software al utilizar un procesador \textit {softcore}}}{81}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {\relax 5.1}{\ignorespaces Marco para analizar el conocimiento como bien com\'un aplicado al movimiento FOSS. Fuente: \cite {CHEO06} p\'ag 46}}{93}
+\contentsline {figure}{\numberline {\relax 5.2}{\ignorespaces Marco para analizar el conocimiento como bien com\'un aplicado al movimiento hardware copyleft. Adaptaci\'on al hardware copyleft de: \cite {CHEO06}}}{96}
+\contentsline {figure}{\numberline {\relax 5.3}{\ignorespaces Adaptaci\'on de la plataforma de desarrollo ECB\_AT91 (a) a un monitor de signos vitales (b) Fuente: \cite {NR11}}}{102}
+\contentsline {figure}{\numberline {\relax 5.4}{\ignorespaces Flujo de dise\~no al utilizar hardware copyleft}}{102}
+\contentsline {figure}{\numberline {\relax 5.5}{\ignorespaces Modelo de transferencia tecnol\'ogica aplicado a la empresa emQbit y a la academia}}{105}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
