@@ -312,14 +312,16 @@
 \glossaryentry{PLD?\glossaryentryfield{PLD}{\glsnamefont{PLD}}{Programmable Logic Device}{\relax }|setentrycounter{page}\glsnumberformat}{100}
 \glossaryentry{SoC?\glossaryentryfield{SoC}{\glsnamefont{SoC}}{Systen On a Chip}{\relax }|setentrycounter{page}\glsnumberformat}{100}
 \glossaryentry{SoC?\glossaryentryfield{SoC}{\glsnamefont{SoC}}{Systen On a Chip}{\relax }|setentrycounter{page}\glsnumberformat}{100}
-\glossaryentry{WiFi?\glossaryentryfield{WiFi}{\glsnamefont{WiFi}}{Tecnología de redes inalámbricas}{\relax }|setentrycounter{page}\glsnumberformat}{101}
-\glossaryentry{3G?\glossaryentryfield{3G}{\glsnamefont{3G}}{3rd generation mobile telecommunications}{\relax }|setentrycounter{page}\glsnumberformat}{101}
-\glossaryentry{GSM?\glossaryentryfield{GSM}{\glsnamefont{GSM}}{Global System for Mobile communication}{\relax }|setentrycounter{page}\glsnumberformat}{101}
-\glossaryentry{GPS?\glossaryentryfield{GPS}{\glsnamefont{GPS}}{Global Positioning System}{\relax }|setentrycounter{page}\glsnumberformat}{101}
-\glossaryentry{BSP?\glossaryentryfield{BSP}{\glsnamefont{BSP}}{Board Support Package}{\relax }|setentrycounter{page}\glsnumberformat}{101}
-\glossaryentry{SoC?\glossaryentryfield{SoC}{\glsnamefont{SoC}}{Systen On a Chip}{\relax }|setentrycounter{page}\glsnumberformat}{103}
-\glossaryentry{RAM?\glossaryentryfield{RAM}{\glsnamefont{RAM}}{Random Acess Memory}{\relax }|setentrycounter{page}\glsnumberformat}{103}
-\glossaryentry{USB?\glossaryentryfield{USB}{\glsnamefont{USB}}{Universal Serial Bus}{\relax }|setentrycounter{page}\glsnumberformat}{103}
-\glossaryentry{FPGA?\glossaryentryfield{FPGA}{\glsnamefont{FPGA}}{Field Programmable Gate Array}{\relax }|setentrycounter{page}\glsnumberformat}{103}
-\glossaryentry{HTTP?\glossaryentryfield{HTTP}{\glsnamefont{HTTP}}{Hypertext Transfer Protocol}{\relax }|setentrycounter{page}\glsnumberformat}{123}
-\glossaryentry{PCB?\glossaryentryfield{PCB}{\glsnamefont{PCB}}{Printed Circuit Board}{\relax }|setentrycounter{page}\glsnumberformat}{123}
+\glossaryentry{CMUA?\glossaryentryfield{CMUA}{\glsnamefont{CMUA}}{Centro de Microelectronica de la Universidad de los Andes}{\relax }|setentrycounter{page}\glsnumberformat}{101}
+\glossaryentry{SBC?\glossaryentryfield{SBC}{\glsnamefont{SBC}}{Single Board Computer}{\relax }|setentrycounter{page}\glsnumberformat}{101}
+\glossaryentry{WiFi?\glossaryentryfield{WiFi}{\glsnamefont{WiFi}}{Tecnología de redes inalámbricas}{\relax }|setentrycounter{page}\glsnumberformat}{102}
+\glossaryentry{3G?\glossaryentryfield{3G}{\glsnamefont{3G}}{3rd generation mobile telecommunications}{\relax }|setentrycounter{page}\glsnumberformat}{102}
+\glossaryentry{GSM?\glossaryentryfield{GSM}{\glsnamefont{GSM}}{Global System for Mobile communication}{\relax }|setentrycounter{page}\glsnumberformat}{102}
+\glossaryentry{GPS?\glossaryentryfield{GPS}{\glsnamefont{GPS}}{Global Positioning System}{\relax }|setentrycounter{page}\glsnumberformat}{102}
+\glossaryentry{BSP?\glossaryentryfield{BSP}{\glsnamefont{BSP}}{Board Support Package}{\relax }|setentrycounter{page}\glsnumberformat}{103}
+\glossaryentry{SoC?\glossaryentryfield{SoC}{\glsnamefont{SoC}}{Systen On a Chip}{\relax }|setentrycounter{page}\glsnumberformat}{104}
+\glossaryentry{RAM?\glossaryentryfield{RAM}{\glsnamefont{RAM}}{Random Acess Memory}{\relax }|setentrycounter{page}\glsnumberformat}{104}
+\glossaryentry{USB?\glossaryentryfield{USB}{\glsnamefont{USB}}{Universal Serial Bus}{\relax }|setentrycounter{page}\glsnumberformat}{104}
+\glossaryentry{FPGA?\glossaryentryfield{FPGA}{\glsnamefont{FPGA}}{Field Programmable Gate Array}{\relax }|setentrycounter{page}\glsnumberformat}{104}
+\glossaryentry{HTTP?\glossaryentryfield{HTTP}{\glsnamefont{HTTP}}{Hypertext Transfer Protocol}{\relax }|setentrycounter{page}\glsnumberformat}{124}
+\glossaryentry{PCB?\glossaryentryfield{PCB}{\glsnamefont{PCB}}{Printed Circuit Board}{\relax }|setentrycounter{page}\glsnumberformat}{124}

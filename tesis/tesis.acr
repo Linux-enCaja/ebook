@@ -2,7 +2,7 @@
 \begin{theglossary}\glossaryheader
 \glsgroupheading{glssymbols}\relax \glsresetentrylist %
 \glossaryentryfield{3G}{\glsnamefont{3G}}{3rd generation mobile telecommunications}{\relax }{\glossaryentrynumbers{\relax 
-		\setentrycounter{page}\glsnumberformat{100}}}\glsgroupskip
+		\setentrycounter{page}\glsnumberformat{102}}}\glsgroupskip
 \glsgroupheading{A}\relax \glsresetentrylist %
 \glossaryentryfield{ADC}{\glsnamefont{ADC}}{Analog-to-digital converter}{\relax }{\glossaryentrynumbers{\relax 
 		\setentrycounter{page}\glsnumberformat{40}}}%
@@ -11,10 +11,10 @@
 		\setentrycounter{page}\glsnumberformat{31\delimR 33}}}\glsgroupskip
 \glsgroupheading{B}\relax \glsresetentrylist %
 \glossaryentryfield{BSP}{\glsnamefont{BSP}}{Board Support Package}{\relax }{\glossaryentrynumbers{\relax 
-		\setentrycounter{page}\glsnumberformat{100}}}\glsgroupskip
+		\setentrycounter{page}\glsnumberformat{103}}}\glsgroupskip
 \glsgroupheading{C}\relax \glsresetentrylist %
 \glossaryentryfield{CAD}{\glsnamefont{CAD}}{Computer-Aided Design}{\relax }{\glossaryentrynumbers{\relax 
-		\setentrycounter{page}\glsnumberformat{97}}}%
+		\setentrycounter{page}\glsnumberformat{98}}}%
 \glossaryentryfield{CAN}{\glsnamefont{CAN}}{Controller area network}{\relax }{\glossaryentrynumbers{\relax 
 		\setentrycounter{page}\glsnumberformat{42}}}%
 \glossaryentryfield{CDIO}{\glsnamefont{CDIO}}{Concebir, Diseñar, Implementar, Operar}{\relax }{\glossaryentrynumbers{\relax 
@@ -26,6 +26,8 @@
 		\setentrycounter{page}\glsnumberformat{34}}}%
 \glossaryentryfield{CIIU}{\glsnamefont{CIIU}}{CODIGO INDUSTRIAL INTERNACIONAL UNIFORME}{\relax }{\glossaryentrynumbers{\relax 
 		\setentrycounter{page}\glsnumberformat{57}}}%
+\glossaryentryfield{CMUA}{\glsnamefont{CMUA}}{Centro de Microelectronica de la Universidad de los Andes}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter{page}\glsnumberformat{101}}}%
 \glossaryentryfield{CODEC}{\glsnamefont{CODEC}}{codificador-decodificador}{\relax }{\glossaryentrynumbers{\relax 
 		\setentrycounter{page}\glsnumberformat{42}}}%
 \glossaryentryfield{COTS}{\glsnamefont{COTS}}{Commercial off-the-shelf}{\relax }{\glossaryentrynumbers{\relax 
@@ -44,7 +46,8 @@
 		\setentrycounter{page}\glsnumberformat{40\delimN 41}\delimN 
 		\setentrycounter{page}\glsnumberformat{52}}}%
 \glossaryentryfield{DIEE}{\glsnamefont{DIEE}}{Departamento de Ingeniería Eléctrica y Electrónica}{\relax }{\glossaryentrynumbers{\relax 
-		\setentrycounter{page}\glsnumberformat{65}}}%
+		\setentrycounter{page}\glsnumberformat{65}\delimN 
+		\setentrycounter{page}\glsnumberformat{86}}}%
 \glossaryentryfield{DMA}{\glsnamefont{DMA}}{Direct memory access}{\relax }{\glossaryentrynumbers{\relax 
 		\setentrycounter{page}\glsnumberformat{40}}}%
 \glossaryentryfield{DSP}{\glsnamefont{DSP}}{Digital signal processor}{\relax }{\glossaryentrynumbers{\relax 
@@ -65,8 +68,8 @@
 \glossaryentryfield{FOSS}{\glsnamefont{FOSS}}{Free and Open-Source Software}{\relax }{\glossaryentrynumbers{\relax 
 		\setentrycounter{page}\glsnumberformat{3}\delimN 
 		\setentrycounter{page}\glsnumberformat{9}\delimN 
-		\setentrycounter{page}\glsnumberformat{87}\delimN 
-		\setentrycounter{page}\glsnumberformat{91\delimR 94}}}%
+		\setentrycounter{page}\glsnumberformat{88}\delimN 
+		\setentrycounter{page}\glsnumberformat{92\delimR 95}}}%
 \glossaryentryfield{FPGA}{\glsnamefont{FPGA}}{Field Programmable Gate Array}{\relax }{\glossaryentrynumbers{\relax 
 		\setentrycounter{page}\glsnumberformat{27\delimN 28}\delimN 
 		\setentrycounter{page}\glsnumberformat{31\delimR 35}\delimN 
@@ -75,28 +78,30 @@
 		\setentrycounter{page}\glsnumberformat{54}\delimN 
 		\setentrycounter{page}\glsnumberformat{78\delimN 79}\delimN 
 		\setentrycounter{page}\glsnumberformat{81}\delimN 
-		\setentrycounter{page}\glsnumberformat{99}\delimN 
-		\setentrycounter{page}\glsnumberformat{102}}}\glsgroupskip
+		\setentrycounter{page}\glsnumberformat{100}\delimN 
+		\setentrycounter{page}\glsnumberformat{104}}}\glsgroupskip
 \glsgroupheading{G}\relax \glsresetentrylist %
 \glossaryentryfield{GNU}{\glsnamefont{GNU}}{GNU is Not Unix}{\relax }{\glossaryentrynumbers{\relax 
 		\setentrycounter{page}\glsnumberformat{42}\delimN 
 		\setentrycounter{page}\glsnumberformat{80}\delimN 
-		\setentrycounter{page}\glsnumberformat{91}}}%
+		\setentrycounter{page}\glsnumberformat{92}}}%
 \glossaryentryfield{GPIO}{\glsnamefont{GPIO}}{General Purpose Input/Output}{\relax }{\glossaryentrynumbers{\relax 
 		\setentrycounter{page}\glsnumberformat{49\delimN 50}\delimN 
 		\setentrycounter{page}\glsnumberformat{78}}}%
 \glossaryentryfield{GPL}{\glsnamefont{GPL}}{General Public License}{\relax }{\glossaryentrynumbers{\relax 
-		\setentrycounter{page}\glsnumberformat{93}\delimN 
-		\setentrycounter{page}\glsnumberformat{96\delimN 97}}}%
+		\setentrycounter{page}\glsnumberformat{94}\delimN 
+		\setentrycounter{page}\glsnumberformat{97\delimN 98}}}%
 \glossaryentryfield{GPS}{\glsnamefont{GPS}}{Global Positioning System}{\relax }{\glossaryentrynumbers{\relax 
-		\setentrycounter{page}\glsnumberformat{100}}}%
+		\setentrycounter{page}\glsnumberformat{102}}}%
 \glossaryentryfield{GSM}{\glsnamefont{GSM}}{Global System for Mobile communication}{\relax }{\glossaryentrynumbers{\relax 
-		\setentrycounter{page}\glsnumberformat{100}}}\glsgroupskip
+		\setentrycounter{page}\glsnumberformat{102}}}\glsgroupskip
 \glsgroupheading{H}\relax \glsresetentrylist %
 \glossaryentryfield{HDL}{\glsnamefont{HDL}}{Hardware Description Language}{\relax }{\glossaryentrynumbers{\relax 
 		\setentrycounter{page}\glsnumberformat{32}}}%
 \glossaryentryfield{HTML}{\glsnamefont{HTML}}{HyperText Markup Language}{\relax }{\glossaryentrynumbers{\relax 
-		\setentrycounter{page}\glsnumberformat{61}}}\glsgroupskip
+		\setentrycounter{page}\glsnumberformat{61}}}%
+\glossaryentryfield{HTTP}{\glsnamefont{HTTP}}{Hypertext Transfer Protocol}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter{page}\glsnumberformat{124}}}\glsgroupskip
 \glsgroupheading{I}\relax \glsresetentrylist %
 \glossaryentryfield{I2C}{\glsnamefont{I2C}}{Inter-Integrated Circuit}{\relax }{\glossaryentrynumbers{\relax 
 		\setentrycounter{page}\glsnumberformat{40}\delimN 
@@ -126,7 +131,7 @@
 		\setentrycounter{page}\glsnumberformat{37}\delimN 
 		\setentrycounter{page}\glsnumberformat{50}\delimN 
 		\setentrycounter{page}\glsnumberformat{60}\delimN 
-		\setentrycounter{page}\glsnumberformat{98}}}\glsgroupskip
+		\setentrycounter{page}\glsnumberformat{99}}}\glsgroupskip
 \glsgroupheading{M}\relax \glsresetentrylist %
 \glossaryentryfield{MARTE}{\glsnamefont{MARTE}}{Modeling and Analysis of Real-Time and Embedded Systems}{\relax }{\glossaryentrynumbers{\relax 
 		\setentrycounter{page}\glsnumberformat{29}}}%
@@ -141,7 +146,7 @@
 		\setentrycounter{page}\glsnumberformat{39}\delimN 
 		\setentrycounter{page}\glsnumberformat{53}}}%
 \glossaryentryfield{OSH}{\glsnamefont{OSH}}{Open Source Hardware}{\relax }{\glossaryentrynumbers{\relax 
-		\setentrycounter{page}\glsnumberformat{94}}}\glsgroupskip
+		\setentrycounter{page}\glsnumberformat{95}}}\glsgroupskip
 \glsgroupheading{P}\relax \glsresetentrylist %
 \glossaryentryfield{PC}{\glsnamefont{PC}}{Program Counter}{\relax }{\glossaryentrynumbers{\relax 
 		\setentrycounter{page}\glsnumberformat{2}\delimN 
@@ -152,7 +157,8 @@
 		\setentrycounter{page}\glsnumberformat{47}\delimN 
 		\setentrycounter{page}\glsnumberformat{53}\delimN 
 		\setentrycounter{page}\glsnumberformat{60}\delimN 
-		\setentrycounter{page}\glsnumberformat{78}}}%
+		\setentrycounter{page}\glsnumberformat{78}\delimN 
+		\setentrycounter{page}\glsnumberformat{124}}}%
 \glossaryentryfield{PIB}{\glsnamefont{PIB}}{Producto Interno Bruto}{\relax }{\glossaryentrynumbers{\relax 
 		\setentrycounter{page}\glsnumberformat{6}}}%
 \glossaryentryfield{PLD}{\glsnamefont{PLD}}{Programmable Logic Device}{\relax }{\glossaryentrynumbers{\relax 
@@ -161,18 +167,20 @@
 		\setentrycounter{page}\glsnumberformat{48}\delimN 
 		\setentrycounter{page}\glsnumberformat{74}\delimN 
 		\setentrycounter{page}\glsnumberformat{77\delimN 78}\delimN 
-		\setentrycounter{page}\glsnumberformat{99}}}\glsgroupskip
+		\setentrycounter{page}\glsnumberformat{100}}}\glsgroupskip
 \glsgroupheading{R}\relax \glsresetentrylist %
 \glossaryentryfield{RAM}{\glsnamefont{RAM}}{Random Acess Memory}{\relax }{\glossaryentrynumbers{\relax 
 		\setentrycounter{page}\glsnumberformat{40\delimN 41}\delimN 
 		\setentrycounter{page}\glsnumberformat{43\delimR 46}\delimN 
 		\setentrycounter{page}\glsnumberformat{60}\delimN 
-		\setentrycounter{page}\glsnumberformat{102}}}%
+		\setentrycounter{page}\glsnumberformat{104}}}%
 \glossaryentryfield{ROM}{\glsnamefont{ROM}}{Read Only Memory}{\relax }{\glossaryentrynumbers{\relax 
 		\setentrycounter{page}\glsnumberformat{42\delimN 43}}}%
 \glossaryentryfield{RTL}{\glsnamefont{RTL}}{Register-transfer level}{\relax }{\glossaryentrynumbers{\relax 
 		\setentrycounter{page}\glsnumberformat{37}}}\glsgroupskip
 \glsgroupheading{S}\relax \glsresetentrylist %
+\glossaryentryfield{SBC}{\glsnamefont{SBC}}{Single Board Computer}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter{page}\glsnumberformat{101}}}%
 \glossaryentryfield{SD}{\glsnamefont{SD}}{Secure Digital}{\relax }{\glossaryentrynumbers{\relax 
 		\setentrycounter{page}\glsnumberformat{40}\delimN 
 		\setentrycounter{page}\glsnumberformat{42\delimN 43}\delimN 
@@ -191,8 +199,8 @@
 		\setentrycounter{page}\glsnumberformat{72\delimR 75}\delimN 
 		\setentrycounter{page}\glsnumberformat{77}\delimN 
 		\setentrycounter{page}\glsnumberformat{80\delimN 81}\delimN 
-		\setentrycounter{page}\glsnumberformat{99}\delimN 
-		\setentrycounter{page}\glsnumberformat{102}}}%
+		\setentrycounter{page}\glsnumberformat{100}\delimN 
+		\setentrycounter{page}\glsnumberformat{104}}}%
 \glossaryentryfield{SPI}{\glsnamefont{SPI}}{Serial Peripheral Interface}{\relax }{\glossaryentrynumbers{\relax 
 		\setentrycounter{page}\glsnumberformat{40}\delimN 
 		\setentrycounter{page}\glsnumberformat{42}}}%
@@ -212,7 +220,8 @@
 \glossaryentryfield{UML}{\glsnamefont{UML}}{Unified Modeling Language}{\relax }{\glossaryentrynumbers{\relax 
 		\setentrycounter{page}\glsnumberformat{29}}}%
 \glossaryentryfield{UNAL}{\glsnamefont{UNAL}}{Universidad Nacional de Colombia}{\relax }{\glossaryentrynumbers{\relax 
-		\setentrycounter{page}\glsnumberformat{23}}}%
+		\setentrycounter{page}\glsnumberformat{23}\delimN 
+		\setentrycounter{page}\glsnumberformat{86}}}%
 \glossaryentryfield{USART}{\glsnamefont{USART}}{Universal asynchronous receiver/transmitter}{\relax }{\glossaryentrynumbers{\relax 
 		\setentrycounter{page}\glsnumberformat{40}}}%
 \glossaryentryfield{USB}{\glsnamefont{USB}}{Universal Serial Bus}{\relax }{\glossaryentrynumbers{\relax 
@@ -220,7 +229,7 @@
 		\setentrycounter{page}\glsnumberformat{40}\delimN 
 		\setentrycounter{page}\glsnumberformat{43}\delimN 
 		\setentrycounter{page}\glsnumberformat{78\delimN 79}\delimN 
-		\setentrycounter{page}\glsnumberformat{102}}}%
+		\setentrycounter{page}\glsnumberformat{104}}}%
 \glossaryentryfield{USD}{\glsnamefont{USD}}{United States dollar}{\relax }{\glossaryentrynumbers{\relax 
 		\setentrycounter{page}\glsnumberformat{33}\delimN 
 		\setentrycounter{page}\glsnumberformat{35}\delimN 
@@ -230,5 +239,5 @@
 		\setentrycounter{page}\glsnumberformat{86}}}\glsgroupskip
 \glsgroupheading{W}\relax \glsresetentrylist %
 \glossaryentryfield{WiFi}{\glsnamefont{WiFi}}{Tecnología de redes inalámbricas}{\relax }{\glossaryentrynumbers{\relax 
-		\setentrycounter{page}\glsnumberformat{100}}}%
+		\setentrycounter{page}\glsnumberformat{102}}}%
 \end{theglossary}\glossarypostamble
