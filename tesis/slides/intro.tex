@@ -3,52 +3,22 @@
 \section{Introducción}
 %$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
-% \subsection[Intro]{Definición de Tecnología}
-% 
-% \begin{frame}
-%   \frametitle{Tecnología: Definición}
-%    \begin{center} \includegraphics[scale=.45]{../images/technology_definition_slides.pdf}   \end{center}
-% \end{frame}
-
-\subsection[Intro]{Transferencia Tecnológica}
-\begin{frame}
-  \frametitle{Transferencia Tecnológica}
- 
-  \begin{alertblock}{}
-    \begin{itemize}
-     \item Odedra \cite{Mo94}: \textbf{La transferencia tecnológica se considera exitosa cuando los receptores de la tecnología \textcolor{DarkGreen}{asimilan} estos conceptos para \textcolor{DarkGreen}{suplir sus necesidades locales} generando productos novedosos}.
-     \item Jolly \cite{Jol77}: \textbf{El conocimiento es lo que queda al final de un proceso \textcolor{DarkGreen}{documentado y difundido} de forma apropiada}.
-    \end{itemize}
-  \end{alertblock}
-
-\end{frame}
-
-\subsection{Canales de Transferencia}
-\begin{frame}
-  \frametitle{Canales para la TT}
-   \begin{center} \includegraphics[scale=.6]{../images/TT_canales.pdf}   \end{center}
-\end{frame}
-
-
 \subsection{Situación Colombiana}
-
 
 \begin{frame}
   \frametitle{Situación Colombiana \cite{LV98}} 
-     \begin{itemize}
-      \item En el país existen 297 programas relacionados con la electrónica \footnote{Según ministerio de educación}. 
-      \item Según ASESEL en el 2001 existían 154 empresas productoras de componentes y equipos de la cadena electrónica.
+    \begin{itemize}
+      \item Según ASESEL\footnote{Asociacion de Entidades del Sector Electronico} en el 2001 existían 154 empresas productoras de componentes y equipos de la cadena electrónica.
         \begin{itemize}
          \item 76\% usa tecnología de los 80 o anterior
         \end{itemize}
       \item Las empresas no adquieren el conocimiento necesario para innovar; se limitan a compra de equipo.
       \item Principal problema: tecnología de producción desactualizada.
-      \item Según el DNP\footnote{Departamento nacional de planeación}, DDE\footnote{Dirección de desarrollo empresarial}, basados en información del DANE y la DIAN, las importaciones son 64 veces mayores que las exportaciones.
-     \end{itemize}
+      \item Según el DNP\footnote{Departamento nacional de planeación}, DDE\footnote{Dirección de desarrollo empresarial}, basados en información del DANE\footnote{Departamento Administrativo Nacional de Estadistica} y la DIAN\footnote{Dirección de Impuestos y Aduanas Nacionales}, las importaciones son 64 veces mayores que las exportaciones.
+      \item En el país existen 297 programas relacionados con la electrónica. 
+    \end{itemize}
 \end{frame}
 
-  
-\subsection{Causas del Atraso}
 \begin{frame}
   \frametitle{Causas del Atraso}
     \begin{itemize}
@@ -59,26 +29,10 @@
      \item \alert{Limitado recurso humano con formación adecuada}.
     \end{itemize}
 \end{frame}
-
-\subsection{Obstáculos para la Transferencia} 
-\begin{frame}
-  \frametitle{Obstáculos para la Transferencia \cite{MO90}}
-    \begin{itemize}
-     \item  Falta de facilidades en educación y en capacitación. 
-     \item  La resistencia o el desconocimiento a la tecnología.
-     \item  La transferencia es efectiva solo si la economía en la cual es introducida es capaz de utilizarla
-     \item  Falta de políticas claras.
-     \item  Competencia de países asiáticos.
-     \item  \textcolor{DarkGreen}{Falta de personal disponible y dispuesto a absorber el \textit{know-how} asociado a la tecnología}.
-    \end{itemize}
-\end{frame}
-
 \subsection{Recomendaciones a la Academia}
 
 \begin{frame}
-
 \frametitle{Recomendaciones para la academia}
-
 \begin{itemize}
     \item Actualización curricular.
      \begin{itemize}
@@ -99,6 +53,108 @@
     \item Búsqueda de financiación para investigación y desarrollo
 \end{itemize}
 \end{frame}
+
+
+\subsection{Preguntas de investigación}
+\frametitle{Preguntas de investigación}
+\begin{frame}
+\def\firstcircle {(0  :2) circle (2.5cm)}
+\def\secondcircle{(90 :2) circle (2.5cm)}
+\def\thirdcircle {(180:2) circle (2.5cm)}
+\def\fourcircle  {(270:2) circle (2.5cm)}
+\resizebox{!}{6.5cm}{
+  \begin{tikzpicture}
+      \begin{scope}[shift={(1cm,-1cm)}, fill opacity=0.8]
+          \fill[red!30]   \firstcircle;
+          \fill[green!30] \secondcircle;
+          \fill[blue!30]  \thirdcircle;
+          \fill[yellow!30]\fourcircle;
+          \footnotesize
+          \draw \firstcircle  node [text=black , right=-0.8cm] (PI) {\textbf{Propiedad Intelectual}};
+          \draw \secondcircle node [text=black, above=1cm]    (TT) {\textbf{Transferencia Tecnológica}};
+          \draw \thirdcircle  node [text=black,   left=-0.5cm]  (DE) {\textbf{Diseño electrónico}};
+          \draw \fourcircle   node [text=black, below=1cm]    (EI) {\textbf{Educación en Ingeniería}};
+      \end{scope}
+      \node [hide]   at (3,-1)                                (reference) {};
+      \small
+      \onslide<1> \node [goals_TT,  right = 2cm of reference]  (goal_TT)   
+                   {¿Qué metodología para la transferencia tecnológica es la más adecuada al entorno colombiano?};
+%                    {Formulación/adaptación y aplicación de una metodología para la transferencia tec\-no\-ló\-gi\-ca y de conocimientos};
+      \onslide<2> \node [goals_PI,  right = 2cm of reference]  (goal_PI)   
+                   {¿Qué modelo de propiedad intelectual favorece la transferencia tecnológica?};
+%                    {\begin{itemize}
+%                      \small
+%                      \item Generación de un recurso público basado en el conocimiento necesario para diseñar implementar y producir sistemas digitales. 
+%                      \item Creación de herramientas de difusión que permitan el acceso de este recurso a cualquier sector de la sociedad que esté interesado.
+%                     \end{itemize}
+%                    };
+      \onslide<3> \node [goals_EI,  right = 2cm of reference]  (goal_EI)   
+                   {\begin{itemize}
+                     \small
+                     \item ¿Que habilidades debe poseer un profesional para soportar y desarrollar la nueva tecnología?
+                     \item ¿Cómo desarrollar estas habilidades?
+                    \end{itemize}
+                    };
+%                    {\begin{itemize}
+%                      \small
+%                      \item Identificación de las habilidades requeridas por los profesionales en ingeniería electrónica para estar acorde con la tendencia de la industria electrónica mundial. 
+%                      \item Creación de un programa académico que ayude al refuerzo de estas habilidades en las asignaturas relacionadas con el diseño digital.
+%                     \end{itemize}
+%                     };
+      \onslide<4> \node [goals_DE,  right = 2cm of reference]  (goal_DE)   
+                   {\begin{itemize}
+                     \small
+                     \item ¿Qué tecnología es la más adecuada para ser transferida?
+                     \item ¿Como se adquieren los conocimientos necesarios para desarrollar nuevos productos que den solución a problemas locales??
+                    \end{itemize}
+                    };
+
+
+
+%                    {¿ y c};
+  \end{tikzpicture}
+}
+\end{frame}
+
+
+
+\subsection{Transferencia Tecnológica}
+\begin{frame}
+  \frametitle{Tecnología: Definición}
+   \begin{center} \includegraphics[scale=.45]{../images/technology_definition_slides.pdf}   \end{center}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Transferencia Tecnológica}
+ 
+  \begin{alertblock}{}
+    \begin{itemize}
+     \item Odedra \cite{Mo94}: \textbf{La transferencia tecnológica se considera exitosa cuando los receptores de la tecnología \textcolor{DarkGreen}{asimilan} estos conceptos para \textcolor{DarkGreen}{suplir sus necesidades locales} generando productos novedosos}.
+     \item Jolly \cite{Jol77}: \textbf{El conocimiento es lo que queda al final de un proceso \textcolor{DarkGreen}{documentado y difundido} de forma apropiada}.
+    \end{itemize}
+  \end{alertblock}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Canales para la TT}
+   \begin{center} \includegraphics[scale=.6]{../images/TT_canales.pdf}   \end{center}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Obstáculos para la Transferencia \cite{MO90}}
+    \begin{itemize}
+     \item  Falta de facilidades en educación y en capacitación. 
+     \item  La resistencia o el desconocimiento a la tecnología.
+     \item  La transferencia es efectiva solo si la economía en la cual es introducida es capaz de utilizarla
+     \item  Falta de políticas claras.
+     \item  Competencia de países asiáticos.
+     \item  \textcolor{DarkGreen}{Falta de personal disponible y dispuesto a absorber el \textit{know-how} asociado a la tecnología}.
+    \end{itemize}
+\end{frame}
+
 
 \subsection{¿Por qué TT en Diseño de Sistemas Embebidos (SE)?}
 
@@ -150,56 +206,3 @@
 % \end{frame}
 
 
-\begin{frame}
-\frametitle{Objetivos / Areas de investigación}
-%\def\firstcircle{posición  shape radio}  
-%                 Grados:distancia al orígen
-\def\firstcircle {(0  :2) circle (2.5cm)}
-\def\secondcircle{(90 :2) circle (2.5cm)}
-\def\thirdcircle {(180:2) circle (2.5cm)}
-\def\fourcircle  {(270:2) circle (2.5cm)}
-
-
-\resizebox{!}{6.5cm}{
-  \begin{tikzpicture}
-      \begin{scope}[shift={(1cm,-1cm)}, fill opacity=0.8]
-          \fill[red!70]   \firstcircle;
-          \fill[green!70] \secondcircle;
-          \fill[blue!70]  \thirdcircle;
-          \fill[yellow!70]\fourcircle;
-          \footnotesize
-          \draw \firstcircle  node [text=black , right=-0.8cm] (PI) {\textbf{Propiedad Intelectual}};
-          \draw \secondcircle node [text=black, above=1cm]    (TT) {\textbf{Transferencia Tecnológica}};
-          \draw \thirdcircle  node [text=black,   left=-0.5cm]  (DE) {\textbf{Diseño electrónico}};
-          \draw \fourcircle   node [text=black, below=1cm]    (EI) {\textbf{Educación en Ingeniería}};
-      \end{scope}
-      \node [hide]   at (3,-1)                                (reference) {};
-      \small
-      \onslide<2> \node [goals_PI,  right = 2cm of reference]  (goal_PI)   
-                   {\begin{itemize}
-                     \small
-                     \item Generación de un recurso público basado en el conocimiento necesario para diseñar implementar y producir sistemas digitales. 
-                     \item Creación de herramientas de difusión que permitan el acceso de este recurso a cualquier sector de la sociedad que esté interesado.
-                    \end{itemize}
-                   };
-      \onslide<1> \node [goals_TT,  right = 2cm of reference]  (goal_TT)   
-                   {Formulación/adaptación y aplicación de una metodología para la transferencia tec\-no\-ló\-gi\-ca y de conocimientos};
-      \onslide<3> \node [goals_DE,  right = 2cm of reference]  (goal_DE)   
-                   {Formulación o adaptación de una metodología de diseño y producción para sistemas embebidos aplicable en el entorno local};
-      \onslide<4> \node [goals_EI,  right = 2cm of reference]  (goal_EI)   
-                   {\begin{itemize}
-                     \small
-                     \item Identificación de las habilidades requeridas por los profesionales en ingeniería electrónica para estar acorde con la tendencia de la industria electrónica mundial. 
-                     \item Creación de un programa académico que ayude al refuerzo de estas habilidades en las asignaturas relacionadas con el diseño digital.
-                    \end{itemize}
-                    };
-  \end{tikzpicture}
-
-
-}
-
-
-
-
-
-\end{frame}
