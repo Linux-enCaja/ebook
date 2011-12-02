@@ -72,43 +72,51 @@
 	\begin{center} \includegraphics[scale=.35]{../images/soft_SoC_design_flow.pdf}   \end{center}
     };
 
-
-
     \onslide<6> \node [ph_explain, right=.5cm of adaptation.east] (exp_adaptation)    
+    {
+%     \begin{center} \textbf{Metodología de diseño} \end{center}
+        \begin{center} \includegraphics[scale=.45]{../images/embedded_system_design_flow.pdf}   \end{center}
+    };
+
+
+    \onslide<7> \node [ph_explain2, right=.5cm of adaptation.east] (exp_adaptation)    
     {
     \begin{center} \textbf{Conocimientos adquiridos} \end{center}
       \begin{table}[htpb]
         \centering
-        \resizebox{!}{1.5cm}{
-          \begin{tabular}{|l|l|l|}
+        \resizebox{!}{0.59cm}{
+          \begin{tabular}{|l|}
             \hline
-            \textbf{Plataforma}  & \textbf{Sistema Operativo y Aplicaciones}
+            Aplicaciones utilizando los sistemas operativos eCos y Linux.
             \\ \hline 
-            Game Boy             & eCos, periféricos en FPGAs.
+            Utilización de librerías graficas como QT, Flash.
             \\ \hline 
-            Zaurus               & Linux 2.4, sistema de archivos, QT.
+            Creación de sistemas de archivos openwrt, buildroot, openembedded
             \\ \hline 
-            iPAQ H3600           & Linux 2.4, Buildroot, QT.
+          \end{tabular}
+         }
+      \end{table}
+
+
+    \begin{center} \textbf{Conocimientos generados} \end{center}
+      \begin{table}[htpb]
+        \centering
+        \resizebox{!}{0.75cm}{
+          \begin{tabular}{|l|}
+            \hline
+              Generador de patrones y analizador lógico utilizando el puerto JTAG.
             \\ \hline 
-            Chumby               & Linux 2.6, u-boot, OpenEmbedded, QT, flash.
+              Drivers para Linux de dispositivos hardware propietarios.
             \\ \hline 
-            Ainol V2000          & Linux 2.6, openwrt, QT.
+              Adaptación del kernel de Linux a nuevas plataformas.
             \\ \hline 
-            SUNGALE DPF          & Linux 2.6, openwrt, QT.
-            \\ \hline 
-            B\&N NOOK            & Linux 2.6, Android Dalvik (VM).
+              Metodología de ingeniería inversa.
             \\ \hline 
           \end{tabular}
          }
       \end{table}
     };
 
-
-    \onslide<7> \node [ph_explain, right=.5cm of adaptation.east] (exp_adaptation)    
-    {
-%     \begin{center} \textbf{Metodología de diseño} \end{center}
-        \begin{center} \includegraphics[scale=.45]{../images/embedded_system_design_flow.pdf}   \end{center}
-    };
     
 \end{tikzpicture}
 \end{figure}
