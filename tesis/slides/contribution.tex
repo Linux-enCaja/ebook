@@ -1,0 +1,79 @@
+\section{Aportes}
+\begin{frame}
+\frametitle{Aportes}
+
+\begin{figure}
+\begin{tikzpicture}[node distance=0.5cm, auto,>=latex', thick]
+\scriptsize
+    % We need to set at bounding box first. Otherwise the diagram
+    % will change position for each frame.
+    \path[use as bounding box] (-1.5,0) rectangle (12,-2);
+
+    % TT methodology     
+    \node [phase_TT]                        (monitoreo)     {Transferencia Tecnológica};
+    \node [phase_PI, below of=monitoreo]    (choice)        {Propiedad Intelectual};
+    \node [phase_DE, below of=choice]       (acquisition)   {Diseño Electrónico};
+    \node [phase_EI, below of=acquisition]  (adaptation)    {Educación en Ingeniería};
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    %            Absorción
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&
+    \onslide<1> \node [goals_TT2, right=.5cm of adaptation.east] (exp_absortion)     
+    {
+      \begin{itemize}
+      \item Aplicación de una metodología de TT abierta e informal.
+        \begin{itemize}
+        \scriptsize
+         \item Generación de productos novedosos.
+         \item Proceso documentado y difundido.
+         \item Transferencia de conocimientos.
+        \end{itemize}
+      \end{itemize}
+    };
+
+    \onslide<2> \node [goals_PI2, right=.5cm of adaptation.east] (exp_adaptation)    
+    {
+      \begin{itemize}
+      \item Definición del concepto hardware copyleft.
+      \item Creación de una comunidad basada en el conocimiento como bien público.
+      \item Creación de un recurso público representado en el conocimiento necesario para diseñar sistemas digitales.
+      \item Creación de un mecanismo de difusión púbico.
+      \end{itemize}
+    };
+
+    \onslide<3> \node [goals_DE2, right=.5cm of adaptation.east] (exp_adaptation)    
+    {
+      \begin{itemize}
+      \item Apropiación de conocimientos necesarios para el diseño y fabricación de sistemas digitales modernos.
+      \item Formulación y aplicación de metodologías de ingenería inversa.
+      \item Creación de plataformas copyleft hardware, generación de software básico y aplicaciones.
+      \item Contribución al movimiento de software libre
+        \begin{itemize}
+         \scriptsize
+         \item Drivers de dispositivos para el kernel de Linux.
+         \item Software para verificación basado en el puerto JTAG.
+         \item Aplicaciones para programación en sistema.
+        \end{itemize}
+      \item Utilización de software libre para el proceso completo de diseño.
+      \end{itemize}
+     };
+ 
+    \onslide<4> \node [goals_EI2, right=.5cm of adaptation.east] (exp_adaptation)    
+    {
+      \begin{itemize}
+      \item Formulación y aplicación de un plan de estudios basado en la iniciativa CDIO
+        \begin{itemize}
+         \scriptsize
+         \item Creación de habilidades necesarias para generar nuevos productos comercializables.
+         \item Transferir los conocimientos adquiridos en el proceso de transferencia tecnológica.
+        \end{itemize}
+      \item Formación de personal durante 2 años.
+      \item Actualización de los programas relacionados con el diseño digital
+      \end{itemize}
+    };
+
+ 
+\end{tikzpicture}
+\end{figure}
+
+\end{frame}
