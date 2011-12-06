@@ -46,6 +46,11 @@
 \logo{\pgfuseimage{logo}}
 
 
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\@makefntext}{\insertfootnotetext{#1}}{\insertfootnotetext{\tiny#1}}{}{}
+\makeatother
+
 \begin{document}
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{footline}[page number]{}
@@ -65,6 +70,18 @@
 \tikzstyle{goals_TT}    = [draw, thin, fill=green!20, text width=7cm,   text justified, minimum height=0.5cm]
 \tikzstyle{goals_DE}    = [draw, thin, fill=blue!20,  text width=7cm,   text justified, minimum height=0.5cm]
 \tikzstyle{goals_EI}    = [draw, thin, fill=yellow!20,text width=7cm,   text justified, minimum height=0.5cm]
+
+
+
+\tikzstyle{goals_PI2}    = [draw, thin, fill=red!20,   text width=8cm,   text justified, minimum height=0.5cm]
+\tikzstyle{goals_TT2}    = [draw, thin, fill=green!20, text width=8cm,   text justified, minimum height=0.5cm]
+\tikzstyle{goals_DE2}    = [draw, thin, fill=blue!20,  text width=8cm,   text justified, minimum height=0.5cm]
+\tikzstyle{goals_EI2}    = [draw, thin, fill=yellow!20,text width=8cm,   text justified, minimum height=0.5cm]
+
+\tikzstyle{phase_PI}     = [draw, thin, fill=red!20,   text width=3.3cm,   text centered, minimum height=0.5cm]
+\tikzstyle{phase_TT}     = [draw, thin, fill=green!20, text width=3.3cm,   text centered, minimum height=0.5cm]
+\tikzstyle{phase_DE}     = [draw, thin, fill=blue!20,  text width=3.3cm,   text centered, minimum height=0.5cm]
+\tikzstyle{phase_EI}     = [draw, thin, fill=yellow!20,text width=3.3cm,   text centered, minimum height=0.5cm]
 
 
 \tikzset{
@@ -120,10 +137,11 @@
       \input aplication  
       \input davinci
       \input difusion
+      \input contribution
       \input conclusions
       \input biblio                 %  |Bibliografía
 
-\end{document}
+\end{document}|
 
 
 
