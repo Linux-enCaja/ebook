@@ -37,37 +37,39 @@
     \end{pgfonlayer}
 
     % "Empresa" node
-    \node [industry, right=1cm of linuxencaja.north east]  (industry)      {\textbf{Empresa}
-                                                                  \begin{itemize}
-                                                                   \item Transferencia de conocimiento.
-                                                                     \begin{itemize}
-                                                                       \scriptsize
-                                                                       \item Procesos de fabricación.
-                                                                       \item Metodologías de diseño.
-                                                                     \end{itemize}
-                                                                   \item Diseños de referencia.
-                                                                  \end{itemize} };
+    \node [industry, right=1cm of linuxencaja.north east]  (industry)      {\textcolor{Lavender} {. \\ . \\.} \textbf{ \large Empresa} \textcolor{Lavender} {. \\ . \\.}
+%                                                                   \begin{itemize}
+%                                                                    \item Transferencia de conocimiento.
+%                                                                      \begin{itemize}
+%                                                                        \scriptsize
+%                                                                        \item Procesos de fabricación.
+%                                                                        \item Metodologías de diseño.
+%                                                                      \end{itemize}
+%                                                                    \item Diseños de referencia.
+%                                                                   \end{itemize} 
+                                                                   };
 
     \draw[myarrow2] ([xshift=0.75cm] adaptation.east) -- ++(0.2,0)-- ++ (0,2.2) --  (industry.west);	
 
     % "Academia" node
-    \node [academy, right=0.8cm of research.south east]  (academy)      {\textbf{Academia}
-                                                                  \begin{itemize}
-                                                                   \item Actualización de programas académicos.
-                                                                   \item Generación de habilidades.
-                                                                   \item Creación de industria.
-                                                                   \item Creación/adaptación de metodologías /procesos de diseño.
-                                                                  \end{itemize} };
+    \node [academy, right=0.8cm of research.south east]  (academy)      {\textcolor{Lavender} {.\\ . \\.}\textbf{ \large Academia} \textcolor{Lavender} {.\\ . \\.}
+%                                                                   \begin{itemize}
+%                                                                    \item Actualización de programas académicos.
+%                                                                    \item Generación de habilidades.
+%                                                                    \item Creación de industria.
+%                                                                    \item Creación/adaptación de metodologías /procesos de diseño.
+%                                                                   \end{itemize}  
+                                                                      };
     \draw[myarrow1] ([xshift=0.75cm] adaptation.east) -- ++(0.2,0)-- ++ (0,-2.2) --  (academy.west);	
 
 
     % Relaciones Universidad - Empresa    
     \draw[myarrow] ([xshift=-2.6cm] industry.south) -- ([xshift=-2.6cm] academy.north);
-    \node[mylabel, below left=of industry.south] (label1)  {\scriptsize Pasantías.\\Servicios.\\Regalías.    \\Necesidades.};  
+%     \node[mylabel, below left=of industry.south] (label1)  {\scriptsize Pasantías.\\Servicios.\\Regalías.    \\Necesidades.};  
 
     % Relaciones Empresa - Universidad
     \draw[myarrow] ([xshift= 2.6cm] academy.north)  -- ([xshift= 2.6cm] industry.south);
-    \node[mylabel, below right=of industry.south] (label1) {\scriptsize Creación. \\Soporte.  \\Capacitación.\\Personal.};  
+%     \node[mylabel, below right=of industry.south] (label1) {\scriptsize Creación. \\Soporte.  \\Capacitación.\\Personal.};  
 
     % Necesidades de la sociedad
     \node [extern, right=0.2cm of industry] (needs)   {Necesidades de la sociedad};
@@ -85,9 +87,9 @@
 \end{frame}
 
 
-\begin{frame}
-  \begin{center} \includegraphics[scale=.6]{../images/transfer_model.pdf}   \end{center}
-\end{frame}
+% \begin{frame}
+%   \begin{center} \includegraphics[scale=.6]{../images/transfer_model.pdf}   \end{center}
+% \end{frame}
 
 
 
