@@ -1,5 +1,0 @@
-\select@language {spanish}
-\contentsline {chapter}{\numberline {1}Sistema en un Chip (SoC)}{3}
-\contentsline {section}{\numberline {1.1}Arquitectura}{3}
-\contentsline {subsubsection}{Unidad de Procesamiento Central (CPU)}{3}
-\contentsline {subsubsection}{Perif\'ericos}{4}

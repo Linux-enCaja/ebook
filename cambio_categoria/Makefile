@@ -11,7 +11,7 @@ all: pdf
 
 clean:
 	@rm -f *.aux *.bbl *.blg *.log *.dvi *.out *.nav *.snm *~ *backup  \
-	*.idx *.ilg *.ind *.toc *.lot *.lof $(MAINDOC).pdf *bak
+	*.idx *.ilg *.ind *.toc *.lot *.lof $(MAINDOC).pdf *bak *acn *acr *log *glo *alg *ist
 
 
 pdf:
