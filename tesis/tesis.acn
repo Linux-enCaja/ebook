@@ -59,7 +59,7 @@
 \glossaryentry{FPGA?\glossaryentryfield{FPGA}{\glsnamefont{FPGA}}{Field Programmable Gate Array}{\relax }|setentrycounter{page}\glsnumberformat}{32}
 \glossaryentry{ASIC?\glossaryentryfield{ASIC}{\glsnamefont{ASIC}}{Application-specific integrated circuit}{\relax }|setentrycounter{page}\glsnumberformat}{32}
 \glossaryentry{ASIC?\glossaryentryfield{ASIC}{\glsnamefont{ASIC}}{Application-specific integrated circuit}{\relax }|setentrycounter{page}\glsnumberformat}{32}
-\glossaryentry{FPGA?\glossaryentryfield{FPGA}{\glsnamefont{FPGA}}{Field Programmable Gate Array}{\relax }|setentrycounter{page}\glsnumberformat}{32}
+\glossaryentry{FPGA?\glossaryentryfield{FPGA}{\glsnamefont{FPGA}}{Field Programmable Gate Array}{\relax }|setentrycounter{page}\glsnumberformat}{33}
 \glossaryentry{FPGA?\glossaryentryfield{FPGA}{\glsnamefont{FPGA}}{Field Programmable Gate Array}{\relax }|setentrycounter{page}\glsnumberformat}{33}
 \glossaryentry{ASIC?\glossaryentryfield{ASIC}{\glsnamefont{ASIC}}{Application-specific integrated circuit}{\relax }|setentrycounter{page}\glsnumberformat}{33}
 \glossaryentry{SoC?\glossaryentryfield{SoC}{\glsnamefont{SoC}}{Systen On a Chip}{\relax }|setentrycounter{page}\glsnumberformat}{33}
@@ -186,18 +186,18 @@
 \glossaryentry{ICE?\glossaryentryfield{ICE}{\glsnamefont{ICE}}{In Circuit Emulation}{\relax }|setentrycounter{page}\glsnumberformat}{45}
 \glossaryentry{RAM?\glossaryentryfield{RAM}{\glsnamefont{RAM}}{Random Acess Memory}{\relax }|setentrycounter{page}\glsnumberformat}{45}
 \glossaryentry{RAM?\glossaryentryfield{RAM}{\glsnamefont{RAM}}{Random Acess Memory}{\relax }|setentrycounter{page}\glsnumberformat}{45}
-\glossaryentry{SoC?\glossaryentryfield{SoC}{\glsnamefont{SoC}}{Systen On a Chip}{\relax }|setentrycounter{page}\glsnumberformat}{45}
-\glossaryentry{RAM?\glossaryentryfield{RAM}{\glsnamefont{RAM}}{Random Acess Memory}{\relax }|setentrycounter{page}\glsnumberformat}{45}
+\glossaryentry{SoC?\glossaryentryfield{SoC}{\glsnamefont{SoC}}{Systen On a Chip}{\relax }|setentrycounter{page}\glsnumberformat}{46}
+\glossaryentry{RAM?\glossaryentryfield{RAM}{\glsnamefont{RAM}}{Random Acess Memory}{\relax }|setentrycounter{page}\glsnumberformat}{46}
 \glossaryentry{PCB?\glossaryentryfield{PCB}{\glsnamefont{PCB}}{Printed Circuit Board}{\relax }|setentrycounter{page}\glsnumberformat}{47}
 \glossaryentry{PCB?\glossaryentryfield{PCB}{\glsnamefont{PCB}}{Printed Circuit Board}{\relax }|setentrycounter{page}\glsnumberformat}{47}
 \glossaryentry{PCB?\glossaryentryfield{PCB}{\glsnamefont{PCB}}{Printed Circuit Board}{\relax }|setentrycounter{page}\glsnumberformat}{47}
 \glossaryentry{PCB?\glossaryentryfield{PCB}{\glsnamefont{PCB}}{Printed Circuit Board}{\relax }|setentrycounter{page}\glsnumberformat}{47}
 \glossaryentry{PLD?\glossaryentryfield{PLD}{\glsnamefont{PLD}}{Programmable Logic Device}{\relax }|setentrycounter{page}\glsnumberformat}{48}
 \glossaryentry{SoC?\glossaryentryfield{SoC}{\glsnamefont{SoC}}{Systen On a Chip}{\relax }|setentrycounter{page}\glsnumberformat}{48}
-\glossaryentry{SoC?\glossaryentryfield{SoC}{\glsnamefont{SoC}}{Systen On a Chip}{\relax }|setentrycounter{page}\glsnumberformat}{48}
-\glossaryentry{I2C?\glossaryentryfield{I2C}{\glsnamefont{I2C}}{Inter-Integrated Circuit}{\relax }|setentrycounter{page}\glsnumberformat}{48}
-\glossaryentry{GPIO?\glossaryentryfield{GPIO}{\glsnamefont{GPIO}}{General Purpose Input/Output}{\relax }|setentrycounter{page}\glsnumberformat}{48}
-\glossaryentry{ISP?\glossaryentryfield{ISP}{\glsnamefont{ISP}}{In System Programming}{\relax }|setentrycounter{page}\glsnumberformat}{48}
+\glossaryentry{SoC?\glossaryentryfield{SoC}{\glsnamefont{SoC}}{Systen On a Chip}{\relax }|setentrycounter{page}\glsnumberformat}{49}
+\glossaryentry{I2C?\glossaryentryfield{I2C}{\glsnamefont{I2C}}{Inter-Integrated Circuit}{\relax }|setentrycounter{page}\glsnumberformat}{49}
+\glossaryentry{GPIO?\glossaryentryfield{GPIO}{\glsnamefont{GPIO}}{General Purpose Input/Output}{\relax }|setentrycounter{page}\glsnumberformat}{49}
+\glossaryentry{ISP?\glossaryentryfield{ISP}{\glsnamefont{ISP}}{In System Programming}{\relax }|setentrycounter{page}\glsnumberformat}{49}
 \glossaryentry{SoC?\glossaryentryfield{SoC}{\glsnamefont{SoC}}{Systen On a Chip}{\relax }|setentrycounter{page}\glsnumberformat}{50}
 \glossaryentry{FPGA?\glossaryentryfield{FPGA}{\glsnamefont{FPGA}}{Field Programmable Gate Array}{\relax }|setentrycounter{page}\glsnumberformat}{50}
 \glossaryentry{FPGA?\glossaryentryfield{FPGA}{\glsnamefont{FPGA}}{Field Programmable Gate Array}{\relax }|setentrycounter{page}\glsnumberformat}{50}
@@ -213,21 +213,21 @@
 \glossaryentry{DDR?\glossaryentryfield{DDR}{\glsnamefont{DDR}}{Double Data Rate)}{\relax }|setentrycounter{page}\glsnumberformat}{52}
 \glossaryentry{SDRAM?\glossaryentryfield{SDRAM}{\glsnamefont{SDRAM}}{Synchronous dynamic random-access memory}{\relax }|setentrycounter{page}\glsnumberformat}{52}
 \glossaryentry{SD?\glossaryentryfield{SD}{\glsnamefont{SD}}{Secure Digital}{\relax }|setentrycounter{page}\glsnumberformat}{52}
-\glossaryentry{CPU?\glossaryentryfield{CPU}{\glsnamefont{CPU}}{Central processing unit}{\relax }|setentrycounter{page}\glsnumberformat}{53}
-\glossaryentry{PCB?\glossaryentryfield{PCB}{\glsnamefont{PCB}}{Printed Circuit Board}{\relax }|setentrycounter{page}\glsnumberformat}{53}
-\glossaryentry{OS?\glossaryentryfield{OS}{\glsnamefont{OS}}{Operating System}{\relax }|setentrycounter{page}\glsnumberformat}{53}
+\glossaryentry{CPU?\glossaryentryfield{CPU}{\glsnamefont{CPU}}{Central processing unit}{\relax }|setentrycounter{page}\glsnumberformat}{52}
+\glossaryentry{PCB?\glossaryentryfield{PCB}{\glsnamefont{PCB}}{Printed Circuit Board}{\relax }|setentrycounter{page}\glsnumberformat}{52}
+\glossaryentry{OS?\glossaryentryfield{OS}{\glsnamefont{OS}}{Operating System}{\relax }|setentrycounter{page}\glsnumberformat}{52}
 \glossaryentry{CPLD?\glossaryentryfield{CPLD}{\glsnamefont{CPLD}}{Complex programmable logic device}{\relax }|setentrycounter{page}\glsnumberformat}{54}
 \glossaryentry{FPGA?\glossaryentryfield{FPGA}{\glsnamefont{FPGA}}{Field Programmable Gate Array}{\relax }|setentrycounter{page}\glsnumberformat}{54}
 \glossaryentry{CPU?\glossaryentryfield{CPU}{\glsnamefont{CPU}}{Central processing unit}{\relax }|setentrycounter{page}\glsnumberformat}{54}
 \glossaryentry{CPU?\glossaryentryfield{CPU}{\glsnamefont{CPU}}{Central processing unit}{\relax }|setentrycounter{page}\glsnumberformat}{54}
-\glossaryentry{CDIO?\glossaryentryfield{CDIO}{\glsnamefont{CDIO}}{Concebir, Diseñar, Implementar, Operar}{\relax }|setentrycounter{page}\glsnumberformat}{56}
+\glossaryentry{CDIO?\glossaryentryfield{CDIO}{\glsnamefont{CDIO}}{Concebir, Diseñar, Implementar, Operar}{\relax }|setentrycounter{page}\glsnumberformat}{55}
 \glossaryentry{SoC?\glossaryentryfield{SoC}{\glsnamefont{SoC}}{Systen On a Chip}{\relax }|setentrycounter{page}\glsnumberformat}{56}
 \glossaryentry{CIIU?\glossaryentryfield{CIIU}{\glsnamefont{CIIU}}{CODIGO INDUSTRIAL INTERNACIONAL UNIFORME}{\relax }|setentrycounter{page}\glsnumberformat}{57}
 \glossaryentry{PCB?\glossaryentryfield{PCB}{\glsnamefont{PCB}}{Printed Circuit Board}{\relax }|setentrycounter{page}\glsnumberformat}{60}
 \glossaryentry{LED?\glossaryentryfield{LED}{\glsnamefont{LED}}{Light-Emitting Diode}{\relax }|setentrycounter{page}\glsnumberformat}{60}
 \glossaryentry{RAM?\glossaryentryfield{RAM}{\glsnamefont{RAM}}{Random Acess Memory}{\relax }|setentrycounter{page}\glsnumberformat}{60}
 \glossaryentry{SoC?\glossaryentryfield{SoC}{\glsnamefont{SoC}}{Systen On a Chip}{\relax }|setentrycounter{page}\glsnumberformat}{60}
-\glossaryentry{HTML?\glossaryentryfield{HTML}{\glsnamefont{HTML}}{HyperText Markup Language}{\relax }|setentrycounter{page}\glsnumberformat}{61}
+\glossaryentry{HTML?\glossaryentryfield{HTML}{\glsnamefont{HTML}}{HyperText Markup Language}{\relax }|setentrycounter{page}\glsnumberformat}{60}
 \glossaryentry{DIEE?\glossaryentryfield{DIEE}{\glsnamefont{DIEE}}{Departamento de Ingeniería Eléctrica y Electrónica}{\relax }|setentrycounter{page}\glsnumberformat}{65}
 \glossaryentry{CDIO?\glossaryentryfield{CDIO}{\glsnamefont{CDIO}}{Concebir, Diseñar, Implementar, Operar}{\relax }|setentrycounter{page}\glsnumberformat}{65}
 \glossaryentry{CDIO?\glossaryentryfield{CDIO}{\glsnamefont{CDIO}}{Concebir, Diseñar, Implementar, Operar}{\relax }|setentrycounter{page}\glsnumberformat}{65}
