@@ -291,197 +291,197 @@ La metodología de diseño utilizada en la creación de este programa académico se 
 %     \caption{Educación de sistemas embebidos. Tomada de:\cite{HMHK09} y modificada} \label{ES_education}
 %  \end{figure}
 
-% \subsection{Contenido}
-% 
-% \subsubsection{Electrónica Digital 1}
-% \begin{itemize}
-%  \item \textbf{Flujo de Diseño de Sistemas Embebidos}
-%      \begin{itemize}
-%        \item Sistemas Digitales: Panorama Y Perspectiva 
-%        \item Metodología de Diseño
-%        \item Representaciones de Diseño y Niveles de Abstracción
-%      \end{itemize}
-%  \item \textbf{Sistemas Numéricos y Operaciones Aritméticas}
-%      \begin{itemize}
-%        \item Representación de Datos
-%        \item Sistemas numéricos: Binario, Octal Hexadecimal
-%        \item Representación de números negativos
-%        \item Algoritmos para la implementación de operaciones aritméticas
-%        \begin{itemize}
-%          \item Camino de Datos
-%          \item Control
-%        \end{itemize}
-%      \end{itemize}
-%  \item \textbf{Lógica Combinatoria}
-%      \begin{itemize}
-%       \item Definición.
-%       \item Ecuaciones Booleanas, Formas canónicas.
-%       \item Módulos Básicos: Multiplexores, codificadores, sumadores, restadores comparadores.
-%      \end{itemize}
-%  \item \textbf{Lógica Secuencial}
-%      \begin{itemize}
-%       \item Definición
-%       \item Elementos de memoria:
-%         \begin{itemize}
-%         \item Latch
-%         \item Flip-Flop
-%         \end{itemize}
-%       \item Bloques básicos
-%         \begin{itemize}
-%         \item Registros
-%         \item Acumuladores
-%         \item Contadores
-%         \end{itemize}
-%       \item Máquina de Estados Finitos (FSM)
-%         \begin{itemize}
-%         \item Arquitectura
-%         \item Tipos: Mealy, Moore
-%         \item Diagramas de Estado
-%         \item Síntesis de Máquinas de Estado
-%         \end{itemize}
-%       \item Máquinas de Estado Algorítmicas (ASM)
-%         \begin{itemize}
-%         \item Tareas Hardware
-%         \item Componentes: Camino de Datos y Máquina de Control
-%         \item Implementación de operaciones aritméticas utilizando ASM
-%         \item Identificación, funcionamiento e interfaz de bloques constructores.
-%         \item Interacción entre el Camino de Datos y la Máquina de Control
-%         \item Lenguajes de Descripción de Hardware
-%         \end{itemize}
-%      \end{itemize}
-%  \item \textbf{Tecnologías de Implementación}
-%      \begin{itemize}
-%       \item Familia Lógica CMOS
-%         \begin{itemize}
-%         \item Principio de funcionamiento, consumo de potencia
-%         \item Niveles Lógicos y márgenes de ruido
-%         \item Retardos, Manejo de Corriente
-%         \item Compuertas tri-estado y Open-Drain
-%         \end{itemize}
-%       \item Dispositivos Lógicos Programables
-%         \begin{itemize}
-%          \item Arreglos Lógicos Programables (PALs)
-%          \item Dispositivos Lógicos Programables (PLDs, CPLDs)
-%          \item Arreglo de Compuertas Programable en Campo (FPGA)
-%          \item Flujo de Diseño - Programación en Sistema
-%         \end{itemize}
-%      \end{itemize}
-%  \item \textbf{Introducción a los procesadores}
-%      \begin{itemize}
-%       \item Máquina de Estados Algorítmica Programable
-%      \end{itemize}
-% \end{itemize}
-% 
-% 
-% \subsubsection{Electrónica Digital 2}
-% 
-% \begin{itemize}
-%  \item \textbf{Codiseño Hardware-Software}
-%     \begin{itemize}
-%      \item Flujo de Diseño y Particionamiento HW/SW.
-%      \item Comunicación SW -> HW (Direccionamiento)
-%      \item Comunicación HW -> SW (Interrupciones)
-%      \item Componentes de un Sistema etherogéneo.
-%       \begin{itemize}
-%         \item Procesador
-%         \item Buses
-%         \item Periféricos
-%         \item Memorias
-%       \end{itemize}
-%     \end{itemize}
-%  \item \textbf{Arquitectura de Procesadores}
-%     \begin{itemize}
-%      \item Micro-Arquitectura
-%      \item Set de Instrucciones
-%      \item Modos de direccionamiento
-%      \item Interrupciones
-%      \item Pipeline
-%     \end{itemize}
-% 
-%  \item \textbf{Implementacion de Tareas Hardware}
-%     \begin{itemize}
-%      \item Arquitectura de computadores
-%      \begin{itemize}
-%        \item CPU
-%        \item Memorias
-%        \item Periféricos
-%        \item Mapa de Memoria
-%        \item Controlador de Interrupciones Programable
-%      \end{itemize}
-%      \item Definición de la Interfaz HS <-> SW
-%      \item Implementación de Tareas Hardware en Periféricos.
-%     \end{itemize}
-% 
-%  \item \textbf{Flujo de Diseño Software}
-%     \begin{itemize}
-%      \item Cadena de Herramientas: 
-%      \begin{itemize}
-%        \item Compilador
-%        \item Librerías standard
-%        \item Depurador
-%        \item Utilidades binarias
-%        \item Código de Inicio C RunTime crt0
-%        \item Herramienta \textit{make}
-%      \end{itemize}
-%      \item Integración del Software sobre hardware Electrónico.
-%        \begin{itemize}
-%         \item Ejecución en Memoria Interna
-%         \item Ejecución en Memoria Externa: Bootloaders
-%        \end{itemize}
-%      \item Implementación de tareas software y comunicación con tareas Hardware.
-%      \end{itemize}
-%  \item \textbf{Sistemas Sobre Silicio}
-%     \begin{itemize}
-%      \item Arquitectura
-%     \end{itemize}
-% \end{itemize}
-% 
-% \subsubsection{Sistemas Embebidos}
-% \begin{itemize}
-%  \item \textbf{Sistemas Embebidos}
-%     \begin{itemize}
-%      \item Definición,aplicaciones
-%      \item Metodología de Diseño
-%      \item Arquitectura
-%        \begin{itemize}
-%           \item Sistema Sobre Silicio
-%           \item Circuitos de Referencia
-%        \end{itemize}
-%     \end{itemize}
-%      \item Iniclialización
-%        \begin{itemize}
-%           \item Métodos de arranque
-%           \item Bootloaders
-%        \end{itemize}
-%  \item \textbf{Sistema Operativo Linux}
-%     \begin{itemize}
-%      \item Arquitectura
-%      \item Sincronización entre procesos
-%      \item Estructura del Kernel y Organización del código fuente
-%      \item Drivers de Dispositivos y módulos del kernel
-%      \item Imágen del kernel
-%      \item Inicialización del Kernel
-%     \end{itemize}
-%  \item \textbf{Sistema de Archivos del root}
-%     \begin{itemize}
-%      \item Tipos de Sistema de Archivos
-%      \item Estructura del Sistema de Archivos del root
-%      \item Archivos de configuración y niveles de ejecución.
-%      \item Montaje del sistema de archvios del root
-%     \end{itemize}
-%  \item \textbf{Interfaz con dispositivos externos al SoC}
-%     \begin{itemize}
-%      \item Control utilizando señales de Entrada/Salida de propósito general (GPIOs)
-%      \item Utilizando puertos de comunicaciones UART, I2C, SPI, USB.
-%      \item Utilizando el controlador de memorias externas del SoC
-%     \end{itemize}
-%  \item \textbf{Interfaz con Periféricos Dedicados Implementados en PLDs}
-%     \begin{itemize}
-%      \item Configuración del PLD utilizando GPIOs del SoC
-%      \item Definición de la Interfaz HW y SW
-%      \item Comunicación con periféricos dedicados
-%     \end{itemize}
-% \end{itemize}
+\subsection{Contenido}
+
+\subsubsection{Electrónica Digital 1}
+\begin{itemize}
+ \item \textbf{Flujo de Diseño de Sistemas Embebidos}
+     \begin{itemize}
+       \item Sistemas Digitales: Panorama Y Perspectiva 
+       \item Metodología de Diseño
+       \item Representaciones de Diseño y Niveles de Abstracción
+     \end{itemize}
+ \item \textbf{Sistemas Numéricos y Operaciones Aritméticas}
+     \begin{itemize}
+       \item Representación de Datos
+       \item Sistemas numéricos: Binario, Octal Hexadecimal
+       \item Representación de números negativos
+       \item Algoritmos para la implementación de operaciones aritméticas
+       \begin{itemize}
+         \item Camino de Datos
+         \item Control
+       \end{itemize}
+     \end{itemize}
+ \item \textbf{Lógica Combinatoria}
+     \begin{itemize}
+      \item Definición.
+      \item Ecuaciones Booleanas, Formas canónicas.
+      \item Módulos Básicos: Multiplexores, codificadores, sumadores, restadores comparadores.
+     \end{itemize}
+ \item \textbf{Lógica Secuencial}
+     \begin{itemize}
+      \item Definición
+      \item Elementos de memoria:
+        \begin{itemize}
+        \item Latch
+        \item Flip-Flop
+        \end{itemize}
+      \item Bloques básicos
+        \begin{itemize}
+        \item Registros
+        \item Acumuladores
+        \item Contadores
+        \end{itemize}
+      \item Máquina de Estados Finitos (FSM)
+        \begin{itemize}
+        \item Arquitectura
+        \item Tipos: Mealy, Moore
+        \item Diagramas de Estado
+        \item Síntesis de Máquinas de Estado
+        \end{itemize}
+      \item Máquinas de Estado Algorítmicas (ASM)
+        \begin{itemize}
+        \item Tareas Hardware
+        \item Componentes: Camino de Datos y Máquina de Control
+        \item Implementación de operaciones aritméticas utilizando ASM
+        \item Identificación, funcionamiento e interfaz de bloques constructores.
+        \item Interacción entre el Camino de Datos y la Máquina de Control
+        \item Lenguajes de Descripción de Hardware
+        \end{itemize}
+     \end{itemize}
+ \item \textbf{Tecnologías de Implementación}
+     \begin{itemize}
+      \item Familia Lógica CMOS
+        \begin{itemize}
+        \item Principio de funcionamiento, consumo de potencia
+        \item Niveles Lógicos y márgenes de ruido
+        \item Retardos, Manejo de Corriente
+        \item Compuertas tri-estado y Open-Drain
+        \end{itemize}
+      \item Dispositivos Lógicos Programables
+        \begin{itemize}
+         \item Arreglos Lógicos Programables (PALs)
+         \item Dispositivos Lógicos Programables (PLDs, CPLDs)
+         \item Arreglo de Compuertas Programable en Campo (FPGA)
+         \item Flujo de Diseño - Programación en Sistema
+        \end{itemize}
+     \end{itemize}
+ \item \textbf{Introducción a los procesadores}
+     \begin{itemize}
+      \item Máquina de Estados Algorítmica Programable
+     \end{itemize}
+\end{itemize}
+
+
+\subsubsection{Electrónica Digital 2}
+
+\begin{itemize}
+ \item \textbf{Codiseño Hardware-Software}
+    \begin{itemize}
+     \item Flujo de Diseño y Particionamiento HW/SW.
+     \item Comunicación SW -> HW (Direccionamiento)
+     \item Comunicación HW -> SW (Interrupciones)
+     \item Componentes de un Sistema etherogéneo.
+      \begin{itemize}
+        \item Procesador
+        \item Buses
+        \item Periféricos
+        \item Memorias
+      \end{itemize}
+    \end{itemize}
+ \item \textbf{Arquitectura de Procesadores}
+    \begin{itemize}
+     \item Micro-Arquitectura
+     \item Set de Instrucciones
+     \item Modos de direccionamiento
+     \item Interrupciones
+     \item Pipeline
+    \end{itemize}
+
+ \item \textbf{Implementacion de Tareas Hardware}
+    \begin{itemize}
+     \item Arquitectura de computadores
+     \begin{itemize}
+       \item CPU
+       \item Memorias
+       \item Periféricos
+       \item Mapa de Memoria
+       \item Controlador de Interrupciones Programable
+     \end{itemize}
+     \item Definición de la Interfaz HS <-> SW
+     \item Implementación de Tareas Hardware en Periféricos.
+    \end{itemize}
+
+ \item \textbf{Flujo de Diseño Software}
+    \begin{itemize}
+     \item Cadena de Herramientas: 
+     \begin{itemize}
+       \item Compilador
+       \item Librerías standard
+       \item Depurador
+       \item Utilidades binarias
+       \item Código de Inicio C RunTime crt0
+       \item Herramienta \textit{make}
+     \end{itemize}
+     \item Integración del Software sobre hardware Electrónico.
+       \begin{itemize}
+        \item Ejecución en Memoria Interna
+        \item Ejecución en Memoria Externa: Bootloaders
+       \end{itemize}
+     \item Implementación de tareas software y comunicación con tareas Hardware.
+     \end{itemize}
+ \item \textbf{Sistemas Sobre Silicio}
+    \begin{itemize}
+     \item Arquitectura
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Sistemas Embebidos}
+\begin{itemize}
+ \item \textbf{Sistemas Embebidos}
+    \begin{itemize}
+     \item Definición,aplicaciones
+     \item Metodología de Diseño
+     \item Arquitectura
+       \begin{itemize}
+          \item Sistema Sobre Silicio
+          \item Circuitos de Referencia
+       \end{itemize}
+    \end{itemize}
+     \item Iniclialización
+       \begin{itemize}
+          \item Métodos de arranque
+          \item Bootloaders
+       \end{itemize}
+ \item \textbf{Sistema Operativo Linux}
+    \begin{itemize}
+     \item Arquitectura
+     \item Sincronización entre procesos
+     \item Estructura del Kernel y Organización del código fuente
+     \item Drivers de Dispositivos y módulos del kernel
+     \item Imágen del kernel
+     \item Inicialización del Kernel
+    \end{itemize}
+ \item \textbf{Sistema de Archivos del root}
+    \begin{itemize}
+     \item Tipos de Sistema de Archivos
+     \item Estructura del Sistema de Archivos del root
+     \item Archivos de configuración y niveles de ejecución.
+     \item Montaje del sistema de archvios del root
+    \end{itemize}
+ \item \textbf{Interfaz con dispositivos externos al SoC}
+    \begin{itemize}
+     \item Control utilizando señales de Entrada/Salida de propósito general (GPIOs)
+     \item Utilizando puertos de comunicaciones UART, I2C, SPI, USB.
+     \item Utilizando el controlador de memorias externas del SoC
+    \end{itemize}
+ \item \textbf{Interfaz con Periféricos Dedicados Implementados en PLDs}
+    \begin{itemize}
+     \item Configuración del PLD utilizando GPIOs del SoC
+     \item Definición de la Interfaz HW y SW
+     \item Comunicación con periféricos dedicados
+    \end{itemize}
+\end{itemize}
 
 
 \subsection{Objetivos de Aprendizaje - Dominio Cognitivo}

@@ -1,0 +1,2366 @@
+Observe que para realizar el diagrama de estados no se tuvieron en cuenta los demás bloques, esta regla se sigue en general, es decir, siempre que trabajemos con un módulo sólo, debe tenerse en cuenta su funcionamiento como un objeto independiente.
+
+{
+Conociendo el funcionamiento de cada uno de los bloques procedemos a
+realizar la descripción en VHDL:}
+
+{\bfseries
+LSR}
+
+{
+Para hacer el diseño general haremos uso de la cláusula
+\textbf{\textit{generic }}para indicar el ancho del registro.}
+
+{\itshape
+\textbf{LIBRARY} ieee;}
+
+{\itshape
+\textbf{USE} ieee.std\_logic\_1164.ALL;}
+
+{\itshape
+\textbf{USE} ieee.numeric\_std.ALL;}
+
+{\itshape
+\textbf{ENTITY} lsr \textbf{IS}}
+
+{\itshape
+ \textbf{generic}(width : natural:=8);  {}-{}-Se debe asignar un valor
+por defecto al genérico}
+
+{\itshape
+\foreignlanguage{spanish}{
+}\foreignlanguage{english}{\textbf{port}}\foreignlanguage{english}{ (}}
+
+{\itshape
+\ \   SH, LOAD, CLK : \textbf{in} std\_logic;\ \ \ \ }
+
+{\itshape
+\ \   INA  \ \ \ \   : \textbf{in}  std\_logic\_vector(width
+\textbf{downto} 1);}
+
+{\itshape
+\ \   OUTA \ \   : \textbf{buffer} std\_logic\_vector(width*2
+\textbf{downto} 1));}
+
+{\itshape
+\textbf{END} lsr;}
+
+{\itshape
+\textbf{ARCHITECTURE} left \textbf{of} lsr \textbf{is}}
+
+{\bfseries\itshape
+begin}
+
+{\itshape
+ \textbf{process} (clk)}
+
+{\itshape
+ \textbf{begin}}
+
+{\itshape
+ \textbf{if} clk\textbf{{\textquotesingle}event} \textbf{and} (clk =
+{\textquotesingle}1{\textquotesingle}) \textbf{then}\ \ {}-{}-Flanco de
+subida en la señal CLK}
+
+{\itshape
+ \textbf{if} (LOAD = {\textquotesingle}1{\textquotesingle})
+\textbf{then}\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+{\itshape
+ LOOP2:}
+
+{\itshape
+ \textbf{for} i \textbf{in} (width + 1) \textbf{to} (width*2) }
+
+{\itshape
+\foreignlanguage{english}{
+}\foreignlanguage{spanish}{LOOP\ \ \ \ \ \ {}-{}-Si LOAD = 1 se carga
+INA en las salidas}}
+
+{\itshape
+ OUTA(i) {\textless}=
+{\textquotesingle}0{\textquotesingle};\ \ \ \ {}-{}-Debido a que INA
+tiene 8 bits y OUTA 16 }
+
+{\itshape
+ \textbf{end} LOOP;\ \ \ \ \ \ {}-{}-los primeros (width) bits deben ser
+cero}
+
+{\itshape
+ OUTA(width \textbf{downto} 1) {\textless}= INA;-{}-Y los (width)
+restantes se cargan con INA}
+
+{\itshape
+ \textbf{elsif} (SH = {\textquotesingle}1{\textquotesingle})
+\textbf{then}\ \ \ \ {}-{}-Si LOAD = 0 y SH = 1 se realiza el }
+
+{\itshape
+\foreignlanguage{spanish}{ }\foreignlanguage{english}{LOOP1:}}
+
+{\itshape
+ \textbf{for} i \textbf{in} 1 \textbf{to} (width*2 -1) }
+
+{\itshape
+\foreignlanguage{english}{
+}\foreignlanguage{spanish}{LOOP\ \ \ \ \ \ {}-{}-corrimiento a la
+izquierda.}}
+
+{\itshape
+\foreignlanguage{spanish}{ }\foreignlanguage{english}{OUTA(i+1)
+{\textless}= OUTA(i);}}
+
+{\itshape
+\foreignlanguage{english}{
+}\foreignlanguage{spanish}{\textbf{end}}\foreignlanguage{spanish}{
+LOOP;\ \ }}
+
+{\itshape
+ OUTA(1) {\textless}=
+{\textquotesingle}0{\textquotesingle};\ \ \ \ {}-{}-El LSB bit después
+del corrimiento es 0}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ OUTA {\textless}= OUTA;\ \ \ \ {}-{}-Si LOAD = 0 y SH = 0 se conserva
+el valor}
+
+{\itshape
+ \textbf{end if};\ \ \ \ \ \ \ \ {}-{}-de las salidas.}
+
+{\itshape
+\foreignlanguage{spanish}{ }\foreignlanguage{english}{\textbf{end
+if}}\foreignlanguage{english}{;}}
+
+{\itshape
+ \textbf{end process};}
+
+{\itshape
+\textbf{end};}
+
+{
+La descripción anterior para el registro de corrimiento, también lo
+podemos escribir de la siguiente forma:}
+
+{\itshape
+\textbf{LIBRARY} ieee;}
+
+{\itshape
+\textbf{USE} ieee.std\_logic\_1164.all;}
+
+{\itshape
+\textbf{USE} ieee.std\_logic\_arith.all;}
+
+{\itshape
+\textbf{ENTITY} lsr \textbf{IS}}
+
+{\itshape
+ \textbf{generic}(width : integer:=255);\ \ {}-{}-Se debe asignar un
+valor por defecto al genérico}
+
+{\itshape
+\foreignlanguage{spanish}{ }\foreignlanguage{english}{port (}}
+
+{\itshape
+\ \ \ \ SH, LOAD, CLK : \textbf{in std\_logic};\ \ \ \ }
+
+{\itshape
+\ \ \ \ INA  :  \textbf{in  integer range }0 \textbf{to }width;}
+
+{\itshape
+\ \ \ \ OUTA  :  \textbf{buffer integer range }0 \textbf{to
+}(width*width -1));}
+
+{\itshape
+\textbf{END }lsr;}
+
+{\itshape
+\textbf{ARCHITECTURE }left \textbf{of }lsr \textbf{is}}
+
+{\bfseries\itshape
+begin}
+
+{\itshape
+ \textbf{process }(clk)}
+
+{\itshape
+ \textbf{begin}}
+
+{\itshape
+ \textbf{if }clk\textbf{{\textquotesingle}event and} (clk =
+{\textquotesingle}1{\textquotesingle}) \textbf{then}\ \ {}-{}-Flanco de
+subida en la señal CLK}
+
+{\itshape
+ \textbf{if }(LOAD = {\textquotesingle}1{\textquotesingle})
+\textbf{then}}
+
+{\itshape
+\foreignlanguage{english}{ }\foreignlanguage{spanish}{OUTA {\textless}=
+INA;}}
+
+{\itshape
+ \textbf{elsif }(SH = {\textquotesingle}1{\textquotesingle})
+\textbf{then}\ \ \ \ {}-{}-Si LOAD = 0 y SH = 1 se realiza el }
+
+{\itshape
+ OUTA {\textless}= OUTA * 2;\ \ \ \ {}-{}-CORRIMIENTO.}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ OUTA {\textless}= OUTA;\ \ \ \ {}-{}-Si LOAD = 0 y SH = 0 se conserva
+el valor}
+
+{\itshape
+ \textbf{end if};\ \ \ \ \ \ \ \ {}-{}-de las salidas.}
+
+{\itshape
+\foreignlanguage{spanish}{ }\foreignlanguage{english}{\textbf{end
+if}}\foreignlanguage{english}{;}}
+
+{\itshape
+ \textbf{end process};}
+
+{\itshape
+\textbf{end architecture};}
+
+{
+El código correspondiente al \textit{testbench} del módulo \textit{lsr}
+es:}
+
+{\itshape
+\textbf{LIBRARY} ieee;}
+
+{\itshape
+\textbf{USE} ieee.std\_logic\_1164.ALL;}
+
+{\itshape
+\textbf{USE} ieee.numeric\_std.ALL;}
+
+{\itshape
+\textbf{ENTITY} testbench \textbf{IS}}
+
+{\itshape
+\textbf{END} testbench;}
+
+{\itshape
+\textbf{ARCHITECTURE} behavior \textbf{OF} testbench \textbf{IS} }
+
+{\itshape
+{}-{}- Component Declaration}
+
+{\itshape
+\ \ \textbf{COMPONENT} lsr}
+
+{\itshape
+ \textbf{PORT} (}
+
+{\itshape
+\ \ \ \ SH, LOAD, CLK : \textbf{in}  std\_logic;\ \ \ \ }
+
+{\itshape
+\ \ \ \ INA  : \textbf{in}  std\_logic\_vector( 8 \textbf{downto} 1 );}
+
+{\itshape
+\ \ \ \ OUTA  : \textbf{buffer} std\_logic\_vector( 16 \textbf{downto} 1
+) );}
+
+{\itshape
+\ \ \textbf{END} \textbf{COMPONENT};}
+
+{\itshape
+\ \ \textbf{SIGNAL} SH  :  std\_logic;}
+
+{\itshape
+\ \ \textbf{SIGNAL} LOAD  :  std\_logic;}
+
+{\itshape
+\ \ \textbf{SIGNAL} CLK  :  std\_logic;}
+
+{\itshape
+\ \ \textbf{SIGNAL} INA  :  std\_logic\_vector( 8 downto 1 );}
+
+{\itshape
+\ \ \textbf{SIGNAL} OUTA  :  std\_logic\_vector( 16 downto 1 );}
+
+{\itshape
+ \textbf{constant} ncycles  : integer := 10;}
+
+{\itshape
+ \textbf{constant} halfperiod : time := 5 ns;}
+
+{\bfseries\itshape
+BEGIN}
+
+{\itshape
+{}-{}- Component Instantiation}
+
+{\itshape
+\ \ uut: lsr \textbf{PORT} \textbf{MAP}(}
+
+{\itshape
+\ \ \ \ SH  ={\textgreater} SH,}
+
+{\itshape
+\ \ \ \ LOAD ={\textgreater} LOAD,}
+
+{\itshape
+\foreignlanguage{english}{\ \ \ \ }\foreignlanguage{spanish}{CLK 
+={\textgreater} CLK,}}
+
+{\itshape
+\ \ \ \ INA  ={\textgreater} INA,}
+
+{\itshape
+\ \ \ \ OUTA ={\textgreater} OUTA}
+
+{\itshape
+\ \ );}
+
+{\itshape
+ {}-{}- Generacion del Reloj}
+
+{\itshape
+\foreignlanguage{spanish}{ }\foreignlanguage{english}{Clock\_Source:
+}\foreignlanguage{english}{\textbf{process}}}
+
+{\itshape
+ \textbf{begin}}
+
+{\itshape
+ \textbf{for} i \textbf{in} 0 to ncycles \textbf{loop}  {}-{}- Genera
+ncyclos de periodo 10 ns}
+
+{\itshape
+ CLK {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{for} halfperiod;}
+
+{\itshape
+ CLK {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{for} halfperiod;}
+
+{\itshape
+ \textbf{end} \textbf{loop};}
+
+{\itshape
+ \textbf{wait};}
+
+{\itshape
+ \textbf{end} \textbf{process} Clock\_Source;}
+
+{\itshape
+{}-{}-  Test Bench Statements}
+
+{\itshape
+ tb : \textbf{PROCESS}}
+
+{\itshape
+ \textbf{BEGIN}}
+
+{\itshape
+\ \   SH  {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   LOAD {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   INA  {\textless}= {\textquotedbl}00110011{\textquotedbl};}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}event}
+\textbf{and} CLK={\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+\ \   LOAD {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}event}
+\textbf{and} CLK={\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}event}
+\textbf{and} CLK={\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   LOAD {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}even}t
+\textbf{and} CLK={\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   SH  {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{for} i \textbf{in} 1 \textbf{to} 5 \textbf{loop}}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}event}
+\textbf{and} CLK={\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \ \ \  LOAD {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{end} \textbf{loop};}
+
+{\itshape
+ \ \   \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}event}
+\textbf{and} CLK={\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+\ \   LOAD {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \ \   INA  {\textless}= {\textquotedbl}00100010{\textquotedbl};}
+
+{\itshape
+\ \   SH  {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}event}
+\textbf{and} CLK={\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \ \   \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}event}
+\textbf{and} CLK={\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   LOAD {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{END} \textbf{PROCESS}; }
+
+{\itshape
+\textbf{END};}
+
+{
+Aquí utilizamos la multiplicación por dos para generar el corrimiento a
+la derecha, pero para utilizar el operador \textbf{\textit{*}} debemos
+incluir el package aritmético de la IEEE: \textit{std\_logic\_arith}.}
+
+ \includegraphics[width=14.991cm,height=3.05cm]{FSM-img17.png} 
+
+{\centering
+Figura 17. Simulación del módulo LSR.
+\par}
+
+{
+RSR}
+
+{\itshape
+\textbf{LIBRARY} ieee;}
+
+{\itshape
+\textbf{USE} ieee.std\_logic\_1164.ALL;}
+
+{\itshape
+\textbf{USE} ieee.numeric\_std.ALL;}
+
+{\itshape
+\textbf{ENTITY} rsr \textbf{IS}}
+
+{\itshape
+ \textbf{generic}(width : natural:=8);  {}-{}-Se debe asignar un valor
+al genérico}
+
+{\itshape
+\foreignlanguage{spanish}{
+}\foreignlanguage{english}{\textbf{port}}\foreignlanguage{english}{ (}}
+
+{\itshape
+\ \   SH, LOAD, CLK : \textbf{in} std\_logic;\ \ \ \ }
+
+{\itshape
+\ \   INB  \ \ \ \   : \textbf{in}  std\_logic \_vector(width
+\textbf{downto} 1);}
+
+{\itshape
+\ \   OUTB \ \   : \textbf{buffer} std\_logic \_vector(width*2
+\textbf{downto} 1));}
+
+{\itshape
+\textbf{END} rsr;}
+
+{\itshape
+\textbf{ARCHITECTURE} right \textbf{of} rsr \textbf{is}}
+
+{\bfseries\itshape
+begin}
+
+{\itshape
+ \textbf{process} (clk)}
+
+{\itshape
+ \textbf{begin}}
+
+{\itshape
+ \textbf{if} clk\textbf{{\textquotesingle}event} \textbf{and }(clk =
+{\textquotesingle}1{\textquotesingle})
+\textbf{then}\ \ \ \ {}-{}-Flanco de subida en la señal CLK}
+
+{\itshape
+ \textbf{if }(LOAD = {\textquotesingle}1{\textquotesingle})
+\textbf{then}\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+{\itshape
+\foreignlanguage{english}{ }\foreignlanguage{spanish}{OUTB {\textless}=
+INB;\ \ \ \ \ \ \ \ {}-{}-Si LOAD = 1 se carga el registro}}
+
+{\itshape
+ \textbf{elsif }(SH = {\textquotesingle}1{\textquotesingle})
+\textbf{then}\ \ \ \ \ \ {}-{}-Si LOAD = 0 y SH = 1 se realiza el }
+
+{\itshape
+\foreignlanguage{spanish}{ }\foreignlanguage{english}{LOOP1: }}
+
+{\itshape
+ \textbf{for }i \textbf{in }(width) \textbf{downto }2
+LOOP\ \ {}-{}-corrimiento a la derecha.}
+
+{\itshape
+ OUTB(i - 1) {\textless}= OUTB(i);\ \ \ \ \ \ \ \ \ \ \ \ \ \  
+\textbf{end }LOOP;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+{\itshape
+\foreignlanguage{english}{ }\foreignlanguage{spanish}{OUTB(width)
+{\textless}= {\textquotesingle}0{\textquotesingle};\ \ \ \ {}-{}-El MSB
+bit después del corrimiento es 0}}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ OUTB {\textless}= OUTB;\ \ \ \ {}-{}-Si LOAD = 0 y SH = 0 se conserva
+el valor }
+
+{\itshape
+ \textbf{end if};\ \ \ \ \ \ \ \ {}-{}-de las salidas.}
+
+{\itshape
+\foreignlanguage{spanish}{ }\foreignlanguage{english}{\textbf{end
+if}}\foreignlanguage{english}{;}}
+
+{\itshape
+ \textbf{end process};}
+
+{\itshape
+\textbf{end};}
+
+{
+Al utilizar el package \textit{std\_logic\_arith }de la librería
+\textit{ieee }el código es el siguiente:}
+
+{\itshape
+\textbf{library ieee};}
+
+{\itshape
+\textbf{USE }ieee.std\_logic\_1164.all;}
+
+{\itshape
+\textbf{USE }ieee.std\_logic\_arith.all;}
+
+{\itshape
+\textbf{ENTITY }rsr \textbf{IS}}
+
+{\itshape
+ \textbf{generic}(width : integer:=255);  {}-{}-Se debe asignar un valor
+por defecto al genérico}
+
+{\itshape
+\foreignlanguage{spanish}{ }\foreignlanguage{english}{\textbf{port
+}}\foreignlanguage{english}{(}}
+
+{\itshape
+\ \ \ \ SH, LOAD, CLK : \textbf{in }\textbf{std\_logic};\ \ \ \ }
+
+{\itshape
+\ \ \ \ INB  :  \textbf{in  integer range }0 \textbf{to }(width);}
+
+{\itshape
+\ \ \ \ OUTB :  \textbf{buffer integer range }0 \textbf{to }(width));}
+
+{\itshape
+\textbf{END }rsr;}
+
+{\itshape
+\textbf{ARCHITECTURE }right \textbf{of }rsr \textbf{is}}
+
+{\bfseries\itshape
+begin}
+
+{\itshape
+ \textbf{process }(clk)}
+
+{\itshape
+ \textbf{begin}}
+
+{\itshape
+ \textbf{if }clk\textbf{{\textquotesingle}event and }(clk =
+{\textquotesingle}1{\textquotesingle}) \textbf{then}\ \ {}-{}-Flanco de
+subida en la señal CLK}
+
+{\itshape
+ \textbf{if }(LOAD = {\textquotesingle}1{\textquotesingle})
+\textbf{then}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+{\itshape
+\foreignlanguage{english}{ }\foreignlanguage{spanish}{OUTB {\textless}=
+INB;\ \ \ \ \ \ {}-{}-Si LOAD = 1 se carga el registro}}
+
+{\itshape
+ \textbf{elsif }(SH = {\textquotesingle}1{\textquotesingle})
+\textbf{then}\ \ \ \ {}-{}-Si LOAD = 0 y SH = 1 se realiza el }
+
+{\itshape
+ OUTB {\textless}= OUTB / 2;}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ OUTB {\textless}= OUTB;\ \ \ \ {}-{}-Si LOAD = 0 y SH = 0 se conserva
+el valor }
+
+{\itshape
+ \textbf{end if};\ \ \ \ \ \ \ \ {}-{}-de las salidas.}
+
+{\itshape
+\foreignlanguage{spanish}{ }\foreignlanguage{english}{\textbf{end
+if}}\foreignlanguage{english}{;}}
+
+{\itshape
+ \textbf{end process};}
+
+{\itshape
+\textbf{end architecture};}
+
+{
+El siguiente es el código VHDL para la realización del
+\textit{TestBench}:}
+
+{\itshape
+\textbf{LIBRARY} ieee;}
+
+{\itshape
+\textbf{USE} ieee.std\_logic\_1164.ALL;}
+
+{\itshape
+\textbf{USE} ieee.numeric\_std.ALL;}
+
+{\itshape
+\textbf{ENTITY} testbench \textbf{IS}}
+
+{\itshape
+\textbf{END} testbench;}
+
+{\itshape
+\textbf{ARCHITECTURE} behavior \textbf{OF} testbench \textbf{IS} }
+
+{\itshape
+{}-{}- Component Declaration}
+
+{\itshape
+\ \ \textbf{Component} rsr}
+
+{\itshape
+\ \ \textbf{PORT}(}
+
+{\itshape
+\ \ \ \ SH, LOAD, CLK : \textbf{in}  std\_logic;\ \ \ \ }
+
+{\itshape
+\ \ \ \ INB  : \textbf{in}  std\_logic\_vector( 8 downto 1 );}
+
+{\itshape
+\ \ \ \ OUTB  : \textbf{buffer} std\_logic\_vector( 8 downto 1 )}
+
+{\itshape
+\ \ \ \ );}
+
+{\itshape
+\ \ \textbf{END} \textbf{COMPONENT};}
+
+{\itshape
+\ \ \textbf{SIGNAL} SH  :  std\_logic;}
+
+{\itshape
+\ \ \textbf{SIGNAL} LOAD  :  std\_logic;}
+
+{\itshape
+\ \ \textbf{SIGNAL} CLK  :  std\_logic;}
+
+{\itshape
+\ \ \textbf{SIGNAL} INA  :  std\_logic\_vector( 8 downto 1 );}
+
+{\itshape
+\ \ \textbf{SIGNAL} OUTA  :  std\_logic\_vector( 8 downto 1 );}
+
+{\itshape
+ \textbf{constant} ncycles : \textbf{integer} := 20;}
+
+{\itshape
+ \textbf{constant} halfperiod : \textbf{time} := 5 ns;}
+
+{\bfseries\itshape
+BEGIN}
+
+{\itshape
+{}-{}- Component Instantiation}
+
+{\itshape
+\ \ uut: rsr \textbf{PORT} \textbf{MAP}(}
+
+{\itshape
+\ \ \ \ SH  ={\textgreater} SH,}
+
+{\itshape
+\ \ \ \ LOAD ={\textgreater} LOAD,}
+
+{\itshape
+\ \ \ \ CLK  ={\textgreater} CLK,}
+
+{\itshape
+\ \ \ \ INB  ={\textgreater} INA,}
+
+{\itshape
+\foreignlanguage{english}{\ \ \ \ }\foreignlanguage{spanish}{OUTB
+={\textgreater} OUTA}}
+
+{\itshape
+\ \ );}
+
+{\itshape
+ {}-{}- Generacion del Reloj}
+
+{\itshape
+\foreignlanguage{spanish}{ }\foreignlanguage{english}{Clock\_Source:
+}\foreignlanguage{english}{\textbf{process}}}
+
+{\itshape
+ \textbf{begin}}
+
+{\itshape
+ \textbf{for} i \textbf{in} 0 \textbf{to} ncycles \textbf{loop}  {}-{}-
+Genera ncyclos de periodo 10 ns}
+
+{\itshape
+ CLK {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{for} halfperiod;}
+
+{\itshape
+ CLK {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{for} halfperiod;}
+
+{\itshape
+ \textbf{end} \textbf{loop};}
+
+{\itshape
+ \textbf{wait};}
+
+{\itshape
+ \textbf{end} \textbf{process} Clock\_Source;}
+
+{\itshape
+{}-{}-  Test Bench Statements}
+
+{\itshape
+ tb : \textbf{PROCESS}}
+
+{\itshape
+ \textbf{BEGIN}}
+
+{\itshape
+\ \   SH  {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   LOAD {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   INA  {\textless}= {\textquotedbl}10001000{\textquotedbl};}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}event}
+\textbf{and} CLK={\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+\ \   LOAD {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}event}
+\textbf{and} CLK={\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{wait until} CLK\textbf{{\textquotesingle}event and
+}CLK={\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   LOAD {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}event
+and} CLK={\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   SH  {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{for} i \textbf{in} 1 \textbf{to} 6 \textbf{loop}}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}event}
+\textbf{and} CLK={\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+\ \ \ \  LOAD {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{end} \textbf{loop};}
+
+{\itshape
+\ \   LOAD {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+\ \   SH  {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}event}
+\textbf{and} CLK={\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   INA  {\textless}= {\textquotedbl}11111111{\textquotedbl};}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}event}
+\textbf{and} CLK={\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   LOAD {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   SH  {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{for} i \textbf{in} 1 \textbf{to} 9 \textbf{loop}}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}event}
+\textbf{and} CLK={\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+\ \ \ \  LOAD {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{end} \textbf{loop};}
+
+{\itshape
+\ \   SH  {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{wait};}
+
+{\itshape
+ \textbf{END} \textbf{PROCESS}; }
+
+{\itshape
+\textbf{END};}
+
+{\centering 
+\includegraphics[width=14.991cm,height=3.05cm]{FSM-img18.png} \par}
+
+{\centering
+Figura 18. Simulación del módulo RSR.
+\par}
+
+{
+CONTROL}
+
+{\itshape
+\textbf{LIBRARY} ieee;}
+
+{\itshape
+\textbf{USE} ieee.std\_logic\_1164.ALL;}
+
+{\itshape
+\textbf{USE} ieee.numeric\_std.ALL;}
+
+{\itshape
+\textbf{ENTITY} controll \textbf{IS}}
+
+{\itshape
+\ \ \textbf{PORT}(}
+
+{\itshape
+\ \ \ \ clk\ \ \ \ :\ \ \textbf{IN}\ \ std\_logic;}
+
+{\itshape
+\ \ \ \ INIT, LSB, Z\ \ :\ \ \textbf{IN}\ \ std\_logic;}
+
+{\itshape
+\ \ \ \ SH,RESET\ \ :\ \ \textbf{OUT}\ \ std\_logic;}
+
+{\itshape
+\ \ \ \ ADD, DONE\ \ :\ \ \textbf{OUT }\ \ std\_logic);}
+
+{\itshape
+\textbf{END} controll;}
+
+{\itshape
+\textbf{ARCHITECTURE} funcional \textbf{OF} controll \textbf{IS}}
+
+{\itshape
+\ \ \textbf{TYPE} \ \ estados\ \ \textbf{IS} (start, check, addd, shift,
+end1);}
+
+{\itshape
+\ \ \textbf{SIGNAL}\ \ current\_state, next\_state\ \ :\ \ estados;}
+
+{\bfseries\itshape
+BEGIN}
+
+{\itshape
+ \textbf{PROCESS} (current\_state, INIT, LSB, Z) }
+
+{\itshape
+ \textbf{BEGIN}}
+
+{\itshape
+ \textbf{case} current\_state \textbf{is}}
+
+{\itshape
+ \textbf{when} start ={\textgreater} SH {\textless}=
+{\textquotesingle}0{\textquotesingle}; RESET {\textless}=
+{\textquotesingle}1{\textquotesingle}; ADD {\textless}=
+{\textquotesingle}0{\textquotesingle}; DONE {\textless}=
+{\textquotesingle}0{\textquotesingle}; }
+
+{\itshape
+ \textbf{if} (INIT = {\textquotesingle}1{\textquotesingle})
+\textbf{then}}
+
+{\itshape
+ next\_state {\textless}= check;}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ next\_state {\textless}= start;}
+
+{\itshape
+ \textbf{end if};}
+
+{\itshape
+ \textbf{when }check ={\textgreater} SH {\textless}=
+{\textquotesingle}0{\textquotesingle}; RESET {\textless}=
+{\textquotesingle}0{\textquotesingle}; ADD {\textless}=
+{\textquotesingle}0{\textquotesingle}; DONE {\textless}=
+{\textquotesingle}0{\textquotesingle}; }
+
+{\itshape
+ \textbf{if} (Z = {\textquotesingle}1{\textquotesingle}) \textbf{then}}
+
+{\itshape
+ next\_state {\textless}= end1;}
+
+{\itshape
+ \textbf{elsif} (LSB = {\textquotesingle}1{\textquotesingle})
+\textbf{then}}
+
+{\itshape
+ next\_state {\textless}= addd;}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ next\_state {\textless}= shift;}
+
+{\itshape
+ \textbf{end if};}
+
+{\itshape
+ \textbf{when} addd  ={\textgreater} SH {\textless}=
+{\textquotesingle}0{\textquotesingle}; RESET {\textless}=
+{\textquotesingle}0{\textquotesingle}; ADD {\textless}=
+{\textquotesingle}1{\textquotesingle}; DONE {\textless}=
+{\textquotesingle}0{\textquotesingle}; }
+
+{\itshape
+ next\_state {\textless}= shift;}
+
+{\itshape
+ \textbf{when} shift ={\textgreater} SH {\textless}=
+{\textquotesingle}1{\textquotesingle}; RESET {\textless}=
+{\textquotesingle}0{\textquotesingle}; ADD {\textless}=
+{\textquotesingle}0{\textquotesingle}; DONE {\textless}=
+{\textquotesingle}0{\textquotesingle}; }
+
+{\itshape
+ next\_state {\textless}= check;}
+
+{\itshape
+ \textbf{when} end1  ={\textgreater} SH {\textless}=
+{\textquotesingle}0{\textquotesingle}; RESET {\textless}=
+{\textquotesingle}0{\textquotesingle}; ADD {\textless}=
+{\textquotesingle}0{\textquotesingle}; DONE {\textless}=
+{\textquotesingle}1{\textquotesingle}; }
+
+{\itshape
+ next\_state {\textless}= start;}
+
+{\itshape
+ \textbf{end case};}
+
+{\itshape
+ \textbf{END PROCESS};}
+
+{\itshape
+ \textbf{process} (CLK)}
+
+{\itshape
+ \textbf{begin}}
+
+{\itshape
+ \textbf{if }clk\textbf{{\textquotesingle}event and }(clk =
+{\textquotesingle}1{\textquotesingle}) \textbf{then}}
+
+{\itshape
+ current\_state {\textless}= next\_state;}
+
+{\itshape
+ \textbf{end if};}
+
+{\itshape
+ \textbf{end process};}
+
+{\itshape
+\textbf{END }funcional;}
+
+{
+El código correspondiente al \textit{testbench} del módulo CONTROL es:}
+
+{\itshape
+\textbf{LIBRARY} ieee;}
+
+{\itshape
+\textbf{USE} ieee.std\_logic\_1164.ALL;}
+
+{\itshape
+\textbf{USE} ieee.numeric\_std.ALL;}
+
+{\itshape
+\textbf{ENTITY} testbench \textbf{IS}}
+
+{\itshape
+\textbf{END} testbench;}
+
+{\itshape
+\textbf{ARCHITECTURE} behavior \textbf{OF} testbench \textbf{IS} }
+
+{\itshape
+\ \ \textbf{COMPONENT} controll}
+
+{\itshape
+\ \ \textbf{PORT}(}
+
+{\itshape
+\ \ \ \ clk  : \textbf{IN} std\_logic;}
+
+{\itshape
+\ \ \ \ INIT  : \textbf{IN} std\_logic;}
+
+{\itshape
+\ \ \ \ LSB  : \textbf{IN} std\_logic;}
+
+{\itshape
+\ \ \ \ Z  : \textbf{IN} std\_logic;  }
+
+{\itshape
+\ \ \ \ SH  : \textbf{OUT} std\_logic;}
+
+{\itshape
+\ \ \ \ RESET : \textbf{OUT} std\_logic;}
+
+{\itshape
+\ \ \ \ ADD  : \textbf{OUT} std\_logic;}
+
+{\itshape
+\ \ \ \ DONE  : \textbf{OUT} std\_logic}
+
+{\itshape
+\ \ \ \ );}
+
+{\itshape
+\ \ \textbf{END} \textbf{COMPONENT};}
+
+{\itshape
+\ \ \textbf{SIGNAL} clk  :  std\_logic;}
+
+{\itshape
+\ \ \textbf{SIGNAL} INIT  :  std\_logic;}
+
+{\itshape
+\ \ \textbf{SIGNAL} LSB  :  std\_logic;}
+
+{\itshape
+\ \ \textbf{SIGNAL} Z  :  std\_logic;}
+
+{\itshape
+\ \ \textbf{SIGNAL} SH  :  std\_logic;}
+
+{\itshape
+\ \ \textbf{SIGNAL} RESET  :  std\_logic;}
+
+{\itshape
+\ \ \textbf{SIGNAL} ADD  :  std\_logic;}
+
+{\itshape
+\ \ \textbf{SIGNAL} DONE  :  std\_logic;}
+
+{\itshape
+ \textbf{constant} ncycles  : integer := 26;}
+
+{\itshape
+ \textbf{constant} halfperiod : time := 5 ns;}
+
+{\bfseries\itshape
+BEGIN}
+
+{\itshape
+\ \ uut: controll \textbf{PORT} \textbf{MAP}(}
+
+{\itshape
+\ \ \ \ clk  ={\textgreater} clk,}
+
+{\itshape
+\ \ \ \ INIT  ={\textgreater} INIT,}
+
+{\itshape
+\foreignlanguage{english}{\ \ \ \ }\foreignlanguage{spanish}{LSB 
+={\textgreater} LSB,}}
+
+{\itshape
+\ \ \ \ Z  ={\textgreater} Z,}
+
+{\itshape
+\foreignlanguage{spanish}{\ \ \ \ }\foreignlanguage{english}{SH 
+={\textgreater} SH,}}
+
+{\itshape
+\ \ \ \ RESET ={\textgreater} RESET,}
+
+{\itshape
+\ \ \ \ ADD  ={\textgreater} ADD,}
+
+{\itshape
+\ \ \ \ DONE  ={\textgreater} DONE}
+
+{\itshape
+\ \ );}
+
+{\itshape
+ {}-{}- Generacion del Reloj}
+
+{\itshape
+ Clock\_Source: \textbf{process}}
+
+{\itshape
+ \textbf{begin}}
+
+{\itshape
+ \textbf{for} i \textbf{in} 0 \textbf{to} ncycles \textbf{loop}  {}-{}-
+Genera ncyclos de periodo 10 ns}
+
+{\itshape
+ CLK {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{for} halfperiod;}
+
+{\itshape
+ CLK {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{for} halfperiod;}
+
+{\itshape
+ \textbf{end} \textbf{loop};}
+
+{\itshape
+ \textbf{wait};}
+
+{\itshape
+ \textbf{end} \textbf{process} Clock\_Source;}
+
+{\itshape
+ tb : \textbf{PROCESS}}
+
+{\itshape
+ \textbf{BEGIN}}
+
+{\itshape
+ INIT  {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\foreignlanguage{english}{ }\foreignlanguage{spanish}{LSB  {\textless}=
+{\textquotesingle}0{\textquotesingle};}}
+
+{\itshape
+ Z  {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\foreignlanguage{spanish}{
+}\foreignlanguage{english}{\textbf{wait}}\foreignlanguage{english}{
+}\foreignlanguage{english}{\textbf{until}}\foreignlanguage{english}{
+CLK}\foreignlanguage{english}{\textbf{{\textquotesingle}event}}\foreignlanguage{english}{
+}\foreignlanguage{english}{\textbf{and}}\foreignlanguage{english}{
+CLK={\textquotesingle}1{\textquotesingle};}}
+
+{\itshape
+ \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}even}t
+\textbf{and} CLK={\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   INIT {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}event
+and }CLK={\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   INIT {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}event}
+\textbf{and} CLK={\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   LSB  {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}event}
+\textbf{and} CLK={\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}event}
+\textbf{and} CLK={\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+\ \   LSB  {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{for} i \textbf{in} 1 \textbf{to} 6 \textbf{loop}}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} CLK{\textquotesingle}\textbf{event}
+\textbf{and} CLK={\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{end} \textbf{loop};}
+
+{\itshape
+\ \   LSB  {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{for} i \textbf{in} 1 \textbf{to} 9 \textbf{loop}}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} CLK{\textquotesingle}\textbf{event}
+\textbf{and} CLK={\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{end} \textbf{loop};}
+
+{\itshape
+\ \   LSB  {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}even}t
+\textbf{and} CLK={\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+\ \   Z  {\textless}= {\textquotesingle}1{\textquotesingle};\ \   }
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}event}
+\textbf{and} CLK={\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}event}
+\textbf{and} CLK={\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   Z  {\textless}= {\textquotesingle}0{\textquotesingle};\ \   }
+
+{\itshape
+\ \   \textbf{wait};}
+
+{\itshape
+ \textbf{END} \textbf{PROCESS};}
+
+{\itshape
+\textbf{END};}
+
+ \includegraphics[width=12.896cm,height=3.84cm]{FSM-img19.png} 
+
+{
+Figura 19. Simulación del módulo CONTROL}
+
+{\bfseries
+ACC}
+
+{\itshape
+\textbf{LIBRARY} ieee;}
+
+{\itshape
+\textbf{USE} ieee.std\_logic\_1164.all;}
+
+{\itshape
+\textbf{USE} ieee.std\_logic\_arith.all;}
+
+{\itshape
+\textbf{ENTITY} acc1 \textbf{IS} }
+
+{\itshape
+\ \ GENERIC(width : integer := 255);}
+
+{\itshape
+\ \ PORT(}
+
+{\itshape
+\ \ \ \ clk, RESET, ADD :\ \ \textbf{IN}\ \ std\_logic;}
+
+{\itshape
+\ \ \ \ SA\ \ \ \   :\ \ \textbf{IN}\ \ \textbf{integer} \textbf{range}
+0 \textbf{to} width;}
+
+{\itshape
+\ \ \ \ P\ \ \ \  :\ \ \textbf{buffer} \textbf{integer} \textbf{range} 0
+\textbf{to} width);}
+
+{\itshape
+\textbf{END} \textbf{entity} acc1;}
+
+{\itshape
+\textbf{ARCHITECTURE} funcional \textbf{OF} acc1 \textbf{IS}}
+
+{\bfseries\itshape
+BEGIN}
+
+{\itshape
+ \textbf{PROCESS} (clk) }
+
+{\itshape
+ \textbf{BEGIN}}
+
+{\itshape
+ \textbf{if} (clk\textbf{{\textquotesingle}event} \textbf{and} clk =
+{\textquotesingle}1{\textquotesingle}) \textbf{then}}
+
+{\itshape
+ \textbf{if} (RESET = {\textquotesingle}1{\textquotesingle})
+\textbf{then}}
+
+{\itshape
+ P {\textless}= 0;}
+
+{\itshape
+ \textbf{ }\textbf{elsif }(ADD = {\textquotesingle}0{\textquotesingle})
+\textbf{then}}
+
+{\itshape
+ P {\textless}= P;}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ P {\textless}= SA + P;}
+
+{\itshape
+ \textbf{end if};}
+
+{\itshape
+ \textbf{end if};}
+
+{\itshape
+ \textbf{END} \textbf{PROCESS};}
+
+{\itshape
+\textbf{END architecture }funcional;}
+
+{
+En el código del módulo ACC incluimos el package
+\textit{std\_logic\_arith} de la librería IEEE, esto se debe hacer
+cuando se utilicen los operadores aritméticos, además definimos las
+señales SA y P como enteros, esto se hace porque la cláusula
+\textbf{\textit{+}} opera sobre este tipo de señales (para las señales
+tipo bit\_vector no está declarada la cláusula \textbf{\textit{+}}).}
+
+{
+El código VHDL correspondiente al \textit{testbench} del Acumulador es
+el siguiente:}
+
+{\itshape
+\textbf{LIBRARY} ieee;}
+
+{\itshape
+\textbf{USE} ieee.std\_logic\_1164.all;}
+
+{\itshape
+\textbf{USE} ieee.std\_logic\_arith.all;}
+
+{\itshape
+\textbf{ENTITY} testbench \textbf{IS}}
+
+{\itshape
+\textbf{END} testbench;}
+
+{\itshape
+\textbf{ARCHITECTURE} behavior \textbf{OF} testbench \textbf{IS} }
+
+{\itshape
+\ \ \textbf{COMPONENT} acc1}
+
+{\itshape
+\ \ \textbf{PORT}(}
+
+{\itshape
+\ \ \ \ clk  : \textbf{IN}  std\_logic;}
+
+{\itshape
+\ \ \ \ RESET : \textbf{IN}  std\_logic;}
+
+{\itshape
+\ \ \ \ ADD  : \textbf{IN}  std\_logic;}
+
+{\itshape
+\ \ \ \ SA  : \textbf{IN}  \textbf{integer} \textbf{range} 0 \textbf{to}
+65024;  }
+
+{\itshape
+\ \ \ \ P  : \textbf{BUFFER} \textbf{integer} \textbf{range} 0
+\textbf{to }65024}
+
+{\itshape
+\ \ \ \ );}
+
+{\itshape
+\ \ \textbf{END} \textbf{COMPONENT};}
+
+{\itshape
+\ \ \textbf{SIGNAL} clk  :  std\_logic;}
+
+{\itshape
+\ \ \textbf{SIGNAL} RESET  :  std\_logic;}
+
+{\itshape
+\ \ \textbf{SIGNAL} ADD  :  std\_logic;}
+
+{\itshape
+\ \ \textbf{SIGNAL} SA  :  integer range 0 to 65024;}
+
+{\itshape
+\ \ \textbf{SIGNAL} P  :  integer range 0 to 65024;}
+
+{\itshape
+ \textbf{constant} ncycles  :  integer := 18;}
+
+{\itshape
+ \textbf{constant} halfperiod :  time := 5 ns;}
+
+{\bfseries\itshape
+BEGIN}
+
+{\itshape
+\ \ uut: acc1 \textbf{PORT} \textbf{MAP}(}
+
+{\itshape
+\ \ \ \ clk  ={\textgreater} clk,}
+
+{\itshape
+\ \ \ \ RESET ={\textgreater} RESET,}
+
+{\itshape
+\ \ \ \ ADD  ={\textgreater} ADD,}
+
+{\itshape
+\ \ \ \ SA  ={\textgreater} SA,}
+
+{\itshape
+\foreignlanguage{english}{\ \ \ \ }\foreignlanguage{spanish}{P 
+={\textgreater} P}}
+
+{\itshape
+\ \ );}
+
+{\itshape
+ {}-{}- Generacion del Reloj}
+
+{\itshape
+\foreignlanguage{spanish}{ }\foreignlanguage{english}{Clock\_Source:
+}\foreignlanguage{english}{\textbf{process}}}
+
+{\itshape
+ \textbf{begin}}
+
+{\itshape
+ \textbf{for} i \textbf{in} 0 \textbf{to} ncycles \textbf{loop}  {}-{}-
+Genera ncyclos de periodo 10 ns}
+
+{\itshape
+ CLK {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{for} halfperiod;}
+
+{\itshape
+ CLK {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{for} halfperiod;}
+
+{\itshape
+ \textbf{end} \textbf{loop};}
+
+{\itshape
+ \textbf{wait};}
+
+{\itshape
+ \textbf{end} \textbf{process} Clock\_Source;}
+
+{\itshape
+ SA\_Source:\textbf{Process}}
+
+{\itshape
+ \textbf{Begin}}
+
+{\itshape
+ \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}event and}
+CLK={\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}even}t
+\textbf{and} CLK={\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ SA {\textless}= 1;}
+
+{\itshape
+ \textbf{for} i \textbf{in} 1 \textbf{to} 9 \textbf{loop}}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}event
+and} CLK={\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}event}
+\textbf{and} CLK={\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ SA {\textless}= SA + 1;}
+
+{\itshape
+\ \  \textbf{end} \textbf{loop};}
+
+{\itshape
+\ \  \textbf{wait};}
+
+{\itshape
+ \textbf{End} \textbf{Process};}
+
+{\itshape
+ tb : \textbf{PROCESS}}
+
+{\itshape
+ \textbf{BEGIN}}
+
+{\itshape
+ RESET {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   ADD  {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}event}
+\textbf{and} CLK={\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}event}
+\textbf{and} CLK={\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ RESET {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}event}
+\textbf{and} CLK={\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ RESET {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}event}
+\textbf{and} CLK={\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ ADD  {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{for} i \textbf{in} 1 \textbf{to} 6 \textbf{loop}}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}event}
+\textbf{and} CLK={\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{end} \textbf{loop};}
+
+{\itshape
+ ADD  {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}event}
+\textbf{and} CLK={\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ RESET {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}event}
+\textbf{and} CLK={\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ RESET {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \ \   \textbf{wait} \textbf{until} CLK\textbf{{\textquotesingle}event}
+\textbf{and} CLK={\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ ADD  {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{wait};}
+
+{\itshape
+ \textbf{END} \textbf{PROCESS};}
+
+{\itshape
+\textbf{END};}
+
+{\centering 
+\includegraphics[width=14.984cm,height=2.709cm]{FSM-img20.png} \par}
+
+{\centering
+Figura 20. Simulación del Acumulador.
+\par}
+
+{\bfseries
+COMP}
+
+{\itshape
+\textbf{LIBRARY} ieee;}
+
+{\itshape
+\textbf{USE} ieee.std\_logic\_1164.all;}
+
+{\itshape
+\textbf{USE} ieee.std\_logic\_arith.all;}
+
+{\itshape
+\textbf{entity} comp \textbf{is}}
+
+{\itshape
+ \textbf{generic} (width : \textbf{integer} := 255);}
+
+{\itshape
+ \textbf{port}(}
+
+{\itshape
+ INB : \textbf{in} \textbf{integer} \textbf{range} 0 \textbf{to} width;}
+
+{\itshape
+ Z  : \textbf{out} std\_logic);}
+
+{\itshape
+\textbf{end} \textbf{entity} comp;}
+
+{\itshape
+\textbf{architecture} comp \textbf{of} comp \textbf{is}}
+
+{\bfseries\itshape
+begin}
+
+{\itshape
+ CERO: \textbf{process} (INB)}
+
+{\itshape
+ \textbf{begin}}
+
+{\itshape
+ \textbf{if} (INB = 0) \textbf{then}}
+
+{\itshape
+\ \   Z {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+\ \ \textbf{else}}
+
+{\itshape
+ Z {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{end if};}
+
+{\itshape
+ \textbf{end process};}
+
+{\itshape
+LSBB: \textbf{process}(INB)}
+
+{\itshape
+\textbf{ }begin}
+
+{\itshape
+ \textbf{if }((INB/2)*2 = INB) \textbf{then}}
+
+{\itshape
+ lsb {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ lsb {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{end if};}
+
+{\itshape
+ \textbf{end process};}
+
+{\itshape
+\textbf{end architecture }comp;}
+
+{
+El código correspondiente al \textit{testbench} del módulo COMP es el
+siguiente:}
+
+{\itshape
+\textbf{LIBRARY} ieee;}
+
+{\itshape
+\textbf{USE} ieee.std\_logic\_1164.ALL;}
+
+{\itshape
+\textbf{USE} ieee.numeric\_std.ALL;}
+
+{\itshape
+\textbf{ENTITY} testbench IS}
+
+{\itshape
+\textbf{END} testbench;}
+
+{\itshape
+\textbf{ARCHITECTURE} behavior \textbf{OF} testbench \textbf{IS} }
+
+{\itshape
+{}-{}- Component Declaration}
+
+{\itshape
+\ \ \textbf{Component} comp}
+
+{\itshape
+\ \ \textbf{PORT}(}
+
+{\itshape
+ INB  : \textbf{in} \textbf{integer} \textbf{range} 0 \textbf{to} 255;}
+
+{\itshape
+ Z,lsb  : \textbf{out} std\_logic}
+
+{\itshape
+\ \ \ \ );}
+
+{\itshape
+\ \ \textbf{END} \textbf{COMPONENT};}
+
+{\itshape
+\ \ \textbf{SIGNAL} INB  : \textbf{integer} \textbf{range} 0 \textbf{to}
+255;}
+
+{\itshape
+\ \ \textbf{SIGNAL} Z, lsb :  std\_logic;}
+
+{\bfseries\itshape
+BEGIN}
+
+{\itshape
+{}-{}- Component Instantiation}
+
+{\itshape
+\ \ uut: comp \textbf{PORT} \textbf{MAP}(}
+
+{\itshape
+\ \ \ \ INB ={\textgreater} INB,}
+
+{\itshape
+\ \ \ \ Z  ={\textgreater} Z,}
+
+{\itshape
+\ \ \ \ lsb ={\textgreater} lsb}
+
+{\itshape
+\ \ );}
+
+{\itshape
+ tb : \textbf{PROCESS}}
+
+{\itshape
+ \textbf{BEGIN}}
+
+{\itshape
+\ \   \textbf{for} i \textbf{in} 0 \textbf{to} 4 \textbf{loop}}
+
+{\itshape
+\ \   INB {\textless}= i;}
+
+{\itshape
+\ \   \textbf{wait} \textbf{for} 200 ns;}
+
+{\itshape
+\ \   \textbf{end} \textbf{loop};}
+
+{\itshape
+\ \   INB {\textless}= 0;}
+
+{\itshape
+\ \   \textbf{wait} \textbf{for} 200 ns;}
+
+{\itshape
+\ \   \textbf{for} i \textbf{in} 6 \textbf{to} 8 \textbf{loop}}
+
+{\itshape
+\ \   INB {\textless}= i;}
+
+{\itshape
+\ \   \textbf{wait} \textbf{for} 200 ns;}
+
+{\itshape
+\ \   \textbf{end} \textbf{loop};}
+
+{\itshape
+ \textbf{wait}; -{}- will wait forever}
+
+{\itshape
+ \textbf{END} \textbf{PROCESS};}
+
+{\itshape
+\textbf{END};}
+
+{\centering 
+\includegraphics[width=14.99cm,height=1.66cm]{FSM-img21.png} \par}
+
+{\centering
+Figura 21. Simulación del módulo COMP
+\par}
+
+{
+Una vez realizados los módulos del multiplicador los unimos utilizando
+la siguiente descripción estructural:}
+
+{\itshape
+\textbf{library ieee};}
+
+{\itshape
+\textbf{USE }ieee.std\_logic\_1164.all;}
+
+{\itshape
+\textbf{USE} ieee.std\_logic\_arith.all;}
+
+{\itshape
+\textbf{entity }multiplica \textbf{is}}
+
+{\itshape
+ \textbf{generic}(}
+
+{\itshape
+\foreignlanguage{english}{ }\foreignlanguage{spanish}{buz:
+integer}\foreignlanguage{spanish}{\textbf{
+}}\foreignlanguage{spanish}{:=255);}}
+
+{\itshape
+ \textbf{port}(}
+
+{\itshape
+\foreignlanguage{spanish}{ }\foreignlanguage{english}{A,B  :
+}\foreignlanguage{english}{\textbf{in
+}}\foreignlanguage{english}{integer}\foreignlanguage{english}{\textbf{
+range }}\foreignlanguage{english}{0
+}\foreignlanguage{english}{\textbf{to
+}}\foreignlanguage{english}{buz;}}
+
+{\itshape
+ ST,CLK  : \textbf{in }std\_logic;}
+
+{\itshape
+ DONE  : \textbf{out }std\_logic;}
+
+{\itshape
+ P  : \textbf{buffer }integer\textbf{ range }0 \textbf{to }(buz*buz
+-1));}
+
+{\itshape
+ \textbf{end entity }multiplica;}
+
+{\itshape
+\textbf{architecture }multi \textbf{of }multiplica \textbf{is}}
+
+{\itshape
+ \textbf{component }lsr}
+
+{\itshape
+ \textbf{generic}(width : integer);}
+
+{\itshape
+ \textbf{port }(}
+
+{\itshape
+ SH, LOAD, CLK : \textbf{in }std\_logic;\ \ \ \ }
+
+{\itshape
+ INA  :  \textbf{in  }integer\textbf{ range }0 \textbf{to }width;}
+
+{\itshape
+ OUTA :  \textbf{buffer }integer\textbf{ range }0 \textbf{to
+}(width*width -1));}
+
+{\itshape
+ \textbf{END component};}
+
+{\itshape
+ \textbf{component }rsr }
+
+{\itshape
+ \textbf{generic}(width : integer);}
+
+{\itshape
+ \textbf{port }(}
+
+{\itshape
+ SH, LOAD, CLK : \textbf{in }std\_logic;\ \ \ \ }
+
+{\itshape
+ INB  :  \textbf{in  }integer\textbf{ range }0 \textbf{to }(width);}
+
+{\itshape
+ OUTB :  \textbf{buffer }integer\textbf{ range }0 \textbf{to }(width));}
+
+{\itshape
+ \textbf{END component};}
+
+{\itshape
+ \textbf{component controll }}
+
+{\itshape
+ \textbf{PORT}(}
+
+{\itshape
+\ \   clk\ \ \ \  :  \textbf{IN  }std\_logic;}
+
+{\itshape
+\ \   INIT, LSB, Z\ \ :  \textbf{IN  }std\_logic;}
+
+{\itshape
+\ \   SH,RESET  :  \textbf{OUT }std\_logic;}
+
+{\itshape
+\ \   ADD, DONE  :  \textbf{OUT }std\_logic);}
+
+{\itshape
+ \textbf{END component};}
+
+{\itshape
+ \textbf{component }acc1\ \ }
+
+{\itshape
+ \textbf{GENERIC}(width : integer);}
+
+{\itshape
+\ \ \textbf{PORT}(}
+
+{\itshape
+\ \ \ \  clk, RESET, ADD :\ \ \textbf{IN\ \ }std\_logic;}
+
+{\itshape
+\ \ \ \  SA\ \ \ \   :\ \ \textbf{IN\ \ }integer\textbf{ range }0
+\textbf{to }(width*width -1);}
+
+{\itshape
+\ \ \ \  P\ \ \ \  :\ \ \textbf{buffer }integer\textbf{ range }0
+\textbf{to }(width*width - 1));}
+
+{\itshape
+ \textbf{end component};}
+
+{\itshape
+ \textbf{component comp }}
+
+{\itshape
+ \textbf{generic }(width : integer);}
+
+{\itshape
+ port(}
+
+{\itshape
+ INB  : \textbf{in} integer \textbf{range} 0 \textbf{to} width;}
+
+{\itshape
+ Z, LSB : \textbf{out} std\_logic);}
+
+{\itshape
+ \textbf{end component};}
+
+{\itshape
+ \textbf{signal }add, shift, lsb, cero, load : std\_logic;}
+
+{\itshape
+ \textbf{signal }INN2 : integer \textbf{range }0 \textbf{to }buz;}
+
+{\itshape
+ \textbf{signal }INN1 : integer \textbf{range }0 \textbf{to }(buz*buz
+-1);}
+
+{\bfseries\itshape
+begin}
+
+{\itshape
+R1: lsr}
+
+{\itshape
+ \textbf{generic map}(buz)}
+
+{\itshape
+\textbf{ }\textbf{port map}(shift, load, CLK, A, INN1);}
+
+{\itshape
+R2: rsr}
+
+{\itshape
+ \textbf{generic map}(buz)}
+
+{\itshape
+ \textbf{port map}(shift, load, CLK, B, INN2);}
+
+{\itshape
+X1: acc1}
+
+{\itshape
+\textbf{ }\textbf{generic map}(buz)}
+
+{\itshape
+\textbf{ }\textbf{port map}(CLK, load, add, INN1, P);}
+
+{\itshape
+X2: comp}
+
+{\itshape
+ \textbf{generic map}(buz)}
+
+{\itshape
+ \textbf{port map}(INN2, cero, lsb);}
+
+{\itshape
+C1: controll}
+
+{\itshape
+ \textbf{port map}(CLK, ST, lsb, cero, shift, load, add, done);}
+
+{\itshape
+\textbf{end architecture }multi;}
+
+{
+El código en VHDL correspondiente al testbench del multiplicador es el
+siguiente:}
+
+{\itshape
+\textbf{LIBRARY} ieee;}
+
+{\itshape
+\textbf{USE} ieee.std\_logic\_1164.ALL;}
+
+{\itshape
+\textbf{USE} ieee.numeric\_std.ALL;}
+
+{\itshape
+\textbf{ENTITY} testbench \textbf{IS}}
+
+{\itshape
+\textbf{END} testbench;}
+
+{\itshape
+\textbf{ARCHITECTURE} behavior \textbf{OF} testbench \textbf{IS} }
+
+{\itshape
+\foreignlanguage{english}{\ \ }\foreignlanguage{spanish}{\textbf{COMPONENT}}\foreignlanguage{spanish}{
+multiplica}}
+
+{\itshape
+\ \ \textbf{PORT}(}
+
+{\itshape
+\foreignlanguage{spanish}{\ \ \ \ }\foreignlanguage{english}{A  :
+}\foreignlanguage{english}{\textbf{IN}}\foreignlanguage{english}{ 
+}\foreignlanguage{english}{\textbf{integer}}\foreignlanguage{english}{
+}\foreignlanguage{english}{\textbf{range}}\foreignlanguage{english}{ 0
+}\foreignlanguage{english}{\textbf{to}}\foreignlanguage{english}{
+255;}}
+
+{\itshape
+\ \ \ \ B  : \textbf{IN}  \textbf{integer} \textbf{range} 0 \textbf{to}
+255;}
+
+{\itshape
+\ \ \ \ ST  : \textbf{IN}  std\_logic;}
+
+{\itshape
+\ \ \ \ CLK  : \textbf{IN}  std\_logic;  }
+
+{\itshape
+\ \ \ \ DONE : \textbf{OUT} std\_logic;}
+
+{\itshape
+\ \ \ \ P  : \textbf{BUFFER} \textbf{integer} \textbf{range} 0
+\textbf{to} 65024}
+
+{\itshape
+\ \ \ \ );}
+
+{\itshape
+\ \ \textbf{END} \textbf{COMPONENT};}
+
+{\itshape
+\ \ \textbf{SIGNAL} A  :  \textbf{integer} \textbf{range} 0 \textbf{to}
+255;}
+
+{\itshape
+\ \ \textbf{SIGNAL} B  :  \textbf{integer} \textbf{range} 0 \textbf{to}
+255;}
+
+{\itshape
+\ \ \textbf{SIGNAL} ST  :  std\_logic;}
+
+{\itshape
+\ \ \textbf{SIGNAL} CLK  :  std\_logic;}
+
+{\itshape
+\ \ \textbf{SIGNAL} DONE :  std\_logic;}
+
+{\itshape
+\ \ \textbf{SIGNAL} P  :  \textbf{integer} \textbf{range} 0 \textbf{to}
+65024;}
+
+{\itshape
+ \textbf{constant} ncycles : \textbf{integer} := 40;}
+
+{\itshape
+ \textbf{constant} halfperiod : \textbf{time} := 5 ns;}
+
+{\bfseries\itshape
+BEGIN}
+
+{\itshape
+\ \ uut: multiplica \textbf{PORT} \textbf{MAP}(}
+
+{\itshape
+\ \ \ \ A  ={\textgreater} A,}
+
+{\itshape
+\ \ \ \ B  ={\textgreater} B,}
+
+{\itshape
+\ \ \ \ ST  ={\textgreater} ST,}
+
+{\itshape
+\ \ \ \ CLK  ={\textgreater} CLK,}
+
+{\itshape
+\ \ \ \ DONE ={\textgreater} DONE,}
+
+{\itshape
+\foreignlanguage{english}{\ \ \ \ }\foreignlanguage{spanish}{P 
+={\textgreater} P}}
+
+{\itshape
+\ \ );}
+
+{\itshape
+ {}-{}- Generacion del Reloj}
+
+{\itshape
+\foreignlanguage{spanish}{ }\foreignlanguage{english}{Clock\_Source:
+}\foreignlanguage{english}{\textbf{process}}}
+
+{\itshape
+ \textbf{begin}}
+
+{\itshape
+ \textbf{for} i \textbf{in} 0 \textbf{to} ncycles \textbf{loop}  {}-{}-
+Genera ncyclos de periodo 10 ns}
+
+{\itshape
+ clk {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{for} halfperiod;}
+
+{\itshape
+ clk {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{for} halfperiod;}
+
+{\itshape
+ \textbf{end} \textbf{loop};}
+
+{\itshape
+ \textbf{wait};}
+
+{\itshape
+ \textbf{end} \textbf{process} Clock\_Source;}
+
+{\itshape
+ tb : \textbf{PROCESS}}
+
+{\itshape
+ \textbf{BEGIN}}
+
+{\itshape
+\ \   A  {\textless}= 12;}
+
+{\itshape
+\ \   B  {\textless}= 12;}
+
+{\itshape
+\ \   ST {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{until} Clk={\textquotesingle}1{\textquotesingle}
+\textbf{and} Clk\textbf{{\textquotesingle}event};}
+
+{\itshape
+\ \   ST {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{until} Clk={\textquotesingle}1{\textquotesingle}
+\textbf{and} Clk\textbf{{\textquotesingle}event};}
+
+{\itshape
+\ \   ST {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} DONE\textbf{{\textquotesingle}event}
+\textbf{and} DONE = {\textquotesingle}0{\textquotesingle}; -{}- Espera
+a que termine la operacion}
+
+{\itshape
+\ \   A  {\textless}= 20;}
+
+{\itshape
+\ \   B  {\textless}= 20;}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until}
+Clk={\textquotesingle}1{\textquotesingle} \textbf{and}
+Clk{\textquotesingle}\textbf{event};}
+
+{\itshape
+\ \   ST {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{until} Clk={\textquotesingle}1{\textquotesingle}
+\textbf{and} Clk{\textquotesingle}\textbf{event};}
+
+{\itshape
+\ \   ST {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until} DONE\textbf{{\textquotesingle}event}
+\textbf{and} DONE = {\textquotesingle}0{\textquotesingle}; -{}- Espera
+a que termine la operacion}
+
+{\itshape
+\ \   A  {\textless}= 20;}
+
+{\itshape
+\ \   B  {\textless}= 20;}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until}
+Clk={\textquotesingle}0{\textquotesingle} \textbf{and}
+Clk\textbf{{\textquotesingle}event};}
+
+{\itshape
+\ \   \textbf{wait} \textbf{until}
+Clk={\textquotesingle}0{\textquotesingle} \textbf{and}
+Clk\textbf{{\textquotesingle}event};}
+
+{\itshape
+ \textbf{wait} \textbf{until} Clk={\textquotesingle}1{\textquotesingle}
+\textbf{and} Clk\textbf{{\textquotesingle}event};}
+
+{\itshape
+\ \   A  {\textless}= 12;}
+
+{\itshape
+\ \   B  {\textless}= 1;}
+
+{\itshape
+ \ \   \textbf{wait} \textbf{until}
+Clk={\textquotesingle}0{\textquotesingle} \textbf{and}
+Clk\textbf{{\textquotesingle}event};}
+
+{\itshape
+\ \   ST {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{until} Clk={\textquotesingle}1{\textquotesingle}
+\textbf{and} Clk\textbf{{\textquotesingle}event};}
+
+{\itshape
+\ \   ST {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{wait}; -{}- will wait forever}
+
+{\itshape
+ \textbf{END} \textbf{PROCESS};}
+
+{\itshape
+\textbf{END};}
+
+{\centering 
+\includegraphics[width=14.99cm,height=3.298cm]{FSM-img22.png} \par}
+
+{\centering
+Figura 22. Simulación del multiplicador.
+\par}
+
+{
+Como se observa en la Figura 22 el multiplicador funciona correctamente,
+además observe que el tiempo requerido para dar la respuesta (Señal
+DONE = {\textquoteleft}1{\textquoteright}) depende de los números a
+multiplicar.}

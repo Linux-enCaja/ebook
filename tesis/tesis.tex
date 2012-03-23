@@ -114,7 +114,7 @@
 \parindent=1cm            
 % \makeatletter\@openrightfalse         %  Elimina la condición de colocar los capítulos en páginas impares, lo que no es necesario
                                       %  cuando se imprime solo por un lado de la hoja
-\input title
+% \input title
 
   \renewcommand{\tablename}{\textbf{Tabla}}
   \renewcommand{\figurename}{\textbf{Figura}}
@@ -124,11 +124,11 @@
 
 %    Elimina la numeración de la tabla de contenidos, lista de imágenes, tablas, 
 %          \renewcommand\thepage{}
-         \tableofcontents
-         \listoffigures
-         \listoftables
-
-         \printglossary[type=\acronymtype,style=long]
+%          \tableofcontents
+%          \listoffigures
+%          \listoftables
+% 
+%          \printglossary[type=\acronymtype,style=long]
 
 
 %          \newpage
@@ -137,19 +137,19 @@
 %    y fija la numeración en 1 para el primer capítulo 
   \pagenumbering{arabic}
 
-          \input intro                  %  Introducción planteamiento del problema
-          \input technology_transfer    %  Marco teórico, recomendaciones, formulación de la metodología
-          \input embedded               %  Aplicación de la metodología, resultados obtenidos
+%           \input intro                  %  Introducción planteamiento del problema
+%           \input technology_transfer    %  Marco teórico, recomendaciones, formulación de la metodología
+%           \input embedded               %  Aplicación de la metodología, resultados obtenidos
           \input education              %  Difusión en la academia 
-          \input commons                %  Difusión como movimiento
-          \input conclusions             %  Conclusiones
+%           \input commons                %  Difusión como movimiento
+%           \input conclusions             %  Conclusiones
 % \@openrighttrue\makeatother
 
 % *******************
 %              Anexos
 % *******************
-         \input emqbit
-         \input papers
+%          \input emqbit
+%          \input papers
 %         \input platform
 
 \addcontentsline{toc}{chapter}{\numberline{}Bibliograf\'{\i}a}
