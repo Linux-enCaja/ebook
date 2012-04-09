@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: HW_copyleft_ES.aux
+The style file: plainnat.bst
+Database file #1: ./biblio.bib.bib
+Warning--empty year in QH
+Warning--can't use both author and editor fields in Sta99
+Warning--empty year in WSCC
+Warning--empty year in WSCC
+Warning--empty note in WCI
+Warning--empty year in WCI
+You've used 17 entries,
+            2773 wiz_defined-function locations,
+            693 strings with 7242 characters,
+and the built_in function-call counts, 5627 in all, are:
+= -- 472
+> -- 268
+< -- 13
++ -- 98
+- -- 81
+* -- 363
+:= -- 915
+add.period$ -- 50
+call.type$ -- 17
+change.case$ -- 76
+chr.to.int$ -- 17
+cite$ -- 40
+duplicate$ -- 305
+empty$ -- 517
+format.name$ -- 98
+if$ -- 1154
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 12
+newline$ -- 92
+num.names$ -- 68
+pop$ -- 187
+preamble$ -- 1
+purify$ -- 61
+quote$ -- 0
+skip$ -- 215
+stack$ -- 0
+substring$ -- 40
+swap$ -- 20
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 177
+warning$ -- 6
+while$ -- 52
+width$ -- 0
+write$ -- 210
+(There were 6 warnings)

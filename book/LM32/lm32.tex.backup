@@ -1,0 +1,18 @@
+
+
+\section{Bus Wishbone}
+
+\subsection{Señales principales}
+
+\begin{itemize}
+ \item \textit{ack_o}: La activación de esta señal indica la terminación normal de un ciclo del bus. 
+ \item \textit{addr_i}: Bus de direcciones. 
+ \item \textit{cyc_i}: Esta señal se activa que un ciclo de bus válido se encuentra en progreso.
+ \item \textit{sel_i}: Estas señales indican cuando se coloca un dato válido en el bus \textit{dat_i} durante un ciclo de escritura, y cuando deberían estar presentes en el bus \textit{dat_o} durante un ciclo de lectura. El número de señales depende de la granularidad del puerto. El LM32 maneja una granularidad de 8 bits sobre un bus de 32 bits, por lo tanto existen 4 señales para seleccionar el byte deseado (\textit{sel_i(3:0)}). 
+ \item \textit{stb_i}: Cuando se activa esta señal se indica al esclavo que ha sido seleccionado. Un esclavo wishbone debe responder a las otras señales únicamente cuando se activa esta señal. El esclavo debe activar la señal \textit{ack_o} como respuesta a la activación de \textit{stb_i}.
+ 
+ \item \textit{we_i}: Esta señal indica la dirección del flujo de datos, en un ciclo de lectura tiene un nivel lógico bajo y en escritura tiene un nivel lógico alto. 
+
+ \item \textit{dat_i}: 
+ \item \textit{dat_o}:
+\end{itemize}

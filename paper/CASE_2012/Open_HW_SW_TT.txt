@@ -1,0 +1,1664 @@
+Metodolog´a Para la Transferencia Tecnol´ gica en
+ı
+o
+la Industria Electr´ nica Basada en Software Libre y
+o
+Hardware Copyleft
+Carlos I. Camargo Bare˜ o
+n
+Universidad Nacional de Colombia,
+Email: cicamargoba@unal.edu.co
+Abstract—Los canales tradicionales para la transferencia tec´
+˜
+nol´ gica en el area del diseno de sistemas embebidos no han sido
+o
+exitosos en los pa´ses en v´a de desarrollo donde la plataforma
+ı
+ı
+tecnol´ gica no est´ lo suﬁcientemente desarrollada para absorver
+o
+a
+esta nueva tecnolog´a y conocimientos, esto se debe en gran parte
+ı
+˜
+a que las empresas de base tecnol´ gica son muy pequenas, con
+o
+˜
+bajos niveles de producci´ n y utilizan metodolog´as de diseno
+o
+ı
+desactualizadas; por otro lado, la dependencia hacia los productos
+˜
+asi´ ticos hace muy dif´cil que estas pequenas empresas puedan
+a
+ı
+crecer sin la protecci´ n del estado. As´ mismo, exite una sobreo
+ı
+oferta de profesionales aﬁnes con la industria electr´ nica, una
+o
+gran parte de ellos provienen de entidades poco consolidadas.
+La uni´ n de estos factores genera una tasa de desempleo muy
+o
+alta, salarios bajos, aumento de la dependencia a los productos
+extranjeros y una desconﬁanza hacia los productos generados
+´
+localmente; lo que afecta de forma considerable el numero
+de estudiantes que ingresan a los programas de formaci´ n
+o
+relacionados con la electr´ nica, llegando hasta el punto del cierre
+o
+de programas acreditados.
+Este art´culo presenta una metodolog´a para la transferencia
+ı
+ı
+˜
+tecnol´ gica en el diseno de sistemas embebidos desarrollada
+o
+en el Departamento de ingenier´a el´ ctrica y electr´ nica de la
+ı
+e
+o
+Universidad Nacional de Colombia; esta metodolog´a tiene como
+ı
+´
+pilares el conocimiento como bien comun, el movimiento de
+software libre y un concepto nuevo desarrollado en conjunto con
+un grupo de desarrolladores hardware y software: el hardware
+copyleft.
+Index Terms—Sistemas Embebidos, educaci´ n en ingenier´a,
+o
+ı
+hardware copyleft.
+
+´
+I. I NTRODUCCI ON
+La transferencia de tecnolog´a ha introducido t´ cnicas de
+ı
+e
+alta productividad y en muchos casos cambios t´ cnicos en
+e
+pa´ses menos desarrollados. La adquisici´ n de tecnolog´a
+ı
+o
+ı
+for´ nea contribuye a mejorar la competitividad en los mera
+cados locales e internacionales en estos pa´ses, en los que
+ı
+debe ser considerada como un proceso vital. Este proceso
+presenta problemas cuando se pierde capacidad de absorci´ n
+o
+por parte del pa´s receptor y la renuencia del pa´s que
+ı
+ı
+transﬁere a transferir tecnolog´a real y el know-how. Por lo
+ı
+que es necesario que estos pa´ses promuevan sus capacidades
+ı
+tecnol´ gicas con el ﬁn de absorber las tecnolog´as for´ neas de
+o
+ı
+a
+forma eﬁciente en funci´ n de sus necesidades locales y de esta
+o
+forma forma generar un r´ pido proceso de industrializaci´ n.
+a
+o
+La transferencia de tecnolog´a seg´ n Van Gigch involucra
+ı
+u
+la adquisici´ n de ”actividad Inventiva” por parte de usuaro
+ios secundarios. Es decir, la transferencia tecnol´ gica no
+o
+
+involucra necesariamente maquinaria o dispositivos f´sicos; el
+ı
+conocimiento puede ser transferido a trav´ s de entrenamiento
+e
+y educaci´ n, y puede incluir temas como manejo efectivo de
+o
+procesos y cambios tecnol´ gicos [1]. No debe confundirse la
+o
+transferencia tecnol´ gica con la apropiaci´ n de tecnolog´a que
+o
+o
+ı
+se deﬁne como el proceso de interacci´ n con la tecnolog´a,
+o
+ı
+la modiﬁcaci´ n de la forma como es usada y el marco
+o
+social dentro del cual es usada. Un ejemplo de apropiaci´ n
+o
+de tecnolog´a lo podemos encontrar en la telefon´a celular,
+ı
+ı
+nuestras sociedades han cambiado dr´ sticamente su forma de
+a
+comunicarse y han generado nuevas actividades alrededor de
+esta tecnolog´a, los usuarios pueden generar aplicaciones que
+ı
+adicionan funcionalidades y servicios.
+A. Tecnolog´a
+ı
+La tecnolog´a es deﬁnida como el factor m´ s signiﬁcativo
+ı
+a
+para mejorar la productividad, calidad y competitividad [2]
+y puede verse como un proceso de transformaci´ n que tiene
+o
+como entrada recursos naturales, bienes, o preductos semimanufacturados y como salida se obtienen bienes consumibles de capital y semi-manufacturados. El Technology Atlas
+team identiﬁca cuatro componentes de la tecnolog´a [1]:
+ı
+Techno-ware relacionado con objetos, herramientas, equipos,
+m´ quinas, veh´culos, facilidades f´sicas, instrumentos, disa
+ı
+ı
+positivos y f´ bricas; Human-ware relacionado con personas,
+a
+habilidades en conocimiento experimental, sabidur´a y creı
+atividad, experiencia, competencia; Info-ware Relacionado
+con la informaci´ n, incluye todo tipo de documentaci´ n y
+o
+o
+datos acumulados relacionados con especiﬁcaci´ n de proceo
+sos,procedimientos, dise˜ os, teor´as, y observaciones; organ
+ı
+ware relacionado con la oganizaci´ n, acuerdos y alianzas
+o
+necesarias para facilitar la integraci´ n de los componentes
+o
+t´ cnico, humano, y de informaci´ n.
+e
+o
+El uso efectivo de estos cuatro componentes requiere el
+cumplimiento de ciertas condiciones. El componente t´ cnico
+e
+requiere de personal con habilidades espec´ﬁcas para poder ser
+ı
+utilizado. Para mejorar la eﬁciencia del sistema el componente
+humano necesita de adaptaci´ n y motivaci´ n. A medida que
+o
+o
+la organizaci´ n cambia para adaptarse a nuevas condiciones o
+o
+requerimientos se debe actualizar el sector de la informaci´ n.
+o
+No es posible realizar operaciones de transformaci´ n ante la
+o
+ausencia de uno de estos cuatro componentes. La tecnolog´a
+ı
+se encuentra fuertemente relacionada con un espectro amplio
+
+de las necesidades humanas, las condiciones f´sicas existentes
+ı
+o por factores culturales derivados de las especiﬁcidades
+hist´ ricas de diferentes grupos sociales [3].
+o
+
+B. Transferencia tecnol´ gica
+o
+Odedra [4] deﬁne la transferencia tecnol´ gica como el
+o
+problema de transfencia de conocimiento (o know-how) sobre un n´ mero de aspectos (que incluyen el conocimiento)
+u
+sobre como funciona un determinado sistema, como operarlo y desarrollar sus aplicaciones, como mantenerlo y si
+es necesario, como producir sus componentes y implementar
+un sistema similar. La transferencia tecnol´ gica se considera
+o
+exitosa cuando los receptores de la tecnolog´a asimilan los
+ı
+conceptos anteriores para suplir sus necesidades locales.
+Seg´ n Jolly [5] La innovaci´ n tecnol´ gica es entendida
+u
+o
+o
+como un nuevo m´ todo, medio o capacidad del individuo
+e
+para realizar una determinada actividad. El resultado de la
+transferencia tecnol´ gica puede ser la aceptaci´ n de una
+o
+o
+pr´ ctica com´ n en otros lugares, o la aplicaci´ n de una
+a
+u
+o
+t´ cnica dise˜ ada para otro uso en la saluci´ n de probe
+n
+o
+lemas locales. La transferencia tecnol´ gica incluye la dio
+fusi´ n de conocimiento cient´ﬁco y la preocupaci´ n por la
+o
+ı
+o
+´
+transformaci´ n del conocimiento en innovaciones utiles. El
+o
+conocimiento es lo que queda al ﬁnal de un proceso documentado y difundido de forma apropiada. Para que la transferencia
+tecnol´ gica sea exitosa es necesario transferir los componentes
+o
+de la tecnolog´a.
+ı
+1) Tipos de Transferencia Tecnol´ gica: Mansﬁeld [6] clasio
+ﬁca la transferencia tecnol´ gica en transferencia de material:
+o
+artefactos tecnol´ gicos, materiales, productos ﬁnales, compoo
+nentes, equipos; transferenica de dise˜ o: dise˜ os, proyectos,
+n
+n
+know-how para fabricar productos dise˜ ados previamente,
+n
+los productos son copiados para producirlos localmente (ingenier´a inversa); transferencia de capacidades: proporciona
+ı
+know-how y software no solo para fabricar componentes
+existentes, sino para innovar y adaptar tecnolog´as existentes
+ı
+para generar nuevos productos. La transferencia de material no
+constituye una transferencia tecnol´ gica real, ya que no geno
+era el conocimiento necesario para transformarlos y generar
+nuevos productos que cumplan con las necesidades locales. La
+transferencia de dise˜ os permite adquirir mayor conocimiento
+n
+sobre la tecnolog´a transferida, sin embargo, es necesario
+ı
+que el pais receptor cuente con la plataforma tecnol´ gica
+o
+adecuada para absorver estos conocimientos, de lo contario no
+se generar´ n nuevos productos y las actividades se limitar´ n al
+a
+a
+ensamblaje de productos pre-manufacturados. La transferencia
+de capacidades es ideal, ya que proporciona las herramientas
+necesarias para que la transferencia sea exitosa, est´ asociada a
+a
+una transferencia de conocimiento, lo cual es vital para entender plenamente la tecnolog´a, mejorando las habilidades de los
+ı
+profesionales del receptor, creando una demanda de bienes y
+servicios relacionados con el conocimiento transferido; lo que
+se traduce en generaci´ n de empleo y aumento del bienestar
+o
+general.
+
+C. Canales para la transferencia de tecnolog´a
+ı
+Grimpe y Hussinger [7] clasiﬁcan los mecanismos en
+Formales: acuerdos de licenciamiento, inversi´ n extranjera,
+o
+compa˜ ´as conjuntas, acuerdos de cooperaci´ n en investinı
+o
+gaci´ n, arreglos de producci´ n conjunta e Informales: No
+o
+o
+involucran acuerdos entre las partes y son dif´ciles de detectar
+ı
+y monitorear, por ejemplo, exportaci´ n de productos teco
+nol´ gicos o bienes de capital, ingenier´a inversa, intercambio
+o
+ı
+de personal t´ cnico y cient´ﬁco, conferencias de ciencia y
+e
+ı
+tecnolog´a, ferias y exposiciones, educaci´ n y entrenamiento
+ı
+o
+realizado por extranjeros, visitas comerciales, literatura abierta
+(art´culos, revistas, libros t´ cnicos), espionaje industrial. Adiı
+e
+cionalmente, existe una divisi´ n basada en la naturaleza de la
+o
+instituci´ n que proporciona los recursos para que se realice
+o
+la transferencia, la instituci´ n puede ser de car´ cter Abierta:
+o
+a
+en donde la tecnolog´a y el conocimiento s´ n considerados
+ı
+o
+bienes p´ blicos, no existen restricciones para acceder a la
+u
+informaci´ n necesaria para adquirir, usar y transformar estos
+o
+´
+conocimientos en productos comerciales, y su exito radica en
+obtener la m´ xima difusi´ n posible para que los usuarios de
+a
+o
+este conocimiento mejoren el material existente y contribuyan
+a su crecimiento con experiencias personales; Cerrada La
+tecnolog´a y el conocimiento se genera para ﬁnes privados,
+ı
+la utilizaci´ n de este conocimiento esta sometida a acuerdos
+o
+comerciales, no es posible entender las bases de la tecnolog´a,
+ı
+por lo que no se pueden generar productos derivados.
+Las actividades realizadas durante este estudio est´ n enmara
+cadas dentro del concepto: El conocimiento es un Bien Com´ n,
+u
+toda la documentaci´ n necesaria para reproducir, entrenar,
+o
+entender y modiﬁcar los productos generados se encuentran
+disponibles en servidores p´ blicos [8] [9] y se proporciona
+u
+soporte a trav´ s de listas de discusi´ n, adicionalmente se
+e
+o
+proporciona soporte comercial para permitir la producci´ n
+o
+de estas modiﬁcaciones. A continuaci´ n se realiza una deo
+scripci´ n de los canales m´ s utilizados para la transferencia
+o
+a
+de tecnolog´a y conocimiento en pa´ses en v´a de desarrollo (
+ı
+ı
+ı
+[10] [4] [11]) indicando en cada caso sus ventajes, limitaciones
+y desventajas.
+1) Adquisici´ n de IT: La adquisici´ n de equipo ha sido
+o
+o
+uno de los mecanismos de transferencia m´ s importantes para
+a
+los pa´ses en desarrollo. Estos equipos se entregan con el
+ı
+software requerido para su funcionamiento con lo que no es
+necesario que los usuarios generen aplicaciones, por lo que
+solo adquieren el conocimiento necesario para utilizar estas
+m´ quinas, y por lo tanto no saben como funcionan. Con la
+a
+´
+venta de equipos se transmite unicamente el conocimiento para
+operar, programar o mantener, sin embargo, este conocimiento
+sobre el sistema puede ayudar a concientizarse sobre la tecnolog´a e impulsar la formaci´ n de capital humano.
+ı
+o
+La experiencia de pa´ses que lograron un r´ pido desarrollo
+ı
+a
+econ´ mico e industrial muestra que la adquisici´ n de una gran
+o
+o
+cantidad de tecnolog´a for´ nea jug´ un papel importante en
+ı
+a
+o
+este proceso. Colombia ha realizado un proceso de transformaci´ n tecnol´ gica pero no ha dise˜ ado pol´ticas efectivas y
+o
+o
+n
+ı
+eﬁcientes para la transferencia de tecnolog´as de alto nivel.
+ı
+
+2) Educaci´ n y Entrenamiento: Educar a las personas a
+o
+trav´ s de cursos y entrenamiento en el pa´s y envi´ ndolas al
+e
+ı
+a
+extranjero para otros estudios es una forma de adquirir knowhow sobre nuevas tecnolog´as. Por otro lado, muchas instituı
+ciones que ofrecen carreras en ingenier´a electr´ nica, ciencias
+ı
+o
+de la computaci´ n y aﬁnes, utilizan modelos pedag´ gicos
+o
+o
+copiados de pa´ses desarrollados, los que no han sido adapı
+tados plenamente a la infraestructura tecnol´ gica local, y no
+o
+es raro encontrar estudiantes que al ﬁnalizar sus estudios no
+est´ n satisfechos con su profesi´ n [4]. No se presenta una
+a
+o
+transferencia tecnol´ gica exitosa cuando estudiantes formados
+o
+en el exterior no pueden aplicar sus conocimientos en su pa´s
+ı
+de origen, por lo que es necesario crear pol´ticas que deﬁnan
+ı
+´
+que areas de estudio son prioritarias para el pa´s.
+ı
+Las multinacionales tambi´ n ofrecen cursos de capacitaci´ n,
+e
+o
+sin embargo, se limitan al uso de sus productos, creando
+dependencia hacia sus herramientas. Adicionalmente, existen
+centros privados de capacitaci´ n que ofrecen cursos para el
+o
+manejo de paquetes y lenguajes de programaci´ n, estos centros
+o
+aprovechan la falta de centros de ense˜ anza tecnol´ gica y
+n
+o
+personal caliﬁcado para cobrar altas sumas de dinero, lo
+cual limita el acceso a la informaci´ n. Programas acad´ micos
+o
+e
+inapropiados, acceso limitado a libros y computadores, falta
+de facilidades para capacitaci´ n, reduce la efectividad de la
+o
+educaci´ n y capacitaci´ n como canal para la transferencia
+o
+o
+tecnol´ gica.
+o
+3) Asistencia T´ cnica: La ventaja de contratar consultores
+e
+externos radica en el ahorro de tiempo y dinero, ya que, utilizar
+personal local implicar´a un gran esfuerzo y posiblemente
+ı
+se tendr´an que asumir errores costosos en el proceso. Sin
+ı
+embargo, no es bueno conﬁar a consultores externos la responsabilidad de construir habilidades locales, ya que reduce el
+desarrollo de estas habilidades, especialmente, la del personal
+encargado de manejar proyectos. En algunas ocasiones los
+consultores no est´ n familiarizados con las condiciones y
+a
+requerimientos locales, por lo que dise˜ an soluciones que no
+n
+se ajustan perfectamente a las necesidades, lo que signiﬁca
+que el sistema es sub-utilizado y la transferencia de tecnolog´a
+ı
+es m´nima. La falta de personal caliﬁcado hace que los
+ı
+consultores se encarguen de todas las tareas del proyecto, lo
+que aumenta su carga de trabajo y disminuye la posibilidad
+de entrenamiento de personal local [10].
+4) Licenciamiento: El licenciamiento es un canal que se
+utiliza para transferencia de know-how sobre productos o procesos, es aplicado de forma individual o en combinaci´ n con
+o
+otros instrumentos como investigaci´ n con inversi´ n extrano
+o
+jera, importaci´ n de maquinaria o de t´ cnicos. Sin embargo,
+o
+e
+esro no es efectivo si no se acompa˜ a de habilidades adminisn
+trativas y de producci´ n. Adicionalmente, es necesario contar
+o
+con una infraestructura tecnol´ gica adecuada, capacidades
+o
+locales de fabricaci´ n de hardware y software y pol´ticas de
+o
+ı
+gobierno adecuadas [11]. Un ejemplo de este tipo de pr´ ctica
+a
+se presenta en el ensamble de dispositivos electr´ nicos, todos
+o
+los componentes se importan completamente terminados y
+el dispositivo ﬁnal es ensamblado probado y se carga la
+conﬁguraci´ n inical, no se producen actividades de ingenier´a
+o
+ı
+
+inversa con lo que se transmite muy poco conocimiento.
+5) Inversi´ n Extranjera Directa: La inversi´ n directa de
+o
+o
+multinacionales es una forma de obtener tecnolog´a externa.
+ı
+Esto asegura una r´ pida transferencia de informaci´ n, pero
+a
+o
+no necesariamente del entendimiento o know-how, lo que
+hace que la tecnolog´a transferida a trav´ s de este canal
+ı
+e
+sea m´nima. Las grandes multinacionales pueden tener cierto
+ı
+control pol´tico en los pa´ses en v´a de desarrollo, hasta tal
+ı
+ı
+ı
+punto que son asesores de instituciones encargadas de ﬁjar
+pol´ticas para la transferencia tecnol´ gica [4]. El objetivo de
+ı
+o
+la transferencia tecnol´ gica debe ser el aumento de la autoo
+suﬁciencia en el pais receptor, unido a un uso compartido de
+recursos y experiencia entre los pa´ses desarrollados y en v´a
+ı
+ı
+de desarrollo. La compra de equipo, plataformas de desarrollo o de software transﬁere muy poco conocimiento sobre
+la tecnolog´a, el servicio post-venta y el mantenimiento es
+ı
+realizado por el proveedor. Por otro lado, si las facilidades en
+educaci´ n y capacitaci´ n son limitadas se limita la formaci´ n
+o
+o
+o
+de capital humano. La asistencia t´ cnica utilizada para suplir
+e
+la falta de personal especializado y ayudar con el proceso de
+transferencia no ha sido muy efectiva.
+II. M OVIMIENTO SOFTWARE LIBRE Y H ARDWARE
+C OPYLEFT
+El movimiento de Software Libre y C´ digo Abierto (FOSS)
+o
+es la estructura auto-gobernada m´ s exitosa, su principal
+a
+innovaci´ n radica en un nuevo esquema de licencias unido
+o
+a herramientas de colaboraci´ n basadas en Internet, lo que
+o
+se convirti´ en una nueva forma de bien com´ n donde los
+o
+u
+miembros de forma colectiva generan un beneﬁcio com´ n el
+u
+software. El desaf´o de FOSS es realizar acciones colectivas
+ı
+para crear y mantener este bien p´ blico. A diferencia de la
+u
+creencia popular, en este movimiento existen derechos de autor
+(copyright) y propiedad intelectual, se poseen derechos legales
+sobre el c´ digo (recurso), tienen control sobre las nuevas
+o
+versiones del software y pueden excluir a otros que aportan
+c´ digo a las nuevas distribuciones.
+o
+6) Transferencia tecnol´ gica: El movimiento FOSS puede
+o
+ser considerado como una instituci´ n abierta que permite y
+o
+promueve la transferencia tecnol´ gica, gracias a la disponio
+bilidad del c´ digo fuente es posible aprender nuevas t´ cnicas
+o
+e
+de programaci´ n, utilizar aplicaciones existentes como hero
+ramientas de desarrollo y entender el funcionamiento y principio de operaci´ n. En la actualidad las grandes multinao
+cionales dedicadas a la generaci´ n de dispositivos electr´ nicos
+o
+o
+de consumo masivo como Apple, Dell, Nokia, HP, Google
+est´ n utilizando productos derivados del proyecto FOSS, esto
+a
+permite tener acceso a la tecnolog´a de estos fabricantes para
+ı
+aplicarlas en productos locales.
+Los foros de discusi´ n permiten tener contacto directo con
+o
+los creadores de los proyectos FOSS todas las conversaciones,
+preguntas/respuestas son almacendas y se proporcionan herramientas que permiten realizar b´ squedas en ellas, lo que
+u
+constituye una fuente de informaci´ n valiosa para cualquier
+o
+persona que quiera mejorar sus conocimientos o habilidades
+
+en el uso de una determinada herramienta, lenguaje de programaci´ n o aplicaci´ n.
+o
+o
+Adicionalmente, gracias al movimiento FOSS se ha creado
+una alternativa abierta que supera en calidad a los productos
+comerciales privativos de Apple y Microsoft, lo que ha permitido reducir de forma considerable el costo de los equipos
+de computo y de esta forma hacer que personas y empresas
+con menos recursos econ´ micos puedan acceder a estas teco
+nolog´as. El movimiento FOSS permite que cualquier persona
+ı
+interesada pueda estudiar y entender la estructura del c´ digo
+o
+de una determinada aplicaci´ n, permitiendo su modiﬁcaci´ n
+o
+o
+para uso particular o comercial, y de esta forma beneﬁciar
+a un sector de la sociedad; lo que no hubiera sido posible
+con los productos comerciales. Es importante recalcar que el
+movimiento FOSS esta dirigido para cualquier persona y no
+es necesario pagar por el acceso a la informaci´ n, esto ha sido
+o
+´
+clave en el exito del movimiento.
+7) Conocimiento como bien com´ n: El Software no es un
+u
+recurso t´pico, porque no es sustraible, no existe un costo
+ı
+si un usuario decide usarlo o no. Sin embargo, es un bien
+com´ n, ya que es un recurso comunal que prospera o decae
+u
+gracias a la contribuci´ n de sus miembros. Los usuarios de este
+o
+tipo de recurso son contribuyentes, en lugar de un grupo de
+propietarios; un aporte de un usuario que mejore el proyecto se
+traduce en un beneﬁcio colectivo. Los contribuyentes pueden
+ser empresas que pagan a una persona para que adicione
+una nueva caracter´stica o adicione soporte a los productos
+ı
+de dichas empresas, sin embargo, ellos pueden decidir no
+compartir estos cambios para tener una ventaja competitiva.
+En la actualidad observamos las tendencias de multinacionales
+como Nokia (Maemo, QT, Meego), Intel (Meego), Google
+(Android), Dell o Motorola a participar, crear y promover
+proyectos de software libre, desde el punto de vista comercial resulta m´ s rentable utilizar herramientas que han sido
+a
+desarrolladas, probadas, y depuradas por miles de usuarios
+caliﬁcados que pagar a un grupo de decenas de desarrolladores
+para desarrollar desde cero una plataforma software.
+En la Figura 1 se ilustra el marco deﬁnido por Ostrom y
+Hess [12] para analizar el conocimiento como bien com´ n,
+u
+aplicado al movimiento FOSS.
+El recurso del proyecto FOSS est´ compuesto por un gran
+a
+grupo de desarrolladores y voluntarios que aportan nuevas
+aplicaciones software, depuran, documentan y actualizan las
+aplicaciones existentes; una plataforma que se encarga de
+administrar los proyectos software: control de revisiones,
+listas de discusi´ n, wikis; un sistema de licenciamiento que
+o
+permite entender, utilizar y modiﬁcar proyectos existentes. La
+”situaci´ n de acci´ n” o la decisi´ n que estos programadores
+o
+o
+o
+deben tomar es contribuir o no al desarrollo de este software.
+La interaci´ n de programadores trabajando de forma conjunta
+o
+en internet puede ser visto como un resultado que puede
+cambiar en el tiempo. Schweik y Semenov [13] identiﬁcaron
+tres estados de este tipo de bien com´ n, una fase inicial,
+u
+seguida por un estado de apertura y un estado m´ s maduro
+a
+de gran crecimiento (en t´ rminos de usuarios y participaci´ n),
+e
+o
+estabilizaci´ n donde el n´ mero de participantes (normalmente
+o
+u
+
+Fig. 1. Marco para analizar el conocimiento como bien com´ n aplicado al
+u
+movimiento FOSS: Modiﬁcaci´ n de: [12] p´ g 46
+o
+a
+
+peque˜ o) no var´a, o el proyecto se estanca y muere (sin
+n
+ı
+participantes). Para que un proyecto sea exitoso, no es necesaria la participaci´ n de un gran n´ mero de programadores,
+o
+u
+es frecuente encontrar grupos peque˜ os de programadores con
+n
+´
+un gran n´ mero de usuarios. La clave del exito est´ en la
+u
+a
+disponibilidad de un programador para contribuir al esfuerzo
+colectivo de por lo menos un peque˜ o grupo de actores que
+n
+producen y mantienen el software.
+III. H ARDWARE COPYLEFT
+El movimiento FOSS proporciona todas las herramientas
+necesarias para el desarrollo de aplicaciones en sistemas
+digitales, sin embargo, este software debe ejecutarse sobre
+una plataforma hardware compuesta por microcontroladores,
+memorias vol´ tiles y no vol´ tiles, dispositivos de comunia
+a
+caci´ n e interfaces hombre - m´ quina. En la actualidad existen
+o
+a
+proyectos aislados como Arduino, Beagle Board, chumby
+y NanoNote que son presentados como open-source, todos
+ellos proporcionan: Esquem´ ticos detallados en formato PDF,
+a
+c´ digo fuente del software necesario para su operaci´ n, soo
+o
+porte a trav´ s de listas de discusi´ n, tutoriales sobre su fune
+o
+cionamiento y programaci´ n, software de desarrollo, archivos
+o
+de dise˜ o: esquem´ tico, layout, archivos para la fabricaci´ n
+n
+a
+o
+de las placas de circuito impreso.
+A excepci´ n de Arduino, los costos necesarios para reproo
+ducir una de estas plataformas es muy elevado, esto se debe
+a las herramientas propietarias utilizadas en el dise˜ o (10000
+n
+USD); las caracter´sticas de la placa de circuito impreso, 6 u
+ı
+8 capas, v´as de .2mm, (400 USD), el costo de los compoı
+nentes (400 USD), y el montaje de encapsuldos BGA, TQFP,
+SMD, y QFN (100). Adicionalmente, algunos componentes
+son dif´ciles de obtener ya que requieren la ﬁrma de acuerdos
+ı
+de conﬁdencialidad. Esto ocasiona que los proyectos opensource hardware no presenten una gran din´ mica en desarrollo
+a
+hardware y las contribuciones se limitan a la fabricaci´ n de
+o
+tarjetas de expansi´ n para prop´ sitos espec´ﬁcos. Desde el
+o
+o
+ı
+punto de vista comercial, estos proyectos son muy atractivos
+ya que permiten modiﬁcar un dise˜ o validado, ahorrando
+n
+mucho tiempo y dinero, desde el punto de vista acad´ mico,
+e
+tener acceso a los archivos de dise˜ o, permite estudiar las
+n
+
+t´ cnicas utilizadas en su dise˜ o para poder aplicarlas en
+e
+n
+proyectos propios.
+El uso de estas plataformas de desarrollo para aplicaciones
+comerciales genera dependencia hacia ellas y elimina la
+necesidad de desarrollo hardware, creando fuentes de empleo
+para personas con un nivel de formaci´ n relativamente alto;
+o
+la dependencia puede llegar hasta el punto de eliminar por
+completo la generaci´ n local; este proceso se est´ obsero
+a
+vando en la actualidad; multinacionales como Microsoft, Dell,
+Apple, Nokia utilizan a empresas asi´ ticas como Foxconn
+a
+para la fabricaci´ n de todos sus productos; lo que trae como
+o
+consecuencia que el n´ mero de empleados de Foxconn es
+u
+mayor que el de Microsoft, Dell, Apple, Nokia combinado
+(fuente: Bureau of Labor Statistics). Las pol´ticas econ´ micas
+ı
+o
+deben estar centradas en la creaci´ n de empleo a todo nivel,
+o
+al eliminar la actividad manufacturera se eliminan una gran
+´
+cantidad de empleos directos e indirectos dejando unicamente
+los relacionados con dise˜ o de aplicaciones, comercializaci´ n
+n
+o
+y ventas.
+Los pa´ses en v´a de desarrollo tienen un elevado grado
+ı
+ı
+de dependencia hacia los productos tecnol´ gicos relacionados
+o
+con los sistemas digitales; esto se debe en gran parte a los
+problemas mencionados anteriormente en los canales tradicionales de transferencia tecnol´ gica y a la no existencia de
+o
+una plataforma capaz de absorver las nuevas tecnolog´as, esto
+ı
+en gran parte se debe a que la informaci´ n se ha centralizado
+o
+en grupos privados que no est´ n interesados en la difusi´ n
+a
+o
+masiva de este conocimiento. Adicionalmente, conseguir el
+nivel de conocimiento necesario para la realizaci´ n de disposo
+itivos comerciales utilizando tecnolog´as modernas requiere
+ı
+un gran esfuerzo que puede llevar varios a˜ os; por otro lado,
+n
+la producci´ n masiva de un determinado dispositivo requiere
+o
+relaciones en el mercado de proveedores de componentes, una
+infraestructura especializada en la manufactura y montaje de
+placas de circuito impreso, y personal especializado en la
+realizaci´ n de pruebas as´ como la infraestructura necesaria
+o
+ı
+para comercializar los productos ﬁnales; muchas empresas
+en pa´ses en v´a de desarrollo no poseen estas relaciones
+ı
+ı
+y no existen proveedores locales de estos servicios; esto se
+debe a la poca demanda y a la gran dependencia de los
+productos extranjeros. Adquirir la infraestructura necesaria
+para la producci´ n local de productos electr´ nicos requiere
+o
+o
+una fuerte inversi´ n econ´ mica, y una demanda interna que
+o
+o
+estimule nuevas inversiones para aumentar y mejorar dichas
+facilidades, lo que no puede realizarse a corto plazo sin la
+intervenci´ n de la academia, la industria y el gobierno. Una
+o
+opci´ n que puede generar resultados a mediano plazo es
+o
+utilizar la infraestructura manufacturera asi´ tica con el f´n de
+a
+ı
+competir en precio y aumentar la demanda interna de bienes
+y servicios hasta llegar al punto de eliminar la dependencia.
+Transferencia tecnol´ gica La iniciativa hardware copyleft
+o
+´
+ofrece un canal para la transferencia tecnol´ gica en el area
+o
+de dise˜ o y producci´ n de sistemas embebidos proporcion
+o
+nando: Dise˜ os de referencia realizados con herramientas
+n
+libres, documentaci´ n completa del proceso de dise˜ o y fabrio
+n
+caci´ n, herramientas de desarrollo abiertas, tutoriales y dise˜ os
+o
+n
+
+documentados, listas de discusicontacto con proveedores de
+componentes, acceso a servicio de prototipado y producci´ n.
+o
+Adicionamete, permitie la creaci´ n de nuevos productos que
+o
+satisfacen necesidades locales. El hardware copyleft es el
+complemento perfecto del software libre ya que permite la
+realizaci´ n de plataformas completamente abiertas que pueden
+o
+ser reproducidas y modiﬁcadas incluso para ﬁnes comerciales.
+Para manejar las licencias se trabajar´ con Creative Coma
+´
+mons 1 organizaci´ n no gubernamental sin animo de lucro que
+o
+ha desarrollado una serie de licencias basadas en principios
+similares a los del movimiento de software libre y que pueden
+ser aplicadas a trabajos realizados en m´ sica, arte, video, texto
+u
+y notas de clase. Para reproducir una plataforma Hardware, es
+necesario suministrar los archivos de las herramientas CAD
+de dise˜ o y fabricaci´ n (PCB, Lista de materiales), por lo
+n
+o
+que esta iniciativa resulta adecuada para distribuir este tipo de
+proyectos. Estas licencias permiten que el autor de un trabajo
+conserve la propiedad intelectual (los derechos asociados a
+´
+esta) pero posibilitando su copia y distribuci´ n, con la unica
+o
+condici´ n de dar cr´ ditos al autor del trabajo original y que
+o
+e
+el trabajo derivado posea la misma licencia. Se pueden elegir
+diferentes permisos dependiendo de los deseos del autor, para
+deﬁnir dichos permisos CreativeCommons proporciona una
+serie de preguntas que buscan determinar los derechos que se
+desean conservar y los que desean liberar. Las preguntas claves
+son: 1) Los lectores pueden copiar y distribuir su trabajo libremente? 2) Es permitido a los usuarios crear trabajos derivados
+del contenido digital? Si es permitido, estas modiﬁcaciones
+deben tener la misma licencia que el trabajo original (esquema
+de licencia viral), o deben ser distribuidos bajo un esquema de
+licencias diferente? 3) Es necesario atribuir el trabajo al autor
+original?. Estas preguntas son la base para deﬁnir un esquema
+de licencias modular. Existen cuatro bloques constructivos para
+o
+las licencias Creative Commons estos son: Atribuci´ n (BY)
+Se permite la distribuci´ n pero se debe dar cr´ dito al autor.
+o
+e
+No comercial (NC) Se permite la distribuci´ n del trabajo sin
+o
+ﬁnes comerciales, si se desea utilizar este trabajo para obtener
+dinero es necesaria una autorizaci´ n del autor; No a trabajos
+o
+derivados (ND) Permite la copia y la distribuci´ n del trabajo
+o
+original sin modiﬁcaciones. Compartir de la misma forma
+(SA) Exige que todo trabajo derivado del uso de proyectos que
+con este esquema de licencias deben tener la misma licencia
+de los trabajos originales.
+Al compartir el trabajo realizado con otras personas para
+que puedan aumentar sus habilidades o con empresas para
+que puedan utilizar los proyectos existentes y ahorrar tiempo
+y dinero en la realizaci´ n de nuevos productos, los cuales a
+o
+su vez, pasar´ n a ser parte de este recurso (conocimiento),
+a
+se proporciona una canal de transfencia sin restricciones que
+permitir´ la difusi´ n de los conocimientos adquiridos; este
+a
+o
+canal novedoso va en contra de la forma tradicional de capacitaci´ n ya que no limita la difusi´ n a factores econ´ micos. La
+o
+o
+o
+iniciativa hardware copyleft adopta los bloques constructivos
+BY (Atribuci´ n) y SA (Compartir de la misma forma), lo
+o
+1 http://creativecommons.org/
+
+que indica que se puede utilizar, distribuir y modiﬁcar
+el resultado de esta investigaci´ n pero dando cr´ dito al
+o
+e
+autor original; y todo trabajo derivado del uso de los
+resultados de este proyecto debe tener la misma licencia
+lo que garantiza el crecimiento del conocimiento generado.
+IV. M ETODOLOG´A PARA LA TRANSFERENCIA
+I
+´
+´
+˜
+TECNOL OGICA EN EL AREA DE DISE NO DE SISTEMAS
+EMBEBIDOS
+
+En esta secci´ n se describir´ n los pasos de una propuesta
+o
+a
+metodol´ gica que tiene como objetivo permitir una transfero
+´
+encia tecnol´ gica exitosa en el area de dise˜ o de sistemas emo
+n
+bebidos. Esta metodolog´a est´ compuesta por los siguientes
+ı
+a
+7 pasos y actividades:
+• Elecci´ n: Identiﬁcaci´ n del estado de la plataforma teco
+o
+nol´ gica existente para identiﬁcar facilidades y necesio
+dades; identiﬁcaci´ n de niveles de complejidad de la
+o
+tecnolog´a; selecci´ n de una alternativa que pueda imı
+o
+plementarse y de resultados a mediano y corto plazo con
+no muy altas inversiones de capital.
+• Adquisicion: Adquisici´ n de plataformas adecuadas de
+o
+desarrollo HW y SW; identiﬁcaci´ n de herramientas de
+o
+desarrollo HW y SW y su origen (abierto/cerrado).
+• Adopci´ n: Utilizaci´ n de plataformas de desarrollo para
+o
+o
+estudio de metodolog´as de dise˜ o; uso de ingenier´a
+ı
+n
+ı
+inversa para entender la arquitectura, funcionamiento y
+programaci´ n de productos comerciales; utilizaci´ n de
+o
+o
+productos comerciales para adaptarlos a problemas locales (Integraci´ n); tomar conciencia de la importancia
+o
+del uso de esta tecnolog´a.
+ı
+• Absorci´ n:Desarrollo o adaptaci´ n de metodolog´as de
+o
+o
+ı
+dise˜ o y procesos de fabricaci´ n; desarrollo de producn
+o
+tos tecnol´ gicos propios; ense˜ anza de metodolog´as de
+o
+n
+ı
+dise˜ o y procesos de fabricaci´ n en centros de educaci´ n
+n
+o
+o
+consolidados.
+• Aplicaci´ n: Desarrollo de soluciones a problemas locales;
+o
+uso de metodolog´as de dise˜ o en la concepci´ n, dise˜ o
+ı
+n
+o
+n
+e implementaci´ n de sistemas digitales utilizando la teco
+nolog´a; utilizaci´ n de procesos de fabricaci´ n adaptados
+ı
+o
+o
+al entorno local; desarrollo de proyectos acad´ micos
+e
+utilizando esta tecnolog´a.
+ı
+• Difusi´ n : Vinculaci´ n de la academia para incluir los
+o
+o
+conocimientos generados en los programas acad´ micos
+e
+de las carreras relacionadas; capacitaci´ n a la industria
+o
+local sobre el uso de la tecnolog´a, las metodolog´as
+ı
+ı
+de dise˜ o y procesos de producci´ n; creaci´ n de una
+n
+o
+o
+comunidad que utilice, mejore y aumente el conocimiento
+generado; hacer que el conocimiento generado en los
+pasos anteriores este disponible a todos los interesados;
+dar a conocer los procesos, productos y conocimientos
+creados a los generadores de pol´ticas de estado.
+ı
+• Desarrollo: Aumento de la demanda de productos, bienes y servicios relacionados; compra de maquinaria que
+permita la fabricaci´ n masiva de forma local; dise˜ o
+o
+n
+de nuevos componentes (Circuitos Integrados, IPs, software CAD); creaci´ n de pol´ticas gubernamentales que
+o
+ı
+
+protejan la producci´ n local; participaci´ n activa de la
+o
+o
+academia en la soluci´ n de problemas y en la formulaci´ n
+o
+o
+de pol´ticas de gobierno relacionadas.
+ı
+A. Elecci´ n y adquisici´ n
+o
+o
+1) Niveles de complejidad de la tecnolog´a: Existen varias
+ı
+alternativas para la implementaci´ n de un sistema embebido:
+o
+FPGA, sistema sobre silicio (SoC), SoC + FPGA y ASIC,
+la utilizaci´ n de FPGAs o SoCs est´ determinada por el
+o
+a
+cumplimiento de restricciones temporales y funcionales, mientras que el uso de ASICs depende de el n´ mero de unidades
+u
+producidas, se estima que a partir de 10 mil unidades se
+debe utilizar un ASIC para reducir los costos de producci´ n.
+o
+Debido a que los niveles de producci´ n de los pa´ses en v´a de
+o
+ı
+ı
+desarrollo no son muy grandes, se abordar´ el problema de la
+a
+transferencia utilizando FPGAs y SoCs comerciales, sin descuidar el estudio e implementaci´ n de ASICs. Adicionamente,
+o
+la inversi´ n necesaria para construir un circuito integrado es
+o
+muy alta, y puede ser considerada como un punto ﬁnal.
+Un proyecto reciente promovido por la uni´ n Europea
+o
+llamado Iberchip empez´ desde hace 17 a˜ os un proceso
+o
+n
+de transferencia tecnol´ gica en el dise˜ o circuitos integrados
+o
+n
+de aplicaci´ n espec´ﬁca (ASICs) hacia los pa´ses iberoamero
+ı
+ı
+icanos; a pesar de que Colombia era uno de los nodos
+principales no se logr´ fabricar ning´ n circuito integrado
+o
+u
+para aplicaciones comerciales; lo que era de esperarse ya
+que la mayor´a de empresas en Colombia son importadores
+ı
+y distribuidores de productos tecnol´ gicos y carecen de Deo
+partamentos de I+D; por otro lado, las pocas empresas de
+base tecnol´ gica se encuentran muy atrasadas y dependen de
+o
+productos comerciales para desarrollar sus productos, esto,
+unido a los bajos niveles de producci´ n hace innecesaria la
+o
+fabricaci´ n de un ASIC.
+o
+2) Diagn´ stico de la Industria Local: Para determinar el
+o
+estado de la industria electr´ nica en Colombia, se cre´ la
+o
+o
+empresa emQbit LTDA. en asociaci´ n con profesionales
+o
+en ingenier´a de sistemas, ingenier´a el´ ctrica e ingenier´a
+ı
+ı
+e
+ı
+electr´ nica. Esta empresa desarroll´ una serie de proyeco
+o
+tos y actividades que ayudaron a entender e identiﬁcar los
+siguientes obst´ culos para el desarrollo y comercializaci´ n
+a
+o
+de sistemas digitales: Falta de proveedores de bienes y servicios relacionados con la actividad (venta de dispositivos
+semiconductores, fabricaci´ n de placas de circuito impreso,
+o
+montaje autom´ tico de componentes, etc); desconocimiento
+a
+de la tecnolog´a (alcances y limitaciones) debido al uso de
+ı
+tecnolog´as y metodolog´as de dise˜ o obsoletas; competencia
+ı
+ı
+n
+con productos asi´ ticos de muy bajo costo; falta de conﬁanza
+a
+en los productos nacionales; desconexi´ n de la academia
+o
+con el sistema productivo; inexistencia de reglamentaci´ n
+o
+de la industria de manufactura electr´ nica; profesionales con
+o
+pocos conocimientos en procesos de dise˜ o y fabricaci´ n. que
+n
+o
+coincide con los resultados de estudios consultados [10] [14]
+[15] [16] [17] [18].
+3) Diagn´ stico de la Academia: La tendencia moderna en
+o
+los programas acad´ micos a la utilizaci´ n de herramientas
+e
+o
+de alto nivel para la ense˜ anza en areas aﬁnes al desarrollo
+n
+
+de dispositivos digitales [19] ocasiona que los profesionales
+no adquieran las habilidades necesarias para completar la
+cadena concepci´ n - dise˜ o - implementaci´ n y operaci´ n,
+o
+n
+o
+o
+en la mayor´a de los casos se generan habilidades para la
+ı
+concepci´ n y el dise˜ o a alto nivel y dejan los otros pasos en
+o
+n
+manos de herramientas especializadas y/o a empresas asi´ ticas.
+a
+Esta situaci´ n resulta la m´ s atractiva desde el punto de vista
+o
+a
+econ´ mico, ya que no es necesario adquirir maquinaria costosa
+o
+ni contratar personal caliﬁcado para operarlas; sin embargo,
+limita la generaci´ n de empleo local a personas con un nivel
+o
+de formaci´ n alto [20] generando desempleo en las personas
+o
+menos capacitadas. Seg´ n John Hall presidente y CEO de
+u
+Linux International “ algunas facultades preparan a la gente en
+el uso de productos en vez de tecnolog´as de nivel b´ sico” [19].
+ı
+a
+Esta situaci´ n unida al abandono de la implementaci´ n hace
+o
+o
+que la dependencia con las empresas manufactureras asi´ ticas
+a
+aumente cada vez m´ s.
+a
+Por otro lado, en muchas instituciones educativas se utilizan tecnolog´as y metodolog´as de dise˜ o obsoletas (Faı
+ı
+n
+milias 74XXX o 40XXX, lenguaje ensamblador, mapas de
+karnaugh), esto unido a programas acad´ micos centrados en
+e
+el an´ lisis y no el dise˜ o, donde el paso ﬁnal es la simulaci´ n
+a
+n
+o
+y el personal docente no tiene ninguna experiencia en el sector
+productivo; origina una deﬁciencia de habilidades necesarias
+para realizar el proceso completo para el dise˜ o de disposin
+tivos, lo que se traduce en profesionales que no disponen de
+las herramientas necesarias para resover los problemas del pa´s
+ı
+y al mismo tiempo competir con los productos asi´ ticos.
+a
+4) Adquisici´ n: En la actualidad es muy f´ cil adquirir
+o
+a
+productos implementados con tecnolog´a de punta, existe una
+ı
+gran variedad de plataformas de desarrollo y de dispositivos
+comerciales a los que se les puede aplicar ingenier´a inversa
+ı
+para entender y modiﬁcar su funcionamiento. Al comienzo
+de este estudio se trabaj´ con la consola de juego GameBoy
+o
+Advance, la cual posee un ASIC basado en un procesador
+ARM7.
+B. Adopci´ n
+o
+En el proceso de adopci´ n se utilizaron productos desarrolo
+lados en otros pa´ses para suplir necesidades locales, en esta
+ı
+etapa se trabaj´ con las plataformas comerciales: Game Boy de
+o
+Nintendo + Chamedlabs Xport (FPGA), la agenda Zaurus SL5500, el dispositivo para redes sociales chumby y el portaretratos de Sungale ID800WT. Se utiliz´ la ingenier´a inversa
+o
+ı
+para entender el funcionamiento y la arquitectura de un sistema
+embebido moderno, la metodolog´a de dise˜ o y como proı
+n
+gramar aplicaciones que cambien el funcionamiento de estos
+dispositivos. Se desarrollaron aplicaciones acad´ micas como:
+e
+Osciloscopio Digital utilizando FPAAs [21], Automatizaci´ n
+o
+de un Puente gr´ a a escala [22], Control Adaptativo Embeu
+bido [23], Control de un horno de reﬂujo para componentes
+de montaje superﬁcial [21], Dispositivo de visualizaci´ n de
+o
+variables que suministra el computador de un autom´ vil [21],
+o
+herramienta para realizar reconﬁguraci´ n parcial de FPGAs
+o
+[24], evoluci´ n de un arreglo de c´ lulas utilizando algoritmos
+o
+e
+gen´ ticos [25] y comerciales como: Adquisici´ n de datos para
+e
+o
+
+medici´ n de calidad de energ´a; plataforma rob´ tica did´ ctica;
+o
+ı
+o
+a
+registro de aceleraci´ n de vehiculos para compa˜ ´as de seo
+nı
+guros; sistema de seguimiento vehicular; monitor de signos
+vitales; diccionario basado en Wikipedia; men´ electr´ nico y
+u
+o
+consola de juegos.
+C. Absorci´ n y aplicaci´ n
+o
+o
+La absorci´ n es una actividad de aprendizaje que integra
+o
+conocimiento que es nuevo para el pa´s pero que no es nuevo
+ı
+para el mundo. En esta etapa se pas´ de las plataformas
+o
+comerciales al dise˜ o de aplicaciones propias, para lo que se
+n
+desarrollaron y/o adaptaron t´ cnicas de fabricaci´ n al entorno
+e
+o
+local, se realiz´ la transferencia de los conocimientos adquirio
+dos a la academia y se inicaron contactos con empresas manufactureras locales y extranjeras. Se desarrollaron los productos
+acad´ micos: Plataformas de desarrollo hardware copyleft para
+e
+CPLDs, FPGAs, Procesadores ARM, MIPS, Blackﬁn, LM32,
+Microblaze, Rob´ tica, Linux Embebido, Codise˜ o HW/SW
+o
+n
+[26] [27] [28], [29], [30] as´ como la creaci´ n de un programa
+ı
+o
+acad´ mico para la ense˜ anza de sistemas digitales utilizando
+e
+n
+tecnolog´a de punta que crea las habilidades necesarias para
+ı
+concebir, dise˜ ar, implementar y operar dispositivos digitales
+n
+modernos y la deﬁnici´ n del concepto hardware copyleft y
+o
+su utilizaci´ n como herramienta en la ense˜ anza de dise˜ o
+o
+n
+n
+de sistemas embebidos [31]. El proyecto SIE [8] proporciona
+la informaci´ n recolectada durante la aplicaci´ n de este proo
+o
+´
+grama acad´ mico en las asignaturas del area de digitales en la
+e
+Universidad Nacional de Colombia; una encuesta realizada a
+estos estudiantes muestra que ellos encuentran la metodolog´a
+ı
+adecuada para generar habilidades necesarias para el desarrollo de aplicaciones comerciales, que se proporcionan las
+herramientas necesarias para lograr el objetivo ﬁnal, y son
+conscientes de que se busca que ellos generen productos
+novedosos y de esta forma generar empleo; adicionalmente
+se muestra que los estudiantes no tienen ning´ n problema
+u
+en utilizar herramientas licenciadas de forma ilegal y que
+preﬁeren el uso de las herramientas libres aunque su utilizaci´ n
+o
+sea mas compleja.
+Adicionalmente, se desarrollaron los siguientes productos comerciales: Control de tornos industriales, plataforma
+rob´ tica did´ ctica, monitoreo de Temperatura, sistema de
+o
+a
+seguimiento vehicular, sistema de medici´ n de la calidad
+o
+del suministro de energ´a el´ ctrica, monitor de signos vitales
+ı
+e
+(UNAL), sistema de comunicaci´ n encriptada utilizando el
+o
+canal GSM (MICROENSAMBLE), switch de 4 canales de
+radio frecuencia (TESAMERICA).
+D. Difusi´ n
+o
+Con las etapas previas se adquirieron los conocimientos
+necesarios para concebir, dise˜ ar, implementar y operar disn
+positivos digitales, y la experiencia necesaria para realizar la
+producci´ n a grandes escalas. La etapa de difusi´ n (se esta
+o
+o
+realizando en el momento de escribir este art´culo) busca hacer
+ı
+llegar este conocimiento a todos los interesados, y de esta
+forma crear una comunidad que lo utilice como un recurso
+com´ n; el cual proporciona a los centros de formaci´ n un
+u
+o
+
+programa acad´ mico actualizado que permite generar en los
+e
+estudiantes las habilidades necesarias para innovar y generar
+empleo y a la industria le suministra herramientas que puede
+utilizar para desarrollo de nuevos productos comerciales y
+para la capacitaci´ n de su recurso humano. Ahorrando en
+o
+ambos casos el tiempo necesario para la utilizaci´ n efectiva
+o
+de esta tecnolog´a (valorada en 5 a˜ os) y el dinero asociado
+ı
+n
+a este estudio. Esto es una consecuencia de la ﬁlosof´a del
+ı
+movimiento FOSS y la iniciativa hardware copyleft.
+El proceso de difusi´ n se realiza en varios frentes, en
+o
+el plano acad´ mico se realizaron conferencias y cursos de
+e
+actualizaci´ n donde se presentan las plataformas hardware
+o
+copyleft desarrolladas y el programa acad´ mico de las asige
+´
+naturas asociadas con el area de la electr´ nica digital, hasta el
+o
+momento 4 de las principales universidades p´ blicas del pa´s
+u
+ı
+est´ n implementando este programa; en el plano industria se
+a
+realiz´ una alianza entre el SENA, (la entidad de formaci´ n
+o
+o
+t´ cnica m´ s grande del pa´s) la universidad nacional de colome
+a
+ı
+bia, (la universidad m´ s importante del pa´s) Sharism at work
+a
+ı
+LTDA, (empresa constituida en HONG KONG especializada
+en la manufactura de dispositivos digitales) empresas de base
+tecnol´ gica y universidades de diferentes regiones del pa´s;
+o
+ı
+esta alianza busca difundir los concimientos adquiridos durante
+5 a˜ os de desarrollo e investigaci´ n, para ello se crear´ una
+n
+o
+a
+plataforma hardware ﬂexible que cumpla con las condiciones
+del hardware copyleft y que permita la implementaci´ n de
+o
+´
+aplicaciones comerciales en diferentes areas. Durante el desarrollo de este proyecto las empresas participantes propondr´ n
+a
+ideas para la realizaci´ n de productos comerciales que den
+o
+soluci´ n a problemas de su regi´ n, se vincular´ n estudiantes
+o
+o
+a
+de los centros de formaci´ n que est´ n realizando su trabajo
+o
+e
+de grado para fomar un equipo que trabaje en la construcci´ n
+o
+de un dispositivo que implemente estas ideas basado en la
+plataforma dise˜ ada previamente.
+n
+El primer paso de este proceso consiste en la capacitaci´ n
+o
+de las empresas y los centros de formaci´ n en la utilizaci´ n
+o
+o
+de software abierto y hardware copyleft como herramientas
+de desarrollo de sistemas embebidos, para esto se utilizar´ el
+a
+material generado en los cursos de la Universidad Nacional;
+a continuaci´ n se dise˜ ar´ la plataforma de desarrollo fexible,
+o
+n a
+este proceso ser´ guiado por la empresa Sharism y por la Unia
+versidad Nacional, una vez ﬁnalizado el dise˜ o, se realizar´ n
+n
+a
+los primeros prototipos y las pruebas correspondientes, una vez
+corregidos los posibles errores se proceder´ a la realizaci´ n
+a
+o
+de 100 unidades de la plataforma base, esto con el f´n de
+ı
+simular una producci´ n a gran escala. Se entregar´ a cada
+o
+a
+grupo de trabajo varias de estas unidades para que desarrollen
+su aplicaci´ n con la ayuda de todos los grupos de trabajo.
+o
+Todo el proceso se documentar´ en un servidor de libre
+a
+acceso, esto con el f´n de hacerlo accesible a cualquier intereı
+sado, se suministrar´ n los archivos necesarios para reproducir
+a
+la capacitaci´ n y la plataforma de desarrollo. Cada grupo de
+o
+trabajo est´ encargado de llevar una bit´ cora donde se detalla
+a
+a
+el proceso de dise˜ o y de suministrar los archivos necesarios
+n
+para reproducir el producto ﬁnal.
+
+V. C ONCLUSIONES Y TRABAJO FUTURO
+Este art´culo presenta los resultados de la aplicaci´ n de
+ı
+o
+una metodolog´a que permite una transferencia tecnol´ gica
+ı
+o
+´
+exitosa en el area de dise˜ o de sistemas embebidos, obteniendo
+n
+como resultados de este proceso la capacitaci´ n a empresas de
+o
+base tecnol´ gica en el uso de herramientas y metodolog´as
+o
+ı
+de dise˜ o modernas basadas en software libre y hardware
+n
+copyleft; la actualizaci´ n del contenido de las asignaturas
+o
+relacionadas en los centros de formaci´ n participantes; la
+o
+posibilidad de generaci´ n de empleo a diferentes niveles (de
+o
+servicios, t´ cnico, profesional, comercial, administrativo); la
+e
+adopci´ n y apropiaci´ n de esta tecnolog´a por parte del sector
+o
+o
+ı
+productivo.
+A futuro se debe monitorear el cluster semilla para observar
+la evoluci´ n de los productos comerciales generados, as´
+o
+ı
+como observar los efectos que generan el cambio introducido
+en los programas acad´ micos, los participantes deben estar
+e
+encargados de cuidar, mejorar y aumentar el recurso com´ n,
+u
+procurando difundirlo para aumentar el n´ mero de usuaru
+ios/beneﬁciarios.
+Una vez alcance un nivel de producci´ n adecuado, se debe
+o
+dar el siguiente paso: la construcci´ n de un ASIC que permita
+o
+reducir los costos de producci´ n, para esto se esta comenzando
+o
+a trabajar con el dise˜ o de un SoC abierto, que permita su
+n
+modiﬁcaci´ n, en el momento de escribir este art´culo se est´
+o
+ı
+a
+trabajando con el softcore Mico 32 de lattice (lm32), se est´ n
+a
+generando IPs y se esta estudiando su arquitectura con el f´n de
+ı
+mejorarla e implementarla, la siguiente etapa de este proceso
+es el desarrollo de la tecnolog´a, proporcioanndo productos
+ı
+nuevos que no tengan ning´ n tipo de patente o restricci´ n
+u
+o
+de uso. Por lo que en un futuro no muy lejano estaremos
+anunciando la fabricaci´ n y disponibilidad de el primer SoC
+o
+abierto dise˜ ado en Colombia.
+n
+VI. BIBLIOGRAF ´
+IA
+R EFERENCES
+[1] F. Bar, F. Pisani, and M. Weber. Mobile technology appropriation in a
+distant mirror: baroque inﬁltration, creolization and cannibalism. Seminario sobre Desarrollo Econ´ mico, Desarrollo Social y Comunicaciones
+o
+M´ viles en Am´ rica Latina. Buenos Aires, April 2007.
+o
+e
+[2] Goel Cohen. Technology transfer: strategic management in developing
+countries. Sage Publications inc, 2004.
+[3] K. Goel and Sayers B. Modelling Global-Oriented Energy Tecnology
+Transfer to DCs. Sixth Global Warning International Conference, San
+Francisco, 1995.
+[4] M. odedra-straub. The Myths and Illusions of Technology Transfer.
+IFIP World Congress Proceedings, August 1994.
+[5] James A. Jolly. The Technology Transfer Process: Concepts, Framework
+and Methodology. The Journal of Technology Transfer. Springer, 1977.
+[6] E. Mansﬁeld. East-West technological transfer issues and problems,
+international technology transfer: Forms, resource requirements, and
+policies. American Economic Review, 65(2), 1975.
+[7] C. Grimpe and K. Hussinger. Formal and Informal Technology Transfer
+from Academia to Industry: Complementarity Effects and Innovation
+Performance. Centre for european economical research, 2008.
+[8] C. Camargo.
+Proyecto SAKC.
+URL:http://en.qihardware.com/wiki/SAKC.
+[9] C. Camargo. ECB AT91 y ECBOT Plataformas Abiertas para el
+desarrollo de Sistemas Embebidos. URL: http://wiki.emqbit.com/freeecb-at91.
+
+[10] M. Odedra. Information Technology Transfer to Developing Countries:
+Case studies from Kenya, Zambia and Zimbabwe. PhD thesis, London
+School of Economics, 1990.
+[11] M. Odedra. Information Technology Transfer to Developing Countries
+Is it really taking place? The 4th IFIF.TC9 International Conference
+on Human Choice and Computers, North Holland, Amsterdam, Netherlands, HCC 4 held jointly with the CEC FAST Programme., 1991.
+[12] Charlotte Hess and Elinor Ostrom, editors. Understanding Knowledge
+as a Commons: From Theory to Practice. The MIT Press, December
+2006.
+[13] C. M Schweik and A. Semenov.
+The Institutional Design
+of ’Open Source’ Programming: Implications for Addressing
+Complex Public Policy and Management Problems.
+URL:
+http://www.ﬁrstmonday.org/issues/issue8 1/schweik/, 2003.
+[14] Innovation Associates Inc. Technology Transfer and Commercialization
+Partnerships Executive Summary.
+[15] M. Duque and A. Gauthier. Formaci´ n de Inegnieros para la Innovaci´ n
+o
+o
+y el Desarrollo Tecnol´ gico en Colombia. Revista de la Facultad de
+o
+Minas - Universidad Nacional de Colombia, December 1999.
+[16] D Zuluaga, S Campos, M Tovar, R Rodr´guez, J S´ nchez, A Aguilı
+a
+era, L Land´nez, and J Medina. Informe de Vigilancia Tecnol´ gica:
+ı
+o
+Aplicaciones de la Electr´ nica en el Sector Agr´cola. Technical report,
+o
+ı
+COLCIENCIAS, 2007.
+[17] M. Tovar and R. Rodr´guez. PROSPECTIVA Y VIGILANCIA TECı
+´
+´
+NOLOGICA DE LA ELECTRONICA EN COLOMBIA. Master’s
+thesis, Universidad Nacional de Colombia, 2007.
+[18] H´ ctor Mart´nez. Apropiaci´ n de conocimiento en Colombia. El caso
+e
+ı
+o
+de los contratos de importaci´ n de tecnolog´a. Revista Cuadernos de
+o
+ı
+Econom´a, 2004.
+ı
+[19] Jon Hall. POR GRANDES QUE SEAN...: ASEGURE EL FUTURO
+DE SU NEGOCIO. Linux magazine,, ISSN 1576-4079(58):92, 2009.
+[20] A.
+Grove.
+How
+America
+Can
+Create
+Jobs.
+http://www.businessweek.com/magazine/content/10 28/b4186048358596.htm,
+May 2010.
+[21] C. Camargo. Implementaci´ n de Sistemas Digitales Complejos Utio
+lizando Sistemas Embebidos. Memorias del XI Workshop de Iberchip
+ISBN 959-261-105-X, 2005.
+[22] I. Castillo, C. Camargo, and C. Perez. Automatizaci´ n de un puente
+o
+gr´ a a escala, mediante una plataforma embebida la cual soporta
+u
+multiprogramaci´ n. XII Workshop Iberchip, 2006.
+o
+[23] F. Pedraza, F. Segura, C. Camargo, and A. Gauthier. Control Adaptativo
+Embebido. Memorias del XI workshop de Iberchip ISBN 959-261-105-X,
+2005.
+[24] C. Camargo and O. Sanchez. Linux embebido como herramienta para
+realizar reconﬁguraci´ n parcial. XII Workshop Iberchip, 2006.
+o
+[25] J. Espinosa, F. Segura, and C. Camargo. Evoluci´ n de un Arreglo de
+o
+C´ lulas Utilizando Algoritmos Gen´ ticos. Memorias del XI Workshop
+e
+e
+de Iberchip ISBN 959-261-105-X, 2005.
+[26] C. Camargo. ECBOT y ECB AT91 Plataformas Abiertas para el Dise˜ o
+n
+de Sistemas Embebidos y Co-Dise˜ o HW/SW. VIII Jornadas de Comn
+putaci´ n Reconﬁgurable y Aplicaciones, Madrid Espa˜ a, September
+o
+n
+2008.
+[27] C. Camargo. ECBOT: Arquitectura Abierta para Robots M´ biles. VII
+o
+conferencia Iberoamericana en Sistemas, Cibern´ tica e Inform´ tica,
+e
+a
+2008.
+[28] C. Camargo. ECBOT y ECB AT91 Plataformas Abiertas para el
+Dise˜ o de Sistemas Embebidos y Co-dise˜ o HW-SW. VIII Jornadas
+n
+n
+de Computaci´ n Reconﬁgurable y Aplicaciones, 2008.
+o
+[29] C. Camargo. ECBOT: Arquitectura Abierta para Robots M´ viles. IEEE
+o
+Colombian Workshop on Circuits and Systems, 2007.
+[30] C. Camargo. First Colombian Linux SBC runs Debian. URL:
+http://www.linuxfordevices.com/c/a/News/First-Colombian-Linux-SBCruns-Debian/, 2006.
+[31] C. Camargo. Hardware copyleft como Herramienta para la Ense˜ anza
+n
+de Sistemas Embebidos. Simposio Argentino de Sistemas Embebidos,
+2011.
+
+

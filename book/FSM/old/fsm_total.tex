@@ -1,0 +1,6917 @@
+
+{\bfseries
+EJEMPLO 4: Cronómetro digital}
+
+{
+Se desea diseñar un sistema digital que sea capaz de medir segundos y
+décimas de segundo utilizando una fuente de reloj externa de FMHZ MHz y
+dos displays de 7 segmentos para la visualización. El diagrama de
+bloques del sistema aparece en la Figura 34.}
+
+{\centering 
+\includegraphics[width=8.518cm,height=3.704cm]{FSM-img34.png} \par}
+
+{\centering
+Figura 34. Diagrama de bloques del Cronómetro Digital.
+\par}
+
+{
+\textbf{Divisor de frecuencia Programable (DIVISOR ):} Como se habrán
+dado cuenta el divisor de frecuencia programable no tiene una entrada
+fija, esta entrada depende de la disponibilidad del sistema, por lo que
+en este caso es un \textit{genérico}. El código en VHDL del contador es
+el siguiente:}
+
+{\itshape
+Library IEEE;}
+
+{\itshape
+use  IEEE.STD\_LOGIC\_1164.all;}
+
+{\itshape
+use  IEEE.STD\_LOGIC\_ARITH.all;}
+
+{\itshape
+use  IEEE.STD\_LOGIC\_UNSIGNED.all;}
+
+{\itshape
+\textbf{Entity} clk\_div \textbf{Is}}
+
+{\itshape
+\foreignlanguage{english}{
+}\foreignlanguage{spanish}{\textbf{GENERIC}}\foreignlanguage{spanish}{(
+FMHZ:
+}\foreignlanguage{spanish}{\textbf{Natural}}\foreignlanguage{spanish}{
+:= 8 );  {}-{}- FMHZ genérico 8MHz por defecto}}
+
+{\itshape
+ \textbf{PORT}(}
+
+{\itshape
+ clock\_FMHZ  : \textbf{IN}  \textbf{STD\_LOGIC};  {}-{}- Señal de reloj
+externa.}
+
+{\itshape
+ Reset  : \textbf{IN  Std\_Logic};  {}-{}- Reset del Módulo}
+
+{\itshape
+ clock\_1Hz  : \textbf{OUT  STD\_LOGIC});  {}-{}- Salida a 1Hz.}
+
+{\itshape
+\textbf{end} clk\_div;}
+
+{\itshape
+\textbf{Architecture} RT \textbf{of} clk\_div \textbf{is}}
+
+{\itshape
+\ \   \textbf{Signal}  count\_1Mhz  : \textbf{Std\_Logic\_Vector}(4
+\textbf{DOWNTO} 0);}
+
+{\itshape
+ \textbf{Signal}  Clock\_1MHz : \textbf{Std\_Logic};}
+
+{\itshape
+ \textbf{Signal}  Count\_1Hz  : \textbf{Integer} \textbf{Range} 0
+\textbf{to} 1000000;}
+
+{\bfseries\itshape
+Begin}
+
+{\itshape
+ \textbf{Process }}
+
+{\itshape
+ \textbf{Begin}}
+
+{\itshape
+{}-{}- Divisor por FMHZ}
+
+{\itshape
+ \textbf{wait} \textbf{until}
+clock\_FMHZ\textbf{{\textquotesingle}event} \textbf{and} clock\_FMHZ =
+{\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{if} Reset = {\textquotesingle}1{\textquotesingle}
+\textbf{then}}
+
+{\itshape
+ \textbf{if} count\_1Mhz {\textless} ( FMHZ - 1 ) \textbf{then}}
+
+{\itshape
+ count\_1Mhz {\textless}= count\_1Mhz + 1;}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ count\_1Mhz {\textless}= {\textquotedbl}00000{\textquotedbl};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{if} count\_1Mhz {\textless} FMHZ/2 \textbf{then}}
+
+{\itshape
+ clock\_1MHz {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ clock\_1MHz {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ Count\_1Mhz {\textless}= {\textquotedbl}00000{\textquotedbl};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{Process};\ \ }
+
+{\itshape
+{}-{}- Divisor por 1000000}
+
+{\itshape
+ \textbf{Process} ( clock\_1Mhz, Reset )}
+
+{\itshape
+ \textbf{Begin}}
+
+{\itshape
+ \textbf{if} Reset = {\textquotesingle}0{\textquotesingle}
+\textbf{then}}
+
+{\itshape
+ Count\_1Hz {\textless}= 0;}
+
+{\itshape
+ \textbf{else }}
+
+{\itshape
+ \textbf{if} clock\_1Mhz\textbf{{\textquotesingle}event} \textbf{and}
+clock\_1Mhz = {\textquotesingle}1{\textquotesingle} \textbf{then}}
+
+{\itshape
+ \textbf{if} count\_1Hz {\textless} 1000000 \textbf{then}}
+
+{\itshape
+ count\_1Hz {\textless}= count\_1Hz + 1;}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ count\_1Hz {\textless}= 0;}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{if} count\_1Hz {\textless} 5000000 \textbf{then}}
+
+{\itshape
+ clock\_1Hz {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ clock\_1Hz {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{end} \textbf{if};\ \ }
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{Process};\ \ }
+
+{\itshape
+\textbf{end} \textbf{RT};}
+
+{
+ Como puede observarse existen dos procesos dentro de la arquitectura el
+primero es un divisor de frecuencia por  FMHZ el cual proporciona una
+señal de reloj de 1 MHz, esto se hizo con el fin de proporcionarle
+adaptabilidad al sistema a cualquier señal de reloj mayor a 1 MHz. El
+segundo proceso es un divisor de frecuencia por 1 millón, la salida de
+este proceso es una señal con frecuencia de 1 Hz.}
+
+{
+\textbf{CONTADOR:} Una vez obtenida la frecuencia de 1 Hz se procede a
+realizar el contador. El código VHDL del contador se muestra a
+continuación:}
+
+{\itshape
+\textbf{Library} Ieee;}
+
+{\itshape
+\textbf{Use} Ieee.Std\_Logic\_1164.all;}
+
+{\itshape
+\textbf{Use} Ieee.Std\_Logic\_Arith.all;}
+
+{\itshape
+\textbf{Use} Ieee.Std\_Logic\_unsigned.all;}
+
+{\itshape
+\textbf{Entity} Contador \textbf{is}}
+
+{\itshape
+ \textbf{Port}(}
+
+{\itshape
+ Clock  : \textbf{In}  Std\_Logic;}
+
+{\itshape
+ Reset  : \textbf{In}  Std\_Logic;}
+
+{\itshape
+ Unidades : \textbf{Buffer}  Std\_Logic\_Vector( 3 \textbf{Downto} 0 );}
+
+{\itshape
+ Decenas  : \textbf{Buffer}  Std\_logic\_Vector( 3 \textbf{Downto} 0 )}
+
+{\itshape
+ );}
+
+{\itshape
+\textbf{end} \textbf{Entity} Contador;}
+
+{\itshape
+\textbf{Architecture} RT \textbf{of} Contador \textbf{is}}
+
+{\bfseries\itshape
+Begin}
+
+{\itshape
+ \textbf{Process} (Clock, Reset)}
+
+{\itshape
+ \textbf{Begin}}
+
+{\itshape
+ \textbf{If} Reset = {\textquotesingle}0{\textquotesingle}
+\textbf{then}}
+
+{\itshape
+ Unidades {\textless}= {\textquotedbl}0000{\textquotedbl};}
+
+{\itshape
+ Decenas  {\textless}= {\textquotedbl}0000{\textquotedbl};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ \textbf{if} Clock\textbf{{\textquotesingle}event} \textbf{and} Clock =
+{\textquotesingle}1{\textquotesingle} \textbf{then}}
+
+{\itshape
+\foreignlanguage{english}{
+}\foreignlanguage{spanish}{\textbf{If}}\foreignlanguage{spanish}{
+Unidades {\textless} {\textquotedbl}1001{\textquotedbl}
+}\foreignlanguage{spanish}{\textbf{then}}}
+
+{\itshape
+ Unidades  {\textless}= Unidades + {\textquotedbl}0001{\textquotedbl};}
+
+{\itshape
+\foreignlanguage{spanish}{ }\foreignlanguage{english}{\textbf{else}}}
+
+{\itshape
+ Unidades {\textless}= {\textquotedbl}0000{\textquotedbl};}
+
+{\itshape
+ \textbf{if} Decenas {\textless} {\textquotedbl}1001{\textquotedbl}
+\textbf{then}}
+
+{\itshape
+\foreignlanguage{english}{ }\foreignlanguage{spanish}{Decenas 
+{\textless}= Decenas + {\textquotedbl}0001{\textquotedbl};}}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ Unidades {\textless}= {\textquotedbl}0000{\textquotedbl};}
+
+{\itshape
+\foreignlanguage{spanish}{ }\foreignlanguage{english}{Decenas 
+{\textless}= {\textquotedbl}0000{\textquotedbl};}}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{End} \textbf{Process};}
+
+{\itshape
+\textbf{End} \textbf{Architecture} RT;}
+
+{
+\textbf{VISUALIZACION: }Para este ejemplo utilizaremos visualización
+dinámica; el  módulo debe contar con una salida que sea capaz de
+manejar un display de 7 segmentos y señales para la selección del
+display. A continuación se muestra el diagrama de bloques y las
+entradas y salidas del visualizador:}
+
+{\centering 
+\includegraphics[width=7.565cm,height=3.545cm]{FSM-img35.png} \par}
+
+{\centering
+Figura. 35 Diagrama de Bloques de la visualización.
+\par}
+
+{
+La visualización dinámica funciona de esta forma: Los segmentos comunes
+de los Displays están unidos entre sí de tal forma que el valor a
+desplegar se pueda mostrar en cualquiera de los dos. Las entradas de
+selección indican en cual de ellos se mostrará el valor enviado. Por
+ejemplo para mostrar el número 69 se deben seguir los siguientes
+pasos:}
+
+{
+Seleccionar el Display de la Derecha haciendo Sel[0] = 1 y Sel[1] = 0.}
+
+{
+Colocar la información correspondiente al Número 9 en BCD\_Out:}
+
+\begin{enumerate}
+\item {
+Esperar TD milisegundos.}
+\item {
+Hacer BCD\_Out = 0, ( Esto para evitar que por un breve instante de
+tiempo se muestre la información del otro display )}
+\item {
+Seleccionar el Display de la izquierda haciendo Sel[0] = 0 y Sel[1] =
+1.}
+\item {
+Colocar la información correspondiente al Número 6 en BCD\_Out:}
+\item {
+Esperar TD milisegundos.}
+\item {
+Repetir el paso 1.}
+\end{enumerate}
+{
+Los pasos que debe realizar el módulo de visualización son lo mismos del
+ejemplo, pero la información que muestran en cada momento son los
+valores de las entradas {\textquotedblleft}Unidades{\textquotedblright}
+y {\textquotedblleft}Decenas{\textquotedblright}.}
+
+{
+Debido a que necesitamos una señal de reloj con un período de TD ms,
+podemos incluir un divisor de frecuencia dentro de la visualización,
+pero esto implica gastar más compuertas lógicas; la solución más óptima
+es incluir el divisor de frecuencia en el módulo divisor. Con lo que el
+código del divisor queda de la siguiente forma:}
+
+{\itshape
+\textbf{Library} IEEE;}
+
+{\itshape
+\textbf{use}  IEEE.STD\_LOGIC\_1164.all;}
+
+{\itshape
+\textbf{use}  IEEE.STD\_LOGIC\_ARITH.all;}
+
+{\itshape
+\textbf{use}  IEEE.STD\_LOGIC\_UNSIGNED.all;}
+
+{\itshape
+\textbf{Entity} clk\_div2 \textbf{Is}}
+
+{\itshape
+\foreignlanguage{english}{
+}\foreignlanguage{spanish}{\textbf{GENERIC}}\foreignlanguage{spanish}{(
+}}
+
+{\itshape
+ FMHZ: Natural := 8;}
+
+{\itshape
+ TD  : Natural := 20 );  {}-{}- FMHZ genérico 8MHz por defecto}
+
+{\itshape
+\foreignlanguage{spanish}{
+}\foreignlanguage{english}{\textbf{PORT}}\foreignlanguage{english}{(}}
+
+{\itshape
+ clock\_FMHZ  : \textbf{In}  Std\_Logic;  {}-{}- Señal de reloj
+externa.}
+
+{\itshape
+ Reset  : \textbf{In}  Std\_Logic;  {}-{}- Reset del Módulo}
+
+{\itshape
+ clock\_1Hz  : \textbf{Out}  Std\_Logic;}
+
+{\itshape
+ Clock\_TD  : \textbf{Out}  Std\_Logic ); -{}- Salida a 1Hz.}
+
+{\itshape
+\textbf{END} clk\_div2;}
+
+{\itshape
+\textbf{Architecture} RT \textbf{of} clk\_div2 \textbf{is}}
+
+{\itshape
+ \textbf{Signal}  count\_1Mhz : STD\_LOGIC\_VECTOR(4 DOWNTO 0);}
+
+{\itshape
+ \textbf{Signal}  Clock\_1MHz : Std\_Logic;}
+
+{\itshape
+ \textbf{Signal}  Clock\_1ms  : Std\_Logic;}
+
+{\itshape
+ \textbf{Signal}  Count\_1Hz  : Integer Range 0 to 100;}
+
+{\itshape
+ \textbf{Signal}  Count\_1ms  : Integer Range 0 to 100;}
+
+{\itshape
+ \textbf{Signal}  Count\_TDms : Integer Range 0 to 100;}
+
+{\bfseries\itshape
+Begin}
+
+{\itshape
+ \textbf{Process}}
+
+{\itshape
+ \textbf{Begin}}
+
+{\itshape
+{}-{}- Divisor por FMHZ}
+
+{\itshape
+ \textbf{wait} \textbf{until}
+clock\_FMHZ\textbf{{\textquotesingle}event} \textbf{and} clock\_FMHZ =
+{\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{if} Reset = {\textquotesingle}1{\textquotesingle}
+\textbf{then}}
+
+{\itshape
+ \textbf{if} count\_1Mhz {\textless} ( FMHZ - 1 ) \textbf{then}}
+
+{\itshape
+ count\_1Mhz {\textless}= count\_1Mhz + 1;}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ count\_1Mhz {\textless}= {\textquotedbl}00000{\textquotedbl};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{if} count\_1Mhz {\textless} FMHZ/2 \textbf{then}}
+
+{\itshape
+ clock\_1MHz {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ clock\_1MHz {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ Count\_1Mhz {\textless}= {\textquotedbl}00000{\textquotedbl};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{Process};\ \ }
+
+{\itshape
+{}-{}- Divisor por 1000}
+
+{\itshape
+ \textbf{Process} ( clock\_1Mhz, Reset )}
+
+{\itshape
+ \textbf{Begin}}
+
+{\itshape
+ \textbf{if} Reset = {\textquotesingle}0{\textquotesingle}
+\textbf{then}}
+
+{\itshape
+ Count\_1ms {\textless}= 0;}
+
+{\itshape
+ \textbf{else }}
+
+{\itshape
+ \textbf{if} clock\_1Mhz\textbf{{\textquotesingle}event} \textbf{and}
+clock\_1Mhz = {\textquotesingle}1{\textquotesingle} \textbf{then}}
+
+{\itshape
+ \textbf{if} count\_1ms {\textless} 1000 \textbf{then}}
+
+{\itshape
+ count\_1ms {\textless}= count\_1ms + 1;}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ count\_1ms {\textless}= 0;}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{if} count\_1ms {\textless} 500 \textbf{then}}
+
+{\itshape
+ clock\_1ms {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ clock\_1ms {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{end} \textbf{if};\ \ }
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{End} \textbf{Process};}
+
+{\itshape
+{}-{}- Divisor por 1000}
+
+{\itshape
+ \textbf{Process} ( clock\_1ms, Reset )}
+
+{\itshape
+ \textbf{Begin}}
+
+{\itshape
+ \textbf{if} Reset = {\textquotesingle}0{\textquotesingle}
+\textbf{then}}
+
+{\itshape
+ Count\_1Hz {\textless}= 0;}
+
+{\itshape
+ \textbf{else }}
+
+{\itshape
+ \textbf{if} clock\_1ms\textbf{{\textquotesingle}event} \textbf{and}
+clock\_1ms = {\textquotesingle}1{\textquotesingle} \textbf{then}}
+
+{\itshape
+ \textbf{if} count\_1Hz {\textless} 1000 \textbf{then}}
+
+{\itshape
+ count\_1Hz {\textless}= count\_1Hz + 1;}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ count\_1Hz {\textless}= 0;}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{if} count\_1Hz {\textless} 500 \textbf{then}}
+
+{\itshape
+ clock\_1Hz {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ clock\_1Hz {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{end} \textbf{if};\ \ }
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{End} \textbf{Process};}
+
+{\itshape
+{}-{}- Base De tiempo para la visualización dinámica}
+
+{\itshape
+\foreignlanguage{spanish}{
+}\foreignlanguage{english}{\textbf{Process}}\foreignlanguage{english}{
+( clock\_1ms, Reset )}}
+
+{\bfseries\itshape
+ Begin}
+
+{\itshape
+ \textbf{if} Reset = {\textquotesingle}0{\textquotesingle}
+\textbf{then}}
+
+{\itshape
+ Count\_TDms {\textless}= 0;}
+
+{\itshape
+ \textbf{else }}
+
+{\itshape
+ \textbf{if} clock\_1ms\textbf{{\textquotesingle}event} \textbf{and}
+clock\_1ms = {\textquotesingle}1{\textquotesingle} \textbf{then}}
+
+{\itshape
+ \textbf{if} count\_TDms {\textless} TD \textbf{then}}
+
+{\itshape
+ count\_TDms {\textless}= count\_TDms + 1;}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ count\_TDms {\textless}= 0;}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{if} count\_TDms {\textless} TD/2 \textbf{then}}
+
+{\itshape
+ clock\_TD {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ clock\_TD {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{end} \textbf{if};\ \ }
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{Process};\ \ }
+
+{\itshape
+\textbf{END} RT;}
+
+{
+En esta versión del divisor de frecuencia se obtiene una señal con una
+frecuencia de 1KHz al realizar la división de la señal de 1MHz entre
+1000. Esta señal se toma como base para obtener las señales de Base de
+tiempo para la visualización dinámica (Dividiendo por TD) y base de
+tiempo de 1 Hz.}
+
+{
+Finalmente el código del módulo de visualización se muestra a
+continuación:}
+
+{\itshape
+\textbf{Library} Ieee;}
+
+{\itshape
+\textbf{Use }Ieee.Std\_Logic\_1164.all;}
+
+{\itshape
+\textbf{Use }Ieee.Std\_Logic\_Arith.all;}
+
+{\itshape
+\textbf{Use} Ieee.Std\_Logic\_unsigned.all;}
+
+{\itshape
+\textbf{Entity }Show \textbf{is}}
+
+{\itshape
+ \textbf{Port}(}
+
+{\itshape
+ Unidades  : \textbf{In  }Std\_Logic\_vector( 3 \textbf{downto }0 );}
+
+{\itshape
+ Decenas  : \textbf{In  }Std\_Logic\_vector( 3 \textbf{downto} 0 );}
+
+{\itshape
+ Clk\_TDms : \textbf{In  }Std\_Logic;}
+
+{\itshape
+ Sel  : \textbf{Out }Std\_Logic\_vector( 1 \textbf{downto }0 );}
+
+{\itshape
+ BCD\_Out  : \textbf{Out }Std\_Logic\_Vector( 6 \textbf{downto }0 ) }
+
+{\itshape
+{}-{}-  BCD\_Out[7..0] = a, b, c, d, e, f, g}
+
+{\itshape
+ );}
+
+{\itshape
+\textbf{End Entity }Show;}
+
+{\itshape
+\textbf{Architecture }RT \textbf{of }Show \textbf{is}}
+
+{\itshape
+ \textbf{Signal }Binary : Std\_logic\_Vector ( 3 \textbf{downto }0 );}
+
+{\itshape
+ \textbf{Type  }Estados is ( Show\_Decenas, Show\_Unidades );}
+
+{\itshape
+ \textbf{Signal }State : Estados;}
+
+{\bfseries\itshape
+Begin}
+
+{\itshape
+ \textbf{Process}( Binary )}
+
+{\itshape
+ \textbf{Begin}}
+
+{\itshape
+ \textbf{Case} Binary \textbf{is}}
+
+{\itshape
+ \textbf{When }{\textquotedbl}0000{\textquotedbl} ={\textgreater}}
+
+{\itshape
+ BCD\_Out {\textless}= {\textquotedbl}0111111{\textquotedbl};}
+
+{\itshape
+ \textbf{When }{\textquotedbl}0001{\textquotedbl} ={\textgreater}}
+
+{\itshape
+ BCD\_Out {\textless}= {\textquotedbl}0100001{\textquotedbl};}
+
+{\itshape
+ \textbf{When }{\textquotedbl}0010{\textquotedbl} ={\textgreater}}
+
+{\itshape
+ BCD\_Out {\textless}= {\textquotedbl}1110110{\textquotedbl};}
+
+{\itshape
+ \textbf{When }{\textquotedbl}0011{\textquotedbl} ={\textgreater}}
+
+{\itshape
+ BCD\_Out {\textless}= {\textquotedbl}1110011{\textquotedbl};}
+
+{\itshape
+ \textbf{When }{\textquotedbl}0100{\textquotedbl} ={\textgreater}}
+
+{\itshape
+ BCD\_Out {\textless}= {\textquotedbl}1101001{\textquotedbl};}
+
+{\itshape
+ \textbf{When }{\textquotedbl}0101{\textquotedbl} ={\textgreater}}
+
+{\itshape
+ BCD\_Out {\textless}= {\textquotedbl}1011011{\textquotedbl};}
+
+{\itshape
+ \textbf{When }{\textquotedbl}0110{\textquotedbl} ={\textgreater}}
+
+{\itshape
+ BCD\_Out {\textless}= {\textquotedbl}1011111{\textquotedbl};}
+
+{\itshape
+ \textbf{When }{\textquotedbl}0111{\textquotedbl} ={\textgreater}}
+
+{\itshape
+ BCD\_Out {\textless}= {\textquotedbl}0110001{\textquotedbl};}
+
+{\itshape
+ \textbf{When }{\textquotedbl}1000{\textquotedbl} ={\textgreater}}
+
+{\itshape
+ BCD\_Out {\textless}= {\textquotedbl}1111111{\textquotedbl};}
+
+{\itshape
+ \textbf{When }{\textquotedbl}1001{\textquotedbl} ={\textgreater}}
+
+{\itshape
+ BCD\_Out {\textless}= {\textquotedbl}1111011{\textquotedbl};}
+
+{\itshape
+ \textbf{When others }={\textgreater}}
+
+{\itshape
+ BCD\_Out {\textless}= {\textquotedbl}0000000{\textquotedbl};}
+
+{\itshape
+ \textbf{end Case};}
+
+{\itshape
+ \textbf{End Process};}
+
+{\itshape
+ \textbf{Process}(Clk\_TDms)}
+
+{\itshape
+ \textbf{Begin}}
+
+{\itshape
+ \textbf{If }(Clk\_TDms\textbf{{\textquotesingle}event} \textbf{and
+}Clk\_TDms = {\textquotesingle}1{\textquotesingle}) \textbf{Then}}
+
+{\itshape
+ \textbf{Case }State \textbf{is}}
+
+{\itshape
+ \textbf{When }Show\_Decenas ={\textgreater}}
+
+{\itshape
+ Binary {\textless}= Decenas;}
+
+{\itshape
+ State  {\textless}= Show\_Unidades;}
+
+{\itshape
+ Sel  {\textless}= {\textquotedbl}01{\textquotedbl};}
+
+{\itshape
+ \textbf{When }Show\_Unidades ={\textgreater}}
+
+{\itshape
+ Binary {\textless}= Unidades;}
+
+{\itshape
+ State  {\textless}= Show\_Decenas;}
+
+{\itshape
+ Sel  {\textless}= {\textquotedbl}10{\textquotedbl};}
+
+{\itshape
+ \textbf{End Case};}
+
+{\itshape
+ \textbf{End If};}
+
+{\itshape
+ \textbf{End Process};}
+
+{\itshape
+\textbf{End Architecture }RT;}
+
+{
+Una vez realizados los diferentes módulos del sistema se debe realizar
+una descripción estructural para realizar la interconexión entre
+ellos:}
+
+{\itshape
+\textbf{Library} IEEE;}
+
+{\itshape
+\textbf{USE }IEEE.STD\_LOGIC\_1164.all;}
+
+{\itshape
+\textbf{USE }IEEE.STD\_LOGIC\_ARITH.all;}
+
+{\itshape
+\textbf{USE} IEEE.STD\_LOGIC\_UNSIGNED.all;}
+
+{\itshape
+\textbf{Entity }Cronometro \textbf{is}}
+
+{\itshape
+\textbf{Port}(}
+
+{\itshape
+\ \ Reset,clk\ \ : \textbf{IN} STD\_LOGIC;}
+
+{\itshape
+\ \ Sel\ \   : \textbf{Out} STD\_LOGIC\_VECTOR( 1 \textbf{downto} 0 );}
+
+{\itshape
+\ \ Seven\_Seg  : \textbf{Out} STD\_LOGIC\_VECTOR( 6 \textbf{downto} 0 )
+);}
+
+{\itshape
+\textbf{End Entity }Cronometro;}
+
+{\itshape
+\textbf{Architecture }Estructural \textbf{Of }Cronometro \textbf{is}}
+
+{\itshape
+\textbf{Component }Show}
+
+{\itshape
+ \textbf{Port}(}
+
+{\itshape
+ Unidades  : \textbf{In  }Std\_Logic\_vector( 3 \textbf{downto }0 );}
+
+{\itshape
+ Decenas  : \textbf{In  }Std\_Logic\_vector( 3 \textbf{downto }0 );}
+
+{\itshape
+ Clk\_TDms  : \textbf{In  }Std\_Logic;}
+
+{\itshape
+ Sel  : \textbf{Out }Std\_Logic\_vector( 1 \textbf{downto }0 );}
+
+{\itshape
+ BCD\_Out  : \textbf{Out }Std\_Logic\_Vector( 6 \textbf{downto }0 ) );}
+
+{\itshape
+\textbf{End Component }Show;}
+
+{\itshape
+\textbf{Component }Contador}
+
+{\itshape
+ \textbf{Port}(}
+
+{\itshape
+\foreignlanguage{spanish}{ }\foreignlanguage{english}{Clock  :
+}\foreignlanguage{english}{\textbf{In 
+}}\foreignlanguage{english}{Std\_Logic;}}
+
+{\itshape
+ Reset  : \textbf{In  }Std\_Logic;}
+
+{\itshape
+ Unidades : \textbf{Buffer  }Std\_Logic\_Vector( 3 \textbf{Downto }0 );}
+
+{\itshape
+ Decenas  : \textbf{Buffer  }Std\_logic\_Vector( 3 \textbf{Downto }0 )}
+
+{\itshape
+ );}
+
+{\itshape
+\textbf{end Component }Contador;}
+
+{\itshape
+\textbf{Component }clk\_div2}
+
+{\itshape
+ \textbf{GENERIC}( }
+
+{\itshape
+ FMHZ: Natural := 8;}
+
+{\itshape
+ TD  : Natural := 20 );}
+
+{\itshape
+ \textbf{PORT}(}
+
+{\itshape
+ clock\_FMHZ  : \textbf{In  }Std\_Logic;}
+
+{\itshape
+ Reset  : \textbf{In  }Std\_Logic;}
+
+{\itshape
+ clock\_1Hz  : \textbf{Out  } Std\_Logic;}
+
+{\itshape
+ Clock\_TD  : \textbf{Out } Std\_Logic );}
+
+{\itshape
+\textbf{END Component }clk\_div2;}
+
+{\itshape
+\textbf{Signal }CLK1Hz, CLKTD  : Std\_logic;}
+
+{\itshape
+\textbf{Signal }Unidades, Decenas : Std\_logic\_vector( 3 downto 0 );}
+
+{\bfseries\itshape
+Begin}
+
+{\itshape
+ A1: clk\_div2}
+
+{\itshape
+ \textbf{Generic map}(8, 20)}
+
+{\itshape
+ \textbf{Port Map}( clk, Reset, CLK1Hz, CLKTD );}
+
+{\itshape
+\foreignlanguage{english}{ }\foreignlanguage{spanish}{A2: Contador}}
+
+{\itshape
+ \textbf{port map}( CLK1Hz, Reset, Unidades, Decenas );}
+
+{\itshape
+\foreignlanguage{spanish}{ }\foreignlanguage{english}{A3: Show}}
+
+{\itshape
+ \textbf{port map}( Unidades, Decenas, CLKTD, Sel, Seven\_Seg );}
+
+{\itshape
+\textbf{End Architecture }Estructural;}
+
+{
+El código correspondiente al \textit{testbench} del cronometro es:}
+
+{\itshape
+\textbf{LIBRARY} ieee;}
+
+{\itshape
+\textbf{USE} ieee.std\_logic\_1164.ALL;}
+
+{\itshape
+\textbf{USE} ieee.numeric\_std.ALL;}
+
+{\itshape
+\textbf{ENTITY} testbench \textbf{IS}}
+
+{\itshape
+\textbf{END} testbench;}
+
+{\itshape
+\textbf{ARCHITECTURE} behavior \textbf{OF} testbench \textbf{IS} }
+
+{\itshape
+{}-{}- Component Declaration}
+
+{\itshape
+\ \ \textbf{Component} cronometro}
+
+{\itshape
+\ \ \textbf{PORT}(}
+
+{\itshape
+\ \ \ \ Reset, clk  : \textbf{IN}  std\_logic;}
+
+{\itshape
+\ \ \ \ Sel  : \textbf{OUT} std\_logic\_vector(1 \textbf{downto} 0);  }
+
+{\itshape
+\ \ \ \ Seven\_Seg  : \textbf{OUT} std\_logic\_vector(6 \textbf{downto}
+0)}
+
+{\itshape
+\ \ \ \ );}
+
+{\itshape
+\ \ \textbf{END} \textbf{COMPONENT};}
+
+{\itshape
+\ \ \textbf{SIGNAL}  Reset  : std\_logic;}
+
+{\itshape
+\ \ \textbf{SIGNAL}  clk  : std\_logic;}
+
+{\itshape
+\ \ \textbf{SIGNAL}  Sel  : std\_logic\_vector(1 \textbf{downto} 0);}
+
+{\itshape
+\ \ \textbf{SIGNAL}  Seven\_Seg  : std\_logic\_vector(6 \textbf{downto}
+0);}
+
+{\itshape
+ \textbf{constant} ncycles  : \textbf{integer} := 40000000;}
+
+{\itshape
+ \textbf{constant} halfperiod : time := 5 ns;\ \ }
+
+{\bfseries\itshape
+BEGIN}
+
+{\itshape
+{}-{}- Component Instantiation}
+
+{\itshape
+\ \ uut: cronometro \textbf{PORT} \textbf{MAP}(}
+
+{\itshape
+\ \ \ \ Reset  ={\textgreater} Reset,}
+
+{\itshape
+\ \ \ \ clk  ={\textgreater} clk,}
+
+{\itshape
+\ \ \ \ Sel  ={\textgreater} Sel,}
+
+{\itshape
+\ \ \ \ Seven\_Seg ={\textgreater} Seven\_Seg}
+
+{\itshape
+\ \ );}
+
+{\itshape
+ {}-{}- Generacion del Reloj}
+
+{\itshape
+ Clock\_Source: \textbf{process}}
+
+{\itshape
+ \textbf{begin}}
+
+{\itshape
+ \textbf{for} i \textbf{in} 0 \textbf{to} ncycles \textbf{loop}  {}-{}-
+Genera ncyclos de periodo 10 ns}
+
+{\itshape
+ clk {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{for} halfperiod;}
+
+{\itshape
+ clk {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{for} halfperiod;}
+
+{\itshape
+ \textbf{end} \textbf{loop};}
+
+{\itshape
+ \textbf{wait};}
+
+{\itshape
+ \textbf{end} \textbf{process} Clock\_Source;}
+
+{\itshape
+ tb : \textbf{PROCESS}}
+
+{\itshape
+ \textbf{BEGIN}}
+
+{\itshape
+ Reset {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event and}
+clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ Reset {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{wait}; }
+
+{\itshape
+ \textbf{END} \textbf{PROCESS};}
+
+{\itshape
+\textbf{END};}
+
+{\bfseries
+EJEMPLO 5: Contador UP/DOWN}
+
+{
+En este ejemplo se diseñará un contador ascendente descendente de 0 a
+99. El sistema tendrá como entradas de control tres pulsadores: Reset,
+Aumento y dismunición. El diagrama de bloques del sistema se muestra en
+la siguiente figura:}
+
+{\centering 
+\includegraphics[width=7.989cm,height=3.413cm]{FSM-img36.png} \par}
+
+{\centering
+Figura 36. Interfaz del Contador Up/Down
+\par}
+
+{
+El diagrama de bloques de este sistema es el siguiente:}
+
+{\centering 
+\includegraphics[width=7.116cm,height=5.239cm]{FSM-img37.png} \par}
+
+{\centering
+Figura 37. Diagrama de Bloques del contador Up/Down
+\par}
+
+{
+Como se puede ver el circuito de visualización es idéntico al del
+ejemplo anterior. Debido a que utilizaremos elementos mecánicos (
+pulsadores ) debemos diseñar un circuito que elimine el ruido eléctrico
+introducido por estos.}
+
+{
+\textbf{ANTIREBOTE}: Este módulo se encarga de eliminar el ruido
+eléctrico introducido por los pulsadores, previniendo de esta forma
+conteos erróneos. Además incorpora un circuito que genera un pulso de
+duración de un período de la señal de reloj para evitar que cuando se
+deja oprimido el Pulsador se genere más de un conteo.}
+
+{\centering 
+\includegraphics[width=11.829cm,height=11.945cm]{FSM-img38.png} \par}
+
+{\centering
+Figura 38. Diagrama de estados del módulo antirrebote
+\par}
+
+{
+El código en VHDL de este módulo es el siguiente:}
+
+{\itshape
+\textbf{library} IEEE;}
+
+{\itshape
+\textbf{use}  ieee.std\_logic\_1164.all;}
+
+{\itshape
+\textbf{use}  ieee.std\_logic\_arith.all;}
+
+{\itshape
+\textbf{Entity} debounce \textbf{Is}}
+
+{\itshape
+ \textbf{Port}(}
+
+{\itshape
+ Push\_Button, Clk : \textbf{In}  Std\_Logic;}
+
+{\itshape
+ Reset  : \textbf{In}  Std\_Logic;}
+
+{\itshape
+ PB\_D\ \   : \textbf{Out} Std\_Logic);}
+
+{\itshape
+\textbf{End} debounce;}
+
+{\itshape
+\textbf{Architecture} RT \textbf{OF} debounce \textbf{Is}}
+
+{\itshape
+\textbf{Type} estados \textbf{Is} ( Rise, fall, S0, S1 );}
+
+{\itshape
+\textbf{Signal} state\ \ : estados;}
+
+{\itshape
+\textbf{Signal} SHIFT\_PB : Std\_Logic\_Vector( 3 downto 0 );}
+
+{\itshape
+\textbf{Signal} PB\_DEBOUNCED  : Std\_Logic;}
+
+{\bfseries\itshape
+Begin}
+
+{\itshape
+ \textbf{Process  }{}-{}- Este proceso elimina el ruido eléctrico
+generado por los pulsadores}
+
+{\itshape
+\foreignlanguage{spanish}{ }\foreignlanguage{english}{\textbf{begin}}}
+
+{\itshape
+ \textbf{wait} \textbf{until} ( Clk\textbf{{\textquotesingle}EVENT} )
+\textbf{AND} ( Clk = {\textquotesingle}1{\textquotesingle} );}
+
+{\itshape
+ SHIFT\_PB( 2 \textbf{Downto} 0 ) {\textless}= SHIFT\_PB( 3
+\textbf{Downto} 1 );}
+
+{\itshape
+ SHIFT\_PB(3) {\textless}= \textbf{NOT} Push\_Button;}
+
+{\itshape
+ \textbf{If} SHIFT\_PB( 3 \textbf{Downto} 0
+)={\textquotedbl}0000{\textquotedbl} \textbf{THEN}}
+
+{\itshape
+ PB\_DEBOUNCED {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{Else}}
+
+{\itshape
+ PB\_DEBOUNCED {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{End} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{process};}
+
+{\itshape
+ \textbf{Process} ( Clk, PB\_DEBOUNCED, Reset )}
+
+{\itshape
+ \textbf{Begin}}
+
+{\itshape
+ \textbf{If} Reset = {\textquotesingle}1{\textquotesingle}
+\textbf{then}}
+
+{\itshape
+ state {\textless}= Rise;}
+
+{\itshape
+ PB\_D {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ \textbf{If} Clk\textbf{{\textquotesingle}event} and Clk =
+{\textquotesingle}0{\textquotesingle} \textbf{then}}
+
+{\itshape
+ \textbf{Case} state \textbf{is}}
+
+{\itshape
+ \textbf{When} Rise ={\textgreater}}
+
+{\itshape
+ PB\_D {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{If} PB\_DEBOUNCED = {\textquotesingle}0{\textquotesingle}
+\textbf{then} }
+
+{\itshape
+ State {\textless}= Rise;}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ State {\textless}= S0;}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{When} S0 ={\textgreater}}
+
+{\itshape
+ PB\_D {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ State {\textless}= S1;  }
+
+{\itshape
+ \textbf{When} S1 ={\textgreater}}
+
+{\itshape
+ PB\_D {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ State {\textless}= Fall;  }
+
+{\itshape
+ \textbf{When} Fall ={\textgreater}}
+
+{\itshape
+ PB\_D {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{If} PB\_DEBOUNCED = {\textquotesingle}1{\textquotesingle}
+\textbf{then} }
+
+{\itshape
+ State {\textless}= Fall;}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ State {\textless}= Rise;}
+
+{\itshape
+ \textbf{end} \textbf{if};  }
+
+{\itshape
+ \textbf{When} Others ={\textgreater}}
+
+{\itshape
+ State {\textless}= Rise;}
+
+{\itshape
+ \textbf{End} \textbf{Case};}
+
+{\itshape
+ \textbf{End} \textbf{If};}
+
+{\itshape
+ \textbf{End} \textbf{If};  }
+
+{\itshape
+ \textbf{End} \textbf{Process};}
+
+{\itshape
+\textbf{end} \textbf{architecture} RT;}
+
+{\centering 
+\includegraphics[width=7.618cm,height=3.307cm]{FSM-img39.png} \par}
+
+{\centering
+Figura 39. Interfaz del módulo contador.
+\par}
+
+{
+\textbf{CONTADOR}: Este módulo está encargado de aumentar o disminuir el
+valor de sus salidas de acuerdo a la entrada que este actuando. La
+interfaz de este módulo se muestra en la figura anterior y el código en
+VHDL se muestra a continuación.}
+
+{\itshape
+\textbf{Library} Ieee;}
+
+{\itshape
+\textbf{Use} Ieee.Std\_Logic\_1164.all;}
+
+{\itshape
+\textbf{Use} Ieee.Std\_Logic\_Arith.all;}
+
+{\itshape
+\textbf{Use} Ieee.Std\_Logic\_unsigned.all;}
+
+{\itshape
+\textbf{Entity} Contador \textbf{is}}
+
+{\itshape
+ \textbf{Port}(}
+
+{\itshape
+ Up  : \textbf{In}  Std\_Logic;}
+
+{\itshape
+ Down  : \textbf{In}  Std\_Logic;}
+
+{\itshape
+ Reset  : \textbf{In}  Std\_logic;}
+
+{\itshape
+ Clk  : \textbf{In}  Std\_logic;}
+
+{\itshape
+ Unidades : \textbf{Buffer}  Std\_Logic\_Vector( 3 \textbf{Downto} 0 );}
+
+{\itshape
+ Decenas  : \textbf{Buffer}  Std\_logic\_Vector( 3 \textbf{Downto} 0 )}
+
+{\itshape
+ );}
+
+{\itshape
+\textbf{end} \textbf{Entity} Contador;}
+
+{\itshape
+\textbf{Architecture} RT \textbf{of} Contador \textbf{is}}
+
+{\bfseries\itshape
+Begin}
+
+{\itshape
+ \textbf{Process} ( Up, Down, Reset, Clk )}
+
+{\itshape
+ \textbf{Begin}}
+
+{\itshape
+ \textbf{If} Reset = {\textquotesingle}1{\textquotesingle}
+\textbf{then}}
+
+{\itshape
+ Unidades {\textless}= {\textquotedbl}0000{\textquotedbl};}
+
+{\itshape
+ Decenas  {\textless}= {\textquotedbl}0000{\textquotedbl};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ \textbf{If} Clk\textbf{{\textquotesingle}event} \textbf{and}
+clk={\textquotesingle}1{\textquotesingle} \textbf{then}}
+
+{\itshape
+ \textbf{if} Up = {\textquotesingle}1{\textquotesingle} \textbf{and}
+Down  = {\textquotesingle}0{\textquotesingle} \textbf{then}}
+
+{\itshape
+\foreignlanguage{english}{ }\textbf{If} Unidades {\textless}
+{\textquotedbl}1001{\textquotedbl} \textbf{then}}
+
+{\itshape
+ Unidades  {\textless}= Unidades + {\textquotedbl}0001{\textquotedbl};}
+
+{\itshape
+ \foreignlanguage{english}{\textbf{else}}}
+
+{\itshape
+ Unidades {\textless}= {\textquotedbl}0000{\textquotedbl};}
+
+{\itshape
+ \textbf{if} Decenas {\textless} {\textquotedbl}1001{\textquotedbl}
+\textbf{then}}
+
+{\itshape
+\foreignlanguage{english}{ }Decenas  {\textless}= Decenas +
+{\textquotedbl}0001{\textquotedbl};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ Unidades {\textless}= {\textquotedbl}0000{\textquotedbl};}
+
+{\itshape
+ \foreignlanguage{english}{Decenas  {\textless}=
+{\textquotedbl}0000{\textquotedbl};}}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{elsif} Up = {\textquotesingle}0{\textquotesingle} \textbf{and}
+Down = {\textquotesingle}1{\textquotesingle} \textbf{then}}
+
+{\itshape
+\foreignlanguage{english}{ }\textbf{If} Unidades {\textgreater}
+{\textquotedbl}0000{\textquotedbl} \textbf{then}}
+
+{\itshape
+ Unidades  {\textless}= Unidades - {\textquotedbl}0001{\textquotedbl};}
+
+{\itshape
+ \foreignlanguage{english}{\textbf{else}}}
+
+{\itshape
+ Unidades {\textless}= {\textquotedbl}1001{\textquotedbl};}
+
+{\itshape
+ \textbf{if} Decenas {\textgreater} {\textquotedbl}0000{\textquotedbl}
+\textbf{then}}
+
+{\itshape
+\foreignlanguage{english}{ }Decenas  {\textless}= Decenas -
+{\textquotedbl}0001{\textquotedbl};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ Unidades {\textless}= {\textquotedbl}1001{\textquotedbl};}
+
+{\itshape
+ \foreignlanguage{english}{Decenas  {\textless}=
+{\textquotedbl}1001{\textquotedbl};}}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+\foreignlanguage{english}{ }\textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ Unidades {\textless}= Unidades;}
+
+{\itshape
+ Decenas  {\textless}= Decenas;}
+
+{\itshape
+ \foreignlanguage{english}{\textbf{end}}\foreignlanguage{english}{
+}\foreignlanguage{english}{\textbf{if}}\foreignlanguage{english}{;}}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{End} \textbf{Process};}
+
+{\itshape
+\textbf{End} \textbf{Architecture} RT;}
+
+{
+La descripción estructural del contador Up/Down es la siguiente:}
+
+{\itshape
+\textbf{library} IEEE;}
+
+{\itshape
+\textbf{use} IEEE.std\_logic\_1164.all;}
+
+{\itshape
+\textbf{entity} UDCounter \textbf{is}}
+
+{\itshape
+ \textbf{port} (}
+
+{\itshape
+ Up  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Down  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Clk  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Reset : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Sel  : \textbf{Buffer} STD\_LOGIC\_VECTOR (1 \textbf{downto} 0);}
+
+{\itshape
+ SEG  : \textbf{out}  STD\_LOGIC\_VECTOR (6 \textbf{downto} 0)}
+
+{\itshape
+ );}
+
+{\itshape
+\textbf{end} UDCounter;}
+
+{\itshape
+\textbf{architecture} UDCounter\_arch \textbf{of} UDCounter \textbf{is}}
+
+{\itshape
+\textbf{Component} Show}
+
+{\itshape
+ \textbf{Port}(}
+
+{\itshape
+ Unidades : In  Std\_Logic\_vector( 3 downto 0 );}
+
+{\itshape
+ Decenas  : In  Std\_Logic\_vector( 3 downto 0 );}
+
+{\itshape
+ Clk\_TDms : In  Std\_Logic;}
+
+{\itshape
+ Sel  : Buffer Std\_Logic\_vector( 1 downto 0 );}
+
+{\itshape
+ BCD\_Out  : Out  Std\_Logic\_Vector( 6 downto 0 ) );}
+
+{\itshape
+\textbf{End} \textbf{Component} Show;}
+
+{\itshape
+\textbf{Component} Contador}
+
+{\itshape
+ \textbf{Port}(}
+
+{\itshape
+\foreignlanguage{spanish}{ }\foreignlanguage{english}{Up  :
+}\foreignlanguage{english}{\textbf{In}}\foreignlanguage{english}{ 
+Std\_Logic;}}
+
+{\itshape
+ Down  : \textbf{In}  Std\_Logic;}
+
+{\itshape
+ Reset  : \textbf{In}  Std\_logic;}
+
+{\itshape
+ Clk  : \textbf{In}  Std\_logic;}
+
+{\itshape
+ Unidades : \textbf{Buffer}  Std\_Logic\_Vector( 3 Downto 0 );}
+
+{\itshape
+ Decenas  : \textbf{Out}  Std\_logic\_Vector( 3 Downto 0 )}
+
+{\itshape
+ );}
+
+{\itshape
+\textbf{end} \textbf{Component} Contador;}
+
+{\itshape
+\textbf{Component} debounce}
+
+{\itshape
+ \textbf{Port}(}
+
+{\itshape
+ Push\_Button, Clk : \textbf{In}  Std\_Logic;}
+
+{\itshape
+ Reset  : \textbf{In}  Std\_Logic;}
+
+{\itshape
+ PB\_D\ \   : \textbf{Out} Std\_Logic);}
+
+{\itshape
+\textbf{End} \textbf{Component} debounce;}
+
+{\itshape
+\textbf{Component} clk\_div2}
+
+{\itshape
+ \textbf{GENERIC}( }
+
+{\itshape
+ FMHZ: Natural := 8;}
+
+{\itshape
+ TD  : Natural := 20 );}
+
+{\itshape
+ \textbf{PORT}(}
+
+{\itshape
+ clock\_FMHZ  : \textbf{In}  Std\_Logic;}
+
+{\itshape
+ Reset  : \textbf{In}  Std\_Logic;}
+
+{\itshape
+ clock\_1Hz  : \textbf{Out}  Std\_Logic;}
+
+{\itshape
+ Clock\_TD  : \textbf{Out}  Std\_Logic );}
+
+{\itshape
+\textbf{END} \textbf{Component} clk\_div2;}
+
+{\itshape
+\textbf{Signal} CLKTD, CLK1Hz, UPI, DNI  : Std\_Logic;}
+
+{\itshape
+\textbf{Signal} Unidades, Decenas : Std\_logic\_vector( 3
+\textbf{downto} 0 );}
+
+{\bfseries\itshape
+begin}
+
+{\itshape
+ A1: clk\_div2}
+
+{\itshape
+ \textbf{Generic} \textbf{map}(8, 20)}
+
+{\itshape
+ \textbf{Port} \textbf{Map}( Clk, Reset, CLK1Hz, CLKTD );}
+
+{\itshape
+ A2: debounce}
+
+{\itshape
+ \textbf{Port} \textbf{Map}( Up, CLKTD, Reset, UPI );}
+
+{\itshape
+ A3: debounce}
+
+{\itshape
+ \textbf{Port} \textbf{Map}( Down, CLKTD, Reset, DNI );}
+
+{\itshape
+\foreignlanguage{english}{ }A4: Contador}
+
+{\itshape
+ \textbf{Port} \textbf{Map}( UPI, DNI, Reset, CLKTD, Unidades, Decenas
+);}
+
+{\itshape
+ \foreignlanguage{english}{A5: Show}}
+
+{\itshape
+ \textbf{Port} \textbf{Map}( Unidades, Decenas, CLKTD, Sel, SEG );}
+
+{\itshape
+\textbf{end} UDCounter\_arch;}
+
+{\bfseries
+Ejemplo 6: UART ( Universal Asynchronous Receiver \& Transmitter )}
+
+{
+La comunicación asíncrona es ampliamente utilizada en los sistemas
+digitales, por esta razón en este ejemplo se diseñará un sistema capáz
+de realizar una comunicación serial asíncrona. }
+
+{
+En la Figura 40 se muestra una trama típica de este tipo de
+comunicación, el primer bit en ser enviado es el Bit de Start ( Cero
+Lógico ), después se envían los bits de datos los cuales pueden variar
+de 6 a 8 Bits, a continuación el bit de paridad el cual es útil para la
+detección de errores en la transferencia; Este bit no es obligatorio y
+en este ejemplo no lo utilizaremos y por último está el bit de stop.}
+
+ \includegraphics[width=12.596cm,height=3.713cm]{FSM-img40.png} 
+
+{
+Figura 40. Trama básica de la transmisión asíncrona: 1 bit de Start, 8
+bits de Datos, un bit de paridad ( opcional ) y un Bit de Stop.}
+
+{
+En un protocolo asíncrono el emisor y el receptor no comparten el mismo
+reloj, debido a esto se debe conocer la velocidad de transmisión ( Baud
+Rate ) antes de iniciarse las comunicaciones. Por lo cual los relojes
+internos del transmisor y el receptor se deben fijar a la misma
+frecuencia. El receptor sincroniza su reloj interno al iniciar cada
+trama, esto se puede realizar detectando la transición de alto a bajo
+en señal de recepción. }
+
+{
+Un concepto clave en el diseño de UARTs es que el reloj interno de la
+UART debe ser más rápido que la velocidad de transmisión. En la UART
+16450 su reloj es 16 veces más rápido que la Tasa de Baudios. Una vez
+que el inicio de la transmisión se detecta se debe esperar un tiempo
+igual a 24 ciclos de muestreo ( 16 del Bit de Start + 8 del Bit ) esto
+se hace para que el receptor pueda relizar la lectura del dato entrante
+en la mitad de cada BIT. Después de esto se muestrea la señal de
+entrada cada 16 ciclos del reloj de muestreo. En la Figura 41 se
+muestra este concepto.}
+
+{\centering 
+\includegraphics[width=12.598cm,height=7.856cm]{FSM-img41.png} \par}
+
+{\centering
+Figura 41. Puntos de muestreo del receptor.
+\par}
+
+{
+El diseño del transmisor es más sencillo ya que el puede iniciar a
+enviar datos en cualquier momento y simplemente debe realizar el
+corrimiento de los datos cada 1/Baud Rate.}
+
+{
+En la siguiente figura se muestra la interfaz y el diagrama de bloques
+de la UART.}
+
+{\centering 
+\includegraphics[width=11.19cm,height=11.164cm]{FSM-img42.png} \par}
+
+{\centering
+Figura 42. Diagrama de Bloques de la UART.
+\par}
+
+{
+Donde:}
+
+{
+Reset  : Reset general del sistema activa alta.}
+
+{
+Clk  : Señal de Reloj.}
+
+{
+Rx  : Señal de entrada serial asíncrona.}
+
+{
+Read\_Data  : Activa alta le informa al receptor que el dato a sido
+leído.}
+
+{
+Data\_Ready  : Indica la recepción de un dato por la línea Rx. El dato
+está disponible }
+
+{
+ en Data\_Rx.}
+
+{
+Data\_Rx( 7..0 ) : Dato recibido por el receptor.}
+
+{
+Data\_Tx( 7..0 ) : Dato a transmitir por la UART.}
+
+{
+Start\_Tx  : Inicio de la transmisión.}
+
+{
+Tx  : Señal de salida serial}
+
+{
+Tx\_Empty  : En estado lógico alto ndica que el transmisor está
+disponible para una }
+
+{
+ nueva transmisión.}
+
+{
+\textbf{Generador de Muestreo}: Este módulo está encargado de generar la
+frecuencia de muestreo del receptor y el reloj del transmisor. En la
+siguiente figura se muestra la interfaz y el diagrama de bloques de
+este módulo.}
+
+{\centering 
+\includegraphics[width=11.455cm,height=10.052cm]{FSM-img43.png} \par}
+
+{\centering
+Figura 43. Diagrama de bloques del generador de muestreo.
+\par}
+
+{
+El bloque {\textquotedblleft} Divisor x 16 {\textquotedblright} como su
+nombre lo indica divide la señal de entrada en 16. El divisor de
+frecuencia programable es capaz de dividir la señal de entrada de 1 a
+FFFF H ( 65535 ). El factor de división debe ser ingresado de la
+siguiente forma: Colocar el byte menos significativo en
+\textit{cte\_div} y hacer \textit{Load\_Hi = 0} y \textit{Load\_Low }=
+1. Colocar el byte más significativo en \textit{cte\_div} y hacer
+\textit{Load\_Hi} = 1 y \textit{Load\_Low} = 0.
+\foreignlanguage{english}{Asignar
+}\foreignlanguage{english}{\textit{Load\_Hi = 0
+}}\foreignlanguage{english}{y}\foreignlanguage{english}{\textit{
+Load\_Low = 0}}\foreignlanguage{english}{. }Como se observa en la
+Figura anterior el reloj del transmisor Clk\_Txs se genere al dividir
+la señal de reloj entrante entre 16*16*cte\_div, si por ejemplo tenemos
+un cristal de 4.9125 Mhz y deseamos realizar una transmisión a 2400 BPS
+\textit{cte\_div} será igual a:}
+
+\begin{equation*}
+{\normalsubformula{\text{cte}}_{\normalsubformula{\text{div}}}=\frac{\normalsubformula{\text{fin}}}{\normalsubformula{\text{BPS}}\ast
+\text{256}}}
+\end{equation*}
+{
+Que para nuestro ejemplo sería:}
+
+% \begin{equation*}
+% \begin{matrix}{\frac{\text{4915200}}{\text{2400}\ast
+% \text{256}}=8=\text{0008}H}\hfill\null \\\hfill\null \end{matrix}\hfill
+% 
+% \end{equation*}
+{
+A continuación se muestrá el código de los módulos div16 y div\_ms:}
+
+{\itshape
+{}-{}- Inicio del módulo div16}
+
+{\itshape
+\textbf{Library} Ieee;}
+
+{\itshape
+\textbf{Use} Ieee.Std\_Logic\_1164.all;}
+
+{\itshape
+\textbf{Use} Ieee.Std\_Logic\_Arith.all;}
+
+{
+\textbf{Use} Ieee.Std\_Logic\_unsigned.all;}
+
+{\itshape
+\textbf{entity} div16 \textbf{is}}
+
+{\itshape
+ \textbf{port }(}
+
+{\itshape
+ Reset: \textbf{in} STD\_LOGIC;}
+
+{\itshape
+ Clk: \textbf{in} STD\_LOGIC;}
+
+{\itshape
+ Clk\_In: \textbf{in} STD\_LOGIC;}
+
+{\itshape
+ Clk\_Out: \textbf{out} STD\_LOGIC}
+
+{\itshape
+ );}
+
+{\itshape
+\textbf{end} div16;}
+
+{\itshape
+\textbf{architecture} div16\_arch \textbf{of} div16 \textbf{is}}
+
+{\itshape
+\textbf{Signal} divider  : Std\_Logic\_Vector( 3 \textbf{downto} 0 );}
+
+{\bfseries\itshape
+begin}
+
+{\itshape
+ \textbf{Process}( CLK, Reset )}
+
+{\itshape
+ \textbf{Begin}}
+
+{\itshape
+ \textbf{if} clk\textbf{{\textquotesingle}event and} clk =
+{\textquotesingle}1{\textquotesingle} \textbf{then}}
+
+{\itshape
+ \textbf{if} Reset = {\textquotesingle}1{\textquotesingle}
+\textbf{then}}
+
+{\itshape
+ divider {\textless}= {\textquotedbl}0000{\textquotedbl};}
+
+{\itshape
+ \textbf{elsif} Clk\_In = {\textquotesingle}1{\textquotesingle}
+\textbf{then}}
+
+{\itshape
+ \textbf{if} divider = {\textquotedbl}1111{\textquotedbl} \textbf{then}}
+
+{\itshape
+ divider {\textless}= {\textquotedbl}0000{\textquotedbl};}
+
+{\itshape
+ Clk\_Out {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ divider {\textless}= divider + {\textquotedbl}0001{\textquotedbl};}
+
+{\itshape
+ Clk\_Out {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{process};}
+
+{\itshape
+\textbf{end} div16\_arch;}
+
+{\itshape
+{}-{}-Inicio del módulo div\_ms}
+
+{\itshape
+\textbf{Library} Ieee;}
+
+{\itshape
+\textbf{Use} Ieee.Std\_Logic\_1164.all;}
+
+{\itshape
+\textbf{Use} Ieee.Std\_Logic\_Arith.all;}
+
+{
+\textbf{Use} Ieee.Std\_Logic\_unsigned.all;}
+
+{\itshape
+\textbf{entity} Div\_ms \textbf{is}}
+
+{\itshape
+ \textbf{port} (}
+
+{\itshape
+ Reset  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Clk  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Clk\_In  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Divider  : \textbf{in}  STD\_LOGIC\_Vector( 7 \textbf{downto} 0 );}
+
+{\itshape
+ Ld\_Div\_Low  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Ld\_Div\_Hi  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Clk\_Out  : \textbf{out} STD\_LOGIC}
+
+{\itshape
+ );}
+
+{\itshape
+\textbf{end} Div\_ms;}
+
+{\itshape
+\textbf{architecture} Div\_ms\_arch of Div\_ms \textbf{is}}
+
+{\itshape
+\textbf{Signal} count, Div\_Factor : Std\_Logic\_Vector( 15
+\textbf{downto} 0 );}
+
+{\bfseries\itshape
+begin}
+
+{\itshape
+ \textbf{Process}( CLK, Reset )}
+
+{\itshape
+ \textbf{Begin}}
+
+{\itshape
+ \textbf{if} clk\textbf{{\textquotesingle}event and} clk =
+{\textquotesingle}1{\textquotesingle} then }
+
+{\itshape
+ \textbf{If} Reset = {\textquotesingle}1{\textquotesingle}
+\textbf{then}}
+
+{\itshape
+ count {\textless}= ( others ={\textgreater}
+{\textquotesingle}0{\textquotesingle} );}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ \textbf{if} Ld\_Div\_Low = {\textquotesingle}1{\textquotesingle}
+\textbf{then}}
+
+{\itshape
+ Div\_Factor( 7 \textbf{downto} 0 ) {\textless}= Divider;}
+
+{\itshape
+ count {\textless}= ( others ={\textgreater}
+{\textquotesingle}0{\textquotesingle} );}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{if} Ld\_Div\_Hi = {\textquotesingle}1{\textquotesingle}
+\textbf{then}}
+
+{\itshape
+ Div\_Factor( 15 \textbf{downto} 8 ) {\textless}= Divider;}
+
+{\itshape
+ count {\textless}= ( others ={\textgreater}
+{\textquotesingle}0{\textquotesingle} );}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{if} count = Div\_Factor \textbf{then}}
+
+{\itshape
+ count {\textless}= ( others ={\textgreater}
+{\textquotesingle}0{\textquotesingle} );}
+
+{\itshape
+ Clk\_Out {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ \textbf{if} Clk\_In = {\textquotesingle}1{\textquotesingle}
+\textbf{then}}
+
+{\itshape
+ count {\textless}= count + 1;}
+
+{\itshape
+ Clk\_Out {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{if} ;}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{process};}
+
+{\itshape
+\textbf{end} Div\_ms\_arch;}
+
+{
+\textbf{Transmisor}: Este módulo está encargado de generar la trama a la
+velocidad determinada en la señal Tx. El transmisor es bastante
+sencillo ya que lo único que debe hacer es realizar un corrimiento a la
+izquierda de un registro de 10 bits conformado de la siguiente forma:}
+
+{
+Dígito 0  : 0 ( Bit de Start ).}
+
+{
+Dígitos 1 -- 9 : Dato a transmitir.}
+
+{
+Dígito 10  : Bit de Stop.}
+
+{
+El código en VHDL del transmisor se muestra a continuación:}
+
+{\itshape
+\textbf{Library} Ieee;}
+
+{\itshape
+\textbf{Use} Ieee.Std\_Logic\_1164.all;}
+
+{\itshape
+\textbf{Use} Ieee.Std\_Logic\_Arith.all;}
+
+{\itshape
+\textbf{Use} Ieee.Std\_Logic\_unsigned.all;}
+
+{\itshape
+\textbf{entity} Buffer\_TX \textbf{is}}
+
+{\itshape
+ \textbf{port} (}
+
+{\itshape
+ Reset  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Clk  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Load  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Shift  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Data\_IN  : \textbf{in}  STD\_LOGIC\_VECTOR (7 \textbf{downto} 0);}
+
+{\itshape
+ Tx  : \textbf{out} STD\_LOGIC;}
+
+{\itshape
+ Tx\_Empty  : Buffer STD\_LOGIC}
+
+{\itshape
+ );}
+
+{\itshape
+\textbf{end} Buffer\_TX;}
+
+{\itshape
+\textbf{architecture} Buffer\_TX\_arch \textbf{of} Buffer\_TX
+\textbf{is}}
+
+{\itshape
+\textbf{Signal} Count\_Tx : Std\_Logic\_Vector ( 3 \textbf{downto} 0 );}
+
+{\itshape
+\textbf{Signal} Reg\_Tx : Std\_Logic\_Vector( 9 \textbf{downto }0 );}
+
+{\itshape
+\textbf{Signal} Tx\_On  : Std\_Logic;  {}-{}-
+{\textquoteleft}1{\textquoteright} indica transmisión en progreso}
+
+{\bfseries\itshape
+Bejín}
+
+{\itshape
+{}-{}- Este proceso realiza un corrimiento cada vez que la señal Shift
+(Clk\_Txs ) es igual a {\textquoteleft}1{\textquoteright}}
+
+{\itshape
+ \foreignlanguage{english}{\textbf{Process}}\foreignlanguage{english}{(
+CLK, Reset, Load, Shift )}}
+
+{\itshape
+ \textbf{Begin}}
+
+{\itshape
+ \textbf{if} clk{\textquotesingle}\textbf{event and }clk =
+{\textquotesingle}1{\textquotesingle} \textbf{then}}
+
+{\itshape
+ \textbf{If} Reset = {\textquotesingle}1{\textquotesingle} \textbf{then}
+ }
+
+{\itshape
+ Reg\_Tx {\textless}= ( \textbf{others} ={\textgreater}
+{\textquotesingle}1{\textquotesingle} );}
+
+{\itshape
+ Tx  {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ \textbf{if} Load = {\textquotesingle}1{\textquotesingle} \textbf{and}
+Tx\_On = {\textquotesingle}0{\textquotesingle} \textbf{then 
+}{}-{}-Formación de la trama a transmitir.}
+
+{\itshape
+ Reg\_Tx( 8 \textbf{downto} 1 ) {\textless}= Data\_In;}
+
+{\itshape
+ Reg\_Tx( 0 ) {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ Reg\_Tx( 9 ) {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ \textbf{if} Shift = {\textquotesingle}1{\textquotesingle} \textbf{then
+}{}-- Corrimiento de la trama.}
+
+{\itshape
+ Reg\_Tx( 8 \textbf{downto} 0 ) {\textless}= Reg\_Tx( 9 \textbf{downto}
+1 );}
+
+{\itshape
+ Tx {\textless}= Reg\_Tx( 0 );}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{process}; }
+
+{\itshape
+ \textbf{Process}( CLK, Reset, Load, Shift )}
+
+{\itshape
+{}-{}- Este proceso controla el número de corrimientos realizados por el
+transmisor}
+
+{\itshape
+ \foreignlanguage{english}{\textbf{Begin}}}
+
+{\itshape
+ \textbf{if} clk\textbf{{\textquotesingle}event and} clk =
+{\textquotesingle}1{\textquotesingle} \textbf{then}}
+
+{\itshape
+ \textbf{If} Reset = {\textquotesingle}1{\textquotesingle} \textbf{then}
+ }
+
+{\itshape
+ Tx\_On  {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ Tx\_Empty {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ Count\_Tx {\textless}= {\textquotedbl}0000{\textquotedbl};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ \textbf{if} Load = {\textquotesingle}1{\textquotesingle} \textbf{and}
+Tx\_On = {\textquotesingle}0{\textquotesingle} \textbf{then}}
+
+{\itshape
+ Tx\_Empty {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ Tx\_On  {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{elsif} Shift = {\textquotesingle}1{\textquotesingle}
+\textbf{then}}
+
+{\itshape
+ \textbf{if} Tx\_On = {\textquotesingle}1{\textquotesingle}
+\textbf{then}}
+
+{\itshape
+ Count\_Tx {\textless}= Count\_Tx + 1;}
+
+{\itshape
+ \textbf{if} Count\_Tx = {\textquotedbl}1001{\textquotedbl}
+\textbf{then}}
+
+{\itshape
+ Count\_Tx {\textless}= {\textquotedbl}0000{\textquotedbl};}
+
+{\itshape
+ Tx\_On  {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ Tx\_Empty {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ Tx\_On  {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ Tx\_Empty {\textless}= Tx\_Empty;}
+
+{\itshape
+ Tx\_On  {\textless}= Tx\_On;}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{if};  }
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{process};}
+
+{
+\textbf{end} Buffer\_TX\_arch;}
+
+{
+\textbf{Receptor}: El receptor está encargado de generar los pulsos de
+muestreo en la mitad de cada Bit y detectar el inicio y fin de la trama
+( Bit de Start y Bit de Stop ). Como puede verse en la Figura 43. El
+generador de pulsos de muestreo produce la señal \textit{clkls} la cual
+es 16 veces más rápida que la señal Clk\_Txs la cual se produce cada
+1/Baud Rate. Por lo tanto el receptor debe esperar 8 ciclos de la señal
+clkls para leer los bits de datos y Stop. En la siguiente figura se
+muestra la interfaz y el diagrama de bloques del receptor.}
+
+{\centering 
+\includegraphics[width=12.612cm,height=9.409cm]{FSM-img44.png} \par}
+
+{\centering
+Figura 46. Diagrama de bloques del receptor.
+\par}
+
+{
+Interface\_Rx : Está encargada de sincronizar la señal de entrada
+\textit{Rx }con la señal \textit{clkls}. Como salida tiene la señal
+\textit{RxDs}.}
+
+{\itshape
+\textbf{library} IEEE;}
+
+{\itshape
+\textbf{use} IEEE.std\_logic\_1164.all;}
+
+{\itshape
+\textbf{entity} Interface\_Rx \textbf{is}}
+
+{\itshape
+ \textbf{port} (}
+
+{\itshape
+ Reset: \textbf{in} STD\_LOGIC;}
+
+{\itshape
+ Clk: \textbf{in} STD\_LOGIC;}
+
+{\itshape
+ clk\_ms: \textbf{in} STD\_LOGIC;}
+
+{\itshape
+ RxD: \textbf{in} STD\_LOGIC;}
+
+{\itshape
+ RxDs: \textbf{out} STD\_LOGIC}
+
+{\itshape
+ );}
+
+{\itshape
+\textbf{end} Interface\_Rx;}
+
+{\itshape
+\textbf{architecture} Interface\_Rx\_arch \textbf{of} Interface\_Rx
+\textbf{is}}
+
+{\itshape
+\textbf{Signal} ifrxd : Std\_Logic\_Vector( 2 \textbf{downto} 0 );}
+
+{\bfseries\itshape
+begin}
+
+{\itshape
+ \textbf{Process}( CLK, Reset )}
+
+{\itshape
+ \textbf{Begin}}
+
+{\itshape
+ \textbf{if} clk{\textquotesingle}\textbf{event and }clk =
+{\textquotesingle}1{\textquotesingle} \textbf{then }}
+
+{\itshape
+ \textbf{if} Reset = {\textquotesingle}1{\textquotesingle}
+\textbf{then}}
+
+{\itshape
+ ifrxd {\textless}= {\textquotedbl}111{\textquotedbl};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ \textbf{if} ( ifrxd(0) = ifrxd(2) ) \textbf{and} ( ifrxd(0) /= ifrxd(1)
+) \textbf{then}}
+
+{\itshape
+ ifrxd(2) {\textless}= ifrxd(0);}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ ifrxd(2) {\textless}= ifrxd(1);}
+
+{\itshape
+ ifrxd(1) {\textless}= ifrxd(0);}
+
+{\itshape
+ ifrxd(0) {\textless}= RxD;}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ RxDs {\textless}= ifrxd(2);}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{process};}
+
+{\itshape
+\textbf{end} Interface\_Rx\_arch;}
+
+{
+Sample\_Rx: Este módulo está encargado de generar la señal de muestreo
+\textit{samples}. La generación de pulsos inicia al detectar una
+transición de alto a bajo en la línea \textit{RxDs} y finaliza cuando
+la señal \textit{Rx\_Full }sea igual a
+{\textquoteleft}1{\textquoteright}.}
+
+{\itshape
+\textbf{library} IEEE;}
+
+{\itshape
+\textbf{use} IEEE.std\_logic\_1164.all;}
+
+{\itshape
+\textbf{Use} Ieee.Std\_Logic\_Arith.all;}
+
+{\itshape
+\textbf{Use} Ieee.Std\_Logic\_unsigned.all;}
+
+{\itshape
+\textbf{entity} SAMPLE\_RX \textbf{is}}
+
+{\itshape
+ \textbf{port} (}
+
+{\itshape
+ Reset: \textbf{in} STD\_LOGIC;}
+
+{\itshape
+ CLK: \textbf{in} STD\_LOGIC;}
+
+{\itshape
+ Rst\_S: \textbf{in} STD\_LOGIC;}
+
+{\itshape
+ Clkms: \textbf{in} STD\_LOGIC;}
+
+{\itshape
+ RxDs: \textbf{in} STD\_LOGIC;}
+
+{\itshape
+ Sample: \textbf{out} STD\_LOGIC}
+
+{\itshape
+ );}
+
+{\itshape
+\textbf{end} SAMPLE\_RX;}
+
+{\itshape
+\textbf{architecture} SAMPLE\_RX\_arch \textbf{of} SAMPLE\_RX
+\textbf{is}}
+
+{\itshape
+\textbf{Signal} cont\_m : Std\_Logic\_Vector( 3 \textbf{downto} 0 );
+-{}- Contador del modulo de muestreo}
+
+{\itshape
+\textbf{Signal} Flag\_Rx: Std\_Logic;  {}-{}- Flag de Recepcion en
+curso}
+
+{\bfseries\itshape
+begin}
+
+{\itshape
+ \textbf{Process}( CLK, Reset )}
+
+{\itshape
+ \textbf{Begin}}
+
+{\itshape
+ \textbf{if} clk\textbf{{\textquotesingle}event and} clk =
+{\textquotesingle}1{\textquotesingle} \textbf{then} }
+
+{\itshape
+ \textbf{If} Reset = {\textquotesingle}1{\textquotesingle}
+\textbf{then}}
+
+{\itshape
+ cont\_m  {\textless}= {\textquotedbl}0000{\textquotedbl};}
+
+{\itshape
+ sample  {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ Flag\_Rx {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{elsif} Rst\_S = {\textquotesingle}1{\textquotesingle}
+\textbf{then}}
+
+{\itshape
+ cont\_m  {\textless}= {\textquotedbl}0000{\textquotedbl};}
+
+{\itshape
+ sample  {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ Flag\_Rx {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{elsif} Clkms = {\textquotesingle}1{\textquotesingle}
+\textbf{then}}
+
+{\itshape
+ \textbf{if} Flag\_Rx = {\textquotesingle}0{\textquotesingle}
+\textbf{and} RxDs = {\textquotesingle}0{\textquotesingle} \textbf{then}
+ {}-{}- Bit de Start}
+
+{\itshape
+\foreignlanguage{english}{ }Flag\_Rx {\textless}=
+{\textquotesingle}1{\textquotesingle};  {}-{}- Inicio de la recepcion}
+
+{\itshape
+ \foreignlanguage{english}{\textbf{elsif}}\foreignlanguage{english}{
+Flag\_Rx = {\textquotesingle}1{\textquotesingle}
+}\foreignlanguage{english}{\textbf{then}}}
+
+{\itshape
+ cont\_m {\textless}= cont\_m + {\textquotedbl}0001{\textquotedbl};}
+
+{\itshape
+ \textbf{if} cont\_m = {\textquotedbl}0110{\textquotedbl} then}
+
+{\itshape
+ sample {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ sample {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{End} \textbf{Process};}
+
+{\itshape
+\textbf{end} SAMPLE\_RX\_arch;}
+
+{
+ctrl\_tx: Esté módulo es básicamente un contador de pulsos de muestreo
+samples, cuando el conteo llega a 10 ( Bit de Start, 8 bits de datos y
+Bit de Stor ), la señal Rx\_Full es igual a
+{\textquoteleft}1{\textquoteright}.}
+
+{\itshape
+\textbf{library} IEEE;}
+
+{\itshape
+\textbf{use} IEEE.std\_logic\_1164.all;}
+
+{\itshape
+\textbf{USE} IEEE.STD\_LOGIC\_ARITH.all;}
+
+{\itshape
+\textbf{USE} IEEE.STD\_LOGIC\_UNSIGNED.all;}
+
+{\itshape
+\textbf{entity} ctrl\_tx \textbf{is}}
+
+{\itshape
+ \textbf{port} (}
+
+{\itshape
+ Reset  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Clk  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Load  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Shift  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Tx\_Empty : \textbf{Buffer} STD\_LOGIC}
+
+{\itshape
+ );}
+
+{\itshape
+\textbf{end} ctrl\_tx;}
+
+{\itshape
+\textbf{architecture} ctrl\_tx\_arch \textbf{of} ctrl\_tx \textbf{is}}
+
+{\itshape
+\textbf{Signal} Count\_Tx : Std\_Logic\_Vector ( 3 \textbf{downto} 0 );}
+
+{\itshape
+\textbf{Signal} Tx\_On  : Std\_Logic;}
+
+{\bfseries\itshape
+begin}
+
+{\itshape
+ \textbf{Process}( CLK, Reset, Load, Shift )}
+
+{\itshape
+ \textbf{Begin}}
+
+{\itshape
+ \textbf{if} clk{\textquotesingle}\textbf{event and }clk =
+{\textquotesingle}1{\textquotesingle} \textbf{then}}
+
+{\itshape
+ \textbf{If} Reset = {\textquotesingle}1{\textquotesingle} \textbf{then}
+ }
+
+{\itshape
+ Tx\_On  {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ Tx\_Empty {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ Count\_Tx {\textless}= {\textquotedbl}0000{\textquotedbl};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ \textbf{if} Load = {\textquotesingle}1{\textquotesingle} \textbf{and}
+Tx\_On = {\textquotesingle}0{\textquotesingle} \textbf{then}}
+
+{\itshape
+ Tx\_Empty {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ Tx\_On  {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{elsif} Shift = {\textquotesingle}1{\textquotesingle}
+\textbf{then}}
+
+{\itshape
+ \textbf{if} Tx\_On = {\textquotesingle}1{\textquotesingle}
+\textbf{then}}
+
+{\itshape
+ Count\_Tx {\textless}= Count\_Tx + 1;}
+
+{\itshape
+ \textbf{if} Count\_Tx = {\textquotedbl}1001{\textquotedbl}
+\textbf{then}}
+
+{\itshape
+ Count\_Tx {\textless}= {\textquotedbl}0000{\textquotedbl};}
+
+{\itshape
+ Tx\_On  {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ Tx\_Empty {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ Tx\_On  {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ Tx\_Empty {\textless}= Tx\_Empty;}
+
+{\itshape
+ Tx\_On  {\textless}= Tx\_On;}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{if};  }
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{process};}
+
+{\itshape
+\textbf{end} ctrl\_tx\_arch;}
+
+{
+Buffer\_Rx: Está encargado de realizar la conversión de seria a paralelo
+del dato de entrada.}
+
+{\itshape
+\textbf{library} IEEE;}
+
+{\itshape
+\textbf{use} IEEE.std\_logic\_1164.all;}
+
+{\itshape
+\textbf{USE} IEEE.STD\_LOGIC\_ARITH.all;}
+
+{\itshape
+\textbf{USE} IEEE.STD\_LOGIC\_UNSIGNED.all;}
+
+{\itshape
+\textbf{entity} Buffer\_TX \textbf{is}}
+
+{\itshape
+ \textbf{port} (}
+
+{\itshape
+ Reset  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Clk  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Load  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Shift  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Data\_IN  : \textbf{in}  STD\_LOGIC\_VECTOR (7 \textbf{downto} 0);}
+
+{\itshape
+ Tx  : \textbf{out} STD\_LOGIC;}
+
+{\itshape
+ Tx\_Empty  : \textbf{Buffer} STD\_LOGIC}
+
+{\itshape
+ );}
+
+{\itshape
+\textbf{end} Buffer\_TX;}
+
+{\itshape
+\textbf{architecture} Buffer\_TX\_arch \textbf{of} Buffer\_TX
+\textbf{is}}
+
+{\itshape
+\textbf{Signal} Count\_Tx : Std\_Logic\_Vector ( 3 \textbf{downto} 0 );}
+
+{\itshape
+\textbf{Signal} Reg\_Tx : Std\_Logic\_Vector( 9 \textbf{downto} 0 );}
+
+{\itshape
+\textbf{Signal} Tx\_On  : Std\_Logic;}
+
+{\bfseries\itshape
+begin}
+
+{\itshape
+ \textbf{Process}( CLK, Reset, Load, Shift )}
+
+{\itshape
+ \textbf{Begin}}
+
+{\itshape
+ \textbf{if} clk\textbf{{\textquotesingle}event and} clk =
+{\textquotesingle}1{\textquotesingle} \textbf{then}}
+
+{\itshape
+ \textbf{If} Reset = {\textquotesingle}1{\textquotesingle} \textbf{then}
+ }
+
+{\itshape
+ Reg\_Tx {\textless}= ( \textbf{others} ={\textgreater}
+{\textquotesingle}1{\textquotesingle} );}
+
+{\itshape
+ Tx  {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ \textbf{if} Load = {\textquotesingle}1{\textquotesingle} \textbf{and}
+Tx\_On = {\textquotesingle}0{\textquotesingle} \textbf{then}}
+
+{\itshape
+ Reg\_Tx( 8 downto 1 ) {\textless}= Data\_In;}
+
+{\itshape
+ Reg\_Tx( 0 ) {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ Reg\_Tx( 9 ) {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ \textbf{if} Shift = {\textquotesingle}1{\textquotesingle}
+\textbf{then}}
+
+{\itshape
+ Reg\_Tx( 8 \textbf{downto} 0 ) {\textless}= Reg\_Tx( 9 \textbf{downto}
+1 );}
+
+{\itshape
+ Tx {\textless}= Reg\_Tx( 0 );}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{process}; }
+
+{\itshape
+ \textbf{Process}( CLK, Reset, Load, Shift )}
+
+{\itshape
+ \textbf{Begin}}
+
+{\itshape
+ \textbf{if} clk\textbf{{\textquotesingle}event and} clk =
+{\textquotesingle}1{\textquotesingle} \textbf{then}}
+
+{\itshape
+ \textbf{If} Reset = {\textquotesingle}1{\textquotesingle} \textbf{then}
+ }
+
+{\itshape
+ Tx\_On  {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ Tx\_Empty {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ Count\_Tx {\textless}= {\textquotedbl}0000{\textquotedbl};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ \textbf{if} Load = {\textquotesingle}1{\textquotesingle} \textbf{and}
+Tx\_On = {\textquotesingle}0{\textquotesingle} \textbf{then}}
+
+{\itshape
+ Tx\_Empty {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ Tx\_On  {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{elsif} Shift = {\textquotesingle}1{\textquotesingle}
+\textbf{then}}
+
+{\itshape
+ \textbf{if} Tx\_On = {\textquotesingle}1{\textquotesingle}
+\textbf{then}}
+
+{\itshape
+ Count\_Tx {\textless}= Count\_Tx + 1;}
+
+{\itshape
+ \textbf{if} Count\_Tx = {\textquotedbl}1001{\textquotedbl}
+\textbf{then}}
+
+{\itshape
+ Count\_Tx {\textless}= {\textquotedbl}0000{\textquotedbl};}
+
+{\itshape
+ Tx\_On  {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ Tx\_Empty {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ Tx\_On  {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{end if};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ Tx\_Empty {\textless}= Tx\_Empty;}
+
+{\itshape
+ Tx\_On  {\textless}= Tx\_On;}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{if};  }
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{process};}
+
+{\itshape
+\textbf{end} Buffer\_TX\_arch;}
+
+{
+A continuación se presenta la descripción estructural de la Uart:}
+
+{\itshape
+\textbf{library }IEEE;}
+
+{\itshape
+\textbf{Use} Ieee.Std\_Logic\_1164.all;}
+
+{\itshape
+\textbf{Use} Ieee.Std\_Logic\_Arith.all;}
+
+{
+\textbf{Use} Ieee.Std\_Logic\_unsigned.all;}
+
+{\itshape
+\textbf{entity} uart \textbf{is}}
+
+{\itshape
+ \textbf{port} (}
+
+{\itshape
+ {}-{}- Senales comunes}
+
+{\itshape
+ Reset  : \textbf{in}  STD\_LOGIC;  {}-{}- Reset Activo Alto}
+
+{\itshape
+ Clk  : \textbf{in}  STD\_LOGIC;  {}-{}- Clock del sistema}
+
+{\itshape
+ {}-{}- Receptor}
+
+{\itshape
+ Rx  : \textbf{in}  STD\_LOGIC;  {}-{}- Linea de recepcion}
+
+{\itshape
+\foreignlanguage{english}{ }\foreignlanguage{spanish}{Read\_Data  :
+}\foreignlanguage{spanish}{\textbf{in}}\foreignlanguage{spanish}{ 
+STD\_LOGIC;  {}-{}- {\textquotesingle}1{\textquotesingle} : Lectura del
+dato recibido}}
+
+{\itshape
+\foreignlanguage{spanish}{ }\foreignlanguage{english}{Data\_Ready  :
+}\foreignlanguage{english}{\textbf{out}}\foreignlanguage{english}{ 
+STD\_LOGIC; -{}- {\textquotesingle}1{\textquotesingle} : Dato
+disponible}}
+
+{\itshape
+ Data\_Rx  : \textbf{out} STD\_LOGIC\_VECTOR ( 7 \textbf{downto} 0 );}
+
+{\itshape
+ {}-{}- Transmisor}
+
+{\itshape
+ Data\_Tx  : \textbf{in}  STD\_LOGIC\_Vector( 7 \textbf{downto} 0 ); 
+{}-{}- Dato a transmitir}
+
+{\itshape
+ Start\_Tx  : \textbf{in}  STD\_LOGIC;  {}-{}-
+{\textquotesingle}1{\textquotesingle} : Inicio de la transmision}
+
+{\itshape
+ Tx  : \textbf{Out} STD\_LOGIC;  {}-{}- Linea de transmision}
+
+{\itshape
+ Tx\_Empty  : \textbf{Buffer} STD\_LOGIC  {}-{}-
+{\textquotesingle}1{\textquotesingle} Transmisor disponible.}
+
+{\itshape
+ );}
+
+{\itshape
+\textbf{end} UART;}
+
+{\itshape
+\textbf{architecture} UART\_arch of UART \textbf{is}}
+
+{\itshape
+\textbf{Signal} Hi: Std\_Logic;}
+
+{\itshape
+\textbf{Component} SAMPLE\_RX}
+
+{\itshape
+ \textbf{port} (}
+
+{\itshape
+ Reset  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ CLK  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Rst\_S  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Clkms  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ RxDs  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Sample : out STD\_LOGIC}
+
+{\itshape
+ );}
+
+{\itshape
+\textbf{end} \textbf{Component} SAMPLE\_RX;}
+
+{\itshape
+\textbf{Component} Ctrl\_Rx}
+
+{\itshape
+ \textbf{port} (}
+
+{\itshape
+ Reset  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Clk  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Samples  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Read\_Data : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Data\_Ready: \textbf{out}  STD\_LOGIC;}
+
+{\itshape
+ Rx\_Full  : \textbf{Buffer} STD\_LOGIC}
+
+{\itshape
+ );}
+
+{\itshape
+\textbf{end} \textbf{Component} Ctrl\_Rx;}
+
+{\itshape
+\textbf{Component} Buffer\_Rx}
+
+{\itshape
+ \textbf{port} (}
+
+{\itshape
+ Reset  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Clk  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ RxDs  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Samples  : \textbf{in  }STD\_LOGIC;}
+
+{\itshape
+ End\_Rx  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Data\_Rx  : \textbf{out} STD\_LOGIC\_VECTOR (7 \textbf{downto} 0)}
+
+{\itshape
+ );}
+
+{\itshape
+\textbf{end} \textbf{Component} Buffer\_Rx;}
+
+{\itshape
+\textbf{Component} Interface\_Rx}
+
+{\itshape
+ \textbf{port} (}
+
+{\itshape
+ Reset  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Clk  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ clk\_ms : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ RxD  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ RxDs  : \textbf{out} STD\_LOGIC}
+
+{\itshape
+ );}
+
+{\itshape
+\textbf{end} \textbf{Component} Interface\_Rx;}
+
+{\itshape
+\textbf{Component} div16}
+
+{\itshape
+ \textbf{port} (}
+
+{\itshape
+ Reset  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Clk  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Clk\_In  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Clk\_Out : \textbf{out} STD\_LOGIC}
+
+{\itshape
+ );}
+
+{\itshape
+\textbf{end} \textbf{Component} div16;}
+
+{\itshape
+\textbf{Component} pulso}
+
+{\itshape
+ \textbf{port} (}
+
+{\itshape
+ Reset  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Clk  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Data\_asyn : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Data\_syn  : \textbf{out} STD\_LOGIC}
+
+{\itshape
+ );}
+
+{\itshape
+\textbf{end} \textbf{Component} pulso;}
+
+{\itshape
+\textbf{Component} Div\_ms}
+
+{\itshape
+ \textbf{port} (}
+
+{\itshape
+ Reset  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Clk  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Clk\_In  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Divider  : \textbf{in}  STD\_LOGIC\_Vector( 7 \textbf{downto} 0 );}
+
+{\itshape
+ Ld\_Div\_Low  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Ld\_Div\_Hi  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Clk\_Out  : \textbf{out} STD\_LOGIC}
+
+{\itshape
+ );}
+
+{\itshape
+\textbf{end} \textbf{Component} Div\_ms;}
+
+{\itshape
+ \textbf{Component} Control\_RX}
+
+{\itshape
+ \textbf{GENERIC}( }
+
+{\itshape
+ Div\_Hi  : Integer := 0;}
+
+{\itshape
+ Div\_Low : Integer := 2 );}
+
+{\itshape
+ \textbf{port} (}
+
+{\itshape
+ Reset  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Clk  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Ld\_Div\_Low : \textbf{out} STD\_LOGIC;}
+
+{\itshape
+ Ld\_Div\_Hi  : \textbf{out} STD\_LOGIC;}
+
+{\itshape
+ Data\_Out  : \textbf{out} STD\_LOGIC\_VECTOR (7 \textbf{downto} 0)}
+
+{\itshape
+ );}
+
+{\itshape
+\textbf{end} \textbf{Component} Control\_RX;}
+
+{\itshape
+\textbf{Component} Buffer\_TX}
+
+{\itshape
+ \textbf{port} (}
+
+{\itshape
+ Reset  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Clk  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Load  : \textbf{in}  STD\_LOGIC;}
+
+{\itshape
+ Shift  : in  STD\_LOGIC;}
+
+{\itshape
+ Data\_IN  : \textbf{in}  STD\_LOGIC\_VECTOR (7 \textbf{downto} 0);}
+
+{\itshape
+ Tx  : \textbf{out}  STD\_LOGIC;}
+
+{\itshape
+ TX\_Empty  : \textbf{Buffer} STD\_LOGIC}
+
+{\itshape
+ );}
+
+{\itshape
+\textbf{end} \textbf{Component} Buffer\_TX;}
+
+{\itshape
+\textbf{Signal} Rx\_Full, RxDs, samples, sample, clk\_pres, clkls, clkl
+: Std\_Logic;}
+
+{\itshape
+\textbf{Signal} Clk\_Tx, Clk\_Txs : STD\_LOGIC;}
+
+{\itshape
+\textbf{Signal} carga\_div\_low, carga\_div\_Hi : STD\_LOGIC;}
+
+{\itshape
+\textbf{Signal} Data\_In : STD\_LOGIC\_VECTOR( 7 \textbf{downto} 0 );}
+
+{\itshape
+begin}
+
+{\itshape
+ Hi {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+\foreignlanguage{english}{
+}{}-{}-\foreignlanguage{spanish}{***********************************************}*****************************************************}
+
+{\itshape
+ {}-{}- * Generador de Frecuencia: La frecuencia de muestreo debe ser 16
+veces mayor que *}
+
+{\itshape
+\foreignlanguage{spanish}{ }\foreignlanguage{spanish}{{}-{}- * la
+velocidad de transmision.  }\foreignlanguage{english}{*}}
+
+{\itshape
+ {}-{}-
+***************************************************************************************************}
+
+{\itshape
+ A1 : div16}
+
+{\itshape
+ \textbf{port} \textbf{map}( Reset, CLK, Hi, clk\_pres );}
+
+{\itshape
+ A2 : div\_ms }
+
+{\itshape
+ \textbf{port} \textbf{map}( Reset, CLK, clk\_pres,data\_in,
+carga\_div\_low, carga\_div\_Hi, clkl );}
+
+{\itshape
+ A3 : pulso}
+
+{\itshape
+ \textbf{port} \textbf{map}( Reset, CLK, clkl, clkls );}
+
+{\itshape
+ A4 : div16}
+
+{\itshape
+ \textbf{port} \textbf{map}( Reset, CLK, clkls, Clk\_Tx );}
+
+{\itshape
+ A5 : pulso}
+
+{\itshape
+ \textbf{port} \textbf{map}( Reset, CLK, Clk\_Tx, Clk\_Txs );}
+
+{\itshape
+\foreignlanguage{english}{ }\foreignlanguage{spanish}{{}-{}-
+**************}}
+
+{\itshape
+ {}-{}- * Receptor * }
+
+{\itshape
+ {}-{}- *************}
+
+{\itshape
+ {}-{}- Sincroniza la señal de entrada Rx con clkls, RxDs señal de
+salida sincronizada}
+
+{\itshape
+\foreignlanguage{spanish}{ }\foreignlanguage{english}{A6 : Interface\_Rx
+}}
+
+{\itshape
+ \textbf{port} \textbf{map}( Reset, CLK, clkls, Rx, RxDs );}
+
+{\itshape
+\foreignlanguage{english}{ }\foreignlanguage{spanish}{{}-{}- Detecta Bit
+de Start y genera una señal (sample) que indica cuando se debe}}
+
+{\itshape
+ {}-{}- leer un bit. Sample tiene una duracion de un ciclo de reloj
+CLK.}
+
+{\itshape
+\foreignlanguage{spanish}{ }\foreignlanguage{english}{A7 : Sample\_Rx 
+}}
+
+{\itshape
+ \textbf{port} \textbf{map}( Reset, CLK, Rx\_Full, clkls, RxDs, sample
+);}
+
+{\itshape
+\foreignlanguage{english}{ }\foreignlanguage{spanish}{{}-{}- Sincroniza
+la senal de entrada sample, samples senal sincronizada.}}
+
+{\itshape
+\foreignlanguage{spanish}{ }\foreignlanguage{english}{A8 : pulso}}
+
+{\itshape
+ \textbf{port} \textbf{map}( Reset, CLK, sample, samples );}
+
+{\itshape
+\foreignlanguage{english}{ }\foreignlanguage{spanish}{{}-{}- Control del
+numero de bits, cuando se reciben 10 pulsos de la señal sample }}
+
+{\itshape
+ {}-{}- Rx\_Full se hace igual a {\textquotesingle}1{\textquotesingle}.}
+
+{\itshape
+\foreignlanguage{spanish}{ }\foreignlanguage{english}{A9 : ctrl\_rx }}
+
+{\itshape
+ \textbf{port} \textbf{map}( Reset, CLK, samples, Read\_Data,
+Data\_Ready, Rx\_Full );}
+
+{\itshape
+\foreignlanguage{english}{ }{}-{}- Realiza la conversión de serie a
+paralelo del dato recibido.}
+
+{\itshape
+ \foreignlanguage{english}{A10: Buffer\_Rx}}
+
+{\itshape
+ \textbf{port} \textbf{map}( Reset, CLK, RxDs, samples, Rx\_Full,
+Data\_Rx );}
+
+{\itshape
+\foreignlanguage{english}{ }\foreignlanguage{spanish}{{}-{}- Carga los
+registros del divisor para funcionar a 9600 BPS}}
+
+{\itshape
+\foreignlanguage{spanish}{ }\foreignlanguage{english}{A11: Control\_RX}}
+
+{\itshape
+ \textbf{generic} \textbf{map}( 0, 2 )}
+
+{\itshape
+ \textbf{port} \textbf{map}( Reset, CLK, carga\_div\_low,
+carga\_div\_Hi, Data\_In );}
+
+{\itshape
+ {}-{}- **************}
+
+{\itshape
+ {}-{}- * Transmisor * }
+
+{\itshape
+ {}-{}- **************}
+
+{\itshape
+ A12: Buffer\_Tx}
+
+{\itshape
+ \textbf{port} \textbf{map}( Reset, Clk, Start\_Tx, Clk\_Txs, Data\_Tx,
+Tx, Tx\_Empty );}
+
+{\itshape
+\textbf{end} UART\_arch;}
+
+{
+El test bench de la UART se muestra a continuación, junto con su
+correspondiente simulación.}
+
+{\itshape
+\textbf{Use} Ieee.Std\_Logic\_1164.all;}
+
+{\itshape
+\textbf{Use} Ieee.Std\_Logic\_Arith.all;}
+
+{\itshape
+\textbf{Use} Ieee.Std\_Logic\_unsigned.all;}
+
+{\itshape
+\textbf{ENTITY} testbench \textbf{IS}}
+
+{\itshape
+\textbf{END} testbench;}
+
+{\itshape
+\textbf{ARCHITECTURE} behavior OF testbench IS }
+
+{\itshape
+{}-{}- Component Declaration}
+
+{\itshape
+ \textbf{Component} UART}
+
+{\itshape
+ \textbf{port} (}
+
+{\itshape
+ {}-{}- Senales comunes}
+
+{\itshape
+ Reset  : \textbf{in}  STD\_LOGIC;  {}-{}- Reset Activo Alto}
+
+{\itshape
+ Clk  : \textbf{in}  STD\_LOGIC;  {}-{}- Clock del sistema}
+
+{\itshape
+ {}-{}- Receptor}
+
+{\itshape
+ Rx  : \textbf{in}  STD\_LOGIC;  {}-{}- Linea de recepcion}
+
+{\itshape
+\foreignlanguage{english}{ }Read\_Data  : \textbf{in}  STD\_LOGIC; 
+{}-{}- {\textquotesingle}1{\textquotesingle} : Lectura del dato
+recibido}
+
+{\itshape
+ \foreignlanguage{english}{Data\_Ready  :
+}\foreignlanguage{english}{\textbf{out}}\foreignlanguage{english}{ 
+STD\_LOGIC; -{}- {\textquotesingle}1{\textquotesingle} : Dato
+disponible}}
+
+{\itshape
+ Data\_Rx  : \textbf{out} STD\_LOGIC\_VECTOR ( 7 \textbf{downto} 0 );}
+
+{\itshape
+ {}-{}- Transmisor}
+
+{\itshape
+ Data\_Tx  : \textbf{in}  STD\_LOGIC\_Vector( 7 \textbf{downto} 0 ); 
+{}-{}- Dato a transmitir}
+
+{\itshape
+ Start\_Tx  : \textbf{in}  STD\_LOGIC;  {}-{}-
+{\textquotesingle}1{\textquotesingle} : Inicio de la transmision}
+
+{\itshape
+ Tx  : \textbf{Out} STD\_LOGIC;  {}-{}- Linea de transmision}
+
+{\itshape
+ Tx\_Empty  : \textbf{Buffer} STD\_LOGIC  {}-{}-
+{\textquotesingle}1{\textquotesingle} Transmisor disponible.}
+
+{\itshape
+ );}
+
+{\itshape
+ \textbf{end} \textbf{component};}
+
+{\itshape
+ \textbf{SIGNAL} Reset  : STD\_LOGIC;}
+
+{\itshape
+ \textbf{SIGNAL} Clk  : STD\_LOGIC;}
+
+{\itshape
+ \textbf{SIGNAL} Rx  : STD\_LOGIC;}
+
+{\itshape
+ \textbf{SIGNAL} Read\_Data  : STD\_LOGIC;}
+
+{\itshape
+ \textbf{SIGNAL} Data\_Ready  : STD\_LOGIC;}
+
+{\itshape
+ \textbf{SIGNAL} Data\_Rx  : STD\_LOGIC\_VECTOR (7 \textbf{downto} 0);}
+
+{\itshape
+ \textbf{SIGNAL} Data\_Tx  : STD\_LOGIC\_VECTOR (7 \textbf{downto} 0);}
+
+{\itshape
+ \textbf{SIGNAL} Start\_Tx  : STD\_LOGIC;}
+
+{\itshape
+ \textbf{SIGNAL} Tx  : STD\_LOGIC;}
+
+{\itshape
+ \textbf{SIGNAL} Tx\_Empty  : STD\_LOGIC;}
+
+{\itshape
+ \textbf{constant} ncycles  : integer := 999999999;}
+
+{\itshape
+ \textbf{constant} halfperiod : time  := 101.72 ns;\ \ }
+
+{\itshape
+ \textbf{constant} tbit  : integer := 512;}
+
+{\bfseries\itshape
+BEGIN}
+
+{\itshape
+{}-{}- Component Instantiation}
+
+{\itshape
+\ \ uut: Uart \textbf{PORT} \textbf{MAP}(}
+
+{\itshape
+ Reset  ={\textgreater} Reset,}
+
+{\itshape
+ Clk  ={\textgreater} Clk,}
+
+{\itshape
+ Rx  ={\textgreater} Rx,}
+
+{\itshape
+ Read\_Data  ={\textgreater} Read\_Data,}
+
+{\itshape
+ Data\_Ready  ={\textgreater} Data\_Ready,}
+
+{\itshape
+ Data\_Rx  ={\textgreater} Data\_Rx,}
+
+{\itshape
+ Data\_Tx  ={\textgreater} Data\_Tx,}
+
+{\itshape
+ Start\_Tx  ={\textgreater} Start\_Tx,}
+
+{\itshape
+ Tx  ={\textgreater} Tx,}
+
+{\itshape
+ Tx\_Empty  ={\textgreater} Tx\_Empty}
+
+{\itshape
+\ \ );}
+
+{\itshape
+ {}-{}- Generacion del Reloj}
+
+{\itshape
+ Clock\_Source: \textbf{process}}
+
+{\itshape
+ \textbf{begin}}
+
+{\itshape
+ \textbf{for} i \textbf{in} 0 \textbf{to} ncycles*10 \textbf{loop} 
+{}-{}- Genera ncyclos de periodo 10 ns}
+
+{\itshape
+ clk {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{for} halfperiod;}
+
+{\itshape
+ clk {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{for} halfperiod;}
+
+{\itshape
+ \textbf{end} \textbf{loop};}
+
+{\itshape
+ \textbf{wait};}
+
+{\itshape
+ \textbf{end} \textbf{process} Clock\_Source;}
+
+{\itshape
+ Receiver : \textbf{PROCESS}}
+
+{\itshape
+ \textbf{BEGIN}}
+
+{\itshape
+ Reset  {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ Rx  {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ Read\_Data  {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk\textbf{{\textquotesingle}event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk\textbf{{\textquotesingle}event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ Reset {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk\textbf{{\textquotesingle}event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk\textbf{{\textquotesingle}event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk\textbf{{\textquotesingle}event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ {}-{}- BIT DE START}
+
+{\itshape
+ Rx  {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{for} i \textbf{in} 0 \textbf{to} tbit \textbf{loop}}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ end loop;}
+
+{\itshape
+ {}-{}- D0}
+
+{\itshape
+ Rx  {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{for} i \textbf{in} 0 \textbf{to} tbit \textbf{loop}}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{end} \textbf{loop};}
+
+{\itshape
+ {}-{}- D1}
+
+{\itshape
+ Rx  {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{for} i \textbf{in} 0 \textbf{to} tbit \textbf{loop}}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{end} \textbf{loop};}
+
+{\itshape
+ {}-{}- D2}
+
+{\itshape
+ Rx  {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{for} i \textbf{in} 0 \textbf{to} tbit \textbf{loop}}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{end} \textbf{loop};}
+
+{\itshape
+ {}-{}- D3}
+
+{\itshape
+ Rx  {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{for} i \textbf{in} 0 \textbf{to} tbit \textbf{loop}}
+
+{\itshape
+ wait until clk{\textquotesingle}\textbf{even}t \textbf{and} clk =
+{\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{end} \textbf{loop};}
+
+{\itshape
+ {}-{}- D4}
+
+{\itshape
+ Rx  {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{for} i \textbf{in} 0 \textbf{to} tbit \textbf{loop}}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{end} \textbf{loop};}
+
+{\itshape
+ {}-{}- D5}
+
+{\itshape
+ Rx  {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{for} i \textbf{in} 0 \textbf{to} tbit \textbf{loop}}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{end} \textbf{loop};}
+
+{\itshape
+ {}-{}- D6}
+
+{\itshape
+ Rx  {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{for} i \textbf{in} 0 \textbf{to} tbit \textbf{loop}}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{end} \textbf{loop};}
+
+{\itshape
+ {}-{}- D7}
+
+{\itshape
+ Rx  {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{for} i \textbf{in} 0 \textbf{to} tbit \textbf{loop}}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{end} \textbf{loop};}
+
+{\itshape
+ {}-{}- BSTOP}
+
+{\itshape
+ Rx  {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{for} i \textbf{in} 0 \textbf{to} tbit \textbf{loop}}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+\foreignlanguage{english}{ }\textbf{end} \textbf{loop};}
+
+{\itshape
+ {}-{}- SEGUNDO BIT ENVIADO}
+
+{\itshape
+ \foreignlanguage{english}{{}-{}- BIT DE START}}
+
+{\itshape
+ Rx  {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{for} i \textbf{in} 0 \textbf{to} tbit \textbf{loop}}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{end} \textbf{loop};}
+
+{\itshape
+ {}-{}- D0}
+
+{\itshape
+ Rx  {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{for} i \textbf{in} 0 \textbf{to} tbit \textbf{loop}}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{end} \textbf{loop};}
+
+{\itshape
+ {}-{}- D1}
+
+{\itshape
+ Rx  {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{for} i \textbf{in} 0 \textbf{to} tbit \textbf{loop}}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{end} \textbf{loop};}
+
+{\itshape
+ {}-{}- LECTURA DEL PRIMER BIT RECIVIDO}
+
+{\itshape
+ Read\_Data {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ Read\_Data {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ {}-{}- D2}
+
+{\itshape
+ Rx  {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{for} i \textbf{in} 0 \textbf{to} tbit \textbf{loop}}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk = = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{end} \textbf{loop};}
+
+{\itshape
+ {}-{}- D3}
+
+{\itshape
+ Rx  {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{for} i \textbf{in} 0 \textbf{to} tbit \textbf{loop}}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{end} \textbf{loop};}
+
+{\itshape
+ {}-{}- D4}
+
+{\itshape
+ Rx  {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{for} i \textbf{in} 0 \textbf{to} tbit \textbf{loop}}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{end} \textbf{loop};}
+
+{\itshape
+ {}-{}- D5}
+
+{\itshape
+ Rx  {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{for} i \textbf{in} 0 \textbf{to} tbit \textbf{loop}}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{end} \textbf{loop};}
+
+{\itshape
+ {}-{}- D6}
+
+{\itshape
+ Rx  {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{for} i \textbf{in} 0 \textbf{to} tbit \textbf{loop}}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk = = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{end} \textbf{loop};}
+
+{\itshape
+ {}-{}- D7}
+
+{\itshape
+ Rx  {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{for} i \textbf{in} 0 \textbf{to} tbit \textbf{loop}}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{end} \textbf{loop};}
+
+{\itshape
+ {}-{}- BSTOP}
+
+{\itshape
+ Rx  {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{for} i \textbf{in} 0 \textbf{to} tbit \textbf{loop}}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{end} \textbf{loop};}
+
+{\itshape
+ wait; -{}- will wait forever}
+
+{\itshape
+ \textbf{END} \textbf{PROCESS};}
+
+{\itshape
+ Transmiter : \textbf{Process}}
+
+{\itshape
+ \textbf{Begin}}
+
+{\itshape
+ \textbf{for} i \textbf{in} 0 \textbf{to} 10 \textbf{loop}}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk ={\textquoteright}1{\textquoteright};}
+
+{\itshape
+ \textbf{end} \textbf{loop};}
+
+{\itshape
+ Data\_Tx {\textless}= {\textquotedbl}10101010{\textquotedbl};}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ Start\_Tx {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ Start\_Tx {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk = = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+{}-{}-  Envía un nuevo dato antes de terminar la transmisión}
+
+{\itshape
+ \foreignlanguage{english}{\textbf{for}}\foreignlanguage{english}{ i
+}\foreignlanguage{english}{\textbf{in}}\foreignlanguage{english}{ 0
+}\foreignlanguage{english}{\textbf{to}}\foreignlanguage{english}{ 1000
+}\foreignlanguage{english}{\textbf{loop}}}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{end} \textbf{loop};}
+
+{\itshape
+ Data\_Tx {\textless}= {\textquotedbl}11100011{\textquotedbl};}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ Start\_Tx {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ Start\_Tx {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+{}-{}-  Espera a que el transmisor este listo para la transmision}
+
+{\itshape
+ \foreignlanguage{english}{\textbf{wait}}\foreignlanguage{english}{
+until Tx\_Empty = {\textquotesingle}1{\textquotesingle};}}
+
+{\itshape
+ \textbf{for} i \textbf{in} 0 \textbf{to} 1000 \textbf{loop}}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{end} \textbf{loop};}
+
+{\itshape
+ Data\_Tx {\textless}= {\textquotedbl}11100011{\textquotedbl};}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ Start\_Tx {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ Start\_Tx {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \textbf{wait} \textbf{until} clk{\textquotesingle}\textbf{event}
+\textbf{and} clk = {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ \textbf{wait};}
+
+{\itshape
+ \textbf{End} \textbf{Process};}
+
+{
+\textbf{\textit{END}};}
+
+{\centering 
+\includegraphics[width=14.99cm,height=6.087cm]{FSM-img45.png} \par}
+
+{\centering
+Figura 45. Simulación de la UART.
+\par}
+
+{\bfseries
+EJEMPLO 7: Diseño de un Computador Sencillo}
+
+{
+Un computador está formado principalmente por tres unidades: La Unidad
+Central de Procesamiento; La memoria que está encargada de almacenar
+las instrucciones del programa y datos; Y las unidades de entrada
+salida cuya función es permitir el intercambio de información con el
+exterior.}
+
+{\centering 
+\includegraphics[width=10.423cm,height=3.678cm]{FSM-img46.png} \par}
+
+{
+Internamente la CPU está dividida en: El camino de datos o
+\textit{Datapath} el cual a su vez está formado por:}
+
+{
+PC: ( Program Counter ) Encargado de almacenar la dirección de memoria
+de la instrucción que se está ejecutando actualmente.}
+
+{
+IR: ( Instruction Register ) Encargado de almacenar el código de la
+instrucción en ejecución.}
+
+{
+ACC: ( Acumulator ) Utilizado para realizar cálculos y como
+almacenamiento temporal de datos de programa.}
+
+{
+MAR: ( Memory Address Register ) Utilizado para el direccionamiento de
+la memoria de programa.}
+
+{
+y  la lógica de control que está encargada de manejar el
+\textit{Datapath} dependiendo de la instrucción en ejecución.}
+
+{
+El primer paso en el diseño de un computador es definir las operaciones
+que se podrán realizar, este conjunto de operaciones recibe el nombre
+de \textit{Set de Instrucciones}. Nuestro computador será capaz de
+realizar operaciones de Suma ( ADD ) , Resta ( SUB ), LOAD y STORE;
+Debido a que tenemos 4 instrucciones serán necesarios dos bits para su
+codificación ( opcode ), es importante notar que cada instrucción debe
+tener un código único:}
+
+\begin{center}
+\tablehead{}
+\begin{supertabular}{|m{1.908cm}|m{1.4629999cm}|}
+\hline
+\centering  Operación &
+\centering\arraybslash  Código\\\hline
+\centering \bfseries ADD &
+\centering\arraybslash  00\\\hline
+\centering \bfseries SUB &
+\centering\arraybslash  01\\\hline
+\centering \bfseries LOAD &
+\centering\arraybslash  10\\\hline
+\centering \bfseries STORE &
+\centering\arraybslash  11\\\hline
+\end{supertabular}
+\end{center}
+{
+La siguiente figura muestra una arquitectura simplificada del
+Computador:}
+
+{\centering 
+\includegraphics[width=8.333cm,height=12.963cm]{FSM-img47.png} \par}
+
+{
+La función LOAD carga el contenido de un registro del Banco en el
+Registro A o en el Registro B, razón por la cual su codificación debe
+indicar en cual registro se desea almacenar la información para esto
+debemos utilizar un tercer bit que nos indique el registro:}
+
+{
+LOAD REG A = 100}
+
+{
+LOAD REG B = 101}
+
+{
+Por otro lado las funciones STORE y LOAD deben indicar hacia y de donde
+se debe transferir la información por lo que estas funciones deben
+indicar el registro origen o fuente, esto se logra asignándole a cada
+registro una dirección de memoria e indicando la dirección del mismo en
+el código de la instrucción. La siguiente figura muestra la forma de
+decodificar la dirección dentro de la instrucción.}
+
+{\centering
+  \includegraphics[width=6.985cm,height=5.027cm]{FSM-img48.png} 
+\par}
+
+{
+Donde \textbf{{}-} indica Don´t Care y \textbf{X} 0 o 1.}
+
+{
+Para comprender mejor el funcionamiento de nuestro computador
+consideremos el siguiente ejemplo:}
+
+{\itshape
+\foreignlanguage{english}{Load regA, 0  ; regA
+}\foreignlanguage{spanish}{[F0DF?]}\foreignlanguage{english}{ Reg[0]}}
+
+{\itshape
+\foreignlanguage{english}{Load regB, 1  ; regB
+}\foreignlanguage{spanish}{[F0DF?]}\foreignlanguage{english}{ Reg[1]}}
+
+{\itshape
+\foreignlanguage{english}{Add  ; result
+}\foreignlanguage{spanish}{[F0DF?]}\foreignlanguage{english}{ regA +
+regB}}
+
+{\itshape
+Store 2  ; reg[2][F0DF?] resultReg}
+
+{
+En binario el código es:}
+
+{\itshape
+\textbf{\textcolor{blue}{1 0}}\textbf{
+}\textbf{\textcolor[rgb]{0.8,0.0,0.0}{0}}\textbf{
+}\textbf{\textcolor[rgb]{0.0,0.5019608,0.0}{0 0 0 0 0 
+}}\textcolor{black}{;Carga el contenido del registro 0 en regA.}}
+
+{\itshape
+\textbf{\textcolor{blue}{1 0}}\textbf{
+}\textbf{\textcolor[rgb]{0.8,0.0,0.0}{1}}\textbf{
+}\textbf{\textcolor[rgb]{0.0,0.5019608,0.0}{0 0 0 0 1 
+}}\textcolor{black}{;Carga el contenido del registro 1 en regB.}}
+
+{\itshape
+\textbf{\textcolor{blue}{0 0}}\textbf{
+}\textbf{\textcolor[rgb]{0.8,0.0,0.0}{0}}\textbf{
+}\textbf{\textcolor[rgb]{0.0,0.5019608,0.0}{0 0 0 0 0 
+}}\textcolor{black}{;Realiza regA + regB y lo almacena en result.}}
+
+{\itshape
+\textbf{\textcolor{blue}{1 1}}\textbf{
+}\textbf{\textcolor[rgb]{0.8,0.0,0.0}{0}}\textbf{
+}\textbf{\textcolor[rgb]{0.0,0.5019608,0.0}{0 0 0 1 0 
+}}\textcolor{black}{;Carga result en el registro 2.}}
+
+{
+Con la codificación anterior no se podría cargar datos desde la memoria
+de programa al Banco de Registro, y nuestro computador estaría aislado
+del mundo externo. Para solucionar esto debemos incluir otra
+instrucción que nos permita el ingreso de datos desde el exterior.
+Podemos ampliar la función STORE de la siguiente forma:}
+
+{
+\textbf{1 1 0 X X X X X} Almacena el contenido del registro de salida de
+la ALU en la dirección XXXXX }
+
+{
+\textbf{1 1 1 X X X X X} Almacena el contenido de la memoria a la
+dirección XXXXX.}
+
+{
+Para mayor claridad en la codificación de las instrucciones es mejor
+dividir la instrucción STORE en STORE ( 110 ) y STOREX (111) para
+indicar que la fuente es externa.}
+
+{
+Para entender el funcionamiento de esta instrucción consideremos el
+siguiente programa:}
+
+{\itshape
+\foreignlanguage{english}{Load  regA, 0  ; regA
+}\foreignlanguage{spanish}{[F0DF?]}\foreignlanguage{english}{ Reg[0]}}
+
+{\itshape
+\foreignlanguage{english}{Storex  1  ; reg1
+}\foreignlanguage{spanish}{[F0DF?]}\foreignlanguage{english}{ PC+1 }}
+
+{\itshape
+\foreignlanguage{english}{Load  regB, 1  ; regB
+}\foreignlanguage{spanish}{[F0DF?]}\foreignlanguage{english}{ Reg[1]}}
+
+{\itshape
+\foreignlanguage{english}{Add  ; result
+}\foreignlanguage{spanish}{[F0DF?]}\foreignlanguage{english}{ regA +
+regB}}
+
+{\itshape
+Store 2  ; mem[2][F0DF?] resultReg}
+
+{
+En binario el código es:}
+
+{\itshape\color{black}
+\textbf{1 0 0 0 0 0 0 0  };Carga el contenido del registro 0 en regA.}
+
+{\itshape\color{blue}
+\textbf{1 1 1 0 0 0 0 1 }\textbf{\textup{ }};Carga 10101010 (PC+1: línea
+siguiente)en reg1}
+
+{\itshape\color{blue}
+\textbf{1 0 1 0 1 0 1 0  };Dato a almacenar}
+
+{\itshape\color{black}
+\textbf{1 0 1 0 0 0 0 1  };Carga el contenido del registro 1 en regB.}
+
+{\itshape\color{black}
+\textbf{0 0 0 0 0 0 0 0  };Realiza regA + regB y lo almacena en result.}
+
+{\itshape\color{black}
+\textbf{1 1 0 0 0 0 1 0  };Carga result en el registro 2.}
+
+{
+Para poder realizar estas operaciones la lógica de control debe ser
+capáz de distinguir las diferentes instrucciones y actuar
+consecuentemente, es decir asignar los valores lógicos adecuados para
+cada función. Los pasos que se deben realizar para la lectura de una
+instrucción son los siguientes:}
+
+\begin{enumerate}
+\item {
+Inicializar el Contador de Programa  ( PC = Dirección base ) para leer
+la primera instrucción.}
+\item {
+Transferir el contenido del Contador de Programa al Registro de
+Dirección de Memoria ( MAR ) }
+\item {
+El contenido de la Memoria debe ser transferido al Registro de
+Instrucción ( IR ).}
+\item {
+Decodificar la Instrucción y realizar las operaciones adecuadas.}
+\item {
+Aumentar en 1 el contenido del contador de Programa en uno y repetir el
+proceso para la siguiente instrucción.}
+\end{enumerate}
+{\centering 
+\includegraphics[width=8.941cm,height=8.941cm]{FSM-img49.png} \par}
+
+{
+La siguiente figura muestra una arquitectura que nos servirá para
+realizar las operaciones de la lógica de control.  La unidad de control
+es la encargada de sincronizar las tareas que deben realizarse para
+ejecutar las instrucciones sobre el \textit{datapath}. }
+
+{\centering 
+\includegraphics[width=12.778cm,height=5.741cm]{FSM-img50.png} \par}
+
+{
+Implementación del \textit{Datapath}}
+
+{
+Una vez diseñada la arquitectura de nuestro computador procedemos a la
+implementación de sus componentes, iniciando por el \textit{datapath};
+El cual está compuesto de:}
+
+{
+ALU: Esta unidad está encargada de realizar las operaciones aritméticas
+y lógicas requeridas por las instrucciones, de acuerdo a nuestro set de
+instrucciones, necesitamos únicamente de la SUMA y de la RESTA ( para
+set de instrucciones más complicados es necesario incluir las
+operaciones necesarias tales como: Complemento, corrimientos, etc ). La
+siguiente figura muestra la interfaz de la ALU.}
+
+{\centering 
+\includegraphics[width=4.948cm,height=3.942cm]{FSM-img51.png} \par}
+
+{
+Y su código correspondiente en VHDL es:}
+
+{\itshape
+\textbf{library} IEEE;}
+
+{\itshape
+\textbf{use} IEEE.STD\_LOGIC\_1164.ALL;}
+
+{\itshape
+\textbf{use} IEEE.STD\_LOGIC\_ARITH.ALL;}
+
+{\itshape
+\textbf{use} IEEE.STD\_LOGIC\_UNSIGNED.ALL;}
+
+{\itshape
+\textbf{entity} ALU \textbf{is}}
+
+{\itshape
+ \textbf{Port} ( A  : \textbf{in} std\_logic\_vector(7 \textbf{downto}
+0);}
+
+{\itshape
+ B  : \textbf{in} std\_logic\_vector(7 \textbf{downto} 0);}
+
+{\itshape
+ Opera  : \textbf{in} std\_logic;}
+
+{\itshape
+ Operacion  : \textbf{in} std\_logic\_vector(1 \textbf{downto} 0);}
+
+{\itshape
+ Resultado  : \textbf{out} std\_logic\_vector(7 \textbf{downto} 0));}
+
+{\itshape
+\textbf{end} \textbf{entity} ALU;}
+
+{\itshape
+\textbf{architecture} RT \textbf{of} ALU \textbf{is}}
+
+{\bfseries\itshape
+begin}
+
+{\itshape
+ \textbf{Process} ( A, B, Opera, Operacion )}
+
+{\itshape
+ \textbf{Begin}}
+
+{\itshape
+ \textbf{If} Opera = {\textquotesingle}1{\textquotesingle}
+\textbf{then}}
+
+{\itshape
+ \textbf{Case} Operacion \textbf{is}}
+
+{\itshape
+ \textbf{When} {\textquotedbl}00{\textquotedbl} ={\textgreater}  {}-{}-
+Suma}
+
+{\itshape
+\foreignlanguage{english}{ }\foreignlanguage{spanish}{Resultado
+{\textless}= A + B;}}
+
+{\itshape
+ \textbf{When} {\textquotedbl}01{\textquotedbl} ={\textgreater}  {}-{}-
+Resta}
+
+{\itshape
+ Resultado {\textless}= A - B;}
+
+{\itshape
+\foreignlanguage{spanish}{
+}\foreignlanguage{english}{\textbf{When}}\foreignlanguage{english}{
+{\textquotedbl}10{\textquotedbl} ={\textgreater}  {}-{}- And logico}}
+
+{\itshape
+ Resultado {\textless}= A and B;  }
+
+{\itshape
+ \textbf{When} {\textquotedbl}11{\textquotedbl} ={\textgreater}  {}-{}-
+Or logico}
+
+{\itshape
+ Resultado {\textless}= A or B;}
+
+{\itshape
+ \textbf{When} Others ={\textgreater}  {}-{}- Error}
+
+{\itshape
+ Resultado {\textless}= {\textquotedbl}XXXXXXXX{\textquotedbl};}
+
+{\itshape
+\textbf{ }\textbf{end} \textbf{case};}
+
+{\itshape
+\foreignlanguage{english}{\textbf{
+}}\foreignlanguage{spanish}{\textbf{else}}\foreignlanguage{spanish}{ 
+{}-{}- Si no hay operación el resultado es A}}
+
+{\itshape
+\foreignlanguage{spanish}{ }\foreignlanguage{english}{Resultado
+{\textless}= A;}}
+
+{\itshape
+\textbf{ }\textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{End} \textbf{Process};}
+
+{\itshape
+\textbf{end} \textbf{architecture} RT;}
+
+{
+Banco de Registros: El banco de registro posee 4 registros de propósito
+general en los que se almacenan datos provenientes de la memoria y de
+resultados temporales de las operaciones. Este módulo tiene la interfaz
+que se muestra en la siguiente figura.}
+
+{\centering 
+\includegraphics[width=6.456cm,height=4.366cm]{FSM-img52.png} \par}
+
+{
+Para realizar una escritura se debe colocar la señal \textit{Write} en
+{\textquoteleft}1{\textquoteright} e indicar el registro destino
+asignándole el valor adecuado a \textit{SelWriteReg}  y esperar un
+flanco de subida en la señal del reloj. El proceso de lectura es
+bastante sencillo, basta con indicar el registro a leer ( asignándole
+un valor a \textit{SelReadReg} ). El código en VHDL del Banco de
+Registros se muestra a continuación.}
+
+{\itshape
+\textbf{library} IEEE;}
+
+{\itshape
+\textbf{use} IEEE.STD\_LOGIC\_1164.ALL;}
+
+{\itshape
+\textbf{use} IEEE.STD\_LOGIC\_ARITH.ALL;}
+
+{\itshape
+\textbf{use} IEEE.STD\_LOGIC\_UNSIGNED.ALL;}
+
+{\itshape
+\textbf{entity} RagBank \textbf{is}}
+
+{\itshape
+ \textbf{Port} ( Clk  : \textbf{in} std\_logic;}
+
+{\itshape
+ Init  : \textbf{in} std\_logic;}
+
+{\itshape
+ DataWrite  : \textbf{in} std\_logic\_vector(7 \textbf{downto} 0);}
+
+{\itshape
+ SelWriteReg : \textbf{in} std\_logic\_vector(1 \textbf{downto} 0);}
+
+{\itshape
+ Write  : \textbf{in} std\_logic;}
+
+{\itshape
+ SelReadReg  : \textbf{in} std\_logic\_vector(1 \textbf{downto} 0);}
+
+{\itshape
+ DataRead  : \textbf{out} std\_logic\_vector(7 \textbf{downto} 0));}
+
+{\itshape
+\textbf{end} RagBank;}
+
+{\itshape
+\textbf{architecture} RT \textbf{of} RagBank \textbf{is}}
+
+{\bfseries\itshape
+begin}
+
+{\itshape
+ \textbf{Process}(Clk, Init, Write)}
+
+{\itshape
+ \textbf{type} RegBank \textbf{is} \textbf{array} ( 0 \textbf{to} 3 )
+\textbf{of} std\_logic\_vector( 7 \textbf{downto} 0 );  }
+
+{\itshape
+ \textbf{variable} Registers: RegBank;}
+
+{\itshape
+ \textbf{Begin }}
+
+{\itshape
+ \textbf{If} Init = {\textquotesingle}1{\textquotesingle} \textbf{then}}
+
+{\itshape
+ \textbf{for} i \textbf{in} 0 \textbf{to} 3 loop}
+
+{\itshape
+ Registers( i ) := {\textquotedbl}00000000{\textquotedbl};}
+
+{\itshape
+ \textbf{end} \textbf{loop};}
+
+{\itshape
+ \textbf{elsif} Write = {\textquotesingle}1{\textquotesingle}
+\textbf{then}}
+
+{\itshape
+ \textbf{if} Clk\textbf{{\textquotesingle}event} \textbf{and} clk =
+{\textquotesingle}1{\textquotesingle} \textbf{then}}
+
+{\itshape
+ Registers( conv\_integer( SelWriteReg ) ) := DataWrite;}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ DataRead {\textless}= Registers( conv\_integer( SelReadReg ) );}
+
+{\itshape
+ \textbf{End} \textbf{Process};}
+
+{\itshape
+\textbf{end} RT;}
+
+{
+Nótese que se utilizó la función \textit{conv\_integer} la cual
+convierte a entero un valor dado en \textit{std\_logic\_vector}, esto
+se debe hacer ya que el subíndice de un arreglo debe ser de tipo
+entero.}
+
+{
+Registros A, B y de salida: Estos registros están encargados de
+almacenar los operandos y el resultados de las operaciones de la ALU.
+Su interfaz se muestra en la siguiente figura.}
+
+{\centering 
+\includegraphics[width=6.006cm,height=3.916cm]{FSM-img53.png} \par}
+
+{\itshape
+El código en VHDL de este registro es el siguiente:}
+
+{\itshape
+\textbf{library} IEEE;}
+
+{\itshape
+\textbf{use} IEEE.STD\_LOGIC\_1164.ALL;}
+
+{\itshape
+\textbf{use} IEEE.STD\_LOGIC\_ARITH.ALL;}
+
+{\itshape
+\textbf{use} IEEE.STD\_LOGIC\_UNSIGNED.ALL;}
+
+{\itshape
+\textbf{entity} Reg \textbf{is}}
+
+{\itshape
+ \textbf{Port} ( Clk  : \textbf{in} std\_logic;}
+
+{\itshape
+ INR  : \textbf{in} std\_logic\_vector(7 \textbf{downto} 0);}
+
+{\itshape
+ Reset : \textbf{in} std\_logic;}
+
+{\itshape
+ Load  : \textbf{in} std\_logic;}
+
+{\itshape
+ OUTR  : \textbf{out} std\_logic\_vector(7 \textbf{downto} 0));}
+
+{\itshape
+\textbf{end} Reg;}
+
+{\itshape
+\textbf{architecture} RT \textbf{of} Reg \textbf{is}}
+
+{\bfseries\itshape
+begin}
+
+{\itshape
+ \textbf{Process}( clk, load, reset )}
+
+{\itshape
+ \textbf{Begin}}
+
+{\itshape
+ \textbf{if} Reset = {\textquotesingle}1{\textquotesingle}
+\textbf{then}}
+
+{\itshape
+ OUTR {\textless}= {\textquotedbl}00000000{\textquotedbl};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ \textbf{if} clk\textbf{{\textquotesingle}event} \textbf{and} clk =
+{\textquotesingle}1{\textquotesingle} \textbf{then}}
+
+{\itshape
+ \textbf{if} load = {\textquotesingle}1{\textquotesingle} \textbf{then}}
+
+{\itshape
+ OUTR {\textless}= INR;}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{End} \textbf{Process};}
+
+{\itshape
+\textbf{end} \textbf{RT};}
+
+{
+Implementación de la lógica de control:}
+
+{
+Contador de Programa: El contador de programa está encargado de mantener
+la dorección de memoria donde se encuentra la última instrucción
+ejecutada.}
+
+{\centering 
+\includegraphics[width=7.645cm,height=1.799cm]{FSM-img54.png} \par}
+
+{
+El código en VHDL del Contador de Programa es el siguiente:}
+
+{\itshape
+\textbf{library} IEEE;}
+
+{\itshape
+\textbf{use} IEEE.STD\_LOGIC\_1164.ALL;}
+
+{\itshape
+\textbf{use} IEEE.STD\_LOGIC\_ARITH.ALL;}
+
+{\itshape
+\textbf{use} IEEE.STD\_LOGIC\_UNSIGNED.ALL;}
+
+{\itshape
+\textbf{entity} ProgCount is}
+
+{\itshape
+ \textbf{Port} ( Clk  : in std\_logic;}
+
+{\itshape
+ Reset : in std\_logic;}
+
+{\itshape
+ IncCP : in std\_logic;}
+
+{\itshape
+ OutCP : buffer std\_logic\_vector(7 downto 0));}
+
+{\itshape
+\textbf{end }ProgCount;}
+
+{\itshape
+\textbf{architecture} Behavioral of ProgCount is}
+
+{\bfseries\itshape
+begin}
+
+{\itshape
+ \textbf{Process}( Clk, Reset, IncCP )}
+
+{\itshape
+ \textbf{Begin}}
+
+{\itshape
+ \textbf{if} Reset = {\textquotesingle}1{\textquotesingle} \textbf{then}
+}
+
+{\itshape
+ OutCP {\textless}= {\textquotedbl}00000000{\textquotedbl};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ \textbf{if} IncCP = {\textquotesingle}1{\textquotesingle}
+\textbf{then}}
+
+{\itshape
+ \textbf{if} clk\textbf{{\textquotesingle}event} \textbf{and} clk =
+{\textquotesingle}1{\textquotesingle} \textbf{then}}
+
+{\itshape
+ OutCP {\textless}= OutCP + {\textquotedbl}00000001{\textquotedbl};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{else}}
+
+{\itshape
+ OutCP {\textless}= OutCP;}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{end} \textbf{if};}
+
+{\itshape
+ \textbf{End} \textbf{Process};}
+
+{\itshape
+\textbf{end} Behavioral;}
+
+{
+Registro de Instrucciones Decodificador y Unidad de Control: Estos
+módulos están encargados de realizar todas las microinstrucciones
+necesarias para realizar las instrucciones. Este módulo tiene la
+interfaz mostrada en la siguiente figura.}
+
+{\centering 
+\includegraphics[width=9.47cm,height=7.063cm]{FSM-img55.png} \par}
+
+{
+Y el código en VHDL de la lógica de control se muestra a continuación.}
+
+{\itshape
+library IEEE;}
+
+{\itshape
+use IEEE.STD\_LOGIC\_1164.ALL;}
+
+{\itshape
+use IEEE.STD\_LOGIC\_ARITH.ALL;}
+
+{\itshape
+use IEEE.STD\_LOGIC\_UNSIGNED.ALL;}
+
+{\itshape
+entity LogControl is}
+
+{\itshape
+ Port ( -{}- }
+
+{\itshape
+ Clk  : in std\_logic;}
+
+{\itshape
+ SysReset  : in std\_logic;}
+
+{\itshape
+\ \   {}-{}- Memory Interface}
+
+{\itshape
+ DataMem  : in std\_logic\_vector(7 downto 0);}
+
+{\itshape
+ {}-{}- Specific Register Control}
+
+{\itshape
+ LoadA  : out std\_logic;}
+
+{\itshape
+ LoadB  : out std\_logic;}
+
+{\itshape
+ LoadResult  : out std\_logic;}
+
+{\itshape
+ LoadMAR  : out std\_logic;}
+
+{\itshape
+ IncCP  : out std\_logic;}
+
+{\itshape
+ Erase  : out std\_logic;}
+
+{\itshape
+ {}-{}- ALU Control}
+
+{\itshape
+ Operate  : out std\_logic;}
+
+{\itshape
+ Operation  : out std\_logic\_vector(1 downto 0);}
+
+{\itshape
+ {}-{}- Register Bank Control}
+
+{\itshape
+ SelReadReg  : out std\_logic\_vector(1 downto 0);}
+
+{\itshape
+ SelWriteReg : out std\_logic\_vector(1 downto 0);}
+
+{\itshape
+ Write  : out std\_logic);}
+
+{\itshape
+end LogControl;}
+
+{\itshape
+architecture Behavioral of LogControl is}
+
+{\itshape
+ type state\_type is ( ResetPC, Fetch, Decode, PCOperation, IncrementPC
+);}
+
+{\itshape
+ Signal State : State\_type;}
+
+{\itshape
+ type Operation\_type is ( OPAdd, OPSub, OPLoad, OPStore, OPStorex );}
+
+{\itshape
+ Signal Oper  : Operation\_type;}
+
+{\itshape
+ Signal IR  : std\_logic\_vector( 7 downto 0 );}
+
+{\itshape
+ type Inter\_type is ( onein, twoin, threein );}
+
+{\itshape
+ Signal Inter : Inter\_type;}
+
+{\itshape
+begin}
+
+{\itshape
+ Process ( Clk, SysReset )}
+
+{\itshape
+ Begin}
+
+{\itshape
+ if SysReset = {\textquotesingle}1{\textquotesingle} then}
+
+{\itshape
+ state {\textless}= ResetPC;}
+
+{\itshape
+\ \ \ \ Inter {\textless}= onein;}
+
+{\itshape
+ else}
+
+{\itshape
+ if ( Clk{\textquotesingle}event and Clk =
+{\textquotesingle}1{\textquotesingle} ) then}
+
+{\itshape
+ Case State is}
+
+{\itshape
+ when ResetPC ={\textgreater}}
+
+{\itshape
+\foreignlanguage{english}{ }Erase  {\textless}=
+{\textquotesingle}1{\textquotesingle}; LoadA  {\textless}=
+{\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \foreignlanguage{english}{LoadB  {\textless}=
+{\textquotesingle}0{\textquotesingle}; LoadResult {\textless}=
+{\textquotesingle}0{\textquotesingle};}}
+
+{\itshape
+ IncCp  {\textless}= {\textquotesingle}0{\textquotesingle}; Operate 
+{\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ Write  {\textless}= {\textquotesingle}0{\textquotesingle}; LoadMAR 
+{\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ State  {\textless}= Fetch;}
+
+{\itshape
+ when Fetch  ={\textgreater}}
+
+{\itshape
+\foreignlanguage{english}{ }Erase  {\textless}=
+{\textquotesingle}0{\textquotesingle}; LoadA  {\textless}=
+{\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \foreignlanguage{english}{LoadB  {\textless}=
+{\textquotesingle}0{\textquotesingle}; LoadResult {\textless}=
+{\textquotesingle}0{\textquotesingle};}}
+
+{\itshape
+ IncCp  {\textless}= {\textquotesingle}0{\textquotesingle}; Operate 
+{\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ Write  {\textless}= {\textquotesingle}0{\textquotesingle}; LoadMAR 
+{\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ state  {\textless}= Decode;}
+
+{\itshape
+ IR  {\textless}= DataMem;}
+
+{\itshape
+ when Decode  ={\textgreater}}
+
+{\itshape
+\foreignlanguage{english}{ }Erase  {\textless}=
+{\textquotesingle}0{\textquotesingle}; LoadA  {\textless}=
+{\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \foreignlanguage{english}{LoadB  {\textless}=
+{\textquotesingle}0{\textquotesingle}; LoadResult {\textless}=
+{\textquotesingle}0{\textquotesingle};}}
+
+{\itshape
+ IncCp  {\textless}= {\textquotesingle}0{\textquotesingle}; Operate 
+{\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ Write  {\textless}= {\textquotesingle}0{\textquotesingle}; LoadMAR 
+{\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ Case IR( 7 downto 5 ) is}
+
+{\itshape
+ when {\textquotedbl}00X{\textquotedbl} ={\textgreater}}
+
+{\itshape
+\ \ \ \ \ \ \ \   Oper {\textless}= OPAdd;}
+
+{\itshape
+ when {\textquotedbl}01X{\textquotedbl} ={\textgreater}}
+
+{\itshape
+\ \ \ \ \ \ \ \   Oper {\textless}= OPSub;}
+
+{\itshape
+ when {\textquotedbl}10X{\textquotedbl} ={\textgreater}}
+
+{\itshape
+\ \ \ \ \ \ \ \   Oper {\textless}= OPLoad;}
+
+{\itshape
+ when {\textquotedbl}110{\textquotedbl} ={\textgreater}}
+
+{\itshape
+\ \ \ \ \ \ \ \   Oper {\textless}= OPStore;}
+
+{\itshape
+ when {\textquotedbl}111{\textquotedbl} ={\textgreater}}
+
+{\itshape
+\ \ \ \ \ \ \ \   Oper {\textless}= OPStorex;}
+
+{\itshape
+ when others ={\textgreater}}
+
+{\itshape
+ end case;}
+
+{\itshape
+ State {\textless}= PCOperation;}
+
+{\itshape
+ Inter {\textless}= onein;}
+
+{\itshape
+ when PCOperation ={\textgreater}}
+
+{\itshape
+ Case Oper is}
+
+{\itshape
+ when OPAdd={\textgreater}}
+
+{\itshape
+ Erase  {\textless}= {\textquotesingle}0{\textquotesingle}; LoadA 
+{\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ LoadB  {\textless}= {\textquotesingle}0{\textquotesingle}; LoadResult
+{\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ IncCp  {\textless}= {\textquotesingle}0{\textquotesingle}; Operate 
+{\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ Write  {\textless}= {\textquotesingle}0{\textquotesingle}; LoadMAR 
+{\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ Operation {\textless}= {\textquotedbl}00{\textquotedbl};}
+
+{\itshape
+ State {\textless}= IncrementPC;}
+
+{\itshape
+ when OPSub={\textgreater}}
+
+{\itshape
+ Erase  {\textless}= {\textquotesingle}0{\textquotesingle}; LoadA 
+{\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ LoadB  {\textless}= {\textquotesingle}0{\textquotesingle}; LoadResult
+{\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ IncCp  {\textless}= {\textquotesingle}0{\textquotesingle}; Operate 
+{\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ Write  {\textless}= {\textquotesingle}0{\textquotesingle}; LoadMAR 
+{\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ Operation {\textless}= {\textquotedbl}01{\textquotedbl};}
+
+{\itshape
+ State {\textless}= IncrementPC;}
+
+{\itshape
+ when OPLoad ={\textgreater}}
+
+{\itshape
+ Erase  {\textless}= {\textquotesingle}0{\textquotesingle}; LoadResult
+{\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ IncCp  {\textless}= {\textquotesingle}0{\textquotesingle}; Operate 
+{\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ Write  {\textless}= {\textquotesingle}0{\textquotesingle}; LoadMAR 
+{\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ Case Inter is}
+
+{\itshape
+ when onein ={\textgreater}}
+
+{\itshape
+ SelReadReg {\textless}= IR( 1 downto 0 );}
+
+{\itshape
+ Inter {\textless}= twoin;}
+
+{\itshape
+ when twoin ={\textgreater}}
+
+{\itshape
+ if IR( 5 ) = {\textquotesingle}1{\textquotesingle} then}
+
+{\itshape
+ LoadB {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ LoadA {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ else}
+
+{\itshape
+ LoadB {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ LoadA {\textless}= {\textquotesingle}1{\textquotesingle};  }
+
+{\itshape
+ end if;}
+
+{\itshape
+ Inter {\textless}= threein;}
+
+{\itshape
+ when threein ={\textgreater}}
+
+{\itshape
+ LoadB {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ LoadA {\textless}= {\textquotesingle}1{\textquotesingle};  }
+
+{\itshape
+ State {\textless}= IncrementPC;}
+
+{\itshape
+ Inter {\textless}= onein;}
+
+{\itshape
+ End Case;  }
+
+{\itshape
+ \ \   when OPStore={\textgreater}}
+
+{\itshape
+\foreignlanguage{english}{ }Erase  {\textless}=
+{\textquotesingle}0{\textquotesingle}; LoadA  {\textless}=
+{\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \foreignlanguage{english}{LoadB  {\textless}=
+{\textquotesingle}0{\textquotesingle}; LoadResult {\textless}=
+{\textquotesingle}0{\textquotesingle};}}
+
+{\itshape
+ IncCp  {\textless}= {\textquotesingle}0{\textquotesingle}; Operate 
+{\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ Write  {\textless}= {\textquotesingle}0{\textquotesingle}; LoadMAR 
+{\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ Case Inter is}
+
+{\itshape
+ when onein ={\textgreater}}
+
+{\itshape
+ SelWriteReg {\textless}= IR( 1 downto 0 );}
+
+{\itshape
+ write {\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ Inter {\textless}= twoin;}
+
+{\itshape
+ when twoin ={\textgreater}}
+
+{\itshape
+ Write {\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ State {\textless}= IncrementPC;}
+
+{\itshape
+ Inter {\textless}= onein;}
+
+{\itshape
+ when others ={\textgreater}}
+
+{\itshape
+ Inter {\textless}= onein;}
+
+{\itshape
+ End Case;}
+
+{\itshape
+\foreignlanguage{english}{ }when OPStorex={\textgreater}}
+
+{\itshape
+ Erase  {\textless}= {\textquotesingle}0{\textquotesingle}; LoadA 
+{\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \foreignlanguage{english}{LoadB  {\textless}=
+{\textquotesingle}0{\textquotesingle}; LoadResult {\textless}=
+{\textquotesingle}0{\textquotesingle};}}
+
+{\itshape
+ IncCp  {\textless}= {\textquotesingle}0{\textquotesingle}; Operate 
+{\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ Write  {\textless}= {\textquotesingle}0{\textquotesingle}; LoadMAR 
+{\textless}= {\textquotesingle}0{\textquotesingle};  }
+
+{\itshape
+ end case;}
+
+{\itshape
+ when IncrementPC ={\textgreater}}
+
+{\itshape
+\foreignlanguage{english}{ }Erase  {\textless}=
+{\textquotesingle}0{\textquotesingle}; LoadA  {\textless}=
+{\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ \foreignlanguage{english}{LoadB  {\textless}=
+{\textquotesingle}0{\textquotesingle}; LoadResult {\textless}=
+{\textquotesingle}0{\textquotesingle};}}
+
+{\itshape
+ IncCp  {\textless}= {\textquotesingle}1{\textquotesingle}; Operate 
+{\textless}= {\textquotesingle}0{\textquotesingle};}
+
+{\itshape
+ Write  {\textless}= {\textquotesingle}0{\textquotesingle}; LoadMAR 
+{\textless}= {\textquotesingle}1{\textquotesingle};}
+
+{\itshape
+ state  {\textless}= Fetch;}
+
+{\itshape
+ end case;}
+
+{\itshape
+ end if;  }
+
+{\itshape
+ end if;}
+
+{\itshape
+ end Process;}
+
+{\itshape
+end Behavioral;}
+
+\subsection{EJERCICIOS}
+\begin{enumerate}
+\item {
+Escribir el código en VHDL de la máquina de estados representada por el
+siguiente diagrama:}
+\end{enumerate}
+{\centering 
+\includegraphics[width=5.946cm,height=10.918cm]{FSM-img56.png} \par}
+
+\begin{enumerate}
+\item {
+En un estacionamiento se cuenta con dos sensores que deben detectar el
+ingreso o salida de vehículos. Cuando un vehículo se encuentra frente a
+uno de los sensores genera un nivel lógico
+{\textquoteleft}1{\textquoteright}. En la siguiente figura se muestra
+el diagrama de tiempos de las señales generadas por los sensores al
+entrar y al salir un vehículo.}
+\end{enumerate}
+{\centering 
+\includegraphics[width=12.928cm,height=6.606cm]{FSM-img57.png} \par}
+
+{
+El sistema debe entregar dos señales UP y DOWN las cuales se colocan en
+un nivel lógico alto cuando se detecta la secuencia completa de entrada
+y salida de un automóvil respectivamente. }
+
+{
+3. Diseñar el decodificador del teclado matricial que se muestra en la
+siguiente figura. Cuando no se tiene ninguna tecla presionada, en las
+entradas R0 a R3 se tiene una lectura de
+{\textquotedblleft}0000{\textquotedblright}. Si por ejemplo se presiona
+la tecla superior izquierda, se recibirá un
+{\textquoteleft}1{\textquoteright} lógico en R0 cuando la secuencia de
+las columnas C0 a C3 sea {\textquotedblleft}1000{\textquotedblright}.
+Por lo tanto un valor lógico alto en las entradas R0 a R3 indica la
+fila de la tecla oprimida, pero no sabemos cual de las cuatro teclas de
+la fila está presionada. Para averiguarlo debemos colocar un
+{\textquoteleft}1{\textquoteright} lógico en solo una de las columnas y
+rotarlo por todas ellas. R0 será igual a
+{\textquoteleft}1{\textquoteright} sólo cuando se coloque el
+{\textquoteleft}1{\textquoteright} lógico en la columna de la tecla
+oprimida y {\textquoteleft}0{\textquoteright} en los otros casos.}
+
+{\centering 
+\includegraphics[width=9.206cm,height=8.227cm]{FSM-img58.png} \par}
+
+{
+Una vez detectada la tecla oprimida el decodificador debe generar un
+código único para cada una de ellas y debe indicar el evento haciendo
+\textit{key\_press = {\textquoteleft}1{\textquoteright}}.}
+
+\begin{enumerate}
+\item {
+Diseñar el sistema de control de los semáforos de un cruce de
+vehículos.}
+\end{enumerate}
+{\centering 
+\includegraphics[width=12.266cm,height=6.682cm]{FSM-img59.png} \par}
+
+\begin{enumerate}
+\item {
+Diseñar un sistema que sea capáz de generar caracteres ASCII en un
+monitor VGA. Una trama de video VGA está compuesta por  480 líneas de
+640 pixels. El monitor cuenta con las siguientes señales de control:}
+\end{enumerate}
+\begin{enumerate}
+\item \begin{itemize}
+\item {
+Red, Green, Blue : Entradas de señal análoga de color, estas entradas
+tienen un rango de 0 a 0.7 V}
+\item {
+Sincronismo Horizontal : Indica el principio y fín de cada línea de
+video ( 480 líneas ).}
+\item {
+Sincronismo Vertical : Indica el principio y fin de cada trama de
+video.}
+\end{itemize}
+\end{enumerate}
+{
+El flanco de bajada de la señal de sincronismo horizontal indica el
+inicio de la línea y al colocar en alto esta señal se asegura que la
+información contenida en la línea de video (Red, Green, Blue ) se
+despliegue en la parte visible de la pantalla. En la siguiente figura
+puede verse la forma de onda y el diagrama de tiempos de esta señal.}
+
+{\centering 
+\includegraphics[width=8.98cm,height=8.419cm]{FSM-img60.png} \par}
+
+{
+De igual forma el flanco de bajada en la señal de sincronismo vertical
+indica el inicio y fin de la trama de video formada por 480 líneas.
+Como puede verse en la figura anterior una línea tiene una duración de
+31.77 us y las 480 líneas tiene una duración de 31.77 us x 480 = 15.25
+ms. }
+
+{
+En la siguiente figura se ilustra el funcionamiento del monitor VGA y se
+indican las zonas no visibles de la pantalla.}
+
+{\centering 
+\includegraphics[width=11.368cm,height=11.501cm]{FSM-img61.png} \par}
+
+\begin{enumerate}
+\item {
+Diseñar el control de un display inteligente. Este display tiene como
+elemento de visualización una matriz de leds de 7x5. Se desea
+visualizar los caracteres ASCII desde el 20H {\textquoteleft}
+{\textquoteleft} hasta el 7EH {\textquoteleft} \~{} {\textquoteright}.
+La siguiente figura muestra el diagrama de bloques propuesto.}
+\end{enumerate}
+{\centering 
+\includegraphics[width=7.327cm,height=5.662cm]{FSM-img62.png} \par}
+
+{
+Debido a que los dispositivos lógicos programables no pueden suministrar
+la corriente necesaria para manejar los leds, es necesario utilizar el
+siguiente circuito para manejar la matriz:}
+
+{\centering 
+\includegraphics[width=9.035cm,height=11.335cm]{FSM-img63.png} \par}
+
+{
+El contenido de la memoria debe ser el siguiente:}
+
+{\centering\bfseries
+{\textquotesingle} {\textquotesingle}000h,000h,000h,000h,000h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}!{\textquotesingle}000h,000h,0FAh,000h,000h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}{\textquotedbl}{\textquotesingle}000h,0E0h,000h,0E0h,000h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}\#{\textquotesingle}044h,0FEh,044h,0FEh,044h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}\${\textquotesingle}048h,054h,0FEh,054h,024h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}\%{\textquotesingle}046h,026h,010h,0C8h,0C4h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}\&{\textquotesingle}00Ah,044h,0AAh,092h,06Ch
+\par}
+
+{\centering\bfseries
+{\textquotesingle}{\textquotesingle}{\textquotesingle}000h,0C0h,0A0h,000h,000h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}({\textquotesingle}000h,082h,044h,038h,000h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}){\textquotesingle}000h,038h,044h,082h,000h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}*{\textquotesingle}028h,010h,07Ch,010h,028h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}+{\textquotesingle}010h,010h,07Ch,010h,010h
+\par}
+
+{\centering\bfseries
+{\textquotesingle},{\textquotesingle}000h,00Ch,00Ah,000h,000h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}-{\textquotesingle}010h,010h,010h,010h,010h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}.{\textquotesingle}000h,006h,006h,000h,000h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}/{\textquotesingle}040h,020h,010h,008h,004h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}0{\textquotesingle}07Ch,0A2h,092h,08Ah,07Ch
+\par}
+
+{\centering\bfseries
+{\textquotesingle}1{\textquotesingle}000h,002h,0FEh,042h,000h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}2{\textquotesingle}062h,092h,08Ah,086h,042h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}3{\textquotesingle}05Ch,0A2h,0A2h,082h,044h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}4{\textquotesingle}008h,0FEh,048h,028h,018h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}5{\textquotesingle}09Ch,0A2h,0A2h,0A2h,0E4h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}6{\textquotesingle}04Ch,092h,092h,092h,07Ch
+\par}
+
+{\centering\bfseries
+{\textquotesingle}7{\textquotesingle}0C0h,0A0h,090h,08Eh,080h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}8{\textquotesingle}06Ch,092h,092h,092h,06Ch
+\par}
+
+{\centering\bfseries
+{\textquotesingle}9{\textquotesingle}07Ch,092h,092h,092h,064h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}:{\textquotesingle}000h,06Ch,06Ch,000h,000h
+\par}
+
+{\centering\bfseries
+{\textquotesingle};{\textquotesingle}000h,06Ch,06Ah,000h,000h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}{\textless}{\textquotesingle}082h,044h,028h,010h,000h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}={\textquotesingle}014h,014h,014h,014h,014h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}{\textgreater}{\textquotesingle}010h,028h,044h,082h,000h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}?{\textquotesingle}060h,090h,08Ah,080h,040h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}@{\textquotesingle}07Ch,082h,09Eh,092h,04Ch
+\par}
+
+{\centering\bfseries
+{\textquotesingle}A{\textquotesingle}03Eh,048h,088h,048h,03Eh
+\par}
+
+{\centering\bfseries
+{\textquotesingle}B{\textquotesingle}06Ch,092h,092h,092h,0FEh
+\par}
+
+{\centering\bfseries
+{\textquotesingle}C{\textquotesingle}044h,082h,082h,082h,07Ch
+\par}
+
+{\centering\bfseries
+{\textquotesingle}D{\textquotesingle}07Ch,082h,082h,082h,0FEh
+\par}
+
+{\centering\bfseries
+{\textquotesingle}E{\textquotesingle}082h,082h,092h,092h,0FEh
+\par}
+
+{\centering\bfseries
+{\textquotesingle}F{\textquotesingle}080h,090h,090h,090h,0FEh
+\par}
+
+{\centering\bfseries
+{\textquotesingle}G{\textquotesingle}05Eh,092h,092h,082h,07Ch
+\par}
+
+{\centering\bfseries
+{\textquotesingle}H{\textquotesingle}0FEh,010h,010h,010h,0FEh
+\par}
+
+{\centering\bfseries
+{\textquotesingle}I{\textquotesingle}000h,082h,0FEh,082h,000h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}J{\textquotesingle}080h,0FCh,082h,002h,004h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}K{\textquotesingle}082h,044h,028h,010h,0FEh
+\par}
+
+{\centering\bfseries
+{\textquotesingle}L{\textquotesingle}002h,002h,002h,002h,0FEh
+\par}
+
+{\centering\bfseries
+{\textquotesingle}M{\textquotesingle}0FEh,040h,030h,040h,0FEh
+\par}
+
+{\centering\bfseries
+{\textquotesingle}N{\textquotesingle}0FEh,008h,010h,020h,0FEh
+\par}
+
+{\centering\bfseries
+{\textquotesingle}O{\textquotesingle}07Ch,082h,082h,082h,07Ch
+\par}
+
+{\centering\bfseries
+{\textquotesingle}P{\textquotesingle}060h,090h,090h,090h,0FEh
+\par}
+
+{\centering\bfseries
+{\textquotesingle}Q{\textquotesingle}07Ah,084h,08Ah,082h,07Ch
+\par}
+
+{\centering\bfseries
+{\textquotesingle}R{\textquotesingle}062h,094h,098h,090h,0FEh
+\par}
+
+{\centering\bfseries
+{\textquotesingle}S{\textquotesingle}04Ch,092h,092h,092h,064h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}T{\textquotesingle}080h,080h,0FEh,080h,080h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}U{\textquotesingle}0FCh,002h,002h,002h,0FCh
+\par}
+
+{\centering\bfseries
+{\textquotesingle}V{\textquotesingle}0F8h,004h,002h,004h,0F8h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}W{\textquotesingle}0FCh,002h,01Ch,002h,0FCh
+\par}
+
+{\centering\bfseries
+{\textquotesingle}X{\textquotesingle}0C6h,028h,010h,028h,0C6h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}Y{\textquotesingle}0E0h,010h,00Eh,010h,0E0h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}Z{\textquotesingle}0C2h,0A2h,092h,08Ah,086h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}[{\textquotesingle}000h,082h,082h,0FEh,000h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}{\textbackslash}{\textquotesingle}004h,008h,010h,020h,040h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}]{\textquotesingle}000h,0FEh,082h,082h,000h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}\^{}{\textquotesingle}020h,040h,080h,040h,020h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}\_{\textquotesingle}002h,002h,002h,002h,002h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}´{\textquotesingle}000h,020h,040h,080h,000h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}a{\textquotesingle}01Eh,02Ah,02Ah,02Ah,004h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}b{\textquotesingle}01Ch,022h,022h,012h,0FEh
+\par}
+
+{\centering\bfseries
+{\textquotesingle}c{\textquotesingle}004h,022h,022h,022h,01Ch
+\par}
+
+{\centering\bfseries
+{\textquotesingle}d{\textquotesingle}0FEh,012h,022h,022h,01Ch
+\par}
+
+{\centering\bfseries
+{\textquotesingle}e{\textquotesingle}018h,02Ah,02Ah,02Ah,01Ch
+\par}
+
+{\centering\bfseries
+{\textquotesingle}f{\textquotesingle}040h,080h,090h,07Eh,010h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}g{\textquotesingle}07Ch,04Ah,04Ah,04Ah,030h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}h{\textquotesingle}01Eh,020h,020h,010h,0FEh
+\par}
+
+{\centering\bfseries
+{\textquotesingle}i{\textquotesingle}000h,002h,0BEh,022h,000h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}j{\textquotesingle}000h,0BCh,022h,002h,004h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}k{\textquotesingle}000h,022h,014h,008h,0FEh
+\par}
+
+{\centering\bfseries
+{\textquotesingle}l{\textquotesingle}000h,002h,0FEh,082h,000h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}m{\textquotesingle}01Eh,020h,018h,020h,03Eh
+\par}
+
+{\centering\bfseries
+{\textquotesingle}n{\textquotesingle}01Eh,020h,020h,010h,03Eh
+\par}
+
+{\centering\bfseries
+{\textquotesingle}o{\textquotesingle}01Ch,022h,022h,022h,01Ch
+\par}
+
+{\centering\bfseries
+{\textquotesingle}p{\textquotesingle}020h,050h,050h,050h,07Eh
+\par}
+
+{\centering\bfseries
+{\textquotesingle}q{\textquotesingle}07Eh,030h,050h,050h,020h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}r{\textquotesingle}010h,020h,020h,010h,03Eh
+\par}
+
+{\centering\bfseries
+{\textquotesingle}s{\textquotesingle}004h,02Ah,02Ah,02Ah,012h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}t{\textquotesingle}004h,002h,012h,07Ch,010h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}u{\textquotesingle}03Eh,004h,002h,002h,03Ch
+\par}
+
+{\centering\bfseries
+{\textquotesingle}v{\textquotesingle}038h,004h,002h,004h,038h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}w{\textquotesingle}03Ch,002h,00Ch,002h,03Ch
+\par}
+
+{\centering\bfseries
+{\textquotesingle}x{\textquotesingle}022h,014h,008h,014h,022h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}y{\textquotesingle}03Ch,00Ah,00Ah,00Ah,030h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}z{\textquotesingle}022h,032h,02Ah,026h,022h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}\{{\textquotesingle}082h,082h,06Ch,010h,000h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}{\textbar}{\textquotesingle}000h,000h,0FEh,000h,000h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}\}{\textquotesingle}000h,010h,06Ch,082h,082h
+\par}
+
+{\centering\bfseries
+{\textquotesingle}\~{}{\textquotesingle}080h,040h,0C0h,080h,040h
+\par}
+
+\begin{enumerate}
+\item {
+Se desea diseñar un display formado por 5 matrices de Leds de 7x5 que
+sea capáz de almacenar mensajes de 70 caracteres. El mensaje a
+desplegar debe ser introducido via serial o por medio de un teclado.}
+\end{enumerate}
+\begin{enumerate}
+\item {
+Diseñar un circuito que permita detectar la tecla oprimida en un
+teclado:}
+\end{enumerate}
+{
+ Cada vez que se oprime una tecla en in teclado IBM el teclado envía un
+código, este código es único para cada tecla. Por ejemplo si se oprime
+la tecla {\textquoteleft}A{\textquoteright} se enviará el código 1CH.
+Si se mantiene oprimida esta tecla el código se envía contínuamenta
+hasta que se suelte o se oprima otra tecla. Cuando se suelta una tecla
+el teclado envía el código F0H para indicar que se liberó una tecla y a
+continuación envía el código de la tecla liberada en nuestro ejemplo
+cuando se libera la tecla {\textquoteleft}A{\textquoteright} el teclado
+envía los códigos F0H 1CH.}
+
+{
+El teclado siempre envía el mismo código para cada letra, por lo tanto
+se debe tener en cuenta que cada vez que se oprima la tecla
+{\textquoteleft}SHIFT{\textquoteright} la siguiente letra debe
+cambiarse de mayúsculas a minúsculas o viceversa. También se debe tener
+en cuenta el estado de la tecla {\textquoteleft}CAPS{\textquoteright}.}
+
+{
+\textbf{Host Commands} }
+
+[Warning: Draw object ignored]
+
+\begin{center}
+\tablehead{}
+\begin{supertabular}{m{0.521cm}m{11.205cm}}
+\bfseries ED &
+\bfseries Set Status LED{\textquotesingle}s -
+This command can be used to turn on and off the Num Lock, Caps Lock \&
+Scroll Lock LED{\textquotesingle}s. After Sending ED, keyboard will
+reply with ACK (FA) and wait for another byte which determines their
+Status. Bit 0 controls the Scroll Lock, Bit 1 the Num Lock and Bit 2
+the Caps lock. Bits 3 to 7 are ignored.~\\
+ &
+\\
+ EE &
+ Echo - Upon sending a Echo command to the
+Keyboard, the keyboard should reply with a Echo (EE)\\
+ &
+\\
+\bfseries F0 &
+\bfseries Set Scan Code Set. Upon Sending F0,
+keyboard will reply with ACK (FA) and wait for another byte, 01-03
+which determines the Scan Code Used. Sending 00 as the second byte will
+return the Scan Code Set currently in Use~\\
+ &
+\\
+ F3 &
+ Set Typematic Repeat Rate. Keyboard will
+Acknowledge command with FA and wait for second byte, which determines
+the Typematic Repeat Rate.\\
+ &
+\\
+\bfseries F4 &
+\bfseries Keyboard Enable - Clears the keyboards
+output buffer, enables Keyboard Scanning and returns an
+Acknowledgment.\\
+ &
+\\
+ F5 &
+ Keyboard Disable - Resets the keyboard,
+disables Keyboard Scanning and returns an Acknowledgment.\\
+ &
+\\
+\bfseries FE &
+\bfseries Resend - Upon receipt of the resend
+command the keyboard will re- transmit the last byte sent.\\
+ &
+\\
+ FF &
+ Reset - Resets the Keyboard.\\
+\end{supertabular}
+\end{center}
+{
+\textbf{Commands} }
+
+[Warning: Draw object ignored]
+
+{
+Now if the Host Commands are send from the host to the keyboard, then
+the keyboard commands must be sent from the keyboard to host. If you
+think this way, you must be correct. Below details some of the commands
+which the keyboard can send. }
+
+\begin{center}
+\tablehead{}
+\begin{supertabular}{m{0.544cm}m{11.182cm}}
+\bfseries FA &
+\bfseries Acknowledge\\
+ &
+\\
+ AA &
+ Power On Self Test Passed (BAT Completed)\\
+ &
+\\
+\bfseries EE &
+\bfseries See Echo Command (Host Commands)\\
+ &
+\\
+ FE &
+ Resend - Upon receipt of the resend command the
+Host should re-transmit the last byte sent.~\\
+ &
+\\
+\bfseries 00 &
+\bfseries Error or Buffer Overflow\\
+ &
+\\
+ FF &
+ Error or Buffer Overflow\\
+\end{supertabular}
+\end{center}
+[Warning: Draw object ignored]
+
+{\bfseries
+Sca}
+
+{
+El teclado riene una interfaz PS2 la cual cuenta con la disposición de
+pines y el diagrama de tiempos indicados en la siguiente figura:}
+
+{\centering 
+\includegraphics[width=12.291cm,height=2.697cm]{FSM-img64.png} \par}
+
+{
+La figura anterior muestra la comunicación entre el teclado y el Host.
+Como puede verse se trata de una comuniacación serial sincrónica en la
+cual el teclado genera las señales Data y Clock. Solo durante el flanco
+de bajado se debe leer el estado de la señal de datos.}
+
+{
+La comunicación entre el Host y el teclado se muestra en la siguiente
+figura. Como puede verse el Host debe iniciar la transmisión generando
+un flanco de bajada en la señal clock y un tiempo después generar el
+Bit de Start, después de esto el teclado genera la señal de reloj y el
+Host debe enviar serialmente el comando deseado, si el teclado recibe
+correctamente la trama responde con ACK.}
+
+{\centering 
+\includegraphics[width=12.607cm,height=2.572cm]{FSM-img65.png} \par}
+
+{
+El conector PS2 tiene 6 pines los cuales tiene las siguientes
+funciones:}
+
+{\centering 
+\includegraphics[width=5.556cm,height=3.069cm]{FSM-img66.png} \par}
+
+{
+Se desea que el driver de teclado tenga una salida ASCII, para poder ser
+utilizado con el Display inteligente del ejercicio 6. La siguiente
+tabla da una relación entre el código de la tecla y el código ASCII de
+la letra o carácter correspondiente.}
+
+\begin{flushleft}
+\tablehead{}
+\begin{supertabular}{|m{0.34500003cm}m{0.40500003cm}|m{0.34500003cm}m{0.40500003cm}|m{0.34500003cm}m{0.40500003cm}|m{0.34500003cm}m{0.40500003cm}|m{0.34500003cm}m{0.40500003cm}|m{0.34500003cm}m{0.40500003cm}|m{0.34500003cm}m{0.40500003cm}|m{0.34500003cm}m{0.40500003cm}|m{0.34500003cm}m{0.40500003cm}|m{0.34500003cm}m{0.40500003cm}|m{0.412cm}m{0.412cm}|m{0.393cm}m{0.40500003cm}|m{0.398cm}m{0.40500003cm}|m{0.541cm}m{0.34500003cm}|m{0.40500003cm}m{0.398cm}|m{0.375cm}m{0.11400001cm}|}
+\hline
+\multicolumn{2}{|m{0.9500001cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries F9} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries F5} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries F3} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries F1} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries F2} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries F12} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries F10} &
+\multicolumn{2}{m{1.0239999cm}|}{\centering
+\bfseries F8} &
+\multicolumn{2}{m{0.99799997cm}|}{\centering
+\bfseries F6} &
+\multicolumn{2}{m{1.003cm}|}{\centering
+\bfseries F4} &
+\multicolumn{2}{m{1.086cm}|}{\centering
+\bfseries Tab} &
+\multicolumn{2}{m{1.003cm}|}{\centering
+\bfseries {\textbar}} &
+\multicolumn{2}{m{0.689cm}|}{\centering
+\bfseries NC}\\\hline
+\multicolumn{1}{|m{0.34500003cm}|}{\centering 
+00} &
+\centering  FF &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+01} &
+\centering  FF &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+02} &
+\centering  FF &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+03} &
+\centering  FF &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+04} &
+\centering  FF &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+05} &
+\centering  FF &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+06} &
+\centering  FF &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+07} &
+\centering  FF &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+08} &
+\centering  FF &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+09} &
+\centering  FF &
+\multicolumn{1}{m{0.412cm}|}{\centering  0A} &
+\centering  FF &
+\multicolumn{1}{m{0.393cm}|}{\centering  0B} &
+\centering  FF &
+\multicolumn{1}{m{0.398cm}|}{\centering  0C} &
+\centering  FF &
+\multicolumn{1}{m{0.541cm}|}{\centering  OD} &
+\centering  09 &
+\multicolumn{1}{m{0.40500003cm}|}{\centering 
+0E} &
+\centering  7C &
+\multicolumn{1}{m{0.375cm}|}{\centering  0F} &
+\\\hline
+\multicolumn{2}{|m{0.9500001cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries Alt} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries SHL} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries CTL} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries q} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries l} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{1.0239999cm}|}{\centering
+\bfseries z} &
+\multicolumn{2}{m{0.99799997cm}|}{\centering
+\bfseries s} &
+\multicolumn{2}{m{1.003cm}|}{\centering
+\bfseries a} &
+\multicolumn{2}{m{1.086cm}|}{\centering
+\bfseries w} &
+\multicolumn{2}{m{1.003cm}|}{\centering
+\bfseries 2} &
+\multicolumn{2}{m{0.689cm}|}{\centering
+\bfseries NC}\\\hline
+\multicolumn{1}{|m{0.34500003cm}|}{\centering 
+10} &
+\centering  FF &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+11} &
+\centering  FF &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+12} &
+\centering  FF &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+13} &
+\centering  FF &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+14} &
+\centering  FF &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+15} &
+\centering  71 &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+16} &
+\centering  31 &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+17} &
+\centering  FF &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+18} &
+\centering  FF &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+19} &
+\centering  FF &
+\multicolumn{1}{m{0.412cm}|}{\centering  1A} &
+\centering  7A &
+\multicolumn{1}{m{0.393cm}|}{\centering  1B} &
+\centering  73 &
+\multicolumn{1}{m{0.398cm}|}{\centering  1C} &
+\centering  61 &
+\multicolumn{1}{m{0.541cm}|}{\centering  1D} &
+\centering  77 &
+\multicolumn{1}{m{0.40500003cm}|}{\centering 
+1E} &
+\centering  32 &
+\multicolumn{1}{m{0.375cm}|}{\centering  1F} &
+\\\hline
+\multicolumn{2}{|m{0.9500001cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries c} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries x} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries d} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries e} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries 4} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries 3} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{0.9500001cm}|}{} &
+\multicolumn{2}{m{1.0239999cm}|}{\centering
+\bfseries v} &
+\multicolumn{2}{m{0.99799997cm}|}{\centering
+\bfseries f} &
+\multicolumn{2}{m{1.003cm}|}{\centering
+\bfseries t} &
+\multicolumn{2}{m{1.086cm}|}{\centering
+\bfseries r} &
+\multicolumn{2}{m{1.003cm}|}{\centering
+\bfseries 5} &
+\multicolumn{2}{m{0.689cm}|}{\centering
+\bfseries NC}\\\hline
+\multicolumn{1}{|m{0.34500003cm}|}{\centering 
+20} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+21} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+22} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+23} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+24} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+25} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+26} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+27} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+28} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+29} &
+ &
+\multicolumn{1}{m{0.412cm}|}{\centering  2A} &
+ &
+\multicolumn{1}{m{0.393cm}|}{\centering  2B} &
+ &
+\multicolumn{1}{m{0.398cm}|}{\centering  2C} &
+ &
+\multicolumn{1}{m{0.541cm}|}{\centering  2D} &
+ &
+\multicolumn{1}{m{0.40500003cm}|}{\centering 
+2E} &
+ &
+\multicolumn{1}{m{0.375cm}|}{\centering  2F} &
+\\\hline
+\multicolumn{2}{|m{0.9500001cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries n} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries b} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries h} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries g} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries y} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries 6} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{1.0239999cm}|}{\centering
+\bfseries m} &
+\multicolumn{2}{m{0.99799997cm}|}{\centering
+\bfseries j} &
+\multicolumn{2}{m{1.003cm}|}{\centering
+\bfseries u} &
+\multicolumn{2}{m{1.086cm}|}{\centering
+\bfseries 7} &
+\multicolumn{2}{m{1.003cm}|}{\centering
+\bfseries 8} &
+\multicolumn{2}{m{0.689cm}|}{\centering
+\bfseries NC}\\\hline
+\multicolumn{1}{|m{0.34500003cm}|}{\centering 
+30} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+31} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+32} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+33} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+34} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+35} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+36} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+37} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+38} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+39} &
+ &
+\multicolumn{1}{m{0.412cm}|}{\centering  3A} &
+ &
+\multicolumn{1}{m{0.393cm}|}{\centering  3B} &
+ &
+\multicolumn{1}{m{0.398cm}|}{\centering  3C} &
+ &
+\multicolumn{1}{m{0.541cm}|}{\centering  3D} &
+ &
+\multicolumn{1}{m{0.40500003cm}|}{\centering 
+3E} &
+ &
+\multicolumn{1}{m{0.375cm}|}{\centering  3F} &
+\\\hline
+\multicolumn{2}{|m{0.9500001cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries ,} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries k} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries i} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries o} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries 0} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries 9} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries .} &
+\multicolumn{2}{m{1.0239999cm}|}{\centering
+\bfseries {}-} &
+\multicolumn{2}{m{0.99799997cm}|}{\centering
+\bfseries l} &
+\multicolumn{2}{m{1.003cm}|}{\centering
+\bfseries ñ} &
+\multicolumn{2}{m{1.086cm}|}{\centering
+\bfseries p} &
+\multicolumn{2}{m{1.003cm}|}{\centering
+\bfseries {\textquoteleft}} &
+\multicolumn{2}{m{0.689cm}|}{\centering
+\bfseries NC}\\\hline
+\multicolumn{1}{|m{0.34500003cm}|}{\centering 
+40} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+41} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+42} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+43} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+44} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+45} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+46} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+47} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+48} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+49} &
+ &
+\multicolumn{1}{m{0.412cm}|}{\centering  4A} &
+ &
+\multicolumn{1}{m{0.393cm}|}{\centering  4B} &
+ &
+\multicolumn{1}{m{0.398cm}|}{\centering  4C} &
+ &
+\multicolumn{1}{m{0.541cm}|}{\centering  4D} &
+ &
+\multicolumn{1}{m{0.40500003cm}|}{\centering 
+4E} &
+ &
+\multicolumn{1}{m{0.375cm}|}{\centering  4F} &
+\\\hline
+\multicolumn{2}{|m{0.9500001cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries \{} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries ´} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries ¿} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries CAP} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries SHR} &
+\multicolumn{2}{m{1.0239999cm}|}{\centering
+\bfseries ENT} &
+\multicolumn{2}{m{0.99799997cm}|}{\centering
+\bfseries +} &
+\multicolumn{2}{m{1.003cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{1.086cm}|}{\centering
+\bfseries \}} &
+\multicolumn{2}{m{1.003cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{0.689cm}|}{\centering
+\bfseries NC}\\\hline
+\multicolumn{1}{|m{0.34500003cm}|}{\centering 
+50} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+51} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+52} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+53} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+54} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+55} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+56} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+57} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+58} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+59} &
+ &
+\multicolumn{1}{m{0.412cm}|}{\centering  5A} &
+ &
+\multicolumn{1}{m{0.393cm}|}{\centering  5B} &
+ &
+\multicolumn{1}{m{0.398cm}|}{\centering  5C} &
+ &
+\multicolumn{1}{m{0.541cm}|}{\centering  5D} &
+ &
+\multicolumn{1}{m{0.40500003cm}|}{\centering 
+5E} &
+ &
+\multicolumn{1}{m{0.375cm}|}{\centering  5F} &
+\\\hline
+\multicolumn{2}{|m{0.9500001cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries {\textless}} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries BKS} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries 1} &
+\multicolumn{2}{m{1.0239999cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{0.99799997cm}|}{\centering
+\bfseries 4} &
+\multicolumn{2}{m{1.003cm}|}{\centering
+\bfseries 7} &
+\multicolumn{2}{m{1.086cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{1.003cm}|}{\centering
+\bfseries NC} &
+\multicolumn{2}{m{0.689cm}|}{\centering
+\bfseries NC}\\\hline
+\multicolumn{1}{|m{0.34500003cm}|}{\centering 
+60} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+61} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+62} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+63} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+64} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+65} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+66} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+67} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+68} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+69} &
+ &
+\multicolumn{1}{m{0.412cm}|}{\centering  6A} &
+ &
+\multicolumn{1}{m{0.393cm}|}{\centering  6B} &
+ &
+\multicolumn{1}{m{0.398cm}|}{\centering  6C} &
+ &
+\multicolumn{1}{m{0.541cm}|}{\centering  6D} &
+ &
+\multicolumn{1}{m{0.40500003cm}|}{\centering 
+6E} &
+ &
+\multicolumn{1}{m{0.375cm}|}{\centering  6F} &
+\\\hline
+\multicolumn{2}{|m{0.9500001cm}|}{\centering
+\bfseries 0} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries .} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries 2} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries 5} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries 6} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries 8} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries ESC} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries NUM} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries F11} &
+\multicolumn{2}{m{0.9500001cm}|}{\centering
+\bfseries +} &
+\multicolumn{2}{m{1.0239999cm}|}{\centering
+\bfseries 3} &
+\multicolumn{2}{m{0.99799997cm}|}{\centering
+\bfseries {}-} &
+\multicolumn{2}{m{1.003cm}|}{\centering
+\bfseries *} &
+\multicolumn{2}{m{1.086cm}|}{\centering
+\bfseries 9} &
+\multicolumn{2}{m{1.003cm}|}{\centering
+\bfseries BD} &
+\multicolumn{2}{m{0.689cm}|}{\centering
+\bfseries NC}\\\hline
+\multicolumn{1}{|m{0.34500003cm}|}{\centering 
+70} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+71} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+72} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+73} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+74} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+75} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+76} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+77} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+78} &
+ &
+\multicolumn{1}{m{0.34500003cm}|}{\centering 
+79} &
+ &
+\multicolumn{1}{m{0.412cm}|}{\centering  7A} &
+ &
+\multicolumn{1}{m{0.393cm}|}{\centering  7B} &
+ &
+\multicolumn{1}{m{0.398cm}|}{\centering  7C} &
+ &
+\multicolumn{1}{m{0.541cm}|}{\centering  7D} &
+ &
+\multicolumn{1}{m{0.40500003cm}|}{\centering 
+7E} &
+ &
+\multicolumn{1}{m{0.375cm}|}{\centering  7F} &
+\\\hline
+\end{supertabular}
+\end{flushleft}
+{
+;SHIFT + KEY}
+
+{
+\ \ \ \ ;00 NC\ \ 01 F9\ \ 02 NC\ \ 03 F5\ \ 04 F3\ \ 05 F1\ \ 06
+F2\ \ 07 F12\ \ 08 NC\ \ 09 F10\ \ 0A F8\ \ 0B F6\ \ 0C F4\ \ 0D
+TAB\ \ OE °\ \ 0F NC}
+
+{
+\ \ db\ \ 0FFH,\ \ 04300H,\ \ 0FFH,\ \ 03F00H,\ \ 03D00H,\ \ 03B00H,\ \ 03C00H,\ \ 08600H,\ \ 0FFH,\ \ 04400H,\ \ 04200H,\ \ 04000H,\ \ 03E00H,\ \ 009H,\ \ 0A7H,\ \ 0FFH}
+
+{
+\ \ \ \ ;10 NC\ \ 11 ALT\ \ 12 SHL\ \ 13 NC\ \ 14 CTL\ \ 15 Q\ \ 16
+!\ \ 17 NC\ \ 18 NC\ \ 19 NC\ \ 1A Z\ \ 1B S\ \ 1C A\ \ 1D W\ \ 1E
+@\ \ 1F NC }
+
+{
+\ \ db\ \ 0FFH,\ \ 0FFH,\ \ 0FFH,\ \ 0FFH,\ \ 0FFH,\ \ 051H,\ \ 021H,\ \ 0FFH,\ \ 0FFH,\ \ 0FFH,\ \ 05AH,\ \ 053H,\ \ 041H,\ \ 057H,\ \ 040H,\ \ 0FFH\ \ }
+
+{
+\ \ \ \ \foreignlanguage{spanish}{;20 NC\ \ 21 C\ \ 22 X\ \ 23 D\ \ 24
+E\ \ 25 \$\ \ 26 \#\ \ 27 NC\ \ 28 NC\ \ 29 SPC\ \ 2A V\ \ 2B F\ \ 2C
+T\ \ 2D R\ \ 2E \%\ \ 2F NC}}
+
+{
+\ \ db\ \ 0FFH,\ \ 043H,\ \ 058H,\ \ 044H,\ \ 045H,\ \ 024H,\ \ 023H,\ \ 0FFH,\ \ 0FFH,\ \ 0FFH,\ \ 056H,\ \ 046H,\ \ 054H,\ \ 052H,\ \ 025H,\ \ 0FFH\ \ }
+
+{
+\ \ \ \ ;30 NC\ \ 31 N\ \ 32 B\ \ 33 H\ \ 34 G\ \ 35 Y\ \ 36 \&\ \ 37
+NC\ \ 38 NC\ \ 39 NC\ \ 3A M\ \ 3B J\ \ 3C U\ \ 3D /\ \ 3E (\ \ 3F NC}
+
+{
+\ \ db\ \ 0FFH,\ \ 0FFH,\ \ 042H,\ \ 048H,\ \ 047H,\ \ 059H,\ \ 026H,\ \ 0FFH,\ \ 0FFH,\ \ 0FFH,\ \ 04DH,\ \ 04AH,\ \ 055H,\ \ 02FH,\ \ 028H,\ \ 0FFH\ \ }
+
+{
+\foreignlanguage{spanish}{\ \ \ \ ;40 NC\ \ 41 ;\ \ 42 K\ \ 43 I\ \ 44
+O\ \ 45 =\ \ 46 )\ \ 47 NC\ \ 48 NC\ \ 49 :\ \ 4A \_\ \ 4B L\ \ 4C
+Ñ\ \ 4D P\ \ 4E ?  }4F NC}
+
+{
+\ \ db\ \ 0FFH,\ \ 03BH,\ \ 04BH,\ \ 049H,\ \ 04FH,\ \ 03DH,\ \ 029H,\ \ 0FFH,\ \ 0FFH,\ \ 03AH,\ \ 05FH,\ \ 04CH,\ \ 0A5H,\ \ 050H,\ \ 03FH,\ \ 0FFH\ \ }
+
+{
+\ \ \ \ ;50 NC\ \ 51 NC\ \ 52 [\ \ 53 NC\ \ 54 ¨\ \ 55 ¡\ \ 56 NC\ \ 57
+NC\ \ 58 CAP\ \ 59 SHR\ \ 5A ENT\ \ 5B *\ \ 5C NC\ \ 5D ]\ \ 5E
+NC\ \ 5F NC}
+
+{
+\ \ db\ \ 0FFH,\ \ 0FFH,\ \ 05BH,\ \ 0FFH,\ \ 0B0H,\ \ 0ADH,\ \ 0FFH,\ \ 0FFH,\ \ 0FFH,\ \ 0FFH,\ \ 013H,\ \ 02AH,\ \ 0FFH,\ \ 05DH,\ \ 0FFH,\ \ 0FFH\ \ }
+
+{
+\ \ \ \ ;60 NC\ \ 61 {\textgreater}\ \ 62 NC\ \ 63 NC\ \ 64 NC\ \ 65
+NC\ \ 66 BKS\ \ 67 NC\ \ 68 NC\ \ 69 END\ \ 6A NC\ \ 6B
+{\textless}-\ \ 6C HM\ \ 6D NC\ \ 6E NC\ \ 6F NC}
+
+{
+\ \ db\ \ 0FFH,\ \ 03EH,\ \ 0FFH,\ \ 0FFH,\ \ 0FFH,\ \ 0FFH,\ \ 08H,\ \ 0FFH,\ \ 0FFH,\ \ 0FFH,\ \ 0FFH,\ \ 0FFH,\ \ 0FFH,\ \ 0FFH,\ \ 0FFH,\ \ 0FFH\ \ }
+
+{
+\ \ \ \ ;70 0\ \ 71 DEL\ \ 72 AD\ \ 73 5\ \ 74 -{\textgreater}\ \ 75
+AUP\ \ 76 ESC\ \ 77 NUM\ \ 78 F11\ \ 79 +\ \ 7A PDN\ \ 7B -\ \ 7C
+*\ \ 7D PUP\ \ 7E B D\ \ 7F NC}
+
+{
+\ \ db\ \ 030H,\ \ 0FFH,\ \ 0FFH,\ \ 035H,\ \ 0FFH,\ \ 0FFH,\ \ 0FFH,\ \ 0FFH,\ \ 0FFH,\ \ 02BH,\ \ 0FFH,\ \ 02DH,\ \ 02AH,\ \ 0FFH,\ \ 0FFH,\ \ 0FFH\ \ }
+
+{
+\ \ \ \ \foreignlanguage{spanish}{;83 F7}}
+
+{
+\ \ \ \ ;E011 ALT GR\ \ E014 CTRR\ \ E069 END\ \ E06B LEFT\ \ E06C
+HOME\ \ E070 INS\ \ E071 DEL\ \ }
+
+{
+\foreignlanguage{spanish}{\ \ \ \ };E072 DOWN\ \ E074 RIGHT\ \ E075
+UP\ \ \ \ E07A P DN\ \ E07D P UP\ \ E05A INTRO\ \ }
+
+{
+\ \ \ \ ;E11477E1F014F077 PAUSE}
+
+{
+\ \ \ \ ;E012E07C\ \ PRINT SCREEN}
+

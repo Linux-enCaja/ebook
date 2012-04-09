@@ -1,0 +1,27 @@
+\BOOKMARK [1][-]{section.1}{Ejemplos de Aplicaciones del VHDL.}{}
+\BOOKMARK [2][-]{subsection.1.1}{INTRODUCCION}{section.1}
+\BOOKMARK [2][-]{subsection.1.2}{\277QUE ES UNA FSM?}{section.1}
+\BOOKMARK [2][-]{subsection.1.3}{TABLAS Y DIAGRAMAS DE ESTADO}{section.1}
+\BOOKMARK [3][-]{subsubsection.1.3.1}{Tabla de Estados}{subsection.1.3}
+\BOOKMARK [3][-]{subsubsection.1.3.2}{Diagrama de Estados}{subsection.1.3}
+\BOOKMARK [2][-]{subsection.1.4}{SINTESIS DE FSM}{section.1}
+\BOOKMARK [3][-]{subsubsection.1.4.1}{Estructura de una FSM}{subsection.1.4}
+\BOOKMARK [3][-]{subsubsection.1.4.2}{Proceso de S\355ntesis}{subsection.1.4}
+\BOOKMARK [3][-]{subsubsection.1.4.3}{Control de Motor de Paso.}{subsection.1.4}
+\BOOKMARK [2][-]{subsection.1.5}{DESCRIPCION VHDL DE UNA FSM}{section.1}
+\BOOKMARK [3][-]{subsubsection.1.5.1}{DESCRIPCION ESTRUCTURAL}{subsection.1.5}
+\BOOKMARK [3][-]{subsubsection.1.5.2}{DESCRIPCION FUNCIONAL}{subsection.1.5}
+\BOOKMARK [1][-]{section.2}{M\341quinas de Estados Algor\355tmicas \(ASM\)}{}
+\BOOKMARK [2][-]{subsection.2.1}{Multiplicaci\363n de n\372meros binarios usando una ASM}{section.2}
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Diagrama de Flujo}{subsection.2.1}
+\BOOKMARK [3][-]{subsubsection.2.1.2}{Identificaci\363n de los componentes del camino de datos}{subsection.2.1}
+\BOOKMARK [3][-]{subsubsection.2.1.3}{Identificaci\363n de las se\361ales de control e interconexi\363n del camino de datos}{subsection.2.1}
+\BOOKMARK [3][-]{subsubsection.2.1.4}{Especificaci\363n de la unidad de control utilizando diagramas de estado}{subsection.2.1}
+\BOOKMARK [3][-]{subsubsection.2.1.5}{Implementaci\363n de los componentes del camino de datos y de la unidad de control}{subsection.2.1}
+\BOOKMARK [3][-]{subsubsection.2.1.6}{Simulaci\363n}{subsection.2.1}
+\BOOKMARK [3][-]{subsubsection.2.1.7}{Pruebas}{subsection.2.1}
+\BOOKMARK [2][-]{subsection.2.2}{Implementaci\363n de un divisor de n bits sin signo}{section.2}
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Identificaci\363n de componentes del camino de datos e interconexi\363n}{subsection.2.2}
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Unidad de control}{subsection.2.2}
+\BOOKMARK [2][-]{subsection.2.3}{Contador de n\372mero de unos}{section.2}
+\BOOKMARK [2][-]{subsection.2.4}{Circuito para determinar la ra\355z cuadrada de un n\372mero binario}{section.2}
