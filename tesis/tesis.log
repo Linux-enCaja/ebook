@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.7.25)  23 FEB 2012 09:31
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.7.25)  10 APR 2012 11:22
 entering extended mode
  %&-line parsing enabled.
 **tesis.tex
@@ -951,8 +951,8 @@ Dictionary: glossaries-dictionary, Language: English
 (/usr/share/texmf-texlive/tex/latex/glossaries/dict/glossaries-dictionary-Spani
 sh.dict
 Dictionary: glossaries-dictionary, Language: Spanish 
-) (./education.tex
-Cap\'{\i }tulo 1.
+) (./platform_full.tex
+Anexo A.
 
 Class scrbook Warning: \float@addtolists detected!
 (scrbook)              You should use the features of package `tocbasic'
@@ -960,50 +960,50 @@ Class scrbook Warning: \float@addtolists detected!
 (scrbook)              Support for \float@addtolists may be removed from
 (scrbook)              `scrbook' soon .
 
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 1.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 8.
 (/usr/share/texmf-texlive/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 1.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 8.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <20.74> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 1.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 8.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 7.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 13.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 12.
+LaTeX Font Info:    Try loading font information for U+msa on input line 13.
 
-
-LaTeX Warning: Reference `ch:embedded' on page 1 undefined on input line 13.
-
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 15.
-LaTeX Font Info:    Try loading font information for U+msa on input line 17.
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 17.
+LaTeX Font Info:    Try loading font information for U+msb on input line 13.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 17.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 13.
 
 (/usr/share/texmf-texlive/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 17.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 13.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 17.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 13.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <9> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 17.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 13.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 17.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 13.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 17.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \hbox (badness 1019) in paragraph at lines 18--19
+[]\OT1/ptm/m/n/10.95 En este apartado se describir[]an las herramientas abierta
+s necesarias para el desarrollo
+ []
 
- [1
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 24.
+[1
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
@@ -1012,120 +1012,576 @@ Non-PDF special ignored!
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-[2] <./images/CDIO.pdf, id=15, 310.15875pt x 129.48375pt>
-File: ./images/CDIO.pdf Graphic file (type pdf)
+[2]
 
-<use ./images/CDIO.pdf> [3 <./images/CDIO.pdf>]
-<./images/CDIO_metodologia.pdf, id=31, 957.5775pt x 451.6875pt>
-File: ./images/CDIO_metodologia.pdf Graphic file (type pdf)
+LaTeX Warning: Reference `ch:education' on page 3 undefined on input line 63.
 
-<use ./images/CDIO_metodologia.pdf> [4 <./images/CDIO_metodologia.pdf>]
-[5]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 164.
+[3] <./images/qucs.png, id=18, 992.70876pt x 688.5725pt>
+File: ./images/qucs.png Graphic file (type png)
 
-Overfull \hbox (76.92326pt too wide) in paragraph at lines 121--165
-[][] 
+<use ./images/qucs.png> [4 <./images/qucs.png (PNG copy)>]
+<./images/gtkwave.png, id=22, 539.76656pt x 316.18124pt>
+File: ./images/gtkwave.png Graphic file (type png)
+
+<use ./images/gtkwave.png> [5 <./images/gtkwave.png (PNG copy)>]
+<./images/kicad.pdf, id=26, 549.05125pt x 144.54pt>
+File: ./images/kicad.pdf Graphic file (type pdf)
+ <use ./images/kicad.pdf>
+[6 <./images/kicad.pdf>]
+<./images/soc_boot_remap.png, id=37, 354.57469pt x 134.75343pt>
+File: ./images/soc_boot_remap.png Graphic file (type png)
+
+<use ./images/soc_boot_remap.png>
+<./images/soc_boot_proc.png, id=38, 389.20406pt x 357.58594pt>
+File: ./images/soc_boot_proc.png Graphic file (type png)
+
+<use ./images/soc_boot_proc.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[7 <./images/soc_boot_remap.png (PNG copy)>]
+Underfull \vbox (badness 2359) has occurred while \output is active []
+
+ [8 <./images/soc_boot_proc.png (PNG copy)>]
+<./images/jtag_basics.png, id=46, 286.06876pt x 325.215pt>
+File: ./images/jtag_basics.png Graphic file (type png)
+
+<use ./images/jtag_basics.png>
+
+LaTeX Warning: Citation `TI96' on page 9 undefined on input line 150.
+
+[9 <./images/jtag_basics.png (PNG copy)>]
+<./images/jtag_sm.png, id=50, 226.59656pt x 277.78781pt>
+File: ./images/jtag_sm.png Graphic file (type png)
+
+<use ./images/jtag_sm.png>
+<./images/SW_design_flow.png, id=51, 366.61969pt x 298.86656pt>
+File: ./images/SW_design_flow.png Graphic file (type png)
+
+<use ./images/SW_design_flow.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[10 <./images/jtag_sm.png (PNG copy)>]
+Underfull \hbox (badness 1715) in paragraph at lines 191--192
+[]\OT1/ptm/m/n/10.95 Utilizando un \OT1/ptm/m/it/10.95 loader\OT1/ptm/m/n/10.95
+ : El \OT1/ptm/m/it/10.95 loader \OT1/ptm/m/n/10.95 es una aplicaci[]on que res
+ide en un medio de
  []
 
-
-Overfull \hbox (19.01508pt too wide) in paragraph at lines 175--205
-[][] 
- []
-
-[6
-
-]
-
-LaTeX Warning: Reference `design_metodology' on page 7 undefined on input line 
-221.
-
-
-LaTeX Warning: Reference `ch:embedded' on page 7 undefined on input line 221.
-
-<./images/habilidades_digitales.pdf, id=54, 494.84875pt x 543.02875pt>
-File: ./images/habilidades_digitales.pdf Graphic file (type pdf)
-
-<use ./images/habilidades_digitales.pdf>
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 300.
+[11 <./images/SW_design_flow.png (PNG copy)>]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 207.
 
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 207.
+ [12]
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 238.
+
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/omlptm.fd
+File: omlptm.fd 
+)
+LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <9> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 238.
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--270
+
+ []
+
+[13]
+
+LaTeX Warning: Citation `MLH98' on page 14 undefined on input line 287.
+
+<./images/ELF_Link_exec1.png, id=69, 509.905pt x 312.16624pt>
+File: ./images/ELF_Link_exec1.png Graphic file (type png)
+
+<use ./images/ELF_Link_exec1.png> [14 <./images/ELF_Link_exec1.png (PNG copy)>]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 326.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+) [15] [16]
+Overfull \hbox (18.27133pt too wide) in paragraph at lines 465--466
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+[17]
+Overfull \hbox (18.27133pt too wide) in paragraph at lines 472--473
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (2.07117pt too wide) in paragraph at lines 475--476
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (23.67139pt too wide) in paragraph at lines 477--478
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][]
+ []
+
+
+Overfull \hbox (12.87128pt too wide) in paragraph at lines 479--480
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][]
+ []
+
+
+Overfull \hbox (12.87128pt too wide) in paragraph at lines 480--481
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (7.47122pt too wide) in paragraph at lines 483--484
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (23.67139pt too wide) in paragraph at lines 485--486
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (39.87155pt too wide) in paragraph at lines 487--488
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (12.87128pt too wide) in paragraph at lines 489--490
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (7.47122pt too wide) in paragraph at lines 491--492
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ 
+ []
+
+[18]
+
+! LaTeX Error: File `./images/at91rm9200' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.516 ...degraphics[scale=.7]{./images/at91rm9200}
+                                                   \end{center}
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+<./images/sdram_basics.png, id=86, 629.35126pt x 328.22626pt>
+File: ./images/sdram_basics.png Graphic file (type png)
+
+<use ./images/sdram_basics.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Citation `CH06' on page 19 undefined on input line 533.
+
+[19] [20 <./images/sdram_basics.png>]
+
+! LaTeX Error: File `./images/nor_prog' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.541 ...ludegraphics[scale=.6]{./images/nor_prog}
+                                                   \end{center}
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 570.
+
+LaTeX Warning: Citation `DR05' on page 21 undefined on input line 570.
+
+[21] <./images/arm_scan1.png, id=99, 692.5875pt x 272.51813pt>
+File: ./images/arm_scan1.png Graphic file (type png)
+
+<use ./images/arm_scan1.png>
+<./images/arm_scan2.png, id=100, 692.5875pt x 56.46094pt>
+File: ./images/arm_scan2.png Graphic file (type png)
+
+<use ./images/arm_scan2.png> [22 <./images/arm_scan1.png (PNG copy)> <./images/
+arm_scan2.png (PNG copy)>]
+
+LaTeX Warning: Citation `DR05' on page 23 undefined on input line 591.
+
+<images/OpenOCD_design_flow.pdf, id=104, 419.5675pt x 235.88126pt>
+File: images/OpenOCD_design_flow.pdf Graphic file (type pdf)
+
+<use images/OpenOCD_design_flow.pdf>
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 598.
+
+
+LaTeX Warning: Citation `DR05' on page 23 undefined on input line 611.
+
+[23 <./images/OpenOCD_design_flow.pdf>] [24]
+<./images/linuxhistory.jpg, id=127, 471.7625pt x 417.56pt>
+File: ./images/linuxhistory.jpg Graphic file (type jpg)
+
+<use ./images/linuxhistory.jpg>
+
+LaTeX Warning: Citation `KYJM+08' on page 25 undefined on input line 642.
+
+[25 <./images/linuxhistory.jpg>]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 657.
+
+
+LaTeX Warning: Citation `IBSS98' on page 26 undefined on input line 657.
+
+
+LaTeX Warning: Citation `IB98' on page 26 undefined on input line 657.
+
+
+LaTeX Warning: Citation `IB98' on page 26 undefined on input line 661.
+
+<./images/kernel.jpg, id=132, 437.635pt x 271.0125pt>
+File: ./images/kernel.jpg Graphic file (type jpg)
+
+<use ./images/kernel.jpg>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Citation `IBSS98' on page 26 undefined on input line 668.
+
+[26] [27 <./images/kernel.jpg>]
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 300.
- [7
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 699.
 
- <./images/habilidades_digitales.pdf>] [8] [9] [10]
-Underfull \hbox (badness 1430) in paragraph at lines 501--502
-[]\OT1/ptm/m/it/10.95 Selecciona \OT1/ptm/m/n/10.95 los componentes adecuados p
-ara cada problema (particionamiento
+<./images/kernel_memory_mapping.jpg, id=139, 566.115pt x 321.2pt>
+File: ./images/kernel_memory_mapping.jpg Graphic file (type jpg)
+
+<use ./images/kernel_memory_mapping.jpg>
+
+! LaTeX Error: File `./images/application_memory_mapping1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.720 ...45]{./images/application_memory_mapping1}
+                                                   \end{center}
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[28 <./images/kernel_memory_mapping.jpg>] [29] [30]
+Underfull \hbox (badness 1975) in paragraph at lines 799--800
+\OT1/ptm/m/n/10.95 y la otra es registrar la nueva plataforma. Cada plataforma 
+ARM es identificada por un
  []
 
-[11] [12]
-Underfull \hbox (badness 1472) in paragraph at lines 614--615
-[]\OT1/ptm/m/n/10.95 An[]alisis: La separaci[]on de la informaci[]on en sus par
-tes componentes, examinando y
+[31] <./images/ecb_at91_linux_config.png, id=154, 478.78876pt x 299.61937pt>
+File: ./images/ecb_at91_linux_config.png Graphic file (type png)
+
+<use ./images/ecb_at91_linux_config.png>
+Underfull \hbox (badness 1264) in paragraph at lines 823--824
+[]\OT1/ptm/m/n/10.95 Al seleccionar nuestra plataforma el programa de configura
+ci[]on crear[]a un archivo de
  []
 
-[13] [14]
-Underfull \hbox (badness 1067) in paragraph at lines 747--748
-[]\OT1/ptm/m/it/10.95 Muestra una creencia \OT1/ptm/m/n/10.95 en la importancia
- del auto-aprendizaje en el desarrollo de
+
+Overfull \hbox (3.09256pt too wide) in paragraph at lines 839--840
+[]\OT1/ptm/m/n/10.95 El archi-vo \OT1/ptm/m/it/10.95 /arch/arm/mach-at91/Makefi
+le b/arch/arm/mach-at91/Makefile \OT1/ptm/m/n/10.95 con-tiene una relaci[]on
  []
 
-[15] [16]
-Underfull \hbox (badness 1194) in paragraph at lines 809--810
-[]\OT1/ptm/m/n/10.95 Durante el per[]^^Podo acad[]emico se trabajar[]a para def
-inir las especificaciones, dise[]nar e
+
+Overfull \hbox (16.50642pt too wide) in paragraph at lines 845--846
+[]\OT1/ptm/m/n/10.95 Con es-to asig-namos el archi-vo de con-fig-u-raci[]on \OT
+1/ptm/m/it/10.95 board-ecbat91.c \OT1/ptm/m/n/10.95 a la platafor-ma \OT1/ptm/m
+/it/10.95 MACH[]ECBAT91\OT1/ptm/m/n/10.95 . 
  []
 
-[17] <./images/SIE_block_diagram.png, id=134, 501.37312pt x 274.02374pt>
-File: ./images/SIE_block_diagram.png Graphic file (type png)
-
-<use ./images/SIE_block_diagram.png>
-
-LaTeX Warning: Reference `ap:platform' on page 18 undefined on input line 826.
-
-[18 <./images/SIE_block_diagram.png>]
-<./images/HW_design_flow.pdf, id=138, 702.625pt x 308.15125pt>
-File: ./images/HW_design_flow.pdf Graphic file (type pdf)
-
-<use ./images/HW_design_flow.pdf> [19]
-<./images/soft_SoC_design_flow.pdf, id=144, 717.68124pt x 528.97626pt>
-File: ./images/soft_SoC_design_flow.pdf Graphic file (type pdf)
-
-<use ./images/soft_SoC_design_flow.pdf>
-Underfull \hbox (badness 1389) in paragraph at lines 858--859
-[]\OT1/ptm/m/n/10.95 En este curso el procesador de la plataforma SIE es utiliz
-ado como herramienta de
+[32 <./images/ecb_at91_linux_config.png (PNG copy)>] [33]
+Overfull \hbox (18.82707pt too wide) in paragraph at lines 925--926
+[]\OT1/ptm/m/n/10.95 La fun-ci[]on \OT1/ptm/m/it/10.95 at91rm9200[]init[]interr
+upts \OT1/ptm/m/n/10.95 ini-cial-iza el con-tro-lador de in-ter-rup-ciones del 
+AT91RM9200
  []
 
-[20 <./images/HW_design_flow.pdf>] [21 <./images/soft_SoC_design_flow.pdf>]
-Underfull \hbox (badness 1484) in paragraph at lines 935--936
-[]\OT1/ptm/m/n/10.95 Con la lectura previa de los temas, el estudiante adquiere
- la capacidad de absorber
+[34]
+Underfull \hbox (badness 1509) in paragraph at lines 978--979
+\OT1/ptm/m/n/10.95 de configuraci[]on del kernel (CONFIG[]MTD[]DATAFLASH = y). 
+La familia de plataformas
  []
 
-[22]
-Overfull \hbox (6.81554pt too wide) in paragraph at lines 956--957
-[]\OT1/ptm/m/n/10.95 Durante el semestre se tra-ba-jar[]a para definir las es-p
-eci-fi-ca-ciones (1,2,3), dise[]nar (30,31,32,33,34)
+[35]
+Overfull \hbox (2.07117pt too wide) in paragraph at lines 1026--1028
+[][][][][][][][][][][][] 
  []
 
-[23] [24]
-Underfull \hbox (badness 1082) in paragraph at lines 1008--1009
-\OT1/ptm/m/n/10.95 productos innovadores, proporcionando conocimientos actualiz
-ados y metodolog[]^^Pas de dise[]no
+[36] [37]
+Overfull \hbox (23.67139pt too wide) in paragraph at lines 1141--1142
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][] 
  []
 
-[25]) (./tesis.bbl [26])
+[38] <./images/vmlinux_contents.png, id=177, 185.19188pt x 442.65375pt>
+File: ./images/vmlinux_contents.png Graphic file (type png)
+
+<use ./images/vmlinux_contents.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Citation `CH06' on page 39 undefined on input line 1168.
+
+[39]
+Underfull \hbox (badness 1946) in paragraph at lines 1194--1195
+[]\OT1/ptm/m/n/10.95 La imagen \OT1/ptm/m/it/10.95 vmlinux \OT1/ptm/m/n/10.95 g
+enerada tiene un tama[]no relativamente grande, lo que la hace
+ []
+
+
+Overfull \hbox (34.4715pt too wide) in paragraph at lines 1198--1199
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][] 
+ []
+
+[40 <./images/vmlinux_contents.png>]
+<./images/boot_process.png, id=185, 402.75468pt x 240.9pt>
+File: ./images/boot_process.png Graphic file (type png)
+
+<use ./images/boot_process.png> [41 <./images/boot_process.png>]
+Underfull \hbox (badness 1895) in paragraph at lines 1256--1257
+\OT1/ptm/m/it/10.95 src/start.S \OT1/ptm/m/n/10.95 y el c[]odigo en C \OT1/ptm/
+m/it/10.95 src/board.c src/serial.c src/xmodem.c src/dataflash.c src/div0.c
+ []
+
+
+Overfull \hbox (34.4715pt too wide) in paragraph at lines 1263--1264
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[42] [43] [44] [45] [46] [47]
+Underfull \hbox (badness 1383) in paragraph at lines 1522--1523
+\OT1/ptm/m/n/10.95 (PHYS[]SDRAM = 0x20000000 est[]a definido en \OT1/ptm/m/it/1
+0.95 include/configs/ecb[]at91.h\OT1/ptm/m/n/10.95 ). Adicionalmente,
+ []
+
+[48]
+Overfull \hbox (18.27133pt too wide) in paragraph at lines 1607--1608
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [49]
+Overfull \hbox (18.27133pt too wide) in paragraph at lines 1645--1646
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[50]
+Overfull \hbox (7.47122pt too wide) in paragraph at lines 1668--1669
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (69.32787pt too wide) in paragraph at lines 1681--1682
+[]\OT1/ptm/m/n/10.95 El primer pa-so es ob-vi-a-mente descar-gar el c[]odi-go f
+uente de la ver-si[]on 1.1.6 de \OT1/ptm/m/it/10.95 http://sourceforge.net/proj
+ects/u-
+ []
+
+
+Overfull \hbox (45.2716pt too wide) in paragraph at lines 1684--1685
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][] 
+ []
+
+[51]
+Overfull \hbox (29.07144pt too wide) in paragraph at lines 1756--1757
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[52]
+Underfull \hbox (badness 1107) in paragraph at lines 1792--1793
+[]\OT1/ptm/m/n/10.95 Seleccionando la opci[]on del men[]u: \OT1/ptm/m/it/10.95 
+3: Upload linux to Dataflash\OT1/ptm/m/n/10.95 , podemos iniciar la
+ []
+
+[53] [54] [55] [56]
+LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <10.95> not available
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 1938.
+
+LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <10.95> not available
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 1938.
+
+ [57]
+Overfull \hbox (18.27133pt too wide) in paragraph at lines 1998--2000
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[58] [59]
+LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <12> not available
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 2073.
+
+LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <12> not available
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 2073.
+
+
+
+LaTeX Warning: Citation `JF' on page 60 undefined on input line 2078.
+
+[60]
+
+LaTeX Warning: Citation `JF' on page 61 undefined on input line 2095.
+
+[61]
+Underfull \hbox (badness 1325) in paragraph at lines 2123--2124
+[]\OT1/ptm/m/it/10.95 initdefault \OT1/ptm/m/n/10.95 Especifica el nivel de eje
+cuci[]on al que se ingresa despu[]es de la
+ []
+
+[62] [63] [64]
+Overfull \hbox (46.77686pt too wide) in paragraph at lines 2233--2234
+\OT1/ptm/m/it/10.95 bed-ded \OT1/ptm/m/n/10.95 se en-cuen-tra en http://linuxen
+caja.com/wiki/ECBOT#Generaci[]on[]de[]la[]imagen[]para[]la[]memoria[]Flash. 
+ []
+
+
+LaTeX Warning: Citation `JCAR05' on page 65 undefined on input line 2238.
+
+
+! LaTeX Error: File `./images/major' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2264 ...ncludegraphics[scale=.7]{./images/major}
+                                                   \end{center}
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[65] [66] [67]
+Underfull \vbox (badness 2409) has occurred while \output is active []
+
+ [68]
+
+! LaTeX Error: File `./images/computer-simple' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2426 ...hics[scale=.6]{./images/computer-simple}
+                                                   \end{center}
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+<./images/rd_wr_waveform.png, id=277, 450.9347pt x 234.1247pt>
+File: ./images/rd_wr_waveform.png Graphic file (type png)
+
+<use ./images/rd_wr_waveform.png> [69]
+<./images/sw_hw_fpga_arch.pdf, id=281, 552.0625pt x 386.44376pt>
+File: ./images/sw_hw_fpga_arch.pdf Graphic file (type pdf)
+
+<use ./images/sw_hw_fpga_arch.pdf> [70 <./images/rd_wr_waveform.png>]
+<./images/sw_hw_fpga_arch_sram.pdf, id=287, 425.59pt x 577.15625pt>
+File: ./images/sw_hw_fpga_arch_sram.pdf Graphic file (type pdf)
+
+<use ./images/sw_hw_fpga_arch_sram.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Citation `RL07' on page 71 undefined on input line 2470.
+
+
+Underfull \vbox (badness 1917) has occurred while \output is active []
+
+ [71 <./images/sw_hw_fpga_arch.pdf>] [72 <./images/sw_hw_fpga_arch_sram.pdf>]
+
+! LaTeX Error: File `./images/memory_mapping' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2496 ...phics[scale=.6]{./images/memory_mapping}
+                                                   \end{center}
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (34.4715pt too wide) in paragraph at lines 2511--2512
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[73] [74]
+Overfull \hbox (2.07117pt too wide) in paragraph at lines 2576--2578
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][] 
+ []
+
+[75] <./images/copy_to_from_user.png, id=335, 397.485pt x 228.855pt>
+File: ./images/copy_to_from_user.png Graphic file (type png)
+
+<use ./images/copy_to_from_user.png> [76 <./images/copy_to_from_user.png (PNG c
+opy)>] [77]) (./tesis.bbl [78]
+
+LaTeX Warning: Empty `thebibliography' environment or \BreakBibliography
+               before end of `thebibliography' environment on input line 3.
+
+)
 
 Package glossaries Warning: No \printglossary or \printglossaries found.
 This document will not have a glossary.
 
-[27
+[79
 
 ] (./tesis.aux)
 
@@ -1133,22 +1589,27 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 19578 strings out of 495061
- 338837 string characters out of 1182621
- 490843 words of memory out of 3000000
- 22227 multiletter control sequences out of 15000+50000
- 35822 words of font info for 87 fonts, out of 3000000 for 9000
+ 23248 strings out of 495061
+ 383692 string characters out of 1182621
+ 551328 words of memory out of 3000000
+ 25846 multiletter control sequences out of 15000+50000
+ 47995 words of font info for 104 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 52i,14n,69p,1288b,613s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 52i,13n,69p,1518b,1962s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
-ve/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/ty
-pe1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utm
-b8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmbi8a.pfb></usr/share
-/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts
-/type1/urw/times/utmri8a.pfb>
-Output written on tesis.pdf (27 pages, 410921 bytes).
+ve/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/ty
+pe1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-texlive/fonts/type1/public/a
+msfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
+cmsy9.pfb></usr/share/texmf-texlive/fonts/type1/urw/courier/ucrr8a.pfb></usr/sh
+are/texmf-texlive/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-texlive
+/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texmf-texlive/fonts/type1/urw
+/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmbi8a.pfb><
+/usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-tex
+live/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw
+/times/utmri8a.pfb>
+Output written on tesis.pdf (79 pages, 1561577 bytes).
 PDF statistics:
- 237 PDF objects out of 1000 (max. 8388607)
+ 391 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 43 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 128 words of extra memory for PDF output out of 10000 (max. 10000000)
 

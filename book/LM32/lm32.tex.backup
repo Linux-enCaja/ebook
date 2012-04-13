@@ -1,5 +1,28 @@
 
 
+General-Purpose Registers
+The LatticeMico32 features the following 32-bit registers:
+By convention, register 0 (r0) must always hold the value 0, and this is
+required for correct operation by both the LatticeMico32 assembler and
+the C compiler. On power-up, the value of 0 in r0 is not hardwired, so you
+must initialize it to load r0 with the 0 value.
+Registers 1 through 28 are truly general purpose and can be used as the
+source or destination register for any instruction. After reset, the values in
+all of these registers are undefined.
+Register 29 (ra) is used by the call instruction to save the return address
+but is otherwise general purpose.
+Register 30 (ea) is used to save the value of the Program Counter (PC)
+when an exception occurs, so it should not be used by user-level
+programs.
+Register 31 (ba) saves the value of the Program Counter (PC) when a
+breakpoint or watchpoint exception occurs, so it should not be used by
+user-level programs.
+
+
+
+
+
+
 \section{Bus Wishbone}
 
 \subsection{Señales principales}
@@ -13,6 +36,25 @@
  
  \item \textit{we_i}: Esta señal indica la dirección del flujo de datos, en un ciclo de lectura tiene un nivel lógico bajo y en escritura tiene un nivel lógico alto. 
 
- \item \textit{dat_i}: 
- \item \textit{dat_o}:
+ \item \textit{dat_i}: Bus de datos de entrada.
+ \item \textit{dat_o}: Bus de datos de salida.
 \end{itemize}
+
+
+
+
+
+
+
+
+
+Volatile keyword says the compiler that no optimiztion on the variable.
+The volatile keyword acts as a data type qualifier.
+The volatile qualifier alters the default behaviour of the variable and does not attempt to optimize the storage referenced by it.
+- Martin Leslie
+volatile means the storage is likely to change at anytime and be changed but something outside the control of the user program. This means that if you reference the variable, the program should always check the physical address (ie a mapped input fifo), and not use it in a cacheed way.
+
+
+
+
+
