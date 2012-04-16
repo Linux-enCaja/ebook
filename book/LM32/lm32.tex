@@ -441,3 +441,25 @@ volatile means the storage is likely to change at anytime and be changed but som
 
 
 
+PIPELINE
+
+
+The six pipeline stages are:
+· Address ? The address of the instruction to execute is calculated and sent to the
+instruction cache.
+· Fetch ? The instruction is read from memory.
+
+
+Decode ? The instruction is decoded, and operands are either fetched from the register
+file or bypassed from the pipeline.
+· Execute ? The operation specified by the instruction is performed. For simple
+instructions such as addition or a logical operation, execution finishes in this stage,
+and the result is made available for bypassing.
+· Memory ? For more complicated instructions such as loads, stores, multiplies, or
+shifts, a second execution stage is required.
+· Write back ? Results produced by the instructions are written back to the register file.
+
+
+
+
+
