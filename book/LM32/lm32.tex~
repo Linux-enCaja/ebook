@@ -246,6 +246,12 @@ Explicar el código de atención a la irq
 Explicar el componente hardware y software,explicar la estructura sw y hw de los proyectos
 
 
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.6]{./LM32/images/soft_SoC_design_flow.pdf} \end{center}
+    \caption{}\label{soft_SoC_design_flow}
+  \end{figure}
+
+
 \subsection{Bus wishbone}
 
 \subsubsection{Señales principales}
@@ -263,8 +269,6 @@ Explicar el componente hardware y software,explicar la estructura sw y hw de los
  \item \textit{dat\_o}: Bus de datos de salida.
 \end{itemize}
 
-\subsubsection{Interface del bus wishbone}
-explicar como funciona el conmax, mostrar diagrama de flujo y simulación
 
   \begin{figure}
     \begin{center} \includegraphics[scale=.6]{./LM32/images/uart_read_waves.pdf} \end{center}
@@ -276,17 +280,68 @@ explicar como funciona el conmax, mostrar diagrama de flujo y simulación
     \caption{Ciclo de escritura del bus wishbone}\label{uart_write_waves}
   \end{figure}
 
+  
+  
+\subsubsection{Interface del bus wishbone}
+explicar como funciona el conmax, mostrar diagrama de flujo y simulación
+
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.35]{./LM32/images/conbus.pdf} \end{center}
+    \caption{Circuito de interconexión del bus wishbone}\label{conbus}
+  \end{figure}
+
+
 
 \subsection{Comunicación con periféricos}
 EXplicación de la UART y del TIMER globales interface en C.
 
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.6]{./LM32/images/uart_block_full.pdf} \end{center}
+    \caption{Ejemplo de periférico wishbone: UART}\label{uart_block_full}
+  \end{figure}
 
-\subsubsection{Escritura}
+
+  
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.6]{./LM32/images/timer.pdf} \end{center}
+    \caption{Ejemplo de periférico wishbone: TIMER}\label{timer}
+  \end{figure}
+
 
 
 \subsubsection{Lectura}
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.6]{./LM32/images/uart_block_read.pdf} \end{center}
+    \caption{Circuito equivalente de lectura de la UART}\label{uart_block_read}
+  \end{figure}
+  
 
-\subsubsection{}
+
+\subsubsection{Escritura}
+    \begin{figure}
+    \begin{center} \includegraphics[scale=.6]{./LM32/images/uart_block_write.pdf} \end{center}
+    \caption{Circuito equivalente de escritura de la UART}\label{uart_block_write}
+  \end{figure}
+
+
+\subsubsection{Interfaz Software}
+
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.6]{./LM32/images/peripheral_soc.pdf} \end{center}
+    \caption{Asignación de la dirección de memoria a los periféricos}\label{peripheral_soc}
+  \end{figure}
+
+
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.6]{./LM32/images/uart_sw_interface.pdf} \end{center}
+    \caption{Definición de la dirección de los registros internos de la UART}\label{uart_sw_interface}
+  \end{figure}
+
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.6]{./LM32/images/timer_sw_interface.pdf} \end{center}
+    \caption{Definición de la dirección de los registros internos del TIMER}\label{timer_sw_interface}
+  \end{figure}
+
 
 \subsubsection{}
 

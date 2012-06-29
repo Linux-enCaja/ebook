@@ -1,3 +1,121 @@
+\chapter{Implementación de tareas Software utilizando procesadores Soft Core}
+
+\section{Introducción}
+
+En el capítulo anterior se estudió la forma de implementar tareas hardware utilizando máquinas de estado algorítmicas. La implementación de tareas hardware es un proceso un poco tedioso ya que involucra la realización de una máquina de estados por cada tarea; la implementación del camino de datos se simplifica de forma considerable ya que existe un conjunto de bloques constructores que pueden ser tomados de una librería creada por el diseñador. El uso de tareas hardware se debe realizar únicamente cuando las restricciones temporales del diseño lo requieran, ya que como veremos en este capítulo, la implementación de tareas software es más sencilla y rápida.
+
+La estructura de una máquina de estados algorítmica permite entender de forma fácil la estructura de un procesador ya que tienen los mismos componentes principales (unidad de control y camino de datos), la diferencia entre ellos es la posibilidad de programación y la configuración fija del camino de datos del procesador.
+
+En este capítulo se estudiará la arquitectura del procesador MICO32 creado por la empresa Lattice semiconductor y gracias a que fué publicado bajo la licencia GNU, es posible su estudio, uso y modificación. En la primera sección se hace la presentación de la arquitectura; a continuación se realiza el análisis de la forma en que el procesador implementa las diferentes instrucciones, iniciando con las operaciones aritméticas y lógicas siguiendo con las de control de flujo de programa (saltos, llamado a función); después se analizarán la comunicación con la memoria de datos; y finalmente el manejo de interrupciones.
+
+En la segunda sección se abordará la arquitectura de un SoC (System on a Chip) basado en el procesador LM32, se analizará la forma de conexión entre los periféricos y la CPU utilizando el bus wishbone; se realizará una descripción detallada de la programación de esta arquitectura utilizando herramientas GNU. 
+
+
+
+%********************************************************************************************************************
+%********************************************************                              SECCIÓN   ARQUITECTURA LM32
+%********************************************************************************************************************
+\section{Arquitectura del procesador LM32}
+
+
+La figura \ref{lm32_arch_single} muestra el diagrama de bloques del soft-core LM32, este procesador utiliza 32 bits y una arquitectura de 6 etapas del pipeline; las 6 etapas del pipeline son:
+
+
+\begin{enumerate}
+ \item \textit{Address}: Se calcula la dirección de la instrucción a ser ejecutada y es enviada al registro de instrucciones.
+ \item \textit{Fetch}: La instrucción se lee de la memoria.
+ \item \textit{Decode}: Se decodifica la instrucción y se toman los operandos del banco de registros o tomados del bypass.
+ \item \textit{Execute}: Se realiza la operacion especificada por la instrucción. Para instrucciones simples como las lógicas o suma, la ejecución finaliza en esta etapa, y el resultado se hace disponible para el bypass.
+ \item \textit{Memory}: Para instrucciones más complejas como acceso a memoria externa, multiplicación, corrimiento, división, es necesaria otra etapa.
+ \item \textit{Write back}: Los resultados producidos por la instrucción son escritas al banco de registros.
+\end{enumerate}
+
+
+\begin{figure}
+  \begin{center} \includegraphics[scale=.6]{./LM32/images/lm32_block_diagram.pdf} \end{center}
+  \caption{Diagrama de bloques del LM32}\label{lm32_arch_single}
+\end{figure}
+
+\subsection{Banco de Registros}
+El LM32 posee 32 registros de 32 bits; el registro \textit{r0} siempre contiene el valor 0, esto es necesario para el correcto funcionamiento de los compiladores de C y ensamblador; los siguientes 8 registros (r1 a r7) son utilizados para paso de argumentos y retorno de resultados en llamados a funciones; si una función requiere más de 8 argumentos, se utiliza la pila (\textit{stack}). Los registros \textit{r1 - r28} pueden ser utilizados como fuente o destino de cualquier instrucción. El registro \textit{r29 (ra)} es utilizado por la instrucción \textit{call} para almacenar la dirección de retorno. El registro \textit{r30 (ea)} es utilizado para almacenar el valor del \textit{contador de programa} cuando se presenta una excepción. El registro \textit{r31 (ba)} almacena el valor del contador de programa cuando se presenta una excepción tipo \textit{breakpoint} o \textit{watchpoint}. Los registros \textit{r26 (gp)} \textit{r27 (fp)} y \textit{r28 (sp)} son el puntero global, de frame y de pila respectivamente.
+ Después del reset el valor no se define el valor de los registros, por lo que la primera acción que debe ejecutar el programa de inicialización en colocar un cero en el registro \textit{r0 (\textbf{xor} r0, r0, r0)}
+
+
+
+\subsection{Registro de estado y control}
+
+Table 4 shows all of the names of the control and status registers (CSR),
+whether the register can be read from or written to, and the index used when
+accessing the register. Some of the registers are optional, depending on the
+configuration of the processor. All signal levels are active high.
+
+
+\begin{table}[htpb]
+  \caption{Registro de Estado y Control}
+  \centering
+    \begin{tabular}{|l|l|l|}	
+      \hline
+      \textbf{Nombre}  & \textbf{Index} & \textbf{Descripción}  
+      \\ \hline 
+       IE          & 0x00 & (R/W)Interrupt enable        
+      \\ \hline 
+       EID         & ---- & (R)  Exception ID   
+      \\ \hline 
+       IM          & 0x01 & (R/W)Interrupt mask  
+      \\ \hline 
+       IP          & 0x02 & (R)  Interrupt pending 
+      \\ \hline    
+      ICC          & 0x03 & (W)  Instruction cache control   
+      \\ \hline 
+       DCC         & 0x04 & (W)  Data cache control  
+      \\ \hline 
+       CC          & 0x05 & (R)  Cycle counter 
+      \\ \hline 
+       CFG         & 0x06 & (R)  Configuration
+      \\ \hline 
+       EBA         & 0x07 & (R/W)Exception base address 
+      \\ \hline 
+    \end{tabular}
+  \label{arquitectura_plataformas_comerciales}
+\end{table}
+
+\subsubsection{Contador de Programa (PC)}
+El contador de programa es un registro de 32 bits que contiene la dirección de la instricción que se ejecuta actualmente. Debido a que todas las instrucciones son de 32 bits, los dos bits menos significativos del PC siempre son zero. El valor de este registro después del reset es \textit{h00000000}
+
+
+
+\subsubsection{EID Exception ID}
+El índice de la excepción es un número de 3 bits que indica la causa de la detención de la ejecución del programa. Las excepciones son eventos que ocurren al interior o al exterior del procesador y cambian el flujo normal de ejecución del programa. Los valores y eventos correspondientes son:
+
+
+
+\begin{itemize}
+ \item \textbf{0}: Reset; se presenta cuando se activa la señal de reset del procesador.
+ \item \textbf{1}: Breakpoint; se presenta cuando se ejecuta la instrucción break o cuando se alcanza un punto de break hardware.
+ \item \textbf{2}: Instruction Bus Error; se presenta cuando falla la captura e una instrucción, típicamente cuando la dirección no es válida.
+ \item \textbf{3}: Watchpoint; se presenta cuando se activa un watchpoint.
+ \item \textbf{4}: Data Bus Error; se presenta cuando falla el acceso a datos, típicamente porque la dirección solicitada es inválida o porque el tipo de acceso no es permitido.
+ \item \textbf{5}: División por cero; Se presenta cuando se hace una dicisión por cero.
+ \item \textbf{6}: Interrupción; se presenta cuando un periférico solicita atención por parte del procesador, para que esta excepción se presente se deben habilitar las interrupciones globales (IE) y la interrupción del periférico (IM).
+ \item \textbf{7}: System Call; se presenta cuando se ejecuta la instricción \textit{scall}.
+\end{itemize}
+
+\subsubsection{IE Habilitación de Interrupción}
+
+IE contiene el flag IE, que determina si se habilitan o no las interrupciones. Si este flag se desactiva, no se presentan interrupciones a pesar de la activación individual realizada con IM. Existen dos bits \textit{BIE} y \textit{EIE} que se utilizan para almacenar el estado de IE cuando se presenta una excepción tipo breakpoint u otro tipo de excepción.
+
+
+\subsubsection{IM Máscara de interrupción}
+ La máscara de interrupción contiene un bit de habilitación para cada una de las 32 interrupciones, el bit 0 corresponde a la interrupción 0. Para que la interrupción se presente es necesario que el bit correspondiente a la interrupción y el flag IE sean igual a 1. Después del reset el valor de IM es \textit{h00000000}
+
+
+\subsubsection{IP Interrupción pendiente}
+
+El registro IP contine un bit para cada una de las 32 interrupciones, este bit se activa cuando se activa la interrupción asociada. Los bits del registro IP deben ser borrados escribiendo un 1.
+
+
+
+
 - tareas software
 - Arquitectura del LM32 (componentes básicos de un procesador)
 - Compilación de progamas para el LM32, explicar un ejemplo sencillo puede ser el de tipos de datos comentandop todos los archivos, lm32, crt0.s, etc
@@ -12,432 +130,220 @@
 
 
 
-General-Purpose Registers
-The LatticeMico32 features the following 32-bit registers:
-By convention, register 0 (r0) must always hold the value 0, and this is
-required for correct operation by both the LatticeMico32 assembler and
-the C compiler. On power-up, the value of 0 in r0 is not hardwired, so you
-must initialize it to load r0 with the 0 value.
-Registers 1 through 28 are truly general purpose and can be used as the
-source or destination register for any instruction. After reset, the values in
-all of these registers are undefined.
-Register 29 (ra) is used by the call instruction to save the return address
-but is otherwise general purpose.
-Register 30 (ea) is used to save the value of the Program Counter (PC)
-when an exception occurs, so it should not be used by user-level
-programs.
-Register 31 (ba) saves the value of the Program Counter (PC) when a
-breakpoint or watchpoint exception occurs, so it should not be used by
-user-level programs.
+
+%********************************************************************************************************************
+%********************************************************                              SECCIÓN   SET DE INSTRUCCIONES
+%********************************************************************************************************************
+\section{Set de Instrucciones del procesador Mico32}
+
+\subsection{Instrucciones aritméticas}
+
+\subsubsection{Entre registros}
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.2]{./LM32/images/arith_register.pdf} \end{center}
+    \caption{Camino de datos de las operaciones aritméticas y lógicas entre registros}\label{arith_register}
+  \end{figure}
+  
+
+\subsubsection{Inmediatas}
+
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.2]{./LM32/images/arith_immediate.pdf} \end{center}
+    \caption{Camino de datos de las operaciones aritméticas y lógicas inmediatas}\label{arith_immediate}
+  \end{figure}
+
+ 
+  
+\subsection{Saltos}
+
+\subsubsection{Condicionales}
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.2]{./LM32/images/branch_condition.pdf} \end{center}
+    \caption{Camino de datos de los saltos condicionales}\label{branch_condition}
+  \end{figure}
+
+\subsubsection{Llamado a función}
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.2]{./LM32/images/branch_call.pdf} \end{center}
+    \caption{Camino de datos de los saltos inmediatos y llamado a funciones}\label{branch_call}
+  \end{figure}
+
+\subsection{Comunicación con la memoria de datos}
+\subsubsection{Tipos de datos}
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.6]{./LM32/images/data_types.pdf} \end{center}
+    \caption{Tipos de datos soportados por el procesador Mico32}\label{data_types}
+  \end{figure}
+
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.6]{./LM32/images/char.pdf} \end{center}
+    \caption{Acceso a un data tipo \textit{char}}\label{type_char}
+  \end{figure}
+ 
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.6]{./LM32/images/short.pdf} \end{center}
+    \caption{Acceso a un data tipo \textit{short}}\label{type_short}
+  \end{figure}
+  
+  
+    \begin{figure}
+    \begin{center} \includegraphics[scale=.6]{./LM32/images/int.pdf} \end{center}
+    \caption{Acceso a un data tipo \textit{int}}\label{type_int}
+  \end{figure}
+  
+  
+\subsubsection{Escritura}
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.2]{./LM32/images/store.pdf} \end{center}
+    \caption{Camino de datos de las instrucciones de escritura a memoria}\label{data_write}
+  \end{figure}
+
+\subsubsection{Lectura}
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.2]{./LM32/images/load.pdf} \end{center}
+    \caption{Camino de datos de las instrucciones de escritura a memoria}\label{data_write}
+  \end{figure}
+
+  
+
+  
+
+\subsection{Interrupciones}
+
+%   \begin{figure}
+%     \begin{center} \includegraphics[scale=.2]{./LM32/images/exception.pdf} \end{center}
+%     \caption{Camino de datos correspondiente a las excepciones}\label{exception}
+%   \end{figure}
+
+
+  
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.2]{./LM32/images/exception_generation.pdf} \end{center}
+    \caption{Camino de datos correspondiente a las generación de excepciones}\label{exception_generation}
+  \end{figure}
+
+  
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.2]{./LM32/images/exception_csr.pdf} \end{center}
+    \caption{Camino de datos correspondiente al acceso de los registros asociados a las excepciones}\label{exception_csr}
+  \end{figure}
+
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.2]{./LM32/images/eret_ret.pdf} \end{center}
+    \caption{Camino de datos asociado al retorno de función y de excepción}\label{eret_ret}
+  \end{figure}
+
+
+Explicar el código de atención a la irq
 
 
 
-After reset, the values in all of the above 32-bit registers are undefined. To
-ensure that register 0 contains 0, the first instruction executed after reset
-should be xor r0, r0, r0.
-Table 3 lists the general-purpose registers and specifies their use by the C
-compiler. In this table, the callee is the function called by the caller function.
-Table 3: General-Purpose Registers
-Register Name Function r0 Holds the value zero r1 General-purpose/argument 0/return value 0 Caller
-r2 General-purpose/argument 1/return value 1 Caller
-r3 General-purpose/argument 2 Caller
-r4 General-purpose/argument 3 Caller
-r5 General-purpose/argument 4 Caller
-r6 General-purpose/argument 5 Caller
-r7 General-purpose/argument 6 Caller
-r8 General-purpose/argument 7 Caller
-r9 General-purpose Caller
-r10 General-purpose Caller
-r11 General-purpose Callee
-r12 General-purpose Callee
-r13 General-purpose Callee
-r14 General-purpose Callee
-r15 General-purpose Callee
-r16 General-purpose Callee
-r17 General-purpose Callee
-r18 General-purpose Callee
-r19 General-purpose Callee
-r20 General-purpose Callee
-r21 General-purpose Callee
-r22 General-purpose Callee
-r23 General-purpose Callee
-r24 General-purpose Callee
-r25 General-purpose Callee
-r26/gp General-purpose/global pointer Callee
-r27/fp General-purpose/frame pointer Callee
-r28/sp Stack pointer Callee
-r29/ra General-purpose/return address Caller
-r30/ea Exception address r31/ba Breakpoint address 
+%********************************************************************************************************************
+%********************************************************                              SECCIÓN   ARQUITECTURA SoC
+%********************************************************************************************************************
+
+\section{Arquitectura del SoC LM32}
+Explicar el componente hardware y software,explicar la estructura sw y hw de los proyectos
 
 
-Control and Status Registers
-Table 4 shows all of the names of the control and status registers (CSR),
-whether the register can be read from or written to, and the index used when
-accessing the register. Some of the registers are optional, depending on the
-configuration of the processor (see ?Configuring the LatticeMico32 Processor?
-on page 35). All signal levels are active high.
-Table 4: Control and Status Registers
-Name
-Access Index
-Description
-No 
-PC
-Optional Program counter
-IE R/W 0x0 Yes Interrupt enable
-EID R ? No LM32 revision number. EID is not
-            accessible via Assembly, since it does not
-           have an index.
-IM R/W 0x1 Yes Interrupt mask
-IP R 0x2 Yes Interrupt pending
-ICC W 0x3 Yes Instruction cache control
-DCC W 0x4 Yes Data cache control
-CC R 0x5 Yes Cycle counter
-CFG R 0x6 No Configuration
-EBA R/W 0x7 No Exception base address
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.6]{./LM32/images/soft_SoC_design_flow.pdf} \end{center}
+    \caption{Flujo de diseño para el procesador LM32}\label{soft_SoC_design_flow}
+  \end{figure}
 
 
-PC ? Program Counter
-The PC CSR is a 32-bit register that contains the address of the instruction
-currently being executed. Because all instructions are four bytes wide, the two
-least significant bits of the PC are always zero. After reset, the value of the PC
-CSR is h00000000.
+\subsection{Bus wishbone}
 
-
-
-
-EID ? Exception ID
-The EID CSR is a 3-bit value that indicates what has caused the program
-execution to stop. The values and corresponding events are the following:
-0 ? Reset
-1 ? Breakpoint Exception
-2 ? Instruction Bus Error
-3 ? Watchpoint Exception
-4 ? Data Bust Error
-5 ? Divide-by-zero
-6 ? Interrupt
-7 ? System Call
-Exceptions are events either inside or outside of the processor that cause a
-change in the normal flow of program execution. The LatticeMico32 processor
-can raise eight types of exceptions, as shown in Table 10. One clock must be
-held in active high until an acknowledge (ACK_I) is accepted. The remaining
-are internal and no ACK_I is generated. The exceptions are listed in a
-decreasing order of priority, so if multiple exceptions occur simultaneously, the
-exception with the highest priority is raised.
-Table 10: Exceptions
-Exception ID Condition
-Reset 0 Raised when the processor?s reset pin is asserted.
-Breakpoint 1 Raised when either a break instruction is executed or when
-            a hardware breakpoint is triggered.
-InstructionBusError 2 Raised when an instruction fetch fails, typically due to the
-                     requested address being invalid.
-Watchpoint 3 Raised when a hardware watchpoint is triggered.
-DataBusError 4 Raised when a data access fails, typically because either
-              the requested address is invalid or the type of access is not
-             allowed.
-DivideByZero 5 Raised when an attempt is made to divide by zero.
-
-Interrupt 6 Raised when one of the processor?s interrupt pins is
-             asserted, providing that the corresponding field in the
-            interrupt mask (IM) CSR is set and the global interrupt
-           enable flag, IE.IE, is set.
-SystemCall 7 Raised when an scall instruction is executed.
-
-
-Exception Handlers
-When an exception occurs, the CPU branches to an address that is an offset
-from either the EBA CSR or the DEBA CSR. The offset is calculated by
-multiplying the exception ID by 32. Exception IDs are shown in Figure 10 on
-page 20. Since all LatticeMico32 instructions are four bytes long, this means
-each exception handler can be eight instructions long. If further instructions
-are required, the handler can call a subroutine.
-Whether the EBA or DEBA is used as the base address depends upon the
-type of the exception that occurred and whether DC.RE is set. Having two
-different base addresses for the exception table allows a debug monitor to
-exist in a different memory from the main program code. For example, the
-debug monitor may exist in an on-chip ROM, whereas the main program code
-may be in a DDR or SRAM. The DC.RE flag allows either interrupts to run at
-full speed when debugging or for the debugger to take complete control and
-handle all exceptions.
-When an exception occurs, the only state that is automatically saved by the
-CPU is the PC, which is saved in either ea or ba, and the interrupt enable flag,
-IE.IE, which is saved in either IE.EIE or IE.BIE. It is the responsibility of the
-exception handler to save and restore any other registers that it uses, if it
-returns to the previously executing code. This will likely be the case for
-interrupt exception handlers but may not be so for handlers that typically
-result in the termination of a program, such as divide by zero or bus error
-handlers.
-The following piece of code shows how the exception handlers can be
-implemented. The nops are required to ensure that the next exception handler
-is aligned at the correct address.
-To ensure that this code is at the correct address, it is common practice to
-place it in its own section. Place the following assembler directive at the start
-of the code:
-
-
-/* Exception handlers */
-_reset_handler:
-xor
-r0, r0, r0
-bi
-_crt0
-nop
-nop
-nop
-nop
-nop
-nop
-_breakpoint_handler:
-sw
-(sp+0), ra
-calli
-save_all
-mvi
-r1, SIGTRAP
-calli
-raise
-bi
-restore_all_and_bret
-nop
-nop
-nop
-_instruction_bus_error_handler:
-sw
-(sp+0), ra
-calli
-save_all
-mvi
-r1, SIGSEGV
-calli
-raise
-bi
-restore_all_and_eret
-nop
-nop
-nop
-_watchpoint_handler:
-sw
-(sp+0), ra
-calli
-save_all
-mvi
-r1, SIGTRAP
-calli
-raise
-bi
-restore_all_and_bret
-nop
-nop
-nop
-_data_bus_error_handler:
-sw
-(sp+0), ra
-calli
-save_all
-mvi
-r1, SIGSEGV
-calli
-raise
-bi
-restore_all_and_eret
-nop
-nop
-nop
-
-_divide_by_zero_handler:
-sw
-(sp+0), ra
-calli
-save_all
-mvi
-r1, SIGFPE
-calli
-raise
-bi
-restore_all_and_eret
-nop
-nop
-nop
-_interrupt_handler:
-sw
-(sp+0), ra
-calli
-save_all
-mvi
-r1, SIGINT
-calli
-raise
-bi
-restore_all_and_eret
-nop
-nop
-nop
-_system_call_handler:
-sw
-(sp+0), ra
-calli
-save_all
-mv
-r1, sp
-calli
-handle_scall
-bi
-restore_all_and_eret
-nop
-nop
-nop
-_save_all:
-addi
-sp, sp, -56
-/* Save all caller save registers onto the stack */
-sw
-(sp+4), r1
-sw
-(sp+8), r2
-sw
-(sp+12), r3
-sw
-(sp+16), r4
-sw
-(sp+20), r5
-sw
-(sp+24), r6
-sw
-(sp+28), r7
-sw
-(sp+32), r8
-sw
-(sp+36), r9
-sw
-(sp+40), r10
-sw
-(sp+48), ea
-sw
-(sp+52), ba
-/* ra needs to be moved from initial stack location */
-lw
-r1, (sp+56)
-sw
-(sp+44), r1
-ret
-
-
-/* Restore all registers and return from exception */
-_restore_all_and_eret:
-lw
-r1, (sp+4)
-lw
-r2, (sp+8)
-lw
-r3, (sp+12)
-lw
-r4, (sp+16)
-lw
-r5, (sp+20)
-lw
-r6, (sp+24)
-lw
-r7, (sp+28)
-lw
-r8, (sp+32)
-lw
-r9, (sp+36)
-lw
-r10, (sp+40)
-lw
-ra, (sp+44)
-lw
-ea, (sp+48)
-lw
-ba, (sp+52)
-addi
-sp, sp, 56
-eret
-/* Restore all registers and return from breakpoint */
-_restore_all_and_bret:
-lw
-r1, (sp+4)
-lw
-r2, (sp+8)
-lw
-r3, (sp+12)
-lw
-r4, (sp+16)
-lw
-r5, (sp+20)
-lw
-r6, (sp+24)
-lw
-r7, (sp+28)
-lw
-r8, (sp+32)
-lw
-r9, (sp+36)
-lw
-r10, (sp+40)
-lw
-ra, (sp+44)
-lw
-ea, (sp+48)
-lw
-ba, (sp+52)
-addi
-sp, sp, 56
-bret
-
-
-
-
-
-
-
-
-IE ? Interrupt Enable
-The IE CSR contains a single-bit flag, IE, that determines whether interrupts
-are enabled. This flag has priority over the IM CSR. In addition, there are two
-bits, BIE and EIE, that are used to save the value of the IE field when either a
-breakpoint or other exception occurs. Each interrupt is associated with a
-mask bit (IE bit) index
-
-
-IM ? Interrupt Mask
-The IM CSR contains an enable bit for each of the 32 interrupts. Bit 0
-corresponds to interrupt 0. In order for an interrupt to be raised, both an
-enable bit in this register and the IE flag in the IE CSR must be set to 1. After
-reset, the value of the IM CSR is h00000000.
-IP ? Interrupt Pending
-The IP CSR contains a pending bit for each of the 32 interrupts. A pending bit
-is set when the corresponding interrupt request line is asserted low. Bit 0
-corresponds to interrupt 0. Bits in the IP CSR can be cleared by writing a 1
-with the wcsr instruction. W
-
-
-
-
-
-
-
-
-
-\section{Bus Wishbone}
-
-\subsection{Señales principales}
+\subsubsection{Señales principales}
 
 \begin{itemize}
- \item \textit{ack_o}: La activación de esta señal indica la terminación normal de un ciclo del bus. 
- \item \textit{addr_i}: Bus de direcciones. 
- \item \textit{cyc_i}: Esta señal se activa que un ciclo de bus válido se encuentra en progreso.
- \item \textit{sel_i}: Estas señales indican cuando se coloca un dato válido en el bus \textit{dat_i} durante un ciclo de escritura, y cuando deberían estar presentes en el bus \textit{dat_o} durante un ciclo de lectura. El número de señales depende de la granularidad del puerto. El LM32 maneja una granularidad de 8 bits sobre un bus de 32 bits, por lo tanto existen 4 señales para seleccionar el byte deseado (\textit{sel_i(3:0)}). 
- \item \textit{stb_i}: Cuando se activa esta señal se indica al esclavo que ha sido seleccionado. Un esclavo wishbone debe responder a las otras señales únicamente cuando se activa esta señal. El esclavo debe activar la señal \textit{ack_o} como respuesta a la activación de \textit{stb_i}.
+ \item \textit{ack\_o}: La activación de esta señal indica la terminación normal de un ciclo del bus. 
+ \item \textit{addr\_i}: Bus de direcciones. 
+ \item \textit{cyc\_i}: Esta señal se activa que un ciclo de bus válido se encuentra en progreso.
+ \item \textit{sel\_i}: Estas señales indican cuando se coloca un dato válido en el bus \textit{dat\_i} durante un ciclo de escritura, y cuando deberían estar presentes en el bus \textit{dat\_o} durante un ciclo de lectura. El número de señales depende de la granularidad del puerto. El LM32 maneja una granularidad de 8 bits sobre un bus de 32 bits, por lo tanto existen 4 señales para seleccionar el byte deseado (\textit{sel\_i(3:0)}). 
+ \item \textit{stb\_i}: Cuando se activa esta señal se indica al esclavo que ha sido seleccionado. Un esclavo wishbone debe responder a las otras señales únicamente cuando se activa esta señal. El esclavo debe activar la señal \textit{ack\_o} como respuesta a la activación de \textit{stb\_i}.
  
- \item \textit{we_i}: Esta señal indica la dirección del flujo de datos, en un ciclo de lectura tiene un nivel lógico bajo y en escritura tiene un nivel lógico alto. 
+ \item \textit{we\_i}: Esta señal indica la dirección del flujo de datos, en un ciclo de lectura tiene un nivel lógico bajo y en escritura tiene un nivel lógico alto. 
 
- \item \textit{dat_i}: Bus de datos de entrada.
- \item \textit{dat_o}: Bus de datos de salida.
+ \item \textit{dat\_i}: Bus de datos de entrada.
+ \item \textit{dat\_o}: Bus de datos de salida.
 \end{itemize}
 
 
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.6]{./LM32/images/uart_read_waves.pdf} \end{center}
+    \caption{Ciclo de lectura del bus wishbone}\label{uart_read_waves}
+  \end{figure}
+
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.6]{./LM32/images/uart_read_waves.pdf} \end{center}
+    \caption{Ciclo de escritura del bus wishbone}\label{uart_write_waves}
+  \end{figure}
+
+  
+  
+\subsubsection{Interface del bus wishbone}
+explicar como funciona el conmax, mostrar diagrama de flujo y simulación
+
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.35]{./LM32/images/conbus.pdf} \end{center}
+    \caption{Circuito de interconexión del bus wishbone}\label{conbus}
+  \end{figure}
 
 
+
+\subsection{Comunicación con periféricos}
+EXplicación de la UART y del TIMER globales interface en C.
+
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.6]{./LM32/images/uart_block_full.pdf} \end{center}
+    \caption{Ejemplo de periférico wishbone: UART}\label{uart_block_full}
+  \end{figure}
+
+
+  
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.6]{./LM32/images/timer.pdf} \end{center}
+    \caption{Ejemplo de periférico wishbone: TIMER}\label{timer}
+  \end{figure}
+
+
+
+\subsubsection{Lectura}
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.6]{./LM32/images/uart_block_read.pdf} \end{center}
+    \caption{Circuito equivalente de lectura de la UART}\label{uart_block_read}
+  \end{figure}
+  
+
+
+\subsubsection{Escritura}
+    \begin{figure}
+    \begin{center} \includegraphics[scale=.6]{./LM32/images/uart_block_write.pdf} \end{center}
+    \caption{Circuito equivalente de escritura de la UART}\label{uart_block_write}
+  \end{figure}
+
+
+\subsubsection{Interfaz Software}
+
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.6]{./LM32/images/peripheral_soc.pdf} \end{center}
+    \caption{Asignación de la dirección de memoria a los periféricos}\label{peripheral_soc}
+  \end{figure}
+
+
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.6]{./LM32/images/uart_sw_interface.pdf} \end{center}
+    \caption{Definición de la dirección de los registros internos de la UART}\label{uart_sw_interface}
+  \end{figure}
+
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.6]{./LM32/images/timer_sw_interface.pdf} \end{center}
+    \caption{Definición de la dirección de los registros internos del TIMER}\label{timer_sw_interface}
+  \end{figure}
+
+
+\subsubsection{}
 
 
 
@@ -448,30 +354,4 @@ The volatile keyword acts as a data type qualifier.
 The volatile qualifier alters the default behaviour of the variable and does not attempt to optimize the storage referenced by it.
 - Martin Leslie
 volatile means the storage is likely to change at anytime and be changed but something outside the control of the user program. This means that if you reference the variable, the program should always check the physical address (ie a mapped input fifo), and not use it in a cacheed way.
-
-
-
-
-
-PIPELINE
-
-
-The six pipeline stages are:
-· Address ? The address of the instruction to execute is calculated and sent to the
-instruction cache.
-· Fetch ? The instruction is read from memory.
-
-
-Decode ? The instruction is decoded, and operands are either fetched from the register
-file or bypassed from the pipeline.
-· Execute ? The operation specified by the instruction is performed. For simple
-instructions such as addition or a logical operation, execution finishes in this stage,
-and the result is made available for bypassing.
-· Memory ? For more complicated instructions such as loads, stores, multiplies, or
-shifts, a second execution stage is required.
-· Write back ? Results produced by the instructions are written back to the register file.
-
-
-
-
 
