@@ -44,11 +44,7 @@ El LM32 posee 32 registros de 32 bits; el registro \textit{r0} siempre contiene 
 
 \subsection{Registro de estado y control}
 
-Table 4 shows all of the names of the control and status registers (CSR),
-whether the register can be read from or written to, and the index used when
-accessing the register. Some of the registers are optional, depending on the
-configuration of the processor. All signal levels are active high.
-
+La tabla \ref{csr} muestra los registros de estado y control (CSR), indicando si son de lectura o escritura y el índice que se utiliza para acceder al registro.
 
 \begin{table}[htpb]
   \caption{Registro de Estado y Control}
@@ -76,11 +72,11 @@ configuration of the processor. All signal levels are active high.
        EBA         & 0x07 & (R/W)Exception base address 
       \\ \hline 
     \end{tabular}
-  \label{arquitectura_plataformas_comerciales}
+  \label{csr}
 \end{table}
 
 \subsubsection{Contador de Programa (PC)}
-El contador de programa es un registro de 32 bits que contiene la dirección de la instricción que se ejecuta actualmente. Debido a que todas las instrucciones son de 32 bits, los dos bits menos significativos del PC siempre son zero. El valor de este registro después del reset es \textit{h00000000}
+El contador de programa es un registro de 32 bits que contiene la dirección de la instrucción que se ejecuta actualmente. Debido a que todas las instrucciones son de 32 bits, los dos bits menos significativos del PC siempre son zero. El valor de este registro después del reset es \textit{h00000000}
 
 
 
@@ -95,29 +91,25 @@ El índice de la excepción es un número de 3 bits que indica la causa de la deten
  \item \textbf{2}: Instruction Bus Error; se presenta cuando falla la captura e una instrucción, típicamente cuando la dirección no es válida.
  \item \textbf{3}: Watchpoint; se presenta cuando se activa un watchpoint.
  \item \textbf{4}: Data Bus Error; se presenta cuando falla el acceso a datos, típicamente porque la dirección solicitada es inválida o porque el tipo de acceso no es permitido.
- \item \textbf{5}: División por cero; Se presenta cuando se hace una dicisión por cero.
+ \item \textbf{5}: División por cero; Se presenta cuando se hace una división por cero.
  \item \textbf{6}: Interrupción; se presenta cuando un periférico solicita atención por parte del procesador, para que esta excepción se presente se deben habilitar las interrupciones globales (IE) y la interrupción del periférico (IM).
- \item \textbf{7}: System Call; se presenta cuando se ejecuta la instricción \textit{scall}.
+ \item \textbf{7}: System Call; se presenta cuando se ejecuta la instrucción \textit{scall}.
 \end{itemize}
 
-\subsubsection{IE Habilitación de Interrupción}
+\subsubsection{IE Habilitación de interrupción}
 
-IE contiene el flag IE, que determina si se habilitan o no las interrupciones. Si este flag se desactiva, no se presentan interrupciones a pesar de la activación individual realizada con IM. Existen dos bits \textit{BIE} y \textit{EIE} que se utilizan para almacenar el estado de IE cuando se presenta una excepción tipo breakpoint u otro tipo de excepción.
+l registro IE contiene el flag IE, que determina si se habilitan o no las interrupciones. Si este flag se desactiva, no se presentan interrupciones a pesar de la activación individual realizada con IM. Existen dos bits \textit{BIE} y \textit{EIE} que se utilizan para almacenar el estado de IE cuando se presenta una excepción tipo breakpoint u otro tipo de excepción; esto se explicará más adelante cuando se estudien las instrucciones relacionadas con las excepciones.
 
 
 \subsubsection{IM Máscara de interrupción}
- La máscara de interrupción contiene un bit de habilitación para cada una de las 32 interrupciones, el bit 0 corresponde a la interrupción 0. Para que la interrupción se presente es necesario que el bit correspondiente a la interrupción y el flag IE sean igual a 1. Después del reset el valor de IM es \textit{h00000000}
+La máscara de interrupción contiene un bit de habilitación para cada una de las 32 interrupciones, el bit 0 corresponde a la interrupción 0. Para que la interrupción se presente es necesario que el bit correspondiente a la interrupción y el flag IE sean igual a 1. Después del reset el valor de IM es \textit{h00000000}
 
 
 \subsubsection{IP Interrupción pendiente}
 
-El registro IP contine un bit para cada una de las 32 interrupciones, este bit se activa cuando se activa la interrupción asociada. Los bits del registro IP deben ser borrados escribiendo un 1.
+El registro IP contine un bit para cada una de las 32 interrupciones, este bit se activa cuando se presenta la interrupción asociada. Los bits del registro IP deben ser borrados escribiendo un 1 lógico.
 
 
-
-
-- tareas software
-- Arquitectura del LM32 (componentes básicos de un procesador)
 - Compilación de progamas para el LM32, explicar un ejemplo sencillo puede ser el de tipos de datos comentandop todos los archivos, lm32, crt0.s, etc
 - Set de instrucciones, con ejemplos en donde sea necesario como en:
    - llamado a funciones: Ejemplo sencillo que muestre como se pasan parámetros a través de r0, r1, r2.
@@ -135,8 +127,35 @@ El registro IP contine un bit para cada una de las 32 interrupciones, este bit s
 %********************************************************                              SECCIÓN   SET DE INSTRUCCIONES
 %********************************************************************************************************************
 \section{Set de Instrucciones del procesador Mico32}
+En esta sección se realizará un análisis del conjunto de instrucciones del procesador Mico32; para facilitar el estudio se realizó una división en cuatro grupos comenzando con las instrucciones aritméticas y lógicas, siguiendo con las relacionadas con saltos, después se analizará la comunicación con la memoria de datos y finalmente las relacionadas con interrupciones y excepciones. Para cada uno de estos grupos se mostrará el camino de datos (simplificado) asociado al conjunto de instrucciones. 
+
 
 \subsection{Instrucciones aritméticas}
+En la figura \ref{arith_register} se muestra el camino de datos simplificado de las operaciones aritméticas y lógicas cuyos operandos son registros, y el resultado se almacena en un registro; en otras palabras son de la forma: \textbf{gpr[RX] = gpr[RY] {OP} gpr[RZ]}, donde: OP puede ser \textit{nor, xor, and, xnor, add, divu, modu, mul, or, sl, sr, sru, sub}. Como puede verse en esta figura la instrucción contiene la información necesaria para direccionar los registros que almacenan los operandos \textbf{RY} (instruction\_d 25:21) y \textbf{RZ} (instruction\_d 20:16), estas señales de 5 bits direccionan el banco de registros y el valor 
+almacenado en ellos puede obtenerse en dos salidas diferentes ( \textbf{gpr[rz]} y \textbf{gpr[ry]}). En el archivo \textit{rtl/lm32/lm32\_cpu.v} se implementa el banco de registros de la siguiente forma:
+
+\lstset{language=verilog}
+\begin{lstlisting}
+assign reg_data_0 = registers[read_idx_0_d];
+assign reg_data_1 = registers[read_idx_1_d];
+\end{lstlisting}
+
+
+En este código \textit{reg\_data\_0} y \textit{reg\_data\_1} son las dos salidas \textbf{gpr[rz]} y \textbf{gpr[ry]}; las señales \textit{read\_idx\_0\_d} y \textit{read\_idx\_1\_d} corresponden a \textit{instruction\_d 25:21} y \textit{instruction\_d 20:16} respectivamente. El contenido de los registros direccionados de esta forma son llevados al modulo \textit{logic\_op} donde se realiza la operacion correspondiente a la instrucción y el resultado pasa a través de los estados del pipeline hasta llegar a la señal \textit{w\_result} (parte inferior de la figura) esta señal entra al banco de registros para ser almacenada en la dirección dada por la señal \textit{write\_idx\_w} la cual es fijada por la instrucción, más específicamente por \textit(instruction\_d 15:11). En el archivo \textit{rtl/lm32/lm32\_cpu.v} se implementa esta escritura al banco de registros de la siguiente forma: 
+
+\lstset{language=verilog}
+\begin{lstlisting}
+always @(posedge clk_i)
+
+begin
+
+    if (reg_write_enable_q_w == `TRUE)
+
+        registers[write_idx_w] <= w_result;
+
+end
+\end{lstlisting}
+
 
 \subsubsection{Entre registros}
   \begin{figure}
@@ -144,37 +163,94 @@ El registro IP contine un bit para cada una de las 32 interrupciones, este bit s
     \caption{Camino de datos de las operaciones aritméticas y lógicas entre registros}\label{arith_register}
   \end{figure}
   
-
+ 
+ 
+ 
 \subsubsection{Inmediatas}
+
+Existe otro grupo de operaciones lógicas y aritméticas en las que uno de los operandos es un registro y el otro es un número fijo, esto permite realizar operaciones con constantes que nos son almacenadas previamente en registros, sino que son almacenadas en la memoria de programa. En la figura \ref{arith_immediate} se muestra como se modifica el camino de datos para este tipo de instrucciones; en ella, podemos observar que \textit{instruction\_d 25:21} direcciona uno de los operandos que está almacenado en el banco de registros y de forma similar al caso anterior el dato almacenado es llevado al bloque \textit{logic\_op}. El segundo operando es llevado a este bloque desde un multiplexor donde se hace una extensión de signo de \textit{instruction\_d 15:0} o se hace un corrimiento a la derecha de 16 posiciones; esto, para convertir el número de 16 bits a uno de 32 bits, lo que da como resultado \textit{{16{instruction\_d[15]}}, instruction\_d[15:0]} y \textit{instruction\_d[15:0], 16'h0000} respectivamente; el 
+corrimiento de 16 bits a la derecha se hace para poder realizar las operaciones \textit{andhi} y \textit{orhi}, las cuales solo operan sobre la parte alta de los operandos.
 
   \begin{figure}
     \begin{center} \includegraphics[scale=.2]{./LM32/images/arith_immediate.pdf} \end{center}
     \caption{Camino de datos de las operaciones aritméticas y lógicas inmediatas}\label{arith_immediate}
   \end{figure}
 
- 
-  
 \subsection{Saltos}
+Los saltos permiten controlar el flujo de ejecución del programa posibilitando la implementación de ciclos, llamado a funciones, y toma de decisiones. En esta subsección estudiaremos el camino de datos resultante para este tipo de instrucciones. A diferencia de las instrucciones aritméticas y lógicas, en este tipo de instrucciones se modifica el valor del contador de programa.
 
 \subsubsection{Condicionales}
+
+En la instrucción se almacena la dirección de los registros que deben ser comparados, específicamente en \textit{instruction\_d 25:21} y \textit{instruction\_d 20:16}; los valores almacenados en estos registros son llevados al sumador y a un bloque especial que determina si se cumple o nó la condición (señales rojas en la gráfica); la señal \textit{condition\_met\_x} se activa si la condición se cumple.
+
+Para que el valor del contador de programa se modifique, es necesario que las señales \textit{condition\_met\_x}, \textit{branch\_m} y \textit{valid\_m} se encuentren activas (señales amarillas en la gráfica); la señal \textit{branch\_m} se activa cuando la instrucción es de tipo \textit{branch} o \textit{call}; la señal \textit{valid\_m} se activa cuando se presenta una instrucción válida. Adicionalmente, es necesario que el procesador no se encuentre en un estado de \textit{stall}. Si se cumplen las condiciones anteriores, se activará la señal \textit{branch\_taken\_m}, la que le indicará a la unidad de instrucciones que cargue el valor de la señal \textit{branch\_target\_m} en el contador de programa.
+
+El valor de \textit{branch\_target\_m} (señal azul en la gráfica) es fijado por dos diferentes métodos: cuando se produce una excepción o cuando se produce un salto, la señak \textit{exception\_x} selecciona el valor adecuado para cada caso. La señal \textit{branch\_target\_x} es el resultado de la suma de \textit{pc\_d} y de \textit{branch\_offset\_d} (para esta suma no se utiliza el bloque sumador). El valor de \textit{branch\_offset} es seleccionado por la señal \textit{select\_call\_immediate} entre las señales \textit{call\_immediate} (para instrucciones de llamado a función) y \textit{branch\_immediate}; está última tiene como valor \textit{{{16{inst[15]}}, inst[15:0]}}, lo que es una extensión de signo de la constante de 16 bits almacenado en la memoria de programa.
+
+En la figura \ref{branch_condition} se muestra el camino de datos equivalente a las instrucciones relacionadas con condicionales; 
   \begin{figure}
     \begin{center} \includegraphics[scale=.2]{./LM32/images/branch_condition.pdf} \end{center}
     \caption{Camino de datos de los saltos condicionales}\label{branch_condition}
   \end{figure}
 
-\subsubsection{Llamado a función}
+\subsubsection{Llamado a función y salto incondicional}
+Existen dos tipos de llamado a función y de salto incondicional; su diferencia radica en la forma de almacenar la dirección a la que deben saltar. En la figura \ref{branch_call} se muestra el camino de datos correspondiente a las instrucciones \textit{calli} y \textit{bi}, estas almacenan en la instrucción la dirección y en la figura \ref{branch_call} se muestra el camino de dato correspondiente a las instrucciones \textit{call} y \textit{b} las que almacenan la dirección en un registro.
+
+
+Para ambos casos el contador de programa es modificado si se activan las señales \textit{condition\_met\_x}, \textit{branch\_m} y \textit{valid\_m}; la señal \textit{valid\_m} se activa cuando se presenta una instrucción válida; \textit{branch\_m} (color amarillo en los graficos) se activa cuando la instrucción que se está ejecutando es un salto o un llamado a función; y  \textit{condition\_met\_x} se activa cuando se cumple con la condición para el salto, debido a que estos saltos y llamados son incondiconales, el MICO32 contempla dos casos en los que activa esta señal, tal como se muestra a continuación (tomado de \textit{rtl/lm32/lm32\_cpu.v}):
+
+\lstset{language=verilog}
+\begin{lstlisting}
+always @*
+begin
+    case (instruction[28:26])
+    3'b000:  condition_met_x = `TRUE;
+    3'b110   condition_met_x = `TRUE;
+    ....
+    ....
+    ....
+    default:              condition_met_x = 1'bx;
+    endcase 
+end
+\end{lstlisting}
+
+Los bits \textit{instruction[28:26]} hacen parte del código de la instrucción; el valor para las instrucciones \textit{bi} y \textit{b} es \textit{000} y para \textit{call} y \textit{calli} es \textit{110}, lo que activa \textit{condition\_met\_x} cada vez que se presentan estas instrucciones.
+
+De forma similar a las instrucciones relacionadas con saltos condicionales el valor del contador de programa es igual al valor de las señal \textit{branch\_target\_x} (señal de color verde en las figuras); el valor de esta señal para las instrucciones \textit{call} y \textit{b} proviene del valor almacenado en el registro seleccionado por \textit{instruction\_d [25:21]}. Para las instrucciones \textit{calli} y \textit{bi} el valor está dado por la señal \textit{branch\_offset} la que toma como valor \textit{{{6{ins[25]}},ins[25:0]}} o \textit{{{16{ins[15]}},ins[15:0]}} para una instrucción \textit{call} o  \textit{b} respectivamente.
+
+Adicionalmente, para las instrucciones de llamado a función \textit{call} y \textit{calli} se debe almacenar en el registro \textit{R29} la dirección de memoria siguiente a la que se realizó el llamado a la función, esto con el fín de retornar al flujo de programa principal, esto se logra haciendo uso del pipeline y se utiliza el valor del contador de programa \textit{pc\_m} cuyo valor contiene el valor adecuado para el retorno del llamado a función; el valor de \textit{pc\_m} (señal color morado en las figuras) es asignado a la señal \textit{w\_result} del banco de registros para ser almacenado en el registro indicado por \textit{write\_idx} (señal marrón en los gráficos); la que toma el valor de \textit{29} cuando se presenta una instrucción \textit{calli} o \textit{call}.
+
   \begin{figure}
-    \begin{center} \includegraphics[scale=.2]{./LM32/images/branch_call.pdf} \end{center}
-    \caption{Camino de datos de los saltos inmediatos y llamado a funciones}\label{branch_call}
+    \begin{center} \includegraphics[scale=.2]{./LM32/images/branch_call_immediate.pdf} \end{center}
+    \caption{Camino de datos de los saltos y l\textit\{branch\_m}lamado a funciones inmediatos}\label{branch_call_immediate}
   \end{figure}
 
+  
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.2]{./LM32/images/branch_call.pdf} \end{center}
+    \caption{Camino de datos de los saltos  y llamado a funciones}\label{branch_call}
+  \end{figure}
+
+
 \subsection{Comunicación con la memoria de datos}
+
+Antes de estudiar el camino de datos correspondiente a este grupo de ibstrucciones, hablaremos de los tipos de datos que soporta el procesador MICO32. En la figura \ref{data_types} se muestran ejemplos de manipulación de diferentes tipos de datos y como estos son tratados en la memoria del procesador.
+
+El primer tipo de datos que se muestra en esta figura es el \textit{char}, la variable \textit{data8} es declarada como un \textit{volatile unsigned char *}, es decir un puntero a un \textit{char} sin signo tipo \textit{volatile}; los tipos de datos \textit{volatile} le indican al compilador que no realice optimizaciones sobre esta variable, lo que es importante cuando se direccionan periféricos. Al puntero \textit{data8} se le asigna la dirección \textit{0x400} y el valor \textit{0x44}. Si se aumenta el valor de la dirección del puntero en una posición \textit{data8++} la nueva dirección será \textit{0x401} y si se aumenta de nuevi pasará a ser \textit{0x402}; lo que indica que el procesador a pesar de ser de 32 bits puede realizar direccionamiento con granularidad byte; esto es muy conveniente para un almacenamiento eficiente de información, de no ser así se utilizaría una palabra de 32 bits para almacenar 8 bits.
+
+La segunda parte de la figura \ref{data_types} ilustra el manejo del tipo de dato \textit{short} el cual es de 8 bits; para esto se utiliza en puntero \textit{data16} con una dirección inicial de \textit{0x200} y un valor de \textit{0x2020}; al aumentar la dirección del puntero en 1 (data16++) la dirección resultante es  \textit{0x202}, lo que permite el almacenamiento eficiente de este tipo de dato.
+
+Finalmente se ilustra el tipo de datos \textit{int} y se observa como las direcciones de memoria inical y final después de aumentar el valor del puntero son \textit{0x300} \textit{0x304}; lo que muestra que el direccionamiento interno de la memoria depende del tipo de datos.
+
+
 \subsubsection{Tipos de datos}
   \begin{figure}
     \begin{center} \includegraphics[scale=.6]{./LM32/images/data_types.pdf} \end{center}
     \caption{Tipos de datos soportados por el procesador Mico32}\label{data_types}
   \end{figure}
 
+
+En la figura \ref{type_char} 
   \begin{figure}
     \begin{center} \includegraphics[scale=.6]{./LM32/images/char.pdf} \end{center}
     \caption{Acceso a un data tipo \textit{char}}\label{type_char}
@@ -248,7 +324,7 @@ Explicar el componente hardware y software,explicar la estructura sw y hw de los
 
   \begin{figure}
     \begin{center} \includegraphics[scale=.6]{./LM32/images/soft_SoC_design_flow.pdf} \end{center}
-    \caption{}\label{soft_SoC_design_flow}
+    \caption{Flujo de diseño para el procesador LM32}\label{soft_SoC_design_flow}
   \end{figure}
 
 
@@ -347,11 +423,4 @@ EXplicación de la UART y del TIMER globales interface en C.
 
 
 
-
-
-Volatile keyword says the compiler that no optimiztion on the variable.
-The volatile keyword acts as a data type qualifier.
-The volatile qualifier alters the default behaviour of the variable and does not attempt to optimize the storage referenced by it.
-- Martin Leslie
-volatile means the storage is likely to change at anytime and be changed but something outside the control of the user program. This means that if you reference the variable, the program should always check the physical address (ie a mapped input fifo), and not use it in a cacheed way.
 

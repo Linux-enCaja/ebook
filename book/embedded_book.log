@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.4.25)  29 JUN 2012 10:40
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.4.25)  10 JUL 2012 23:21
 entering extended mode
  %&-line parsing enabled.
 **embedded_book.tex
@@ -1249,13 +1249,13 @@ Non-PDF special ignored!
 
 ] (./embedded_book.toc
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 2.
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 3.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 2.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 3.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 2.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 3.
 LaTeX Font Info:    Font shape `OT1/ppl/bx/sc' in size <10> not available
-(Font)              Font shape `OT1/ppl/b/sc' tried instead on input line 2.
+(Font)              Font shape `OT1/ppl/b/sc' tried instead on input line 3.
 ) [1] [2
 
 ] (./LM32/lm32.tex
@@ -1271,7 +1271,8 @@ been already used, duplicate ignored
 l.22 
       [1
 
-] <./LM32/images/lm32_block_diagram.pdf, id=65, 730.73pt x 672.5125pt>
+]
+<./LM32/images/lm32_block_diagram.pdf, id=105, 730.73pt x 672.5125pt>
 File: ./LM32/images/lm32_block_diagram.pdf Graphic file (type pdf)
 
 <use ./LM32/images/lm32_block_diagram.pdf>
@@ -1287,232 +1288,277 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.84 
-      [2] [3 <./LM32/images/lm32_block_diagram.pdf>] [4]
-<./LM32/images/arith_register.pdf, id=107, 1617.04124pt x 2603.7275pt>
+l.80 
+      [2] [3 <./LM32/images/lm32_block_diagram.pdf>] [4] [5]
+(/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+)
+(/usr/share/texmf-texlive/tex/latex/listings/lstlang2.sty
+File: lstlang2.sty 2004/09/05 1.3 listings language file
+)
+(/usr/share/texmf-texlive/tex/latex/listings/lstlang3.sty
+File: lstlang3.sty 2004/09/05 1.3 listings language file
+)
+LaTeX Font Info:    Try loading font information for OML+ppl on input line 154.
+
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/omlppl.fd
+File: omlppl.fd 
+)
+LaTeX Font Info:    Font shape `OML/ppl/m/n' in size <8> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 154.
+
+<./LM32/images/arith_register.pdf, id=155, 1616.0375pt x 2595.6975pt>
 File: ./LM32/images/arith_register.pdf Graphic file (type pdf)
 
 <use ./LM32/images/arith_register.pdf>
 
-LaTeX Warning: Float too large for page by 19.95662pt on input line 145.
+LaTeX Warning: Float too large for page by 18.35065pt on input line 164.
 
-<./LM32/images/arith_immediate.pdf, id=109, 1616.0375pt x 2608.74625pt>
+[6] [7 <./LM32/images/arith_register.pdf>]
+<./LM32/images/arith_immediate.pdf, id=212, 1616.0375pt x 2608.74625pt>
 File: ./LM32/images/arith_immediate.pdf Graphic file (type pdf)
 
 <use ./LM32/images/arith_immediate.pdf>
 
-LaTeX Warning: Float too large for page by 18.30038pt on input line 153.
+LaTeX Warning: Float too large for page by 18.30038pt on input line 177.
 
-
-
-pdfTeX warning: /usr/bin/pdflatex (file ./LM32/images/branch_condition.pdf): PD
-F inclusion: found PDF version <1.5>, but at most version <1.4> allowed
-<./LM32/images/branch_condition.pdf, id=111, 2392.87677pt x 3383.03278pt>
+<./LM32/images/branch_condition.pdf, id=215, 2090.81125pt x 2686.035pt>
 File: ./LM32/images/branch_condition.pdf Graphic file (type pdf)
 
 <use ./LM32/images/branch_condition.pdf>
-Overfull \hbox (137.56688pt too wide) in paragraph at lines 161--161
+Overfull \hbox (77.15485pt too wide) in paragraph at lines 192--192
  [] 
  []
 
 
-LaTeX Warning: Float too large for page by 164.81491pt on input line 163.
+LaTeX Warning: Float too large for page by 25.41783pt on input line 194.
 
-<./LM32/images/branch_call.pdf, id=113, 2115.905pt x 2640.86626pt>
+[8] [9 <./LM32/images/arith_immediate.pdf>] [10 <./LM32/images/branch_condition
+.pdf>]
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 204.
+
+ (/usr/share/texmf-texlive/tex/latex/psnfss/omsppl.fd
+File: omsppl.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 204.
+
+Overfull \hbox (1.21657pt too wide) in paragraph at lines 226--227
+\OT1/ppl/m/n/10 se[]nal \OT1/ppl/m/it/10 branch[]offset \OT1/ppl/m/n/10 la que 
+toma co-mo val-or \OT1/ppl/m/it/10 6ins[25],ins[25:0] \OT1/ppl/m/n/10 o \OT1/pp
+l/m/it/10 16ins[15],ins[15:0]
+ []
+
+<./LM32/images/branch_call_immediate.pdf, id=294, 2115.905pt x 2640.86626pt>
+File: ./LM32/images/branch_call_immediate.pdf Graphic file (type pdf)
+
+<use ./LM32/images/branch_call_immediate.pdf>
+Overfull \hbox (82.17351pt too wide) in paragraph at lines 231--231
+ [] 
+ []
+
+
+LaTeX Warning: Float too large for page by 16.38423pt on input line 233.
+
+<./LM32/images/branch_call.pdf, id=296, 1829.83624pt x 2640.86626pt>
 File: ./LM32/images/branch_call.pdf Graphic file (type pdf)
 
 <use ./LM32/images/branch_call.pdf>
-Overfull \hbox (82.17351pt too wide) in paragraph at lines 167--167
+Overfull \hbox (24.96077pt too wide) in paragraph at lines 237--237
  [] 
  []
 
 
-LaTeX Warning: Float too large for page by 16.38423pt on input line 169.
+LaTeX Warning: Float too large for page by 16.38423pt on input line 239.
 
-<./LM32/images/data_types.pdf, id=115, 873.2625pt x 419.5675pt>
+
+Underfull \vbox (badness 7133) has occurred while \output is active []
+
+ [11]
+[12 <./LM32/images/branch_call_immediate.pdf>] [13 <./LM32/images/branch_call.p
+df>] <./LM32/images/data_types.pdf, id=385, 873.2625pt x 419.5675pt>
 File: ./LM32/images/data_types.pdf Graphic file (type pdf)
 
 <use ./LM32/images/data_types.pdf>
-Overfull \hbox (182.96153pt too wide) in paragraph at lines 174--174
+Overfull \hbox (182.96153pt too wide) in paragraph at lines 255--255
  [] 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [5]
-[6 <./LM32/images/arith_register.pdf>] [7 <./LM32/images/arith_immediate.pdf>]
-[8 <./LM32/images/branch_condition.pdf>] [9 <./LM32/images/branch_call.pdf>]
-<./LM32/images/char.pdf, id=254, 652.4375pt x 116.435pt>
+<./LM32/images/char.pdf, id=388, 652.4375pt x 116.435pt>
 File: ./LM32/images/char.pdf Graphic file (type pdf)
 
 <use ./LM32/images/char.pdf>
-Overfull \hbox (50.46552pt too wide) in paragraph at lines 179--179
+Overfull \hbox (50.46552pt too wide) in paragraph at lines 262--262
  [] 
  []
 
-<./LM32/images/short.pdf, id=255, 653.44125pt x 116.435pt>
+<./LM32/images/short.pdf, id=389, 653.44125pt x 116.435pt>
 File: ./LM32/images/short.pdf Graphic file (type pdf)
 
 <use ./LM32/images/short.pdf>
-Overfull \hbox (51.06776pt too wide) in paragraph at lines 184--184
+Overfull \hbox (51.06776pt too wide) in paragraph at lines 267--267
  [] 
  []
 
-<./LM32/images/int.pdf, id=256, 653.44125pt x 116.435pt>
+<./LM32/images/int.pdf, id=390, 653.44125pt x 116.435pt>
 File: ./LM32/images/int.pdf Graphic file (type pdf)
 
 <use ./LM32/images/int.pdf>
-Overfull \hbox (51.06776pt too wide) in paragraph at lines 190--190
- [] 
- []
-
-<./LM32/images/store.pdf, id=257, 2055.68pt x 2626.81375pt>
-File: ./LM32/images/store.pdf Graphic file (type pdf)
-
-<use ./LM32/images/store.pdf>
-Overfull \hbox (70.12872pt too wide) in paragraph at lines 197--197
- [] 
- []
-
-
-LaTeX Warning: Float too large for page by 13.57379pt on input line 199.
-
-<./LM32/images/load.pdf, id=259, 2058.69125pt x 2627.8175pt>
-File: ./LM32/images/load.pdf Graphic file (type pdf)
-
-<use ./LM32/images/load.pdf>
-Overfull \hbox (70.73096pt too wide) in paragraph at lines 203--203
- [] 
- []
-
-
-LaTeX Warning: Float too large for page by 13.77454pt on input line 205.
-
-<./LM32/images/exception_generation.pdf, id=261, 1828.8325pt x 1407.2575pt>
-File: ./LM32/images/exception_generation.pdf Graphic file (type pdf)
-
-<use ./LM32/images/exception_generation.pdf>
-Overfull \hbox (24.76003pt too wide) in paragraph at lines 221--221
- [] 
- []
-
-<./LM32/images/exception_csr.pdf, id=263, 2184.16pt x 2878.755pt>
-File: ./LM32/images/exception_csr.pdf Graphic file (type pdf)
-
-<use ./LM32/images/exception_csr.pdf>
-Overfull \hbox (95.82426pt too wide) in paragraph at lines 227--227
- [] 
- []
-
-
-LaTeX Warning: Float too large for page by 75.96115pt on input line 229.
-
-<./LM32/images/eret_ret.pdf, id=265, 2078.76625pt x 2602.72375pt>
-File: ./LM32/images/eret_ret.pdf Graphic file (type pdf)
-
-<use ./LM32/images/eret_ret.pdf>
-Overfull \hbox (74.7459pt too wide) in paragraph at lines 232--232
- [] 
- []
-
-
-LaTeX Warning: Float too large for page by 8.75587pt on input line 234.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [10 <./LM32/images/data_types.pdf>]
-Overfull \vbox (51.58981pt too high) has occurred while \output is active []
-
-
-[11 <./LM32/images/char.pdf> <./LM32/images/short.pdf> <./LM32/images/int.pdf>]
-[12 <./LM32/images/store.pdf>] [13 <./LM32/images/load.pdf>] [14 <./LM32/images
-/exception_generation.pdf>] [15 <./LM32/images/exception_csr.pdf>] [16 <./LM32/
-images/eret_ret.pdf>]
-<./LM32/images/uart_read_waves.pdf, id=480, 653.44125pt x 159.59625pt>
-File: ./LM32/images/uart_read_waves.pdf Graphic file (type pdf)
-
-<use ./LM32/images/uart_read_waves.pdf>
-Overfull \hbox (51.06776pt too wide) in paragraph at lines 268--268
- [] 
- []
-
-File: ./LM32/images/uart_read_waves.pdf Graphic file (type pdf)
-<use ./LM32/images/uart_read_waves.pdf>
 Overfull \hbox (51.06776pt too wide) in paragraph at lines 273--273
  [] 
  []
 
-<./LM32/images/conbus.pdf, id=481, 1116.17pt x 432.61626pt>
+<./LM32/images/store.pdf, id=391, 2055.68pt x 2626.81375pt>
+File: ./LM32/images/store.pdf Graphic file (type pdf)
+
+<use ./LM32/images/store.pdf>
+Overfull \hbox (70.12872pt too wide) in paragraph at lines 280--280
+ [] 
+ []
+
+
+LaTeX Warning: Float too large for page by 13.57379pt on input line 282.
+
+<./LM32/images/load.pdf, id=393, 2058.69125pt x 2627.8175pt>
+File: ./LM32/images/load.pdf Graphic file (type pdf)
+
+<use ./LM32/images/load.pdf>
+Overfull \hbox (70.73096pt too wide) in paragraph at lines 286--286
+ [] 
+ []
+
+
+LaTeX Warning: Float too large for page by 13.77454pt on input line 288.
+
+<./LM32/images/exception_generation.pdf, id=395, 1828.8325pt x 1407.2575pt>
+File: ./LM32/images/exception_generation.pdf Graphic file (type pdf)
+
+<use ./LM32/images/exception_generation.pdf>
+Overfull \hbox (24.76003pt too wide) in paragraph at lines 304--304
+ [] 
+ []
+
+<./LM32/images/exception_csr.pdf, id=397, 2184.16pt x 2878.755pt>
+File: ./LM32/images/exception_csr.pdf Graphic file (type pdf)
+
+<use ./LM32/images/exception_csr.pdf>
+Overfull \hbox (95.82426pt too wide) in paragraph at lines 310--310
+ [] 
+ []
+
+
+LaTeX Warning: Float too large for page by 75.96115pt on input line 312.
+
+<./LM32/images/eret_ret.pdf, id=399, 2078.76625pt x 2602.72375pt>
+File: ./LM32/images/eret_ret.pdf Graphic file (type pdf)
+
+<use ./LM32/images/eret_ret.pdf>
+Overfull \hbox (74.7459pt too wide) in paragraph at lines 315--315
+ [] 
+ []
+
+
+LaTeX Warning: Float too large for page by 8.75587pt on input line 317.
+
+<./LM32/images/soft_SoC_design_flow.pdf, id=401, 724.7075pt x 528.97626pt>
+File: ./LM32/images/soft_SoC_design_flow.pdf Graphic file (type pdf)
+
+<use ./LM32/images/soft_SoC_design_flow.pdf>
+Overfull \hbox (93.82785pt too wide) in paragraph at lines 333--333
+ [] 
+ []
+
+
+Underfull \vbox (badness 2753) has occurred while \output is active []
+
+ [14]
+[15 <./LM32/images/data_types.pdf> <./LM32/images/char.pdf> <./LM32/images/shor
+t.pdf>] <./LM32/images/uart_read_waves.pdf, id=442, 653.44125pt x 159.59625pt>
+File: ./LM32/images/uart_read_waves.pdf Graphic file (type pdf)
+
+<use ./LM32/images/uart_read_waves.pdf>
+Overfull \hbox (51.06776pt too wide) in paragraph at lines 357--357
+ [] 
+ []
+
+File: ./LM32/images/uart_read_waves.pdf Graphic file (type pdf)
+<use ./LM32/images/uart_read_waves.pdf>
+Overfull \hbox (51.06776pt too wide) in paragraph at lines 362--362
+ [] 
+ []
+
+<./LM32/images/conbus.pdf, id=443, 1116.17pt x 432.61626pt>
 File: ./LM32/images/conbus.pdf Graphic file (type pdf)
 
 <use ./LM32/images/conbus.pdf>
-Overfull \hbox (49.66536pt too wide) in paragraph at lines 283--283
+Overfull \hbox (49.66536pt too wide) in paragraph at lines 372--372
  [] 
  []
 
-<./LM32/images/uart_block_full.pdf, id=483, 607.26875pt x 398.48875pt>
+<./LM32/images/uart_block_full.pdf, id=445, 607.26875pt x 398.48875pt>
 File: ./LM32/images/uart_block_full.pdf Graphic file (type pdf)
 
 <use ./LM32/images/uart_block_full.pdf>
-Overfull \hbox (23.36406pt too wide) in paragraph at lines 293--293
+Overfull \hbox (23.36406pt too wide) in paragraph at lines 382--382
  [] 
  []
 
-[17 <./LM32/images/uart_read_waves.pdf>]
-<./LM32/images/timer.pdf, id=497, 625.33624pt x 414.54875pt>
+<./LM32/images/timer.pdf, id=447, 625.33624pt x 414.54875pt>
 File: ./LM32/images/timer.pdf Graphic file (type pdf)
 
 <use ./LM32/images/timer.pdf>
-Overfull \hbox (34.20464pt too wide) in paragraph at lines 300--300
+Overfull \hbox (34.20464pt too wide) in paragraph at lines 389--389
  [] 
  []
 
-<./LM32/images/uart_block_read.pdf, id=499, 565.11125pt x 351.3125pt>
+<./LM32/images/uart_block_read.pdf, id=449, 565.11125pt x 351.3125pt>
 File: ./LM32/images/uart_block_read.pdf Graphic file (type pdf)
 
-<use ./LM32/images/uart_block_read.pdf>
-<./LM32/images/uart_block_write.pdf, id=501, 576.1525pt x 270.00874pt>
+<use ./LM32/images/uart_block_read.pdf> [16 <./LM32/images/int.pdf>] [17 <./LM3
+2/images/store.pdf>] [18 <./LM32/images/load.pdf>]
+<./LM32/images/uart_block_write.pdf, id=538, 576.1525pt x 270.00874pt>
 File: ./LM32/images/uart_block_write.pdf Graphic file (type pdf)
 
 <use ./LM32/images/uart_block_write.pdf>
-Overfull \hbox (4.69415pt too wide) in paragraph at lines 316--316
+Overfull \hbox (4.69415pt too wide) in paragraph at lines 405--405
  [] 
  []
 
-<./LM32/images/peripheral_soc.pdf, id=503, 557.08125pt x 129.48375pt>
+<./LM32/images/peripheral_soc.pdf, id=540, 557.08125pt x 129.48375pt>
 File: ./LM32/images/peripheral_soc.pdf Graphic file (type pdf)
 
 <use ./LM32/images/peripheral_soc.pdf>
-<./LM32/images/uart_sw_interface.pdf, id=505, 581.17125pt x 350.30875pt>
+<./LM32/images/uart_sw_interface.pdf, id=542, 581.17125pt x 350.30875pt>
 File: ./LM32/images/uart_sw_interface.pdf Graphic file (type pdf)
 
 <use ./LM32/images/uart_sw_interface.pdf>
-Overfull \hbox (7.70544pt too wide) in paragraph at lines 330--330
+Overfull \hbox (7.70544pt too wide) in paragraph at lines 419--419
  [] 
  []
 
-<./LM32/images/timer_sw_interface.pdf, id=507, 657.45625pt x 326.21875pt>
+<./LM32/images/timer_sw_interface.pdf, id=544, 657.45625pt x 326.21875pt>
 File: ./LM32/images/timer_sw_interface.pdf Graphic file (type pdf)
 
 <use ./LM32/images/timer_sw_interface.pdf>
-Overfull \hbox (53.47679pt too wide) in paragraph at lines 335--335
+Overfull \hbox (53.47679pt too wide) in paragraph at lines 424--424
  [] 
  []
 
-) (./embedded_book.bbl [18 <./LM32/images/conbus.pdf>] [19 <./LM32/images/uart_
-block_full.pdf>] [20 <./LM32/images/timer.pdf> <./LM32/images/uart_block_read.p
-df>] [21 <./LM32/images/uart_block_write.pdf> <./LM32/images/peripheral_soc.pdf
->] [22 <./LM32/images/uart_sw_interface.pdf> <./LM32/images/timer_sw_interface.
-pdf>]
+) (./embedded_book.bbl [19 <./LM32/images/exception_generation.pdf>] [20 <./LM3
+2/images/exception_csr.pdf>] [21 <./LM32/images/eret_ret.pdf>] [22 <./LM32/imag
+es/soft_SoC_design_flow.pdf> <./LM32/images/uart_read_waves.pdf>] [23 <./LM32/i
+mages/conbus.pdf>] [24 <./LM32/images/uart_block_full.pdf>] [25 <./LM32/images/
+timer.pdf> <./LM32/images/uart_block_read.pdf>] [26 <./LM32/images/uart_block_w
+rite.pdf> <./LM32/images/peripheral_soc.pdf>] [27 <./LM32/images/uart_sw_interf
+ace.pdf> <./LM32/images/timer_sw_interface.pdf>] [28
+
+]
 bibitemlist
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [23
-
-]
+) [29]
 \tf@toc=\write6
 \openout6 = `embedded_book.toc'.
 
@@ -1522,20 +1568,22 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 24004 strings out of 495061
- 427817 string characters out of 1182621
- 582457 words of memory out of 3000000
- 26534 multiletter control sequences out of 15000+50000
- 33816 words of font info for 99 fonts, out of 3000000 for 9000
+ 24710 strings out of 495061
+ 436308 string characters out of 1182621
+ 612249 words of memory out of 3000000
+ 27184 multiletter control sequences out of 15000+50000
+ 34243 words of font info for 100 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 61i,11n,69p,1081b,381s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 61i,12n,69p,1083b,1300s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
-ve/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texmf-texlive/fonts/type1/ur
-w/palatino/uplbi8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/palatino/uplr8
-a.pfb></usr/share/texmf-texlive/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on embedded_book.pdf (27 pages, 733087 bytes).
+ve/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/typ
+e1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/urw/palat
+ino/uplb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/palatino/uplbi8a.pfb><
+/usr/share/texmf-texlive/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-
+texlive/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on embedded_book.pdf (33 pages, 871500 bytes).
 PDF statistics:
- 697 PDF objects out of 1000 (max. 8388607)
- 91 named destinations out of 1000 (max. 500000)
- 184 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 870 PDF objects out of 1000 (max. 8388607)
+ 131 named destinations out of 1000 (max. 500000)
+ 258 words of extra memory for PDF output out of 10000 (max. 10000000)
 
