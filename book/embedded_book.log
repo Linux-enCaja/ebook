@@ -1,30 +1,31 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.4.25)  10 JUL 2012 23:21
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.7.16)  30 JUL 2012 07:43
 entering extended mode
+ restricted \write18 enabled.
  %&-line parsing enabled.
 **embedded_book.tex
 (./embedded_book.tex
-LaTeX2e <2009/09/24>
-Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, loaded.
-(/usr/share/texmf-texlive/tex/latex/memoir/memoir.cls
-Document Class: memoir 2009/09/21 v1.61803398b configurable book, report, artic
-le document class
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, lo
+aded.
+(/usr/share/texlive/texmf-dist/tex/latex/memoir/memoir.cls
+Document Class: memoir 2011/03/06 v3.6j configurable book, report, article docu
+ment class
 \onelineskip=\skip41
 \lxvchars=\skip42
 \xlvchars=\skip43
 \@memcnta=\count79
 \c@@memmarkcntra=\count80
-(/usr/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in pdf mode detected.
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
 Class memoir Info: An `ifetex' package is being emulated on input line 251.
 
-(/usr/share/texmf-texlive/tex/generic/ifxetex/ifxetex.sty
-Package: ifxetex 2009/01/23 v0.5 Provides ifxetex conditional
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-(/usr/share/texmf-texlive/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2009/04/17 v1.2 Provides the ifluatex switch (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
 \stockheight=\skip44
@@ -32,11 +33,11 @@ Package ifluatex Info: LuaTeX not detected.
 \trimtop=\skip46
 \trimedge=\skip47
 
-(/usr/share/texmf-texlive/tex/latex/etex-pkg/etex.sty
+(/usr/share/texlive/texmf-dist/tex/latex/etex-pkg/etex.sty
 Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
 \et@xins=\count81
 )
-(/usr/share/texmf-texlive/tex/latex/memoir/mem10.clo
+(/usr/share/texlive/texmf-dist/tex/latex/memoir/mem10.clo
 File: mem10.clo 2008/01/30 v0.3 memoir class 10pt size option
 )
 \binding=\skip48
@@ -46,13 +47,15 @@ File: mem10.clo 2008/01/30 v0.3 memoir class 10pt size option
 \lowermargin=\skip52
 \headdrop=\skip53
 \normalrulethickness=\skip54
-\headwidth=\skip55
+\mem@maxheadheight=\skip55
+\mem@maxfootheight=\skip56
+\headwidth=\skip57
 \c@storedpagenumber=\count82
 \memPD=\dimen102
-\m@mabparskip=\skip56
-\thanksmarkwidth=\skip57
-\thanksmarksep=\skip58
-\droptitle=\skip59
+\m@mabparskip=\skip58
+\thanksmarkwidth=\skip59
+\thanksmarksep=\skip60
+\droptitle=\skip61
 \c@book=\count83
 \c@part=\count84
 \c@chapter=\count85
@@ -61,74 +64,74 @@ File: mem10.clo 2008/01/30 v0.3 memoir class 10pt size option
 \c@subsubsection=\count88
 \c@paragraph=\count89
 \c@subparagraph=\count90
-\beforechapskip=\skip60
-\midchapskip=\skip61
-\afterchapskip=\skip62
-\chapindent=\skip63
-\bottomsectionskip=\skip64
-\secindent=\skip65
-\beforesecskip=\skip66
-\aftersecskip=\skip67
-\subsecindent=\skip68
-\beforesubsecskip=\skip69
-\aftersubsecskip=\skip70
-\subsubsecindent=\skip71
-\beforesubsubsecskip=\skip72
-\aftersubsubsecskip=\skip73
-\paraindent=\skip74
-\beforeparaskip=\skip75
-\afterparaskip=\skip76
-\subparaindent=\skip77
-\beforesubparaskip=\skip78
-\aftersubparaskip=\skip79
-\pfbreakskip=\skip80
+\beforechapskip=\skip62
+\midchapskip=\skip63
+\afterchapskip=\skip64
+\chapindent=\skip65
+\bottomsectionskip=\skip66
+\secindent=\skip67
+\beforesecskip=\skip68
+\aftersecskip=\skip69
+\subsecindent=\skip70
+\beforesubsecskip=\skip71
+\aftersubsecskip=\skip72
+\subsubsecindent=\skip73
+\beforesubsubsecskip=\skip74
+\aftersubsubsecskip=\skip75
+\paraindent=\skip76
+\beforeparaskip=\skip77
+\afterparaskip=\skip78
+\subparaindent=\skip79
+\beforesubparaskip=\skip80
+\aftersubparaskip=\skip81
+\pfbreakskip=\skip82
 \c@@ppsavesec=\count91
 \c@@ppsaveapp=\count92
 \ragrparindent=\dimen103
 \everylistparindent=\dimen104
-\parsepi=\skip81
-\topsepi=\skip82
-\itemsepi=\skip83
-\parsepii=\skip84
-\topsepii=\skip85
-\topsepiii=\skip86
-\itemsepii=\skip87
-\itemsepiii=\skip88
-\partopsepii=\skip89
-\partopsepiii=\skip90
-\m@msavetopsep=\skip91
-\m@msavepartopsep=\skip92
+\parsepi=\skip83
+\topsepi=\skip84
+\itemsepi=\skip85
+\parsepii=\skip86
+\topsepii=\skip87
+\topsepiii=\skip88
+\itemsepii=\skip89
+\itemsepiii=\skip90
+\partopsepii=\skip91
+\partopsepiii=\skip92
+\m@msavetopsep=\skip93
+\m@msavepartopsep=\skip94
 \@enLab=\toks14
-\abstitleskip=\skip93
-\absleftindent=\skip94
+\abstitleskip=\skip95
+\absleftindent=\skip96
 \abs@leftindent=\dimen105
-\absrightindent=\skip95
-\absparindent=\skip96
-\absparsep=\skip97
+\absrightindent=\skip97
+\absparindent=\skip98
+\absparsep=\skip99
 \c@vslineno=\count93
 \c@poemline=\count94
 \c@modulo@vs=\count95
 \c@memfvsline=\count96
-\vleftskip=\skip98
-\vrightskip=\skip99
-\stanzaskip=\skip100
-\versewidth=\skip101
-\vgap=\skip102
-\vindent=\skip103
+\vleftskip=\skip100
+\vrightskip=\skip101
+\stanzaskip=\skip102
+\versewidth=\skip103
+\vgap=\skip104
+\vindent=\skip105
 \vleftmargin=\dimen106
 \c@verse=\count97
 \c@chrsinstr=\count98
-\beforepoemtitleskip=\skip104
-\afterpoemtitleskip=\skip105
+\beforepoemtitleskip=\skip106
+\afterpoemtitleskip=\skip107
 \c@poem=\count99
-\beforePoemTitleskip=\skip106
-\midPoemTitleskip=\skip107
-\afterPoemTitleskip=\skip108
+\beforePoemTitleskip=\skip108
+\midPoemTitleskip=\skip109
+\afterPoemTitleskip=\skip110
 \col@sep=\dimen107
 \extrarowheight=\dimen108
 \NC@list=\toks15
-\extratabsurround=\skip109
-\backup@length=\skip110
+\extratabsurround=\skip111
+\backup@length=\skip112
 \TX@col@width=\dimen109
 \TX@old@table=\dimen110
 \TX@old@col=\dimen111
@@ -153,8 +156,8 @@ File: mem10.clo 2008/01/30 v0.3 memoir class 10pt size option
 \@thisruleclass=\count103
 \@lastruleclass=\count104
 \@thisrulewidth=\dimen126
-\ctableftskip=\skip111
-\ctabrightskip=\skip112
+\ctableftskip=\skip113
+\ctabrightskip=\skip114
 \abovecolumnspenalty=\count105
 \@linestogo=\count106
 \@cellstogo=\count107
@@ -162,19 +165,20 @@ File: mem10.clo 2008/01/30 v0.3 memoir class 10pt size option
 \crtok=\toks17
 \@mincolumnwidth=\dimen127
 \c@newflo@tctr=\count109
-\@contcwidth=\skip113
-\@contindw=\skip114
-\abovecaptionskip=\skip115
-\belowcaptionskip=\skip116
-\subfloattopskip=\skip117
-\subfloatcapskip=\skip118
-\subfloatcaptopadj=\skip119
-\subfloatbottomskip=\skip120
-\subfloatlabelskip=\skip121
+\mem@margin@floatbox=\box26
+\@contcwidth=\skip115
+\@contindw=\skip116
+\abovecaptionskip=\skip117
+\belowcaptionskip=\skip118
+\subfloattopskip=\skip119
+\subfloatcapskip=\skip120
+\subfloatcaptopadj=\skip121
+\subfloatbottomskip=\skip122
+\subfloatlabelskip=\skip123
 \subfloatcapmargin=\dimen128
 \c@@contsubnum=\count110
-\m@mscap@capbox=\box26
-\m@mscap@fbox=\box27
+\m@mscap@capbox=\box27
+\m@mscap@fbox=\box28
 \sidecapsep=\dimen129
 \sidecapwidth=\dimen130
 \m@m@tempdima=\dimen131
@@ -182,107 +186,120 @@ File: mem10.clo 2008/01/30 v0.3 memoir class 10pt size option
 \sidecapraise=\dimen133
 \m@mscapmainwidth=\dimen134
 \m@mscaplkern=\dimen135
-\beforeepigraphskip=\skip122
-\afterepigraphskip=\skip123
-\epigraphwidth=\skip124
-\epigraphrule=\skip125
-LaTeX Info: Redefining \em on input line 7000.
-LaTeX Info: Redefining \emph on input line 7008.
-\tocentryskip=\skip126
-\tocbaseline=\skip127
-\cftparskip=\skip128
-\cftbeforebookskip=\skip129
+\beforeepigraphskip=\skip124
+\afterepigraphskip=\skip125
+\epigraphwidth=\skip126
+\epigraphrule=\skip127
+LaTeX Info: Redefining \em on input line 7377.
+LaTeX Info: Redefining \emph on input line 7385.
+\tocentryskip=\skip128
+\tocbaseline=\skip129
+\cftparskip=\skip130
+\cftbeforebookskip=\skip131
 \cftbookindent=\dimen136
 \cftbooknumwidth=\dimen137
-\cftbeforepartskip=\skip130
-\cftpartindent=\skip131
-\cftpartnumwidth=\skip132
-\cftbeforechapterskip=\skip133
-\cftchapterindent=\skip134
-\cftchapternumwidth=\skip135
-\cftbeforesectionskip=\skip136
-\cftsectionindent=\skip137
-\cftsectionnumwidth=\skip138
-\cftbeforesubsectionskip=\skip139
-\cftsubsectionindent=\skip140
-\cftsubsectionnumwidth=\skip141
-\cftbeforesubsubsectionskip=\skip142
-\cftsubsubsectionindent=\skip143
-\cftsubsubsectionnumwidth=\skip144
-\cftbeforeparagraphskip=\skip145
-\cftparagraphindent=\skip146
-\cftparagraphnumwidth=\skip147
-\cftbeforesubparagraphskip=\skip148
-\cftsubparagraphindent=\skip149
-\cftsubparagraphnumwidth=\skip150
+\cftbeforepartskip=\skip132
+\cftpartindent=\skip133
+\cftpartnumwidth=\skip134
+\cftbeforechapterskip=\skip135
+\cftchapterindent=\skip136
+\cftchapternumwidth=\skip137
+\cftbeforesectionskip=\skip138
+\cftsectionindent=\skip139
+\cftsectionnumwidth=\skip140
+\cftbeforesubsectionskip=\skip141
+\cftsubsectionindent=\skip142
+\cftsubsectionnumwidth=\skip143
+\cftbeforesubsubsectionskip=\skip144
+\cftsubsubsectionindent=\skip145
+\cftsubsubsectionnumwidth=\skip146
+\cftbeforeparagraphskip=\skip147
+\cftparagraphindent=\skip148
+\cftparagraphnumwidth=\skip149
+\cftbeforesubparagraphskip=\skip150
+\cftsubparagraphindent=\skip151
+\cftsubparagraphnumwidth=\skip152
 \prechapterprecisshift=\dimen138
 \c@maxsecnumdepth=\count111
 \bibindent=\dimen139
-\bibitemsep=\skip151
-\indexcolsep=\skip152
-\indexrule=\skip153
+\bibitemsep=\skip153
+\indexcolsep=\skip154
+\indexrule=\skip155
 \indexmarkstyle=\toks18
 \@indexbox=\insert233
 \glossarycolsep=\dimen140
 \glossaryrule=\dimen141
-\sideparvshift=\skip154
+\sideparvshift=\skip156
 \sideins=\insert232
-\sidebartopsep=\skip155
-\sidebarhsep=\skip156
-\sidebarvsep=\skip157
-\sidebarwidth=\skip158
-\footmarkwidth=\skip159
-\footmarksep=\skip160
-\footparindent=\skip161
-\footinsdim=\skip162
+\sidebartopsep=\skip157
+\sidebarhsep=\skip158
+\sidebarvsep=\skip159
+\sidebarwidth=\skip160
+\footmarkwidth=\skip161
+\footmarksep=\skip162
+\footparindent=\skip163
+\footinsdim=\skip164
 \footinsv@r=\insert231
 \@mpfootinsv@r=\insert230
 \m@m@k=\count112
 \m@m@h=\dimen142
-\m@mipn@skip=\skip163
-\c@pagenote=\count113
+\m@mipn@skip=\skip165
+\sidefootins=\insert229
+\sidefootadjust=\skip166
+\sidefootheight=\skip167
+\sidefoothsep=\skip168
+\sidefootvsep=\skip169
+\sidefootwidth=\skip170
+\m@mdownsf=\skip171
+\c@sidefootnote=\count113
+\sidefootmarkwidth=\skip172
+\sidefootmarksep=\skip173
+\sidefootparindent=\skip174
+\c@pagenote=\count114
+\c@pagenoteshadow=\count115
+\mem@pn@lastkern=\skip175
 \every@verbatim=\toks19
 \afterevery@verbatim=\toks20
 \verbatim@line=\toks21
-\tab@position=\count114
+\tab@position=\count116
 \verbatim@in@stream=\read1
-\verbatimindent=\skip164
+\verbatimindent=\skip176
 \verbatim@out=\write3
-\bvboxsep=\skip165
-\c@memfbvline=\count115
-\c@bvlinectr=\count116
-\bvnumlength=\skip166
+\bvboxsep=\skip177
+\c@memfbvline=\count117
+\c@bvlinectr=\count118
+\bvnumlength=\skip178
 \fb@frw=\dimen143
 \fb@frh=\dimen144
 \FrameRule=\dimen145
 \FrameSep=\dimen146
-\c@cp@cntr=\count117
-LaTeX Info: Redefining \: on input line 10864.
-LaTeX Info: Redefining \! on input line 10866.
-\c@ism@mctr=\count118
-\c@xsm@mctr=\count119
-\c@csm@mctr=\count120
-\c@ksm@mctr=\count121
-\c@xksm@mctr=\count122
-\c@cksm@mctr=\count123
-\c@msm@mctr=\count124
-\c@xmsm@mctr=\count125
-\c@cmsm@mctr=\count126
-\c@bsm@mctr=\count127
-\c@workm@mctr=\count128
-\c@sheetsequence=\count129
-\c@lastsheet=\count130
-\c@lastpage=\count131
-\c@figure=\count132
-\c@lofdepth=\count133
-\cftbeforefigureskip=\skip167
-\cftfigureindent=\skip168
-\cftfigurenumwidth=\skip169
-\c@table=\count134
-\c@lotdepth=\count135
-\cftbeforetableskip=\skip170
-\cfttableindent=\skip171
-\cfttablenumwidth=\skip172
+\c@cp@cntr=\count119
+LaTeX Info: Redefining \: on input line 11807.
+LaTeX Info: Redefining \! on input line 11809.
+\c@ism@mctr=\count120
+\c@xsm@mctr=\count121
+\c@csm@mctr=\count122
+\c@ksm@mctr=\count123
+\c@xksm@mctr=\count124
+\c@cksm@mctr=\count125
+\c@msm@mctr=\count126
+\c@xmsm@mctr=\count127
+\c@cmsm@mctr=\count128
+\c@bsm@mctr=\count129
+\c@workm@mctr=\count130
+\c@sheetsequence=\count131
+\c@lastsheet=\count132
+\c@lastpage=\count133
+\c@figure=\count134
+\c@lofdepth=\count135
+\cftbeforefigureskip=\skip179
+\cftfigureindent=\skip180
+\cftfigurenumwidth=\skip181
+\c@table=\count136
+\c@lotdepth=\count137
+\cftbeforetableskip=\skip182
+\cfttableindent=\skip183
+\cfttablenumwidth=\skip184
 Package abstract [2008/07/23] emulated by memoir.
 Package appendix [2008/07/23] emulated by memoir.
 Package array [2008/07/23] emulated by memoir.
@@ -316,32 +333,33 @@ Package titleref [2008/07/23] emulated by memoir.
 Package titling [2008/07/23] emulated by memoir.
 Package tocbibind [2008/07/23] emulated by memoir.
 Package tocloft [2008/07/23] emulated by memoir.
+Package tocvsec2 [2008/07/23] emulated by memoir.
 Package verbatim [2008/07/23] emulated by memoir.
 Package verse [2008/07/23] emulated by memoir.
 
-(/usr/share/texmf-texlive/tex/latex/memoir/mempatch.sty
+(/usr/share/texlive/texmf-dist/tex/latex/memoir/mempatch.sty
 Package: mempatch 2009/07/24 v6.0f Patches for memoir class v1.6180339
 ))
-(/usr/share/texmf-texlive/tex/latex/base/fontenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 )
-(/usr/share/texmf-texlive/tex/latex/base/inputenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks22
 \inpenc@posthook=\toks23
 
-(/usr/share/texmf-texlive/tex/latex/base/latin1.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2008/03/30 v1.1d Input encoding file
 ))
-(/usr/share/texmf-texlive/tex/generic/babel/babel.sty
-Package: babel 2008/07/06 v3.8l The Babel package
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2008/07/08 v3.8m The Babel package
 
-(/usr/share/texmf-texlive/tex/generic/babel/spanish.ldf
-Language: spanish.ldf 2009/01/02 v5.0h Spanish support from the babel system
+(/usr/share/texlive/texmf-dist/tex/generic/babel/spanish.ldf
+Language: spanish.ldf 2011/10/06 v5.0k Spanish support from the babel system
 
-(/usr/share/texmf-texlive/tex/generic/babel/babel.def
-File: babel.def 2008/07/06 v3.8l Babel common definitions
-\babel@savecnt=\count136
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2008/07/08 v3.8m Babel common definitions
+\babel@savecnt=\count138
 \U@D=\dimen147
 )
 
@@ -350,25 +368,32 @@ Package babel Warning: No hyphenation patterns were loaded for
 (babel)                I will use the patterns loaded for \language=0 instead.
 
 \l@spanish = a dialect from \language0
-\es@datefmt=\count137
+\es@datefmt=\count139
 \es@quottoks=\toks24
-\es@quotdepth=\count138
-)) (/usr/share/texmf-texlive/tex/latex/base/fontenc.sty
+\es@quotdepth=\count140
+)) (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 )
-(/usr/share/texmf-texlive/tex/latex/graphics/color.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
-(/etc/texmf/tex/latex/config/color.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 
-(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
-\Gread@gobject=\count139
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/usr/share/texmf-texlive/tex/latex/graphics/dvipsnam.def
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count141
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
 (/usr/share/texmf/tex/latex/pgf/frontendlayer/tikz.sty
@@ -378,9 +403,9 @@ File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 \pgfutil@everybye=\toks25
 )
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box28
+\pgfutil@abb=\box29
 
-(/usr/share/texmf-texlive/tex/latex/ms/everyshi.sty
+(/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfrcs.code.tex
@@ -389,21 +414,21 @@ Package: pgfrcs 2010/10/25 v2.10 (rcs-revision 1.24)
 Package: pgf 2008/01/15 v2.10 (rcs-revision 1.12)
 
 (/usr/share/texmf/tex/latex/pgf/basiclayer/pgfcore.sty
-(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks26
 )
-(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/etc/texmf/tex/latex/config/graphics.cfg
-File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 )
@@ -431,10 +456,10 @@ Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
 \pgf@yc=\dimen157
 \w@pgf@writea=\write4
 \r@pgf@reada=\read2
-\c@pgf@counta=\count140
-\c@pgf@countb=\count141
-\c@pgf@countc=\count142
-\c@pgf@countd=\count143
+\c@pgf@counta=\count142
+\c@pgf@countb=\count143
+\c@pgf@countc=\count144
+\c@pgf@countd=\count145
 
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
@@ -449,8 +474,8 @@ File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
 )))
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
-\pgfsyssoftpath@smallbuffer@items=\count144
-\pgfsyssoftpath@bigbuffer@items=\count145
+\pgfsyssoftpath@smallbuffer@items=\count146
+\pgfsyssoftpath@bigbuffer@items=\count147
 )
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
@@ -458,7 +483,7 @@ File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
 (/usr/share/texmf/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
-(/etc/texmf/tex/latex/config/color.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -481,8 +506,8 @@ Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen158
-\pgfmath@count=\count146
-\pgfmath@box=\box29
+\pgfmath@count=\count148
+\pgfmath@box=\box30
 \pgfmath@toks=\toks30
 \pgfmath@stack@operand=\toks31
 \pgfmath@stack@operation=\toks32
@@ -496,7 +521,7 @@ Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)))
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count147
+\c@pgfmathroundto@lastzeros=\count149
 ))
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
@@ -527,10 +552,10 @@ File: pgfcorepathusage.code.tex 2008/04/22  (rcs-revision 1.12)
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
-\pgfpic=\box30
-\pgf@hbox=\box31
-\pgf@layerbox@main=\box32
-\pgf@picture@serial@count=\count148
+\pgfpic=\box31
+\pgf@hbox=\box32
+\pgf@layerbox@main=\box33
+\pgf@picture@serial@count=\count150
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
@@ -557,14 +582,14 @@ File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
 \pgf@max=\dimen181
-\pgf@sys@shading@range@num=\count149
+\pgf@sys@shading@range@num=\count151
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
 
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2010/09/01  (rcs-revision 1.17)
-\pgfexternal@startupbox=\box33
+\pgfexternal@startupbox=\box34
 ))
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2010/08/27  (rcs-revision 1.2)
@@ -577,7 +602,7 @@ File: pgfcorepatterns.code.tex 2009/07/02  (rcs-revision 1.3)
 )))
 (/usr/share/texmf/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2010/09/09  (rcs-revision 1.13)
-\pgfnodeparttextbox=\box34
+\pgfnodeparttextbox=\box35
 )
 (/usr/share/texmf/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2010/10/22  (rcs-revision 1.8)
@@ -605,7 +630,7 @@ Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
 
 (/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
-\pgf@plot@mark@count=\count150
+\pgf@plot@mark@count=\count152
 \pgfplotmarksize=\dimen186
 )
 \tikz@lastx=\dimen187
@@ -614,20 +639,20 @@ File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
 \tikz@lastysaved=\dimen190
 \tikzleveldistance=\dimen191
 \tikzsiblingdistance=\dimen192
-\tikz@figbox=\box35
-\tikz@tempbox=\box36
-\tikztreelevel=\count151
-\tikznumberofchildren=\count152
-\tikznumberofcurrentchild=\count153
-\tikz@fig@count=\count154
+\tikz@figbox=\box36
+\tikz@tempbox=\box37
+\tikztreelevel=\count153
+\tikznumberofchildren=\count154
+\tikznumberofcurrentchild=\count155
+\tikz@fig@count=\count156
 
 (/usr/share/texmf/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
-\pgfmatrixcurrentrow=\count155
-\pgfmatrixcurrentcolumn=\count156
-\pgf@matrix@numberofcolumns=\count157
+\pgfmatrixcurrentrow=\count157
+\pgfmatrixcurrentcolumn=\count158
+\pgf@matrix@numberofcolumns=\count159
 )
-\tikz@expandcount=\count158
+\tikz@expandcount=\count160
 
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopat
 hs.code.tex
@@ -688,26 +713,26 @@ File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
 (/usr/share/texmf/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.c
 ode.tex
 File: pgflibraryshapes.multipart.code.tex 2010/01/07 v2.10 (rcs-revision 1.2)
-\pgfnodepartlowerbox=\box37
-\pgfnodeparttwobox=\box38
-\pgfnodepartthreebox=\box39
-\pgfnodepartfourbox=\box40
-\pgfnodeparttwentybox=\box41
-\pgfnodepartnineteenbox=\box42
-\pgfnodeparteighteenbox=\box43
-\pgfnodepartseventeenbox=\box44
-\pgfnodepartsixteenbox=\box45
-\pgfnodepartfifteenbox=\box46
-\pgfnodepartfourteenbox=\box47
-\pgfnodepartthirteenbox=\box48
-\pgfnodeparttwelvebox=\box49
-\pgfnodepartelevenbox=\box50
-\pgfnodeparttenbox=\box51
-\pgfnodepartninebox=\box52
-\pgfnodeparteightbox=\box53
-\pgfnodepartsevenbox=\box54
-\pgfnodepartsixbox=\box55
-\pgfnodepartfivebox=\box56
+\pgfnodepartlowerbox=\box38
+\pgfnodeparttwobox=\box39
+\pgfnodepartthreebox=\box40
+\pgfnodepartfourbox=\box41
+\pgfnodeparttwentybox=\box42
+\pgfnodepartnineteenbox=\box43
+\pgfnodeparteighteenbox=\box44
+\pgfnodepartseventeenbox=\box45
+\pgfnodepartsixteenbox=\box46
+\pgfnodepartfifteenbox=\box47
+\pgfnodepartfourteenbox=\box48
+\pgfnodepartthirteenbox=\box49
+\pgfnodeparttwelvebox=\box50
+\pgfnodepartelevenbox=\box51
+\pgfnodeparttenbox=\box52
+\pgfnodepartninebox=\box53
+\pgfnodeparteightbox=\box54
+\pgfnodepartsevenbox=\box55
+\pgfnodepartsixbox=\box56
+\pgfnodepartfivebox=\box57
 )))
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryposit
 ioning.code.tex
@@ -739,11 +764,11 @@ ations.code.tex
 \pgfdecoratedinputsegmentcompleteddistance=\dimen196
 \pgfdecoratedinputsegmentremainingdistance=\dimen197
 \pgf@decorate@distancetomove=\dimen198
-\pgf@decorate@repeatstate=\count159
+\pgf@decorate@repeatstate=\count161
 \pgfdecorationsegmentamplitude=\dimen199
 \pgfdecorationsegmentlength=\dimen200
 )
-\tikz@lib@dec@box=\box57
+\tikz@lib@dec@box=\box58
 )
 (/usr/share/texmf/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.p
 athmorphing.code.tex))
@@ -762,38 +787,37 @@ File: tikzlibraryautomata.code.tex 2008/07/14 v2.10 (rcs-revision 1.3)
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybackg
 rounds.code.tex
 File: tikzlibrarybackgrounds.code.tex 2010/02/08 v2.10 (rcs-revision 1.2)
-\pgf@layerbox@background=\box58
-\pgf@layerboxsaved@background=\box59
+\pgf@layerbox@background=\box59
+\pgf@layerboxsaved@background=\box60
 )
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypetri
 .code.tex
 File: tikzlibrarypetri.code.tex 2008/06/18 v2.10 (rcs-revision 1.2)
-) (/usr/share/texmf-texlive/tex/latex/psnfss/times.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
-(/usr/share/texmf-texlive/tex/latex/tools/multicol.sty
-Package: multicol 2008/12/05 v1.6h multicolumn formatting (FMi)
-\c@tracingmulticols=\count160
-\mult@box=\box60
+(/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
+\c@tracingmulticols=\count162
+\mult@box=\box61
 \multicol@leftmargin=\dimen201
-\c@unbalance=\count161
-\c@collectmore=\count162
-\doublecol@number=\count163
-\multicoltolerance=\count164
-\multicolpretolerance=\count165
+\c@unbalance=\count163
+\c@collectmore=\count164
+\doublecol@number=\count165
+\multicoltolerance=\count166
+\multicolpretolerance=\count167
 \full@width=\dimen202
 \page@free=\dimen203
 \premulticols=\dimen204
 \postmulticols=\dimen205
-\multicolsep=\skip173
-\multicolbaselineskip=\skip174
-\partial@page=\box61
-\last@line=\box62
-\mult@rightbox=\box63
-\mult@grightbox=\box64
-\mult@gfirstbox=\box65
-\mult@firstbox=\box66
-\@tempa=\box67
+\multicolsep=\skip185
+\multicolbaselineskip=\skip186
+\partial@page=\box62
+\last@line=\box63
+\mult@rightbox=\box64
+\mult@grightbox=\box65
+\mult@gfirstbox=\box66
+\mult@firstbox=\box67
 \@tempa=\box68
 \@tempa=\box69
 \@tempa=\box70
@@ -810,218 +834,268 @@ Package: multicol 2008/12/05 v1.6h multicolumn formatting (FMi)
 \@tempa=\box81
 \@tempa=\box82
 \@tempa=\box83
-\c@columnbadness=\count166
-\c@finalcolumnbadness=\count167
+\@tempa=\box84
+\c@columnbadness=\count168
+\c@finalcolumnbadness=\count169
 \last@try=\dimen206
 \multicolovershoot=\dimen207
 \multicolundershoot=\dimen208
-\mult@nat@firstbox=\box84
-\colbreak@box=\box85
+\mult@nat@firstbox=\box85
+\colbreak@box=\box86
+\multicol@sort@counter=\count170
 )
-(/usr/share/texmf-texlive/tex/latex/multirow/multirow.sty
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen209
 )
-(/usr/share/texmf-texlive/tex/latex/pdfpages/pdfpages.sty
-Package: pdfpages 2009/02/07 v0.4g Insert pages of external PDF documents (AM)
+(/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2012/04/03 v0.4s Insert pages of external PDF documents (AM)
 
-(/usr/share/texmf-texlive/tex/latex/base/ifthen.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
-(/usr/share/texmf-texlive/tex/latex/tools/calc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count168
-\calc@Bcount=\count169
+\calc@Acount=\count171
+\calc@Bcount=\count172
 \calc@Adimen=\dimen210
 \calc@Bdimen=\dimen211
-\calc@Askip=\skip175
-\calc@Bskip=\skip176
+\calc@Askip=\skip187
+\calc@Bskip=\skip188
 LaTeX Info: Redefining \setlength on input line 76.
 LaTeX Info: Redefining \addtolength on input line 77.
-\calc@Ccount=\count170
-\calc@Cskip=\skip177
+\calc@Ccount=\count173
+\calc@Cskip=\skip189
 )
-(/usr/share/texmf-texlive/tex/latex/eso-pic/eso-pic.sty
-Package: eso-pic 2006/07/14 v1.1d eso-pic (RN)
+(/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2010/10/06 v2.0c eso-pic (RN)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/atbegshi.sty
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2012/04/03 v0.4s Pdfpages driver for pdfTeX (AM)
 )
-(/usr/share/texmf-texlive/tex/latex/pdfpages/pppdftex.def
-File: pppdftex.def 2009/02/07 v0.4g Pdfpages driver for pdfTeX (AM)
-)
-\AM@pagebox=\box86
+\AM@pagebox=\box87
 \AM@toc@title=\toks35
-\c@AM@survey=\count171
-\AM@templatesizebox=\box87
+\c@AM@survey=\count174
+\AM@templatesizebox=\box88
 )
-(/usr/share/texmf-texlive/tex/latex/listings/listings.sty
-\lst@mode=\count172
-\lst@gtempboxa=\box88
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count175
+\lst@gtempboxa=\box89
 \lst@token=\toks36
-\lst@length=\count173
+\lst@length=\count176
 \lst@currlwidth=\dimen212
-\lst@column=\count174
-\lst@pos=\count175
+\lst@column=\count177
+\lst@pos=\count178
 \lst@lostspace=\dimen213
 \lst@width=\dimen214
-\lst@newlines=\count176
-\lst@lineno=\count177
+\lst@newlines=\count179
+\lst@lineno=\count180
 \lst@maxwidth=\dimen215
 
-(/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-\c@lstnumber=\count178
-\lst@skipnumbers=\count179
-\lst@framebox=\box89
+\c@lstnumber=\count181
+\lst@skipnumbers=\count182
+\lst@framebox=\box90
 )
-(/usr/share/texmf-texlive/tex/latex/listings/listings.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2007/02/22 1.4 listings configuration
 ))
 Package: listings 2007/02/22 1.4 (Carsten Heinz)
 
-(/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
-(/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 )
-(/usr/share/texmf-texlive/tex/latex/colortbl/colortbl.sty
-Package: colortbl 2001/02/13 v0.1j Color table columns (DPC)
+(/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
 \everycr=\toks37
-\minrowclearance=\skip178
+\minrowclearance=\skip190
 )
-(/usr/share/texmf-texlive/tex/latex/float/float.sty
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count180
+\c@float@type=\count183
 \float@exts=\toks38
-\float@box=\box90
+\float@box=\box91
 \@float@everytoks=\toks39
-\@floatcapt=\box91
+\@floatcapt=\box92
 )
-(/usr/share/texmf-texlive/tex/latex/rotating/rotating.sty
+(/usr/share/texlive/texmf-dist/tex/latex/rotating/rotating.sty
 Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
-\c@r@tfl@t=\count181
-\rotFPtop=\skip179
-\rotFPbot=\skip180
-\rot@float@box=\box92
+\c@r@tfl@t=\count184
+\rotFPtop=\skip191
+\rotFPbot=\skip192
+\rot@float@box=\box93
 \rot@mess@toks=\toks40
 )
-(/usr/share/texmf-texlive/tex/latex/oberdiek/pdflscape.sty
-Package: pdflscape 2008/08/11 v0.10 Landscape pages in PDF (HO)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/pdflscape.sty
+Package: pdflscape 2008/08/11 v0.10 Display of landscape pages in PDF (HO)
 
-(/usr/share/texmf-texlive/tex/latex/graphics/lscape.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
-Package pdflscape Info: Auto-detected driver: pdftex on input line 75.
+Package pdflscape Info: Auto-detected driver: pdftex on input line 80.
 )
-(/usr/share/texmf-texlive/tex/latex/pstricks/pstricks.sty
-Package: pstricks 2008/11/26 v0.40 LaTeX wrapper for `PSTricks' (RN,HV)
+(/usr/share/texlive/texmf-dist/tex/latex/pstricks/pstricks.sty
+Package: pstricks 2011/10/31 v0.52 LaTeX wrapper for `PSTricks' (RN,HV)
 
-(/usr/share/texmf-texlive/tex/generic/pstricks/pstricks.tex
-`PSTricks' v1.29  <2009/05/19> (tvz)
+(/usr/share/texlive/texmf-dist/tex/generic/pstricks/pstricks.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/pst-xkey.tex
+File: pst-xkey.tex 2005/11/25 v1.6 PSTricks specialization of xkeyval (HA)
+
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2008/08/13 v2.6a package option processing (HA)
+
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+\XKV@toks=\toks41
+\XKV@tempa@toks=\toks42
+\XKV@depth=\count185
+File: xkeyval.tex 2008/08/13 v2.6a key=value parser (HA)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pstricks/pst-fp.tex
+`pst-fp' v0.05, 2010/01/17 (hv)
+\pstFP@xs=\count186
+\pstFP@xia=\count187
+\pstFP@xib=\count188
+\pstFP@xfa=\count189
+\pstFP@xfb=\count190
+\pstFP@rega=\count191
+\pstFP@regb=\count192
+\pstFP@regs=\count193
+\pstFP@times=\count194
+)
+\psLoopIndex=\count195
+
+`PSTricks' v2.29  <2012/06/04> (tvz)
 \pst@dima=\dimen216
 \pst@dimb=\dimen217
 \pst@dimc=\dimen218
 \pst@dimd=\dimen219
 \pst@dimg=\dimen220
 \pst@dimh=\dimen221
-\pst@hbox=\box93
-\pst@boxg=\box94
-\pst@cnta=\count182
-\pst@cntb=\count183
-\pst@cntc=\count184
-\pst@cntd=\count185
-\pst@cntg=\count186
-\pst@cnth=\count187
-\pst@toks=\toks41
-(/usr/share/texmf-texlive/tex/generic/pstricks/pstricks.con)
-\psunit=\dimen222
-\psxunit=\dimen223
-\psyunit=\dimen224
-\pslinewidth=\dimen225
-\pst@customdefs=\toks42
-\pslinearc=\dimen226
-\everypsbox=\toks43
-\psframesep=\dimen227
-\pslabelsep=\dimen228
-\pst@shift=\dimen229
-\theoverlaybox=\box95
+\pst@dimm=\dimen222
+\pst@dimn=\dimen223
+\pst@dimo=\dimen224
+\pst@dimp=\dimen225
+\pst@hbox=\box94
+\pst@ibox=\box95
+\pst@boxg=\box96
+\pst@cnta=\count196
+\pst@cntb=\count197
+\pst@cntc=\count198
+\pst@cntd=\count199
+\pst@cntg=\count200
+\pst@cnth=\count201
+\pst@cntm=\count202
+\pst@cntn=\count203
+\pst@cnto=\count204
+\pst@cntp=\count205
+\@zero=\count206
+\pst@toks=\toks43
+(/usr/share/texlive/texmf-dist/tex/generic/pstricks/pstricks.con)
+\psunit=\dimen226
+\psxunit=\dimen227
+\psyunit=\dimen228
+\pst@C@@rType=\count207
+Normal \dimen register pool exhausted, switching to extended pool.
+\pslinewidth=\dimen256
+\psk@startLW=\dimen257
+\psk@endLW=\dimen258
+\pst@customdefs=\toks44
+\pslinearc=\dimen259
+\pst@symbolStep=\dimen260
+\pst@symbolWidth=\dimen261
+\pst@symbolLinewidth=\dimen262
+\everypsbox=\toks45
+\psframesep=\dimen263
+\pslabelsep=\dimen264
+\pst@shift=\dimen265
+\theoverlaybox=\box97
 )
-File: pstricks.tex 2009/05/19 v1.29 `PSTricks' (tvz,hv)
+File: pstricks.tex 2012/06/04 v2.29 `PSTricks' (tvz,hv)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pstricks/pst-fp.tex)
+File: pst-fp.tex 2012/06/04 v2.29 `PST-fp' (hv)
 )
-(/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2000/07/18 v2.13 AMS math features
-\@mathmargin=\skip181
+\@mathmargin=\skip193
 
 For additional information on amsmath, use the `?' option.
-(/usr/share/texmf-texlive/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-(/usr/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks44
-Normal \dimen register pool exhausted, switching to extended pool.
-\ex@=\dimen256
+\@emptytoks=\toks46
+\ex@=\dimen266
 ))
-(/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen257
+\pmbraise@=\dimen267
 )
-(/usr/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count188
+\inf@bad=\count208
 LaTeX Info: Redefining \frac on input line 211.
-\uproot@=\count189
-\leftroot@=\count190
+\uproot@=\count209
+\leftroot@=\count210
 LaTeX Info: Redefining \overline on input line 307.
-\classnum@=\count191
-\DOTSCASE@=\count192
+\classnum@=\count211
+\DOTSCASE@=\count212
 LaTeX Info: Redefining \ldots on input line 379.
 LaTeX Info: Redefining \dots on input line 382.
 LaTeX Info: Redefining \cdots on input line 467.
-\Mathstrutbox@=\box96
-\strutbox@=\box97
-\big@size=\dimen258
+\Mathstrutbox@=\box98
+\strutbox@=\box99
+\big@size=\dimen268
 LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
-\macc@depth=\count193
-\c@MaxMatrixCols=\count194
+\macc@depth=\count213
+\c@MaxMatrixCols=\count214
 \dotsspace@=\muskip10
-\c@parentequation=\count195
-\dspbrk@lvl=\count196
-\tag@help=\toks45
-\row@=\count197
-\column@=\count198
-\maxfields@=\count199
-\andhelp@=\toks46
-\eqnshift@=\dimen259
-\alignsep@=\dimen260
-\tagshift@=\dimen261
-\tagwidth@=\dimen262
-\totwidth@=\dimen263
-\lineht@=\dimen264
-\@envbody=\toks47
-\multlinegap=\skip182
-\multlinetaggap=\skip183
-\mathdisplay@stack=\toks48
+\c@parentequation=\count215
+\dspbrk@lvl=\count216
+\tag@help=\toks47
+\row@=\count217
+\column@=\count218
+\maxfields@=\count219
+\andhelp@=\toks48
+\eqnshift@=\dimen269
+\alignsep@=\dimen270
+\tagshift@=\dimen271
+\tagwidth@=\dimen272
+\totwidth@=\dimen273
+\lineht@=\dimen274
+\@envbody=\toks49
+\multlinegap=\skip194
+\multlinetaggap=\skip195
+\mathdisplay@stack=\toks50
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
-(/usr/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2009/06/22 v3.00
 
-(/usr/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 ))
-(/usr/share/texmf-texlive/tex/latex/base/latexsym.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/latexsym.sty
 Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 \symlasy=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 (Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
 )
-(/usr/share/texmf-texlive/tex/latex/tools/bm.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/bm.sty
 Package: bm 2004/02/26 v1.1c Bold Symbol Support (DPC/FMi)
 \symboldoperators=\mathgroup7
 \symboldletters=\mathgroup8
@@ -1030,140 +1104,146 @@ Package: bm 2004/02/26 v1.1c Bold Symbol Support (DPC/FMi)
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 138.
 LaTeX Info: Redefining \bm on input line 204.
 )
-(/usr/share/texmf-texlive/tex/latex/tools/longtable.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
-\LTleft=\skip184
-\LTright=\skip185
-\LTpre=\skip186
-\LTpost=\skip187
-\LTchunksize=\count200
-\LTcapwidth=\dimen265
-\LT@head=\box98
-\LT@firsthead=\box99
-\LT@foot=\box100
-\LT@lastfoot=\box101
-\LT@cols=\count201
-\LT@rows=\count202
-\c@LT@tables=\count203
-\c@LT@chunks=\count204
-\LT@p@ftn=\toks49
+\LTleft=\skip196
+\LTright=\skip197
+\LTpre=\skip198
+\LTpost=\skip199
+\LTchunksize=\count220
+\LTcapwidth=\dimen275
+\LT@head=\box100
+\LT@firsthead=\box101
+\LT@foot=\box102
+\LT@lastfoot=\box103
+\LT@cols=\count221
+\LT@rows=\count222
+\c@LT@tables=\count223
+\c@LT@chunks=\count224
+\LT@p@ftn=\toks51
 )
-(/usr/share/texmf-texlive/tex/latex/psnfss/palatino.sty
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/palatino.sty
 Package: palatino 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
-(/usr/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2009/10/09 v6.79a Hypertext links for LaTeX
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2012/05/13 v6.82q Hypertext links for LaTeX
 
-(/usr/share/texmf-texlive/tex/generic/oberdiek/ifvtex.sty
-Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package hobsub Info: Skipping package `ifluatex' (already loaded).
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
-)
-(/usr/share/texmf-texlive/tex/latex/oberdiek/hycolor.sty
-Package: hycolor 2009/10/02 v1.5 Code for color options of hyperref/bookmark (H
-O)
-
-(/usr/share/texmf-texlive/tex/latex/oberdiek/xcolor-patch.sty
-Package: xcolor-patch 2009/10/02 xcolor patch
-))
-\@linkdim=\dimen266
-\Hy@linkcounter=\count205
-\Hy@pagecounter=\count206
-
-(/usr/share/texmf-texlive/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2009/10/09 v6.79a Hyperref: PDFDocEncoding definition (HO)
-)
-(/usr/share/texmf-texlive/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2007/12/12 v1.2 Prefix for e-TeX command names (HO)
-
-(/usr/share/texmf-texlive/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2007/09/09 v1.2 Providing info/warning/message (HO)
-)
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
-)
-(/usr/share/texmf-texlive/tex/latex/latexconfig/hyperref.cfg
-File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
-)
-(/usr/share/texmf-texlive/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2009/08/13 v3.4 Keyval support for LaTeX options (HO)
-
-(/usr/share/texmf-texlive/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2009/07/30 v1.5 Key value parser with default handler suppor
-t (HO)
-))
-Package hyperref Info: Hyper figures OFF on input line 2975.
-Package hyperref Info: Link nesting OFF on input line 2980.
-Package hyperref Info: Hyper index ON on input line 2983.
-Package hyperref Info: Plain pages OFF on input line 2990.
-Package hyperref Info: Backreferencing OFF on input line 2995.
-
-Implicit mode ON; LaTeX internals redefined
-Package hyperref Info: Bookmarks ON on input line 3191.
-(/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
-\Urlmuskip=\muskip11
-Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
-)
-LaTeX Info: Redefining \url on input line 3428.
-
-(/usr/share/texmf-texlive/tex/generic/oberdiek/bitset.sty
-Package: bitset 2007/09/28 v1.0 Data type bit set (HO)
-
-(/usr/share/texmf-texlive/tex/generic/oberdiek/intcalc.sty
-Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
-)
-(/usr/share/texmf-texlive/tex/generic/oberdiek/bigintcalc.sty
-Package: bigintcalc 2007/11/11 v1.1 Expandable big integer calculations (HO)
-
-(/usr/share/texmf-texlive/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2009/09/23 v0.6 LuaTeX support for pdfTeX utility functions
- (HO)
-
-(/usr/share/texmf-texlive/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2009/08/05 v1.0 Some LaTeX kernel commands for general use (HO
-)
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
-)))
-\Fld@menulength=\count207
-\Field@Width=\dimen267
-\Fld@charsize=\dimen268
-\Field@toks=\toks50
-Package hyperref Info: Hyper figures OFF on input line 4377.
-Package hyperref Info: Link nesting OFF on input line 4382.
-Package hyperref Info: Hyper index ON on input line 4385.
-Package hyperref Info: backreferencing OFF on input line 4392.
-Package hyperref Info: Link coloring OFF on input line 4397.
-Package hyperref Info: Link coloring with OCG OFF on input line 4402.
-Package hyperref Info: PDF/A mode OFF on input line 4407.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package hobsub Info: Skipping package `atbegshi' (already loaded).
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen276
+\Hy@linkcounter=\count225
+\Hy@pagecounter=\count226
 
-(/usr/share/texmf-texlive/tex/generic/oberdiek/atbegshi.sty
-Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2012/05/13 v6.82q Hyperref: PDFDocEncoding definition (HO)
 )
-\Hy@abspage=\count208
-\c@Item=\count209
+\Hy@SavedSpaceFactor=\count227
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-(/usr/share/texmf-texlive/tex/latex/memoir/memhfixc.sty
-Package: memhfixc 2009/02/06 v1.12 nameref/hyperref package fixes for memoir cl
+Package hyperref Info: Hyper figures OFF on input line 4062.
+Package hyperref Info: Link nesting OFF on input line 4067.
+Package hyperref Info: Hyper index ON on input line 4070.
+Package hyperref Info: Plain pages OFF on input line 4077.
+Package hyperref Info: Backreferencing OFF on input line 4082.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4300.
+\c@Hy@tempcnt=\count228
+
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4653.
+Normal \count register pool exhausted, switching to extended pool.
+\Fld@menulength=\count277
+\Field@Width=\dimen277
+\Fld@charsize=\dimen278
+Package hyperref Info: Hyper figures OFF on input line 5773.
+Package hyperref Info: Link nesting OFF on input line 5778.
+Package hyperref Info: Hyper index ON on input line 5781.
+Package hyperref Info: backreferencing OFF on input line 5788.
+Package hyperref Info: Link coloring OFF on input line 5793.
+Package hyperref Info: Link coloring with OCG OFF on input line 5798.
+Package hyperref Info: PDF/A mode OFF on input line 5803.
+LaTeX Info: Redefining \ref on input line 5843.
+LaTeX Info: Redefining \pageref on input line 5847.
+\Hy@abspage=\count278
+\c@Item=\count279
+\c@Hfootnote=\count280
+)
+(/usr/share/texlive/texmf-dist/tex/latex/memoir/memhfixc.sty
+Package: memhfixc 2010/08/17 v1.15 nameref/hyperref package fixes for memoir cl
 ass
-\c@memhycontfloat=\count210
+\c@memhycontfloat=\count281
 )
-*hyperref using default driver hpdftex*
-(/usr/share/texmf-texlive/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2009/10/09 v6.79a Hyperref driver for pdfTeX
-\Fld@listcount=\count211
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2012/05/13 v6.82q Hyperref driver for pdfTeX
+\Fld@listcount=\count282
+\c@bookmark@seq@number=\count283
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip200
 )
 
 LaTeX Warning: Unused global option(s):
     [leter].
 
 (./embedded_book.aux
-
-LaTeX Warning: Label `data_write' multiply defined.
-
+LaTeX Info: Redefining \. on input line 19.
+LaTeX Info: Redefining \% on input line 19.
 )
 \openout1 = `embedded_book.aux'.
 
@@ -1182,72 +1262,96 @@ LaTeX Font Info:    ... okay on input line 74.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 74.
 LaTeX Font Info:    ... okay on input line 74.
 LaTeX Font Info:    Try loading font information for OT1+ppl on input line 74.
- (/usr/share/texmf-texlive/tex/latex/psnfss/ot1ppl.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
-(/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+LaTeX Info: Redefining \. on input line 74.
+LaTeX Info: Redefining \% on input line 74.
+ (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count212
-\scratchdimen=\dimen269
-\scratchbox=\box102
-\nofMPsegments=\count213
-\nofMParguments=\count214
-\everyMPshowfont=\toks51
-\MPscratchCnt=\count215
-\MPscratchDim=\dimen270
-\MPnumerator=\count216
-\everyMPtoPDFconversion=\toks52
+\scratchcounter=\count284
+\scratchdimen=\dimen279
+\scratchbox=\box104
+\nofMPsegments=\count285
+\nofMParguments=\count286
+\everyMPshowfont=\toks52
+\MPscratchCnt=\count287
+\MPscratchDim=\dimen280
+\MPnumerator=\count288
+\makeMPintoPDFobject=\count289
+\everyMPtoPDFconversion=\toks53
 ) ABD: EveryShipout initializing macros
-\c@lstlisting=\count217
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\AtBeginShipoutBox=\box105
+\c@lstlisting=\count290
 Package hyperref Info: Link coloring OFF on input line 74.
 
-(/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
-Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 
-(/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
-Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count218
+\c@section@level=\count291
 )
+Redoing nameref's sectioning
+Redoing nameref's label
+LaTeX Info: Redefining \nameref on input line 74.
 LaTeX Info: Redefining \ref on input line 74.
 LaTeX Info: Redefining \pageref on input line 74.
-
+LaTeX Info: Redefining \nameref on input line 74.
 (./embedded_book.out) (./embedded_book.out)
 \@outlinefile=\write5
 \openout5 = `embedded_book.out'.
 
-\AtBeginShipoutBox=\box103
+LaTeX Font Info:    Try loading font information for U+msa on input line 85.
 
-Redoing nameref's sectioning
-Redoing nameref's label
-LaTeX Font Info:    Try loading font information for U+msa on input line 84.
-(/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 84.
+LaTeX Font Info:    Try loading font information for U+msb on input line 85.
 
-(/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 84.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 85.
 
-(/usr/share/texmf-texlive/tex/latex/base/ulasy.fd
+(/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 84.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 85.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 84.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 85.
  [1
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
+Non-PDF special ignored!
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+
+Non-PDF special ignored!
+Non-PDF special ignored!{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 [2
 
 
 ] (./embedded_book.toc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 3.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
@@ -1258,332 +1362,1978 @@ LaTeX Font Info:    Font shape `OT1/ppl/bx/sc' in size <10> not available
 (Font)              Font shape `OT1/ppl/b/sc' tried instead on input line 3.
 ) [1] [2
 
-] (./LM32/lm32.tex
-LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 3.
+] (./FSM/ASM.tex
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+! LaTeX Error: Can be used only in preamble.
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.22 
-      [1
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3 \documentclass
+                  [a4paper]{article}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
-]
-<./LM32/images/lm32_block_diagram.pdf, id=105, 730.73pt x 672.5125pt>
-File: ./LM32/images/lm32_block_diagram.pdf Graphic file (type pdf)
 
-<use ./LM32/images/lm32_block_diagram.pdf>
-Overfull \hbox (97.44138pt too wide) in paragraph at lines 35--35
- [] 
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4 \usepackage
+               [latin1]{inputenc}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5 \usepackage
+               {listings}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.6 \usepackage
+               [T1]{fontenc}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 \usepackage
+               [spanish,es-noshorthands]{babel}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 \usepackage
+               {amsmath}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9 \usepackage
+               {amssymb,amsfonts,textcomp}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 \usepackage
+                {color}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 \usepackage
+                [top=2.501cm,bottom=2.501cm,left=3cm,right=3cm,nohead,nofoot...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.12 \usepackage
+                {array}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.13 \usepackage
+                {supertabular}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 \usepackage
+                {hhline}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.15 \usepackage
+                {hyperref}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Package hyperref Warning: Option `pdftex' has already been used,
+(hyperref)                setting the option has no effect on input line 16.
+
+
+Package hyperref Warning: Option `colorlinks' has already been used,
+(hyperref)                setting the option has no effect on input line 16.
+
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.17 \usepackage
+                [pdftex]{graphicx}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+)
+Overfull \hbox (44.79514pt too wide) in paragraph at lines 3--40
+[]\OT1/ppl/m/n/10 [a4paper]article [latin1]inputenc list-ings [T1]fontenc [span
+ish,es-noshorthands]babel
  []
 
+
+Overfull \hbox (194.30467pt too wide) in paragraph at lines 3--40
+\OT1/ppl/m/n/10 ams-math amssymb,amsfonts,textcomp col-or [top=2.501cm,bottom=2
+.501cm,left=3cm,right=3cm,nohead,nofoot]geometry
+ []
+
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.41 \begin{document}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 43.
+
+LaTeX Warning: Reference `asm_block_diagram' on page 1 undefined on input line 
+45.
+
+
+LaTeX Warning: File `./images/asm_block_diagram.pdf' not found on input line 49
+.
+
+
+! Package pdftex.def Error: File `./images/asm_block_diagram.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.49 ...ht=5.08cm]{./images/asm_block_diagram.pdf}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 49.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.62 \end{enumerate}
+                     [1]
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 39.
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 64.
+
+
+LaTeX Warning: Reference `productos_parciales' on page 2 undefined on input lin
+e 66.
+
+
+LaTeX Warning: File `./images/FSM-img12.png' not found on input line 75.
+
+
+! Package pdftex.def Error: File `./images/FSM-img12.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.75 ...9cm,height=5.08cm]{./images/FSM-img12.png}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Reference `flujo_multiplicador' on page 2 undefined on input lin
+e 80.
+
 LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <10> not available
-(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 41.
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 80.
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.80 
-      [2] [3 <./LM32/images/lm32_block_diagram.pdf>] [4] [5]
-(/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2004/09/05 1.3 listings language file
-)
-(/usr/share/texmf-texlive/tex/latex/listings/lstlang2.sty
-File: lstlang2.sty 2004/09/05 1.3 listings language file
-)
-(/usr/share/texmf-texlive/tex/latex/listings/lstlang3.sty
-File: lstlang3.sty 2004/09/05 1.3 listings language file
-)
-LaTeX Font Info:    Try loading font information for OML+ppl on input line 154.
+l.82 
+      [2]
+
+LaTeX Warning: File `./images/Multipl.pdf' not found on input line 87.
 
 
-(/usr/share/texmf-texlive/tex/latex/psnfss/omlppl.fd
-File: omlppl.fd 
-)
-LaTeX Font Info:    Font shape `OML/ppl/m/n' in size <8> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 154.
+! Package pdftex.def Error: File `./images/Multipl.pdf' not found.
 
-<./LM32/images/arith_register.pdf, id=155, 1616.0375pt x 2595.6975pt>
-File: ./LM32/images/arith_register.pdf Graphic file (type pdf)
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.87 ...egraphics[scale=.35]{./images/Multipl.pdf}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-<use ./LM32/images/arith_register.pdf>
 
-LaTeX Warning: Float too large for page by 18.35065pt on input line 164.
+LaTeX Warning: Reference `caja_multiplicador' on page 3 undefined on input line
+ 91.
 
-[6] [7 <./LM32/images/arith_register.pdf>]
-<./LM32/images/arith_immediate.pdf, id=212, 1616.0375pt x 2608.74625pt>
-File: ./LM32/images/arith_immediate.pdf Graphic file (type pdf)
 
-<use ./LM32/images/arith_immediate.pdf>
+LaTeX Warning: File `./images/FSM-img14.png' not found on input line 95.
 
-LaTeX Warning: Float too large for page by 18.30038pt on input line 177.
 
-<./LM32/images/branch_condition.pdf, id=215, 2090.81125pt x 2686.035pt>
-File: ./LM32/images/branch_condition.pdf Graphic file (type pdf)
+! Package pdftex.def Error: File `./images/FSM-img14.png' not found.
 
-<use ./LM32/images/branch_condition.pdf>
-Overfull \hbox (77.15485pt too wide) in paragraph at lines 192--192
- [] 
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.95 ...cm,height=5.055cm]{./images/FSM-img14.png}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `./images/Multipl2.pdf' not found on input line 105.
+
+
+! Package pdftex.def Error: File `./images/Multipl2.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.105 ...aphics[scale=0.35]{./images/Multipl2.pdf}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Reference `datapath_multiplicador' on page 3 undefined on input 
+line 109.
+
+
+LaTeX Warning: Reference `intercon_datapath_multiplicador' on page 3 undefined 
+on input line 113.
+
+
+LaTeX Warning: File `./images/multipl_datapath.pdf' not found on input line 117
+.
+
+
+! Package pdftex.def Error: File `./images/multipl_datapath.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.117 ...scale=1.2]{./images/multipl_datapath.pdf}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[3] [4]
+
+LaTeX Warning: Reference `control_multiplicador' on page 5 undefined on input l
+ine 129.
+
+
+LaTeX Warning: File `./images/Multipl3.pdf' not found on input line 133.
+
+
+! Package pdftex.def Error: File `./images/Multipl3.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.133 ...raphics[scale=0.4]{./images/Multipl3.pdf}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Reference `control_multiplicador' on page 5 undefined on input l
+ine 137.
+
+[5]
+! Undefined control sequence.
+l.148 \tablehead
+                {}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Environment supertabular undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.149 \begin{supertabular}
+                          {|m{1.855cm}|m{0.791cm}|m{1.765cm}|m{1.038cm}|m{0....
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
+l.150 \hline
+            
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Overfull \hbox (225.39868pt too wide) in paragraph at lines 149--150
+ \OT1/ppl/m/n/10 |m1.855cm|m0.791cm|m1.765cm|m1.038cm|m0.566cm|m0.95699996cm|m1
+.1719999cm|m1.467cm|m1.8179998cm| 
+ []
+
+! Misplaced alignment tab character &.
+l.151 \centering  ESTADO &
+                           \centering  SH & \centering  LSR & \centering  RS...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.151 \centering  ESTADO & \centering  SH &
+                                            \centering  LSR & \centering  RS...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.151 ...TADO & \centering  SH & \centering  LSR &
+                                                   \centering  RSR & \center...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.151 ... SH & \centering  LSR & \centering  RSR &
+                                                   \centering  Z & \centerin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.151 ...  LSR & \centering  RSR & \centering  Z &
+                                                   \centering  LSB & \center...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.151 ...  RSR & \centering  Z & \centering  LSB &
+                                                   \centering  ADD & \center...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.151 ...  Z & \centering  LSB & \centering  ADD &
+                                                   \centering  DONE & \cente...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.151 ...SB & \centering  ADD & \centering  DONE &
+                                                   \centering\arraybslash  A...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \cr.
+\reserved@c ->\ifnum 0=`{}\fi \cr 
+                                  
+l.151 ...ONE & \centering\arraybslash  ACC\\\hline
+                                                  
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
+l.151 ...ONE & \centering\arraybslash  ACC\\\hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced alignment tab character &.
+l.152 \centering  CHECK &
+                          \centering  0 & \centering  00000111 & \centering ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.152 \centering  CHECK & \centering  0 &
+                                          \centering  00000111 & \centering ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.152 ... & \centering  0 & \centering  00000111 &
+                                                   \centering  0101 & \cente...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.152 ...\centering  00000111 & \centering  0101 &
+                                                   \centering  0 & \centerin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.152 ...0111 & \centering  0101 & \centering  0 &
+                                                   \centering  1 & \centerin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.152 ...g  0101 & \centering  0 & \centering  1 &
+                                                   \centering  0 & \centerin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.152 ...ring  0 & \centering  1 & \centering  0 &
+                                                   \centering  0 &
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.152 ...ring  1 & \centering  0 & \centering  0 &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \cr.
+\reserved@c ->\ifnum 0=`{}\fi \cr 
+                                  
+l.153 \centering\arraybslash  00000000\\\hline
+                                              
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
+l.153 \centering\arraybslash  00000000\\\hline
+                                              
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced alignment tab character &.
+l.154 \centering  ADD &
+                        \centering  0 & \centering  00000111 & \centering  0...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.154 \centering  ADD & \centering  0 &
+                                        \centering  00000111 & \centering  0...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.154 ... & \centering  0 & \centering  00000111 &
+                                                   \centering  0101 & \cente...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.154 ...\centering  00000111 & \centering  0101 &
+                                                   \centering  0 & \centerin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.154 ...0111 & \centering  0101 & \centering  0 &
+                                                   \centering  1 & \centerin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.154 ...g  0101 & \centering  0 & \centering  1 &
+                                                   \centering  1 & \centerin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.154 ...ring  0 & \centering  1 & \centering  1 &
+                                                   \centering  0 &
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.154 ...ring  1 & \centering  1 & \centering  0 &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \cr.
+\reserved@c ->\ifnum 0=`{}\fi \cr 
+                                  
+l.155 \centering\arraybslash  00000111\\\hline
+                                              
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
+l.155 \centering\arraybslash  00000111\\\hline
+                                              
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced alignment tab character &.
+l.156 \centering  SHIFT &
+                          \centering  1 & \multicolumn{1}{m{1.765cm}}{\cente...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.156 \centering  SHIFT & \centering  1 &
+                                          \multicolumn{1}{m{1.765cm}}{\cente...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \omit.
+\multispan ->\omit 
+                   \@multispan 
+l.156 ...lumn{1}{m{1.765cm}}{\centering  00001110}
+                                                   & \centering  0010 & \cen...
+I expect to see \omit only after tab marks or the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Undefined control sequence.
+\@preamble ...\begingroup \CT@setup \CT@row@color 
+                                                  \CT@cell@color \CT@do@colo...
+l.156 ...lumn{1}{m{1.765cm}}{\centering  00001110}
+                                                   & \centering  0010 & \cen...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Misplaced alignment tab character &.
+l.156 ...mn{1}{m{1.765cm}}{\centering  00001110} &
+                                                   \centering  0010 & \cente...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.156 ...centering  00001110} & \centering  0010 &
+                                                   \centering  0 & \centerin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.156 ...110} & \centering  0010 & \centering  0 &
+                                                   \centering  0 & \centerin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.156 ...g  0010 & \centering  0 & \centering  0 &
+                                                   \centering  0 & \centerin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.156 ...ring  0 & \centering  0 & \centering  0 &
+                                                   \centering  0 &
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.156 ...ring  0 & \centering  0 & \centering  0 &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \cr.
+\reserved@c ->\ifnum 0=`{}\fi \cr 
+                                  
+l.157 \centering\arraybslash  00000111\\\hline
+                                              
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
+l.157 \centering\arraybslash  00000111\\\hline
+                                              
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced alignment tab character &.
+l.158 \centering  CHECK &
+                          \centering  0 & \centering  00001110 & \centering ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.158 \centering  CHECK & \centering  0 &
+                                          \centering  00001110 & \centering ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.158 ... & \centering  0 & \centering  00001110 &
+                                                   \centering  0010 & \cente...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.158 ...\centering  00001110 & \centering  0010 &
+                                                   \centering  0 & \centerin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.158 ...1110 & \centering  0010 & \centering  0 &
+                                                   \centering  0 & \centerin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.158 ...g  0010 & \centering  0 & \centering  0 &
+                                                   \centering  0 & \centerin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.158 ...ring  0 & \centering  0 & \centering  0 &
+                                                   \centering  0 &
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.158 ...ring  0 & \centering  0 & \centering  0 &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \cr.
+\reserved@c ->\ifnum 0=`{}\fi \cr 
+                                  
+l.159 \centering\arraybslash  00000111\\\hline
+                                              
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
+l.159 \centering\arraybslash  00000111\\\hline
+                                              
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced alignment tab character &.
+l.160 \centering  SHIFT &
+                          \multicolumn{1}{m{0.791cm}}{\centering  1} & \mult...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \omit.
+\multispan ->\omit 
+                   \@multispan 
+l.160 ...multicolumn{1}{m{0.791cm}}{\centering  1}
+                                                   & \multicolumn{1}{m{1.765...
+I expect to see \omit only after tab marks or the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Undefined control sequence.
+\@preamble ...\begingroup \CT@setup \CT@row@color 
+                                                  \CT@cell@color \CT@do@colo...
+l.160 ...multicolumn{1}{m{0.791cm}}{\centering  1}
+                                                   & \multicolumn{1}{m{1.765...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Misplaced alignment tab character &.
+l.160 ...lticolumn{1}{m{0.791cm}}{\centering  1} &
+                                                   \multicolumn{1}{m{1.765cm...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \omit.
+\multispan ->\omit 
+                   \@multispan 
+l.160 ...olumn{1}{m{1.765cm}}{\centering 00011100}
+                                                   & \centering  0001 & \cen...
+I expect to see \omit only after tab marks or the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Undefined control sequence.
+\@preamble ...\begingroup \CT@setup \CT@row@color 
+                                                  \CT@cell@color \CT@do@colo...
+l.160 ...olumn{1}{m{1.765cm}}{\centering 00011100}
+                                                   & \centering  0001 & \cen...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Misplaced alignment tab character &.
+l.160 ...umn{1}{m{1.765cm}}{\centering 00011100} &
+                                                   \centering  0001 & \cente...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.160 ...\centering 00011100} & \centering  0001 &
+                                                   \centering  0 & \centerin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.160 ...100} & \centering  0001 & \centering  0 &
+                                                   \centering  1 & \centerin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.160 ...g  0001 & \centering  0 & \centering  1 &
+                                                   \centering  0 & \centerin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.160 ...ring  0 & \centering  1 & \centering  0 &
+                                                   \centering  0 &
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.160 ...ring  1 & \centering  0 & \centering  0 &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \cr.
+\reserved@c ->\ifnum 0=`{}\fi \cr 
+                                  
+l.161 \centering\arraybslash  00000111\\\hline
+                                              
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
+l.161 \centering\arraybslash  00000111\\\hline
+                                              
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced alignment tab character &.
+l.162 \centering  CHECK &
+                          \centering  0 & \centering  00011100 & \centering ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.162 \centering  CHECK & \centering  0 &
+                                          \centering  00011100 & \centering ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.162 ... & \centering  0 & \centering  00011100 &
+                                                   \centering  0001 & \cente...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.162 ...\centering  00011100 & \centering  0001 &
+                                                   \centering  0 & \centerin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.162 ...1100 & \centering  0001 & \centering  0 &
+                                                   \centering  1 & \centerin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.162 ...g  0001 & \centering  0 & \centering  1 &
+                                                   \centering  0 & \centerin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.162 ...ring  0 & \centering  1 & \centering  0 &
+                                                   \centering  0 &
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.162 ...ring  1 & \centering  0 & \centering  0 &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \cr.
+\reserved@c ->\ifnum 0=`{}\fi \cr 
+                                  
+l.163 \centering\arraybslash  00000111\\\hline
+                                              
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
+l.163 \centering\arraybslash  00000111\\\hline
+                                              
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced alignment tab character &.
+l.164 \centering  ADD &
+                        \centering  0 & \centering  00011100 & \centering  0...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.164 \centering  ADD & \centering  0 &
+                                        \centering  00011100 & \centering  0...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.164 ... & \centering  0 & \centering  00011100 &
+                                                   \centering  0001 & \cente...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.164 ...\centering  00011100 & \centering  0001 &
+                                                   \centering  0 & \centerin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.164 ...1100 & \centering  0001 & \centering  0 &
+                                                   \centering  1 & \centerin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.164 ...g  0001 & \centering  0 & \centering  1 &
+                                                   \centering  1 & \centerin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.164 ...ring  0 & \centering  1 & \centering  1 &
+                                                   \centering  0 &
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.164 ...ring  1 & \centering  1 & \centering  0 &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \cr.
+\reserved@c ->\ifnum 0=`{}\fi \cr 
+                                  
+l.165 \centering\arraybslash  00100011\\\hline
+                                              
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
+l.165 \centering\arraybslash  00100011\\\hline
+                                              
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced alignment tab character &.
+l.166 \centering  SHIFT &
+                          \multicolumn{1}{m{0.791cm}}{\centering  1} & \mult...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \omit.
+\multispan ->\omit 
+                   \@multispan 
+l.166 ...multicolumn{1}{m{0.791cm}}{\centering  1}
+                                                   & \multicolumn{1}{m{1.765...
+I expect to see \omit only after tab marks or the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Undefined control sequence.
+\@preamble ...\begingroup \CT@setup \CT@row@color 
+                                                  \CT@cell@color \CT@do@colo...
+l.166 ...multicolumn{1}{m{0.791cm}}{\centering  1}
+                                                   & \multicolumn{1}{m{1.765...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Misplaced alignment tab character &.
+l.166 ...lticolumn{1}{m{0.791cm}}{\centering  1} &
+                                                   \multicolumn{1}{m{1.765cm...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \omit.
+\multispan ->\omit 
+                   \@multispan 
+l.166 ...lumn{1}{m{1.765cm}}{\centering  00111000}
+                                                   & \centering  0000 & \cen...
+I expect to see \omit only after tab marks or the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Undefined control sequence.
+\@preamble ...\begingroup \CT@setup \CT@row@color 
+                                                  \CT@cell@color \CT@do@colo...
+l.166 ...lumn{1}{m{1.765cm}}{\centering  00111000}
+                                                   & \centering  0000 & \cen...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Misplaced alignment tab character &.
+l.166 ...mn{1}{m{1.765cm}}{\centering  00111000} &
+                                                   \centering  0000 & \cente...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.166 ...centering  00111000} & \centering  0000 &
+                                                   \centering  1 & \centerin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.166 ...000} & \centering  0000 & \centering  1 &
+                                                   \centering  0 & \centerin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.166 ...g  0000 & \centering  1 & \centering  0 &
+                                                   \centering  0 & \centerin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.166 ...ring  1 & \centering  0 & \centering  0 &
+                                                   \centering  0 &
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.166 ...ring  0 & \centering  0 & \centering  0 &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \cr.
+\reserved@c ->\ifnum 0=`{}\fi \cr 
+                                  
+l.167 \centering\arraybslash  00100011\\\hline
+                                              
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
+l.167 \centering\arraybslash  00100011\\\hline
+                                              
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced alignment tab character &.
+l.168 \centering  CHECK &
+                          \centering  0 & \centering  00111000 & \centering ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.168 \centering  CHECK & \centering  0 &
+                                          \centering  00111000 & \centering ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.168 ... & \centering  0 & \centering  00111000 &
+                                                   \centering  0000 & \cente...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.168 ...\centering  00111000 & \centering  0000 &
+                                                   \centering  1 & \centerin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.168 ...1000 & \centering  0000 & \centering  1 &
+                                                   \centering  0 & \centerin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.168 ...g  0000 & \centering  1 & \centering  0 &
+                                                   \centering  0 & \centerin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.168 ...ring  1 & \centering  0 & \centering  0 &
+                                                   \centering  0 &
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.168 ...ring  0 & \centering  0 & \centering  0 &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \cr.
+\reserved@c ->\ifnum 0=`{}\fi \cr 
+                                  
+l.169 \centering\arraybslash  00100011\\\hline
+                                              
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
+l.169 \centering\arraybslash  00100011\\\hline
+                                              
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced alignment tab character &.
+l.170 \centering  END1 &
+                         \centering  0 & \centering  00111000 & \centering  ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.170 \centering  END1 & \centering  0 &
+                                         \centering  00111000 & \centering  ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.170 ... & \centering  0 & \centering  00111000 &
+                                                   \centering  0000 & \cente...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.170 ...\centering  00111000 & \centering  0000 &
+                                                   \centering  1 & \centerin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.170 ...1000 & \centering  0000 & \centering  1 &
+                                                   \centering  0 & \centerin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.170 ...g  0000 & \centering  1 & \centering  0 &
+                                                   \centering  0 & \centerin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.170 ...ring  1 & \centering  0 & \centering  0 &
+                                                   \centering  1 &
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.170 ...ring  0 & \centering  0 & \centering  1 &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \cr.
+\reserved@c ->\ifnum 0=`{}\fi \cr 
+                                  
+l.171 \centering\arraybslash  00100011\\\hline
+                                              
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
+l.171 \centering\arraybslash  00100011\\\hline
+                                              
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced alignment tab character &.
+l.172 \centering  START &
+                          \centering  0 & \multicolumn{1}{m{1.765cm}}{\cente...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.172 \centering  START & \centering  0 &
+                                          \multicolumn{1}{m{1.765cm}}{\cente...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \omit.
+\multispan ->\omit 
+                   \@multispan 
+l.172 ...lumn{1}{m{1.765cm}}{\centering  00000111}
+                                                   & \multicolumn{1}{m{1.038...
+I expect to see \omit only after tab marks or the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Undefined control sequence.
+\@preamble ...\begingroup \CT@setup \CT@row@color 
+                                                  \CT@cell@color \CT@do@colo...
+l.172 ...lumn{1}{m{1.765cm}}{\centering  00000111}
+                                                   & \multicolumn{1}{m{1.038...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Misplaced alignment tab character &.
+l.172 ...mn{1}{m{1.765cm}}{\centering  00000111} &
+                                                   \multicolumn{1}{m{1.038cm...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \omit.
+\multispan ->\omit 
+                   \@multispan 
+l.172 ...ticolumn{1}{m{1.038cm}}{\centering  0101}
+                                                   & \multicolumn{1}{m{0.566...
+I expect to see \omit only after tab marks or the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Undefined control sequence.
+\@preamble ...\begingroup \CT@setup \CT@row@color 
+                                                  \CT@cell@color \CT@do@colo...
+l.172 ...ticolumn{1}{m{1.038cm}}{\centering  0101}
+                                                   & \multicolumn{1}{m{0.566...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Misplaced alignment tab character &.
+l.172 ...column{1}{m{1.038cm}}{\centering  0101} &
+                                                   \multicolumn{1}{m{0.566cm...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \omit.
+\multispan ->\omit 
+                   \@multispan 
+l.172 ...multicolumn{1}{m{0.566cm}}{\centering  0}
+                                                   & \centering  1 & \center...
+I expect to see \omit only after tab marks or the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Undefined control sequence.
+\@preamble ...\begingroup \CT@setup \CT@row@color 
+                                                  \CT@cell@color \CT@do@colo...
+l.172 ...multicolumn{1}{m{0.566cm}}{\centering  0}
+                                                   & \centering  1 & \center...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Misplaced alignment tab character &.
+l.172 ...lticolumn{1}{m{0.566cm}}{\centering  0} &
+                                                   \centering  1 & \centerin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.172 ....566cm}}{\centering  0} & \centering  1 &
+                                                   \centering  0 & \multicol...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.172 ...ing  0} & \centering  1 & \centering  0 &
+                                                   \multicolumn{1}{m{1.467cm...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \omit.
+\multispan ->\omit 
+                   \@multispan 
+l.172 ...multicolumn{1}{m{1.467cm}}{\centering  0}
+                                                   & \centering\arraybslash ...
+I expect to see \omit only after tab marks or the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Undefined control sequence.
+\@preamble ...\begingroup \CT@setup \CT@row@color 
+                                                  \CT@cell@color \CT@do@colo...
+l.172 ...multicolumn{1}{m{1.467cm}}{\centering  0}
+                                                   & \centering\arraybslash ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Misplaced alignment tab character &.
+l.172 ...lticolumn{1}{m{1.467cm}}{\centering  0} &
+                                                   \centering\arraybslash  0...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \cr.
+\reserved@c ->\ifnum 0=`{}\fi \cr 
+                                  
+l.172 ... \centering\arraybslash  00000000\\\hline
+                                                  
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
+l.172 ... \centering\arraybslash  00000000\\\hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+! LaTeX Error: \begin{center} on input line 147 ended by \end{supertabular}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.173 \end{supertabular}
+                        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[6]
+Overfull \hbox (3.31602pt too wide) in paragraph at lines 187--189
+[]\OT1/ppl/m/n/10 Es bueno ten-er en cuen-ta los difer-entes nive-les de sim-u-
+laci[]on que se pueden
  []
 
 
-LaTeX Warning: Float too large for page by 25.41783pt on input line 194.
+LaTeX Warning: Reference `division' on page 7 undefined on input line 195.
 
-[8] [9 <./LM32/images/arith_immediate.pdf>] [10 <./LM32/images/branch_condition
-.pdf>]
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 204.
 
- (/usr/share/texmf-texlive/tex/latex/psnfss/omsppl.fd
+LaTeX Warning: File `./images/FSM-img23.png' not found on input line 199.
+
+
+! Package pdftex.def Error: File `./images/FSM-img23.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.199 ...,height=10.502cm]{./images/FSM-img23.png}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Reference `division' on page 7 undefined on input line 203.
+
+[7]
+
+LaTeX Warning: File `./images/divisor.pdf' not found on input line 208.
+
+
+! Package pdftex.def Error: File `./images/divisor.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.208 ...raphics[scale=0.35]{./images/divisor.pdf}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Reference `flujo_comp_division' on page 8 undefined on input lin
+e 213.
+
+
+Underfull \vbox (badness 2111) has occurred while \output is active []
+
+ [8]
+
+LaTeX Warning: File `./images/divisor2.pdf' not found on input line 217.
+
+
+! Package pdftex.def Error: File `./images/divisor2.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.217 ...aphics[scale=0.35]{./images/divisor2.pdf}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Reference `datapath_division' on page 9 undefined on input line 
+221.
+
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 221.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsppl.fd
 File: omsppl.fd 
 )
-LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 204.
-
-Overfull \hbox (1.21657pt too wide) in paragraph at lines 226--227
-\OT1/ppl/m/n/10 se[]nal \OT1/ppl/m/it/10 branch[]offset \OT1/ppl/m/n/10 la que 
-toma co-mo val-or \OT1/ppl/m/it/10 6ins[25],ins[25:0] \OT1/ppl/m/n/10 o \OT1/pp
-l/m/it/10 16ins[15],ins[15:0]
- []
-
-<./LM32/images/branch_call_immediate.pdf, id=294, 2115.905pt x 2640.86626pt>
-File: ./LM32/images/branch_call_immediate.pdf Graphic file (type pdf)
-
-<use ./LM32/images/branch_call_immediate.pdf>
-Overfull \hbox (82.17351pt too wide) in paragraph at lines 231--231
- [] 
- []
+LaTeX Font Info:    Font shape `OMS/ppl/m/it' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 221.
 
 
-LaTeX Warning: Float too large for page by 16.38423pt on input line 233.
-
-<./LM32/images/branch_call.pdf, id=296, 1829.83624pt x 2640.86626pt>
-File: ./LM32/images/branch_call.pdf Graphic file (type pdf)
-
-<use ./LM32/images/branch_call.pdf>
-Overfull \hbox (24.96077pt too wide) in paragraph at lines 237--237
- [] 
- []
+LaTeX Warning: File `./images/divisor3.pdf' not found on input line 229.
 
 
-LaTeX Warning: Float too large for page by 16.38423pt on input line 239.
+! Package pdftex.def Error: File `./images/divisor3.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.229 ...raphics[scale=1.4]{./images/divisor3.pdf}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \vbox (badness 7133) has occurred while \output is active []
-
- [11]
-[12 <./LM32/images/branch_call_immediate.pdf>] [13 <./LM32/images/branch_call.p
-df>] <./LM32/images/data_types.pdf, id=385, 873.2625pt x 419.5675pt>
-File: ./LM32/images/data_types.pdf Graphic file (type pdf)
-
-<use ./LM32/images/data_types.pdf>
-Overfull \hbox (182.96153pt too wide) in paragraph at lines 255--255
- [] 
- []
-
-<./LM32/images/char.pdf, id=388, 652.4375pt x 116.435pt>
-File: ./LM32/images/char.pdf Graphic file (type pdf)
-
-<use ./LM32/images/char.pdf>
-Overfull \hbox (50.46552pt too wide) in paragraph at lines 262--262
- [] 
- []
-
-<./LM32/images/short.pdf, id=389, 653.44125pt x 116.435pt>
-File: ./LM32/images/short.pdf Graphic file (type pdf)
-
-<use ./LM32/images/short.pdf>
-Overfull \hbox (51.06776pt too wide) in paragraph at lines 267--267
- [] 
- []
-
-<./LM32/images/int.pdf, id=390, 653.44125pt x 116.435pt>
-File: ./LM32/images/int.pdf Graphic file (type pdf)
-
-<use ./LM32/images/int.pdf>
-Overfull \hbox (51.06776pt too wide) in paragraph at lines 273--273
- [] 
- []
-
-<./LM32/images/store.pdf, id=391, 2055.68pt x 2626.81375pt>
-File: ./LM32/images/store.pdf Graphic file (type pdf)
-
-<use ./LM32/images/store.pdf>
-Overfull \hbox (70.12872pt too wide) in paragraph at lines 280--280
- [] 
- []
+LaTeX Warning: Reference `control_division' on page 9 undefined on input line 2
+36.
 
 
-LaTeX Warning: Float too large for page by 13.57379pt on input line 282.
-
-<./LM32/images/load.pdf, id=393, 2058.69125pt x 2627.8175pt>
-File: ./LM32/images/load.pdf Graphic file (type pdf)
-
-<use ./LM32/images/load.pdf>
-Overfull \hbox (70.73096pt too wide) in paragraph at lines 286--286
- [] 
- []
+LaTeX Warning: File `./images/divisor4.pdf' not found on input line 240.
 
 
-LaTeX Warning: Float too large for page by 13.77454pt on input line 288.
+! Package pdftex.def Error: File `./images/divisor4.pdf' not found.
 
-<./LM32/images/exception_generation.pdf, id=395, 1828.8325pt x 1407.2575pt>
-File: ./LM32/images/exception_generation.pdf Graphic file (type pdf)
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.240 ...graphics[scale=.4]{./images/divisor4.pdf}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-<use ./LM32/images/exception_generation.pdf>
-Overfull \hbox (24.76003pt too wide) in paragraph at lines 304--304
- [] 
- []
-
-<./LM32/images/exception_csr.pdf, id=397, 2184.16pt x 2878.755pt>
-File: ./LM32/images/exception_csr.pdf Graphic file (type pdf)
-
-<use ./LM32/images/exception_csr.pdf>
-Overfull \hbox (95.82426pt too wide) in paragraph at lines 310--310
- [] 
- []
-
-
-LaTeX Warning: Float too large for page by 75.96115pt on input line 312.
-
-<./LM32/images/eret_ret.pdf, id=399, 2078.76625pt x 2602.72375pt>
-File: ./LM32/images/eret_ret.pdf Graphic file (type pdf)
-
-<use ./LM32/images/eret_ret.pdf>
-Overfull \hbox (74.7459pt too wide) in paragraph at lines 315--315
- [] 
- []
-
-
-LaTeX Warning: Float too large for page by 8.75587pt on input line 317.
-
-<./LM32/images/soft_SoC_design_flow.pdf, id=401, 724.7075pt x 528.97626pt>
-File: ./LM32/images/soft_SoC_design_flow.pdf Graphic file (type pdf)
-
-<use ./LM32/images/soft_SoC_design_flow.pdf>
-Overfull \hbox (93.82785pt too wide) in paragraph at lines 333--333
- [] 
- []
-
-
-Underfull \vbox (badness 2753) has occurred while \output is active []
-
- [14]
-[15 <./LM32/images/data_types.pdf> <./LM32/images/char.pdf> <./LM32/images/shor
-t.pdf>] <./LM32/images/uart_read_waves.pdf, id=442, 653.44125pt x 159.59625pt>
-File: ./LM32/images/uart_read_waves.pdf Graphic file (type pdf)
-
-<use ./LM32/images/uart_read_waves.pdf>
-Overfull \hbox (51.06776pt too wide) in paragraph at lines 357--357
- [] 
- []
-
-File: ./LM32/images/uart_read_waves.pdf Graphic file (type pdf)
-<use ./LM32/images/uart_read_waves.pdf>
-Overfull \hbox (51.06776pt too wide) in paragraph at lines 362--362
- [] 
- []
-
-<./LM32/images/conbus.pdf, id=443, 1116.17pt x 432.61626pt>
-File: ./LM32/images/conbus.pdf Graphic file (type pdf)
-
-<use ./LM32/images/conbus.pdf>
-Overfull \hbox (49.66536pt too wide) in paragraph at lines 372--372
- [] 
- []
-
-<./LM32/images/uart_block_full.pdf, id=445, 607.26875pt x 398.48875pt>
-File: ./LM32/images/uart_block_full.pdf Graphic file (type pdf)
-
-<use ./LM32/images/uart_block_full.pdf>
-Overfull \hbox (23.36406pt too wide) in paragraph at lines 382--382
- [] 
- []
-
-<./LM32/images/timer.pdf, id=447, 625.33624pt x 414.54875pt>
-File: ./LM32/images/timer.pdf Graphic file (type pdf)
-
-<use ./LM32/images/timer.pdf>
-Overfull \hbox (34.20464pt too wide) in paragraph at lines 389--389
- [] 
- []
-
-<./LM32/images/uart_block_read.pdf, id=449, 565.11125pt x 351.3125pt>
-File: ./LM32/images/uart_block_read.pdf Graphic file (type pdf)
-
-<use ./LM32/images/uart_block_read.pdf> [16 <./LM32/images/int.pdf>] [17 <./LM3
-2/images/store.pdf>] [18 <./LM32/images/load.pdf>]
-<./LM32/images/uart_block_write.pdf, id=538, 576.1525pt x 270.00874pt>
-File: ./LM32/images/uart_block_write.pdf Graphic file (type pdf)
-
-<use ./LM32/images/uart_block_write.pdf>
-Overfull \hbox (4.69415pt too wide) in paragraph at lines 405--405
- [] 
- []
-
-<./LM32/images/peripheral_soc.pdf, id=540, 557.08125pt x 129.48375pt>
-File: ./LM32/images/peripheral_soc.pdf Graphic file (type pdf)
-
-<use ./LM32/images/peripheral_soc.pdf>
-<./LM32/images/uart_sw_interface.pdf, id=542, 581.17125pt x 350.30875pt>
-File: ./LM32/images/uart_sw_interface.pdf Graphic file (type pdf)
-
-<use ./LM32/images/uart_sw_interface.pdf>
-Overfull \hbox (7.70544pt too wide) in paragraph at lines 419--419
- [] 
- []
-
-<./LM32/images/timer_sw_interface.pdf, id=544, 657.45625pt x 326.21875pt>
-File: ./LM32/images/timer_sw_interface.pdf Graphic file (type pdf)
-
-<use ./LM32/images/timer_sw_interface.pdf>
-Overfull \hbox (53.47679pt too wide) in paragraph at lines 424--424
- [] 
- []
-
-) (./embedded_book.bbl [19 <./LM32/images/exception_generation.pdf>] [20 <./LM3
-2/images/exception_csr.pdf>] [21 <./LM32/images/eret_ret.pdf>] [22 <./LM32/imag
-es/soft_SoC_design_flow.pdf> <./LM32/images/uart_read_waves.pdf>] [23 <./LM32/i
-mages/conbus.pdf>] [24 <./LM32/images/uart_block_full.pdf>] [25 <./LM32/images/
-timer.pdf> <./LM32/images/uart_block_read.pdf>] [26 <./LM32/images/uart_block_w
-rite.pdf> <./LM32/images/peripheral_soc.pdf>] [27 <./LM32/images/uart_sw_interf
-ace.pdf> <./LM32/images/timer_sw_interface.pdf>] [28
-
-]
-bibitemlist
-
-LaTeX Warning: Empty `thebibliography' environment on input line 3.
-
-) [29]
+[9] [10]
 \tf@toc=\write6
 \openout6 = `embedded_book.toc'.
 
- (./embedded_book.aux)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 254.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 254.
+ (./embedded_book.aux
+LaTeX Info: Redefining \. on input line 19.
+LaTeX Info: Redefining \% on input line 19.
+)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 254.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 254.
 
-LaTeX Warning: There were multiply-defined labels.
 
- ) 
+Package rerunfilecheck Warning: File `embedded_book.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `embedded_book.out':
+(rerunfilecheck)             Before: 9287D0B626AF8F0590E83BDF657FEC50;309
+(rerunfilecheck)             After:  126A00FC6FC4FBCFBF6BC2D9742AD1B7;541.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 254.
+ ) )
+(\end occurred inside a group at level 1)
+
+### semi simple group (level 1) entered at line 41 (\begingroup)
+### bottom level 
 Here is how much of TeX's memory you used:
- 24710 strings out of 495061
- 436308 string characters out of 1182621
- 612249 words of memory out of 3000000
- 27184 multiletter control sequences out of 15000+50000
- 34243 words of font info for 100 fonts, out of 3000000 for 9000
- 28 hyphenation exceptions out of 8191
- 61i,12n,69p,1083b,1300s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
-ve/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/typ
-e1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/urw/palat
-ino/uplb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/palatino/uplbi8a.pfb><
-/usr/share/texmf-texlive/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-
-texlive/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on embedded_book.pdf (33 pages, 871500 bytes).
+ 25593 strings out of 495059
+ 454610 string characters out of 3182030
+ 632317 words of memory out of 3000000
+ 28168 multiletter control sequences out of 15000+200000
+ 32075 words of font info for 97 fonts, out of 3000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 61i,11n,69p,1120b,478s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{section*.27} has been referenced bu
+t does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.18} has been referenced but does not exist
+, replaced by a fixed one
+
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/pala
+tino/uplbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on embedded_book.pdf (14 pages, 107597 bytes).
 PDF statistics:
- 870 PDF objects out of 1000 (max. 8388607)
- 131 named destinations out of 1000 (max. 500000)
- 258 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 161 PDF objects out of 1000 (max. 8388607)
+ 137 compressed objects within 2 object streams
+ 48 named destinations out of 1000 (max. 500000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 

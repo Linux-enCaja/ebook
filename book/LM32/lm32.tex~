@@ -185,13 +185,21 @@ En la instrucción se almacena la dirección de los registros que deben ser compar
 
 Para que el valor del contador de programa se modifique, es necesario que las señales \textit{condition\_met\_x}, \textit{branch\_m} y \textit{valid\_m} se encuentren activas (señales amarillas en la gráfica); la señal \textit{branch\_m} se activa cuando la instrucción es de tipo \textit{branch} o \textit{call}; la señal \textit{valid\_m} se activa cuando se presenta una instrucción válida. Adicionalmente, es necesario que el procesador no se encuentre en un estado de \textit{stall}. Si se cumplen las condiciones anteriores, se activará la señal \textit{branch\_taken\_m}, la que le indicará a la unidad de instrucciones que cargue el valor de la señal \textit{branch\_target\_m} en el contador de programa.
 
-El valor de \textit{branch\_target\_m} (señal azul en la gráfica) es fijado por dos diferentes métodos: cuando se produce una excepción o cuando se produce un salto, la señak \textit{exception\_x} selecciona el valor adecuado para cada caso. La señal \textit{branch\_target\_x} es el resultado de la suma de \textit{pc\_d} y de \textit{branch\_offset\_d} (para esta suma no se utiliza el bloque sumador). El valor de \textit{branch\_offset} es seleccionado por la señal \textit{select\_call\_immediate} entre las señales \textit{call\_immediate} (para instrucciones de llamado a función) y \textit{branch\_immediate}; está última tiene como valor \textit{{{16{inst[15]}}, inst[15:0]}}, lo que es una extensión de signo de la constante de 16 bits almacenado en la memoria de programa.
+El valor de \textit{branch\_target\_m} (señal azul en la gráfica) es fijado por dos diferentes métodos: cuando se produce una excepción o cuando se produce un salto, la señal \textit{exception\_x} selecciona el valor adecuado para cada caso. La señal \textit{branch\_target\_x} es el resultado de la suma de \textit{pc\_d} y de \textit{branch\_offset\_d} (para esta suma no se utiliza el bloque sumador). El valor de \textit{branch\_offset} es seleccionado por la señal \textit{select\_call\_immediate} entre las señales \textit{call\_immediate} (para instrucciones de llamado a función) y \textit{branch\_immediate}; está última tiene como valor \textit{{{16{inst[15]}}, inst[15:0]}}, lo que es una extensión de signo de la constante de 16 bits almacenado en la memoria de programa.
 
 En la figura \ref{branch_condition} se muestra el camino de datos equivalente a las instrucciones relacionadas con condicionales; 
   \begin{figure}
     \begin{center} \includegraphics[scale=.2]{./LM32/images/branch_condition.pdf} \end{center}
     \caption{Camino de datos de los saltos condicionales}\label{branch_condition}
   \end{figure}
+  
+En la figura \ref{loop_example} se iilustran 3 ciclos que utilizan condicionales; en color azul se muestra el código en C y en negro se muestra el código implementado por el compilador. 
+  
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.6]{./LM32/images/loop_example.pdf} \end{center}
+    \caption{Ejemplo de código: saltos condicionales}\label{loop_example}
+  \end{figure}
+
 
 \subsubsection{Llamado a función y salto incondicional}
 Existen dos tipos de llamado a función y de salto incondicional; su diferencia radica en la forma de almacenar la dirección a la que deben saltar. En la figura \ref{branch_call} se muestra el camino de datos correspondiente a las instrucciones \textit{calli} y \textit{bi}, estas almacenan en la instrucción la dirección y en la figura \ref{branch_call} se muestra el camino de dato correspondiente a las instrucciones \textit{call} y \textit{b} las que almacenan la dirección en un registro.
@@ -201,16 +209,23 @@ Para ambos casos el contador de programa es modificado si se activan las señales
 
 \lstset{language=verilog}
 \begin{lstlisting}
-always @*
-begin
-    case (instruction[28:26])
-    3'b000:  condition_met_x = `TRUE;
-    3'b110   condition_met_x = `TRUE;
+always @*
+
+begin
+
+    case (instruction[28:26])
+
+    3'b000:  condition_met_x = `TRUE;
+
+    3'b110   condition_met_x = `TRUE;
+
     ....
     ....
     ....
-    default:              condition_met_x = 1'bx;
-    endcase 
+    default:              condition_met_x = 1'bx;
+
+    endcase 
+
 end
 \end{lstlisting}
 
@@ -222,7 +237,7 @@ Adicionalmente, para las instrucciones de llamado a función \textit{call} y \tex
 
   \begin{figure}
     \begin{center} \includegraphics[scale=.2]{./LM32/images/branch_call_immediate.pdf} \end{center}
-    \caption{Camino de datos de los saltos y l\textit\{branch\_m}lamado a funciones inmediatos}\label{branch_call_immediate}
+    \caption{Camino de datos de los saltos y llamado a funciones inmediatos}\label{branch_call_immediate}
   \end{figure}
 
   
@@ -232,9 +247,30 @@ Adicionalmente, para las instrucciones de llamado a función \textit{call} y \tex
   \end{figure}
 
 
+
+En la figura \ref{call_function} se muestra un ejemplo de uso de la función call. El código en C utilizado para este ejemplo se muestra en color azul. La línea de código \textit{result1 = function(0x30)} hace el llamado a la función \textit{function} pasándole el parámetro \textit{0x30 (decimal 48)}; el código implementado por el compilador se muestra junto al código en C; como se mencionó anteriormente, los primeros registros del banco de registros se usan para pasar parámetros entre funciones, en el paso 1, se almacena el valor \textit{0x30 (48 decimal)} en \textit{r1}; en el paso dos se hace un llamado inmediato a función a la dirección de memoria \textit{0x8C}, lo que hace que el valor del contador de programa tome el valor \textit{0x8C} y se almacene el valor \textit{0x310} en el registro  \textit{ra}.
+
+La función \textit{function} está declarada como \textit{int function(int x)} y reside en la posición de memoria \textit{0x8C}. En el paso 3, se almacena el valor de los registros que se utilizan en la función con el fín de restaurarlos antes de retornar al programa donde fué llamada, esto se hace debido a que solo existe un banco de registros en el procesador y si no se hace esto el valor de los registros antes y después del llamado será diferente lo que ocasionará errores en los algoritmos implementados. EL registro \textit{ra} almacena el valor de la dirección de retorno, y se almacena para asegurar que cuando se hagan llamados a función anidados se retorne a la dirección adecuada. En el paso 4 se restaura el valor de los registros, garantizando la continuidad del programa principal; finalmente, en el paso 6 la función  \textit{ret} carga el valor del \textit{ra} en el contador de programa
+
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.6]{./LM32/images/call_function.pdf} \end{center}
+    \caption{Ejemplo de código: llamado a función}\label{call_function}
+  \end{figure}
+
+
+En la figura \ref{call_function_nested} se ilustra la importancia del almacenamiento de los registros en los llamados a funciones, para este ejemplo se consideró el registro \textit{ra}; cuando se almacena el registro \textit{ra} en la función \textit{F2} para ser restaurado al finalizar la función el flujo de programa retorna a la función \textit{F1}, lo que se ejecuta correctamente en los dos casos. Cuando finaliza \textit{F1} el valor de \textit{ra} varía; cuando no se almacena el valor la dirección de retorno de F1 es modificada por lo que cuando se retorna el contador de programa se hace igual a la dirección de retorno de \textit{F2}.
+
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.6]{./LM32/images/call_function_nested.pdf} \end{center}
+    \caption{Llamado a función anidado}\label{call_function_nested}
+  \end{figure}
+
+  
 \subsection{Comunicación con la memoria de datos}
 
 Antes de estudiar el camino de datos correspondiente a este grupo de ibstrucciones, hablaremos de los tipos de datos que soporta el procesador MICO32. En la figura \ref{data_types} se muestran ejemplos de manipulación de diferentes tipos de datos y como estos son tratados en la memoria del procesador.
+
+\subsubsection{Tipos de datos}
 
 El primer tipo de datos que se muestra en esta figura es el \textit{char}, la variable \textit{data8} es declarada como un \textit{volatile unsigned char *}, es decir un puntero a un \textit{char} sin signo tipo \textit{volatile}; los tipos de datos \textit{volatile} le indican al compilador que no realice optimizaciones sobre esta variable, lo que es importante cuando se direccionan periféricos. Al puntero \textit{data8} se le asigna la dirección \textit{0x400} y el valor \textit{0x44}. Si se aumenta el valor de la dirección del puntero en una posición \textit{data8++} la nueva dirección será \textit{0x401} y si se aumenta de nuevi pasará a ser \textit{0x402}; lo que indica que el procesador a pesar de ser de 32 bits puede realizar direccionamiento con granularidad byte; esto es muy conveniente para un almacenamiento eficiente de información, de no ser así se utilizaría una palabra de 32 bits para almacenar 8 bits.
 
@@ -243,14 +279,14 @@ La segunda parte de la figura \ref{data_types} ilustra el manejo del tipo de dat
 Finalmente se ilustra el tipo de datos \textit{int} y se observa como las direcciones de memoria inical y final después de aumentar el valor del puntero son \textit{0x300} \textit{0x304}; lo que muestra que el direccionamiento interno de la memoria depende del tipo de datos.
 
 
-\subsubsection{Tipos de datos}
   \begin{figure}
     \begin{center} \includegraphics[scale=.6]{./LM32/images/data_types.pdf} \end{center}
     \caption{Tipos de datos soportados por el procesador Mico32}\label{data_types}
   \end{figure}
 
 
-En la figura \ref{type_char} 
+El procesador MICO32 posee 4 señales \textit{D\_SEL\_O[3:0]} que son utilizadas para indicarle a los periféricos el tipo de operación de lectura/escritura que se está efectuando; en la figura \ref{type_char} se observa que estas señales se activan de forma individual indicando el byte que se está direccionando; en la figura \ref{type_short} las señales se activan por parejas indicando el grupo de 2 bytes que se está direccionando; finalmente en la figura \ref{type_int} las 4 señales se activan al tiempo lo que indica un acceso a los 4 bytes al mismo tiempo.
+
   \begin{figure}
     \begin{center} \includegraphics[scale=.6]{./LM32/images/char.pdf} \end{center}
     \caption{Acceso a un data tipo \textit{char}}\label{type_char}
@@ -260,29 +296,38 @@ En la figura \ref{type_char}
     \begin{center} \includegraphics[scale=.6]{./LM32/images/short.pdf} \end{center}
     \caption{Acceso a un data tipo \textit{short}}\label{type_short}
   \end{figure}
-  
-  
+
     \begin{figure}
     \begin{center} \includegraphics[scale=.6]{./LM32/images/int.pdf} \end{center}
     \caption{Acceso a un data tipo \textit{int}}\label{type_int}
   \end{figure}
   
   
-\subsubsection{Escritura}
+\subsubsection{Escritura a la memoria de datos}
+El acceso a memoria de datos permite extender las capacidades del procesador posibilitando la conexión de periféricos; los que a su vez, realizan la comunicación con el exterior utilizando diferentes protocolos de comunicación y medios físicos. En esta subsección se describirá la forma en la que el MICO32 implementa las operaciones de lectura y escritura a la memoria de datos.
+
+En la figura \ref{data_write} se ilustra el camino de datos asociado a las instrucciones \textit{sb}, \textit{sh} y \textit{sw}. En las tres, el valor contenido en el registro direccionado por \textit{instruction\_d[25:21]} (RX señales color rojo en la figura) más el valor de 16 bits (con signo extendido a 32 bits) forman la dirección a la que se desea escribir. El valor contenido en el registro direccionado por \textit{instruction\_d[20:16]} (RY señales color azul en la figura) corresponde al dato que será escrito en esa posición de memoria; de esta forma se construyen los buses de datos y direcciones del procesador. Cómo se dijo anteriormente el MICO32 direcciona con granularidad de byte, por esta razón en las instrucciones \textit{sh} y \textit{sw} se indica el valor escrito en las direcciones \textit{+1} y \textit{+1, +2 y +3} respectivamente; indicando el tamaño en bytes del tipo de dato escrito. Estas señales ingresan a un módulo llamado \textit{load\_store\_unit} que se encarga de generar las señales 
+correspondientes al bus \textit{wishbone}, más adelante estudiaremos en detalle el funcionamiento de este bus.
+
+
+En la figura \ref{type_char},  y \ref{type_int} se muestran las formas de onda cuando se escribe un dato tipo char (\textit{0x44}) a la dirección \textit{0x400}, el dato escrito en el bus es \textit{0x44444444} para que el periférico pueda utilizar cualquiera de las cuatro partes del bus de datos \textit{D\_DAT\_O[7:0]}, \textit{D\_DAT\_O[15:8]}, \textit{D\_DAT\_O[23:16]}, \textit{D\_DAT\_O[31:24]}, algo similar ocurre en la escritura del tipo de dato \textit{short} (con valor \textit{0x2020}) mostrado en la figura  \ref{type_short}, aquí se repite el dato para poder utilizar dos partes del bus del datos \textit{D\_DAT\_O[15:0]} y \textit{D\_DAT\_O[31:16]}.
+
+
   \begin{figure}
     \begin{center} \includegraphics[scale=.2]{./LM32/images/store.pdf} \end{center}
     \caption{Camino de datos de las instrucciones de escritura a memoria}\label{data_write}
   \end{figure}
 
-\subsubsection{Lectura}
+  
+
+  
+  \subsubsection{Lectura}
+En la figura \ref{data_read} se muestra el camino de datos asociado a las instrucciones \textit{lb/lbu}, \textit{lh/lhu} y \textit{lw}. La dirección de la cual se leera se calcula de forma similar al caso de la escritura; el valor contenido en el registro direccionado por \textit{instruction\_d[25:21]} (RY señales color rojo en la figura). El dato leído por el módulo \textit{load\_store\_unit} (señal morada en la figura) es almacenado en el registro cuya dirección está dada por \textit{instruction\_d[20:16]}.
+
   \begin{figure}
     \begin{center} \includegraphics[scale=.2]{./LM32/images/load.pdf} \end{center}
-    \caption{Camino de datos de las instrucciones de escritura a memoria}\label{data_write}
+    \caption{Camino de datos de las instrucciones de escritura a memoria}\label{data_read}
   \end{figure}
-
-  
-
-  
 
 \subsection{Interrupciones}
 
@@ -291,36 +336,139 @@ En la figura \ref{type_char}
 %     \caption{Camino de datos correspondiente a las excepciones}\label{exception}
 %   \end{figure}
 
+Existen dos formas de conocer si un periférico conectado al procesador requiere atención por parte del procesador; examinando de forma constante los registros de estado del periférico o utilizando interrupciones. La consulta constante de los registros de estado del periférico requiere incluir en el código una rutina que realice esta operación, la cual debe ser llamada de forma regular en el programa principal, la velocidad con que se realice esta consulta debe ser la adecuada para que no se pierdan eventos; debido a esto; uno de los problemas de esta técnica es que al aumentar el número de periféricos aumenta el tiempo entre consultas para un periférico, lo que aumenta la posibilidad de pérdida de eventos; adicionalmente, aumenta el tiempo dedicado a la consulta, lo que disminuye el tiempo disponible para ejecutar las tareas software en el procesador.
 
-  
+Las interrupciones modifican el flujo normal de ejecución del sistema y son originadas por señales dedicadas, lo que hace que su atención ocurra de forma inmediata. Cuando se presenta una interrupción, el valor del contador de programa toma un valor fijo que recibe el nombre de vector de interrupción, el valor del vector de interrupción está formado por (ver figura \ref{exception_generation} señales de color rojo) una dirección base \textit{EBA} (Exception Base Address) que por defecto es \textit{0x00}, un índice que indica la exepción que se presentó \textit{eid\_x} (6 para la interrupción) y tres ceros; estos tres ceros hacen que el espacio entre vectores de excepción sea de 8 palabras de 32 bits, por lo que la rutina de atención a la interrupción debe tener máximo 8 instrucciones (esta rutina se explicará más adelante); para la interrupción el valor del vector es de \textit{0x30}. 
+
+Como se puede observar en la figura \ref{exception_generation} para que se genere una excepción (señales de color azul), se debe activar cualquiera de las señales \textit{instruction\_bus\_error\_exception}, \textit{sysrem\_call\_exception\_exception}, \textit{data\_bus\_error\_exception}, \textit{divide\_by\_zero\_exception} o \textit{interrupt\_exception}; lo que activará la señal \textit{branch\_taken\_m} quien a su vez realiza el cambio en el contador de programa \textit{pc\_a}. Para que la señal \textit{interrupt\_exception} se active es necesario: 1- habilitar la generación de interrupciones, es decir, que el flag \textit{ie} (interrupt enable) está activo; 2- habilitar la generación de la interrupción deseada, para esto el bit correspondiente a la interrupción debe ser igual a 1 en la señal \textit{im} (interrupt mask), lo que recibe el nombre de \textit{enmascaramiento} y 3 - Que el periférico asociado a la interrupción realice una solicitud de atención activando su señal de interrupción, lo que 
+origina una activación de la señal correspondiente en \textit{ip} (interrupt pending). 
+
+Al activarsre la señal \textit{exception\_x} la variable que direcciona el registro a ser escrito en el banco de registros \textit{write\_idx} toma el valor \textit{30 decimal} (\textit{ea} - exception address) y el valor a ser escrito (\textit{w\_result}) será \textit{{pc\_m, 2'b00}} (los saltos en el contador de programa es de a 4 bytes, debido a que las instrucciones son de 32 bits, por esta razón los dos bits menos significativos no son tomados en cuenta); lo que garantiza que al salir de la interrupción, el programa principal continuará donde se interrumpió.
+
+
   \begin{figure}
     \begin{center} \includegraphics[scale=.2]{./LM32/images/exception_generation.pdf} \end{center}
     \caption{Camino de datos correspondiente a las generación de excepciones}\label{exception_generation}
-  \end{figure}
+  \end{figure}  
 
-  
-  \begin{figure}
+ 
+
+ \subsubsection{Rutina de atención a la interrupción}
+ A continuación se lista la rutina que se ejecuta cada vez que se presenta una interrupción; como se dijo anteriormente, la dirección del vector de interrupción debe ser \textit{0x48}, por lo que este código debe residir en la memoria de programa en dicha dirección.
+ 
+ 
+ \lstset{language=C, numbers=left, firstnumber=48}
+\begin{lstlisting}
+	sw      (sp+0), ra
+	calli   _save_all
+	rcsr	r1, IP 
+	calli   irq_handler
+	mvhi    r1, 0xffff
+	ori     r1, r1, 0xffff
+	wcsr	IP, r1 
+	bi      _restore_all_and_eret
+\end{lstlisting}
+
+En la línea \textit{48} se almacena el valor del registro \textit{ra} en la pila (la pila es una región de la memoria RAM que se utiliza para diferentes propósitos en la ejecución de un programa), esto se hace para que al salir de la rutina de atención a la interrupción el programa continúe de forma adecuada, de no hacer esto, si la interrupción se produjo cuando se estaba ejecutando una función el valor de retorno de la interrupción se modificaría. 
+
+En la línea \textit{49} se hace un llamado a la función \textit{save\_all}:
+
+ \lstset{language=C, numbers=none}
+\begin{lstlisting}
+	addi    sp, sp, -128
+	sw      (sp+4), r1
+	...
+	sw      (sp+108), r27
+#endif
+	sw      (sp+120), ea
+	sw      (sp+124), ba
+	/* ra and sp need special handling, as they have been modified */
+	lw      r1, (sp+128)
+	sw      (sp+116), r1
+	mv      r1, sp
+	addi    r1, r1, 128
+	sw      (sp+112), r1        
+	ret
+\end{lstlisting}
+
+En esta función, toma una ``fotografía'' del estado del procesador en el instante en que se presenta la interrupción,  almacenando el valor de todos los registros en la pila, esto se hace para garantizar que el estado del procesador antes y después de la interrupción sea el mismo. 
+
+En la línea \textit{49} se almacena el valor de la señal \textit{ip} (interrupt pending) en el registro \textit{r1}, esto se hace para pasar parámetros a la función que será llamada en la línea \textit{50}. \textit{irq\_handler} es la función que realizará las acciones correspondientes a una determinada interrupción, esta función debe ser declarada en C en cualquier archivo que haga parte del código fuente de la aplicación (en los ejemplos del repositorio se declara en el archivo \textit{soc-hw.c}) como: \textit{void irq\_handler(uint32\_t pending)}.
+
+En las líneas \textit{51} - \textit{53} se llena con unos la señal \textit{IP}, lo que equivale a una restauración de esta señal, y puede verse como una forma de informarle al procesador que las interrupciones ya fueron atendidas. Finalmente en la línea \textit{54} se hace un llamado a la función \textit{\_restore\_all\_and\_eret}:
+
+\lstset{language=C, numbers=none}
+\begin{lstlisting}
+        lw      r1, (sp+4)
+        ...
+        lw      r27, (sp+108)
+        lw      ra, (sp+116)
+        lw      ea, (sp+120)
+        lw      ba, (sp+124)
+        /* Stack pointer must be restored last, in case it has been updated */
+        lw      sp, (sp+112)
+        eret
+\end{lstlisting}
+
+Esta función: restaura el valor de todos los registros del procesador, incluyendo los registros \textit{ra, ea y ba}, el registro \textit{ea} se almacena para asegurar el correcto funcionamiento ante el caso de excepciones anidades; y ejecuta la instrucción \textit{eret} la que hace que el contador de programa tome el valor almacenado en el registro \textit{ea} con lo que el programa retorna a la siguiente instrucción del punto donde se generó la interrupción.
+
+
+Como se mencionó anteriormente, para que la interrupción se presente es necesario habilitar las interrupciones globales y la máscara asociada al periférico. Para esto, el archivo \textit{crt0ram.S} suministra las siguientes funciones:
+
+
+\lstset{language=C, numbers=none}
+\begin{lstlisting}
+irq_enable:
+	mvi     r1, 1
+	wcsr	IE, r1
+	ret
+
+irq_disable:
+	mvi     r1, 0
+	wcsr	IE, r1
+	ret
+
+irq_set_mask:
+	wcsr	IM, r1
+	ret	
+\end{lstlisting}
+
+En este código se utiliza la instrucción \textit{wcsr} y en la función de atención a la interrupción ya se había utilizado la instrucción \textit{rcsr} (\textit{rcsr	r1, IP}); estas instrucciones realizan operaciones de escritura y lectura sobre los registros de estatus y control del procesador. En la figura \ref{exception_csr} se muestra el camino de datos relacionado con estas intrucciones.
+
+\begin{figure}
     \begin{center} \includegraphics[scale=.2]{./LM32/images/exception_csr.pdf} \end{center}
     \caption{Camino de datos correspondiente al acceso de los registros asociados a las excepciones}\label{exception_csr}
   \end{figure}
+  
+El camino de color rojo muestra la escritura utilizando la instrucción \textit{wcsr}; \textit{instruction\_d[20:16]} contiene la dirección del registro a ser escrito en \textit{csr}; y \textit{instruction\_d[25:21]} el registro de estatus y control a escribir. 
+
+La lectura de los registros de estado y control se muestra en color morado en la figura; de forma similar a la escritura \textit{instruction\_d[25:21]} direcciona el registro a leer y \textit{instruction\_d[15:11]} la dirección del registro que almacenará el valor leído.
+
+\subsection{Retorno de función y de excepción}
+
+La figura \ref{eret_ret} muestra el camino de datos asociado a las instrucciones de retorno de excepción y de función \textit{eret} y \textit{ret}; en estas instrucciones, el valor de la dirección del registro que va a ser almacenado en el contador de programa es fijo (\textit{instruction\_d[25:21]}), siendo \textit{30} para la instrucción \textit{eret} y \textit{29} para la instrucción \textit{ret}. El valor contenido en estos registros pasa a la señal \textit{branch\_target} y su valor será almacenado en el contador de programa retornando a la dirección siguiente a la que se produjo la excepción o el llamado a función. 
 
   \begin{figure}
     \begin{center} \includegraphics[scale=.2]{./LM32/images/eret_ret.pdf} \end{center}
     \caption{Camino de datos asociado al retorno de función y de excepción}\label{eret_ret}
   \end{figure}
 
+  
+  
+  
+En la Figura \ref{interrupt_flow} se resume el proceso de atención a la interrupción. La solicitud de atención por parte de un periférico recibe el nombre de \textbf{IRQ} (interrupt request) y la rutina que atiende esta solicitud recibe el nombre de \textit{ISR} (interrupt service routine)
 
-Explicar el código de atención a la irq
-
-
+  \begin{figure}
+    \begin{center} \includegraphics[scale=.5]{./LM32/images/interrupt_process.pdf} \end{center}
+    \caption{Flujo asociado a la atención de una interrupción}\label{interrupt_flow}
+  \end{figure}
 
 %********************************************************************************************************************
 %********************************************************                              SECCIÓN   ARQUITECTURA SoC
 %********************************************************************************************************************
 
 \section{Arquitectura del SoC LM32}
-Explicar el componente hardware y software,explicar la estructura sw y hw de los proyectos
-
+En la figura \ref{soft_SoC_design_flow} 
 
   \begin{figure}
     \begin{center} \includegraphics[scale=.6]{./LM32/images/soft_SoC_design_flow.pdf} \end{center}

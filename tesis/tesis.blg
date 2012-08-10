@@ -1,47 +1,58 @@
-This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: tesis.aux
 The style file: unsrt.bst
-I found no \citation commands---while reading file tesis.aux
 Database file #1: biblio.bib
-You've used 0 entries,
+Warning--empty year in WM91
+Warning--empty journal in ETPoSSI(09
+Warning--empty journal in IAI
+Warning--empty year in IAI
+Warning--can't use both author and editor fields in CMS06
+Warning--can't use both author and editor fields in AEAR85
+Warning--can't use both author and editor fields in Sta99
+Warning--empty year in CC
+Warning--empty school in NR11
+Warning--empty note in WCI
+Warning--empty year in BBS
+You've used 64 entries,
             1791 wiz_defined-function locations,
-            445 strings with 3514 characters,
-and the built_in function-call counts, 18 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 2
-:= -- 7
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
+            769 strings with 13567 characters,
+and the built_in function-call counts, 8816 in all, are:
+= -- 733
+> -- 345
+< -- 1
++ -- 152
+- -- 88
+* -- 284
+:= -- 1600
+add.period$ -- 190
+call.type$ -- 64
+change.case$ -- 54
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
+cite$ -- 75
+duplicate$ -- 503
+empty$ -- 943
+format.name$ -- 88
+if$ -- 1925
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 3
-num.names$ -- 0
-pop$ -- 0
+int.to.str$ -- 64
+missing$ -- 55
+newline$ -- 321
+num.names$ -- 66
+pop$ -- 237
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1
+skip$ -- 177
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 6
+swap$ -- 56
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 2
-(There was 1 error message)
+warning$ -- 11
+while$ -- 65
+width$ -- 66
+write$ -- 645
+(There were 11 warnings)
