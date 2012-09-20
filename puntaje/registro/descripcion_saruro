@@ -1,0 +1,52 @@
+El S.E. TES ROv2.019 se basa en la arquitectura20 mostrada en la Figura , en la cual se integran componentes específicos de hardware y software, diseñados en forma paralela con el objetivo de dar soluciones a problemas locales en el campo de la telemonitorización de senñles biomédicas.
+
+Las características del S.E. TES ROv2.0 diseñado se resumen a continuación:
+
+Procesador ARM920T de 180 MHz.
+Dimensiones: 11cm x 10cm, altura máxima de 2cm.
+Alimentación: 5V ± 10 %.
+Memoria serial Flash de 2 MB, memoria SDRAM de 32MB.
+PCB (Printed Circuit Board) de dos capas.
+Una Ranura para memoria SD/MMC.
+Interfaz Ethernet 10/100.
+6 puertos seriales (RS232), un puerto I2 C, 4 puertos USB.
+
+
+3.4.3. Módulos del Sistema Embebido TES ROv2.0 
+El sistema TES ROv2.0 implementado se presenta en la Figura 3.11, en el cual se identifican los tres módulos que lo componen:
+
+Figura 3.11: Fotos del S.E. TES ROv2.0.
+Módulo de Procesamiento: son los componentes que constituyen la arquitectura fundamental del sistema TES ROv2.0. Este módulo se basa en la plataforma de desarrollo ECB AT91.
+
+Módulo de Adquisición: es el sector que se encarga de capturar la información proveniente de las tarjetas de adquisición de señales biomédicas.
+Módulo de Comunicación: corresponde a los componentes electrónicos diseñados para realizar la comunicación del sistema, ya sea por redes cableadas o inalámbricas, al sistema de información clínico.
+Tanto el módulo de comunicación como el de adquisición constituyen el aporte principal de Hardware realizado en el S.E. TES ROv2.0, los cuales fueron diseñados a la medida para realizar la captura y transmisión de las señales biomédicas al sistema de información clínico SARURO.
+
+
+3.4.4.
+Componentes Electrónicos En la Figura 3.12 se identifican los componentes electrónicos y periféricos más importantes del Sistema Embebido.
+
+
+3.4.6.
+Modulo de Procesamiento
+En la construcción del sistema TES ROv2.0, el modulo de procesamiento esta integrado por:
+Unidad de Procesamiento: para la implementación esta unidad se utiliza el SoC (System on Chip) AT91RM9200, fabricado por Atmel, el cual integra en su núcleo el procesador ARM920T [18, 32, 86]. Es una solución completa que minimiza el costo de fabricación de un dispositivo y ofrece soporte a un gran número de interfaces y protocolos.
+Algunas de las características del SoC AT91RM9200 son:
+
+• Integra el procesador ARM920T de 200 MIPS a 180 MHz. Posee Memory Management Unit (MMU).
+• Tiene soporte para memorias: SDRAM, NAND flash, DataFlash, SD/MMC y CompactFlash.
+• Posee puertos: USB 2.0 host, I2 C, SPI, serial RS232 y Ethernet.
+• Tiene soporte para las Interfaces: high speed USB 2.0, Ethernet 10/100 Base T y interfaz de bus externo (EBI).
+• Ofrece soporte para el estándar IEEE 1149.1 JTAG.
+• Tiene una memoria interna SRAM de 16 KB y una memoria ROM de 128KB.
+
+Dispositivos de Almacenamiento: el almacenamiento de los datos se realiza utilizando los siguientes componentes:
+• MT48LC: es una memoria dinámica de acceso aleatorio con una interfaz sincrónica o SDRAM de 32MB.
+• AT45DB161: es una memoria Flash de interfaz serial reprogramable por software de tipo NOR fabricada por ATMEL. Permite realizar la lectura de los datos hasta una velocidad de 66 MHz.
+Periféricos: para implementar los dos principales periféricos se utilizó:
+• MAX3223 : proporciona una interfaz eléctrica entre el controlador de comunicación asincrónico y el conector de puerto serie.
+Funciona hasta velocidades de señalización de datos de 250 kbps y es fabricado por Texas Instruments.
+• KS8721 : es un producto de la línea de Ethernet. Ofrece una interfaz de la subcapa MAC y la capa física con el procesador ARM. Opera a 2.5V, con velocidades de 10BaseT/100BaseTX/FX [57,69].
+
+
+

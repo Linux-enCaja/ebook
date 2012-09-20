@@ -1,6 +1,7 @@
-\beamer@endinputifotherversion {3.07pt}
+
+\beamer@endinputifotherversion {3.10pt}
 \select@language {english}
-\setcounter {tocdepth}{1}
+\save@tocdepth \setcounter {tocdepth}{1}
 \beamer@sectionintoc {1}{Equipo de Trabajo}{2}{0}{1}
 \beamer@sectionintoc {2}{Motivaci\'on}{3}{0}{2}
 \beamer@subsectionintoc {2}{1}{Redes Inteligentes}{3}{0}{2}
